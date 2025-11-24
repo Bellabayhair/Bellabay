@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Bay – Coiffure & Extensions</title>
+  <meta name="description" content="Bella Bay – Coiffure et extensions haut de gamme à domicile, Montréal & Laval. Coloration, mèches, extensions adhésives et à clips.">
+  <style>
+    :root {
+      --rose: #ff7aa8;
+      --rose-pale: #ffe8f2;
+      --noir: #111111;
+      --gris: #555555;
+      --or: #f5c26b;
+      --blanc: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--blanc);
+      color: var(--noir);
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--or);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      background: radial-gradient(circle at 0 0, var(--or), var(--rose));
+      color: var(--blanc);
+    }
+    .logo-text-title {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--gris);
+    }
+    .header-contact {
+      text-align: right;
+      font-size: 12px;
+    }
+    .header-contact a {
+      color: var(--noir);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .header-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 26px 0 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 20px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--rose-pale);
+      color: var(--gris);
+      font-size: 11px;
+    }
+    .hero-title {
+      margin-top: 14px;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+    }
+    .hero-title span {
+      color: var(--rose);
+    }
+    .hero-sub {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--gris);
+      max-width: 460px;
+    }
+    .hero-tags {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .hero-tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #f0f0f0;
+      background: #fafafa;
+    }
+    .hero-cta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-main {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--rose), var(--or));
+      color: var(--blanc);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .btn-main:active { opacity: 0.9; }
+    .hero-cta-note {
+      font-size: 11px;
+      color: var(--gris);
+    }
+
+    .section {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #f4f4f4;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .section-sub {
+      font-size: 12px;
+      color: var(--gris);
+      margin-bottom: 12px;
+      max-width: 520px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 12px;
+    }
+    .card {
+      border-radius: 16px;
+      border: 1px solid #f1f1f1;
+      padding: 14px 14px 13px;
+      background: #ffffff;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-sub {
+      font-size: 11px;
+      color: var(--gris);
+      margin-bottom: 6px;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .price-label {
+      color: var(--gris);
+    }
+    .price-value {
+      font-weight: 500;
+    }
+    .pill {
+      display: inline-flex;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: var(--rose-pale);
+      color: var(--gris);
+      margin-top: 4px;
+    }
+
+    .note {
+      margin-top: 8px;
+      font-size: 10px;
+      color: #777777;
+    }
+
+    .contact-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 16px;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+    .contact-list {
+      list-style: none;
+      font-size: 12px;
+      display: grid;
+      gap: 4px;
+    }
+    .contact-list a {
+      color: var(--noir);
+      text-decoration: none;
+    }
+    .contact-list a:hover { text-decoration: underline; }
+    .contact-note {
+      font-size: 11px;
+      color: var(--gris);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #f4f4f4;
+      font-size: 10px;
+      color: #888888;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 720px) {
+      .page { padding-inline: 16px; }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-contact { text-align: left; }
+      .cards {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-block {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-badge">BB</div>
+        <div>
+          <div class="logo-text-title">Bella Bay</div>
+          <div class="logo-text-sub">Coiffure & Extensions – Montréal · Laval</div>
+        </div>
+      </div>
+      <div class="header-contact">
+        <div><a href="tel:+15145822856">514&nbsp;582&nbsp;2856</a></div>
+        <div><a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></div>
+        <div style="font-size:11px;color:#777;">Luxe à domicile – sur rendez-vous</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="hero-badge">Luxe à domicile · Coloration & Extensions</div>
+          <h1 class="hero-title">
+            Coiffure & extensions <span>haut de gamme</span><br />à Montréal & Laval.
+          </h1>
+          <p class="hero-sub">
+            Balayage lumineux, bruns chocolat profonds, mèches signature et extensions discrètes.
+            Un service privé, soigné et ponctuel – directement chez vous.
+          </p>
+          <div class="hero-tags">
+            <div class="hero-tag">Coloration & mèches</div>
+            <div class="hero-tag">Extensions adhésives & à clips</div>
+            <div class="hero-tag">Brushing & mise en beauté</div>
+          </div>
+          <div class="hero-cta">
+            <button class="btn-main" onclick="window.location.href='tel:+15145822856'">
+              Appeler pour réserver
+            </button>
+            <div class="hero-cta-note">
+              SMS / WhatsApp possible · Réponse rapide
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <h2 class="section-title">Services coiffure</h2>
+        <p class="section-sub">
+          Des prestations claires, des prix transparents, et la même exigence qu’en salon haut de gamme,
+          dans le confort de votre domicile.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Coupe & coiffage</div>
+            <p class="card-sub">Cheveux soignés, ligne de coupe précise, brushing glossy.</p>
+            <div class="price-row">
+              <span class="price-label">Coupe femme + brushing</span>
+              <span class="price-value">50&nbsp;$</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Brushing</span>
+              <span class="price-value">40&nbsp;$</span>
+            </div>
+            <span class="pill">Déplacement inclus Montréal / Laval</span>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Coloration & mèches</div>
+            <p class="card-sub">Pour éclaircir, apporter de la profondeur ou raviver votre couleur.</p>
+            <div class="price-row">
+              <span class="price-label">Coloration racines / ton sur ton</span>
+              <span class="price-value">75&nbsp;$</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Coloration complète</span>
+              <span class="price-value">90&nbsp;$</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Mèches / balayage demi-tête</span>
+              <span class="price-value">120&nbsp;$</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Mèches / balayage tête complète</span>
+              <span class="price-value">150&nbsp;$ – 180&nbsp;$</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="extensions">
+        <h2 class="section-title">Extensions capillaires</h2>
+        <p class="section-sub">
+          Cheveux 100&nbsp;% humains, sélectionnés et posés avec soin pour un résultat naturel,
+          discret et confortable au quotidien.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Extensions adhésives</div>
+            <p class="card-sub">Idéales pour un volume souple et des longueurs harmonieuses.</p>
+            <div class="price-row">
+              <span class="price-label">Pose dès 2 paquets</span>
+              <span class="price-value">à partir de 120&nbsp;$</span>
+            </div>
+            <div class="note">
+              Prix variable selon la quantité de paquets, la longueur et l’épaisseur souhaitées.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Extensions à clips</div>
+            <p class="card-sub">Parfait pour les événements, shootings, soirées & occasions spéciales.</p>
+            <div class="price-row">
+              <span class="price-label">Pose & mise en forme</span>
+              <span class="price-value">80&nbsp;$ – 120&nbsp;$</span>
+            </div>
+            <div class="note">
+              Possibilité d’utiliser vos propres extensions ou d’être conseillée sur l’achat du bon set.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2 class="section-title">Réservations & contact</h2>
+        <p class="section-sub">
+          Je vous réponds personnellement pour chaque demande, afin de proposer le service le plus
+          adapté à vos cheveux, votre budget et votre agenda.
+        </p>
+        <div class="contact-block">
+          <ul class="contact-list">
+            <li><strong>Téléphone / SMS :</strong> <a href="tel:+15145822856">514&nbsp;582&nbsp;2856</a></li>
+            <li><strong>Email :</strong> <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></li>
+            <li><strong>Instagram :</strong> <a href="https://instagram.com/bellah.bay" target="_blank">@bellah.bay</a></li>
+            <li><strong>Zones desservies :</strong> Montréal & Laval</li>
+          </ul>
+          <div class="contact-note">
+            Merci d’indiquer votre type de cheveux, la prestation souhaitée (ex : balayage, coloration,
+            extensions adhésives) et vos disponibilités. Une photo de vos cheveux au naturel aide
+            également à confirmer le tarif avant le déplacement.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 Bella Bay – Coiffure & Extensions à domicile.</div>
+      <div><a href="https://bellabay.ca">bellabay.ca</a></div>
+    </footer>
+  </div>
+</body>
+</html>
