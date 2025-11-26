@@ -3,107 +3,82 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bella Bay — Coiffure & Extensions</title>
+<title>Bella Bay – Coiffure & Extensions</title>
 
 <style>
-/* ===========================
-    PALETTE BELLA BAY
-=========================== */
-:root {
-    --rose-pale: #fadbea;
-    --rose: #f27ca3;
-    --or: #d9a441;
-    --noir: #111111;
-    --blanc: #ffffff;
-}
-
-/* ===========================
-      RESET
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background: var(--rose-pale);
-    color: var(--noir);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #F27CA3 0%, #FADBEA 50%, #FFFFFF 100%);
+  color: #111;
 }
 
-/* ===========================
-      HEADER
-=========================== */
 header {
-    background: linear-gradient(135deg, var(--rose), var(--rose-pale));
-    padding: 18px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  background: #F27CA3;
+  padding: 18px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--blanc);
-    letter-spacing: 2px;
-}
-
-nav a {
-    margin-left: 15px;
-    color: var(--blanc);
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-/* ===========================
-      HERO SECTION
-=========================== */
-.hero {
-    padding: 55px 25px;
-    text-align: center;
-    background: url('https://i.imgur.com/it5d3dX.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: var(--blanc);
-}
-
-.hero-title {
-    font-size: 32px;
-    font-weight: 800;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
-}
-
-.hero-sub {
-    font-size: 18px;
-    margin: 10px 0 25px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-button {
-    background: var(--or);
-    color: var(--noir);
-    padding: 12px 20px;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* ===========================
-      SECTIONS
-=========================== */
 section {
-    padding: 40px 25px;
+  padding: 25px;
 }
 
 h2 {
-    font-size: 26px;
-    color: var(--rose);
-    margin-bottom:
+  color: #F27CA3;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+  background: #F27CA3;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>BELLA BAY</header>
+
+<section>
+  <h2>Coiffure & Extensions</h2>
+  <p>Balayage, mèches, coloration, extensions adhésives, transformations complètes.</p>
+  <button onclick="window.location.href='tel:+15145822856'">Réserver maintenant</button>
+</section>
+
+<section>
+  <h2>Tarifs</h2>
+  <div class="card">Coupe femme – 50$</div>
+  <div class="card">Brushing – 40$</div>
+  <div class="card">Coloration – 75$ à 90$</div>
+  <div class="card">Mèches – 120$ à 180$</div>
+  <div class="card">Extensions adhésives – à partir de 120$</div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <div class="card">
+    Téléphone : 514-582-2856<br>
+    Instagram : @bellah.bay
+  </div>
+</section>
+
+</body>
+</html>
