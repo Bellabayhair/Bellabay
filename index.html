@@ -1,21 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bella Bay – Coiffure & Extensions</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bella Bay — Coiffure & Extensions</title>
 
-  <style>
-    :root {
-      --rose-pale: #fadbea;
-      --rose: #f27ca3;
-      --or: #d9a441;
-      --noir: #111111;
-      --blanc: #ffffff;
-    }
+<style>
+/* ===========================
+    PALETTE BELLA BAY
+=========================== */
+:root {
+    --rose-pale: #fadbea;
+    --rose: #f27ca3;
+    --or: #d9a441;
+    --noir: #111111;
+    --blanc: #ffffff;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+/* ===========================
+      RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    body {
+body {
+    background: var(--rose-pale);
+    color: var(--noir);
+}
+
+/* ===========================
+      HEADER
+=========================== */
+header {
+    background: linear-gradient(135deg, var(--rose), var(--rose-pale));
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--blanc);
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin-left: 15px;
+    color: var(--blanc);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* ===========================
+      HERO SECTION
+=========================== */
+.hero {
+    padding: 55px 25px;
+    text-align: center;
+    background: url('https://i.imgur.com/it5d3dX.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: var(--blanc);
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 800;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.hero-sub {
+    font-size: 18px;
+    margin: 10px 0 25px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+button {
+    background: var(--or);
+    color: var(--noir);
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ===========================
+      SECTIONS
+=========================== */
+section {
+    padding: 40px 25px;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--rose);
+    margin-bottom:
