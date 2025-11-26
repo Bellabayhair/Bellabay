@@ -1,84 +1,198 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bella Bay – Coiffure & Extensions</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #F27CA3 0%, #FADBEA 50%, #FFFFFF 100%);
-  color: #111;
+/* ===== Couleurs Bella Bay ===== */
+:root {
+  --rose: #f7c6e6;
+  --rose-fonce: #e598c7;
+  --or: #d9b260;
+  --noir: #1a1a1a;
+  --blanc: #ffffff;
 }
 
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f7d7eb 0%, #f9e8f3 40%, #ffffff 100%);
+  color: var(--noir);
+}
+
+/* ===== Header ===== */
 header {
-  background: #F27CA3;
-  padding: 18px;
+  background: linear-gradient(90deg, var(--rose-fonce), var(--rose));
+  padding: 22px;
   text-align: center;
-  color: white;
-  font-size: 24px;
+  color: var(--blanc);
+  font-size: 26px;
   font-weight: bold;
   letter-spacing: 2px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
+/* ===== Hero ===== */
+.hero {
+  padding: 50px 25px;
+  text-align: center;
+  background: url('https://i.imgur.com/it5d3dX.jpeg') center/cover no-repeat;
+  color: var(--blanc);
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 800;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.btn-main {
+  margin-top: 25px;
+  background: var(--or);
+  color: var(--noir);
+  border: none;
+  padding: 14px 26px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ===== Sections ===== */
 section {
-  padding: 25px;
+  padding: 40px 25px;
 }
 
 h2 {
-  color: #F27CA3;
-  margin-bottom: 15px;
-  font-size: 22px;
+  font-size: 26px;
+  color: var(--rose-fonce);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .card {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
+  background: var(--blanc);
+  padding: 18px;
   border-radius: 15px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
-button {
-  background: #F27CA3;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  border: none;
-  font-size: 16px;
-  margin-top: 10px;
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--rose-fonce);
+}
+
+/* ===== Contact ===== */
+.contact-box {
+  text-align: center;
+  background: var(--blanc);
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-box a {
+  color: var(--rose-fonce);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 40px;
+  background: var(--rose-fonce);
+  color: var(--blanc);
+  padding: 22px;
+  text-align: center;
+  font-size: 14px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>BELLA BAY</header>
 
-<section>
-  <h2>Coiffure & Extensions</h2>
-  <p>Balayage, mèches, coloration, extensions adhésives, transformations complètes.</p>
-  <button onclick="window.location.href='tel:+15145822856'">Réserver maintenant</button>
-</section>
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>Coiffure & Extensions de Luxe</h1>
+  <p>Transformations, mèches, balayage, coloration et extensions 100% humaines.</p>
+  <button class="btn-main" onclick="window.location.href='#contact'">Réserver maintenant</button>
+</div>
 
-<section>
-  <h2>Tarifs</h2>
-  <div class="card">Coupe femme – 50$</div>
-  <div class="card">Brushing – 40$</div>
-  <div class="card">Coloration – 75$ à 90$</div>
-  <div class="card">Mèches – 120$ à 180$</div>
-  <div class="card">Extensions adhésives – à partir de 120$</div>
-</section>
+<!-- ===== Services ===== -->
+<section id="services">
+  <h2>Services</h2>
 
-<section>
-  <h2>Contact</h2>
   <div class="card">
-    Téléphone : 514-582-2856<br>
-    Instagram : @bellah.bay
+    <h3>💇‍♀️ Coupe femme</h3>
+    <p>Coupe + brushing — 50$</p>
+  </div>
+
+  <div class="card">
+    <h3>🎨 Coloration</h3>
+    <p>Racines — 75$<br>Complète — 90$</p>
+  </div>
+
+  <div class="card">
+    <h3>✨ Mèches</h3>
+    <p>Moitié tête — 120$<br>Tête complète — 150$ à 180$</p>
   </div>
 </section>
+
+<!-- ===== Extensions ===== -->
+<section id="extensions">
+  <h2>Extensions Capillaires</h2>
+
+  <div class="card">
+    <h3>Extensions adhésives</h3>
+    <p>À partir de 120$ (2 paquets)</p>
+  </div>
+
+  <div class="card">
+    <h3>Cheveux Rémi 100% humains</h3>
+    <p>Qualité premium, doux et naturels.</p>
+  </div>
+</section>
+
+<!-- ===== Galerie ===== -->
+<section id="galerie">
+  <h2>Galerie – Avant / Après</h2>
+
+  <div class="card">
+    <p>Les photos de transformations seront ajoutées ici.</p>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <h2>Réservation & Contact</h2>
+  <div class="contact-box">
+    <p><strong>Téléphone :</strong><br>514-582-2856</p>
+    <p><strong>Email :</strong><br>bella.chamoun001@gmail.com</p>
+    <p><strong>Instagram :</strong><br><a target="_blank" href="https://instagram.com/bellah.bay">@bellah.bay</a></p>
+    <button class="btn-main" onclick="window.location.href='tel:+15145822856'">Appeler maintenant</button>
+  </div>
+</section>
+
+<footer>
+  © Bella Bay — Coiffure & Extensions. Tous droits réservés.
+</footer>
 
 </body>
 </html>
