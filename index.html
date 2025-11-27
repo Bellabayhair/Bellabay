@@ -1,240 +1,234 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bella Bay – Coiffure & Extensions de Luxe</title>
-
-  <!-- Polices élégantes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --rose-pale: #ffe9f4;
-      --rose: #f7a8c9;
-      --rose-fonce: #e06d9c;
-      --or: #d9a441;
-      --noir: #171119;
-      --blanc: #ffffff;
-      --ombre-douce: 0 20px 45px rgba(0, 0, 0, 0.10);
-      --rayon: 28px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+<meta charset="UTF-8">
+<title>Bella Bay – Coiffure & Beauté Glamour</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #fff 0, #ffe9f4 40%, #fdd9ec 80%);
-      color: var(--noir);
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #ffedf7;
+        color: #5c004f;
     }
 
     /* HEADER */
-
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      padding: 10px 18px;
+        background: linear-gradient(135deg, #ffb6d9, #ff92c9, #ff7fbd);
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.6rem;
+        box-shadow: 0 4px 18px rgba(255, 102, 164, 0.45);
+        border-bottom: 2px solid rgba(255,255,255,0.3);
     }
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+    /* NAV MENU */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        padding: 14px 0;
+        background: #ffe3f1;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid #ffb6d9;
     }
 
-    .logo-block {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    nav a {
+        text-decoration: none;
+        color: #a30074;
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: 25px;
     }
 
-    .logo-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe0f1 45%, #f28cb7 80%);
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.9), 0 0 0 6px rgba(217,164,65,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      font-size: 18px;
-      color: var(--blanc);
+    nav a:hover {
+        background: #ffc7e4;
+        color: #5c004f;
     }
 
-    .logo-text-main {
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      font-size: 15px;
-      text-transform: uppercase;
-    }
-
-    .logo-sub {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #8e6d7f;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 3px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--or), var(--rose-fonce));
-      transition: width 0.22s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-pill {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(217,164,65,0.5);
-      background: radial-gradient(circle at top left, #fff9ec 0, #ffe4f2 100%);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #8b5d24;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 18px 18px 40px;
-    }
-
-    /* HERO AVEC VAGUES */
-
+    /* HERO SECTION */
     .hero {
-      margin-top: 20px;
-      border-radius: 32px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--ombre-douce);
-      background: linear-gradient(145deg, #261824 0%, #2c1825 35%, #1c1421 100%);
-      color: var(--blanc);
-      padding: 30px 22px 26px;
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #ffeaf4, #ffd6ec, #ffc6e6);
+        box-shadow: inset 0 0 40px rgba(255, 120, 180, 0.2);
     }
 
-    /* Vagues / mer rose texturées */
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.75;
-      filter: blur(0.5px);
+    .hero h1 {
+        font-size: 2.2rem;
+        color: #a1007d;
+        margin-bottom: 10px;
     }
 
-    .hero::before {
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.0) 55%),
-                  radial-gradient(circle at 60% 80%, rgba(242,124,163,0.55) 0, transparent 60%);
-      top: -120px;
-      left: -120px;
-      mix-blend-mode: screen;
+    .hero p {
+        width: 85%;
+        margin: auto;
+        font-size: 1rem;
+        color: #6a0057;
+        opacity: 0.9;
     }
 
-    .hero::after {
-      width: 520px;
-      height: 520px;
-      background:
-        radial-gradient(circle at 10% 90%, rgba(255,213,234,0.9) 0, transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(243,164,203,0.9) 0, transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.5) 0, transparent 65%);
-      bottom: -220px;
-      right: -200px;
-      mix-blend-mode: screen;
+    .btn {
+        background: linear-gradient(135deg, #ff92c9, #ffb6d9);
+        border: none;
+        padding: 14px 26px;
+        border-radius: 35px;
+        color: #4c003d;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 30px;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(255, 120, 165, 0.35);
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      gap: 18px;
+    .btn:hover {
+        background: #ff7fbd;
     }
 
-    .hero-badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
+    /* SECTIONS */
+    section {
+        padding: 40px 20px;
+        text-align: center;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+    section h2 {
+        font-size: 1.8rem;
+        color: #91006f;
+        margin-bottom: 16px;
     }
 
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 30px;
-      line-height: 1.2;
-      margin-top: 6px;
-      margin-bottom: 4px;
+    .card {
+        background: white;
+        margin: auto;
+        max-width: 420px;
+        padding: 25px;
+        border-radius: 22px;
+        box-shadow: 0 3px 18px rgba(255, 160, 200, 0.3);
+        margin-bottom: 22px;
+        border: 1px solid #ffd8ea;
     }
 
-    .hero-title span {
-      background: linear-gradient(90deg, #ffdca3, #f7a8c9);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .price {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #cc007f;
+        margin-top: 8px;
     }
 
-    .hero-sub {
-      font-size: 14px;
-      max-width: 440px;
-      color: #fceeff;
+    footer {
+        background: #ffbcdd;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #4f0040;
+        margin-top: 40px;
     }
+</style>
+</head>
 
-    .hero-actions {
-      margin-top: 10px;
-      display: flex
+
+<body>
+
+<header>
+    ✨ Bella Bay – Coiffure & Extensions ✨
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#extensions">Extensions</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="accueil">
+    <h1>Transformations féminines & glamour</h1>
+    <p>
+        Coiffure, coloration, mèches, balayage, extensions adhésives
+        – Bella Bay révèle la beauté naturelle de chaque femme avec douceur et élégance.
+    </p>
+    <button class="btn" onclick="location.href='#contact'">Réserver maintenant</button>
+</div>
+
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Services Bella Bay</h2>
+
+    <div class="card">
+        <h3>Brushing</h3>
+        <div class="price">40$</div>
+    </div>
+
+    <div class="card">
+        <h3>Coupe + Brushing</h3>
+        <div class="price">50$</div>
+    </div>
+
+    <div class="card">
+        <h3>Coloration de base</h3>
+        <div class="price">75$</div>
+    </div>
+</section>
+
+
+<!-- TARIFS -->
+<section id="tarifs">
+    <h2>Tarifs coloration & mèches</h2>
+
+    <div class="card">
+        <h3>Coloration complète</h3>
+        <div class="price">90$</div>
+    </div>
+
+    <div class="card">
+        <h3>Mèches moitié tête</h3>
+        <div class="price">120$</div>
+    </div>
+
+    <div class="card">
+        <h3>Mèches tête complète</h3>
+        <div class="price">150$</div>
+    </div>
+</section>
+
+
+<!-- EXTENSIONS -->
+<section id="extensions">
+    <h2>Extensions Adhésives Rémi 100% Humains</h2>
+
+    <div class="card">
+        <h3>Pose 2 paquets</h3>
+        <div class="price">Dès 120$</div>
+    </div>
+
+    <div class="card">
+        <h3>Analyse couleur & type de cheveux</h3>
+        <p>Conseils personnalisés avant la pose.</p>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Réserver votre transformation</h2>
+
+    <div class="card">
+        <p>📩 <strong>Email :</strong> bella.chamoun001@gmail.com</p>
+        <p>📞 <strong>Téléphone :</strong> 514-582-2856</p>
+        <p>📷 <strong>Instagram :</strong> @bellah.bay</p>
+        <p>📍 Laval · Rive-Nord · Montréal</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Bella Bay – Beauté féminine & glamour.  
+</footer>
+
+</body>
+</html>
