@@ -3,289 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bella Bay – Coiffure & Extensions Deluxe</title>
+  <title>Bella Bay – Coiffure & Extensions de Luxe</title>
+
+  <!-- Police élégante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --rose-fonce: #f27ca3;
-      --rose: #f7c6e6;
-      --rose-pale: #fdeaf4;
-      --or: #d9b260;
-      --or-clair: #f2d68a;
-      --noir: #151515;
+      --rose-pale: #fadbea;
+      --rose: #f27ca3;
+      --or: #d9a441;
+      --noir: #111111;
       --blanc: #ffffff;
+      --gris-clair: #f8f4f7;
+      --ombre-douce: 0 15px 40px rgba(0, 0, 0, 0.08);
+      --rayon-carte: 26px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at 0% 0%, #fff 0, #fdeaf4 40%, #f7c6e6 80%);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--rose-pale);
       color: var(--noir);
-      overflow-x: hidden;
+      line-height: 1.5;
     }
 
-    /* HEADER */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER / NAV */
+
     header {
-      background: linear-gradient(90deg, var(--rose-fonce), var(--rose));
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 20;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 50;
+      background: linear-gradient(135deg, #fef4fa 0%, #fadbea 40%, #ffffff 100%);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      padding: 10px 18px;
     }
 
-    .logo {
-      font-weight: 900;
-      font-size: 26px;
-      letter-spacing: 2px;
-      color: var(--blanc);
-      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    nav a {
-      margin-left: 10px;
-      font-size: 14px;
-      text-decoration: none;
-      color: var(--blanc);
-      font-weight: 600;
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    /* HERO */
-    .hero {
-      padding: 60px 22px 40px;
-      text-align: center;
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe5f1 38%, #f27ca3 75%);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 0 2px rgba(217, 164, 65, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 16px;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #8f6d7d;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
       position: relative;
-      overflow: hidden;
     }
 
-    .hero-bg {
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or), var(--rose));
+      transition: width 0.22s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(217, 164, 65, 0.12);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #8b5d24;
+      border: 1px solid rgba(217, 164, 65, 0.4);
+    }
+
+    /* LAYOUT GLOBAL */
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 18px 18px 40px;
+    }
+
+    /* SECTION HERO */
+
+    .hero {
+      margin-top: 10px;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.75) 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.6) 0, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(242,124,163,0.45) 0, transparent 55%),
+        linear-gradient(145deg, #2b1f27 0%, #282030 45%, #16141c 100%);
+      box-shadow: var(--ombre-douce);
+      color: var(--blanc);
+      position: relative;
+      padding: 28px 22px 26px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .hero::after {
+      /* vague / bulle luxe */
+      content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.9) 0, transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(255,255,255,0.85) 0, transparent 60%),
-        linear-gradient(135deg, #f27ca3 0%, #f7c6e6 45%, #fdeaf4 80%);
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(250,219,234,0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(242,124,163,0.25) 0, transparent 60%),
+        linear-gradient(120deg, rgba(242,124,163,0.16), transparent 55%);
       opacity: 0.9;
-      z-index: 0;
+      pointer-events: none;
     }
 
-    .hero-content {
+    .hero-inner {
       position: relative;
       z-index: 1;
+      display: grid;
+      gap: 20px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 4px 12px;
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.8);
-      background: rgba(255,255,255,0.6);
-      font-size: 12px;
-      margin-bottom: 14px;
+      background: rgba(250, 219, 234, 0.13);
+      border: 1px solid rgba(250, 219, 234, 0.45);
+      font-size: 11px;
+    }
+
+    .hero-badge span {
+      font-weight: 500;
     }
 
     .hero-title {
-      font-size: 34px;
-      font-weight: 900;
-      margin-bottom: 10px;
-      color: var(--noir);
-      text-shadow: 0 2px 6px rgba(255,255,255,0.5);
-    }
-
-    .hero-sub {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #333;
-      max-width: 450px;
-      margin: 0 auto;
-    }
-
-    .hero-buttons {
-      margin-top: 22px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 4px 3px;
-      border: 0;
-    }
-
-    .btn-main {
-      background: linear-gradient(135deg, var(--or), var(--or-clair));
-      color: var(--noir);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--or);
-      color: var(--or);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 26px 20px 10px;
-    }
-
-    h2.section-title {
-      font-size: 24px;
-      margin-bottom: 14px;
-      color: var(--rose-fonce);
-      font-weight: 800;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 14px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.96);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      margin-bottom: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border: 1px solid rgba(255,255,255,0.7);
-    }
-
-    .card-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--noir);
-    }
-
-    .card-text {
-      font-size: 14px;
-      color: #555;
-    }
-
-    /* TARIFS */
-    ul.tarifs {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul.tarifs li {
-      display: flex;
-      justify-content: space-between;
+      font-size: 30px;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
       margin-bottom: 6px;
     }
 
-    .price {
-      font-weight: 700;
+    .hero-title span.highlight {
+      background: linear-gradient(90deg, #ffdca3, #f27ca3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    /* CONTACT */
-    .contact-card {
-      text-align: center;
+    .hero-sub {
+      font-size: 14px;
+      max-width: 430px;
+      color: #fbe9ff;
     }
 
-    .contact-card a {
-      color: var(--rose-fonce);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    footer {
-      margin-top: 22px;
-      padding: 24px 12px;
-      text-align: center;
-      font-size: 12px;
-      color: #444;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo">BELABÉ DELUXE</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#tarifs">Tarifs</a>
-    <a href="#reservation">Réserver</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="badge">Coiffure & extensions · Laval / Montréal</div>
-    <div class="hero-title">Coiffure & Extensions de Luxe</div>
-    <div class="hero-sub">
-      Balayage, mèches, coloration et extensions 100% cheveux humains.<br>
-      Un résultat glamour, doux et brillant.
-    </div>
-    <div class="hero-buttons">
-      <a href="#reservation" class="btn btn-main">Réserver maintenant</a>
-      <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <h2 class="section-title">Services principaux</h2>
-
-  <div class="card">
-    <div class="card-title">Coloration & Mèches</div>
-    <div class="card-text">Luminosité, transformation et modernité.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Extensions capillaires</div>
-    <div class="card-text">Extensions adhésives — qualité Real Hair 100% humaine.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Coiffure à domicile</div>
-    <div class="card-text">Disponible sur Laval et Montréal.</div>
-  </div>
-</section>
-
-<section id="tarifs">
-  <h2 class="section-title">Tarifs</h2>
-
-  <div class="card">
-    <ul class="tarifs">
-      <li><span>Coupe femme</span><span class="price">50 $</span></li>
-      <li><span>Brushing</span><span class="price">40 $</span></li>
-      <li><span>Coloration racines</span><span class="price">75 $</span></li>
-      <li><span>Coloration complète</span><span class="price">90 $</span></li>
-      <li><span>Mèches demi-tête</span><span class="price">120 $</span></li>
-      <li><span>Mèches tête complète</span><span class="price">150–180 $</span></li>
-    </ul>
-  </div>
-</section>
-
-<section id="reservation">
-  <h2 class="section-title">Réservation</h2>
-
-  <div class="card contact-card">
-    <p><strong>Téléphone :</strong><br><a href="tel:+15145822856">514-582-2856</a></p>
-    <p><strong>Instagram :</strong><br><a href="https://instagram.com/bellah.bay" target="_blank">@bellah.bay</a></p>
-    <a href="tel:+15145822856" class="btn btn-main" style="margin-top:10px;">Appeler maintenant</a>
-  </div>
-</section>
-
-<footer>
-  © Belabé Deluxe — Coiffure & Extensions  
-</footer>
-
-</body>
-</html>
+    .hero-actions
