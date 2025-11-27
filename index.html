@@ -29,19 +29,13 @@
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Poppins", sans-serif;
       background: var(--rose-pale);
       color: var(--noir);
       line-height: 1.5;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER / NAV */
-
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -53,11 +47,10 @@
 
     .nav {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .logo-block {
@@ -67,59 +60,53 @@
     }
 
     .logo-badge {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
+      width: 40px;
+      height: 40px;
       background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe5f1 38%, #f27ca3 75%);
-      border: 2px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 0 0 2px rgba(217, 164, 65, 0.35);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 1px;
-      color: #ffffff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      color: var(--blanc);
+      box-shadow: 0 0 0 2px rgba(217,164,65,0.55);
+      border: 2px solid rgba(255,255,255,0.7);
     }
 
     .logo-text-main {
       font-weight: 700;
       letter-spacing: 0.18em;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .logo-sub {
       font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
       color: #8f6d7d;
+      letter-spacing: 0.12em;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 14px;
+      gap: 16px;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
     }
 
     .nav-links a {
-      padding: 6px 0;
       position: relative;
+      padding-bottom: 3px;
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: -3px;
       width: 0;
       height: 2px;
-      border-radius: 999px;
+      left: 0;
+      bottom: 0;
       background: linear-gradient(90deg, var(--or), var(--rose));
-      transition: width 0.22s ease;
+      transition: 0.25s;
     }
 
     .nav-links a:hover::after {
@@ -127,104 +114,242 @@
     }
 
     .nav-pill {
-      padding: 7px 14px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(217, 164, 65, 0.12);
       font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #8b5d24;
-      border: 1px solid rgba(217, 164, 65, 0.4);
+      background: rgba(217,164,65,0.15);
+      border: 1px solid rgba(217,164,65,0.4);
     }
 
-    /* LAYOUT GLOBAL */
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 18px 18px 40px;
-    }
-
-    /* SECTION HERO */
-
+    /* HERO */
     .hero {
-      margin-top: 10px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, #2b1f27, #1a1620);
       border-radius: 32px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.75) 0, transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.6) 0, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(242,124,163,0.45) 0, transparent 55%),
-        linear-gradient(145deg, #2b1f27 0%, #282030 45%, #16141c 100%);
-      box-shadow: var(--ombre-douce);
+      padding: 30px 22px;
       color: var(--blanc);
       position: relative;
-      padding: 28px 22px 26px;
-      display: grid;
-      gap: 22px;
+      overflow: hidden;
+      box-shadow: var(--ombre-douce);
     }
 
     .hero::after {
-      /* vague / bulle luxe */
       content: "";
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 20% 20%, rgba(250,219,234,0.18) 0, transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(242,124,163,0.25) 0, transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(250,219,234,0.25), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(242,124,163,0.22), transparent 60%),
         linear-gradient(120deg, rgba(242,124,163,0.16), transparent 55%);
       opacity: 0.9;
-      pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       display: grid;
       gap: 20px;
     }
 
-    .hero-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(250, 219, 234, 0.13);
-      border: 1px solid rgba(250, 219, 234, 0.45);
-      font-size: 11px;
-    }
-
-    .hero-badge span {
-      font-weight: 500;
-    }
-
     .hero-title {
-      font-size: 30px;
-      line-height: 1.18;
-      letter-spacing: 0.02em;
-      margin-bottom: 6px;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
-    .hero-title span.highlight {
+    .highlight {
       background: linear-gradient(90deg, #ffdca3, #f27ca3);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
     }
 
     .hero-sub {
-      font-size: 14px;
-      max-width: 430px;
-      color: #fbe9ff;
+      font-size: 15px;
+      color: #ffe9ff;
+      max-width: 450px;
     }
 
-    .hero-actions
+    .btn-primary {
+      background: linear-gradient(120deg, var(--or), #ffefb2);
+      padding: 12px 26px;
+      border-radius: 999px;
+      color: #3a2608;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: inline-block;
+      margin-top: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* SECTIONS */
+    .section-title {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 22px;
+      color: #b85786;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .services-grid {
+      margin-top: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--blanc);
+      border-radius: 26px;
+      padding: 16px;
+      box-shadow: var(--ombre-douce);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    .card-price {
+      font-weight: 600;
+      color: #b85786;
+      text-align: right;
+    }
+
+    /* RÉSERVATION */
+    .reservation {
+      background: #fff5fa;
+      padding: 24px;
+      border-radius: 32px;
+      margin-top: 50px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .reservation-pill {
+      display: block;
+      background: white;
+      padding: 12px 14px;
+      border-radius: 999px;
+      margin-top: 8px;
+      border: 1px solid rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: #b85786;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 25px;
+      font-size: 11px;
+      color: #8a7483;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <div class="logo-block">
+      <div class="logo-badge">BB</div>
+      <div>
+        <div class="logo-text-main">BELLA BAY</div>
+        <div class="logo-sub">Coiffure · Extensions · Luxe</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reservation">Réservation</a>
+      <div class="nav-pill">Deluxe Pro</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        Coiffure & Extensions <span class="highlight">Bella Deluxe Pro</span>
+      </h1>
+      <p class="hero-sub">
+        Transformations, mèches, balayage, coloration & extensions 100% humaines.  
+        Service mobile à domicile — Laval & Rive-Nord.
+      </p>
+
+      <a href="#reservation" class="btn-primary">Réserver maintenant</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <h2 class="section-title" id="services">Services</h2>
+
+  <div class="services-grid">
+
+    <div class="card">
+      <div class="card-left">
+        💇‍♀️  
+        <div>
+          <div class="card-title">Coupe femme + brushing</div>
+        </div>
+      </div>
+      <div class="card-price">50 $</div>
+    </div>
+
+    <div class="card">
+      <div class="card-left">
+        🎨  
+        <div class="card-title">Coloration de base</div>
+      </div>
+      <div class="card-price">75 $</div>
+    </div>
+
+    <div class="card">
+      <div class="card-left">
+        🌟  
+        <div class="card-title">Mèches / Balayage</div>
+      </div>
+      <div class="card-price">120–180 $</div>
+    </div>
+
+    <div class="card">
+      <div class="card-left">
+        💖  
+        <div class="card-title">Extensions adhésives</div>
+      </div>
+      <div class="card-price">120 $ +</div>
+    </div>
+
+  </div>
+
+  <!-- RÉSERVATION -->
+  <section id="reservation" class="reservation">
+    <h2 class="section-title">Réserver</h2>
+
+    <a class="reservation-pill" href="tel:5145822856">📞 Appel direct — 514-582-2856</a>
+    <a class="reservation-pill" href="sms:5145822856">💬 SMS — “Rendez-vous Bella Bay”</a>
+    <a class="reservation-pill" href="mailto:bella.chamoun001@gmail.com">📧 Email</a>
+    <a class="reservation-pill" href="https://instagram.com/bellah.bay" target="_blank">📸 Instagram — @bellah.bay</a>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 <strong>Bella Bay</strong> · Coiffure & Extensions de Luxe
+</footer>
+
+</body>
+</html>
+      
