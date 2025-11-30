@@ -1,168 +1,144 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>BellaBay.ca – Coiffure & Beauté Glamour à Laval et Montréal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Référencement -->
-  <meta name="description" content="BellaBay.ca – Coiffure, coloration, mèches, balayage et extensions adhésives à Laval, Rive-Nord et Montréal. Services féminins, glamour et personnalisés.">
-  <link rel="canonical" href="https://bellabay.ca">
-
-  <!-- Open Graph (pour les partages Instagram/Facebook) -->
-  <meta property="og:title" content="Bella Bay – Coiffure & Extensions">
-  <meta property="og:description" content="Transformations féminines & glamour : coiffure, coloration, mèches, balayage et extensions adhésives.">
-  <meta property="og:url" content="https://bellabay.ca">
-  <meta property="og:type" content="website">
-
+  <meta charset="UTF-8" />
+  <title>✨ Bella Bay – Coiffure & Extensions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bella Bay – Coiffure et extensions à domicile à Laval et Montréal : coupe, brushing, coloration, mèches, extensions et mise en beauté dans un style glam et féminin.">
   <style>
+    :root {
+      --rose-fond: #ffe6f5;
+      --rose-vif: #ff63b8;
+      --rose-doux: #ff9fd8;
+      --violet-prof: #321231;
+      --texte-principal: #2c102e;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: #ffedf7;
-        color: #5c004f;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--rose-fond);
+      color: var(--texte-principal);
+      line-height: 1.6;
     }
 
-    /* HEADER */
+    /* BARRE HAUT */
     header {
-        background: linear-gradient(135deg, #ffb6d9, #ff92c9, #ff7fbd);
-        padding: 20px;
-        text-align: center;
-        color: white;
-        font-weight: 700;
-        font-size: 1.6rem;
-        box-shadow: 0 4px 18px rgba(255, 102, 164, 0.45);
-        border-bottom: 2px solid rgba(255,255,255,0.3);
-    }
-    header span.domain {
-        display: block;
-        font-size: 0.9rem;
-        font-weight: 500;
-        opacity: 0.9;
-        margin-top: 4px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(90deg, rgba(255, 118, 190, 0.96), rgba(255, 180, 220, 0.96));
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
     }
 
-    /* NAV MENU */
-    nav {
+    .nav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0.6rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffeefb, #ff63b8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text span:first-child {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #ffeefe;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
         display: flex;
-        justify-content: center;
-        gap: 18px;
-        padding: 14px 0;
-        background: #ffe3f1;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-bottom: 1px solid #ffb6d9;
+      }
     }
 
-    nav a {
-        text-decoration: none;
-        color: #a30074;
-        font-weight: 600;
-        padding: 6px 14px;
-        border-radius: 25px;
-    }
-
-    nav a:hover {
-        background: #ffc7e4;
-        color: #5c004f;
-    }
-
-    /* HERO SECTION */
+    /* HERO AVEC EFFET VAGUE */
     .hero {
-        text-align: center;
-        padding: 60px 20px;
-        background: linear-gradient(135deg, #ffeaf4, #ffd6ec, #ffc6e6);
-        box-shadow: inset 0 0 40px rgba(255, 120, 180, 0.2);
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 10% 0%, #ffffff, #ffe0f4 40%, #ffb1e0 100%);
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
-        color: #a1007d;
-        margin-bottom: 10px;
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.25rem;
+      display: grid;
+      gap: 1.75rem;
     }
 
-    .hero p {
-        width: 85%;
-        margin: auto;
-        font-size: 1rem;
-        color: #6a0057;
-        opacity: 0.9;
+    @media (min-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+      }
     }
 
-    .btn {
-        background: linear-gradient(135deg, #ff92c9, #ffb6d9);
-        border: none;
-        padding: 14px 26px;
-        border-radius: 35px;
-        color: #4c003d;
-        font-weight: 700;
-        font-size: 1rem;
-        margin-top: 30px;
-        cursor: pointer;
-        box-shadow: 0 6px 18px rgba(255, 120, 165, 0.35);
-    }
-
-    .btn:hover {
-        background: #ff7fbd;
-    }
-
-    /* SECTIONS */
-    section {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    section h2 {
-        font-size: 1.8rem;
-        color: #91006f;
-        margin-bottom: 16px;
-    }
-
-    .card {
-        background: white;
-        margin: auto;
-        max-width: 420px;
-        padding: 25px;
-        border-radius: 22px;
-        box-shadow: 0 3px 18px rgba(255, 160, 200, 0.3);
-        margin-bottom: 22px;
-        border: 1px solid #ffd8ea;
-    }
-
-    .card h3 {
-        margin-top: 0;
-    }
-
-    .price {
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: #cc007f;
-        margin-top: 8px;
-    }
-
-    footer {
-        background: #ffbcdd;
-        padding: 20px;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #4f0040;
-        margin-top: 40px;
-    }
-
-    footer a {
-        color: #4f0040;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-    ✨ Bella Bay – Coiffure 
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -40px;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 120px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(circle at 50% 0%, rgba(255,255,255
