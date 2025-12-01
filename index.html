@@ -181,4 +181,834 @@
     .hero {
       margin-top: 1.5rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.4
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 6px 20px rgba(197, 69, 140, 0.32);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-badge span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rose-vif);
+    }
+
+    .hero-copy p {
+      font-size: 0.96rem;
+      max-width: 520px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.82rem;
+    }
+
+    .chip {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 151, 210, 0.5);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .btn-main,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+        background 0.15s ease-out;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #ff63b8, #ff9fd8);
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(228, 71, 150, 0.45);
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(228, 71, 150, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--violet-prof);
+      border: 1px solid rgba(201, 129, 190, 0.6);
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(139, 48, 116, 0.2);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      opacity: 0.78;
+    }
+
+    /* CARTE VISUELLE HERO -------------------------------------------------- */
+
+    .hero-card {
+      border-radius: 30px;
+      background: radial-gradient(circle at 0% 0%, #ffeefb, #ffbadf 40%, #ff8bd0);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-logo-badge {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-tagline {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.85;
+    }
+
+    .hero-avatar {
+      margin-top: 0.4rem;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 231, 249, 0.9);
+      padding: 0.1rem 0.55rem;
+      background: rgba(200, 60, 140, 0.25);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-avatar span:first-child {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: url("https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200")
+        center/cover;
+      box-shadow: 0 0 0 2px rgba(255, 240, 248, 0.9);
+    }
+
+    .hero-services {
+      margin-top: 1.2rem;
+      padding-top: 1.1rem;
+      border-top: 1px dashed rgba(255, 222, 247, 0.8);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-service-pill {
+      border-radius: 999px;
+      padding: 0.45rem 0.65rem;
+      background: rgba(255, 238, 249, 0.16);
+      border: 1px solid rgba(255, 235, 249, 0.65);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-service-pill span:first-child {
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .hero-service-pill span:last-child {
+      opacity: 0.8;
+    }
+
+    .hero-card-floating {
+      position: absolute;
+      right: 1.2rem;
+      bottom: 1.1rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: 18px;
+      background: rgba(50, 18, 49, 0.55);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      box-shadow: 0 10px 26px rgba(40, 9, 40, 0.7);
+    }
+
+    .hero-card-floating strong {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero-card-floating {
+        position: static;
+        margin-top: 0.9rem;
+      }
+
+      .hero-services {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* SECTIONS ------------------------------------------------------------- */
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--rose-vif);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-intro {
+      font-size: 0.92rem;
+      max-width: 620px;
+      opacity: 0.9;
+      margin-bottom: 1.1rem;
+    }
+
+    /* SERVICES RAPIDES ----------------------------------------------------- */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+      padding: 1.1rem 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.86rem;
+      opacity: 0.85;
+    }
+
+    .pill-row {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .pill {
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255, 237, 249, 0.95);
+      border: 1px solid rgba(255, 166, 216, 0.65);
+    }
+
+    .price-highlight {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    /* BOUTIQUE EXTENSIONS -------------------------------------------------- */
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .product-card {
+      border-radius: var(--radius-xl);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .product-tag {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--rose-vif);
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .product-meta {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .product-meta strong {
+      font-weight: 600;
+    }
+
+    .product-color-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+      font-size: 0.76rem;
+    }
+
+    .swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .swatch-row {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .swatch-1N {
+      background: #1b1b1b;
+    }
+
+    .swatch-4N {
+      background: #4c2b1a;
+    }
+
+    .swatch-6N {
+      background: #7b4a26;
+    }
+
+    .swatch-10N {
+      background: #f5e2b3;
+    }
+
+    .product-price {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-top: 0.25rem;
+    }
+
+    .product-note {
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    .product-actions {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .product-actions a {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    /* CONTACT -------------------------------------------------------------- */
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(120deg, #ff9fd8, #ff63b8);
+      color: #fff;
+      padding: 1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-card p {
+      font-size: 0.86rem;
+      opacity: 0.95;
+    }
+
+    .contact-infos {
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .contact-infos a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* FOOTER --------------------------------------------------------------- */
+
+    footer {
+      padding: 1.4rem 1.25rem 2.4rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(44, 16, 46, 0.7);
+    }
+
+    footer a {
+      color: var(--rose-vif);
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR --------------------------------------------------------------- -->
+  <header>
+    <div class="nav-inner">
+      <a href="#haut" class="logo">
+        <div class="logo-badge">BB</div>
+        <div class="logo-text">
+          <span>Bella Bay</span>
+          <span>Coiffure & Beauté</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#extensions">Extensions</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="tel:+15145822856">
+        📞 Réserver maintenant
+      </a>
+    </div>
+  </header>
+
+  <main id="haut">
+    <!-- HERO / INTRO ------------------------------------------------------ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-badge">
+          ✨ <span>Salon à domicile – Laval & Montréal</span>
+        </div>
+        <h1>BellaBay.ca – Coiffure & Extensions glamour, façon Barbie luxe</h1>
+        <p>
+          Transformations capillaires, extensions premium et mise en beauté
+          complète, directement chez toi. Un service privé, féminin et
+          ultra-personnalisé, pensé pour te faire sentir comme une star.
+        </p>
+
+        <div class="hero-highlight">
+          <div class="chip">Extensions capillaires 100% cheveux humains</div>
+          <div class="chip">Press-on nails & extensions de cils</div>
+          <div class="chip">Service à domicile sur rendez-vous</div>
+        </div>
+
+        <div class="hero-cta-row">
+          <a class="btn-main" href="tel:+15145822856">
+            📞 Appeler pour réserver
+          </a>
+          <a
+            class="btn-secondary"
+            href="https://www.instagram.com/bellah.bay"
+            target="_blank"
+          >
+            📸 Voir les looks sur Instagram
+          </a>
+        </div>
+
+        <p class="hero-note">
+          * Rendez-vous flexibles à Laval, Rive-Nord & Montréal. Paiement
+          sécurisé sur place.
+        </p>
+      </div>
+
+      <!-- Carte visuelle droite -->
+      <aside class="hero-card" aria-label="Carte de présentation Bella Bay">
+        <div class="hero-card-top">
+          <div>
+            <div class="hero-tagline">Studio Bella Bay</div>
+            <div class="hero-logo-badge">BB</div>
+            <div class="hero-avatar">
+              <span></span>
+              <span>Bella Bay – Coiffeuse & styliste</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-services">
+          <div class="hero-service-pill">
+            <span>Coiffure & coloration</span>
+            <span>Brushing, coupes & colorations haute brillance.</span>
+          </div>
+          <div class="hero-service-pill">
+            <span>Extensions capillaires</span>
+            <span>Longueur, volume & effet wavy glamour.</span>
+          </div>
+          <div class="hero-service-pill">
+            <span>Press-on nails</span>
+            <span>Looks chics, prêts-à-porter, réutilisables.</span>
+          </div>
+          <div class="hero-service-pill">
+            <span>Extensions de cils</span>
+            <span>Regard doux & volumineux, effet Barbie.</span>
+          </div>
+        </div>
+
+        <div class="hero-card-floating">
+          <strong>Disponibilités</strong>
+          <span>Sur rendez-vous du lundi au samedi</span>
+          <span>Laval, Rive-Nord & Montréal</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES ---------------------------------------------------------- -->
+    <section id="services">
+      <div class="section-kicker">Services coiffure</div>
+      <h2 class="section-title">Coiffure & mise en beauté à domicile</h2>
+      <p class="section-intro">
+        Des services simples, clairs et féminins. Tu choisis ton look, Bella
+        Bay s’occupe du reste – sans texte compliqué ni jargon technique.
+      </p>
+
+      <div class="service-grid">
+        <article class="card">
+          <h3>Coupes & brushing glamour</h3>
+          <p>
+            Coupe sur mesure, brushing lisse ou wavy, toujours avec une
+            finition brillante et féminine.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Coupe femme + brushing</span>
+            <span class="pill">Brushing seul</span>
+          </div>
+          <div class="price-highlight">À partir de 40&nbsp;$</div>
+        </article>
+
+        <article class="card">
+          <h3>Coloration & mèches</h3>
+          <p>
+            Colorations naturelles, mèches lumineuses et balayages doux, pour
+            un résultat net sans abîmer les cheveux.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Coloration de base</span>
+            <span class="pill">Balayage & mèches</span>
+          </div>
+          <div class="price-highlight">À partir de 75&nbsp;$</div>
+        </article>
+
+        <article class="card">
+          <h3>Extensions capillaires sur mesure</h3>
+          <p>
+            Extensions de qualité professionnelle pour gagner en longueur,
+            volume et mouvement, dans tes tons naturels.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Pose & ajustement</span>
+            <span class="pill">Entretien & retrait</span>
+          </div>
+          <div class="price-highlight">Tarifs sur consultation rapide</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXTENSIONS CAPIILLAIRES ------------------------------------------ -->
+    <section id="extensions">
+      <div class="section-kicker">Extensions capillaires</div>
+      <h2 class="section-title">Ligne Bella Bay – longueurs & couleurs</h2>
+      <p class="section-intro">
+        On commence avec les longueurs et couleurs les plus demandées :
+        versions naturelles, faciles à porter au quotidien. Tout est pensé
+        pour être clair : longueur, couleur, prix – sans description trop
+        technique.
+      </p>
+
+      <div class="catalog-grid">
+        <!-- 18 po -->
+        <article class="product-card">
+          <div class="product-tag">Extensions adhésives</div>
+          <div class="product-title">18&nbsp;po – Longueur naturelle</div>
+          <div class="product-meta">
+            <strong>Idéal pour :</strong> un effet longueur discret et
+            élégant, parfait pour tous les jours.
+          </div>
+
+          <div class="product-color-row">
+            <div class="swatch-row">
+              <span class="swatch swatch-1N"></span>
+              <span>1N Noir profond</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-4N"></span>
+              <span>4N Brun chocolat</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-6N"></span>
+              <span>6N Châtain miel</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-10N"></span>
+              <span>10N Blond clair</span>
+            </div>
+          </div>
+
+          <div class="product-price">À partir de 120&nbsp;$ la pose*</div>
+          <div class="product-note">
+            *Prix final confirmé après consultation rapide selon volume
+            souhaité.
+          </div>
+
+          <div class="product-actions">
+            <a class="btn-main" href="tel:+15145822856">Réserver cette longueur</a>
+            <a
+              class="btn-secondary"
+              href="https://www.instagram.com/bellah.bay"
+              target="_blank"
+              >Voir des avant / après</a
+            >
+          </div>
+        </article>
+
+        <!-- 20–22 po -->
+        <article class="product-card">
+          <div class="product-tag">Extensions adhésives</div>
+          <div class="product-title">20–22&nbsp;po – Effet sirène</div>
+          <div class="product-meta">
+            <strong>Idéal pour :</strong> un look long, wavy ou lisse, très
+            glamour, parfait pour les shootings et soirées.
+          </div>
+
+          <div class="product-color-row">
+            <div class="swatch-row">
+              <span class="swatch swatch-1N"></span>
+              <span>1N Noir profond</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-4N"></span>
+              <span>4N Brun chocolat</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-6N"></span>
+              <span>6N Châtain miel</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-10N"></span>
+              <span>10N Blond clair</span>
+            </div>
+          </div>
+
+          <div class="product-price">À partir de 150&nbsp;$ la pose*</div>
+          <div class="product-note">
+            *Longueur idéale pour un vrai effet Barbie, cheveux jusqu’à la
+            poitrine ou un peu plus bas.
+          </div>
+
+          <div class="product-actions">
+            <a class="btn-main" href="tel:+15145822856">Demander un devis</a>
+            <a
+              class="btn-secondary"
+              href="mailto:bella.chamoun001@gmail.com?subject=Info%20extensions%2020-22po"
+              >Écrire par courriel</a
+            >
+          </div>
+        </article>
+
+        <!-- 24–26 po -->
+        <article class="product-card">
+          <div class="product-tag">Ligne premium</div>
+          <div class="product-title">24–26&nbsp;po – Maxi longueur</div>
+          <div class="product-meta">
+            <strong>Idéal pour :</strong> looks très longs, photoshoot,
+            occasions spéciales, style sirène XXL.
+          </div>
+
+          <div class="product-color-row">
+            <div class="swatch-row">
+              <span class="swatch swatch-1N"></span>
+              <span>1N Noir profond</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-4N"></span>
+              <span>4N Brun chocolat</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-6N"></span>
+              <span>6N Châtain miel</span>
+            </div>
+            <div class="swatch-row">
+              <span class="swatch swatch-10N"></span>
+              <span>10N Blond clair</span>
+            </div>
+          </div>
+
+          <div class="product-price">À partir de 180&nbsp;$ la pose*</div>
+          <div class="product-note">
+            *Prévoir un court appel ou message pour ajuster le volume, la
+            longueur exacte et la couleur.
+          </div>
+
+          <div class="product-actions">
+            <a class="btn-main" href="tel:+15145822856">Réserver un appel</a>
+            <a
+              class="btn-secondary"
+              href="https://wa.me/15145822856"
+              target="_blank"
+              >Discuter par message</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BOUTIQUE TEASER --------------------------------------------------- -->
+    <section id="boutique">
+      <div class="section-kicker">Boutique Bella Bay</div>
+      <h2 class="section-title">Press-on nails & extensions de cils – bientôt</h2>
+      <p class="section-intro">
+        La boutique complète arrive : kits de press-on nails girly, extensions
+        de cils et accessoires, tous dans l’univers rose, glamour et chic
+        Bella Bay. Les fiches produits seront ajoutées progressivement.
+      </p>
+
+      <div class="service-grid">
+        <article class="card">
+          <h3>Press-on nails Bella Bay</h3>
+          <p>
+            Formes tendance, longueur XL ou medium, finition brillante ou
+            baby-boomer. Collage simple, effet salon.
+          </p>
+          <div class="pill-row">
+            <span class="pill">French blanche</span>
+            <span class="pill">Baby boomer</span>
+            <span class="pill">Rose Barbie</span>
+          </div>
+          <div class="price-highlight">Kits à partir de 25&nbsp;$</div>
+        </article>
+
+        <article class="card">
+          <h3>Extensions de cils</h3>
+          <p>
+            Effet naturel, volume ou effet poupée, toujours doux et
+            confortable, adapté à la forme de tes yeux.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Regard naturel</span>
+            <span class="pill">Volume glamour</span>
+          </div>
+          <div class="price-highlight">Tarifs sur demande</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT ----------------------------------------------------------- -->
+    <section id="contact">
+      <div class="section-kicker">Contact & réservations</div>
+      <h2 class="section-title">Prendre ton rendez-vous Bella Bay</h2>
+
+      <div class="contact-card">
+        <div>
+          <h3>Un message, un appel, et on s’occupe du reste</h3>
+          <p>
+            Partage simplement ton idée de look (longueur, couleur, occasion).
+            Bella Bay te répond avec une proposition claire : service, prix
+            estimé et créneau disponible.
+          </p>
+        </div>
+
+        <div class="contact-infos">
+          <span>📞 Téléphone / SMS : <a href="tel:+15145822856">+1 (514) 582-2856</a></span>
+          <span>📧 Courriel : <a href="mailto:bella.chamoun001@gmail.com">bella.chamoun001@gmail.com</a></span>
+          <span>
+            📸 Instagram :
+            <a href="https://www.instagram.com/bellah.bay" target="_blank"
+              >@bellah.bay</a
+            >
+          </span>
+          <span>📍 Service à domicile – Laval, Rive-Nord & Montréal</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Bella Bay – Coiffure & Extensions à domicile.  
+    Site créé avec amour pour un univers 100% rose, féminin et glamour.  
+    Suivre les nouveautés sur
+    <a href="https://www.instagram.com/bellah.bay" target="_blank"
+      >@bellah.bay</a
+    >.
+  </footer>
+</body>
+</html>
