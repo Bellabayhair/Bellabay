@@ -2,911 +2,195 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Bella Bay - Coiffure & Extensions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Bella Bay – Coloration, mèches, brushing, extensions et coiffure sur mesure dans une ambiance chic, glamour et bord de mer."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Bay · Coiffure & Boutique Beauté</title>
 
   <style>
-    :root {
-      --bb-rose: #ff5f9a;
-      --bb-rose-light: #ffe6f3;
-      --bb-rose-soft: #ffd7eb;
-      --bb-bg: #fff5fb;
-      --bb-text-dark: #2b1c28;
-      --bb-text-soft: #6a4b63;
-      --bb-card: #ffffff;
-      --bb-shadow: 0 18px 40px rgba(114, 16, 77, 0.18);
-      --bb-radius-xl: 32px;
-      --bb-radius-lg: 24px;
-      --bb-radius-pill: 999px;
-      --bb-transition: 0.22s ease-out;
-    }
-
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
-      padding: 0;
+      font-family: "Montserrat", sans-serif;
+      background: #ffeef4 url('https://i.imgur.com/VzFQ7YM.png');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
     }
-
-    html,
-    body {
-      height: 100%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      color: var(--bb-text-dark);
-      background:
-        radial-gradient(circle at 0% 0%, #ffe1f7 0, transparent 55%),
-        radial-gradient(circle at 100% 0%, #ffeefc 0, transparent 60%),
-        radial-gradient(circle at 0% 100%, #ffd1e6 0, transparent 55%),
-        linear-gradient(180deg, #ffeaf5 0%, #ffd4e4 40%, #ffc9da 100%);
-      min-height: 100vh;
-    }
-
-    /* --- coquillages décoratifs --- */
-    .shell-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.24;
-      mix-blend-mode: screen;
-      z-index: 0;
-    }
-
-    .shell {
-      position: absolute;
-      border-radius: 50% 50% 45% 55%;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0, #ffe3f2 45%, #f7aecf 100%);
-      box-shadow: 0 14px 30px rgba(186, 91, 140, 0.35);
-      filter: blur(0.6px);
-    }
-
-    .shell--1 {
-      width: 220px;
-      height: 220px;
-      bottom: -40px;
-      left: -40px;
-      transform: rotate(-12deg);
-    }
-
-    .shell--2 {
-      width: 160px;
-      height: 160px;
-      top: 120px;
-      right: -30px;
-      transform: rotate(18deg);
-    }
-
-    .shell--3 {
-      width: 130px;
-      height: 130px;
-      bottom: 120px;
-      right: 40px;
-      transform: rotate(-28deg);
-    }
-
-    /* petites bulles type perles */
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0, #ffe5ff 70%, #f0b9ff 100%);
-      opacity: 0.7;
-    }
-
-    .bubble--1 {
-      width: 16px;
-      height: 16px;
-      bottom: 80px;
-      left: 140px;
-    }
-
-    .bubble--2 {
-      width: 10px;
-      height: 10px;
-      bottom: 160px;
-      left: 60px;
-    }
-
-    .bubble--3 {
-      width: 18px;
-      height: 18px;
-      top: 220px;
-      right: 80px;
-    }
-
-    .bubble--4 {
-      width: 12px;
-      height: 12px;
-      top: 60px;
-      right: 150px;
-    }
-
-    /* --- layout général --- */
-
-    .page {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 20px 18px 60px;
-      z-index: 1;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: var(--bb-radius-xl);
-      box-shadow: var(--bb-shadow);
-      padding: 24px 22px;
-      backdrop-filter: blur(14px);
-    }
-
-    /* --- header --- */
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .brand-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0, #ff7aa9 40%, #e83787 100%);
-      box-shadow: 0 10px 26px rgba(220, 62, 130, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
+      padding: 25px;
+      text-align: center;
+      font-size: 32px;
       font-weight: 800;
-      font-size: 22px;
-      letter-spacing: 0.06em;
+      color: #cc3366;
+      letter-spacing: 2px;
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      background: #ffffffcc;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(6px);
     }
 
-    .brand-name {
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      font-size: 13px;
-      color: var(--bb-text-soft);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--bb-radius-pill);
-      padding: 10px 22px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      transition: transform var(--bb-transition), box-shadow var(--bb-transition),
-        background var(--bb-transition), color var(--bb-transition);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 20% 0, #ffe1f3 0, #ff3f92 40%, #e1187a 100%);
-      color: #ffffff;
-      box-shadow: 0 14px 32px rgba(213, 38, 122, 0.5);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(213, 38, 122, 0.6);
-    }
-
-    .btn-ghost {
-      background: #ffffff;
-      color: var(--bb-text-dark);
-      border: 1px solid #f4c3dd;
-    }
-
-    .btn-ghost:hover {
-      background: #ffe6f4;
-    }
-
-    /* --- section hero --- */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-      gap: 22px;
-      margin-bottom: 24px;
-    }
-
-    .hero-main {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: var(--bb-radius-pill);
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #ffd7eb;
-      font-size: 12px;
-      margin-bottom: 10px;
-      color: var(--bb-text-soft);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #2ecc71;
-      box-shadow: 0 0 0 5px rgba(46, 204, 113, 0.15);
-    }
-
-    .hero-title {
+    h2 {
       font-size: 26px;
-      line-height: 1.12;
-      margin-bottom: 12px;
+      color: #cc3366;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 700;
     }
 
-    .hero-em {
-      color: var(--bb-rose);
-    }
-
-    .hero-text {
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--bb-text-soft);
-      margin-bottom: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      color: var(--bb-text-soft);
-    }
-
-    /* carte style salon + palette */
-
-    .hero-style {
-      position: relative;
-      padding: 20px 18px 18px;
-      border-radius: var(--bb-radius-xl);
-      background: radial-gradient(circle at 0% 0%, #ffeef9 0, #ffd3ea 40%, #ffc0de 100%);
-      overflow: hidden;
-      box-shadow: 0 14px 32px rgba(172, 45, 115, 0.35);
-    }
-
-    .hero-style-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 13px;
-      color: var(--bb-text-soft);
-      font-weight: 600;
-    }
-
-    .hero-style-logo {
-      font-weight: 800;
-      letter-spacing: 0.28em;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .hero-style-badge {
-      border-radius: var(--bb-radius-pill);
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.88);
-      font-size: 11px;
-    }
-
-    .hero-style-row {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .swatch-large {
-      flex: 1.1;
-      border-radius: 24px;
-      background: linear-gradient(135deg, #ff7ab1, #ff4f96);
-      height: 88px;
-      box-shadow: 0 10px 28px rgba(227, 63, 135, 0.55);
-    }
-
-    .swatch-group {
-      flex: 1;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .swatch {
-      flex: 1;
-      height: 70px;
-      border-radius: 18px;
-      background: #2f222b;
-      box-shadow: 0 10px 22px rgba(46, 34, 43, 0.6);
-    }
-
-    .swatch:nth-child(2) {
-      filter: brightness(1.1);
-    }
-
-    .swatch:nth-child(3) {
-      filter: brightness(1.2);
-    }
-
-    .hero-style-foot {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      margin-top: 10px;
-      color: var(--bb-text-soft);
-    }
-
-    /* --- section boutique --- */
-
-    section {
-      margin-bottom: 26px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--bb-text-soft);
-      margin-bottom: 16px;
-    }
-
-    .grid {
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
 
     .product-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 22px;
-      padding: 14px 14px 16px;
-      box-shadow: 0 10px 26px rgba(148, 43, 102, 0.18);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-tag {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 4px 8px;
-      background: rgba(255, 95, 154, 0.12);
-      color: #d72685;
-      font-weight: 600;
+      padding: 20px;
+      background: #fff7fb;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px #00000015;
+      border: 2px solid #ffdded;
     }
 
     .product-title {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #cc3366;
     }
 
     .product-meta {
-      font-size: 11px;
-      color: var(--bb-text-soft);
+      font-size: 15px;
+      margin-bottom: 10px;
+      line-height: 1.4;
     }
 
     .product-price {
-      font-size: 13px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--bb-rose);
-      margin-top: 4px;
+      color: #e6005c;
+      margin-bottom: 12px;
     }
 
     .product-cta {
-      margin-top: 8px;
-      font-size: 11px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--bb-text-soft);
+      display: inline-block;
+      padding: 10px 18px;
+      background: #cc3366;
+      color: white;
+      border-radius: 10px;
       text-decoration: none;
-    }
-
-    .product-cta span {
-      font-size: 14px;
-    }
-
-    /* --- avis clients --- */
-
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .review {
-      background: rgba(255, 255, 255, 0.94);
-      border-radius: 20px;
-      padding: 12px 14px;
-      box-shadow: 0 10px 24px rgba(142, 40, 99, 0.18);
-      font-size: 12px;
-      color: var(--bb-text-soft);
-    }
-
-    .review-name {
       font-weight: 600;
-      font-size: 12px;
-      margin-bottom: 2px;
-      color: var(--bb-text-dark);
     }
 
-    .review-stars {
-      color: #ffb347;
-      margin-bottom: 4px;
-      font-size: 11px;
-    }
-
-    /* --- contact & horaires --- */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 16px;
-    }
-
-    .contact-card {
-      border-radius: var(--bb-radius-xl);
-      padding: 20px 18px 18px;
-      background: radial-gradient(circle at 0% 0%, #ffeef9 0, #ffd6ec 40%, #ffc4e0 100%);
-      box-shadow: 0 16px 34px rgba(177, 57, 120, 0.4);
-      color: var(--bb-text-dark);
-    }
-
-    .contact-title {
+    /* CONTACT */
+    .contact-block {
       font-size: 18px;
       text-align: center;
-      margin-bottom: 10px;
+      line-height: 1.8;
     }
 
-    .contact-text {
-      font-size: 13px;
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .contact-label {
-      min-width: 70px;
-      font-weight: 600;
-    }
-
-    .contact-link {
-      color: var(--bb-text-dark);
-      text-decoration: none;
-    }
-
-    .contact-link:hover {
-      text-decoration: underline;
-    }
-
-    .contact-actions {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    .hours-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 24px;
-      padding: 16px 16px 14px;
-      box-shadow: 0 12px 28px rgba(122, 33, 88, 0.26);
-      font-size: 13px;
-    }
-
-    .hours-title {
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
+    /* HOURS */
     .hours-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 3px;
-    }
-
-    .hours-note {
-      font-size: 11px;
-      color: var(--bb-text-soft);
-      margin-top: 6px;
-    }
-
-    footer {
-      margin-top: 10px;
-      font-size: 11px;
-      text-align: center;
-      color: var(--bb-text-soft);
-    }
-
-    /* --- responsive --- */
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .reviews {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        padding: 18px 14px 40px;
-      }
-
-      .card {
-        padding: 20px 16px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-title {
-        font-size: 22px;
-      }
-
-      .grid,
-      .reviews {
-        grid-template-columns: 1fr;
-      }
-
-      .brand-logo {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
-      }
+      padding: 10px 15px;
+      border-bottom: 1px solid #ffdded;
+      font-size: 17px;
     }
   </style>
 </head>
+
 <body>
-  <!-- coquillages / perles décoratives -->
-  <div class="shell-layer">
-    <div class="shell shell--1"></div>
-    <div class="shell shell--2"></div>
-    <div class="shell shell--3"></div>
-    <div class="bubble bubble--1"></div>
-    <div class="bubble bubble--2"></div>
-    <div class="bubble bubble--3"></div>
-    <div class="bubble bubble--4"></div>
+
+<header>BELLA BAY</header>
+
+<!---------------- HERO ---------------->
+<div class="section" style="text-align:center;">
+  <h2>Bienvenue chez Bella Bay</h2>
+  <p style="font-size:18px;">
+    Coiffure · Extensions capillaires · Press-on · Cils à bande · Boutique Beauté
+  </p>
+</div>
+
+<!---------------- BOUTIQUE ---------------->
+<div class="section">
+  <h2>Boutique Bella Bay</h2>
+
+  <div class="product-grid">
+
+    <!-- EXTENSIONS CAPILLAIRES -->
+    <article class="product-card">
+      <h3 class="product-title">Extensions Capillaires Bella Bay</h3>
+      <p class="product-meta">
+        Extensions adhésives haute qualité. Longueurs variées, textures naturelles.
+      </p>
+      <p class="product-price">À partir de 120$</p>
+      <a class="product-cta" href="sms:+14506005412">Commander</a>
+    </article>
+
+    <!-- PRESS-ON -->
+    <article class="product-card">
+      <h3 class="product-title">Ongles Press-On Bella Bay</h3>
+      <p class="product-meta">
+        French blanche, babyboomer, XL, formes tendance. Finition professionnelle.
+      </p>
+      <p class="product-price">À partir de 35$</p>
+      <a class="product-cta" href="sms:+14506005412">Commander</a>
+    </article>
+
+    <!-- CILS À BANDE -->
+    <article class="product-card">
+      <h3 class="product-title">Cils à Bande – Classique • Volume • Russe</h3>
+      <p class="product-meta">
+        Trois styles : naturel, fourni ou intense. Idéal pour soirée ou everyday glam.
+      </p>
+      <p class="product-price">À partir de 25$</p>
+      <a class="product-cta" href="sms:+14506005412">Commander</a>
+    </article>
+
   </div>
+</div>
 
-  <main class="page">
-    <!-- HEADER -->
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BB</div>
-        <div class="brand-text">
-          <div class="brand-name">BELLA BAY</div>
-          <div class="brand-sub">Coiffure &amp; Extensions</div>
-        </div>
-      </div>
-      <a
-        class="btn btn-primary"
-        href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-        target="_blank"
-        rel="noopener"
-      >
-        Réserver maintenant
-      </a>
-    </header>
+<!---------------- RÉSERVATION ---------------->
+<div class="section">
+  <h2>Réservation</h2>
+  <p style="text-align:center;">
+    Prenez rendez-vous directement avec Fresha :
+    <br><br>
+    <a class="product-cta" href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank">
+      Accéder à la réservation
+    </a>
+  </p>
+</div>
 
-    <!-- HERO + STYLE -->
-    <section class="hero">
-      <div class="card hero-main">
-        <div class="status-pill">
-          <span class="status-dot"></span>
-          Ouvert – Rendez-vous uniquement
-        </div>
+<!---------------- HORAIRE ---------------->
+<div class="section">
+  <h2>Horaire</h2>
 
-        <h1 class="hero-title">
-          Transformations capillaires chic &amp; glamour à
-          <span class="hero-em">Bella Bay</span>
-        </h1>
+  <div class="hours-row"><span>Lundi</span><span style="color:#cc3366;font-weight:bold;">Fermé</span></div>
+  <div class="hours-row"><span>Mardi</span><span>10h00 – 18h00</span></div>
+  <div class="hours-row"><span>Mercredi</span><span>10h00 – 18h00</span></div>
+  <div class="hours-row"><span>Jeudi</span><span>10h00 – 20h00</span></div>
+  <div class="hours-row"><span>Vendredi</span><span>10h00 – 20h00</span></div>
+  <div class="hours-row"><span>Samedi</span><span>10h00 – 18h00</span></div>
+  <div class="hours-row"><span>Dimanche</span><span style="color:#cc3366;font-weight:bold;">Fermé</span></div>
 
-        <p class="hero-text">
-          Coloration, mèches, brushing, extensions et coiffure sur mesure dans une ambiance
-          chaleureuse, lumineuse &amp; glamour – inspirée de l’univers
-          <b>bord de mer et coquillages</b>.
-        </p>
+</div>
 
-        <div class="hero-actions">
-          <a
-            class="btn btn-primary"
-            href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-            target="_blank"
-            rel="noopener"
-          >
-            Réserver en ligne (Fresha)
-          </a>
+<!---------------- CONTACT ---------------->
+<div class="section">
+  <h2>Contact</h2>
+  <div class="contact-block">
+    📞 Téléphone : <b>(450) 600-5412</b><br>
+    📧 Email : <b>bellabay.coiffure@gmail.com</b><br>
+    📍 Laval, Québec
+  </div>
+</div>
 
-          <a class="btn btn-ghost" href="#boutique">
-            Voir la boutique Bella Bay
-          </a>
-        </div>
-
-        <p class="hero-note">
-          💕 Spécialisée en mèches, balayage, extensions et transformations glamour – avec douceur, soin
-          et attention à chaque détail.
-        </p>
-      </div>
-
-      <div class="hero-style card">
-        <div class="hero-style-title">
-          <span class="hero-style-logo">BB · BELLA BAY</span>
-          <span class="hero-style-badge">Style salon Bella Bay</span>
-        </div>
-
-        <div class="hero-style-row">
-          <div class="swatch-large"></div>
-          <div class="swatch-group">
-            <div class="swatch"></div>
-            <div class="swatch"></div>
-            <div class="swatch"></div>
-          </div>
-        </div>
-
-        <div class="hero-style-foot">
-          <span>Ambiance rose, lumineux &amp; glamour</span>
-          <span>BB · Coiffure &amp; Extensions</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- BOUTIQUE -->
-    <section id="boutique">
-      <h2 class="section-title">Boutique Bella Bay</h2>
-      <p class="section-subtitle">
-        Extensions capillaires, ongles press-on et cils à bande pour prolonger l’expérience Bella Bay à la maison.
-      </p>
-
-      <div class="grid">
-        <!-- Extensions capillaires -->
-        <article class="product-card">
-          <div class="product-tag">Best-seller</div>
-          <h3 class="product-title">Extensions adhésives Bella Bay</h3>
-          <p class="product-meta">
-            Extensions adhésives en cheveux 100% humains, effet naturel et
-            volume bord de mer. Idéales pour une transformation glamour.
-          </p>
-          <p class="product-price">
-            À partir de 120&nbsp;$ (2 paquets)
-          </p>
-          <a
-            class="product-cta"
-            href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>➜</span> Réserver la pose ou demander un devis
-          </a>
-        </article>
-
-        <!-- Ongles press-on -->
-        <article class="product-card">
-          <div class="product-tag">Press-on</div>
-          <h3 class="product-title">Ongles press-on Bella Bay</h3>
-
-          <p class="product-meta">
-            Kits d’ongles press-on prêts à poser :
-            French blanche, baby boomer et formes tendance (court, medium, XL),
-            finition salon, à coller à la maison.
-          </p>
-
-          <p class="product-price">
-            À partir de 35&nbsp;$ le kit
-          </p>
-
-          <a
-            class="product-cta"
-            href="sms:+14506005412?body=Bonjour%20Bella%20Bay,%20je%20veux%20informations%20sur%20les%20ongles%20press-on."
-          >
-            <span>➜</span> Commander ou poser une question
-          </a>
-        </article>
-
-        <!-- Cils à bande -->
-        <article class="product-card">
-          <div class="product-tag">Cils à bande</div>
-          <h3 class="product-title">Cils à bande Bella Bay – Classique, Volume &amp; Russe</h3>
-
-          <p class="product-meta">
-            Boîtes de cils à bande à coller :
-            <br><b>Classique</b> – effet naturel pour tous les jours  
-            <br><b>Volume</b> – plus fourni, regard glamour  
-            <br><b>Russe</b> – volume intense et dramatique, style soirée
-          </p>
-
-          <p class="product-price">
-            À partir de 25&nbsp;$ la boîte
-          </p>
-
-          <a
-            class="product-cta"
-            href="sms:+14506005412?body=Bonjour%20Bella%20Bay,%20je%20veux%20acheter%20des%20cils%20%C3%A0%20bande%20(Classique%2C%20Volume%20ou%20Russe)."
-          >
-            <span>➜</span> Commander par SMS
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <!-- AVIS CLIENTS -->
-    <section>
-      <h2 class="section-title">Avis de clientes Bella Bay</h2>
-      <p class="section-subtitle">
-        Une expérience chaleureuse, privée et 100% personnalisée – pour se sentir belle, confiante et glam.
-      </p>
-
-      <div class="reviews">
-        <article class="review">
-          <div class="review-name">Sarah L.</div>
-          <div class="review-stars">★★★★★</div>
-          <p>
-            Mèches parfaites, super douces, et l’ambiance bord de mer rose est juste magique.
-            Je reviens bientôt!
-          </p>
-        </article>
-
-        <article class="review">
-          <div class="review-name">Mélissa R.</div>
-          <div class="review-stars">★★★★★</div>
-          <p>
-            Extensions hyper naturelles, aucune démarcation. On se sent comme dans un petit salon privé de luxe.
-          </p>
-        </article>
-
-        <article class="review">
-          <div class="review-name">Nadia A.</div>
-          <div class="review-stars">★★★★★</div>
-          <p>
-            Rendez-vous facile à prendre sur Fresha, service doux et professionnel.
-            On voit que tout est fait avec amour.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT & HORAIRES -->
-    <section id="contact">
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h2 class="contact-title">Contact &amp; réservation</h2>
-          <p class="contact-text">
-            Pour prendre rendez-vous ou poser une question, tu peux me joindre directement :
-          </p>
-
-          <div class="contact-row">
-            <span class="contact-label">Téléphone</span>
-            <a class="contact-link" href="tel:+14506005412">(450) 600-5412</a>
-          </div>
-
-          <div class="contact-row">
-            <span class="contact-label">Courriel</span>
-            <a class="contact-link" href="mailto:bellabay.coiffure@gmail.com">
-              bellabay.coiffure@gmail.com
-            </a>
-          </div>
-
-          <div class="contact-row">
-            <span class="contact-label">Instagram</span>
-            <a
-              class="contact-link"
-              href="https://instagram.com/bellah.bay"
-              target="_blank"
-              rel="noopener"
-            >
-              @bellah.bay
-            </a>
-          </div>
-
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="tel:+14506005412">Appeler maintenant</a>
-            <a class="btn btn-ghost" href="sms:+14506005412">Envoyer un SMS</a>
-          </div>
-        </div>
-
-        <div class="hours-card">
-          <div class="hours-title">Horaires</div>
-          <div class="hours-row">
-            <span>Lundi – Dimanche</span>
-            <span>9h00 – 20h00</span>
-          </div>
-          <div class="hours-note">
-            Rendez-vous seulement, dans une ambiance salon privé inspirée du bord de mer et des coquillages.
-          </div>
-
-          <div style="margin-top: 10px;">
-            <div style="font-size: 12px; margin-bottom: 6px; font-weight: 600;">
-              Réserver en ligne
-            </div>
-            <a
-              class="btn btn-primary"
-              style="width: 100%; justify-content: center;"
-              href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-              target="_blank"
-              rel="noopener"
-            >
-              Voir les services sur Fresha
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Bella Bay – Coiffure &amp; Extensions. Tous droits réservés.
-    </footer>
-  </main>
-
-  <script>
-    // année actuelle dans le pied de page
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
