@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -6,58 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Bella Bay - Salon de coiffure et extensions à Laval. Coloration, mèches, brushing, extensions capillaires, press-on nails et cils à bande dans une ambiance chic & glamour."
+    content="Bella Bay - Coiffure, colorations, mèches et extensions capillaires à Laval, dans une ambiance mer rose & coquillages. Boutique extensions, press-on nails et cils à bande."
   />
 
   <style>
     :root {
       --bb-rose: #ff5f9a;
-      --bb-rose-soft: #ffd7ea;
-      --bb-rose-light: #ffe6f5;
-      --bb-bg: #fff5fb;
-      --bb-text-dark: #2b1c28;
-      --bb-text-soft: #6a4b63;
+      --bb-rose-medium: #ff8fbc;
+      --bb-rose-soft: #ffe0f2;
+      --bb-rose-light: #fff2f9;
+      --bb-sable: #ffe9d2;
+      --bb-text: #2b1c28;
+      --bb-text-soft: #6d4f66;
       --bb-card: #ffffff;
-      --bb-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.14);
       --bb-radius-xl: 32px;
-      --bb-radius-pill: 999px;
-      --bb-rose-gradient: linear-gradient(135deg, #ff5f9a, #ff6fbf);
+      --bb-radius-card: 26px;
+      --bb-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.14);
+      --bb-gradient-rose: linear-gradient(135deg, #ff5f9a, #ff8fbc);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         Roboto, sans-serif;
-      background: radial-gradient(circle at top, #ffe6ff 0, #fff5fb 45%, #ffe9f3 100%);
-      color: var(--bb-text-dark);
+      color: var(--bb-text);
       line-height: 1.6;
+      background: #fff7fd;
       padding: 16px;
     }
 
     .page {
       max-width: 1100px;
-      margin: 0 auto 80px auto;
+      margin: 0 auto 72px auto;
       position: relative;
     }
 
-    /* Fond effet coquillages / mer, très léger */
-    .page::before {
+    /* FOND MER ROSE + COQUILLAGES */
+
+    body::before {
       content: "";
       position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.65) 0, transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4) 0, transparent 60%),
-        radial-gradient(circle at 15% 80%, rgba(255,192,203,0.55) 0, transparent 60%),
-        radial-gradient(circle at 85% 70%, rgba(255,228,225,0.7) 0, transparent 55%);
-      opacity: 0.45;
+      inset: -80px;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.9) 0, transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(255,182,193,0.9) 0, transparent 60%),
+        radial-gradient(circle at 20% 85%, rgba(255,223,211,0.95) 0, transparent 60%),
+        radial-gradient(circle at 85% 75%, rgba(255,192,234,0.95) 0, transparent 55%),
+        linear-gradient(145deg,#ffe4f3,#ffdce8,#ffe9f7);
+      opacity: 0.9;
+    }
+
+    body::after {
+      /* formes coquillages artistiques */
+      content: "";
+      position: fixed;
+      inset: -40px;
       z-index: -1;
+      background-image:
+        radial-gradient(circle at 15% 60%, rgba(255,255,255,0.7) 0, transparent 55%),
+        radial-gradient(circle at 70% 40%, rgba(255,255,255,0.8) 0, transparent 60%),
+        radial-gradient(circle at 45% 10%, rgba(255,240,248,0.9) 0, transparent 50%);
+      mix-blend-mode: soft-light;
+      opacity: 0.85;
+      pointer-events: none;
     }
 
     /* NAVBAR */
@@ -75,10 +92,11 @@
       justify-content: space-between;
       gap: 16px;
       padding: 10px 18px;
-      background: linear-gradient(135deg, #ffe4f4, #fff5fb);
-      border-radius: var(--bb-radius-pill);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      background: rgba(255, 246, 252, 0.96);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     .nav-left {
@@ -88,30 +106,24 @@
     }
 
     .nav-logo {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffeef8, #ff5f9a 70%);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+      background: radial-gradient(circle at 25% 20%,#ffeef8,#ff5f9a 70%);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-weight: 800;
       letter-spacing: 1px;
-      font-size: 15px;
-    }
-
-    .nav-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      font-size: 16px;
     }
 
     .nav-title-main {
+      font-size: 13px;
+      letter-spacing: 0.18em;
       font-weight: 800;
-      letter-spacing: 0.16em;
-      font-size: 12px;
     }
 
     .nav-title-sub {
@@ -127,13 +139,13 @@
     }
 
     .nav-link {
-      border-radius: 999px;
-      padding: 6px 12px;
       text-decoration: none;
       color: var(--bb-text-soft);
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
 
     .nav-link:hover {
@@ -141,15 +153,15 @@
     }
 
     .btn-primary-nav {
-      border-radius: var(--bb-radius-pill);
+      border-radius: 999px;
       padding: 10px 20px;
-      background: var(--bb-rose-gradient);
-      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 14px 26px rgba(255, 95, 154, 0.45);
-      white-space: nowrap;
+      background: var(--bb-gradient-rose);
+      color: #fff;
       font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 16px 32px rgba(255,95,154,0.55);
+      white-space: nowrap;
     }
 
     .btn-primary-nav:hover {
@@ -157,61 +169,62 @@
       transform: translateY(-1px);
     }
 
-    /* SECTIONS GÉNÉRALES */
+    /* LAYOUT SECTIONS */
 
     section {
       margin-bottom: 40px;
     }
 
     .card {
-      background: var(--bb-card);
-      border-radius: 30px;
-      padding: 26px 22px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--bb-radius-card);
+      padding: 24px 20px;
       box-shadow: var(--bb-shadow-soft);
-      position: relative;
-      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.9);
     }
 
     .section-title {
       font-size: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-subtitle {
       font-size: 13px;
       color: var(--bb-text-soft);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
-    /* HERO */
+    /* HERO / ACCUEIL */
 
     .hero {
-      background: linear-gradient(145deg, rgba(255,252,255,0.98), rgba(255,230,245,0.98));
-      padding: 26px 22px 26px 22px;
+      background: rgba(255,255,255,0.98);
       border-radius: var(--bb-radius-xl);
-      box-shadow: var(--bb-shadow-soft);
+      padding: 28px 22px;
+      box-shadow: 0 22px 46px rgba(0,0,0,0.26);
       display: grid;
       grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr);
-      gap: 18px;
-      margin-bottom: 24px;
+      gap: 20px;
       position: relative;
       overflow: hidden;
+      margin-bottom: 26px;
     }
 
     .hero::before {
+      /* halo rosé façon mer rose */
       content: "";
       position: absolute;
       inset: -40%;
-      background-image:
-        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.9) 0, transparent 55%),
-        radial-gradient(circle at 110% 10%, rgba(255,183,215,0.9) 0, transparent 60%),
-        radial-gradient(circle at 35% 115%, rgba(255,182,193,0.8) 0, transparent 60%);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,1) 0, transparent 55%),
+        radial-gradient(circle at 85% -5%, rgba(255,182,193,0.9) 0, transparent 60%),
+        radial-gradient(circle at 30% 110%, rgba(255,223,211,0.95) 0, transparent 55%);
       opacity: 0.9;
       pointer-events: none;
     }
 
     .hero-main,
-    .hero-side {
+    .hero-visual {
       position: relative;
       z-index: 1;
     }
@@ -222,8 +235,8 @@
       gap: 8px;
       padding: 6px 11px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(0,0,0,0.06);
       font-size: 11px;
       color: var(--bb-text-soft);
       margin-bottom: 10px;
@@ -233,8 +246,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #34d399;
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2);
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.3);
     }
 
     h1 {
@@ -262,92 +275,94 @@
 
     .btn-primary,
     .btn-secondary {
-      border-radius: var(--bb-radius-pill);
+      border-radius: 999px;
       padding: 10px 18px;
-      text-decoration: none;
       font-size: 13px;
+      border: none;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      border: none;
       cursor: pointer;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: var(--bb-rose-gradient);
+      background: var(--bb-gradient-rose);
       color: #fff;
-      box-shadow: 0 16px 30px rgba(255, 95, 154, 0.5);
+      box-shadow: 0 18px 32px rgba(255,95,154,0.55);
       font-weight: 600;
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.95);
       color: var(--bb-text-soft);
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     .btn-primary:hover,
     .btn-secondary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.16);
     }
 
-    .hero-side-card {
-      background: rgba(255, 255, 255, 0.92);
+    .hero-visual {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .hero-shell-card {
+      flex: 1;
       border-radius: 26px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.9) 0, transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(255,192,234,0.9) 0, transparent 55%),
+        linear-gradient(145deg, #ffe0f2, #ffd8e2, #ffe9f7);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.26);
+      position: relative;
+      overflow: hidden;
       padding: 18px 16px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 14px;
-      align-items: center;
     }
 
-    .hero-badge-title {
-      font-size: 11px;
-      letter-spacing: 0.14em;
+    .hero-shell-card::before {
+      content: "";
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      left: -20%;
+      top: -20%;
+      background-image:
+        radial-gradient(circle at 15% 40%, rgba(255,255,255,0.9) 0, transparent 55%),
+        radial-gradient(circle at 75% 30%, rgba(255,240,248,0.95) 0, transparent 60%),
+        radial-gradient(circle at 50% 85%, rgba(255,223,211,0.95) 0, transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+    }
+
+    .hero-shell-inner {
+      position: relative;
+      z-index: 1;
+      color: var(--bb-text);
+      font-size: 13px;
+    }
+
+    .hero-shell-title {
+      font-size: 13px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
+      margin-bottom: 8px;
       color: var(--bb-text-soft);
-      margin-bottom: 6px;
     }
 
-    .hero-swatches {
-      display: flex;
-      gap: 10px;
-      align-items: center;
+    .hero-shell-big {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-    .swatch-rose {
-      width: 68px;
-      height: 40px;
-      border-radius: 18px;
-      background: var(--bb-rose-gradient);
-      box-shadow: 0 10px 22px rgba(255, 95, 154, 0.6);
-    }
-
-    .swatch-dark-row {
-      display: flex;
-      gap: 6px;
-    }
-
-    .swatch-dark {
-      width: 28px;
-      height: 28px;
-      border-radius: 12px;
-      background: #2b1c28;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--bb-text-soft);
-      margin-top: 8px;
-    }
-
-    .hero-mini {
-      font-size: 11px;
+    .hero-shell-note {
+      font-size: 12px;
       color: var(--bb-text-soft);
     }
 
@@ -360,15 +375,16 @@
     }
 
     .service-card {
-      background: #fff8fd;
-      border-radius: 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 22px;
       padding: 16px 16px 14px 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+      border: 1px solid rgba(255,255,255,0.9);
     }
 
     .service-title {
       font-size: 15px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .service-desc {
@@ -387,30 +403,31 @@
 
     .boutique-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
 
     .product-card {
-      background: #ffffff;
-      border-radius: 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 22px;
       padding: 18px 16px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-title {
-      font-size: 15px;
-      margin-bottom: 6px;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.95);
     }
 
     .product-badge {
       display: inline-flex;
-      padding: 4px 9px;
+      padding: 4px 10px;
       border-radius: 999px;
+      font-size: 11px;
       background: #fff0f8;
       color: var(--bb-rose);
-      font-size: 11px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+    }
+
+    .product-title {
+      font-size: 15px;
+      margin-bottom: 4px;
     }
 
     .product-text {
@@ -428,17 +445,17 @@
 
     .btn-small {
       padding: 8px 14px;
-      font-size: 12px;
       border-radius: 999px;
+      font-size: 12px;
       text-decoration: none;
       border: none;
       cursor: pointer;
+      background: var(--bb-gradient-rose);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(255,95,154,0.5);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--bb-rose-gradient);
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(255, 95, 154, 0.45);
     }
 
     .btn-small:hover {
@@ -454,11 +471,12 @@
     }
 
     .avis-item {
-      background: #fff8fd;
-      border-radius: 20px;
+      background: rgba(255,248,253,0.98);
+      border-radius: 18px;
       padding: 12px 14px;
       font-size: 12px;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.9);
     }
 
     .avis-nom {
@@ -467,16 +485,16 @@
     }
 
     .avis-stars {
-      color: #facc15;
+      color: #fbbf24;
       font-size: 11px;
       margin-bottom: 4px;
     }
 
-    /* CONTACT */
+    /* CONTACT & HORAIRE */
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
       gap: 18px;
     }
 
@@ -502,7 +520,7 @@
     }
 
     .horaire-table td {
-      padding: 4px 0;
+      padding: 3px 0;
     }
 
     .horaire-jour {
@@ -522,24 +540,26 @@
       text-align: center;
       font-size: 11px;
       color: var(--bb-text-soft);
-      margin-top: 30px;
-      opacity: 0.9;
+      margin-top: 26px;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 860px) {
       .hero {
         grid-template-columns: 1fr;
       }
-      .hero-side-card {
-        grid-template-columns: 1fr;
+      .hero-visual {
+        order: -1;
       }
       .contact-grid {
         grid-template-columns: 1fr;
       }
       .nav-links {
-        display: none; /* pour garder la nav simple sur mobile */
+        display: none;
+      }
+      .page {
+        margin-bottom: 50px;
       }
     }
   </style>
@@ -551,15 +571,16 @@
       <nav class="nav">
         <div class="nav-left">
           <div class="nav-logo">BB</div>
-          <div class="nav-title">
+          <div>
             <div class="nav-title-main">BELLA BAY</div>
-            <div class="nav-title-sub">Coiffure &amp; Extensions</div>
+            <div class="nav-title-sub">Coiffure • Extensions • Mer rose</div>
           </div>
         </div>
         <div class="nav-links">
           <a href="#accueil" class="nav-link">Accueil</a>
           <a href="#services" class="nav-link">Services</a>
           <a href="#boutique" class="nav-link">Boutique</a>
+          <a href="#reservation" class="nav-link">Réservation</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         <a
@@ -578,21 +599,19 @@
       <section class="hero">
         <div class="hero-main">
           <div class="pill-status">
-            <div class="pill-dot"></div>
-            Ouvert – Rendez-vous uniquement
+            <span class="pill-dot"></span>
+            Ouvert – Sur rendez-vous
           </div>
-
           <h1>
-            Transformations capillaires chic &amp; glamour à
-            <span>Bella Bay</span>
+            Bella Bay, ton salon
+            <span>glamour au bord de l’eau</span>
           </h1>
-
           <p class="hero-text">
-            Coloration, mèches, brushing, extensions et coiffure sur mesure
-            dans une ambiance chaleureuse, lumineuse &amp; glamour – inspirée
-            de l’univers bord de mer et coquillages.
+            Colorations, mèches, balayages et extensions capillaires dans une
+            ambiance mer rose & coquillages. L’idée&nbsp;: se faire coiffer comme
+            si tu avais les pieds dans le sable, avec un look digne d’un
+            shooting Instagram.
           </p>
-
           <div class="hero-actions">
             <a
               class="btn-primary"
@@ -608,63 +627,48 @@
           </div>
         </div>
 
-        <div class="hero-side">
-          <div class="hero-side-card">
-            <div>
-              <div class="hero-badge-title">BB • BELLA BAY</div>
-              <div class="hero-swatches">
-                <div class="swatch-rose"></div>
-                <div style="display:flex; flex-direction:column; gap:4px;">
-                  <span class="hero-mini">Ambiance rose, lumineuse &amp; glamour</span>
-                  <span class="hero-mini">Bord de mer &amp; coquillages</span>
-                </div>
-              </div>
-              <p class="hero-note">
-                Un salon intime où chaque transformation est pensée pour
-                sublimer ta personnalité, des racines jusqu’aux pointes.
-              </p>
-            </div>
-            <div>
-              <div class="hero-badge-title">COIFFURE &amp; EXTENSIONS</div>
-              <div class="hero-swatches">
-                <div class="swatch-dark-row">
-                  <div class="swatch-dark"></div>
-                  <div class="swatch-dark"></div>
-                  <div class="swatch-dark"></div>
-                </div>
-              </div>
-              <p class="hero-note">
-                Spécialisée en colorations, mèches, balayages et extensions
-                adhésives pour un résultat naturel, brillant et glamour.
+        <div class="hero-visual">
+          <div class="hero-shell-card">
+            <div class="hero-shell-inner">
+              <div class="hero-shell-title">UNIVERS BELLA BAY</div>
+              <div class="hero-shell-big">Mer rose, coquillages & glam</div>
+              <p class="hero-shell-note">
+                Bella Bay s’inspire des baies, de l’eau, de la lumière et de la
+                douceur de la mer. Un concept où on imagine se faire coiffer
+                pieds nus dans le sable, avec un résultat chic, doux & brillant.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SERVICES COIFFURE -->
+      <!-- SERVICES -->
       <section id="services">
         <div class="card">
           <h2 class="section-title">Services coiffure Bella Bay</h2>
           <p class="section-subtitle">
-            Des forfaits clairs et transparents, inspirés des tarifs des salons de
-            Montréal &amp; Laval – toujours avec un service personnalisé.
+            Tarifs inspirés des salons de Montréal–Laval, avec une approche
+            personnalisée et des résultats lumineux.
           </p>
 
           <div class="services-grid">
             <div class="service-card">
-              <div class="service-title">Coupe &amp; mise en forme</div>
+              <div class="service-title">Coupe & mise en forme</div>
               <div class="service-desc">
-                Coupe femme sur mesure, finition brushing adapté à ta texture.
+                Coupe femme adaptée à ta morphologie & ta texture, avec mise en
+                forme lisse ou wavy.
               </div>
-              <div class="service-price">Coupe femme : 50&nbsp;$<br />Brushing : 40&nbsp;$</div>
+              <div class="service-price">
+                Coupe femme : 50&nbsp;$<br />
+                Brushing : 40&nbsp;$
+              </div>
             </div>
 
             <div class="service-card">
-              <div class="service-title">Coloration &amp; mèches</div>
+              <div class="service-title">Coloration & mèches</div>
               <div class="service-desc">
-                Coloration complète, racines, mèches, balayage &amp; gloss pour une
-                couleur lumineuse.
+                Coloration complète, racines, mèches ou balayage pour un
+                résultat doux, brillant & uniforme.
               </div>
               <div class="service-price">
                 Coloration racines : 75&nbsp;$<br />
@@ -676,8 +680,8 @@
             <div class="service-card">
               <div class="service-title">Extensions capillaires</div>
               <div class="service-desc">
-                Extensions adhésives haute qualité pour volume &amp; longueur, avec
-                conseil couleur personnalisé.
+                Conseil couleur & texture, pose d’extensions pour volume & longueur
+                façon Bella Bay.
               </div>
               <div class="service-price">
                 Pose extensions adhésives (2 paquets) : dès 120&nbsp;$
@@ -685,13 +689,13 @@
             </div>
 
             <div class="service-card">
-              <div class="service-title">Coiffure &amp; occasions</div>
+              <div class="service-title">Coiffure glam</div>
               <div class="service-desc">
-                Coiffure glamour, waves, brushing ultra lisse ou volume pour
-                événements &amp; soirées.
+                Waves, brushing ultra lisse, volume glamour pour soirées,
+                événements & photos.
               </div>
               <div class="service-price">
-                Coiffure styling : à partir de 60&nbsp;$
+                Styling : à partir de 60&nbsp;$
               </div>
             </div>
           </div>
@@ -703,24 +707,53 @@
         <div class="card">
           <h2 class="section-title">Boutique Bella Bay</h2>
           <p class="section-subtitle">
-            Extensions, press-on nails et cils à bande sélectionnés pour un look
+            Extensions, press-on nails et cils à bande pour prolonger le look
             Bella Bay à la maison.
           </p>
 
           <div class="boutique-grid">
-            <!-- Extensions capillaires -->
+            <!-- Extensions adhésives -->
             <div class="product-card">
               <div class="product-badge">Extensions capillaires</div>
               <h3 class="product-title">Extensions adhésives Bella Bay</h3>
               <p class="product-text">
-                Extensions adhésives haute qualité, textures naturelles, effet
-                seamless. Idéal pour gagner en longueur et en volume tout en
-                gardant un look doux &amp; glamour.
+                Extensions adhésives haute qualité pour un effet seamless, doux
+                et naturel. Idéal pour longueur & volume dans des teintes
+                naturelles (noir, brun, chocolat, blond niveau 10).
               </p>
               <p class="product-price">
                 À partir de 120&nbsp;$ (2 paquets et plus)
               </p>
-              <a href="#contact" class="btn-small">Commander / Info</a>
+              <a href="#contact" class="btn-small">Demander les couleurs</a>
+            </div>
+
+            <!-- Extensions à clips -->
+            <div class="product-card">
+              <div class="product-badge">Extensions capillaires</div>
+              <h3 class="product-title">Extensions à clips Bella Bay</h3>
+              <p class="product-text">
+                Extensions à clips faciles à poser et à retirer, parfaites pour
+                les shootings, soirées et occasions spéciales. Look salon sans
+                engagement permanent.
+              </p>
+              <p class="product-price">
+                Kits extensions à clips : selon longueur & densité
+              </p>
+              <a href="#contact" class="btn-small">Infos & tarifs</a>
+            </div>
+
+            <!-- Extensions kératine -->
+            <div class="product-card">
+              <div class="product-badge">Extensions capillaires</div>
+              <h3 class="product-title">Extensions à la kératine</h3>
+              <p class="product-text">
+                Mèches à la kératine pour une pose longue durée, idéale pour une
+                transformation complète, toujours dans un style chic & discret.
+              </p>
+              <p class="product-price">
+                Tarifs sur évaluation – selon longueur & quantité
+              </p>
+              <a href="#contact" class="btn-small">Évaluer mon projet</a>
             </div>
 
             <!-- Press-on nails -->
@@ -728,9 +761,9 @@
               <div class="product-badge">Press-on nails</div>
               <h3 class="product-title">Ongles press-on Bella Bay</h3>
               <p class="product-text">
-                Kits d’ongles press-on prêts à poser : formes tendance, longueurs
-                variées, look salon sans rendez-vous. Idéal pour photos, soirées
-                et looks Instagram.
+                Kits d’ongles press-on prêts à coller : formes tendance, longueurs
+                variées, look salon sans rendez-vous. Idéal pour photos, sorties
+                & événements.
               </p>
               <p class="product-price">
                 À partir de 35&nbsp;$ • Kits luxe jusqu’à 60&nbsp;$
@@ -743,11 +776,12 @@
               <div class="product-badge">Cils à bande</div>
               <h3 class="product-title">Cils à bande Bella Bay</h3>
               <p class="product-text">
-                Cils à bande à coller soi-même : styles classique, volume et russe.
-                Parfait pour intensifier le regard sans pose professionnelle.
+                Cils à bande à coller soi-même (non service pro) : styles
+                classique, volume et russe, pour intensifier le regard sans
+                rendez-vous en salon.
               </p>
               <p class="product-price">
-                Styles classique, volume &amp; russe – à partir de 25&nbsp;$
+                À partir de 25&nbsp;$ selon le style (classique, volume, russe)
               </p>
               <a href="#contact" class="btn-small">Choisir mon style</a>
             </div>
@@ -760,11 +794,9 @@
         <div class="card">
           <h2 class="section-title">Réservation en ligne</h2>
           <p class="section-subtitle">
-            Réserve ton rendez-vous directement en ligne via Fresha : tu choisis
-            ton service, ta plage horaire et tu reçois une confirmation
-            automatique.
+            Tu peux réserver directement en ligne via Fresha : tu choisis ton
+            service, ton horaire et tu reçois une confirmation automatique.
           </p>
-
           <div class="hero-actions">
             <a
               class="btn-primary"
@@ -772,10 +804,10 @@
               target="_blank"
               rel="noopener"
             >
-              Réserver maintenant sur Fresha
+              Réserver sur Fresha
             </a>
             <a class="btn-secondary" href="#contact">
-              Besoin d’une question avant ?
+              Poser une question avant
             </a>
           </div>
         </div>
@@ -784,37 +816,35 @@
       <!-- AVIS CLIENTS -->
       <section id="avis">
         <div class="card">
-          <h2 class="section-title">Avis clients</h2>
+          <h2 class="section-title">Avis Bella Bay</h2>
           <p class="section-subtitle">
             Une expérience pensée pour te faire sentir belle, confiante &amp;
-            chouchoutée du début à la fin.
+            chouchoutée, dans une ambiance mer rose & coquillages.
           </p>
 
           <div class="avis-grid">
             <div class="avis-item">
-              <div class="avis-nom">Sarah • Coloration &amp; mèches</div>
+              <div class="avis-nom">Sarah • Coloration & mèches</div>
               <div class="avis-stars">★★★★★</div>
               <div>
-                « Super douce, à l’écoute et le résultat est juste magnifique.
-                Mes mèches sont lumineuses et les cheveux restent brillants. »
+                « Résultat super doux et lumineux, sans abîmer mes cheveux. Je
+                me sens vraiment dans mon univers. »
               </div>
             </div>
-
             <div class="avis-item">
               <div class="avis-nom">Mélissa • Extensions adhésives</div>
               <div class="avis-stars">★★★★★</div>
               <div>
-                « Pose d’extensions ultra naturelle, personne ne voit la
-                différence. Je reçois des compliments tous les jours. »
+                « Les extensions sont invisibles, on dirait mes vrais cheveux.
+                J’adore le côté glamour mais naturel. »
               </div>
             </div>
-
             <div class="avis-item">
-              <div class="avis-nom">Nadia • Press-on &amp; cils</div>
+              <div class="avis-nom">Nadia • Press-on & cils à bande</div>
               <div class="avis-stars">★★★★★</div>
               <div>
-                « Les press-on tiennent super bien et les cils à bande donnent un
-                regard de poupée pour mes sorties. »
+                « Parfait pour mes soirées : les press-on et les cils à bande
+                me sauvent à chaque fois. »
               </div>
             </div>
           </div>
@@ -824,10 +854,10 @@
       <!-- CONTACT & HORAIRES -->
       <section id="contact">
         <div class="card">
-          <h2 class="section-title">Contact &amp; réservation</h2>
+          <h2 class="section-title">Contact & horaires</h2>
           <p class="section-subtitle">
-            Pour prendre rendez-vous ou poser une question, tu peux me joindre
-            directement :
+            Pour toute question, réservation ou information sur la boutique,
+            écris-moi ou appelle directement.
           </p>
 
           <div class="contact-grid">
@@ -855,8 +885,7 @@
                   @bellah.bay
                 </a>
               </div>
-
-              <div style="margin-top:14px;">
+              <div style="margin-top: 14px;">
                 <a
                   class="btn-primary"
                   href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
@@ -895,15 +924,15 @@
                 </tr>
                 <tr>
                   <td class="horaire-jour">Samedi</td>
-                  <td class="horaire-heure">10h00 – 17h00</td>
+                  <td class="horaire-heure">10h00 – 18h00</td>
                 </tr>
                 <tr>
                   <td class="horaire-jour">Dimanche</td>
                   <td class="horaire-heure horaire-ferme">Fermé</td>
                 </tr>
               </table>
-              <p class="hero-note" style="margin-top:8px;">
-                Rendez-vous uniquement – les horaires peuvent légèrement varier
+              <p class="hero-text" style="font-size:11px; margin-top:6px;">
+                Rendez-vous uniquement. Les horaires peuvent varier légèrement
                 selon la demande.
               </p>
             </div>
@@ -913,21 +942,12 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Bella Bay – Coiffure &amp; Extensions à Laval. Tous droits réservés.
+      © <span id="year"></span> Bella Bay – Coiffure & Extensions à Laval. Tous droits réservés.
     </footer>
   </div>
 
   <script>
-    // année dynamique dans le footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
----
-
-Quand tu auras collé et validé ça sur GitHub, recharge https://bellabay.ca :
-tu devrais voir exactement le style rose lumineux, l’intro, les services, la boutique, Fresha, avis et contact + horaires, tout sur une seule page.
-
-Si tu veux ensuite ajuster juste les prix ou un petit texte, je te dirai exactement quelle ligne modifier 💕
