@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Bella Bay - Coiffure & Extensions</title>
+  <title>Bella Bay - Luxury Coiffure & Extensions à Laval</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Bella Bay - Coiffure, colorations, mèches, extensions et boutique beauté à Laval. Services sur rendez-vous dans une ambiance rose chic & glamour."
+    content="Bella Bay - Luxury coiffure, colorations, mèches, traitements capillaires, extensions et beauty bar à Laval. Services sur rendez-vous, événements, mariages, anniversaires, bals et occasions spéciales."
   />
 
   <style>
@@ -21,7 +21,6 @@
       --bb-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
       --bb-radius-xl: 32px;
       --bb-radius-pill: 999px;
-      --bb-radius-lg: 24px;
       --bb-border: rgba(255, 255, 255, 0.6);
       --bb-cta: #ff4b8c;
       --bb-cta-hover: #ff2f7a;
@@ -46,7 +45,6 @@
       overflow-x: hidden;
     }
 
-    /* Fond rose + ambiance coquillages (image à ajouter dans le repo) */
     body::before {
       content: "";
       position: fixed;
@@ -65,7 +63,7 @@
       content: "";
       position: fixed;
       inset: 0;
-      background-image: url("coquillages-bellabay.jpg"); /* mets ton image là, même dossier */
+      background-image: url("coquillages-bellabay.jpg"); /* optionnel */
       background-size: cover;
       background-position: center;
       opacity: 0.16;
@@ -78,7 +76,6 @@
       margin: 0 auto 80px;
     }
 
-    /* NAVBAR */
     header {
       position: sticky;
       top: 8px;
@@ -199,18 +196,17 @@
       transform: translateY(-1px);
     }
 
-    /* HERO */
     .hero {
       background: linear-gradient(
           145deg,
           rgba(255, 255, 255, 0.96),
           rgba(255, 230, 250, 0.98)
         );
-      padding: 26px 22px 26px 22px;
+      padding: 26px 22px 24px;
       border-radius: var(--bb-radius-xl);
       box-shadow: var(--bb-shadow);
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
       margin-bottom: 28px;
       border: 1px solid var(--bb-border);
@@ -230,8 +226,7 @@
       pointer-events: none;
     }
 
-    .hero-main,
-    .hero-side {
+    .hero-main {
       position: relative;
       z-index: 1;
     }
@@ -245,7 +240,7 @@
       background: rgba(255, 255, 255, 0.92);
       border: 1px solid rgba(255, 255, 255, 0.9);
       font-size: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: var(--bb-text-soft);
     }
 
@@ -260,17 +255,47 @@
     h1 {
       font-size: 28px;
       line-height: 1.18;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     h1 span.highlight {
       color: var(--bb-rose);
     }
 
+    .hero-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--bb-text-soft);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
     .hero-text {
       font-size: 14px;
       color: var(--bb-text-soft);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+    }
+
+    .hero-events {
+      font-size: 13px;
+      color: var(--bb-text-dark);
+      margin-bottom: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-events strong {
+      color: var(--bb-rose);
+    }
+
+    .hero-events ul {
+      margin-top: 4px;
+      margin-left: 16px;
+      font-size: 12px;
+      color: var(--bb-text-soft);
     }
 
     .hero-actions {
@@ -278,7 +303,7 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .hero-note {
@@ -286,82 +311,6 @@
       color: var(--bb-text-soft);
     }
 
-    /* Hero side card */
-    .hero-card {
-      background: radial-gradient(circle at 10% 0, #ffeafb 0, #ffffff 55%);
-      border-radius: 26px;
-      padding: 16px 16px 18px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at 30% 0, #ffe6ff 0, #ffb6c8 60%, #ff7dac 100%);
-      border-radius: 50%;
-      inset: auto auto -40px -40px;
-      opacity: 0.7;
-      filter: blur(1px);
-    }
-
-    .hero-card-title {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      color: var(--bb-text-soft);
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-      font-size: 12px;
-    }
-
-    .hero-chip-color {
-      width: 40px;
-      height: 24px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff6fa8, #ff5f9a);
-      box-shadow: 0 10px 24px rgba(255, 95, 154, 0.7);
-    }
-
-    .hero-chip-text {
-      font-size: 12px;
-      color: var(--bb-text-soft);
-    }
-
-    .hero-chip-text strong {
-      color: var(--bb-text-dark);
-    }
-
-    .hero-bottom {
-      margin-top: 6px;
-      font-size: 11px;
-      color: var(--bb-text-soft);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-bottom span {
-      font-weight: 600;
-      color: var(--bb-rose);
-    }
-
-    /* SECTIONS GÉNÉRIQUES */
     section {
       margin-bottom: 32px;
     }
@@ -386,7 +335,6 @@
       margin-bottom: 14px;
     }
 
-    /* SERVICES */
     .services-grid {
       display: grid;
       gap: 14px;
@@ -431,7 +379,6 @@
       margin-top: 10px;
     }
 
-    /* BOUTIQUE */
     .boutique-grid {
       display: grid;
       gap: 14px;
@@ -497,13 +444,32 @@
       background: var(--bb-rose);
     }
 
+    .promo-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: var(--bb-rose-light);
+      border: 1px solid var(--bb-rose-soft);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--bb-text-dark);
+    }
+
+    .promo-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--bb-text-soft);
+      display: block;
+      margin-bottom: 4px;
+    }
+
     .boutique-note {
       font-size: 11px;
       color: var(--bb-text-soft);
       margin-top: 10px;
     }
 
-    /* AVIS */
     .avis-grid {
       display: grid;
       gap: 12px;
@@ -533,7 +499,6 @@
       font-size: 11px;
     }
 
-    /* CONTACT */
     .contact-grid {
       display: grid;
       gap: 14px;
@@ -618,23 +583,9 @@
       scroll-behavior: smooth;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 780px) {
       body {
         padding: 12px;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 20px 14px 18px;
-      }
-
-      .hero-main {
-        order: 1;
-      }
-
-      .hero-side {
-        order: 2;
       }
 
       .nav {
@@ -667,14 +618,14 @@
           <div class="nav-logo">BB</div>
           <div class="nav-brand">
             <span>BELLA BAY</span>
-            <span>Coiffure &amp; Extensions</span>
+            <span>Luxury Coiffure &amp; Beauty Bar</span>
           </div>
         </div>
 
         <div class="nav-links">
           <a href="#accueil">Accueil</a>
-          <a href="#services">Services</a>
-          <a href="#boutique">Boutique</a>
+          <a href="#services">Services &amp; tarifs</a>
+          <a href="#boutique">Boutique &amp; promos</a>
           <a href="#avis">Avis</a>
           <a href="#contact">Contact</a>
         </div>
@@ -691,13 +642,15 @@
     </header>
 
     <main>
-      <!-- ACCUEIL / HERO -->
+      <!-- HERO -->
       <section id="accueil" class="hero">
         <div class="hero-main">
           <div class="pill-status">
             <span class="pill-status-dot"></span>
-            <span>Ouvert – Rendez-vous uniquement</span>
+            <span>Ouvert – Rendez-vous uniquement (Laval &amp; environs)</span>
           </div>
+
+          <div class="hero-subtitle">Luxury Bella Bay</div>
 
           <h1>
             Transformations capillaires
@@ -706,10 +659,22 @@
           </h1>
 
           <p class="hero-text">
-            Coloration, mèches, brushing, extensions et coiffure sur mesure dans une ambiance
-            chaleureuse, lumineuse &amp; glamour. Les services sont actuellement
+            Coloration, mèches, traitements capillaires, extensions et beauty bar dans une ambiance chaleureuse,
+            lumineuse &amp; glamour. Les services sont actuellement
             <strong>offerts à domicile, sur rendez-vous</strong>, dans la région de Laval et environs.
           </p>
+
+          <div class="hero-events">
+            <strong>Besoin de te préparer pour une occasion spéciale ?</strong><br />
+            Bella Bay est là pour sublimer tes cheveux et ton look pour :
+            <ul>
+              <li>Événements &amp; soirées</li>
+              <li>Mariages (invitées &amp; mariée)</li>
+              <li>Anniversaires</li>
+              <li>Bal &amp; occasions spéciales</li>
+              <li>Ou tout autre moment important</li>
+            </ul>
+          </div>
 
           <div class="hero-actions">
             <a
@@ -721,114 +686,116 @@
               Réserver en ligne (Fresha)
             </a>
 
-            <a href="#boutique" class="btn btn-outline">
-              Voir la boutique Bella Bay
+            <a href="tel:+15145822856" class="btn btn-outline">
+              Appeler : 514-582-2856
             </a>
           </div>
 
           <p class="hero-note">
-            Pour toute question ou demande spéciale, n'hésitez pas à me contacter.  
-            Si vous avez des questions ou des commentaires, n'hésitez pas à les laisser en commentaire. Merci et au revoir.
+            Pour toute question ou demande spéciale (événements, mariages, groupes), tu peux aussi écrire par SMS ou courriel.
           </p>
-        </div>
-
-        <div class="hero-side">
-          <div class="hero-card">
-            <div class="hero-card-title">Ambiance Bella Bay</div>
-
-            <div class="hero-chip">
-              <div class="hero-chip-color"></div>
-              <div class="hero-chip-text">
-                <strong>Rose chic &amp; glamour</strong><br />
-                Reflets doux, lumière délicate, avec une touche de « mer rose » en arrière-plan.
-              </div>
-            </div>
-
-            <div class="hero-chip">
-              <div class="hero-chip-text">
-                <strong>Extensions &amp; transformations</strong><br />
-                Longueur, volume &amp; brillance, toujours avec un résultat naturel et élégant.
-              </div>
-            </div>
-
-            <div class="hero-bottom">
-              Chaque détail est pensé pour sublimer ta personnalité,
-              <span>sans surcharge ni compromis sur la qualité.</span>
-            </div>
-          </div>
         </div>
       </section>
 
-      <!-- SERVICES -->
+      <!-- SERVICES & TARIFS -->
       <section id="services">
         <div class="section-card">
-          <h2 class="section-title">Coiffure &amp; Extensions</h2>
+          <h2 class="section-title">Services &amp; tarifs coiffure</h2>
           <p class="section-subtitle">
-            Une sélection de services pour mettre en valeur ta couleur, ta texture et ton style,
-            dans un cadre intime et sur rendez-vous.
+            Tarifs principaux pour les services coiffure, traitements capillaires &amp; kératine Bella Bay.
           </p>
 
           <div class="services-grid">
             <div class="service-item">
               <div class="service-main">
+                <h3>Coupe femme</h3>
+                <p>Coupe sur mesure adaptée à ta morphologie et ton style.</p>
+              </div>
+              <div class="service-price">60&nbsp;$</div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-main">
+                <h3>Coloration racine</h3>
+                <p>Rafraîchissement des racines pour un résultat uniforme et propre.</p>
+              </div>
+              <div class="service-price">75&nbsp;$</div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-main">
                 <h3>Coloration complète</h3>
                 <p>Couleur uniforme, soin, séchage &amp; mise en forme légère.</p>
               </div>
-              <div class="service-price">à partir de 90&nbsp;$</div>
+              <div class="service-price">90&nbsp;$</div>
             </div>
 
             <div class="service-item">
               <div class="service-main">
                 <h3>Mèches / Balayage</h3>
-                <p>Reflets doux, effet soleil ou contraste plus marqué, selon ton envie.</p>
+                <p>Reflets doux ou contrastés, effet soleil selon ton envie.</p>
               </div>
-              <div class="service-price">à partir de 120&nbsp;$</div>
+              <div class="service-price">À partir de 120&nbsp;$</div>
             </div>
 
             <div class="service-item">
               <div class="service-main">
-                <h3>Brushing &amp; mise en plis</h3>
-                <p>Brushing lisse, wavy ou volumineux pour tes sorties &amp; événements.</p>
+                <h3>Gloss brillance</h3>
+                <p>Patine / gloss pour raviver l'éclat et la brillance de ta couleur.</p>
               </div>
-              <div class="service-price">40&nbsp;$</div>
+              <div class="service-price">35&nbsp;$</div>
             </div>
 
             <div class="service-item">
               <div class="service-main">
-                <h3>Transformations capillaires</h3>
-                <p>Changement de look complet (coupe, couleur, stylisation).</p>
+                <h3>Traitement capillaire</h3>
+                <p>Soin nourrissant pour redonner douceur, brillance &amp; force aux cheveux.</p>
               </div>
-              <div class="service-price">sur mesure</div>
+              <div class="service-price">35&nbsp;$</div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-main">
+                <h3>Massage capillaire</h3>
+                <p>Massage relaxant du cuir chevelu, idéal pour stimuler la circulation &amp; lâcher prise.</p>
+              </div>
+              <div class="service-price">20&nbsp;$</div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-main">
+                <h3>Traitement kératine</h3>
+                <p>Lissage &amp; soin en profondeur pour des cheveux plus doux, brillants &amp; disciplinés.</p>
+              </div>
+              <div class="service-price">À partir de 260&nbsp;$</div>
             </div>
 
             <p class="service-note">
-              Les déplacements se font actuellement
-              <strong>à domicile, sur rendez-vous</strong>.
-              Le tarif final peut varier selon la longueur, l’épaisseur et la technique choisie.
+              Les services sont offerts <strong>sur rendez-vous uniquement</strong>, actuellement à domicile dans la région de Laval.
+              Le prix final peut varier selon la longueur, l’épaisseur et la technique utilisée.  
+              Pour des forfaits événements / mariages, n’hésite pas à demander un devis personnalisé.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- BOUTIQUE -->
+      <!-- BOUTIQUE & PROMOS -->
       <section id="boutique">
         <div class="section-card">
-          <h2 class="section-title">Boutique Bella Bay</h2>
+          <h2 class="section-title">Boutique Bella Bay &amp; Spécial des Fêtes</h2>
           <p class="section-subtitle">
-            Extensions capillaires, press-on nails et cils à bande, sélectionnés pour compléter
-            ton look Bella Bay.
+            Extensions capillaires, cils volume 3D et ongles press-on pour compléter ton look Bella Bay.
           </p>
 
           <div class="boutique-grid">
-            <!-- Extensions adhésives -->
             <article class="product-card">
               <div class="product-header">
                 <div class="product-title">Extensions adhésives Bella Bay</div>
-                <div class="product-price">À partir de 120&nbsp;$</div>
+                <div class="product-price">99&nbsp;$ – 190&nbsp;$</div>
               </div>
               <p class="product-desc">
-                Extensions adhésives de qualité salon, effet naturel, idéales pour ajouter
-                longueur &amp; densité. Nuances naturelles : noir, brun, chocolat, blond.
+                Extensions adhésives de qualité salon, effet ultra naturel.
+                Idéales pour ajouter longueur &amp; densité. Nuances naturelles : noir, brun, chocolat, blond.
               </p>
               <div class="product-actions">
                 <button class="btn-chip" type="button">
@@ -840,15 +807,14 @@
               </div>
             </article>
 
-            <!-- Extensions à clips -->
             <article class="product-card">
               <div class="product-header">
                 <div class="product-title">Extensions à clips Bella Bay</div>
-                <div class="product-price">À partir de 110&nbsp;$</div>
+                <div class="product-price">75&nbsp;$ – 350&nbsp;$</div>
               </div>
               <p class="product-desc">
-                Extensions à clips réutilisables, faciles à poser et retirer, parfaites pour
-                occasions spéciales ou looks temporaires.
+                Extensions à clips réutilisables, faciles à poser et retirer,
+                parfaites pour événements, shootings ou looks temporaires.
               </p>
               <div class="product-actions">
                 <button class="btn-chip" type="button">
@@ -860,32 +826,14 @@
               </div>
             </article>
 
-            <!-- Extensions kératine -->
             <article class="product-card">
               <div class="product-header">
-                <div class="product-title">Extensions kératine (mèches)</div>
-                <div class="product-price">Sur consultation</div>
+                <div class="product-title">Cils volume 3D</div>
+                <div class="product-price">24,99&nbsp;$</div>
               </div>
               <p class="product-desc">
-                Mèches kératine pour une tenue longue durée. Pose et entretien à discuter
-                selon ta chevelure &amp; ton objectif.
-              </p>
-              <div class="product-actions">
-                <button class="btn-chip" type="button">
-                  <span class="dot"></span> Info &amp; devis par message
-                </button>
-              </div>
-            </article>
-
-            <!-- Press-on nails -->
-            <article class="product-card">
-              <div class="product-header">
-                <div class="product-title">Press-on nails Bella Bay</div>
-                <div class="product-price">À partir de 35&nbsp;$</div>
-              </div>
-              <p class="product-desc">
-                Ongles press-on stylés, formes modernes (coffin, almond, carré),
-                longueurs de court à XL, styles nude, french ou glamour.
+                Cils volume 3D pour un regard intense &amp; glamour.
+                Idéal pour soirées, photos, événements &amp; occasions spéciales.
               </p>
               <div class="product-actions">
                 <button class="btn-chip" type="button">
@@ -897,15 +845,15 @@
               </div>
             </article>
 
-            <!-- Cils à bande -->
             <article class="product-card">
               <div class="product-header">
-                <div class="product-title">Cils à bande (classique, volume, russe)</div>
-                <div class="product-price">À partir de 20&nbsp;$</div>
+                <div class="product-title">Ongles press-on Bella Bay</div>
+                <div class="product-price">2 pour 35,99&nbsp;$</div>
               </div>
               <p class="product-desc">
-                Cils à bande à coller soi-même (non service professionnel).
-                Styles classique, volume et russe pour adapter l’intensité du regard.
+                Press-on nails glam, formes modernes (coffin, almond, carré),
+                du nude chic au full glam.  
+                <strong>Spécial des Fêtes :</strong> 2 ensembles pour seulement <strong>35,99&nbsp;$</strong>.
               </p>
               <div class="product-actions">
                 <button class="btn-chip" type="button">
@@ -916,6 +864,12 @@
                 </button>
               </div>
             </article>
+          </div>
+
+          <div class="promo-box">
+            <span class="promo-label">Spécial des Fêtes</span>
+            Prépare-toi pour Noël, le Jour de l’An, les partys d’entreprise et les soirées entre amies :
+            <strong>ongles press-on 2 pour 35,99&nbsp;$</strong> + options extensions &amp; cils pour un look 100% Bella Bay.
           </div>
 
           <p class="boutique-note">
@@ -968,10 +922,10 @@
       <!-- CONTACT -->
       <section id="contact">
         <div class="section-card">
-          <h2 class="section-title">Contact &amp; Réservation</h2>
+          <h2 class="section-title">Contact &amp; réservation</h2>
           <p class="section-subtitle">
-            Pour prendre rendez-vous ou poser une question, utilise le mode de contact
-            qui te convient le mieux.
+            Pour prendre rendez-vous, réserver pour un événement ou poser une question,
+            utilise le mode de contact qui te convient le mieux.
           </p>
 
           <div class="contact-grid">
@@ -979,9 +933,9 @@
               <div class="contact-label">Téléphone &amp; SMS</div>
               <div class="contact-main">
                 <strong>Tél. :</strong>
-                <a href="tel:+14506005412">(450) 600-5412</a><br />
+                <a href="tel:+15145822856">514-582-2856</a><br />
                 <strong>SMS :</strong>
-                <a href="sms:+14506005412">Envoyer un message texte</a>
+                <a href="sms:+15145822856">Envoyer un message texte</a>
               </div>
             </div>
 
@@ -1022,7 +976,7 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Bella Bay – Coiffure &amp; Extensions.
+      © <span id="year"></span> Bella Bay – Luxury Coiffure &amp; Beauty Bar, Laval.
       Site vitrine et boutique en développement.  
       Pour toute collaboration ou projet, écris à
       <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a>.
@@ -1030,7 +984,6 @@
   </div>
 
   <script>
-    // Année automatique dans le footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
