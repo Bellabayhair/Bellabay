@@ -2,317 +2,950 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Bella Bay - Luxury Coiffure & Beauty Bar</title>
+  <title>BellaBay - Luxury Coiffure & Beauty Bar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bella Bay - Luxury Coiffure & Beauty Bar à Laval. Coloration, mèches, traitements capillaires, extensions, beauty bar et services événements sur rendez-vous." />
+  <meta
+    name="description"
+    content="BellaBay - Luxury Coiffure & Beauty Bar à Laval. Transformations capillaires, coloration, mèches, traitements, extensions premium, cils, ongles et produits Redken & L'Oréal Professionnel."
+  />
+
+  <!-- Fonts élégantes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+    :root {
+      --rose-soft: #ffe5f1;
+      --rose-poudre: #f9c5d5;
+      --rose-fonce: #e58fb6;
+      --or-soft: #f6e0b5;
+      --texte-principal: #221722;
+      --fond-carte: #ffffff;
+      --ombre-carte: 0 10px 30px rgba(0, 0, 0, 0.09);
+      --rayon: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.5;
-      color: #222;
-      background: #fff7fb;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--texte-principal);
+      background: radial-gradient(circle at top left, #fff0f7 0, #ffeaf3 25%, #fbd3e0 55%, #f6c0da 100%);
+      min-height: 100vh;
+    }
+
+    /* texture douce */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 0);
+      background-size: 120px 120px;
+      opacity: 0.35;
+      z-index: -1;
     }
 
     header {
-      background: linear-gradient(135deg, #f19ac3, #f6c4de);
+      padding: 0.5rem 1.5rem 0.5rem;
+    }
+
+    .promo-top {
+      background: linear-gradient(90deg, #4b243a, #a84f7e);
       color: #fff;
-      padding: 1rem 1.5rem 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 0.45rem 0.5rem;
+    }
+
+    .promo-top span {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .promo-top small {
+      opacity: 0.95;
+      margin-left: 0.5rem;
     }
 
     .top-bar {
+      max-width: 1080px;
+      margin: 0.6rem auto 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
-    }
-
-    .logo {
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      font-size: 0.95rem;
     }
 
     nav a {
-      margin-left: 0.75rem;
+      margin-left: 1rem;
       text-decoration: none;
       font-size: 0.9rem;
-      color: #fff;
-      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #4b2a3b;
     }
 
     nav a:hover {
-      opacity: 1;
       text-decoration: underline;
     }
 
-    .hero {
-      margin-top: 1.5rem;
-      max-width: 900px;
+    .brand-block {
+      max-width: 1080px;
+      margin: 0.5rem auto 0;
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
     }
 
-    .hero h1 {
-      font-size: 1.9rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero p {
-      margin: 0.35rem 0;
-    }
-
-    .hero-buttons {
-      margin-top: 1rem;
+    .logo-circle {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 0.75rem;
+      border-radius: 50%;
+      background: conic-gradient(from 150deg, #fdf5ff, #f3c3da, #f8e3f2, #f7d0df, #fdf5ff);
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
       align-items: center;
+      justify-content: center;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn-main {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      border-radius: 999px;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
+    .logo-circle::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.7);
+    }
+
+    .logo-text {
+      position: relative;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.1rem;
+      color: #4b243a;
+      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    .brand-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0.25rem 0 0.15rem;
+    }
+
+    .brand-subtitle {
       font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #5f3446;
     }
 
-    .btn-main:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      padding: 0.6rem 1.3rem;
+    .badge-luxury {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      margin-top: 0.9rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f3b0cf, #f6e0b5);
     }
 
     main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 3rem 1.25rem;
-      background: #fff;
+      max-width: 1080px;
+      margin: 0 auto 3rem;
+      padding: 0 1.25rem 2.5rem;
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-top: 2.25rem;
     }
 
-    h2 {
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
       font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 2px solid #f3c1dd;
-      display: inline-block;
-      padding-bottom: 0.2rem;
+      margin: 0;
+      position: relative;
+      padding-bottom: 0.3rem;
     }
 
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      margin-bottom: 0.25rem;
-      color: #333;
+    .section-header h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 72px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f3b0cf, #f6e0b5);
     }
 
-    .price {
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .small-note {
+    .section-header p {
+      margin: 0;
       font-size: 0.9rem;
-      color: #555;
+      color: #5a3a4a;
+      max-width: 420px;
     }
 
-    .boutique-item {
-      border: 1px solid #f5d4e7;
-      border-radius: 1rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: #fff9fd;
+    .card {
+      background: radial-gradient(circle at top left, #fff9fe 0, #ffffff 40%, #ffeef8 100%);
+      border-radius: var(--rayon);
+      box-shadow: var(--ombre-carte);
+      padding: 1.5rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.85), transparent);
+      right: -80px;
+      top: -60px;
+      opacity: 0.75;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 1px solid rgba(243, 176, 207, 0.5);
+      left: -60px;
+      bottom: -40px;
+      opacity: 0.7;
+    }
+
+    .promo-ribbon {
+      margin-top: 1.2rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #4b243a, #a64b7a);
+      color: #fff;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .promo-ribbon span {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
     }
 
     .fresha-cta {
-      text-align: center;
-      margin: 2.5rem 0 1.5rem 0;
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
     }
 
-    .fresha-cta a {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
+    .btn-fresha {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.9rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, #f19ac3, #f6c4de);
+      border: none;
+      background: linear-gradient(135deg, #4b243a, #a84f7e);
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      letter-spacing: 0.03em;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      box-shadow: 0 12px 26px rgba(75, 36, 58, 0.35);
     }
 
-    .fresha-cta a:hover {
+    .btn-fresha small {
+      font-size: 0.7rem;
+      font-weight: 500;
       opacity: 0.9;
+    }
+
+    .btn-fresha:hover {
       transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      color: #5a3a4a;
+      max-width: 300px;
+    }
+
+    .boutique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .boutique-item {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      box-shadow: var(--ombre-carte);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .boutique-media {
+      height: 150px;
+      background: radial-gradient(circle at top left, #fbe1ee, #f7c6da, #f3b0cf);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .boutique-media::after {
+      content: "";
+      position: absolute;
+      inset: 15%;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.9);
+    }
+
+    .boutique-body {
+      padding: 1rem 1.1rem 1.1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .boutique-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .boutique-price {
+      font-weight: 700;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .boutique-text {
+      font-size: 0.85rem;
+      margin: 0.25rem 0 0.4rem;
+      color: #654056;
+    }
+
+    .boutique-note {
+      font-size: 0.78rem;
+      color: #7a5067;
+      margin-top: auto;
+    }
+
+    .promo-banner {
+      margin-top: 1.4rem;
+      padding: 0.85rem 1rem;
+      border-radius: 18px;
+      background: linear-gradient(90deg, #4b243a, #c25f92);
+      color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.86rem;
+    }
+
+    .promo-tag {
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .avis-list h3 {
+      margin-bottom: 0.15rem;
+      font-size: 0.98rem;
+    }
+
+    .avis-list p {
+      margin-top: 0;
+      font-size: 0.85rem;
+      color: #5a3a4a;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .contact-block {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      box-shadow: var(--ombre-carte);
+      font-size: 0.9rem;
+    }
+
+    .galerie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .galerie-item {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      box-shadow: var(--ombre-carte);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .galerie-photo {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .galerie-caption {
+      padding: 0.8rem 0.9rem 0.9rem;
+      font-size: 0.85rem;
+      color: #5a3a4a;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.35rem 0 0.7rem;
+      font-size: 0.86rem;
+    }
+
+    a {
+      color: #9b3f77;
     }
 
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      padding: 1.5rem 1rem 2rem 1rem;
-      color: #666;
+      font-size: 0.8rem;
+      padding: 1.5rem 1rem 2.3rem;
+      color: #5f3b4f;
     }
 
-    @media (max-width: 640px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
+    @media (max-width: 680px) {
       nav {
-        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+      }
+      nav a {
+        margin: 0 0.4rem;
+        font-size: 0.8rem;
+      }
+      .brand-title {
+        font-size: 1.3rem;
+        letter-spacing: 0.12em;
+      }
+      .brand-subtitle {
+        letter-spacing: 0.18em;
+        font-size: 0.8rem;
+      }
+      main {
+        padding-inline: 1rem;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 0.75rem;
+      table {
+        font-size: 0.85rem;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
+    <div class="promo-top">
+      <span>Code promo</span>
+      <small>FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration (en salon)</small>
+    </div>
+
     <div class="top-bar">
-      <div class="logo">BB</div>
+      <div></div>
       <nav>
-        <a href="#accueil">Accueil</a>
         <a href="#services">Services & tarifs</a>
+        <a href="#apropos">À propos</a>
         <a href="#boutique">Boutique</a>
+        <a href="#galerie">Galerie</a>
         <a href="#avis">Avis</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
-    <div class="hero" id="accueil">
-      <h1>Bella Bay — Luxury Coiffure & Beauty Bar</h1>
-      <p>Coloration, mèches, soins, extensions, transformations glamour & événements.</p>
-
-      <div class="hero-buttons">
-        <a href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-           target="_blank"
-           class="btn-main">
-           Réserver en ligne (Fresha)
-        </a>
-
-        <a href="tel:15145822856" class="btn-secondary">514-582-2856</a>
+    <div class="brand-block" id="accueil">
+      <div class="logo-circle">
+        <div class="logo-text">BB</div>
+      </div>
+      <div class="brand-title">BellaBay</div>
+      <div class="brand-subtitle">Luxury Coiffure &amp; Beauty Bar</div>
+      <div class="badge-luxury">
+        <span class="badge-dot"></span> Transformations capillaires &amp; beauty bar · Laval
       </div>
     </div>
   </header>
 
   <main>
-
-    <!-- SERVICES -->
+    <!-- SERVICES & TARIFS -->
     <section id="services">
-      <h2>Services & Tarifs</h2>
+      <div class="section-header">
+        <h2>Services &amp; tarifs</h2>
+        <p>
+          Voici la liste principale des services BellaBay. Les prix peuvent varier selon la longueur,
+          l’épaisseur et la technique. Les détails par catégorie seront développés avec photos avant / après.
+        </p>
+      </div>
 
-      <h3>Coupe femme</h3>
-      <p class="price">50 $</p>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead>
+              <tr style="background:rgba(243,176,207,0.18);">
+                <th style="text-align:left; padding:0.6rem 0.5rem; border-bottom:1px solid rgba(0,0,0,0.06);">
+                  Service
+                </th>
+                <th style="text-align:right; padding:0.6rem 0.5rem; border-bottom:1px solid rgba(0,0,0,0.06);">
+                  Tarif
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Consultation capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coupe femme</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">60&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Brushing</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coloration de base</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coloration complète</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">90&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Mèches / Balayage</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 120&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions adhésives (Tape-in)</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">99&nbsp;$ – 190&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions clip-in</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$ – 350&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions kératine – fusion</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 190&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Traitement capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">35&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Massage capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Shampoing ultraviolet (cheveux blancs)</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">15&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Effet texturisant</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Enlever de la masse / réduire le volume</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h3>Brushing</h3>
-      <p class="price">40 $</p>
+        <p style="margin-top:0.8rem; font-size:0.86rem;">
+          Chaque catégorie (coloration, balayage, extensions, soins) pourra être détaillée avec photos
+          avant / après et explications professionnelles. Les conseils maison détaillés sont offerts
+          uniquement en consultation capillaire (50&nbsp;$).
+        </p>
 
-      <h3>Coloration de base</h3>
-      <p class="price">75 $</p>
+        <div class="promo-ribbon">
+          <span>Promos du moment</span>
+          FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration (à mentionner lors de la réservation).
+        </div>
 
-      <h3>Coloration complète</h3>
-      <p class="price">90 $</p>
-
-      <h3>Mèches / Balayage</h3>
-      <p class="price">À partir de 120 $</p>
-
-      <h3>Extensions adhésives</h3>
-      <p class="price">99–190 $</p>
-
-      <h3>Extensions clip-in</h3>
-      <p class="price">75–350 $</p>
-
-      <h3>Kératine</h3>
-      <p class="price">À partir de 260 $</p>
-
-      <h3>Traitement capillaire</h3>
-      <p class="price">35 $</p>
-
-      <h3>Massage capillaire</h3>
-      <p class="price">20 $</p>
+        <div class="fresha-cta">
+          <a
+            href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
+            target="_blank"
+            rel="noopener"
+            class="btn-fresha"
+          >
+            Réserver sur Fresha
+            <small>Voir les durées &amp; détails des services</small>
+          </a>
+          <p class="cta-note">
+            Les paiements et dépôts pour les services se font directement via Fresha, de façon simple et sécurisée.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- BOUTIQUE -->
+    <!-- À PROPOS / MON STYLE -->
+    <section id="apropos">
+      <div class="section-header">
+        <h2>À propos de BellaBay</h2>
+        <p>
+          Un beauty bar intime et féminin, dédié aux transformations capillaires et au soin du détail.
+        </p>
+      </div>
+
+      <div class="card">
+        <p style="font-size:0.95rem;">
+          Je m’appelle Samira, fondatrice de <strong>BellaBay</strong>. Ma passion, c’est tout ce qui touche
+          à la coiffure : couleurs, balayage, extensions et soins profonds qui transforment vraiment la chevelure.
+        </p>
+        <p style="font-size:0.95rem;">
+          Mon style, c’est une approche douce, glamour et structurée : chaque look est pensé pour te sublimer,
+          respecter ta fibre capillaire et te faire ressortir confiante et transformée. Je travaille avec des
+          produits professionnels comme <strong>Redken</strong> et <strong>L’Oréal Professionnel</strong>, ainsi
+          qu’une sélection d’extensions premium en longueurs 22", 24" et l’exclusif 26" BellaBay.
+        </p>
+        <p style="font-size:0.95rem;">
+          Que ce soit pour une simple mise en beauté, une transformation complète, un événement ou une pose
+          d’extensions, mon objectif est que chaque rendez-vous devienne un moment dont tu te souviendras,
+          avec des résultats qui se voient sur les photos comme dans la vraie vie.
+        </p>
+        <p style="font-size:0.85rem; margin-top:0.9rem;">
+          Situé à Laval, BellaBay offre actuellement des services sur rendez-vous, à domicile ou en déplacement,
+          selon le type de prestation.
+        </p>
+      </div>
+    </section>
+
+    <!-- BOUTIQUE EXTENSIONS & PRODUITS -->
     <section id="boutique">
-      <h2>Boutique Bella Bay</h2>
-
-      <div class="boutique-item">
-        <h3>Extensions adhésives</h3>
-        <p class="price">99–190 $</p>
-        <p>Qualité premium, effet naturel, plusieurs couleurs disponibles.</p>
+      <div class="section-header">
+        <h2>Boutique BellaBay</h2>
+        <p>
+          Extensions professionnelles (22"&nbsp;·&nbsp;24"&nbsp;·&nbsp;26"), cils, ongles et produits capillaires
+          Redken &amp; L’Oréal Professionnel, sélectionnés pour sublimer et protéger tes cheveux.
+        </p>
       </div>
 
-      <div class="boutique-item">
-        <h3>Extensions clip-in</h3>
-        <p class="price">75–350 $</p>
+      <div class="boutique-grid">
+        <!-- Tape-in -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/tapein-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Extensions adhésives – Tape-in (22" · 24" · 26")</h3>
+            <p class="boutique-price">99&nbsp;$ – 190&nbsp;$</p>
+            <p class="boutique-text">
+              Extensions professionnelles en cheveux 100&nbsp;% humains, pose invisible et ultra-confortable.
+              Longueurs 
+              </p>
+            <p class="boutique-note">
+              Idéales pour volume + longueur. Tenue 6–8 semaines.
+              Pour commander : sélectionnez “Extensions Tape-in” lors de la réservation Fresha.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clip-in -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/clipin-studio.jpg'); background-size:cover; background-position:center;">
+          </div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Extensions clip-in (22" · 24" · 26")</h3>
+            <p class="boutique-price">75&nbsp;$ – 350&nbsp;$</p>
+            <p class="boutique-text">
+              Extensions réutilisables parfaites pour photoshoots, soirées, mariages et transformations
+              instantanées. Volume immédiat, effet studio.
+            </p>
+            <p class="boutique-note">
+              Longueurs 22", 24" et 26".  
+              Couleurs confirmées en consultation (50&nbsp;$).
+            </p>
+          </div>
+        </article>
+
+        <!-- Extensions Kératine -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/keratine-studio.jpg'); background-size:cover; background-position:center;">
+          </div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Extensions kératine – Fusion</h3>
+            <p class="boutique-price">À partir de 190&nbsp;$</p>
+            <p class="boutique-text">
+              Pose par fusion kératine pour un résultat longue durée, ultra naturel et résistant.
+              Cheveux 100 % humains, qualité premium.
+            </p>
+            <p class="boutique-note">
+              Consultation obligatoire : longueur, couleur, densité (50&nbsp;$ – crédit appliqué si pose réalisée).
+            </p>
+          </div>
+        </article>
+
+        <!-- Cils 3D -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/cils-3d-studio.jpg'); background-size:cover; background-position:center;">
+          </div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Cils volume 3D BellaBay</h3>
+            <p class="boutique-price">24,99&nbsp;$</p>
+            <p class="boutique-text">
+              Cils effet volume pour un regard intense et glamour. Fini léger et confortable.
+            </p>
+            <p class="boutique-note">
+              Disponible en plusieurs modèles. Ajouter lors de la réservation ou via SMS.
+            </p>
+          </div>
+        </article>
+
+        <!-- Ongles press-on -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/ongles-presson-studio.jpg'); background-size:cover; background-position:center;">
+          </div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Ongles press-on BellaBay</h3>
+            <p class="boutique-price">2 pour 35,99&nbsp;$</p>
+            <p class="boutique-text">
+              Ongles press-on premium, formes modernes (coffin, almond, carré). Nude chic ou full glam.
+            </p>
+            <p class="boutique-note">
+              Modèles confirmés en messages privés ou consultation.
+            </p>
+          </div>
+        </article>
+
+        <!-- Produits Redken / L'Oréal -->
+        <article class="boutique-item">
+          <div
+            class="boutique-media"
+            style="background-image:url('images/redken-loreal-studio.jpg'); background-size:cover; background-position:center;">
+          </div>
+          <div class="boutique-body">
+            <h3 class="boutique-title">Produits Redken & L’Oréal Professionnel</h3>
+            <p class="boutique-price">Sur recommandation · Consultation 50&nbsp;$</p>
+            <p class="boutique-text">
+              Produits professionnels utilisés en salon : Redken (base BellaBay) et L’Oréal Professionnel.
+              Parfaits pour protéger la fibre et prolonger la coloration.
+            </p>
+            <p class="boutique-note">
+              Disponibles après recommandation personnalisée selon ton type de cheveux.
+            </p>
+          </div>
+        </article>
       </div>
 
-      <div class="boutique-item">
-        <h3>Cils 3D Volume</h3>
-        <p class="price">24,99 $</p>
-      </div>
-
-      <div class="boutique-item">
-        <h3>Press-on nails</h3>
-        <p class="price">2 pour 35,99 $</p>
+      <div class="promo-banner">
+        <div class="promo-tag">Promos extensions &amp; couleur</div>
+        FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration (sur Fresha).
       </div>
     </section>
 
-    <!-- CTA FRESHA -->
-    <div class="fresha-cta">
-      <a href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
-         target="_blank">
-         Réserver & payer avec Fresha
-      </a>
-    </div>
+    <!-- PRODUITS PROFESSIONNELS -->
+    <section id="produits-pro">
+      <div class="section-header">
+        <h2>Produits professionnels utilisés</h2>
+        <p>
+          Produits sélectionnés pour préserver la santé du cheveu et maximiser la brillance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Gamme capillaire Redken (base BellaBay)</h3>
+        <p>
+          Redken est utilisé pour tous les lavages, soins et protocoles techniques.
+        </p>
+        <ul>
+          <li>Respect optimal de la fibre</li>
+          <li>Résultats durables après coloration & balayage</li>
+          <li>Adapté aux cheveux blonds, colorés ou sensibilisés</li>
+        </ul>
+
+        <h3>Complément L’Oréal Professionnel</h3>
+        <p>
+          Soins ciblés pour réparation, hydratation et protection couleur.
+        </p>
+
+        <p style="font-size:0.85rem;">
+          Routine maison disponible après consultation professionnelle (50&nbsp;$).
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie">
+      <div class="section-header">
+        <h2>Galerie d’inspiration</h2>
+        <p>
+          Aperçu des transformations possibles : balayage, coloration, extensions, volume.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="galerie-grid">
+          <div class="galerie-item">
+            <div class="galerie-photo" style="background-image:url('images/galerie-coloration-complete.jpg');"></div>
+            <div class="galerie-caption">
+              Coloration complète lumineuse, finition brillante.
+            </div>
+          </div>
+
+          <div class="galerie-item">
+            <div class="galerie-photo" style="background-image:url('images/galerie-balayage.jpg');"></div>
+            <div class="galerie-caption">
+              Balayage caramel/miel avec effet soleil.
+            </div>
+          </div>
+
+          <div class="galerie-item">
+            <div class="galerie-photo" style="background-image:url('images/galerie-extensions-26.jpg');"></div>
+            <div class="galerie-caption">
+              Extensions 26" BellaBay – volume & longueur maximaux.
+            </div>
+          </div>
+
+          <div class="galerie-item">
+            <div class="galerie-photo" style="background-image:url('images/galerie-volume-keratine.jpg');"></div>
+            <div class="galerie-caption">
+              Lissage & volume avec traitement kératine.
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.82rem; margin-top:1rem;">
+          Les photos réelles de tes clientes seront ajoutées au fur et à mesure.
+        </p>
+      </div>
+    </section>
 
     <!-- AVIS -->
     <section id="avis">
-      <h2>Avis Clients</h2>
+      <div class="section-header">
+        <h2>Avis clients</h2>
+        <p>Témoignages authentiques de clientes satisfaites.</p>
+      </div>
 
-      <h3>Sarah ★★★★★</h3>
-      <p>Résultat incroyable, service professionnel.</p>
+      <div class="card avis-list">
+        <h3>Sarah ★★★★★</h3>
+        <p>Mèches parfaites, couleur lumineuse, service exceptionnel.</p>
 
-      <h3>Nadia ★★★★★</h3>
-      <p>Extensions super naturelles, je recommande !</p>
+        <h3>Nadia ★★★★★</h3>
+        <p>Extensions adhésives très naturelles. Travail propre et soigné.</p>
+
+        <h3>Julie ★★★★★</h3>
+        <p>Douce, professionnelle et à l’écoute. Transformation réussie!</p>
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Tél : <a href="tel:15145822856">514-582-2856</a></p>
-      <p>Email : <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
-      <p>Instagram : <a href="https://www.instagram.com/bellah.bay">@bellah.bay</a></p>
+      <div class="section-header">
+        <h2>Contact & réservation</h2>
+        <p>Pour rendez-vous, événements, questions ou déplacements.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-block">
+          <h3>Réservation Fresha</h3>
+          <p>
+            <a href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank">
+              Réserver via Fresha
+            </a>
+          </p>
+          <p>Tél. / SMS : <a href="tel:15145822856">514-582-2856</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Courriel & réseaux</h3>
+          <p>Email : <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
+          <p>Instagram :
+            <a href="https://www.instagram.com/bellah.bay" target="_blank">@bellah.bay</a>
+          </p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Horaires</h3>
+          <ul>
+            <li>Lundi : Fermé</li>
+            <li>Mardi : 10h – 17h</li>
+            <li>Mercredi : 10h – 17h</li>
+            <li>Jeudi : 9h – 17h</li>
+            <li>Vendredi : 9h – 17h</li>
+            <li>Samedi : 10h – 17h</li>
+            <li>Dimanche : Fermé</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    © 2025 Bella Bay – Luxury Coiffure & Beauty Bar (Laval)
+    © BellaBay – Luxury Coiffure & Beauty Bar, Laval. Tous droits réservés.
   </footer>
+
 </body>
-                              </html>
+</html>
