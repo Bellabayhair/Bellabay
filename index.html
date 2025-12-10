@@ -347,7 +347,7 @@
     }
 
     .boutique-body {
-      padding: 1rem 1.1rem 1.1rem;
+      padding: 1rem 1.1rem 1.2rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -376,6 +376,7 @@
       font-size: 0.78rem;
       color: #7a5067;
       margin-top: auto;
+      margin-bottom: 0.6rem;
     }
 
     .promo-banner {
@@ -398,6 +399,30 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
+    }
+
+    .btn-boutique {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #4b243a, #a84f7e);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      margin-top: 0.2rem;
+      align-self: flex-start;
+      box-shadow: 0 8px 18px rgba(75, 36, 58, 0.28);
+    }
+
+    .btn-boutique:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
     }
 
     .avis-list h3 {
@@ -499,8 +524,8 @@
 <body>
   <header>
     <div class="promo-top">
-      <span>Code promo</span>
-      <small>FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration (en salon)</small>
+      <span>Codes promo</span>
+      <small>FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration · Livraison gratuite dès 75&nbsp;$ sur la boutique en ligne</small>
     </div>
 
     <div class="top-bar">
@@ -677,8 +702,8 @@
       <div class="section-header">
         <h2>Boutique BellaBay</h2>
         <p>
-          Extensions professionnelles (22"&nbsp;·&nbsp;24"&nbsp;·&nbsp;26"), cils, ongles et produits capillaires
-          Redken &amp; L’Oréal Professionnel, sélectionnés pour sublimer et protéger tes cheveux.
+          Extensions professionnelles, cils, ongles et accessoires sélectionnés avec soin.  
+          Commande en ligne via notre boutique sécurisée · <strong>Livraison gratuite dès 75&nbsp;$</strong>.
         </p>
       </div>
 
@@ -690,16 +715,23 @@
             style="background-image:url('images/tapein-studio.jpg'); background-size:cover; background-position:center;"
           ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Extensions adhésives – Tape-in (22" · 24" · 26")</h3>
+            <h3 class="boutique-title">Extensions adhésives – Tape-in BellaBay™</h3>
             <p class="boutique-price">99&nbsp;$ – 190&nbsp;$</p>
             <p class="boutique-text">
               Extensions professionnelles en cheveux 100&nbsp;% humains, pose invisible et ultra-confortable.
-              Longueurs 
-              </p>
-            <p class="boutique-note">
-              Idéales pour volume + longueur. Tenue 6–8 semaines.
-              Pour commander : sélectionnez “Extensions Tape-in” lors de la réservation Fresha.
+              Longueurs disponibles : 22", 24" et l’exclusif 26" BellaBay.
             </p>
+            <p class="boutique-note">
+              Idéales pour volume + longueur longue durée. Pose possible au Beauty Bar BellaBay.
+            </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/products/extensions-tape-in-bellabay"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Acheter en ligne
+            </a>
           </div>
         </article>
 
@@ -707,38 +739,53 @@
         <article class="boutique-item">
           <div
             class="boutique-media"
-            style="background-image:url('images/clipin-studio.jpg'); background-size:cover; background-position:center;">
-          </div>
+            style="background-image:url('images/clipin-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Extensions clip-in (22" · 24" · 26")</h3>
+            <h3 class="boutique-title">Extensions clip-in BellaBay™</h3>
             <p class="boutique-price">75&nbsp;$ – 350&nbsp;$</p>
             <p class="boutique-text">
-              Extensions réutilisables parfaites pour photoshoots, soirées, mariages et transformations
-              instantanées. Volume immédiat, effet studio.
+              Extensions réutilisables, parfaites pour soirées, mariages, photoshoots et transformations
+              instantanées. Effet studio, volume et longueur immédiats.
             </p>
             <p class="boutique-note">
-              Longueurs 22", 24" et 26".  
-              Couleurs confirmées en consultation (50&nbsp;$).
+              Longueurs 22", 24" et 26". Modèles et teintes confirmés lors de la commande ou en consultation.
             </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/products/extensions-clip-in-bellabay"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Acheter en ligne
+            </a>
           </div>
         </article>
 
-        <!-- Extensions Kératine -->
+        <!-- Kératine -->
         <article class="boutique-item">
           <div
             class="boutique-media"
-            style="background-image:url('images/keratine-studio.jpg'); background-size:cover; background-position:center;">
-          </div>
+            style="background-image:url('images/keratine-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Extensions kératine – Fusion</h3>
+            <h3 class="boutique-title">Extensions kératine – Fusion BellaBay™</h3>
             <p class="boutique-price">À partir de 190&nbsp;$</p>
             <p class="boutique-text">
-              Pose par fusion kératine pour un résultat longue durée, ultra naturel et résistant.
-              Cheveux 100 % humains, qualité premium.
+              Pose par fusion kératine pour un résultat ultra-naturel et longue durée. Cheveux 100 % humains,
+              qualité premium, effet salon.
             </p>
             <p class="boutique-note">
-              Consultation obligatoire : longueur, couleur, densité (50&nbsp;$ – crédit appliqué si pose réalisée).
+              Consultation obligatoire (50&nbsp;$ – créditée si la pose est réalisée).
             </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/products/extensions-keratine-bellabay"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Acheter en ligne
+            </a>
           </div>
         </article>
 
@@ -746,17 +793,25 @@
         <article class="boutique-item">
           <div
             class="boutique-media"
-            style="background-image:url('images/cils-3d-studio.jpg'); background-size:cover; background-position:center;">
-          </div>
+            style="background-image:url('images/cils-3d-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Cils volume 3D BellaBay</h3>
+            <h3 class="boutique-title">Cils volume 3D BellaBay™</h3>
             <p class="boutique-price">24,99&nbsp;$</p>
             <p class="boutique-text">
-              Cils effet volume pour un regard intense et glamour. Fini léger et confortable.
+              Cils volume 3D pour un regard intense et glamour, parfaits pour photos, soirées et événements.
             </p>
             <p class="boutique-note">
-              Disponible en plusieurs modèles. Ajouter lors de la réservation ou via SMS.
+              Disponibles en plusieurs styles. À ajouter à ta commande en ligne ou lors de la réservation.
             </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/products/cils-3d-bellabay"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Acheter en ligne
+            </a>
           </div>
         </article>
 
@@ -764,17 +819,25 @@
         <article class="boutique-item">
           <div
             class="boutique-media"
-            style="background-image:url('images/ongles-presson-studio.jpg'); background-size:cover; background-position:center;">
-          </div>
+            style="background-image:url('images/ongles-presson-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Ongles press-on BellaBay</h3>
+            <h3 class="boutique-title">Ongles press-on BellaBay™</h3>
             <p class="boutique-price">2 pour 35,99&nbsp;$</p>
             <p class="boutique-text">
-              Ongles press-on premium, formes modernes (coffin, almond, carré). Nude chic ou full glam.
+              Ongles press-on premium, formes modernes (coffin, almond, carré) du nude chic au full glam.
             </p>
             <p class="boutique-note">
-              Modèles confirmés en messages privés ou consultation.
+              Idéals pour compléter ton look BellaBay. Modèles confirmés en ligne ou en messages privés.
             </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/products/ongles-press-on-bellabay"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Acheter en ligne
+            </a>
           </div>
         </article>
 
@@ -782,25 +845,35 @@
         <article class="boutique-item">
           <div
             class="boutique-media"
-            style="background-image:url('images/redken-loreal-studio.jpg'); background-size:cover; background-position:center;">
-          </div>
+            style="background-image:url('images/redken-loreal-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
-            <h3 class="boutique-title">Produits Redken & L’Oréal Professionnel</h3>
+            <h3 class="boutique-title">Shampoings &amp; masques Redken / L’Oréal</h3>
             <p class="boutique-price">Sur recommandation · Consultation 50&nbsp;$</p>
             <p class="boutique-text">
-              Produits professionnels utilisés en salon : Redken (base BellaBay) et L’Oréal Professionnel.
-              Parfaits pour protéger la fibre et prolonger la coloration.
+              Shampoings, masques et traitements professionnels Redken (base du salon),
+              complétés par certains soins L’Oréal Professionnel, choisis pour protéger la
+              fibre, prolonger la coloration et maximiser la brillance.
             </p>
             <p class="boutique-note">
-              Disponibles après recommandation personnalisée selon ton type de cheveux.
+              Disponibles après recommandation personnalisée selon ton type de cheveu, lors d’une
+              consultation capillaire ou d’un service en salon.
             </p>
+            <a
+              href="https://VOTRE-BOUTIQUE-SHOPIFY.myshopify.com/collections/soins-capillaires"
+              target="_blank"
+              rel="noopener"
+              class="btn-boutique"
+            >
+              Voir les produits
+            </a>
           </div>
         </article>
       </div>
 
       <div class="promo-banner">
-        <div class="promo-tag">Promos extensions &amp; couleur</div>
-        FETE2025 : -10% sur les extensions · B10 : -10% sur la coloration (sur Fresha).
+        <div class="promo-tag">Boutique en ligne BellaBay</div>
+        Commandes sécurisées via notre boutique en ligne (Shopify). Livraison gratuite dès 75&nbsp;$ avant taxes.
       </div>
     </section>
 
@@ -809,74 +882,93 @@
       <div class="section-header">
         <h2>Produits professionnels utilisés</h2>
         <p>
-          Produits sélectionnés pour préserver la santé du cheveu et maximiser la brillance.
+          Tous les services BellaBay sont réalisés avec des produits professionnels sélectionnés pour la
+          santé et la brillance de tes cheveux.
         </p>
       </div>
 
       <div class="card">
-        <h3>Gamme capillaire Redken (base BellaBay)</h3>
-        <p>
-          Redken est utilisé pour tous les lavages, soins et protocoles techniques.
+        <h3 style="margin-top:0;">Gamme capillaire Redken (base du salon)</h3>
+        <p style="font-size:0.9rem; margin-bottom:0.8rem;">
+          Les shampoings, soins et traitements utilisés au bac et en service sont principalement issus de la
+          gamme <strong>Redken</strong>. Cela permet :
         </p>
-        <ul>
-          <li>Respect optimal de la fibre</li>
-          <li>Résultats durables après coloration & balayage</li>
-          <li>Adapté aux cheveux blonds, colorés ou sensibilisés</li>
+        <ul style="font-size:0.9rem; padding-left:1.1rem; margin-top:0;">
+          <li>Un meilleur respect de la fibre capillaire</li>
+          <li>Des résultats durables après coloration, balayage ou kératine</li>
+          <li>Des protocoles adaptés aux cheveux blonds, méchés, colorés ou sensibilisés</li>
         </ul>
 
-        <h3>Complément L’Oréal Professionnel</h3>
-        <p>
-          Soins ciblés pour réparation, hydratation et protection couleur.
+        <h3 style="margin-top:1.2rem;">Complément L’Oréal Professionnel</h3>
+        <p style="font-size:0.9rem;">
+          Certains soins ciblés de la gamme <strong>L’Oréal Professionnel</strong> sont utilisés en complément,
+          selon les besoins spécifiques du cheveu (réparation, hydratation, protection couleur).
         </p>
 
-        <p style="font-size:0.85rem;">
-          Routine maison disponible après consultation professionnelle (50&nbsp;$).
+        <p style="font-size:0.86rem; margin-top:0.8rem;">
+          Pour une routine complète à la maison (shampoing, masque, protection), une
+          <strong>consultation capillaire (50&nbsp;$)</strong> est recommandée. Aucun “conseil maison”
+          détaillé n’est donné sans consultation professionnelle.
         </p>
       </div>
     </section>
 
-    <!-- GALERIE -->
+    <!-- GALERIE D'INSPIRATION -->
     <section id="galerie">
       <div class="section-header">
-        <h2>Galerie d’inspiration</h2>
+        <h2>Galerie d’inspiration &amp; transformations</h2>
         <p>
-          Aperçu des transformations possibles : balayage, coloration, extensions, volume.
+          Quelques idées de looks BellaBay : balayages, colorations, extensions et volume. Les vraies
+          photos avant / après pourront être ajoutées au fur et à mesure.
         </p>
       </div>
 
       <div class="card">
         <div class="galerie-grid">
           <div class="galerie-item">
-            <div class="galerie-photo" style="background-image:url('images/galerie-coloration-complete.jpg');"></div>
+            <div
+              class="galerie-photo"
+              style="background-image:url('images/galerie-coloration-complete.jpg');"
+            ></div>
             <div class="galerie-caption">
-              Coloration complète lumineuse, finition brillante.
+              Coloration complète : transformation de la couleur naturelle vers un ton plus lumineux, fini brillant.
             </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo" style="background-image:url('images/galerie-balayage.jpg');"></div>
+            <div
+              class="galerie-photo"
+              style="background-image:url('images/galerie-balayage.jpg');"
+            ></div>
             <div class="galerie-caption">
-              Balayage caramel/miel avec effet soleil.
+              Balayage caramel / miel avec effet soleil et profondeur, idéal pour un look doux et chic.
             </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo" style="background-image:url('images/galerie-extensions-26.jpg');"></div>
+            <div
+              class="galerie-photo"
+              style="background-image:url('images/galerie-extensions-26.jpg');"
+            ></div>
             <div class="galerie-caption">
-              Extensions 26" BellaBay – volume & longueur maximaux.
+              Extensions 26" BellaBay : longueur dramatique et volume maximal, effet studio.
             </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo" style="background-image:url('images/galerie-volume-keratine.jpg');"></div>
+            <div
+              class="galerie-photo"
+              style="background-image:url('images/galerie-volume-keratine.jpg');"
+            ></div>
             <div class="galerie-caption">
-              Lissage & volume avec traitement kératine.
+              Volume &amp; lissage avec traitement kératine : discipline, brillance et douceur au toucher.
             </div>
           </div>
         </div>
 
-        <p style="font-size:0.82rem; margin-top:1rem;">
-          Les photos réelles de tes clientes seront ajoutées au fur et à mesure.
+        <p style="font-size:0.82rem; margin-top:0.9rem;">
+          Les photos exactes avant / après de tes clientes pourront être ajoutées ici lorsque tu auras
+          tes propres shootings et transformations.
         </p>
       </div>
     </section>
@@ -885,44 +977,68 @@
     <section id="avis">
       <div class="section-header">
         <h2>Avis clients</h2>
-        <p>Témoignages authentiques de clientes satisfaites.</p>
+        <p>Quelques témoignages de clientes satisfaites par leurs transformations BellaBay.</p>
       </div>
 
       <div class="card avis-list">
         <h3>Sarah ★★★★★</h3>
-        <p>Mèches parfaites, couleur lumineuse, service exceptionnel.</p>
+        <p>
+          Mèches et brushing parfaits, exactement la couleur que je voulais. Service attentionné du début
+          à la fin.
+        </p>
 
         <h3>Nadia ★★★★★</h3>
-        <p>Extensions adhésives très naturelles. Travail propre et soigné.</p>
+        <p>
+          Les extensions adhésives sont super confortables et naturelles. On voit qu’il y a un vrai souci
+          du détail.
+        </p>
 
         <h3>Julie ★★★★★</h3>
-        <p>Douce, professionnelle et à l’écoute. Transformation réussie!</p>
+        <p>
+          Très douce, à l’écoute, prend le temps d’expliquer chaque étape. Je recommande pour un
+          changement de look en confiance.
+        </p>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
       <div class="section-header">
-        <h2>Contact & réservation</h2>
-        <p>Pour rendez-vous, événements, questions ou déplacements.</p>
+        <h2>Contact &amp; réservation</h2>
+        <p>
+          Pour prendre rendez-vous, réserver pour un événement ou poser une question, utilise le mode de
+          contact qui te convient le mieux.
+        </p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-block">
-          <h3>Réservation Fresha</h3>
+          <h3>Rendez-vous &amp; Fresha</h3>
           <p>
-            <a href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank">
+            Réservation en ligne&nbsp;:<br />
+            <a
+              href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
+              target="_blank"
+              rel="noopener"
+            >
               Réserver via Fresha
             </a>
           </p>
-          <p>Tél. / SMS : <a href="tel:15145822856">514-582-2856</a></p>
+          <p>
+            Tél. &amp; SMS&nbsp;:<br />
+            <a href="tel:15145822856">514-582-2856</a>
+          </p>
         </div>
 
         <div class="contact-block">
-          <h3>Courriel & réseaux</h3>
-          <p>Email : <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
-          <p>Instagram :
-            <a href="https://www.instagram.com/bellah.bay" target="_blank">@bellah.bay</a>
+          <h3>Courriel &amp; réseaux</h3>
+          <p>
+            Courriel&nbsp;:<br />
+            <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a>
+          </p>
+          <p>
+            Instagram&nbsp;:<br />
+            <a href="https://www.instagram.com/bellah.bay" target="_blank" rel="noopener">@bellah.bay</a>
           </p>
         </div>
 
@@ -937,15 +1053,16 @@
             <li>Samedi : 10h – 17h</li>
             <li>Dimanche : Fermé</li>
           </ul>
+          <p style="font-size:0.8rem; margin-top:0.4rem;">
+            Services actuellement offerts sur rendez-vous, à domicile dans la région de Laval et environs.
+          </p>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    © BellaBay – Luxury Coiffure & Beauty Bar, Laval. Tous droits réservés.
+    © BellaBay – Luxury Coiffure &amp; Beauty Bar, Laval. Tous droits réservés.
   </footer>
-
 </body>
 </html>
