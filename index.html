@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -288,13 +289,8 @@
 
     .btn-fresha:hover { transform: translateY(-1px); opacity: 0.96; }
 
-    .cta-note {
-      font-size: 0.8rem;
-      color: #5a3a4a;
-      max-width: 300px;
-    }
+    .cta-note { font-size: 0.8rem; color: #5a3a4a; max-width: 300px; }
 
-    /* --- Boutique + Galerie --- */
     .boutique-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -311,18 +307,20 @@
       position: relative;
     }
 
-    /* IMPORTANT: on passe en <img> pour éviter les bugs d’affichage */
     .boutique-media {
-      height: 170px;
+      height: 150px;
       background: radial-gradient(circle at top left, #fbe1ee, #f7c6da, #f3b0cf);
       position: relative;
       overflow: hidden;
     }
-    .boutique-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
+
+    .boutique-media::after {
+      content: "";
+      position: absolute;
+      inset: 15%;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.9);
     }
 
     .boutique-body {
@@ -334,56 +332,9 @@
     }
 
     .boutique-title { font-weight: 600; font-size: 1rem; margin: 0; }
-
     .boutique-price { font-weight: 700; margin: 0; font-size: 0.95rem; }
-
-    .boutique-text {
-      font-size: 0.85rem;
-      margin: 0.25rem 0 0.4rem;
-      color: #654056;
-    }
-
-    .boutique-note {
-      font-size: 0.78rem;
-      color: #7a5067;
-      margin-top: auto;
-    }
-
-    /* Bouton acheter (Stripe/PayPal) */
-    .buy-row{
-      margin-top: .65rem;
-      display:flex;
-      gap:.6rem;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn-buy{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:.75rem 1.1rem;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.78rem;
-      color:#fff;
-      background:linear-gradient(135deg, #4b243a, #a84f7e);
-      box-shadow:0 12px 26px rgba(75,36,58,.25);
-    }
-    .btn-buy.secondary{
-      background:rgba(255,255,255,.85);
-      color:#4b243a;
-      border:1px solid rgba(75,36,58,.2);
-      box-shadow:none;
-    }
-    .buy-hint{
-      font-size:.75rem;
-      color:#6a4157;
-      margin-top:.45rem;
-      line-height:1.35;
-    }
+    .boutique-text { font-size: 0.85rem; margin: 0.25rem 0 0.4rem; color: #654056; }
+    .boutique-note { font-size: 0.78rem; color: #7a5067; margin-top: auto; }
 
     .promo-banner {
       margin-top: 1.4rem;
@@ -440,64 +391,15 @@
     }
 
     .galerie-photo {
-      height: 190px;
-      background: radial-gradient(circle at top left, #fbe1ee, #f7c6da, #f3b0cf);
-      overflow:hidden;
-    }
-    .galerie-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
     }
 
     .galerie-caption {
       padding: 0.8rem 0.9rem 0.9rem;
       font-size: 0.85rem;
       color: #5a3a4a;
-    }
-
-    /* Avant / Après */
-    .before-after-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.1rem;
-    }
-    .ba-card{
-      background: rgba(255,255,255,.96);
-      border-radius: 20px;
-      box-shadow: var(--ombre-carte);
-      overflow:hidden;
-    }
-    .ba-media{
-      height: 220px;
-      background: radial-gradient(circle at top left, #fbe1ee, #f7c6da, #f3b0cf);
-      position:relative;
-      overflow:hidden;
-    }
-    .ba-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .ba-badge{
-      position:absolute;
-      top:10px;
-      left:10px;
-      background: rgba(0,0,0,.55);
-      color:#fff;
-      padding:.35rem .7rem;
-      border-radius:999px;
-      font-size:.75rem;
-      font-weight:800;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-    }
-    .ba-body{
-      padding: .85rem .95rem 1rem;
-      font-size: .85rem;
-      color:#5a3a4a;
     }
 
     ul { padding-left: 1.2rem; margin: 0.35rem 0 0.7rem; font-size: 0.86rem; }
@@ -534,7 +436,6 @@
         <a href="#services">Services & tarifs</a>
         <a href="#apropos">À propos</a>
         <a href="#boutique">Boutique</a>
-        <a href="#avant-apres">Avant / Après</a>
         <a href="#galerie">Galerie</a>
         <a href="#avis">Avis</a>
         <a href="#contact">Contact</a>
@@ -560,7 +461,7 @@
         <h2>Services &amp; tarifs</h2>
         <p>
           Voici la liste principale des services BellaBay. Les prix peuvent varier selon la longueur,
-          l’épaisseur et la technique.
+          l’épaisseur et la technique. Les détails par catégorie seront développés avec photos avant / après.
         </p>
       </div>
 
@@ -578,23 +479,71 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td style="padding:0.45rem 0.5rem;">Consultation capillaire</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Coupe femme</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">60&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Brushing</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Coloration de base</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Coloration complète</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">90&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Mèches / Balayage</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 120&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Extensions adhésives (Tape-in)</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">99&nbsp;$ – 190&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Extensions clip-in</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$ – 350&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Extensions kératine – fusion</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 190&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Traitement capillaire</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">35&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Massage capillaire</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Shampoing ultraviolet (cheveux blancs)</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">15&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Effet texturisant</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td></tr>
-              <tr><td style="padding:0.45rem 0.5rem;">Enlever de la masse / réduire le volume</td><td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td></tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Consultation capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coupe femme</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">60&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Brushing</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">50&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coloration de base</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Coloration complète</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">90&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Mèches / Balayage</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 120&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions adhésives (Tape-in)</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">99&nbsp;$ – 190&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions clip-in</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">75&nbsp;$ – 350&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Extensions kératine – fusion</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">À partir de 190&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Traitement capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">35&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Massage capillaire</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Shampoing ultraviolet (cheveux blancs)</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">15&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Effet texturisant</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;">Enlever de la masse / réduire le volume</td>
+                <td style="padding:0.45rem 0.5rem; text-align:right; font-weight:600;">20&nbsp;$</td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+        <p style="margin-top:0.8rem; font-size:0.86rem;">
+          Chaque catégorie (coloration, balayage, extensions, soins) pourra être détaillée avec photos
+          avant / après et explications professionnelles. Les conseils maison détaillés sont offerts
+          uniquement en consultation capillaire (50&nbsp;$).
+        </p>
 
         <div class="promo-ribbon">
           <span>Promos du moment</span>
@@ -603,7 +552,7 @@
 
         <div class="fresha-cta">
           <a
-            href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544"
+            href="https://partners.fresha.com/calendar?view=day&location_id=2812380&calendar_selected_resources=e-working&date=2025-12-12"
             target="_blank"
             rel="noopener"
             class="btn-fresha"
@@ -618,11 +567,13 @@
       </div>
     </section>
 
-    <!-- À PROPOS -->
+    <!-- À PROPOS / MON STYLE -->
     <section id="apropos">
       <div class="section-header">
         <h2>À propos de BellaBay</h2>
-        <p>Un beauty bar intime et féminin, dédié aux transformations capillaires et au soin du détail.</p>
+        <p>
+          Un beauty bar intime et féminin, dédié aux transformations capillaires et au soin du détail.
+        </p>
       </div>
 
       <div class="card">
@@ -632,7 +583,14 @@
         </p>
         <p style="font-size:0.95rem;">
           Mon style, c’est une approche douce, glamour et structurée : chaque look est pensé pour te sublimer,
-          respecter ta fibre capillaire et te faire ressortir confiante et transformée.
+          respecter ta fibre capillaire et te faire ressortir confiante et transformée. Je travaille avec des
+          produits professionnels comme <strong>Redken</strong> et <strong>L’Oréal Professionnel</strong>, ainsi
+          qu’une sélection d’extensions premium en longueurs 22", 24" et l’exclusif 26" BellaBay.
+        </p>
+        <p style="font-size:0.95rem;">
+          Que ce soit pour une simple mise en beauté, une transformation complète, un événement ou une pose
+          d’extensions, mon objectif est que chaque rendez-vous devienne un moment dont tu te souviendras,
+          avec des résultats qui se voient sur les photos comme dans la vraie vie.
         </p>
         <p style="font-size:0.85rem; margin-top:0.9rem;">
           Situé à Laval, BellaBay offre actuellement des services sur rendez-vous, à domicile ou en déplacement,
@@ -641,116 +599,132 @@
       </div>
     </section>
 
-    <!-- BOUTIQUE -->
+    <!-- BOUTIQUE EXTENSIONS & PRODUITS -->
     <section id="boutique">
       <div class="section-header">
         <h2>Boutique BellaBay</h2>
         <p>
-          Clique sur <strong>Acheter</strong> pour payer en ligne (Stripe/PayPal). Tu peux aussi commander par SMS.
+          Extensions professionnelles (22"&nbsp;·&nbsp;24"&nbsp;·&nbsp;26"), cils, ongles et produits capillaires
+          Redken &amp; L’Oréal Professionnel, sélectionnés pour sublimer et protéger tes cheveux.
         </p>
       </div>
 
       <div class="boutique-grid">
         <!-- Tape-in -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/adhesif-1.jpg" alt="Extensions adhésives – Tape-in BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/adhesif-1.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Extensions adhésives – Tape-in (22" · 24" · 26")</h3>
             <p class="boutique-price">99&nbsp;$ – 190&nbsp;$</p>
             <p class="boutique-text">
               Extensions professionnelles en cheveux 100&nbsp;% humains, pose invisible et ultra-confortable.
+              Longueurs disponibles : <strong>22"</strong>, <strong>24"</strong> et l’exclusif
+              <strong>26" BellaBay</strong>.
             </p>
-            <div class="buy-row">
-              <a class="btn-buy" href="PASTE_PAYLINK_TAPEIN" target="_blank" rel="noopener">Acheter</a>
-              <a class="btn-buy secondary" href="sms:+15145822856?&body=Bonjour%20BellaBay%20!%20Je%20veux%20commander%20des%20Extensions%20Tape-in%20(22/24/26).%20Merci%20!" >Commander par SMS</a>
-            </div>
-            <div class="buy-hint">Remplace <strong>PASTE_PAYLINK_TAPEIN</strong> par ton lien Stripe/PayPal.</div>
+            <p class="boutique-note">
+              Idéales pour volume + longueur. Tenue 6–8 semaines.
+              Pour commander : ajoute “Extensions Tape-in” lors de ta réservation Fresha.
+            </p>
           </div>
         </article>
 
         <!-- Clip-in -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/clip-1.jpg" alt="Extensions clip-in BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/clip-1.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Extensions clip-in (22" · 24" · 26")</h3>
             <p class="boutique-price">75&nbsp;$ – 350&nbsp;$</p>
-            <p class="boutique-text">Extensions réutilisables — volume et longueur instantanés.</p>
-            <div class="buy-row">
-              <a class="btn-buy" href="PASTE_PAYLINK_CLIPIN" target="_blank" rel="noopener">Acheter</a>
-              <a class="btn-buy secondary" href="sms:+15145822856?&body=Bonjour%20BellaBay%20!%20Je%20veux%20commander%20des%20Extensions%20Clip-in%20(22/24/26).%20Merci%20!" >Commander par SMS</a>
-            </div>
-            <div class="buy-hint">Remplace <strong>PASTE_PAYLINK_CLIPIN</strong> par ton lien Stripe/PayPal.</div>
+            <p class="boutique-text">
+              Extensions réutilisables, parfaites pour soirées, mariages, photoshoots et transformations
+              instantanées. Effet studio, volume et longueur immédiats.
+            </p>
+            <p class="boutique-note">
+              Longueurs 22", 24" et 26".
+              Modèles et teintes confirmés en consultation (50&nbsp;$).
+            </p>
           </div>
         </article>
 
         <!-- Kératine -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/adhesif-3.jpg" alt="Extensions kératine – fusion BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/adhesif-3.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Extensions kératine – Fusion (22" · 24" · 26")</h3>
             <p class="boutique-price">À partir de 190&nbsp;$</p>
-            <p class="boutique-text">Résultat ultra-naturel et longue durée.</p>
-            <div class="buy-row">
-              <a class="btn-buy" href="PASTE_PAYLINK_KERATIN" target="_blank" rel="noopener">Acheter</a>
-              <a class="btn-buy secondary" href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank" rel="noopener">Consultation / Réserver</a>
-            </div>
-            <div class="buy-hint">Remplace <strong>PASTE_PAYLINK_KERATIN</strong> par ton lien Stripe/PayPal.</div>
+            <p class="boutique-text">
+              Pose par fusion kératine pour un résultat ultra-naturel et longue durée. Cheveux 100 % humains,
+              qualité premium, effet salon.
+            </p>
+            <p class="boutique-note">
+              Consultation obligatoire : choix de longueur, couleur, densité (50&nbsp;$ – montant crédité
+              si la pose est réalisée).
+            </p>
           </div>
         </article>
 
         <!-- Cils 3D -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/cils-3d-studio.jpg" alt="Cils volume 3D BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/cils-3d-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Cils volume 3D BellaBay</h3>
             <p class="boutique-price">24,99&nbsp;$</p>
-            <p class="boutique-text">Regard intense et glamour, parfait pour événements.</p>
-            <div class="buy-row">
-              <a class="btn-buy" href="PASTE_PAYLINK_LASHES" target="_blank" rel="noopener">Acheter</a>
-              <a class="btn-buy secondary" href="sms:+15145822856?&body=Bonjour%20BellaBay%20!%20Je%20veux%20commander%20les%20Cils%20Volume%203D.%20Merci%20!" >Commander par SMS</a>
-            </div>
-            <div class="buy-hint">Remplace <strong>PASTE_PAYLINK_LASHES</strong> par ton lien Stripe/PayPal.</div>
+            <p class="boutique-text">
+              Cils volume 3D pour un regard intense et glamour, parfaits pour photos, soirées et événements.
+            </p>
+            <p class="boutique-note">
+              Disponibles en plusieurs styles. À ajouter à ta réservation ou sur demande via SMS.
+            </p>
           </div>
         </article>
 
         <!-- Ongles press-on -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/ongles-presson-studio.jpg" alt="Ongles press-on BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/ongles-presson-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Ongles press-on BellaBay</h3>
             <p class="boutique-price">2 pour 35,99&nbsp;$</p>
-            <p class="boutique-text">Look luxe du nude chic au full glam.</p>
-            <div class="buy-row">
-              <a class="btn-buy" href="PASTE_PAYLINK_NAILS" target="_blank" rel="noopener">Acheter</a>
-              <a class="btn-buy secondary" href="sms:+15145822856?&body=Bonjour%20BellaBay%20!%20Je%20veux%20commander%20les%20Ongles%20press-on%20(2%20pour%2035,99$).%20Merci%20!" >Commander par SMS</a>
-            </div>
-            <div class="buy-hint">Remplace <strong>PASTE_PAYLINK_NAILS</strong> par ton lien Stripe/PayPal.</div>
+            <p class="boutique-text">
+              Ongles press-on premium, formes modernes (coffin, almond, carré) du nude chic au full glam.
+            </p>
+            <p class="boutique-note">
+              Idéals pour compléter ton look BellaBay. Modèles confirmés en messages privés ou consultation.
+            </p>
           </div>
         </article>
 
         <!-- Produits Redken / L'Oréal -->
         <article class="boutique-item">
-          <div class="boutique-media">
-            <img src="images/redken-loreal-studio.jpg" alt="Produits Redken et L'Oréal Professionnel BellaBay">
-          </div>
+          <div
+            class="boutique-media"
+            style="background-image:url('images/redken-loreal-studio.jpg'); background-size:cover; background-position:center;"
+          ></div>
           <div class="boutique-body">
             <h3 class="boutique-title">Shampoings &amp; masques Redken &amp; L’Oréal</h3>
-            <p class="boutique-price">Sur recommandation</p>
-            <p class="boutique-text">Soins professionnels selon ton type de cheveux.</p>
-            <div class="buy-row">
-              <a class="btn-buy secondary" href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank" rel="noopener">Consultation 50$</a>
-              <a class="btn-buy secondary" href="sms:+15145822856?&body=Bonjour%20BellaBay%20!%20Je%20veux%20des%20produits%20Redken%20/%20L'Or%C3%A9al%20recommand%C3%A9s%20pour%20mes%20cheveux.%20Merci%20!" >Demander par SMS</a>
-            </div>
+            <p class="boutique-price">Sur recommandation · Consultation 50&nbsp;$</p>
+            <p class="boutique-text">
+              Shampoings, masques et traitements professionnels <strong>Redken</strong> (base du salon),
+              complétés par certains soins <strong>L’Oréal Professionnel</strong>, choisis pour protéger la
+              fibre, prolonger la coloration et maximiser la brillance.
+            </p>
+            <p class="boutique-note">
+              Disponibles après recommandation personnalisée selon ton type de cheveu, lors d’une
+              consultation capillaire ou d’un service en salon.
+            </p>
           </div>
         </article>
       </div>
@@ -762,121 +736,101 @@
       </div>
     </section>
 
-    <!-- AVANT / APRES (nouveau) -->
-    <section id="avant-apres">
-      <div class="section-header">
-        <h2>Avant / Après</h2>
-        <p>Ajoute tes vraies transformations (2 paires). Remplace simplement les fichiers dans <strong>/images</strong>.</p>
-      </div>
-
-      <div class="before-after-grid">
-        <div class="ba-card">
-          <div class="ba-media">
-            <span class="ba-badge">Avant</span>
-            <img src="images/avant-1.jpg" alt="Avant - transformation 1 BellaBay">
-          </div>
-          <div class="ba-body">Avant — base naturelle, préparation.</div>
-        </div>
-
-        <div class="ba-card">
-          <div class="ba-media">
-            <span class="ba-badge">Après</span>
-            <img src="images/apres-1.jpg" alt="Après - transformation 1 BellaBay">
-          </div>
-          <div class="ba-body">Après — longueur, volume, brillance (effet luxe).</div>
-        </div>
-
-        <div class="ba-card">
-          <div class="ba-media">
-            <span class="ba-badge">Avant</span>
-            <img src="images/avant-2.jpg" alt="Avant - transformation 2 BellaBay">
-          </div>
-          <div class="ba-body">Avant — cheveux fins / mi-longs.</div>
-        </div>
-
-        <div class="ba-card">
-          <div class="ba-media">
-            <span class="ba-badge">Après</span>
-            <img src="images/apres-2.jpg" alt="Après - transformation 2 BellaBay">
-          </div>
-          <div class="ba-body">Après — transformation complète (photo-ready).</div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:1.2rem;">
-        <p style="font-size:.9rem;margin-top:0;">
-          ✅ Pour que ça marche : mets 4 images dans ton dossier <strong>images</strong> avec exactement ces noms :
-        </p>
-        <ul style="margin-bottom:0;">
-          <li><strong>avant-1.jpg</strong></li>
-          <li><strong>apres-1.jpg</strong></li>
-          <li><strong>avant-2.jpg</strong></li>
-          <li><strong>apres-2.jpg</strong></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PRODUITS PRO -->
+    <!-- PRODUITS PROFESSIONNELS -->
     <section id="produits-pro">
       <div class="section-header">
         <h2>Produits professionnels utilisés</h2>
-        <p>Tous les services BellaBay sont réalisés avec des produits professionnels sélectionnés.</p>
+        <p>
+          Tous les services BellaBay sont réalisés avec des produits professionnels sélectionnés pour la
+          santé et la brillance de tes cheveux.
+        </p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;">Gamme capillaire Redken (base du salon)</h3>
+        <p style="font-size:0.9rem; margin-bottom:0.8rem;">
+          Les shampoings, soins et traitements utilisés au bac et en service sont principalement issus de la
+          gamme <strong>Redken</strong>. Cela permet :
+        </p>
         <ul style="font-size:0.9rem; padding-left:1.1rem; margin-top:0;">
-          <li>Meilleur respect de la fibre capillaire</li>
-          <li>Résultats durables après coloration, balayage ou kératine</li>
-          <li>Protocoles adaptés aux cheveux blonds, méchés, colorés ou sensibilisés</li>
+          <li>Un meilleur respect de la fibre capillaire</li>
+          <li>Des résultats durables après coloration, balayage ou kératine</li>
+          <li>Des protocoles adaptés aux cheveux blonds, méchés, colorés ou sensibilisés</li>
         </ul>
 
         <h3 style="margin-top:1.2rem;">Complément L’Oréal Professionnel</h3>
         <p style="font-size:0.9rem;">
-          Soins ciblés selon les besoins (réparation, hydratation, protection couleur).
+          Certains soins ciblés de la gamme <strong>L’Oréal Professionnel</strong> sont utilisés en complément,
+          selon les besoins spécifiques du cheveu (réparation, hydratation, protection couleur).
+        </p>
+
+        <p style="font-size:0.86rem; margin-top:0.8rem;">
+          Pour une routine complète à la maison (shampoing, masque, protection), une
+          <strong>consultation capillaire (50&nbsp;$)</strong> est recommandée. Aucun “conseil maison”
+          détaillé n’est donné sans consultation professionnelle.
         </p>
       </div>
     </section>
 
-    <!-- GALERIE -->
+    <!-- GALERIE D'INSPIRATION -->
     <section id="galerie">
       <div class="section-header">
         <h2>Galerie d’inspiration &amp; transformations</h2>
-        <p>Quelques idées de looks BellaBay : adhésif, clip-in, volume et longueur.</p>
+        <p>
+          Quelques idées de looks BellaBay : extensions adhésives, clip-in, volume et longueur.
+          Les vraies photos avant / après pourront être complétées au fur et à mesure.
+        </p>
       </div>
 
       <div class="card">
         <div class="galerie-grid">
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/adhesif-1.jpg" alt="Galerie BellaBay - adhésif 1"></div>
-            <div class="galerie-caption">Pose d’extensions adhésives : densité et mouvement.</div>
+            <div class="galerie-photo" style="background-image:url('images/adhesif-1.jpg');"></div>
+            <div class="galerie-caption">
+              Pose d’extensions adhésives sur cheveux longs : ajout de densité et de mouvement.
+            </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/adhesif-2.jpg" alt="Galerie BellaBay - adhésif 2"></div>
-            <div class="galerie-caption">Longueur homogène et finition glossy.</div>
+            <div class="galerie-photo" style="background-image:url('images/adhesif-2.jpg');"></div>
+            <div class="galerie-caption">
+              Pose extension cheveux – mèche à mèche 150&nbsp;g : longueur homogène et finition glossy.
+            </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/adhesif-3.jpg" alt="Galerie BellaBay - adhésif 3"></div>
-            <div class="galerie-caption">Volume souple et boucles définies.</div>
+            <div class="galerie-photo" style="background-image:url('images/adhesif-3.jpg');"></div>
+            <div class="galerie-caption">
+              Extensions sur base brune : volume souple et boucles définies, effet studio.
+            </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/adhesif-4.jpg" alt="Galerie BellaBay - adhésif 4"></div>
-            <div class="galerie-caption">Avant / après adhésives sur cheveux fins.</div>
+            <div class="galerie-photo" style="background-image:url('images/adhesif-4.jpg');"></div>
+            <div class="galerie-caption">
+              Avant / après extensions adhésives sur cheveux fins : transformation longueur + volume.
+            </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/clip-1.jpg" alt="Galerie BellaBay - clip 1"></div>
-            <div class="galerie-caption">Clip-in : vue face / dos / après.</div>
+            <div class="galerie-photo" style="background-image:url('images/clip-1.jpg');"></div>
+            <div class="galerie-caption">
+              Extensions clip-in sur cheveux mi-longs : vue face / dos / après pour montrer le résultat.
+            </div>
           </div>
 
           <div class="galerie-item">
-            <div class="galerie-photo"><img src="images/clip-2.jpg" alt="Galerie BellaBay - clip 2"></div>
-            <div class="galerie-caption">Avant / après clip-in blondes : longueur XXL.</div>
+            <div class="galerie-photo" style="background-image:url('images/clip-2.jpg');"></div>
+            <div class="galerie-caption">
+              Avant / après extensions clip-in blondes : longueur XXL et ondulations romantiques.
+            </div>
           </div>
         </div>
+
+        <p style="font-size:0.82rem; margin-top:0.9rem;">
+          Cette galerie peut être enrichie avec tes propres photos de clientes : avant / après, dos, profil,
+          détails de couleur, etc. Idéal pour ton Instagram et pour rassurer les nouvelles clientes.
+        </p>
       </div>
     </section>
 
@@ -889,13 +843,13 @@
 
       <div class="card avis-list">
         <h3>Sarah ★★★★★</h3>
-        <p>Mèches et brushing parfaits, exactement la couleur que je voulais.</p>
+        <p>Mèches et brushing parfaits, exactement la couleur que je voulais. Service attentionné du début à la fin.</p>
 
         <h3>Nadia ★★★★★</h3>
-        <p>Les extensions adhésives sont super confortables et naturelles.</p>
+        <p>Les extensions adhésives sont super confortables et naturelles. On voit qu’il y a un vrai souci du détail.</p>
 
         <h3>Julie ★★★★★</h3>
-        <p>Très douce, à l’écoute, prend le temps d’expliquer chaque étape.</p>
+        <p>Très douce, à l’écoute, prend le temps d’expliquer chaque étape. Je recommande pour un changement de look en confiance.</p>
       </div>
     </section>
 
@@ -903,24 +857,41 @@
     <section id="contact">
       <div class="section-header">
         <h2>Contact &amp; réservation</h2>
-        <p>Pour rendez-vous, événement ou question : contacte-moi.</p>
+        <p>
+          Pour prendre rendez-vous, réserver pour un événement ou poser une question, utilise le mode de
+          contact qui te convient le mieux.
+        </p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-block">
           <h3>Rendez-vous &amp; Fresha</h3>
           <p>
-            <a href="https://www.fresha.com/book-now/bella-bay-dd54koo3/all-offer?share=true&pId=2719544" target="_blank" rel="noopener">
+            Réservation en ligne&nbsp;:<br />
+            <a
+              href="https://partners.fresha.com/calendar?view=day&location_id=2812380&calendar_selected_resources=e-working&date=2025-12-12"
+              target="_blank"
+              rel="noopener"
+            >
               Réserver via Fresha
             </a>
           </p>
-          <p>Tél. &amp; SMS : <a href="tel:15145822856">514-582-2856</a></p>
+          <p>
+            Tél. &amp; SMS&nbsp;:<br />
+            <a href="tel:15145822856">514-582-2856</a>
+          </p>
         </div>
 
         <div class="contact-block">
           <h3>Courriel &amp; réseaux</h3>
-          <p>Courriel : <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
-          <p>Instagram : <a href="https://www.instagram.com/bellah.bay" target="_blank" rel="noopener">@bellah.bay</a></p>
+          <p>
+            Courriel&nbsp;:<br />
+            <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a>
+          </p>
+          <p>
+            Instagram&nbsp;:<br />
+            <a href="https://www.instagram.com/bellah.bay" target="_blank" rel="noopener">@bellah.bay</a>
+          </p>
         </div>
 
         <div class="contact-block">
