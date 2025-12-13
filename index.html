@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Bella Bay — Luxury Coiffure & Beauty (Laval)</title>
-  <meta name="description" content="Bella Bay à Laval : coiffure, coloration, mèches, extensions, traitements. Réservation en ligne intégrée + boutique." />
+  <title>Bella Bay — Coiffure & Beauty (Laval)</title>
+  <meta name="description" content="Bella Bay à Laval : coiffure, coloration, mèches, extensions, traitements. Réservation en ligne intégrée (Fresha) + boutique." />
   <meta name="theme-color" content="#0b0b10" />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,10 +16,13 @@
     :root{
       --bg:#0b0b10;
       --panel:#12121a;
+      --panel2:#0f0f16;
       --text:#f5f2f7;
       --muted:#c9c3d1;
       --line:rgba(255,255,255,.10);
       --pink:#f5a6c8;
+      --pink2:#ff78b6;
+      --gold:#d7b56d;
       --gold2:#ffdf9a;
       --shadow: 0 18px 55px rgba(0,0,0,.45);
       --r:18px;
@@ -30,42 +34,41 @@
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(245,166,200,.18), transparent 55%),
+        radial-gradient(900px 600px at 100% 0%, rgba(215,181,109,.12), transparent 60%),
+        radial-gradient(900px 600px at 0% 100%, rgba(255,120,182,.12), transparent 60%),
+        var(--bg);
       color:var(--text);
-      background: var(--bg);
-      position: relative;
+      position:relative;
       overflow-x:hidden;
     }
 
-    /* ✅ BACKGROUND TRANSLUCIDE (coquillages) */
+    /* Background translucide (coquillages) */
     body::before{
       content:"";
-      position: fixed;
-      inset: 0;
-      background-image: url("img/bg-coquillages.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: .18;              /* <- Ajuste ici (0.12 à 0.22) */
-      filter: blur(0px);
-      z-index:-2;
-      pointer-events:none;
-    }
-    /* voile sombre pour garder la lisibilité */
-    body::after{
-      content:"";
-      position: fixed;
+      position:fixed;
       inset:0;
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,166,200,.18), transparent 55%),
-        radial-gradient(900px 600px at 100% 0%, rgba(255,223,154,.12), transparent 60%),
-        rgba(11,11,16,.86);
-      z-index:-1;
+        url("img/bg-shells.jpg") center/cover no-repeat;
+      opacity:.11;               /* translucide */
+      filter: blur(1.5px) saturate(1.05);
       pointer-events:none;
+      z-index:-1;
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: radial-gradient(1200px 800px at 50% 30%, rgba(11,11,16,.15), rgba(11,11,16,.72));
+      pointer-events:none;
+      z-index:-1;
     }
 
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
 
+    /* Header */
     .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
@@ -78,10 +81,15 @@
       padding:12px 0;
       gap:12px;
     }
-    .brand{display:flex; align-items:center; gap:10px; min-width:240px;}
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:240px;
+    }
     .brand-logo{
-      width:44px; height:44px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(245,166,200,.30), rgba(255,223,154,.20));
+      width:44px; height:44px;
+      border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,223,154,.9), rgba(215,181,109,.3) 45%, rgba(245,166,200,.20) 70%, rgba(0,0,0,.0) 100%),
+        linear-gradient(135deg, rgba(245,166,200,.30), rgba(215,181,109,.12));
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
       display:grid; place-items:center;
@@ -94,12 +102,30 @@
       font-family:"Great Vibes", cursive;
       font-size:28px;
       color:var(--gold2);
+      text-shadow: 0 8px 25px rgba(215,181,109,.22);
     }
-    .brand-title .tag{font-size:12px; color:var(--muted); margin-top:2px;}
+    .brand-title .tag{
+      font-size:12px; color:var(--muted);
+      margin-top:2px;
+    }
 
+    .links{
+      display:flex; flex-wrap:wrap;
+      gap:10px; align-items:center; justify-content:flex-end;
+    }
+    .links a{
+      font-size:13px;
+      color:rgba(245,242,247,.88);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+    }
+    .links a:hover{border-color: rgba(245,166,200,.35)}
     .cta{display:flex; gap:10px; align-items:center;}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
       padding:10px 14px;
       border-radius:999px;
       font-weight:650;
@@ -109,86 +135,111 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
       cursor:pointer;
       transition:transform .12s ease;
-      white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(245,166,200,.30), rgba(255,223,154,.22));
+      background: linear-gradient(135deg, rgba(245,166,200,.30), rgba(215,181,109,.22));
       border-color: rgba(255,223,154,.25);
     }
+    .btn.primary strong{color:var(--gold2)}
     .btn.small{padding:9px 12px; font-size:12.5px}
 
-    .card{
-      border-radius:var(--r);
-      border:1px solid var(--line);
-      background: rgba(18,18,26,.88);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
-    .hero{padding:32px 0 12px}
+    /* Hero */
+    .hero{padding:32px 0 10px}
     .hero-grid{
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:16px;
       align-items:stretch;
     }
-    .hero-main{padding:22px}
-    h1{
-      margin:8px 0 10px;
-      font-family:"Playfair Display", serif;
-      font-size:42px;
-      line-height:1.05;
+    .card{
+      border-radius:var(--r);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18,18,26,.92), rgba(15,15,22,.92));
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .sub{color:rgba(201,195,209,.92); font-size:15.5px; line-height:1.55; margin:0 0 12px;}
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .hero-main{padding:22px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(245,166,200,.25);
+      background: rgba(245,166,200,.08);
+      font-size:12.5px;
+      color:rgba(245,242,247,.92);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: radial-gradient(circle, var(--gold2), var(--gold));
+      box-shadow: 0 0 0 4px rgba(215,181,109,.15);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-family:"Playfair Display", serif;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:.2px;
+    }
+    .sub{
+      color:rgba(201,195,209,.92);
+      font-size:15.5px;
+      line-height:1.55;
+      max-width:58ch;
+      margin:0 0 16px;
+    }
+    .promo-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+    .promo{
+      flex:1;
+      min-width:260px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: radial-gradient(700px 160px at 10% 20%, rgba(245,166,200,.18), transparent 65%),
+                  radial-gradient(700px 160px at 90% 30%, rgba(215,181,109,.16), transparent 60%),
+                  rgba(255,255,255,.03);
+    }
+    .promo b{color:var(--gold2)}
+    .promo small{display:block; color:rgba(201,195,209,.9); margin-top:3px; line-height:1.35}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
 
-    /* ✅ SANS image au-dessus du téléphone */
-    .hero-side{padding:16px; display:flex; flex-direction:column; justify-content:space-between; gap:12px;}
+    /* Hero side (SANS image, comme demandé) */
+    .hero-side{padding:18px; display:grid; gap:12px; align-content:start;}
     .pill{
       font-size:12.5px;
-      padding:8px 10px;
+      padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
+      color:rgba(245,242,247,.88);
       background: rgba(255,255,255,.02);
       display:inline-flex; gap:8px; align-items:center;
-      width:fit-content;
     }
-    .phone{font-weight:800; letter-spacing:.2px;}
+    .pill strong{color:var(--pink)}
+    .phone{font-weight:800; letter-spacing:.2px; color:rgba(255,255,255,.92);}
 
-    section{padding:16px 0}
-    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin:10px 0;}
-    .section-title h2{margin:0; font-family:"Playfair Display", serif; font-size:26px;}
-
+    /* Sections */
+    section{padding:18px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px; margin:10px 0 10px;
+    }
+    .section-title h2{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size:26px;
+    }
+    .section-title p{margin:0; color:rgba(201,195,209,.92); font-size:13.5px;}
     .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
     .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;}
-
-    /* Services avec photo */
-    .service{
-      padding:12px;
+    .item{
+      padding:14px;
       border:1px solid var(--line);
       border-radius:16px;
       background: rgba(255,255,255,.03);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 120px 1fr;
-      gap:12px;
-      align-items:stretch;
     }
-    .service .simg{
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      overflow:hidden;
-      background: rgba(0,0,0,.22);
-      min-height:110px;
-    }
-    .service .simg img{width:100%; height:100%; object-fit:cover;}
-    .service h3{margin:0 0 6px; font-size:15.5px}
-    .service p{margin:0; color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45}
 
-    /* Boutique */
-    .shop-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;}
-    .product{
+    /* Cards avec image (pour Services et Boutique) */
+    .media-card{
       display:grid;
       grid-template-columns: 140px 1fr;
       gap:12px;
@@ -198,19 +249,25 @@
       background: rgba(255,255,255,.03);
       overflow:hidden;
     }
-    .product .img{
+    .media-card .img{
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(0,0,0,.22);
       overflow:hidden;
       min-height:120px;
     }
-    .product .img img{width:100%; height:100%; object-fit:cover;}
-    .product h4{margin:0 0 6px; font-size:15.5px}
-    .product .meta{font-size:12.5px; color:rgba(201,195,209,.92); margin-bottom:10px; line-height:1.35;}
-    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-    .price{font-weight:800; color:var(--gold2);}
+    .media-card .img img{width:100%; height:100%; object-fit:cover;}
+    .media-card h3, .media-card h4{margin:0 0 6px; font-size:15.5px}
+    .media-card .meta{
+      font-size:12.5px; color:rgba(201,195,209,.92);
+      margin-bottom:10px; line-height:1.35;
+    }
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px;}
+    .price{font-weight:800; color:var(--gold2); letter-spacing:.2px;}
 
+    .shop-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;}
+
+    /* Fresha embed */
     .embed{
       border-radius:18px;
       border:1px solid var(--line);
@@ -218,276 +275,539 @@
       background: rgba(255,255,255,.02);
       box-shadow: var(--shadow);
     }
-    .embed iframe{width:100%; height:820px; border:0; background:#fff;}
+    .embed-head{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .embed-head .left{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      color:rgba(245,242,247,.92);
+      font-size:13px;
+    }
+    .embed iframe{
+      width:100%;
+      height:820px;
+      border:0;
+      background:#fff;
+    }
 
+    /* Footer */
     footer{
       padding:22px 0 35px;
       color:rgba(201,195,209,.92);
       border-top:1px solid var(--line);
       margin-top:18px;
     }
+    .foot{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+    .foot small{display:block; margin-top:6px; line-height:1.4}
 
+    /* Responsive */
     @media (max-width: 920px){
       .hero-grid{grid-template-columns: 1fr}
       h1{font-size:36px}
       .grid-3{grid-template-columns: 1fr}
       .grid-2{grid-template-columns: 1fr}
       .shop-grid{grid-template-columns: 1fr}
-      .product{grid-template-columns: 120px 1fr}
-      .service{grid-template-columns: 120px 1fr}
+      .media-card{grid-template-columns: 120px 1fr}
+      .links{display:none}
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Header -->
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <a class="brand" href="#accueil">
+        <a class="brand" href="#accueil" aria-label="Aller à l'accueil">
           <div class="brand-logo">BB</div>
           <div class="brand-title">
             <div class="name">Bella Bay</div>
             <div class="tag">Luxury Coiffure & Beauty • Laval</div>
           </div>
         </a>
+
+        <div class="links" aria-label="Navigation">
+          <a href="#services">Services</a>
+          <a href="#boutique">Boutique</a>
+          <a href="#apropos">À propos</a>
+          <a href="#carriere">Carrière</a>
+          <a href="#reserver">Réserver</a>
+          <a href="#contact">Contact</a>
+        </div>
+
         <div class="cta">
           <a class="btn small" href="#boutique">Voir la boutique</a>
-          <a class="btn primary" href="#reserver">Réserver</a>
+          <a class="btn primary" href="#reserver"><strong>Réserver</strong></a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Hero -->
   <main id="accueil" class="wrap hero">
     <div class="hero-grid">
       <div class="card hero-main">
-        <h1>Résultats premium — extensions & beauté</h1>
-        <p class="sub">Réservation en ligne intégrée + boutique. Glam, propre, rapide.</p>
+        <div class="kicker"><span class="dot"></span> Glam • Pro • Rapide • Résultats visibles</div>
+        <h1>Coiffure de luxe, extensions & beauté — <span style="color:var(--pink)">Bella Bay</span></h1>
+        <p class="sub">
+          Un look impeccable, sans stress : services coiffure + boutique. Réservation en ligne intégrée directement dans le site.
+        </p>
+
+        <div class="promo-row">
+          <div class="promo">
+            <b>Promo des Fêtes : -15% jusqu’au Boxing Day</b>
+            <small>Valide sur une sélection de services & produits (selon conditions).</small>
+          </div>
+          <div class="promo">
+            <b>Nouveau client : -15%</b>
+            <small>Bienvenue chez Bella Bay — une première visite qui donne envie de revenir.</small>
+          </div>
+        </div>
+
         <div class="hero-actions">
-          <a class="btn primary" href="#reserver">Réserver maintenant</a>
+          <a class="btn primary" href="#reserver"><strong>Réserver maintenant</strong></a>
           <a class="btn" href="#services">Voir les services</a>
           <a class="btn" href="#boutique">Acheter un produit</a>
         </div>
       </div>
 
+      <!-- IMPORTANT: sans photo ici (image supprimée comme demandé) -->
       <div class="card hero-side">
-        <div>
-          <div class="pill">📍 <b>Laval</b> • Montréal</div>
-          <div style="height:10px"></div>
-          <div class="pill phone">📞 514-582-2856</div>
-        </div>
+        <div class="pill"><strong>📍</strong> Laval • Montréal</div>
+        <div class="pill phone">📞 514-582-2856</div>
         <div class="row">
-          <a class="btn small" href="#contact">Écrire</a>
-          <a class="btn small primary" href="#reserver">Réserver</a>
+          <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          <a class="btn small" href="#contact"><strong>Écrire</strong></a>
+        </div>
+        <div class="item" style="margin-top:4px;">
+          <div style="font-weight:750; color:var(--gold2); margin-bottom:6px;">Focus du moment</div>
+          <div style="color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45;">
+            <b>Kératine</b> • Extensions • Couleur • Soins • Cils • Ongles
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- ✅ SERVICES (phrase supprimée + images selon ta demande) -->
+  <!-- Services -->
   <section id="services" class="wrap">
     <div class="section-title">
-      <h2>Services</h2>
-      <a class="btn small primary" href="#reserver">Réserver</a>
+      <div>
+        <h2>Services</h2>
+        <!-- Phrase supprimée comme demandé -->
+      </div>
+      <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
     </div>
 
     <div class="grid-3">
-      <div class="service">
-        <div class="simg"><img src="img/traitement-capillaire.jpg" alt="Traitement capillaire — Bella Bay"></div>
+
+      <div class="media-card">
+        <div class="img"><img src="img/services-coupe.jpg" alt="Coupe & Brushing — Bella Bay"></div>
         <div>
-          <h3>Soin / Traitement capillaire</h3>
-          <p>Hydratation • Réparation • Cheveux plus doux (35$). Massage capillaire (20$).</p>
+          <h3>Coupe & Brushing</h3>
+          <div class="meta">Finition impeccable • Volume & tenue • Idéal événements</div>
+          <div class="row">
+            <span class="price">Coupe femme 50$ • Brushing 40$</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
         </div>
       </div>
 
-      <div class="service">
-        <div class="simg"><img src="img/extension-keratine.jpg" alt="Extensions kératine — Bella Bay"></div>
+      <div class="media-card">
+        <div class="img"><img src="img/services-couleur.jpg" alt="Coloration & Mèches — Bella Bay"></div>
         <div>
-          <h3>Extensions kératine</h3>
-          <p>Résultat naturel • Longueur • Tenue. Service premium sur consultation.</p>
+          <h3>Coloration • Mèches</h3>
+          <div class="meta">Résultat lumineux • Ton sur ton • Balayage/mèches</div>
+          <div class="row">
+            <span class="price">Coloration 75$–90$ • Mèches 120$–180$</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
         </div>
       </div>
 
-      <div class="service">
-        <div class="simg"><img src="img/extension-clip.jpg" alt="Extensions clip — Bella Bay"></div>
+      <div class="media-card">
+        <div class="img"><img src="img/extensions-all.jpg" alt="Extensions — Bella Bay"></div>
         <div>
-          <h3>Extensions à clip</h3>
-          <p>Look instantané • Idéal événements. Pose facile et rapide.</p>
+          <h3>Extensions (Adhésives / Clip / Kératine)</h3>
+          <div class="meta">Longueurs • Densité • Effet naturel • Conseils entretien</div>
+          <div class="row">
+            <span class="price">À partir de 99$</span>
+            <a class="btn small primary" href="#boutique"><strong>Voir boutique</strong></a>
+          </div>
         </div>
       </div>
+
     </div>
 
     <div style="height:12px"></div>
 
     <div class="grid-3">
-      <div class="service">
-        <div class="simg"><img src="img/keratine-avantapres.jpg" alt="Kératine avant/après — Bella Bay"></div>
+
+      <div class="media-card">
+        <div class="img"><img src="img/steam.jpg" alt="Soin capillaire — Bella Bay"></div>
         <div>
-          <h3>Traitement kératine</h3>
-          <p>Brillance • Discipline • Réduction frisottis. À partir de 260$.</p>
+          <h3>Traitement capillaire</h3>
+          <div class="meta">Hydratation • Réparation • Brillance</div>
+          <div class="row">
+            <span class="price">Traitement 35$ • Massage 20$</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
         </div>
       </div>
 
-      <div class="service">
-        <div class="simg"><img src="img/guide-longueurs.jpg" alt="Guide longueurs extensions — Bella Bay"></div>
+      <div class="media-card">
+        <div class="img"><img src="img/keratine-main.jpg" alt="Traitement Kératine — Bella Bay"></div>
         <div>
-          <h3>Guide longueurs (toutes extensions)</h3>
-          <p>12" à 24" — on choisit selon ton look + ta morphologie. (Guide visuel)</p>
+          <h3>Traitement Kératine</h3>
+          <div class="meta">Brillance • Discipline • Réduction frisottis</div>
+          <div class="row">
+            <span class="price">À partir de 260$</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
         </div>
       </div>
 
-      <div class="service">
-        <div class="simg"><img src="img/tape-in-long.jpg" alt="Tape-in — cheveux longs — Bella Bay"></div>
+      <div class="media-card">
+        <div class="img"><img src="img/services-evenements.jpg" alt="Occasions spéciales — Bella Bay"></div>
         <div>
-          <h3>Extensions Tape-in</h3>
-          <p>Effet naturel • Longueurs visibles • Volume. Parfait pour cheveux longs.</p>
+          <h3>Occasions spéciales</h3>
+          <div class="meta">Mariage • Anniversaire • Bal • Événement</div>
+          <div class="row">
+            <span class="price">Sur demande</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="grid-2">
+      <div class="media-card">
+        <div class="img"><img src="img/lashes.jpg" alt="Extensions de cils — Bella Bay"></div>
+        <div>
+          <h3>Extensions de cils</h3>
+          <div class="meta">Regard “wow” • Style glamour • Résultat propre</div>
+          <div class="row">
+            <span class="price">Prix sur demande</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="img"><img src="img/nails.jpg" alt="Ongles press-on — Bella Bay"></div>
+        <div>
+          <h3>Ongles (press-on)</h3>
+          <div class="meta">Design tendance • Finition luxe • Prêt à porter</div>
+          <div class="row">
+            <span class="price">Prix sur demande</span>
+            <a class="btn small primary" href="#boutique"><strong>Voir boutique</strong></a>
+          </div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- ✅ BOUTIQUE (cils + ongles + produits) -->
+  <!-- Boutique -->
   <section id="boutique" class="wrap">
     <div class="section-title">
-      <h2>Boutique</h2>
+      <div>
+        <h2>Boutique</h2>
+        <p>Chaque produit a une image + bouton “Acheter”.</p>
+      </div>
       <a class="btn small" href="#contact">Besoin d’aide?</a>
     </div>
 
     <div class="shop-grid">
 
-      <div class="product">
-        <div class="img"><img src="img/tape-in-long.jpg" alt="Tape-in — Bella Bay"></div>
+      <!-- PRODUIT 1 -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/adhesif.jpg" alt="Extensions adhésives — Bella Bay">
+        </div>
         <div>
-          <h4>Extensions Tape-in</h4>
-          <div class="meta">Longueurs • Volume • Pose discrète</div>
+          <h4>Extensions Adhésives</h4>
+          <div class="meta">Effet naturel • Volume & longueur • Pose rapide</div>
           <div class="row">
-            <span class="price">À partir de $</span>
-            <a class="btn small primary" href="#" target="_blank" rel="noopener">Acheter</a>
+            <span class="price">99$ – 190$</span>
+            <a class="btn small primary" href="https://www.paypal.com/paypalme/bellabay/150" target="_blank" rel="noopener"><strong>Acheter</strong></a>
           </div>
         </div>
       </div>
 
-      <div class="product">
-        <div class="img"><img src="img/extension-clip.jpg" alt="Extensions clip — Bella Bay"></div>
+      <!-- PRODUIT 2 -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/clip.jpg" alt="Extensions clip-in — Bella Bay">
+        </div>
         <div>
           <h4>Extensions Clip-in</h4>
-          <div class="meta">Facile • Instantané • Événements</div>
+          <div class="meta">Facile à poser • Looks instantanés • Idéal événements</div>
           <div class="row">
             <span class="price">75$ – 350$</span>
-            <a class="btn small primary" href="#" target="_blank" rel="noopener">Acheter</a>
+            <a class="btn small primary" href="https://www.paypal.com/paypalme/bellabay/150" target="_blank" rel="noopener"><strong>Acheter</strong></a>
           </div>
         </div>
       </div>
 
-      <div class="product">
-        <div class="img"><img src="img/cils.jpg" alt="Cils — Bella Bay"></div>
-        <div>
-          <h4>Extensions de cils</h4>
-          <div class="meta">Regard intense • Glam • Tenue impeccable</div>
-          <div class="row">
-            <span class="price">À partir de $</span>
-            <a class="btn small primary" href="#" target="_blank" rel="noopener">Acheter</a>
-          </div>
+      <!-- PRODUIT 3 -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/keratine-main.jpg" alt="Traitement Kératine — Bella Bay">
         </div>
-      </div>
-
-      <div class="product">
-        <div class="img"><img src="img/ongles.jpg" alt="Ongles press-on — Bella Bay"></div>
         <div>
-          <h4>Ongles press-on</h4>
-          <div class="meta">Look luxe • Pose rapide • Prêt pour événements</div>
-          <div class="row">
-            <span class="price">À partir de $</span>
-            <a class="btn small primary" href="#" target="_blank" rel="noopener">Acheter</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <div class="img"><img src="img/traitement-capillaire.jpg" alt="Soin capillaire — Bella Bay"></div>
-        <div>
-          <h4>Soin / Traitement capillaire</h4>
-          <div class="meta">Hydratation • Réparation • Brillance</div>
-          <div class="row">
-            <span class="price">35$</span>
-            <a class="btn small primary" href="#reserver">Réserver</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <div class="img"><img src="img/keratine-avantapres.jpg" alt="Kératine — Bella Bay"></div>
-        <div>
-          <h4>Traitement kératine</h4>
-          <div class="meta">Brillance • Discipline • Anti-frisottis</div>
+          <h4>Traitement Kératine</h4>
+          <div class="meta">Brillance • Discipline • Réduction frisottis</div>
           <div class="row">
             <span class="price">À partir de 260$</span>
-            <a class="btn small primary" href="#reserver">Réserver</a>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUIT 4 -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/soin.jpg" alt="Traitement capillaire — Bella Bay">
+        </div>
+        <div>
+          <h4>Traitement capillaire</h4>
+          <div class="meta">Hydratation • Réparation • Cheveux plus doux</div>
+          <div class="row">
+            <span class="price">35$</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUIT 5 (CILS) -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/lashes.jpg" alt="Extensions de cils — Bella Bay">
+        </div>
+        <div>
+          <h4>Extensions de cils</h4>
+          <div class="meta">Regard intense • Glamour • Finition propre</div>
+          <div class="row">
+            <span class="price">Prix sur demande</span>
+            <a class="btn small primary" href="#reserver"><strong>Réserver</strong></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUIT 6 (ONGLES) -->
+      <div class="media-card">
+        <div class="img">
+          <img src="img/nails.jpg" alt="Ongles press-on — Bella Bay">
+        </div>
+        <div>
+          <h4>Ongles press-on</h4>
+          <div class="meta">Design luxe • Prêt à porter • Effet salon</div>
+          <div class="row">
+            <span class="price">Prix sur demande</span>
+            <a class="btn small primary" href="https://www.paypal.com/paypalme/bellabay/150" target="_blank" rel="noopener"><strong>Acheter</strong></a>
           </div>
         </div>
       </div>
 
     </div>
+
+    <div style="height:12px"></div>
+
+    <!-- Produits (L'Oréal / Kérastase) -->
+    <div class="item">
+      <h3 style="margin:0 0 8px; font-size:15.5px;">Produits (L’Oréal / Kérastase)</h3>
+      <div style="color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45; margin-bottom:10px;">
+        Ajoute tes photos produits dans <b>/img</b> (ex: <b>img/loreal.jpg</b>, <b>img/kerastase.jpg</b>) et ça s’affiche automatiquement ici.
+      </div>
+
+      <div class="grid-2">
+        <div class="media-card">
+          <div class="img"><img src="img/loreal.jpg" alt="Produits L'Oréal — Bella Bay"></div>
+          <div>
+            <h4>Produits L’Oréal</h4>
+            <div class="meta">Shampooing • Soin • Styling • Finition pro</div>
+            <div class="row">
+              <span class="price">À partir de 20$</span>
+              <a class="btn small primary" href="https://www.paypal.com/paypalme/bellabay/150" target="_blank" rel="noopener"><strong>Acheter</strong></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <div class="img"><img src="img/kerastase.jpg" alt="Produits Kérastase — Bella Bay"></div>
+          <div>
+            <h4>Produits Kérastase</h4>
+            <div class="meta">Soin luxe • Brillance • Réparation</div>
+            <div class="row">
+              <span class="price">À partir de 35$</span>
+              <a class="btn small primary" href="https://www.paypal.com/paypalme/bellabay/150" target="_blank" rel="noopener"><strong>Acheter</strong></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- Réserver (Fresha) -->
+  <!-- À propos -->
+  <section id="apropos" class="wrap">
+    <div class="section-title">
+      <div>
+        <h2>À propos</h2>
+        <p>Court. Vendeur. Pro.</p>
+      </div>
+    </div>
+
+    <div class="card" style="padding:16px;">
+      <div class="grid-2">
+        <div class="item">
+          <h3 style="margin:0 0 6px; font-size:15.5px;">Ma promesse</h3>
+          <p style="margin:0; color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45;">
+            Chez Bella Bay, chaque détail compte : un résultat luxueux, une tenue impeccable et une expérience fluide.
+          </p>
+        </div>
+        <div class="item">
+          <h3 style="margin:0 0 6px; font-size:15.5px;">Mon style</h3>
+          <p style="margin:0; color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45;">
+            Glamour moderne : couleurs lumineuses, finitions propres, extensions naturelles, look “wow” sans exagération.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrière -->
+  <section id="carriere" class="wrap">
+    <div class="section-title">
+      <div>
+        <h2>Carrière</h2>
+        <p>Tu veux rejoindre l’équipe? Envoie ton info en 1 minute.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3 style="margin:0 0 6px; font-size:15.5px;">Postes</h3>
+      <p style="margin:0; color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45;">
+        Coiffeuse • Coloriste • Technicienne extensions • Assistante (selon besoins)
+      </p>
+      <div class="row" style="margin-top:10px;">
+        <a class="btn small primary" href="#contact"><strong>Postuler</strong></a>
+        <a class="btn small" href="mailto:info@bellabay.ca?subject=Carri%C3%A8re%20-%20Bella%20Bay"><strong>Envoyer un email</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réserver (Fresha intégré) -->
   <section id="reserver" class="wrap">
     <div class="section-title">
-      <h2>Réserver</h2>
+      <div>
+        <h2>Réserver</h2>
+        <p>Réservation intégrée ici.</p>
+      </div>
       <a class="btn small" href="https://partners.fresha.com/calendar?view=day&location_id=2812380&calendar_selected_resources=e-working&date=2025-12-12" target="_blank" rel="noopener">
         Ouvrir en plein écran
       </a>
     </div>
 
-    <div class="embed">
+    <div class="embed" aria-label="Réservation Fresha intégrée">
+      <div class="embed-head">
+        <div class="left">
+          <span class="pill"><strong>✔</strong> Réservation en ligne</span>
+          <span class="pill"><strong>✔</strong> Services & disponibilités</span>
+          <span class="pill"><strong>✔</strong> Paiement selon config Fresha</span>
+        </div>
+        <a class="btn small primary" href="https://partners.fresha.com/calendar?view=day&location_id=2812380&calendar_selected_resources=e-working&date=2025-12-12" target="_blank" rel="noopener">
+          <strong>Ouvrir</strong>
+        </a>
+      </div>
       <iframe
-        title="Fresha - Bella Bay"
+        title="Réservation Fresha — Bella Bay"
         src="https://partners.fresha.com/calendar?view=day&location_id=2812380&calendar_selected_resources=e-working&date=2025-12-12"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        allow="payment *; clipboard-read; clipboard-write">
-      </iframe>
+        allow="payment *; clipboard-read *; clipboard-write *"
+      ></iframe>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="wrap">
     <div class="section-title">
-      <h2>Contact</h2>
-      <a class="btn small primary" href="tel:5145822856">Appeler</a>
+      <div>
+        <h2>Contact</h2>
+        <p>Réponse rapide. Simple.</p>
+      </div>
     </div>
 
     <div class="grid-2">
-      <div class="card" style="padding:14px;">
-        <b>Téléphone</b> : 514-582-2856<br>
-        <b>Zone</b> : Laval • Montréal<br>
-        <b>Instagram</b> : <a href="#" style="text-decoration:underline;">@bellabay</a>
+      <div class="item">
+        <h3 style="margin:0 0 6px; font-size:15.5px;">Coordonnées</h3>
+        <div style="color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.55;">
+          <div><b>Téléphone :</b> 514-582-2856</div>
+          <div><b>Zone :</b> Laval • Montréal</div>
+          <div><b>Instagram :</b> <a href="A_REMPLACER_LIEN_INSTAGRAM" target="_blank" rel="noopener" style="color:var(--gold2);">A_REMPLACER_LIEN_INSTAGRAM</a></div>
+        </div>
       </div>
 
-      <div class="card" style="padding:14px;">
-        <b>Message rapide</b><br>
-        <div style="height:10px"></div>
-        <div class="row">
-          <a class="btn small primary" href="sms:5145822856">SMS</a>
-          <a class="btn small" href="tel:5145822856">Appeler</a>
+      <div class="item">
+        <h3 style="margin:0 0 6px; font-size:15.5px;">Message rapide</h3>
+        <p style="margin:0; color:rgba(201,195,209,.92); font-size:13.5px; line-height:1.45;">
+          Clique ici pour écrire :
+        </p>
+        <div class="row" style="margin-top:10px;">
+          <a class="btn small primary" href="sms:+15145822856"><strong>SMS</strong></a>
+          <a class="btn small" href="tel:+15145822856"><strong>Appeler</strong></a>
+          <a class="btn small" href="mailto:info@bellabay.ca"><strong>Email</strong></a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="wrap">
-      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <div><b>Bella Bay</b><div style="opacity:.85; margin-top:6px;">Luxury Coiffure & Beauty • Laval / Montréal</div></div>
-        <div style="opacity:.85;">© <span id="y"></span> Bella Bay</div>
+  <footer class="wrap">
+    <div class="foot">
+      <div>
+        <div style="font-family:'Playfair Display', serif; font-size:18px; color:rgba(255,255,255,.92);">Bella Bay</div>
+        <small>Luxury Coiffure & Beauty • Laval</small>
+      </div>
+      <div>
+        <small>© <span id="y"></span> Bella Bay • Tous droits réservés</small>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 
+  <!--
+    IMPORTANT (images à mettre dans GitHub -> dossier /img) :
+    img/keratine-main.jpg   (ta photo principale kératine)
+    img/steam.jpg           (traitement/soin capillaire)
+    img/extensions-all.jpg  (image “toutes extensions”)
+    img/lashes.jpg          (cils)
+    img/nails.jpg           (ongles)
+    img/bg-shells.jpg       (coquillages en background translucide)
+    img/services-coupe.jpg
+    img/services-couleur.jpg
+    img/services-evenements.jpg
+    img/loreal.jpg
+    img/kerastase.jpg
+
+    ET ceux que tu as déjà :
+    img/adhesif.jpg
+    img/clip.jpg
+    img/soin.jpg
+  -->
 </body>
-  </html>
+</html>
+```0
