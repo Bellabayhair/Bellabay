@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Look lumineux, moderne et Instagram-ready." /><style>
+<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Expérience beauté moderne, vivante et Instagram-ready." /><style>
 :root{
   --bg:#fff7fb;
   --card:#ffffff;
@@ -16,15 +16,17 @@
 body{
   background:var(--bg);
   color:#222;
+  line-height:1.6;
 }
 
 a{text-decoration:none;color:inherit}
 
+/* HEADER */
 header{
   position:sticky;top:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 18px;
-  background:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.9);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
@@ -47,7 +49,7 @@ nav a{
 /* HERO */
 .hero{
   position:relative;
-  height:88vh;
+  height:90vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -57,10 +59,9 @@ nav a{
 
 .hero video{
   position:absolute;
-  top:0;left:0;
   width:100%;height:100%;
   object-fit:cover;
-  filter:brightness(.75) contrast(1.05);
+  filter:brightness(.78);
 }
 
 .hero-content{
@@ -70,37 +71,35 @@ nav a{
 }
 
 .hero h1{
-  font-size:60px;
+  font-size:58px;
   color:var(--pink);
   letter-spacing:-1px;
 }
 
 .hero p{
-  color:var(--muted);
   margin-top:10px;
-  line-height:1.6;
+  color:#444;
+  font-size:18px;
 }
 
 .btn{
+  margin-top:15px;
+  display:inline-block;
   padding:14px 22px;
   border-radius:999px;
-  font-weight:900;
   background:var(--pink);
   color:white;
-  display:inline-block;
-  margin-top:15px;
+  font-weight:900;
 }
 
-section{
-  padding:60px 18px;
-}
-
+/* SECTIONS */
+section{padding:70px 18px}
 .title{
   text-align:center;
+  font-size:28px;
   color:var(--gold);
-  font-size:26px;
-  margin-bottom:25px;
   font-weight:900;
+  margin-bottom:25px;
 }
 
 .grid{
@@ -117,7 +116,9 @@ section{
   border-radius:18px;
   padding:18px;
   box-shadow:0 10px 30px rgba(0,0,0,.05);
+  transition:.2s;
 }
+.card:hover{transform:translateY(-5px)}
 
 .highlight{
   color:var(--pink);
@@ -127,21 +128,50 @@ section{
 .small{
   color:var(--muted);
   font-size:13px;
-  line-height:1.4;
 }
 
+/* STORY SECTION */
+.story{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.story p{
+  margin-top:10px;
+  color:#555;
+  font-size:16px;
+}
+
+/* REVIEWS */
 .review{
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:12px;
   background:white;
+  border:1px solid var(--border);
+  padding:15px;
+  border-radius:14px;
 }
-
 .review span{
   color:var(--pink);
   font-weight:900;
 }
 
+/* PROCESS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  max-width:900px;
+  margin:auto;
+}
+.step{
+  background:white;
+  padding:15px;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+.step h3{color:var(--pink)}
+
+/* FLOAT */
 .float{
   position:fixed;
   right:14px;
@@ -150,7 +180,6 @@ section{
   flex-direction:column;
   gap:10px;
 }
-
 .float a{
   padding:12px 14px;
   border-radius:999px;
@@ -164,61 +193,80 @@ footer{
   padding:30px;
   color:var(--muted);
   border-top:1px solid var(--border);
-  font-size:12px;
-  background:white;
 }
 </style></head><body><header>
 <div class="logo">B.B</div>
 <nav>
+<a href="#story">Histoire</a>
 <a href="#services">Services</a>
+<a href="#process">Comment ça marche</a>
 <a href="#avis">Avis</a>
-<a href="#booking">Réserver</a>
 </nav>
 </header><section class="hero">
 <video autoplay muted loop playsinline>
-  <source src="https://cdn.coverr.co/videos/coverr-woman-getting-hair-washed-1571/1080p.mp4" type="video/mp4">
+<source src="https://cdn.coverr.co/videos/coverr-woman-getting-hair-washed-1571/1080p.mp4" />
 </video><div class="hero-content">
 <h1>Bella Bay (B.B)</h1>
-<p>Coiffure mobile lumineuse à Montréal & Laval — balayage, coloration et extensions pour un look doux, élégant et moderne.</p>
-<a class="btn" href="#booking">Réserver maintenant</a>
+<p>Une expérience beauté vivante, douce et moderne — pour des cheveux qui attirent tous les regards.</p>
+<a class="btn" href="#services">Découvrir</a>
+</div>
+</section><section id="story">
+<div class="title">L’expérience Bella Bay</div>
+<div class="story">
+<p>
+Bella Bay n’est pas seulement une coiffure. C’est une transformation.
+Un moment pour te sentir belle, confiante et unique.
+</p>
+<p>
+Chaque cliente est écoutée, conseillée et sublimée selon son style.
+</p>
 </div>
 </section><section id="services">
 <div class="title">Services</div><div class="grid">
 <div class="card">
-<div class="highlight">À partir de</div>
+<div class="highlight">À partir de 95$</div>
 <h3>Coloration</h3>
-<p class="small">95$ — résultat lumineux et naturel</p>
+<p class="small">Couleurs lumineuses et modernes adaptées à ton style</p>
 </div><div class="card">
-<div class="highlight">À partir de</div>
+<div class="highlight">À partir de 150$</div>
 <h3>Mèches</h3>
-<p class="small">150$ — effet doux et lumineux</p>
+<p class="small">Effet naturel pour un glow subtil et élégant</p>
 </div><div class="card">
-<div class="highlight">À partir de</div>
+<div class="highlight">À partir de 180$</div>
 <h3>Balayage</h3>
-<p class="small">180$ — glow naturel élégant</p>
+<p class="small">Résultat doux, lumineux et très tendance</p>
 </div><div class="card">
-<div class="highlight">À partir de</div>
+<div class="highlight">Sur devis</div>
 <h3>Extensions</h3>
-<p class="small">Prix selon qualité et quantité</p>
+<p class="small">Adapté à la qualité et la quantité de cheveux</p>
+</div>
+</div>
+</section><section id="process">
+<div class="title">Comment ça se passe</div><div class="steps">
+<div class="step">
+<h3>1. Consultation</h3>
+<p class="small">On discute de ton style et de tes envies</p>
+</div>
+<div class="step">
+<h3>2. Transformation</h3>
+<p class="small">Service professionnel à domicile</p>
+</div>
+<div class="step">
+<h3>3. Résultat</h3>
+<p class="small">Cheveux brillants, modernes et élégants</p>
 </div>
 </div>
 </section><section id="avis">
 <div class="title">Avis clients</div>
 <div class="grid">
-<div class="review"><span>Sarah</span><p>Résultat magnifique ✨</p></div>
-<div class="review"><span>Jessica</span><p>Très douce et professionnelle</p></div>
-<div class="review"><span>Amélie</span><p>J’adore mon résultat</p></div>
-</div>
-</section><section id="booking">
-<div class="card" style="text-align:center;max-width:700px;margin:auto">
-<h2 style="color:#caa25a">Réservation Fresha</h2>
-<p class="small">Clique pour réserver ton look Bella Bay</p>
-<a class="btn" href="#">Accéder à Fresha</a>
+<div class="review"><span>Sarah</span><p>J’ai jamais eu autant de compliments ✨</p></div>
+<div class="review"><span>Jessica</span><p>Résultat incroyable, très professionnel</p></div>
+<div class="review"><span>Amélie</span><p>Je recommande à 100%</p></div>
 </div>
 </section><footer>
 Bella Bay (B.B) — Coiffure Mobile Montréal & Laval
 </footer><div class="float">
-<a href="#booking">📅 Réserver</a>
+<a href="#services">📅 Réserver</a>
 <a href="tel:+15145822856">📞 Appeler</a>
 </div></body>
 </html>
