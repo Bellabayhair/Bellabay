@@ -1,415 +1,169 @@
-
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bella Bay — Luxury Coiffure & Beauty • Laval</title>
-  <meta name="description" content="Bella Bay — coiffure privée mobile à Laval & Montréal. Réserver en ligne (Fresha) + boutique avec paiement PayPal." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Bella Bay — Coiffure Luxe à Domicile Montréal & Laval</title>  <!-- SEO -->  <meta name="description" content="Bella Bay — coiffure à domicile à Montréal & Laval. Coloration, balayage, mèches, extensions. Réservation rapide en ligne via Fresha." />
+  <meta name="keywords" content="coiffure Montréal, coiffeuse Laval, balayage, extensions cheveux, coiffure à domicile" />
+  <meta name="author" content="Bella Bay" />  <!-- Open Graph -->  <meta property="og:title" content="Bella Bay — Luxury Hair Experience" />
+  <meta property="og:description" content="Coiffure luxe à domicile à Montréal & Laval" />
+  <meta property="og:type" content="website" />  <style>
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 
-  <style>
-    :root{
-      --bg:#0b0b0f;
-      --card: rgba(255,255,255,.045);
-      --card2: rgba(255,255,255,.03);
-      --border: rgba(255,255,255,.10);
-      --txt:#f3f3f6;
-      --muted:#b9b9c7;
-      --rose:#ff78b6;
-      --gold:#d9b46a;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 22px;
-    }
-    *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--txt);
+      font-family: system-ui, Arial, sans-serif;
       background:
-        radial-gradient(1000px 550px at 20% 0%, rgba(255,120,182,.18), transparent 60%),
-        radial-gradient(900px 520px at 85% 10%, rgba(217,180,106,.14), transparent 55%),
-        var(--bg);
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1080px; margin:0 auto; padding:18px}
-
-    /* Header */
-    .topbar{
-      position: sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,11,15,.65);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      padding:14px 18px;
-      max-width:1080px; margin:0 auto;
-    }
-    .brand{display:flex; align-items:center; gap:12px; min-width:180px;}
-    .logo{
-      width:44px; height:44px; border-radius:16px;
-      border:1px solid var(--border);
-      background: linear-gradient(135deg, rgba(255,120,182,.25), rgba(217,180,106,.20));
-      display:grid; place-items:center;
-      box-shadow: var(--shadow);
-      flex:0 0 auto;
-    }
-    .logo span{font-weight:900; letter-spacing:.5px; color: var(--gold); text-shadow:0 1px 0 rgba(0,0,0,.35);}
-    .brand-title{line-height:1.1;}
-    .brand-title .name{font-weight:900; letter-spacing:.2px; font-size:18px;}
-    .brand-title .tag{color: var(--muted); font-size:12px; margin-top:2px;}
-
-    .navbtn{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
-    .pill{
-      padding:10px 12px; border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--txt);
-      font-weight:700; font-size:13px;
-      transition:.2s; white-space:nowrap;
-    }
-    .pill:hover{background: rgba(255,255,255,.07)}
-    .pill.primary{
-      border-color: rgba(217,180,106,.35);
-      background: linear-gradient(180deg, rgba(217,180,106,.18), rgba(255,120,182,.08));
-    }
-
-    /* Cards */
-    .card{
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, var(--card), var(--card2));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .pad{padding:18px}
-
-    /* Hero */
-    .hero{padding:18px 0 6px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr}
-      .nav{flex-direction:column; align-items:flex-start}
-      .navbtn{width:100%; justify-content:flex-start}
-    }
-
-    .chipline{
-      display:flex; gap:10px; flex-wrap:wrap;
-      padding:12px 12px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-weight:700; font-size:13px;
-      margin-bottom:14px;
-    }
-    .dot{width:10px; height:10px; border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, var(--gold), rgba(255,120,182,.7));
-      box-shadow: 0 0 22px rgba(217,180,106,.25);
-      margin-top:2px;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(34px, 4.3vw, 52px);
-      line-height:1.05;
-      letter-spacing:-.8px;
-    }
-    .h1pink{
-      background: linear-gradient(180deg, #fff, rgba(255,255,255,.75));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .h1accent{
-      background: linear-gradient(180deg, var(--rose), rgba(255,120,182,.55));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .sub{margin:0 0 14px; color: var(--muted); font-size:16px; line-height:1.55;}
-
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:14px 18px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
+        radial-gradient(900px 500px at 20% 0%, rgba(255,120,182,.18), transparent),
+        radial-gradient(900px 500px at 80% 0%, rgba(217,180,106,.14), transparent),
+        #0b0b0f;
       color:#fff;
-      font-weight:900;
-      letter-spacing:.2px;
-      cursor:pointer;
-      transition:.2s;
-      white-space:nowrap;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
-    .btn.gold{
-      border-color: rgba(217,180,106,.35);
-      background: linear-gradient(180deg, rgba(217,180,106,.20), rgba(255,120,182,.08));
-    }
-    .btn.rose{
-      border-color: rgba(255,120,182,.35);
-      background: rgba(255,120,182,.10);
     }
 
-    .promo{display:grid; gap:12px;}
-    .promo-card{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 18px;
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    nav{
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,.65);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:12px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      font-size:13px;
+    }
+
+    nav a:hover{background:rgba(255,255,255,.06)}
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:70px 16px;
+    }
+
+    h1{
+      font-size:44px;
+      color:#d9b46a;
+    }
+
+    .sub{
+      max-width:600px;
+      margin:12px auto;
+      color:#b9b9c7;
+      line-height:1.5;
+    }
+
+    .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+
+    .btn{
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      font-weight:700;
+    }
+
+    .btn.gold{
+      background:linear-gradient(135deg,#d9b46a,#b8924d);
+      color:#000;
+    }
+
+    section{padding:40px 16px}
+
+    h2{text-align:center;color:#d9b46a;margin-bottom:20px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:18px;
       padding:16px;
     }
-    .promo-title{margin:0; font-weight:900; color: var(--gold); font-size:18px;}
-    .promo-text{margin:8px 0 0; color: var(--muted); line-height:1.45;}
 
-    /* Sections */
-    .section{padding:14px 0}
-    .section-title{margin:0 0 10px; font-size:20px; font-weight:900; letter-spacing:.2px;}
+    .review{color:#b9b9c7;font-size:14px}
+    .review b{color:#fff}
 
-    /* Services / Shop */
-    .grid3{display:grid; gap:12px; grid-template-columns: repeat(3, 1fr);}
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
-    .item{padding:16px;}
-    .badge{
-      display:inline-block;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(217,180,106,.22);
-      background: rgba(217,180,106,.12);
-      color: var(--gold);
-      font-size:12px;
-      font-weight:900;
-    }
-    .item h3{margin:10px 0 6px; font-size:16px}
-    .item p{margin:0 0 10px; color:var(--muted); line-height:1.4}
-    .price{font-weight:900; color:#fff}
-    .small{font-size:13px}
-
-    /* Footer */
-    footer{
-      margin-top:18px;
-      border-top:1px solid rgba(255,255,255,.10);
-      padding:22px 0 34px;
-      color: var(--muted);
-    }
-    .foot{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:flex-start;}
-
-    /* Floating mobile actions */
     .float{
-      position:fixed; right:14px; bottom:14px;
-      display:flex; flex-direction:column; gap:10px; z-index:100;
+      position:fixed;
+      right:12px;
+      bottom:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
+
     .float a{
-      border-radius:999px; padding:12px 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-      font-weight:900;
-      box-shadow: 0 12px 30px rgba(0,0,0,.55);
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(0,0,0,.5);
+      border:1px solid rgba(255,255,255,.15);
+      font-weight:800;
     }
-    .float a:first-child{
-      border-color: rgba(217,180,106,.35);
-      background: linear-gradient(180deg, rgba(217,180,106,.22), rgba(255,120,182,.08));
-    }
-  </style>
-</head>
-
-<body>
-  <!-- 🔧 CONFIG (remplace ces 2 liens) -->
-  <script>
-    const FRESHA_BOOKING_URL = "COLLE_ICI_TON_LIEN_FRESHA_CLIENT";
-    const PAYPAL_URL = "COLLE_ICI_TON_LIEN_PAYPAL";
-    function goBooking(){ window.open(FRESHA_BOOKING_URL, "_blank", "noopener"); }
-    function goPayPal(){ window.open(PAYPAL_URL, "_blank", "noopener"); }
-  </script>
-
-  <div class="topbar">
-    <div class="nav">
-      <div class="brand">
-        <div class="logo"><span>BB</span></div>
-        <div class="brand-title">
-          <div class="name">Bella Bay</div>
-          <div class="tag">Luxury Coiffure & Beauty • Laval</div>
-        </div>
-      </div>
-
-      <div class="navbtn">
-        <a class="pill" href="#services">Services</a>
-        <a class="pill" href="#boutique">Boutique</a>
-        <a class="pill" href="#reserver">Réserver</a>
-        <a class="pill" href="#contact">Contact</a>
-        <a class="pill primary" href="#boutique">Voir la boutique</a>
-      </div>
-    </div>
+  </style></head><body><script>
+  const FRESHA = "COLLE_ICI_FRESHA";
+  function book(){ window.open(FRESHA,"_blank"); }
+</script><nav>
+  <a href="#services">Services</a>
+  <a href="#avant">Avant/Après</a>
+  <a href="#avis">Avis</a>
+  <a href="#book">Réserver</a>
+  <a href="#contact">Contact</a>
+</nav><div class="hero">
+  <h1>Bella Bay</h1>
+  <p class="sub">Coiffure luxe à domicile à Montréal & Laval — balayage, coloration, extensions et soins professionnels.</p>
+  <div class="btns">
+    <a class="btn gold" href="javascript:void(0)" onclick="book()">Réserver maintenant</a>
+    <a class="btn" href="#services">Voir services</a>
   </div>
-
-  <main class="wrap">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-
-        <div class="card pad">
-          <div class="chipline">
-            <span class="dot"></span>
-            <span>Glam</span> • <span>Pro</span> • <span>Rapide</span> • <span>Résultats visibles</span>
-          </div>
-
-          <h1>
-            <span class="h1pink">Coiffure de luxe,</span><br>
-            <span class="h1pink">extensions & beauté</span> — <span class="h1accent">Bella Bay</span>
-          </h1>
-
-          <p class="sub">
-            Un look impeccable, sans stress : services coiffure + boutique.
-            <strong>Réservation en ligne</strong> + paiement simple.
-          </p>
-
-          <div class="cta">
-            <a class="btn gold" href="#reserver">Réserver en ligne</a>
-            <a class="btn" href="#services">Voir les services</a>
-            <a class="btn rose" href="#boutique">Acheter un produit</a>
-          </div>
-        </div>
-
-        <div class="card pad promo">
-          <div class="promo-card">
-            <p class="promo-title">Promo des Fêtes : -15% jusqu’au Boxing Day</p>
-            <p class="promo-text">Valide sur une sélection de services & produits (selon conditions).</p>
-          </div>
-          <div class="promo-card">
-            <p class="promo-title">Nouveau client : -15%</p>
-            <p class="promo-text">Bienvenue chez Bella Bay — une première visite qui donne envie de revenir.</p>
-          </div>
-          <div class="cta">
-            <a class="btn" href="tel:+15145822856">Appeler : (514) 582-2856</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <h2 class="section-title">Services</h2>
-
-      <div class="grid3">
-        <div class="card item">
-          <span class="badge">Coiffure</span>
-          <h3>Coupe femme</h3>
-          <p>Coupe + finition soignée, style luxe.</p>
-          <div class="price">50 $</div>
-        </div>
-
-        <div class="card item">
-          <span class="badge">Brushing</span>
-          <h3>Brushing</h3>
-          <p>Brillance & tenue longue durée.</p>
-          <div class="price">40 $</div>
-        </div>
-
-        <div class="card item">
-          <span class="badge">Coloration</span>
-          <h3>Coloration / Balayage</h3>
-          <p>Base, complète, mèches/balayage (selon longueur).</p>
-          <div class="price">75 $ à 180 $</div>
-        </div>
-      </div>
-
-      <div class="cta" style="margin-top:12px">
-        <a class="btn gold" href="#reserver">Réserver en ligne</a>
-        <a class="btn" href="#boutique">Voir la boutique</a>
-      </div>
-    </section>
-
-    <!-- BOUTIQUE -->
-    <section id="boutique" class="section">
-      <h2 class="section-title">Boutique (paiement PayPal)</h2>
-      <p class="sub" style="margin-top:0">
-        Clique sur <strong>“Payer avec PayPal”</strong> pour acheter directement.
-      </p>
-
-      <div class="grid3">
-        <div class="card item">
-          <span class="badge">Extensions</span>
-          <h3>Extensions adhésives</h3>
-          <p>Prix selon longueur/densité. Paiement direct PayPal.</p>
-          <div class="cta">
-            <a class="btn gold" href="javascript:void(0)" onclick="goPayPal()">Payer avec PayPal</a>
-          </div>
-          <div class="small">99 $ à 190 $</div>
-        </div>
-
-        <div class="card item">
-          <span class="badge">Extensions</span>
-          <h3>Extensions clip</h3>
-          <p>Look instantané. Paiement direct PayPal.</p>
-          <div class="cta">
-            <a class="btn gold" href="javascript:void(0)" onclick="goPayPal()">Payer avec PayPal</a>
-          </div>
-          <div class="small">75 $ à 350 $</div>
-        </div>
-
-        <div class="card item">
-          <span class="badge">Traitement</span>
-          <h3>Kératine</h3>
-          <p>À partir de 260$ selon cheveux. Paiement direct PayPal.</p>
-          <div class="cta">
-            <a class="btn gold" href="javascript:void(0)" onclick="goPayPal()">Payer avec PayPal</a>
-          </div>
-          <div class="small">À partir de 260 $</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ RÉSERVER EN LIGNE (FRESHA — VERSION AMÉLIORÉE) -->
-    <section id="reserver" class="section">
-      <h2 class="section-title">Réserver en ligne</h2>
-      <div class="card pad">
-        <p class="sub" style="margin-top:0">
-          Clique ici pour accéder au calendrier <strong>Fresha côté cliente</strong>, choisir ton service et confirmer ton rendez-vous.
-        </p>
-        <div class="cta" style="margin-top:10px">
-          <a class="btn gold" href="javascript:void(0)" onclick="goBooking()">📅 Réserver maintenant</a>
-          <a class="btn" href="#services">Voir les services</a>
-          <a class="btn rose" href="#boutique">Acheter un produit</a>
-        </div>
-        <p class="small" style="margin-top:12px; color:var(--muted)">
-          Important : colle ici le lien “Online booking / Booking link” (client) depuis ton compte Fresha.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Contact</h2>
-      <div class="card pad">
-        <p class="sub" style="margin-top:0">Service mobile privé — Laval • Montréal</p>
-        <div class="cta">
-          <a class="btn gold" href="tel:+15145822856">📞 (514) 582-2856</a>
-          <a class="btn" href="https://bellabay.ca" target="_blank" rel="noopener">🌐 bellabay.ca</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="foot">
-        <div>
-          <div style="font-weight:900; color:#fff">Bella Bay</div>
-          <div class="small">Service mobile de coiffure — Sublimez vos cheveux avec Bella Bay.</div>
-        </div>
-        <div class="small">© <span id="y"></span> Bella Bay • PayPal • Réservation en ligne</div>
-      </div>
-    </footer>
-
-  </main>
-
-  <div class="float">
-    <a href="javascript:void(0)" onclick="goBooking()">📅 Réserver</a>
-    <a href="tel:+15145822856">📞 Appeler</a>
+</div><section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card"><b>Coloration</b><br><span class="review">Résultat lumineux & naturel</span></div>
+    <div class="card"><b>Balayage</b><br><span class="review">Effet luxe professionnel</span></div>
+    <div class="card"><b>Extensions</b><br><span class="review">Volume & longueur instantanés</span></div>
   </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
+</section><section id="avant">
+  <h2>Avant / Après</h2>
+  <div class="grid">
+    <img class="card" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" style="width:100%"/>
+    <img class="card" src="https://images.unsplash.com/photo-1526045478516-99145907023c" style="width:100%"/>
+  </div>
+</section><section id="avis">
+  <h2>Avis clients</h2>
+  <div class="grid">
+    <div class="card review"><b>Sarah:</b> Résultat incroyable et service parfait.</div>
+    <div class="card review"><b>Jessica:</b> Expérience luxe à domicile.</div>
+    <div class="card review"><b>Amélie:</b> Très professionnelle, je recommande.</div>
+  </div>
+</section><section id="book">
+  <h2>Réservation</h2>
+  <div class="card" style="text-align:center">
+    Clique pour réserver via Fresha
+    <br><br>
+    <a class="btn gold" href="javascript:void(0)" onclick="book()">Ouvrir Fresha</a>
+  </div>
+</section><section id="contact">
+  <h2>Contact</h2>
+  <div class="card" style="text-align:center">
+    Montréal & Laval<br>
+    📞 514-582-2856
+  </div>
+</section><div class="float">
+  <a href="javascript:void(0)" onclick="book()">📅 Réserver</a>
+  <a href="tel:+15145822856">📞 Appeler</a>
+</div></body>
 </html>
