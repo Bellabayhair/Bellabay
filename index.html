@@ -2,26 +2,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bella Bay — Luxury Mobile Hair Salon Montréal & Laval</title><meta name="description" content="Bella Bay — coiffure mobile luxe à Montréal & Laval. Coloration, balayage, extensions XL 26 pouces. Résultats avant/après et réservation en ligne." />
-<meta name="keywords" content="coiffure Montréal, coiffeuse mobile Laval, balayage Montréal, extensions cheveux, coloration luxe" /><style>
+<title>Bella Bay — Coiffure Mobile Montréal & Laval | Looks Viraux</title><meta name="description" content="Bella Bay — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Looks viraux, résultats Instagram-ready et réservation rapide via Fresha." />
+<meta name="keywords" content="coiffeuse mobile Montréal, coiffure Laval, balayage Montréal, extensions cheveux, coloration cheveux, Bella Bay" /><!-- Open Graph (Instagram / Facebook preview) --><meta property="og:title" content="Bella Bay — Coiffure Mobile Luxe" />
+<meta property="og:description" content="Looks viraux, balayage, coloration & extensions à Montréal & Laval" />
+<meta property="og:type" content="website" /><style>
 :root{
   --bg:#0b0b0f;
   --card:#15151d;
   --border:#2a2a2a;
-  --pink:#ff4fa3;
+  --pink:#ff3fa6;
   --gold:#d9b46a;
   --muted:#bdbdc7;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial;}
-body{background:var(--bg);color:white;scroll-behavior:smooth;}
+body{background:var(--bg);color:white;}
 a{text-decoration:none;color:inherit}
 
 header{
   position:sticky;top:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
-  padding:14px 20px;
-  background:rgba(0,0,0,.75);
+  padding:14px 18px;
+  background:rgba(0,0,0,.85);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
@@ -37,12 +39,11 @@ nav a{
 
 .hero{
   position:relative;
-  height:85vh;
+  height:88vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  overflow:hidden;
 }
 
 .hero::before{
@@ -52,26 +53,23 @@ nav a{
   filter:brightness(.45);
 }
 
-.hero-content{
-  position:relative;
-  max-width:800px;
-}
+.hero-content{position:relative;max-width:850px;padding:20px}
 
-.hero h1{font-size:58px;color:var(--pink)}
-.hero p{color:var(--muted);margin-top:10px}
+.hero h1{font-size:64px;color:var(--pink);letter-spacing:-1px}
+.hero p{color:var(--muted);margin-top:10px;line-height:1.6}
 
 .btn{
-  display:inline-block;
-  margin-top:18px;
   padding:14px 22px;
+  border-radius:999px;
+  font-weight:900;
   background:var(--pink);
   color:black;
-  font-weight:900;
-  border-radius:999px;
+  display:inline-block;
+  margin-top:15px;
 }
 
-section{padding:70px 20px}
-.title{text-align:center;color:var(--gold);font-size:24px;margin-bottom:25px}
+section{padding:60px 18px}
+.title{text-align:center;color:var(--gold);font-size:26px;margin-bottom:25px;font-weight:900}
 
 .grid{
   display:grid;
@@ -86,9 +84,12 @@ section{padding:70px 20px}
   border:1px solid var(--border);
   border-radius:18px;
   padding:18px;
+  transition:.2s;
 }
+.card:hover{transform:translateY(-5px)}
 
-.price{margin-top:10px;color:var(--gold);font-weight:900}
+.highlight{color:var(--pink);font-weight:900}
+.small{color:var(--muted);font-size:13px;line-height:1.4}
 
 .review{
   padding:15px;
@@ -98,106 +99,88 @@ section{padding:70px 20px}
 }
 .review span{color:var(--pink);font-weight:900}
 
-/* BEFORE AFTER CAROUSEL */
-.carousel{
-  max-width:900px;
-  margin:auto;
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  border:1px solid var(--border);
-}
+/* FAQ */
+.faq{max-width:800px;margin:auto}
+.faq h3{color:var(--pink);margin-top:10px}
 
-.slides{
+/* FLOAT CTA */
+.float{
+  position:fixed;
+  right:14px;
+  bottom:14px;
   display:flex;
-  width:300%;
-  animation:slide 10s infinite;
+  flex-direction:column;
+  gap:10px;
 }
-
-.slides img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-
-@keyframes slide{
-  0%{transform:translateX(0)}
-  33%{transform:translateX(-100%)}
-  66%{transform:translateX(-200%)}
-  100%{transform:translateX(0)}
-}
-
-.booking{
-  text-align:center;
-  max-width:700px;
-  margin:auto;
-  padding:25px;
-  background:var(--card);
+.float a{
+  padding:12px 14px;
+  border-radius:999px;
+  background:rgba(0,0,0,.75);
   border:1px solid var(--border);
-  border-radius:20px;
+  font-weight:900;
 }
 
-footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--border)}
-</style></head><body><header>
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  font-size:12px;
+}
+</style><!-- LOCAL SEO (Google Maps style) --><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bella Bay",
+  "description": "Coiffure mobile à Montréal et Laval",
+  "areaServed": ["Montréal", "Laval"],
+  "telephone": "+15145822856"
+}
+</script></head><body><header>
 <div class="logo">BB</div>
 <nav>
 <a href="#services">Services</a>
-<a href="#resultats">Résultats</a>
 <a href="#avis">Avis</a>
+<a href="#faq">FAQ</a>
 <a href="#booking">Réserver</a>
 </nav>
-</header><!-- HERO --><section class="hero">
+</header><section class="hero">
 <div class="hero-content">
 <h1>Bella Bay</h1>
-<p>Coiffure mobile luxe à Montréal & Laval — coloration, balayage et extensions premium avec résultats avant/après.</p>
+<p>Looks viraux à Montréal & Laval — coiffure mobile, balayage, coloration et extensions pour un résultat Instagram-ready.</p>
 <a class="btn" href="#booking">Réserver maintenant</a>
 </div>
-</section><!-- SERVICES --><section id="services">
-<div class="title">Services Signature</div><div class="grid">
-<div class="card">
-<h3>Coloration signature</h3>
-<p>Résultat riche et moderne</p>
-<div class="price">95$+</div>
-</div><div class="card">
-<h3>Balayage luxe</h3>
-<p>Effet lumineux naturel</p>
-<div class="price">150$+</div>
-</div><div class="card">
-<h3>Extensions XL 26"</h3>
-<p>Volume instantané premium</p>
-<div class="price">120$+</div>
+</section><section id="services">
+<div class="title">Services</div><div class="grid">
+<div class="card"><div class="highlight">À partir de</div><h3>Coloration</h3><p class="small">Résultat lumineux et tendance</p></div>
+<div class="card"><div class="highlight">À partir de</div><h3>Balayage</h3><p class="small">Effet naturel viral</p></div>
+<div class="card"><div class="highlight">À partir de</div><h3>Extensions</h3><p class="small">Volume & transformation complète</p></div>
 </div>
+</section><section id="avis">
+<div class="title">Avis clients</div>
+<div class="grid">
+<div class="review"><span>Sarah</span><p>Incroyable résultat 🔥</p></div>
+<div class="review"><span>Jessica</span><p>Je reviens sans hésiter</p></div>
+<div class="review"><span>Amélie</span><p>Look viral garanti</p></div>
 </div>
-</section><!-- BEFORE AFTER RESULTS --><section id="resultats">
-<div class="title">Résultats Avant / Après</div><div class="carousel">
-  <div class="slides">
-    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702" alt="hair result 1" />
-    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e" alt="hair result 2" />
-    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="hair result 3" />
-  </div>
+</section><section id="faq">
+<div class="title">FAQ</div>
+<div class="faq">
+<h3>Est-ce que tu te déplaces ?</h3>
+<p class="small">Oui, service mobile à domicile Montréal & Laval.</p><h3>Comment réserver ?</h3>
+<p class="small">Via Fresha en ligne.</p><h3>Résultats ?</h3>
+<p class="small">Looks naturels, modernes et Instagram-ready.</p>
 </div>
-</section><!-- REVIEWS --><section id="avis">
-<div class="title">Avis Clients</div><div class="grid">
-<div class="review">
-<span>Sarah M.</span>
-<p>Résultat incroyable, je recommande fortement.</p>
-</div>
-<div class="review">
-<span>Jessica L.</span>
-<p>Expérience luxe à domicile parfaite.</p>
-</div>
-<div class="review">
-<span>Amélie R.</span>
-<p>Très satisfaite du résultat final.</p>
-</div>
-</div>
-</section><!-- BOOKING --><section id="booking">
-<div class="booking">
-<h2 style="color:#d9b46a">Réservation en ligne</h2>
-<p style="color:#bdbdc7">Clique pour réserver via Fresha</p>
+</section><section id="booking">
+<div class="card" style="text-align:center;max-width:700px;margin:auto">
+<h2 style="color:#d9b46a">Réservation Fresha</h2>
+<p class="small">Clique pour réserver ton look Bella Bay</p>
 <a class="btn" href="#">Accéder à Fresha</a>
 </div>
 </section><footer>
-© Bella Bay — Luxury Mobile Hair Experience
-</footer></body>
+© Bella Bay — Coiffure Mobile Montréal & Laval
+</footer><div class="float">
+<a href="#booking">📅 Réserver</a>
+<a href="tel:+15145822856">📞 Appeler</a>
+</div></body>
 </html>
