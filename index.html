@@ -2,40 +2,49 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval | Looks Viraux</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Looks viraux, résultats Instagram-ready et réservation rapide via Fresha." />
-<meta name="keywords" content="coiffeuse mobile Montréal, coiffure Laval, balayage Montréal, extensions cheveux, coloration cheveux, Bella Bay" /><style>
+<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Look lumineux, moderne et Instagram-ready." /><style>
 :root{
-  --bg:#0b0b0f;
-  --card:#15151d;
-  --border:#2a2a2a;
-  --pink:#ff3fa6;
-  --gold:#d9b46a;
-  --muted:#bdbdc7;
+  --bg:#fff7fb;
+  --card:#ffffff;
+  --border:#f1d7e6;
+  --pink:#ff4fa3;
+  --gold:#caa25a;
+  --muted:#6b6b76;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial;}
-body{background:var(--bg);color:white;}
+body{
+  background:var(--bg);
+  color:#222;
+}
+
 a{text-decoration:none;color:inherit}
 
 header{
   position:sticky;top:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 18px;
-  background:rgba(0,0,0,.85);
+  background:rgba(255,255,255,.85);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
 
-.logo{font-weight:900;color:var(--pink);letter-spacing:3px}
+.logo{
+  font-weight:900;
+  color:var(--pink);
+  letter-spacing:3px;
+}
+
 nav a{
   margin-left:10px;
   padding:8px 12px;
   border:1px solid var(--border);
   border-radius:999px;
   font-size:13px;
+  background:white;
 }
 
-/* HERO VIDEO */
+/* HERO */
 .hero{
   position:relative;
   height:88vh;
@@ -49,10 +58,9 @@ nav a{
 .hero video{
   position:absolute;
   top:0;left:0;
-  width:100%;
-  height:100%;
+  width:100%;height:100%;
   object-fit:cover;
-  filter:brightness(.45) contrast(1.1);
+  filter:brightness(.75) contrast(1.05);
 }
 
 .hero-content{
@@ -61,21 +69,39 @@ nav a{
   padding:20px;
 }
 
-.hero h1{font-size:64px;color:var(--pink);letter-spacing:-1px}
-.hero p{color:var(--muted);margin-top:10px;line-height:1.6}
+.hero h1{
+  font-size:60px;
+  color:var(--pink);
+  letter-spacing:-1px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.6;
+}
 
 .btn{
   padding:14px 22px;
   border-radius:999px;
   font-weight:900;
   background:var(--pink);
-  color:black;
+  color:white;
   display:inline-block;
   margin-top:15px;
 }
 
-section{padding:60px 18px}
-.title{text-align:center;color:var(--gold);font-size:26px;margin-bottom:25px;font-weight:900}
+section{
+  padding:60px 18px;
+}
+
+.title{
+  text-align:center;
+  color:var(--gold);
+  font-size:26px;
+  margin-bottom:25px;
+  font-weight:900;
+}
 
 .grid{
   display:grid;
@@ -90,18 +116,31 @@ section{padding:60px 18px}
   border:1px solid var(--border);
   border-radius:18px;
   padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.highlight{color:var(--pink);font-weight:900}
-.small{color:var(--muted);font-size:13px;line-height:1.4}
+.highlight{
+  color:var(--pink);
+  font-weight:900;
+}
+
+.small{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.4;
+}
 
 .review{
   padding:15px;
   border:1px solid var(--border);
   border-radius:12px;
-  background:#11111a;
+  background:white;
 }
-.review span{color:var(--pink);font-weight:900}
+
+.review span{
+  color:var(--pink);
+  font-weight:900;
+}
 
 .float{
   position:fixed;
@@ -111,10 +150,11 @@ section{padding:60px 18px}
   flex-direction:column;
   gap:10px;
 }
+
 .float a{
   padding:12px 14px;
   border-radius:999px;
-  background:rgba(0,0,0,.75);
+  background:white;
   border:1px solid var(--border);
   font-weight:900;
 }
@@ -125,6 +165,7 @@ footer{
   color:var(--muted);
   border-top:1px solid var(--border);
   font-size:12px;
+  background:white;
 }
 </style></head><body><header>
 <div class="logo">B.B</div>
@@ -133,12 +174,12 @@ footer{
 <a href="#avis">Avis</a>
 <a href="#booking">Réserver</a>
 </nav>
-</header><!-- HERO VIDEO --><section class="hero">
+</header><section class="hero">
 <video autoplay muted loop playsinline>
   <source src="https://cdn.coverr.co/videos/coverr-woman-getting-hair-washed-1571/1080p.mp4" type="video/mp4">
 </video><div class="hero-content">
 <h1>Bella Bay (B.B)</h1>
-<p>Looks viraux à Montréal & Laval — coiffure mobile, coloration, balayage et extensions pour un résultat élégant et moderne.</p>
+<p>Coiffure mobile lumineuse à Montréal & Laval — balayage, coloration et extensions pour un look doux, élégant et moderne.</p>
 <a class="btn" href="#booking">Réserver maintenant</a>
 </div>
 </section><section id="services">
@@ -146,18 +187,15 @@ footer{
 <div class="card">
 <div class="highlight">À partir de</div>
 <h3>Coloration</h3>
-<p class="small">Résultat lumineux et personnalisé</p>
-<div class="highlight">95$</div>
+<p class="small">95$ — résultat lumineux et naturel</p>
 </div><div class="card">
 <div class="highlight">À partir de</div>
 <h3>Mèches</h3>
-<p class="small">Effet naturel et lumineux</p>
-<div class="highlight">150$</div>
+<p class="small">150$ — effet doux et lumineux</p>
 </div><div class="card">
 <div class="highlight">À partir de</div>
 <h3>Balayage</h3>
-<p class="small">Glow naturel et élégant</p>
-<div class="highlight">180$</div>
+<p class="small">180$ — glow naturel élégant</p>
 </div><div class="card">
 <div class="highlight">À partir de</div>
 <h3>Extensions</h3>
@@ -167,13 +205,13 @@ footer{
 </section><section id="avis">
 <div class="title">Avis clients</div>
 <div class="grid">
-<div class="review"><span>Sarah</span><p>Résultat incroyable 🔥</p></div>
-<div class="review"><span>Jessica</span><p>Vraiment magnifique</p></div>
-<div class="review"><span>Amélie</span><p>Je recommande à 100%</p></div>
+<div class="review"><span>Sarah</span><p>Résultat magnifique ✨</p></div>
+<div class="review"><span>Jessica</span><p>Très douce et professionnelle</p></div>
+<div class="review"><span>Amélie</span><p>J’adore mon résultat</p></div>
 </div>
 </section><section id="booking">
 <div class="card" style="text-align:center;max-width:700px;margin:auto">
-<h2 style="color:#d9b46a">Réservation Fresha</h2>
+<h2 style="color:#caa25a">Réservation Fresha</h2>
 <p class="small">Clique pour réserver ton look Bella Bay</p>
 <a class="btn" href="#">Accéder à Fresha</a>
 </div>
