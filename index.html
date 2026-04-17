@@ -1,7 +1,11 @@
 <!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Bella Bay — Luxury Hair Experience Montréal & Laval</title>  <meta name="description" content="Bella Bay — service de coiffure mobile à Laval & Montréal. Coloration, balayage, mèches et extensions. Réservation en ligne." />  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Bella Bay — Coiffure Luxe à Domicile Montréal & Laval | Balayage & Extensions</title>  <!-- SEO -->  <meta name="description" content="Bella Bay — coiffeuse à domicile à Montréal & Laval. Balayage, coloration, mèches, extensions. Réservation rapide via Fresha. Résultats professionnels." />
+  <meta name="keywords" content="coiffeuse Montréal, coiffure Laval, balayage Montréal, extensions cheveux, coloration, coiffure à domicile" />
+  <meta name="author" content="Bella Bay" />  <!-- Open Graph -->  <meta property="og:title" content="Bella Bay — Luxury Hair Experience" />
+  <meta property="og:description" content="Coiffure luxe à domicile à Montréal & Laval" />
+  <meta property="og:type" content="website" />  <style>
     :root{
       --bg:#0b0b0f;
       --card: rgba(255,255,255,.05);
@@ -26,7 +30,6 @@
 
     a{color:inherit; text-decoration:none}
 
-    /* HEADER */
     header{
       padding:14px 18px;
       display:flex;
@@ -54,7 +57,6 @@
       border-radius:999px;
     }
 
-    /* HERO */
     .hero{
       text-align:center;
       padding:70px 16px;
@@ -66,7 +68,7 @@
     }
 
     .hero p{
-      max-width:600px;
+      max-width:650px;
       margin:12px auto;
       color:var(--muted);
       line-height:1.5;
@@ -118,6 +120,12 @@
       margin-top:6px;
     }
 
+    .video{
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--border);
+    }
+
     footer{
       text-align:center;
       padding:25px;
@@ -125,60 +133,91 @@
       border-top:1px solid var(--border);
       margin-top:20px;
     }
+
+    .social{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .social a{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      font-weight:700;
+    }
+
+    .social a:hover{
+      background:rgba(255,255,255,.06);
+    }
   </style></head><body><header>
   <div class="logo">BB</div>
   <div class="nav">
     <a href="#services">Services</a>
     <a href="#galerie">Galerie</a>
+    <a href="#video">Résultats</a>
     <a href="#avis">Avis</a>
     <a href="#contact">Contact</a>
   </div>
 </header><div class="hero">
   <h1>Bella Bay</h1>
-  <p>Service de coiffure mobile à Laval & Montréal — luxe, élégance et résultats professionnels directement chez toi.</p>
-  <a class="btn" href="#services">Réserver maintenant</a>
+  <p>Coiffure à domicile luxe à Montréal & Laval — balayage, coloration, extensions, résultats professionnels.</p>
+  <a class="btn" href="#services">Réserver maintenant</a>  <div class="social">
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="#contact">Fresha</a>
+  </div>
 </div><section id="services">
   <h2>Services uniques</h2>  <div class="grid">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702" />
       <h3>Coloration signature</h3>
-      <p>Couleurs riches, brillantes et personnalisées</p>
-      <div class="price">à partir de 75$</div>
+      <p>Couleurs riches et personnalisées</p>
+      <div class="price">à partir de 95$</div>
     </div><div class="card">
-  <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e" />
+  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" />
   <h3>Balayage luxe</h3>
-  <p>Effet soleil naturel et sophistiqué</p>
+  <p>Effet naturel professionnel exceptionnel</p>
   <div class="price">90$ - 180$</div>
 </div>
 
 <div class="card">
   <img src="https://images.unsplash.com/photo-1526045478516-99145907023c" />
-  <h3>Extensions premium</h3>
+  <h3>Extensions XL</h3>
   <p>Volume et longueur instantanés</p>
   <div class="price">120$+</div>
 </div>
 
   </div>
 </section><section id="galerie">
-  <h2>Galerie (exemples)</h2>
+  <h2>Avant / Après</h2>
   <div class="grid">
     <div class="card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9"></div>
     <div class="card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937"></div>
+  </div>
+</section><section id="video">
+  <h2>Résultats réels</h2>
+  <div class="card">
+    <video class="video" controls>
+      <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+    </video>
+    <p style="margin-top:10px;color:#c9c9d6">Transformation coiffure Bella Bay</p>
   </div>
 </section><section id="avis">
   <h2>Avis clients</h2>  <div class="grid">
-    <div class="card">"Service incroyable à domicile, résultat parfait" — Sarah</div>
-    <div class="card">"Très professionnelle et douce" — Jessica</div>
-    <div class="card">"Meilleur balayage que j’ai eu" — Amélie</div>
+    <div class="card">"Service incroyable à domicile" — Sarah</div>
+    <div class="card">"Très professionnelle et rapide" — Jessica</div>
+    <div class="card">"J’adore Bella Bay 😍 extensions parfaites" — Client</div>
   </div>
 </section><section id="contact">
   <h2>Contact</h2>
   <div class="card">
     📍 Laval & Montréal<br>
-    📞 514-582-2856
+    📞 514-582-2856<br>
+    🌐 Bella Bay Mobile
   </div>
 </section><footer>
-  © Bella Bay — Service mobile de coiffure luxe
+  © Bella Bay — Luxury Hair Experience
 </footer></body>
 </html>
