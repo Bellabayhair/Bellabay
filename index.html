@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Résultats Instagram-ready et réservation rapide via Fresha." />
+<title>Bella Bay (B.B) — Coiffure Mobile Montréal & Laval | Looks Viraux</title><meta name="description" content="Bella Bay (B.B) — coiffure mobile à Montréal & Laval. Coloration, balayage, extensions. Looks viraux, résultats Instagram-ready et réservation rapide via Fresha." />
 <meta name="keywords" content="coiffeuse mobile Montréal, coiffure Laval, balayage Montréal, extensions cheveux, coloration cheveux, Bella Bay" /><style>
 :root{
   --bg:#0b0b0f;
@@ -35,6 +35,7 @@ nav a{
   font-size:13px;
 }
 
+/* HERO VIDEO */
 .hero{
   position:relative;
   height:88vh;
@@ -42,16 +43,23 @@ nav a{
   align-items:center;
   justify-content:center;
   text-align:center;
+  overflow:hidden;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1522337660859-02fbefca4702') center/cover;
-  filter:brightness(.45);
+.hero video{
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.45) contrast(1.1);
 }
 
-.hero-content{position:relative;max-width:850px;padding:20px}
+.hero-content{
+  position:relative;
+  max-width:850px;
+  padding:20px;
+}
 
 .hero h1{font-size:64px;color:var(--pink);letter-spacing:-1px}
 .hero p{color:var(--muted);margin-top:10px;line-height:1.6}
@@ -125,10 +133,12 @@ footer{
 <a href="#avis">Avis</a>
 <a href="#booking">Réserver</a>
 </nav>
-</header><section class="hero">
-<div class="hero-content">
+</header><!-- HERO VIDEO --><section class="hero">
+<video autoplay muted loop playsinline>
+  <source src="https://cdn.coverr.co/videos/coverr-woman-getting-hair-washed-1571/1080p.mp4" type="video/mp4">
+</video><div class="hero-content">
 <h1>Bella Bay (B.B)</h1>
-<p>Coiffure mobile à Montréal & Laval — looks viraux, coloration, balayage et extensions pour un résultat élégant et moderne.</p>
+<p>Looks viraux à Montréal & Laval — coiffure mobile, coloration, balayage et extensions pour un résultat élégant et moderne.</p>
 <a class="btn" href="#booking">Réserver maintenant</a>
 </div>
 </section><section id="services">
@@ -158,13 +168,13 @@ footer{
 <div class="title">Avis clients</div>
 <div class="grid">
 <div class="review"><span>Sarah</span><p>Résultat incroyable 🔥</p></div>
-<div class="review"><span>Jessica</span><p>Très professionnel</p></div>
+<div class="review"><span>Jessica</span><p>Vraiment magnifique</p></div>
 <div class="review"><span>Amélie</span><p>Je recommande à 100%</p></div>
 </div>
 </section><section id="booking">
 <div class="card" style="text-align:center;max-width:700px;margin:auto">
 <h2 style="color:#d9b46a">Réservation Fresha</h2>
-<p class="small">Clique pour réserver ton rendez-vous Bella Bay</p>
+<p class="small">Clique pour réserver ton look Bella Bay</p>
 <a class="btn" href="#">Accéder à Fresha</a>
 </div>
 </section><footer>
