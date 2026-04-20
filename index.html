@@ -7,7 +7,7 @@
 
 <style>
 
-/* BASE */
+/* GLOBAL */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,26 +15,36 @@ body {
   color: #1a1a1a;
 }
 
-/* HEADER */
+/* HEADER DOUX + BACKGROUND COQUILLAGE */
 header {
-  background: linear-gradient(135deg, #f8d7e5, #ffffff);
+  position: relative;
   text-align: center;
-  padding: 90px 20px;
+  padding: 100px 20px;
+  color: #111;
+
+  background-image:
+    linear-gradient(rgba(255, 247, 250, 0.93), rgba(255, 247, 250, 0.93)),
+    url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21"); /* coquillage */
+
+  background-size: cover;
+  background-position: center;
 }
 
+/* TITRE */
 header h1 {
   font-size: 48px;
   letter-spacing: 3px;
   margin: 0;
 }
 
+/* SOUS-TEXTE */
 header p {
   font-size: 16px;
   color: #666;
   margin-top: 10px;
 }
 
-/* BADGES (notifications marketing) */
+/* BADGES (NOTIFICATIONS MARKETING) */
 .badge-row {
   margin-top: 15px;
 }
@@ -50,7 +60,7 @@ header p {
   font-weight: bold;
 }
 
-/* BUTTON */
+/* BUTTON CTA */
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -105,7 +115,7 @@ h2 {
   color: #b76e79;
 }
 
-/* INFO BOX */
+/* BOUTIQUE */
 .info-box {
   background: white;
   padding: 25px;
@@ -131,12 +141,13 @@ footer {
 <header>
   <h1>BELLA BAY</h1>
   <p>Coiffure mobile à Montréal & Laval</p>
-  <p>Service professionnel à domicile — réservation rapide en ligne</p>
+  <p>Service professionnel à domicile — réservation simple en ligne</p>
 
+  <!-- BADGES / NOTIFICATIONS -->
   <div class="badge-row">
     <span class="badge">✔ Coiffure mobile</span>
     <span class="badge">✔ Montréal & Laval</span>
-    <span class="badge">✔ Réservation en ligne</span>
+    <span class="badge">✔ Réservation rapide</span>
   </div>
 
   <a href="TON-LIEN-FRESHA" target="_blank" class="btn">
