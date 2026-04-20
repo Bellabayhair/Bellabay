@@ -5,40 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bella Bay - Coiffure Mobile Montréal & Laval</title>
 
+<!-- POLICE SIGNATURE -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
 
-/* FULL PINK BASE */
+/* SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BASE FULL PINK */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #ffe4ec, #ffd1dc);
-  color: #2a2a2a;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
-/* HEADER FULL PINK + IMAGE */
+/* HEADER COIFFURE + ROSE + CHEVEUX */
 header {
   position: relative;
   text-align: center;
-  padding: 100px 20px;
-  color: #111;
+  padding: 110px 20px;
+  color: #fff;
 
   background-image:
-    linear-gradient(rgba(255, 182, 193, 0.65), rgba(255, 182, 193, 0.85)),
-    url("https://images.unsplash.com/photo-1522337660859-02fbefca4702");
+    linear-gradient(
+      rgba(255, 105, 180, 0.65),
+      rgba(255, 182, 193, 0.85)
+    ),
+    url("https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg"); /* cheveux salon */
 
   background-size: cover;
   background-position: center;
 }
 
-/* TITRE */
+/* LOGO BB + SIGNATURE */
 header h1 {
-  font-size: 52px;
   margin: 0;
-  color: #fff;
-  letter-spacing: 3px;
 }
 
-/* TEXTE */
+header h1 .bb {
+  font-weight: 900;
+  font-size: 52px;
+  letter-spacing: 2px;
+}
+
+header h1 .brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 54px;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+/* TEXT */
 header p {
   font-size: 16px;
   color: #fff;
@@ -52,7 +74,7 @@ header p {
 
 .badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255,255,255,0.25);
   color: #fff;
   padding: 6px 14px;
   margin: 5px;
@@ -80,7 +102,7 @@ header p {
   transform: scale(1.05);
 }
 
-/* SECTIONS FULL PINK */
+/* SECTIONS */
 section {
   max-width: 950px;
   margin: auto;
@@ -110,7 +132,6 @@ h2 {
 .service h3 {
   font-size: 16px;
   margin: 0;
-  color: #2a2a2a;
 }
 
 .price {
@@ -119,7 +140,7 @@ h2 {
   color: #b03060;
 }
 
-/* INFO BOX */
+/* BOX */
 .info-box {
   background: #ffe4ec;
   padding: 25px;
@@ -144,7 +165,11 @@ footer {
 
 <header>
 
-  <h1>BELLA BAY</h1>
+  <h1>
+    <span class="bb">BB</span>
+    <span class="brand">Bella Bay</span>
+  </h1>
+
   <p>Coiffure mobile à Montréal & Laval</p>
   <p>Beauté, douceur & glamour directement chez vous</p>
 
@@ -158,9 +183,13 @@ footer {
     ✨ Réserver maintenant
   </a>
 
+  <a href="#services" class="btn" style="margin-top:15px;">
+    Voir les services ↓
+  </a>
+
 </header>
 
-<section>
+<section id="services">
 
   <h2>Services</h2>
 
