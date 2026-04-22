@@ -9,7 +9,6 @@
 
 <style>
 
-/* GLOBAL */
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -18,19 +17,18 @@ scroll-behavior:smooth;
 overflow-x:hidden;
 }
 
-/* ANIMATION SCROLL */
+/* ANIMATION */
 .hidden{
 opacity:0;
 transform:translateY(40px);
 transition:all 0.8s ease;
 }
-
 .show{
 opacity:1;
 transform:translateY(0);
 }
 
-/* TOP BAR */
+/* TOP */
 .topbar{
 position:fixed;
 top:0;
@@ -68,7 +66,6 @@ padding:6px 10px;
 border-radius:20px;
 transition:0.3s;
 }
-
 .menu a:hover{
 background:white;
 transform:scale(1.05);
@@ -85,18 +82,12 @@ linear-gradient(rgba(255,182,193,0.75),rgba(255,105,180,0.85)),
 url("https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg");
 background-size:cover;
 background-position:center;
-animation:fadeIn 1s ease-in;
 }
 
 .hero h1{
 font-family:'Great Vibes',cursive;
 font-size:75px;
 margin:0;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:scale(1.1);}
-to{opacity:1;transform:scale(1);}
 }
 
 /* BUTTON */
@@ -115,7 +106,6 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 12px 25px rgba(0,0,0,0.2);
 }
 
 /* SECTIONS */
@@ -125,7 +115,7 @@ max-width:1000px;
 margin:auto;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 background:rgba(255,255,255,0.6);
 backdrop-filter:blur(5px);
@@ -133,9 +123,7 @@ padding:18px;
 border-radius:15px;
 margin:10px 0;
 transition:0.3s;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
-
 .card:hover{
 transform:translateY(-5px);
 background:white;
@@ -151,7 +139,7 @@ border:none;
 outline:none;
 }
 
-/* CHAT BUTTON */
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -167,30 +155,6 @@ font-size:28px;
 text-decoration:none;
 color:white;
 z-index:9999;
-transition:0.3s;
-}
-
-.whatsapp-float:hover{
-transform:scale(1.1);
-}
-
-/* QUICK BUTTON */
-.quick-btn{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#ff69b4;
-color:white;
-padding:12px 14px;
-border-radius:30px;
-font-weight:bold;
-text-decoration:none;
-font-size:13px;
-transition:0.3s;
-}
-
-.quick-btn:hover{
-transform:scale(1.05);
 }
 
 </style>
@@ -198,7 +162,6 @@ transform:scale(1.05);
 
 <body>
 
-<!-- TOP -->
 <div class="topbar">
 <div class="logo">BB</div>
 
@@ -222,21 +185,24 @@ transform:scale(1.05);
 
 <div class="card">Coupe femme — 75$</div>
 <div class="card">Coloration — à partir de 90$</div>
+<div class="card">Coloration fantaisie — à partir de 110$</div>
+<div class="card">Mèches — à partir de 130$</div>
 <div class="card">Balayage — à partir de 150$</div>
+<div class="card">Coiffage (lisse / bouclé / brushing) — 50$ à 70$</div>
 <div class="card">Gloss — 70$</div>
+<div class="card">Traitement capillaire — à partir de 80$</div>
 <div class="card">Kératine — à partir de 120$</div>
-<div class="card">Extensions — consultation</div>
+<div class="card">Extensions — consultation 45$</div>
 
-<p style="color:#b3003c;font-weight:bold;">⚡ Places limitées cette semaine</p>
 </section>
 
 <!-- AVIS -->
 <section id="avis" class="hidden">
 <h2>Avis clientes</h2>
 
-<div class="card">⭐ Jessica – “Résultat incroyable !”</div>
-<div class="card">⭐ Marie-Ève – “Service rapide et professionnel.”</div>
-<div class="card">⭐ Josée – “Très satisfaite.”</div>
+<div class="card">⭐ Jessica – “Service incroyable !”</div>
+<div class="card">⭐ Marie-Ève – “Très professionnelle.”</div>
+<div class="card">⭐ Josée – “Résultat parfait.”</div>
 <div class="card">⭐ Christina – “Je recommande fortement.”</div>
 
 </section>
@@ -253,7 +219,10 @@ transform:scale(1.05);
 <select id="service">
 <option>Coupe</option>
 <option>Coloration</option>
+<option>Coloration fantaisie</option>
+<option>Mèches</option>
 <option>Balayage</option>
+<option>Coiffage</option>
 <option>Gloss</option>
 <option>Kératine</option>
 <option>Extensions</option>
@@ -264,16 +233,11 @@ transform:scale(1.05);
 </form>
 </section>
 
-<!-- CHAT -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/15145822856" class="whatsapp-float">💬</a>
-
-<a href="https://wa.me/15145822856?text=Bonjour%20je%20veux%20un%20rendez-vous%20😊" class="quick-btn">
-Réserver
-</a>
 
 <script>
 
-/* FORM WHATSAPP */
 function sendWhatsApp(event){
 event.preventDefault();
 
@@ -291,12 +255,11 @@ Je veux un rendez-vous.`;
 window.open("https://wa.me/15145822856?text="+encodeURIComponent(msg));
 }
 
-/* BUTTON */
 function openBooking(){
 window.open("https://wa.me/15145822856?text=Bonjour%20je%20veux%20un%20rendez-vous%20😊");
 }
 
-/* SCROLL ANIMATION */
+/* animation */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
