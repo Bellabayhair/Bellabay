@@ -28,7 +28,6 @@ body {
   z-index: 1000;
 }
 
-/* BUTTON */
 .bb-btn {
   width: 48px;
   height: 48px;
@@ -39,7 +38,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 /* CONTENT */
@@ -69,7 +67,7 @@ body {
   font-size: 64px;
 }
 
-/* BUTTON STYLE */
+/* BUTTONS */
 .btn {
   display: inline-block;
   padding: 14px 30px;
@@ -80,6 +78,12 @@ body {
   font-weight: bold;
   margin-top: 15px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* CARD */
@@ -88,6 +92,21 @@ body {
   padding: 16px;
   margin: 10px 0;
   border-radius: 14px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 2000;
 }
 
 </style>
@@ -103,7 +122,6 @@ body {
 <!-- CONTENT -->
 <div class="content">
 
-  <!-- HERO -->
   <div class="hero">
     <h1>Bella Bay</h1>
     <p>Coiffure mobile à Montréal & Laval</p>
@@ -118,7 +136,6 @@ body {
 
   </div>
 
-  <!-- SERVICES -->
   <section>
 
     <h2>Services</h2>
@@ -136,6 +153,11 @@ body {
 
 </div>
 
+<!-- WHATSAPP FLOAT BUTTON -->
+<a class="whatsapp-float" href="https://wa.me/15145822856" target="_blank">
+💬 Chat
+</a>
+
 <script>
 
 // Notifications
@@ -145,22 +167,22 @@ window.addEventListener("load", function () {
   }
 });
 
-// Réservation Google Form
+// Réservation
 function bookNow() {
 
   window.open("https://forms.gle/BLFRhR3Hfh3MPPzw5", "_blank");
 
-  alert("💖 Bella Bay : vous allez être redirigée vers la réservation !");
+  alert("💖 Bella Bay : redirection vers la réservation !");
 
   if (Notification.permission === "granted") {
     new Notification("Bella Bay 💇‍♀️", {
-      body: "Formulaire de réservation ouvert !",
+      body: "Réservation ouverte avec succès !",
       icon: "https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg"
     });
   }
 }
 
-// WhatsApp
+// WhatsApp bouton normal
 function openWhatsApp() {
   window.open("https://wa.me/15145822856", "_blank");
 }
