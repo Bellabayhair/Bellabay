@@ -9,108 +9,123 @@
 
 <style>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #ffe4ec, #ffd1dc);
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#ffe4ec,#ffd1dc);
 }
 
-/* TOP BAR */
-.topbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(255,182,193,0.92);
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  z-index: 1000;
+.topbar{
+position:fixed;
+top:0;
+width:100%;
+height:70px;
+background:rgba(255,182,193,0.92);
+display:flex;
+align-items:center;
+padding:0 15px;
+z-index:1000;
 }
 
-.bb-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffb6c1, #b03060);
-  color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bb-btn{
+width:48px;
+height:48px;
+border-radius:50%;
+background:radial-gradient(circle at 30% 30%,#ffb6c1,#b03060);
+color:white;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-/* CONTENT */
-.content {
-  margin-top: 80px;
-  padding: 20px;
-  max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
+.content{
+margin-top:80px;
+padding:20px;
+max-width:950px;
+margin-left:auto;
+margin-right:auto;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  color: white;
-  border-radius: 20px;
-  background:
-    linear-gradient(rgba(255,182,193,0.80), rgba(255,105,180,0.85)),
-    url("https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg");
-  background-size: cover;
-  background-position: center;
+.hero{
+text-align:center;
+padding:50px 20px;
+color:white;
+border-radius:20px;
+background:
+linear-gradient(rgba(255,182,193,0.80),rgba(255,105,180,0.85)),
+url("https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg");
+background-size:cover;
+background-position:center;
 }
 
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 64px;
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:64px;
+margin-bottom:10px;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #ff69b4, #ffb6c1);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: 0.3s;
+.hero p{
+margin:8px 0;
 }
 
-.btn:hover {
-  transform: scale(1.05);
+.btn{
+padding:14px 30px;
+border-radius:30px;
+background:linear-gradient(135deg,#ff69b4,#ffb6c1);
+color:white;
+border:none;
+cursor:pointer;
+font-weight:bold;
+margin-top:10px;
+font-size:16px;
 }
 
-/* CARD */
-.card {
-  background: #ffe4ec;
-  padding: 16px;
-  margin: 10px 0;
-  border-radius: 14px;
+.card{
+background:#ffe4ec;
+padding:16px;
+margin:10px 0;
+border-radius:14px;
 }
 
-/* FORM */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-form input, form select, form textarea {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
+form input,
+form select,
+form textarea{
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+width:100%;
+box-sizing:border-box;
+font-size:15px;
 }
 
-form textarea {
-  resize: none;
-  height: 80px;
+form textarea{
+height:90px;
+resize:none;
+}
+
+.contact{
+margin-top:50px;
+text-align:center;
+padding:30px;
+background:#fff0f5;
+border-radius:20px;
+}
+
+a{
+color:#b03060;
+text-decoration:none;
+font-weight:bold;
+}
+
+h2{
+margin-top:30px;
 }
 
 </style>
@@ -118,82 +133,99 @@ form textarea {
 
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP -->
 <div class="topbar">
-  <div class="bb-btn">BB</div>
+<div class="bb-btn">BB</div>
 </div>
 
 <!-- CONTENT -->
 <div class="content">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Bella Bay</h1>
-    <p>Coiffure mobile à Montréal & Laval</p>
-  </div>
+<!-- HERO -->
+<div class="hero">
+<h1>Bella Bay</h1>
+<p>Coiffure mobile à Montréal & Laval ✨</p>
+<p>Réservation rapide • Service professionnel • À domicile</p>
+</div>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Services</h2>
+<!-- SERVICES -->
+<section>
+<h2>Services</h2>
 
-    <div class="card">Coupe femme — 75$</div>
-    <div class="card">Brushing — 50$</div>
-    <div class="card">Coupe + Brushing — 120$</div>
-    <div class="card">Coloration — à partir de 90$</div>
-    <div class="card">Mèches — à partir de 120$</div>
-    <div class="card">Balayage — à partir de 150$</div>
-    <div class="card">Gloss — 70$</div>
-    <div class="card">Extensions — consultation</div>
-  </section>
+<div class="card">Coupe femme — 75$</div>
+<div class="card">Brushing — 50$</div>
+<div class="card">Coupe + Brushing — 120$</div>
+<div class="card">Coloration — à partir de 90$</div>
+<div class="card">Mèches — à partir de 120$</div>
+<div class="card">Balayage — à partir de 150$</div>
+<div class="card">Gloss — 70$</div>
+<div class="card">Extensions — consultation</div>
 
-  <!-- FORMULAIRE -->
-  <section style="margin-top:40px;">
-    <h2>Réserver un rendez-vous</h2>
+</section>
 
-    <form onsubmit="sendWhatsApp(event)">
+<!-- FORMULAIRE -->
+<section style="margin-top:40px;">
+<h2>Réserver un rendez-vous</h2>
 
-      <input type="text" id="name" placeholder="Nom complet" required>
+<form onsubmit="sendWhatsApp(event)">
 
-      <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+<input type="text" id="name" placeholder="Nom complet" required>
 
-      <select id="service" required>
-        <option value="">Choisir un service</option>
-        <option>Coupe femme - 75$</option>
-        <option>Brushing - 50$</option>
-        <option>Coupe + Brushing - 120$</option>
-        <option>Coloration - à partir de 90$</option>
-        <option>Mèches - à partir de 120$</option>
-        <option>Balayage - à partir de 150$</option>
-        <option>Gloss - 70$</option>
-        <option>Extensions - consultation</option>
-      </select>
+<input type="tel" id="phone" placeholder="Numéro de téléphone" required>
 
-      <input type="date" id="date" required>
+<select id="service" required>
+<option value="">Choisir un service</option>
+<option>Coupe femme - 75$</option>
+<option>Brushing - 50$</option>
+<option>Coupe + Brushing - 120$</option>
+<option>Coloration - à partir de 90$</option>
+<option>Mèches - à partir de 120$</option>
+<option>Balayage - à partir de 150$</option>
+<option>Gloss - 70$</option>
+<option>Extensions - consultation</option>
+</select>
 
-      <textarea id="notes" placeholder="Notes (optionnel)"></textarea>
+<input type="date" id="date" required>
 
-      <button class="btn" type="submit">
-        Envoyer la réservation
-      </button>
+<textarea id="notes" placeholder="Notes (optionnel)"></textarea>
 
-    </form>
-  </section>
+<button class="btn" type="submit">
+Envoyer la réservation
+</button>
+
+</form>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+
+<h2>Contact Bella Bay</h2>
+
+<p>📞 <a href="tel:15145822856">514-582-2856</a></p>
+
+<p>📧 <a href="mailto:bellabay.coiffure@gmail.com">
+bellabay.coiffure@gmail.com
+</a></p>
+
+<p>Service mobile Montréal & Laval ✨</p>
+
+</section>
 
 </div>
 
 <script>
 
-function sendWhatsApp(event) {
-  event.preventDefault();
+function sendWhatsApp(event){
+event.preventDefault();
 
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let service = document.getElementById("service").value;
-  let date = document.getElementById("date").value;
-  let notes = document.getElementById("notes").value;
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let service=document.getElementById("service").value;
+let date=document.getElementById("date").value;
+let notes=document.getElementById("notes").value;
 
-  let message =
-`💇‍♀️ Nouvelle réservation Bella Bay 💖
+let message =
+`💖 Bella Bay - Nouvelle réservation ✨
 
 Nom: ${name}
 Téléphone: ${phone}
@@ -201,9 +233,10 @@ Service: ${service}
 Date: ${date}
 Notes: ${notes}`;
 
-  let url = "https://wa.me/15145822856?text=" + encodeURIComponent(message);
+let url =
+"https://wa.me/15145822856?text=" + encodeURIComponent(message);
 
-  window.open(url, "_blank");
+window.open(url,"_blank");
 }
 
 </script>
