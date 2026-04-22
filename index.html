@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bella Bay</title>
+<title>Bella Bay - Coiffure Mobile Montréal & Laval</title>
+
+<meta name="description" content="Bella Bay - Coiffure mobile professionnelle à Montréal et Laval. Coloration, mèches, balayage et extensions à domicile. Réservez maintenant.">
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -15,10 +17,24 @@ body {
   background: linear-gradient(180deg, #ffe4ec, #ffd1dc);
 }
 
+/* TOP CONTACT BAR */
+.contact-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #b03060;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  font-size: 12px;
+  z-index: 2000;
+}
+
 /* TOP BAR */
 .topbar {
   position: fixed;
-  top: 0;
+  top: 35px;
   width: 100%;
   height: 70px;
   background: rgba(255,182,193,0.92);
@@ -28,7 +44,6 @@ body {
   z-index: 1000;
 }
 
-/* BB BUTTON */
 .bb-btn {
   width: 48px;
   height: 48px;
@@ -46,12 +61,13 @@ body {
 .sidebar {
   position: fixed;
   left: -280px;
-  top: 70px;
+  top: 105px;
   width: 260px;
   height: 100%;
   background: rgba(255,182,193,0.97);
   padding: 20px;
   transition: 0.3s;
+  z-index: 1500;
 }
 
 .sidebar a {
@@ -64,7 +80,7 @@ body {
 
 /* CONTENT */
 .content {
-  margin-top: 80px;
+  margin-top: 120px;
   padding: 20px;
   max-width: 950px;
   margin-left: auto;
@@ -74,7 +90,7 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   color: white;
   border-radius: 20px;
 
@@ -91,45 +107,6 @@ body {
   font-size: 64px;
 }
 
-/* SECTIONS */
-section {
-  margin-top: 40px;
-}
-
-/* CARDS */
-.card {
-  background: #ffe4ec;
-  padding: 16px;
-  margin: 10px 0;
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* TEXT BLOCK */
-.textbox {
-  background: #fff0f5;
-  padding: 18px;
-  border-radius: 14px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  color: #444;
-}
-
-/* INSPIRATION */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.gallery div {
-  height: 160px;
-  border-radius: 14px;
-  background-size: cover;
-  background-position: center;
-}
-
 /* BUTTON */
 .btn {
   display: inline-block;
@@ -139,6 +116,46 @@ section {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+/* SERVICES */
+.card {
+  background: #ffe4ec;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CTA BOX */
+.cta {
+  background: #b03060;
+  color: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* FLOAT BUTTONS */
+.float-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #b03060;
+  padding: 10px;
+  z-index: 3000;
+}
+
+.float-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .sidebar.open {
@@ -149,6 +166,12 @@ section {
 </head>
 
 <body>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <span>📞 514-582-2856</span>
+  <span>✉️ bellabay.coiffure@gmail.com</span>
+</div>
 
 <!-- TOP -->
 <div class="topbar">
@@ -168,77 +191,49 @@ section {
 <!-- CONTENT -->
 <div class="content">
 
-  <!-- HERO -->
   <div id="home" class="hero">
 
     <h1>Bella Bay</h1>
     <p>Coiffure mobile professionnelle à Montréal & Laval</p>
-    <p>Service à domicile — confort, luxe et résultats salon</p>
+    <p>Résultats salon directement chez vous</p>
 
-    <a class="btn" href="TON-LIEN-FRESHA" target="_blank">
-      Réserver maintenant
-    </a>
+    <a class="btn" href="TON-LIEN-FRESHA">Réserver maintenant</a>
 
   </div>
 
-  <!-- ABOUT -->
-  <section>
-
-    <h2>À propos</h2>
-
-    <div class="textbox">
-      Bella Bay est spécialisée en coiffure mobile haut de gamme.  
-      Nous offrons une expérience salon complète directement chez vous, avec une attention particulière aux détails, à la santé du cheveu et à la finition professionnelle.
-    </div>
-
-  </section>
-
-  <!-- SERVICES -->
   <section id="services">
 
     <h2>Services & Prix</h2>
 
     <div class="card"><span>Coupe femme</span><span>50$</span></div>
     <div class="card"><span>Brushing</span><span>40$</span></div>
-    <div class="card"><span>Coupe + Brushing</span><span>80$</span></div>
-
-    <div class="card"><span>Coloration racines</span><span>90$+</span></div>
     <div class="card"><span>Coloration complète</span><span>95$ – 180$</span></div>
-
     <div class="card"><span>Mèches</span><span>120$ – 220$+</span></div>
     <div class="card"><span>Balayage</span><span>150$ – 250$+</span></div>
 
-    <div class="card"><span>Traitement capillaire</span><span>60$+</span></div>
-    <div class="card"><span>Extensions</span><span>Sur consultation</span></div>
-
   </section>
 
-  <!-- INSPIRATION -->
-  <section id="inspi">
+  <div class="cta">
+    <h3>Prête pour une transformation ?</h3>
+    <p>Réserve ton rendez-vous Bella Bay maintenant ✨</p>
+    <a class="btn" href="TON-LIEN-FRESHA">Réserver</a>
+  </div>
 
-    <h2>Inspiration & Résultats</h2>
+</div>
 
-    <div class="textbox">
-      Transformations capillaires réalisées par Bella Bay : couleurs naturelles, balayages lumineux et extensions adaptées à chaque cliente.
-    </div>
+<!-- FLOAT BAR -->
+<div class="float-bar">
 
-    <div class="gallery">
-      <div style="background-image:url('https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg');"></div>
-      <div style="background-image:url('https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg');"></div>
-      <div style="background-image:url('https://images.pexels.com/photos/3993314/pexels-photo-3993314.jpeg');"></div>
-      <div style="background-image:url('https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg');"></div>
-    </div>
-
-  </section>
+  <a href="tel:+15145822856">📞 Appeler</a>
+  <a href="mailto:bellabay.coiffure@gmail.com">✉️ Email</a>
+  <a href="TON-LIEN-FRESHA">📅 Réserver</a>
 
 </div>
 
 <script>
-
 function toggleMenu() {
   document.getElementById("sidebar").classList.toggle("open");
 }
-
 </script>
 
 </body>
