@@ -13,47 +13,70 @@ body{
 margin:0;
 font-family:Arial,sans-serif;
 background:linear-gradient(180deg,#ffe4ec,#ffd1dc);
+scroll-behavior:smooth;
 }
 
+/* TOP BAR */
 .topbar{
 position:fixed;
 top:0;
 width:100%;
 height:70px;
-background:rgba(255,182,193,0.92);
+background:rgba(255,182,193,0.95);
 display:flex;
 align-items:center;
+justify-content:space-between;
 padding:0 15px;
 z-index:1000;
+box-sizing:border-box;
 }
 
-.bb-btn{
-width:48px;
-height:48px;
+.logo{
+width:45px;
+height:45px;
 border-radius:50%;
 background:radial-gradient(circle at 30% 30%,#ffb6c1,#b03060);
 color:white;
-font-weight:bold;
 display:flex;
 align-items:center;
 justify-content:center;
+font-weight:bold;
 }
 
+/* MENU */
+.menu{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.menu a{
+text-decoration:none;
+color:#7a1f3d;
+font-weight:bold;
+font-size:13px;
+background:rgba(255,255,255,0.6);
+padding:6px 10px;
+border-radius:20px;
+}
+
+/* CONTENT */
 .content{
-margin-top:80px;
+margin-top:90px;
 padding:20px;
-max-width:950px;
+max-width:1000px;
 margin-left:auto;
 margin-right:auto;
 }
 
+/* HERO */
 .hero{
 text-align:center;
-padding:50px 20px;
+padding:60px 20px;
 color:white;
 border-radius:20px;
 background:
-linear-gradient(rgba(255,182,193,0.80),rgba(255,105,180,0.85)),
+linear-gradient(rgba(255,182,193,0.8),rgba(255,105,180,0.85)),
 url("https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg");
 background-size:cover;
 background-position:center;
@@ -61,71 +84,73 @@ background-position:center;
 
 .hero h1{
 font-family:'Great Vibes',cursive;
-font-size:64px;
-margin-bottom:10px;
+font-size:70px;
+margin:0;
 }
 
 .hero p{
-margin:8px 0;
-}
-
-.btn{
-padding:14px 30px;
-border-radius:30px;
-background:linear-gradient(135deg,#ff69b4,#ffb6c1);
-color:white;
-border:none;
-cursor:pointer;
-font-weight:bold;
 margin-top:10px;
 font-size:16px;
 }
 
-.card{
-background:#ffe4ec;
-padding:16px;
-margin:10px 0;
-border-radius:14px;
+/* BUTTON */
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#ff69b4,#ffb6c1);
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:15px;
 }
 
+/* SECTION */
+section{
+margin-top:50px;
+}
+
+h2{
+color:#8a2148;
+}
+
+/* CARDS */
+.card{
+background:#ffeef4;
+padding:15px;
+border-radius:15px;
+margin:10px 0;
+}
+
+/* FORM */
 form{
 display:flex;
 flex-direction:column;
 gap:10px;
 }
 
-form input,
-form select,
-form textarea{
+input,select,textarea{
 padding:12px;
 border-radius:10px;
 border:1px solid #ccc;
-width:100%;
-box-sizing:border-box;
-font-size:15px;
 }
 
-form textarea{
+textarea{
 height:90px;
-resize:none;
 }
 
 .contact{
-margin-top:50px;
 text-align:center;
 padding:30px;
 background:#fff0f5;
 border-radius:20px;
+margin-top:40px;
 }
 
 a{
-color:#b03060;
-text-decoration:none;
+color:#8a2148;
 font-weight:bold;
-}
-
-h2{
-margin-top:30px;
+text-decoration:none;
 }
 
 </style>
@@ -135,21 +160,32 @@ margin-top:30px;
 
 <!-- TOP -->
 <div class="topbar">
-<div class="bb-btn">BB</div>
+<div class="logo">BB</div>
+
+<div class="menu">
+<a href="#accueil">Accueil</a>
+<a href="#services">Services</a>
+<a href="#histoire">Histoire</a>
+<a href="#avis">Avis</a>
+<a href="#reservation">Réserver</a>
+<a href="#contact">Contact</a>
+</div>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
 <!-- HERO -->
-<div class="hero">
+<section id="accueil" class="hero">
 <h1>Bella Bay</h1>
 <p>Coiffure mobile à Montréal & Laval ✨</p>
-<p>Réservation rapide • Service professionnel • À domicile</p>
-</div>
+
+<a href="#reservation">
+<button class="btn">Réserver maintenant</button>
+</a>
+</section>
 
 <!-- SERVICES -->
-<section>
+<section id="services">
 <h2>Services</h2>
 
 <div class="card">Coupe femme — 75$</div>
@@ -160,18 +196,34 @@ margin-top:30px;
 <div class="card">Balayage — à partir de 150$</div>
 <div class="card">Gloss — 70$</div>
 <div class="card">Extensions — consultation</div>
-
 </section>
 
-<!-- FORMULAIRE -->
-<section style="margin-top:40px;">
+<!-- HISTOIRE -->
+<section id="histoire">
+<h2>Notre histoire</h2>
+
+<div class="card">
+Bella Bay vous aide à révéler la meilleure version de vous-même grâce à des produits de qualité, un service professionnel premium et un résultat soigné qui met en valeur vos cheveux.
+</div>
+</section>
+
+<!-- AVIS -->
+<section id="avis">
+<h2>Avis clients</h2>
+
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Très bon service, résultat parfait !</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Professionnelle et rapide.</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Je recommande fortement Bella Bay.</div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation">
 <h2>Réserver un rendez-vous</h2>
 
 <form onsubmit="sendWhatsApp(event)">
 
 <input type="text" id="name" placeholder="Nom complet" required>
-
-<input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+<input type="tel" id="phone" placeholder="Téléphone" required>
 
 <select id="service" required>
 <option value="">Choisir un service</option>
@@ -189,17 +241,15 @@ margin-top:30px;
 
 <textarea id="notes" placeholder="Notes (optionnel)"></textarea>
 
-<button class="btn" type="submit">
-Envoyer la réservation
-</button>
+<button class="btn" type="submit">Envoyer la réservation</button>
 
 </form>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section id="contact" class="contact">
 
-<h2>Contact Bella Bay</h2>
+<h2>Contact</h2>
 
 <p>📞 <a href="tel:15145822856">514-582-2856</a></p>
 
@@ -224,8 +274,8 @@ let service=document.getElementById("service").value;
 let date=document.getElementById("date").value;
 let notes=document.getElementById("notes").value;
 
-let message =
-`💖 Bella Bay - Nouvelle réservation ✨
+let message=
+`💖 Bella Bay - Réservation
 
 Nom: ${name}
 Téléphone: ${phone}
@@ -233,8 +283,7 @@ Service: ${service}
 Date: ${date}
 Notes: ${notes}`;
 
-let url =
-"https://wa.me/15145822856?text=" + encodeURIComponent(message);
+let url="https://wa.me/15145822856?text="+encodeURIComponent(message);
 
 window.open(url,"_blank");
 }
