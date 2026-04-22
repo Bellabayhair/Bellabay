@@ -67,23 +67,22 @@ body {
   font-size: 64px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn {
   display: inline-block;
   padding: 14px 30px;
   border-radius: 30px;
   background: linear-gradient(135deg, #ff69b4, #ffb6c1);
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
+  border: none;
   cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
   transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
-  opacity: 0.9;
 }
 
 /* CARD */
@@ -94,19 +93,24 @@ body {
   border-radius: 14px;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 2000;
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form select, form textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: none;
+  height: 80px;
 }
 
 </style>
@@ -114,7 +118,7 @@ body {
 
 <body>
 
-<!-- TOP -->
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="bb-btn">BB</div>
 </div>
@@ -122,22 +126,14 @@ body {
 <!-- CONTENT -->
 <div class="content">
 
+  <!-- HERO -->
   <div class="hero">
     <h1>Bella Bay</h1>
     <p>Coiffure mobile à Montréal & Laval</p>
-
-    <button class="btn" onclick="bookNow()">
-      Réserver maintenant
-    </button>
-
-    <button class="btn" onclick="openWhatsApp()">
-      💬 WhatsApp
-    </button>
-
   </div>
 
+  <!-- SERVICES -->
   <section>
-
     <h2>Services</h2>
 
     <div class="card">Coupe femme — 75$</div>
@@ -148,43 +144,66 @@ body {
     <div class="card">Balayage — à partir de 150$</div>
     <div class="card">Gloss — 70$</div>
     <div class="card">Extensions — consultation</div>
+  </section>
 
+  <!-- FORMULAIRE -->
+  <section style="margin-top:40px;">
+    <h2>Réserver un rendez-vous</h2>
+
+    <form onsubmit="sendWhatsApp(event)">
+
+      <input type="text" id="name" placeholder="Nom complet" required>
+
+      <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+
+      <select id="service" required>
+        <option value="">Choisir un service</option>
+        <option>Coupe femme - 75$</option>
+        <option>Brushing - 50$</option>
+        <option>Coupe + Brushing - 120$</option>
+        <option>Coloration - à partir de 90$</option>
+        <option>Mèches - à partir de 120$</option>
+        <option>Balayage - à partir de 150$</option>
+        <option>Gloss - 70$</option>
+        <option>Extensions - consultation</option>
+      </select>
+
+      <input type="date" id="date" required>
+
+      <textarea id="notes" placeholder="Notes (optionnel)"></textarea>
+
+      <button class="btn" type="submit">
+        Envoyer la réservation
+      </button>
+
+    </form>
   </section>
 
 </div>
 
-<!-- WHATSAPP FLOAT BUTTON -->
-<a class="whatsapp-float" href="https://wa.me/15145822856" target="_blank">
-💬 Chat
-</a>
-
 <script>
 
-// Notifications
-window.addEventListener("load", function () {
-  if ("Notification" in window) {
-    Notification.requestPermission();
-  }
-});
+function sendWhatsApp(event) {
+  event.preventDefault();
 
-// Réservation
-function bookNow() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let service = document.getElementById("service").value;
+  let date = document.getElementById("date").value;
+  let notes = document.getElementById("notes").value;
 
-  window.open("https://forms.gle/BLFRhR3Hfh3MPPzw5", "_blank");
+  let message =
+`💇‍♀️ Nouvelle réservation Bella Bay 💖
 
-  alert("💖 Bella Bay : redirection vers la réservation !");
+Nom: ${name}
+Téléphone: ${phone}
+Service: ${service}
+Date: ${date}
+Notes: ${notes}`;
 
-  if (Notification.permission === "granted") {
-    new Notification("Bella Bay 💇‍♀️", {
-      body: "Réservation ouverte avec succès !",
-      icon: "https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg"
-    });
-  }
-}
+  let url = "https://wa.me/15145822856?text=" + encodeURIComponent(message);
 
-// WhatsApp bouton normal
-function openWhatsApp() {
-  window.open("https://wa.me/15145822856", "_blank");
+  window.open(url, "_blank");
 }
 
 </script>
