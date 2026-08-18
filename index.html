@@ -3,417 +3,2325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella Bay | Haute Coiffure & Boutique Prestige</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <title>Bella Bay | Coiffure Luxe & Beauty Bar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      /* Palette Pinky Bay : Rose vibrant avec du caractère dégradé vers le blanc */
-      --pink-vibrant: #FF4A7A;       /* Rose ciel de coucher de soleil */
-      --pink-pastel: #FFE3E8;        /* Rose doux coquillage */
-      --white-pure: #FFFFFF;         /* Blanc éclatant */
-      --text-dark: #2A161B;          /* Brun-noir profond pour un contraste parfait */
-      --font-title: 'Playfair Display', serif;
-      --font-body: 'Poppins', sans-serif;
+      --rose: #d58a9a;
+      --rose-clair: #f8e5e9;
+      --rose-pale: #fff8f9;
+
+      --or: #c6a15b;
+      --or-clair: #ead7a6;
+
+      --noir: #171316;
+      --noir-doux: #292126;
+
+      --blanc: #ffffff;
+      --creme: #faf7f4;
+
+      --titre: "Playfair Display", serif;
+      --texte: "Poppins", sans-serif;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: var(--font-body);
-      color: var(--text-dark);
-      background-color: var(--white-pure);
+      font-family: var(--texte);
+      color: var(--noir);
+      background: var(--creme);
       overflow-x: hidden;
     }
 
-    /* --- HERO SECTION : L'EFFET WOW DU CIEL ROSE --- */
-    .hero {
-      min-height: 90vh;
-      background: linear-gradient(135deg, var(--pink-vibrant) 0%, var(--pink-pastel) 60%, var(--white-pure) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* Décoration coquillage subtile en arrière-plan */
-    .hero::after {
-      content: "🐚";
-      position: absolute;
-      bottom: 20px;
-      right: 10%;
-      font-size: 5rem;
-      opacity: 0.15;
+    button {
+      font-family: inherit;
     }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 1200px;
+      z-index: 50;
+
+      padding: 24px 6%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
     }
 
     .logo {
-      font-family: var(--font-title);
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--white-pure);
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+      font-family: var(--titre);
+      font-size: 2rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
 
-    .nav-links a {
-      color: var(--text-dark);
-      text-decoration: none;
+    .logo span {
+      color: var(--or-clair);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      font-size: .82rem;
       font-weight: 500;
-      margin-left: 20px;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: background 0.3s;
+      transition: .3s;
     }
 
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.4);
+    nav a:hover {
+      color: var(--or-clair);
+    }
+
+    .nav-rdv {
+      border: 1px solid var(--or-clair);
+      padding: 10px 18px;
+      border-radius: 30px;
+    }
+
+    /* =========================
+       BOUTONS
+    ========================= */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: .85rem;
+      font-weight: 600;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-or {
+      background: var(--or);
+      color: white;
+    }
+
+    .btn-or:hover {
+      background: #ad8746;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--noir);
+    }
+
+    .btn-dark {
+      background: var(--noir);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: var(--rose);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 130px 20px 80px;
+
+      background:
+        linear-gradient(
+          rgba(24,17,20,.58),
+          rgba(24,17,20,.78)
+        ),
+        url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=2000&q=90")
+        center / cover;
     }
 
     .hero-content {
-      max-width: 800px;
-      margin-top: 60px;
+      max-width: 900px;
+      color: white;
     }
 
-    .hero-content h2 {
-      font-family: var(--font-title);
-      font-size: 3.5rem;
-      color: var(--white-pure);
-      line-height: 1.2;
-      margin-bottom: 25px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    .eyebrow {
+      color: var(--or-clair);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .72rem;
+      margin-bottom: 20px;
     }
 
-    .hero-content p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 35px;
-      color: var(--text-dark);
+    .hero h1 {
+      font-family: var(--titre);
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      line-height: .95;
+      margin-bottom: 30px;
     }
 
-    /* Boutons d'action luxueux */
-    .cta-group {
+    .hero h1 span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #f5eeee;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       flex-wrap: wrap;
+      margin-top: 35px;
     }
 
-    .btn-main {
-      background-color: var(--text-dark);
-      color: var(--white-pure);
-      padding: 16px 36px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, background-color 0.3s;
-    }
+    /* =========================
+       INTRO
+    ========================= */
 
-    .btn-main:hover {
-      transform: translateY(-3px);
-      background-color: var(--pink-vibrant);
-    }
-
-    /* --- SECTION À PROPOS & BIENFAITS --- */
-    .about {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+    .intro {
+      padding: 100px 8%;
       text-align: center;
+      background: white;
     }
 
-    .about h3 {
-      font-family: var(--font-title);
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--pink-vibrant);
+    .intro h2 {
+      font-family: var(--titre);
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 25px;
     }
 
-    .about p {
-      font-size: 1.15rem;
+    .intro h2 span {
+      color: var(--rose);
+    }
+
+    .intro p {
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.9;
+      color: #6d6267;
+    }
+
+    /* =========================
+       TITRES DE SECTIONS
+    ========================= */
+
+    .section-heading {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading small {
+      color: var(--or);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+
+    .section-heading h2 {
+      font-family: var(--titre);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin: 10px 0 15px;
+    }
+
+    .section-heading p {
+      color: #71666a;
       line-height: 1.8;
-      color: var(--text-dark);
     }
 
-    /* --- SECTION BOUTIQUE PRESTIGE --- */
-    .shop-section {
-      padding: 80px 20px;
-      background: linear-gradient(180deg, var(--white-pure) 0%, var(--pink-pastel) 100%);
+    /* =========================
+       LES 3 UNIVERS
+    ========================= */
+
+    .univers {
+      padding: 100px 6%;
+      background:
+        linear-gradient(
+          180deg,
+          var(--rose-pale),
+          white
+        );
     }
 
-    .section-title {
+    .univers-grid {
+      max-width: 1250px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .univers-card {
+      min-height: 500px;
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      color: white;
+
+      border-radius: 5px;
+
+      transition: .4s;
+    }
+
+    .univers-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .univers-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-size: cover;
+      background-position: center;
+
+      transition: .6s;
+    }
+
+    .univers-card:hover::before {
+      transform: scale(1.07);
+    }
+
+    .univers-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          transparent 20%,
+          rgba(0,0,0,.9)
+        );
+    }
+
+    .univers-content {
+      position: relative;
+      z-index: 2;
+      padding: 35px;
+    }
+
+    .univers-content h3 {
+      font-family: var(--titre);
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .univers-content p {
+      color: #eee;
+      font-size: .84rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .univers-link {
+      color: var(--or-clair);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
+    .univers-coiffure::before {
+      background-image:
+        url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=90");
+    }
+
+    .univers-boutique::before {
+      background-image:
+        url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=90");
+    }
+
+    .univers-beauty::before {
+      background-image:
+        url("https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=90");
+    }
+
+    /* =========================
+       COIFFURE
+    ========================= */
+
+    .coiffure {
+      padding: 110px 6%;
+      background: white;
+    }
+
+    .service-grid {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #eadde0;
+
+      padding: 35px 25px;
+
       text-align: center;
-      font-family: var(--font-title);
-      font-size: 2.8rem;
-      margin-bottom: 50px;
+
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+    }
+
+    .service-icon {
+      color: var(--or);
+      font-size: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-family: var(--titre);
+      font-size: 1.5rem;
+      margin: 14px 0;
+    }
+
+    .service-card p {
+      color: #756b70;
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    .service-price {
+      color: var(--rose);
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* =========================
+       SOUS-CATEGORIES MECHES
+    ========================= */
+
+    .subcategory {
+      max-width: 1150px;
+      margin: 40px auto 0;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .subcategory-box {
+      background: var(--rose-pale);
+      border: 1px solid #f0dfe3;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .subcategory-box h3 {
+      font-family: var(--titre);
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .subcategory-box p {
+      color: #756b70;
+      font-size: .85rem;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       BOUTIQUE
+    ========================= */
+
+    .boutique {
+      padding: 110px 6%;
+      background: var(--rose-pale);
+    }
+
+    .boutique-category {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .boutique-category-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .boutique-category-title h3 {
+      font-family: var(--titre);
+      font-size: 2.2rem;
+    }
+
+    .boutique-category-title span {
+      color: var(--or);
+      font-size: 1.3rem;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .product-card {
-      background: var(--white-pure);
-      border-radius: 20px;
+      background: white;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
+
+      border: 1px solid #eadde0;
+
+      transition: .3s;
     }
 
     .product-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.08);
     }
 
-    .product-img {
+    .product-image {
       width: 100%;
-      height: 280px;
+      height: 230px;
       object-fit: cover;
-      background-color: #f0f0f0;
     }
 
     .product-info {
-      padding: 25px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 22px;
     }
 
-    .product-category {
-      font-size: 0.8rem;
+    .product-info small {
+      color: var(--rose);
       text-transform: uppercase;
-      color: var(--pink-vibrant);
-      font-weight: 700;
       letter-spacing: 1px;
-      margin-bottom: 5px;
+      font-size: .65rem;
+      font-weight: 700;
     }
 
     .product-info h4 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-family: var(--titre);
+      font-size: 1.25rem;
+      margin: 8px 0;
     }
 
-    .product-price {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-dark);
+    .product-info p {
+      color: #756b70;
+      font-size: .78rem;
+      line-height: 1.6;
       margin-bottom: 15px;
     }
 
-    .btn-add {
-      background: none;
-      border: 2px solid var(--text-dark);
-      color: var(--text-dark);
+    .product-price {
+      color: var(--noir);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .product-button {
+      width: 100%;
+      border: 1px solid var(--noir);
+      background: transparent;
+      color: var(--noir);
+
       padding: 10px;
-      border-radius: 20px;
-      font-weight: 600;
+
+      border-radius: 25px;
+
       cursor: pointer;
-      transition: all 0.3s;
+
+      transition: .3s;
     }
 
-    .btn-add:hover {
-      background: var(--text-dark);
-      color: var(--white-pure);
+    .product-button:hover {
+      background: var(--noir);
+      color: white;
     }
 
-    /* --- CONFIGURATION CONTACT & PIED DE PAGE --- */
-    footer {
-      background-color: var(--text-dark);
-      color: var(--white-pure);
-      padding: 60px 20px;
+    /* =========================
+       BEAUTY BAR
+    ========================= */
+
+    .beauty-bar {
+      padding: 110px 7%;
+      background: var(--noir);
+      color: white;
+    }
+
+    .beauty-wrapper {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .beauty-image {
+      min-height: 600px;
+
+      background:
+        url("https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=90")
+        center / cover;
+    }
+
+    .beauty-text small {
+      color: var(--or-clair);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .7rem;
+    }
+
+    .beauty-text h2 {
+      font-family: var(--titre);
+      font-size: 4rem;
+      margin: 15px 0 20px;
+    }
+
+    .beauty-text p {
+      color: #d8ced1;
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .beauty-services {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .beauty-services li {
+      padding: 13px 0;
+      border-bottom: 1px solid #3b3437;
+      color: #eee;
+    }
+
+    .beauty-services li::before {
+      content: "✦";
+      color: var(--or);
+      margin-right: 10px;
+    }
+
+    /* =========================
+       BEAUTY BAR SERVICES
+    ========================= */
+
+    .beauty-menu {
+      padding: 100px 6%;
+      background: white;
+    }
+
+    .beauty-menu-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .beauty-menu-card {
       text-align: center;
+
+      padding: 40px 25px;
+
+      border: 1px solid #eadde0;
+
+      background: white;
     }
 
-    .footer-content h3 {
-      font-family: var(--font-title);
+    .beauty-menu-card .icon {
       font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .beauty-menu-card h3 {
+      font-family: var(--titre);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .beauty-menu-card p {
+      color: #756b70;
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       GALERIE
+    ========================= */
+
+    .gallery {
+      padding: 110px 6%;
+      background: var(--creme);
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+
+      transition: .4s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(.98);
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 110px 20px;
+      text-align: center;
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(25,18,21,.72),
+          rgba(25,18,21,.72)
+        ),
+        url("https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1800&q=90")
+        center / cover;
+    }
+
+    .cta h2 {
+      font-family: var(--titre);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.05;
       margin-bottom: 20px;
     }
 
-    .footer-contacts {
-      margin: 20px 0;
-      font-size: 1.1rem;
+    .cta p {
+      color: #eee;
+      margin-bottom: 30px;
     }
 
-    .footer-contacts p {
-      margin: 10px 0;
-    }
+    /* =========================
+       FOOTER
+    ========================= */
 
-    .footer-contacts a {
-      color: var(--pink-pastel);
-      text-decoration: none;
-    }
-
-    /* --- BOUTON FLOTTANT WHATSAPP STYLE UNIQUE --- */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25D366;
+    footer {
+      background: var(--noir);
       color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      transition: transform 0.3s;
+      padding: 70px 6% 30px;
     }
 
-    .whatsapp-float:hover {
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    footer h3 {
+      font-family: var(--titre);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    footer h4 {
+      color: var(--or-clair);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .7rem;
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #cfc5c9;
+      font-size: .84rem;
+      line-height: 1.9;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 50px auto 0;
+
+      padding-top: 25px;
+
+      border-top: 1px solid #393134;
+
+      text-align: center;
+
+      color: #817579;
+
+      font-size: .72rem;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      background: #25D366;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 27px;
+
+      z-index: 100;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.25);
+
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
-      .hero-content h2 { font-size: 2.3rem; }
-      .logo { width: 100%; text-align: center; }
-      .nav-links { width: 100%; text-align: center; margin-top: 10px; }
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      header {
+        position: relative;
+        background: var(--noir);
+
+        flex-direction: column;
+      }
+
+      .univers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .beauty-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .beauty-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: .75rem;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .product-grid,
+      .service-grid,
+      .beauty-menu-grid,
+      .subcategory,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .univers-card {
+        min-height: 400px;
+      }
+
+      .beauty-image {
+        min-height: 400px;
+      }
+
+      .beauty-text h2 {
+        font-size: 2.8rem;
+      }
+
+      .product-image {
+        height: 260px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Écran principal / Immersion Plage Ciel Rose -->
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="#accueil" class="logo">
+      Bella <span>Bay</span>
+    </a>
+
+    <nav>
+
+      <a href="#accueil">
+        Accueil
+      </a>
+
+      <a href="#coiffure">
+        Coiffure
+      </a>
+
+      <a href="#boutique">
+        Boutique
+      </a>
+
+      <a href="#beauty">
+        Beauty Bar
+      </a>
+
+      <a href="#contact" class="nav-rdv">
+        Réserver
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <section class="hero" id="accueil">
-    <header>
-      <div class="logo">Bella Bay</div>
-      <nav class="nav-links">
-        <a href="#accueil">Accueil</a>
-        <a href="#concept">Concept</a>
-        <a href="#boutique">Boutique</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
     <div class="hero-content">
-      <h2>Nous sommes là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits.</h2>
-      <p>Découvrez notre savoir-faire unique, nos extensions d'exception et notre sélection de soins capillaires professionnels.</p>
-      <div class="cta-group">
-        <a href="https://wa.me/15145822856" target="_blank" class="btn-main">Prendre Rendez-vous</a>
-        <a href="#boutique" class="btn-main" style="background-color: transparent; border: 2px solid white;">Explorer la Boutique</a>
-      </div>
-    </div>
-    <div></div> <!-- Pour l'équilibre du flex space-between -->
-  </section>
 
-  <!-- Section Concept & Identité -->
-  <section class="about" id="concept">
-    <h3>L'Engagement Bella Bay</h3>
-    <p>Parce que chaque chevelure est unique, nous refusons les solutions génériques. Notre approche marie l'excellence technique à domicile et l'utilisation de formules enrichies qui respectent et transforment profondément la nature de vos cheveux. Venez vivre l'expérience d'un salon prestigieux dans le confort absolu de votre foyer.</p>
-  </section>
-
-  <!-- Section Boutique Dynamique et Remplissable -->
-  <section class="shop-section" id="boutique">
-    <h3 class="section-title">La Boutique Prestige 🛍️</h3>
-    <div class="product-grid">
-
-      <!-- Produit 1 : Extensions -->
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=500&q=80" alt="Extensions de cheveux haut de gamme" class="product-img">
-        <div class="product-info">
-          <div>
-            <p class="product-category">Extensions</p>
-            <h4>Extensions de Cheveux Naturels Premium</h4>
-          </div>
-          <div>
-            <p class="product-price">Sur Devis</p>
-            <button class="btn-add">Sélectionner</button>
-          </div>
-        </div>
+      <div class="eyebrow">
+        Luxury Coiffure & Beauty Bar
       </div>
 
-      <!-- Produit 2 : Shampoing -->
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80" alt="Shampoing soin intense" class="product-img">
-        <div class="product-info">
-          <div>
-            <p class="product-category">Soins Capillaires</p>
-            <h4>Shampoing Traitant Bienfaits Intenses</h4>
-          </div>
-          <div>
-            <p class="product-price">34.00 $</p>
-            <button class="btn-add">Ajouter au panier</button>
-          </div>
-        </div>
-      </div>
+      <h1>
+        Bella <span>Bay</span>
+      </h1>
 
-      <!-- Produit 3 : Brosse -->
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1590156221122-c7b3cd685ee2?auto=format&fit=crop&w=500&q=80" alt="Brosse professionnelle" class="product-img">
-        <div class="product-info">
-          <div>
-            <p class="product-category">Accessoires</p>
-            <h4>Brosse Démêlante Haute Brillance</h4>
-          </div>
-          <div>
-            <p class="product-price">28.00 $</p>
-            <button class="btn-add">Ajouter au panier</button>
-          </div>
-        </div>
-      </div>
+      <p>
+        Coiffure, coloration, extensions, beauté et boutique
+        dans un univers féminin, élégant et luxueux.
+        Services mobiles à Montréal, Laval et sur la Rive-Nord.
+      </p>
 
-      <!-- Produit 4 : Press-on -->
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=500&q=80" alt="Press-on nails design chic" class="product-img">
-        <div class="product-info">
-          <div>
-            <p class="product-category">Ongles</p>
-            <h4>Kit Press-On Nails "Pinky Sunset"</h4>
-          </div>
-          <div>
-            <p class="product-price">45.00 $</p>
-            <button class="btn-add">Ajouter au panier</button>
-          </div>
-        </div>
+      <div class="hero-buttons">
+
+        <a
+          href="https://wa.me/15145822856"
+          target="_blank"
+          class="btn btn-or">
+
+          Prendre rendez-vous
+
+        </a>
+
+        <a
+          href="#boutique"
+          class="btn btn-outline">
+
+          Découvrir la boutique
+
+        </a>
+
       </div>
 
     </div>
+
   </section>
 
-  <!-- Pied de page et Contacts Officiels -->
+
+  <!-- =========================
+       INTRO
+  ========================= -->
+
+  <section class="intro">
+
+    <h2>
+      Votre beauté.<br>
+      <span>Votre style. Bella Bay.</span>
+    </h2>
+
+    <p>
+      Découvrez une expérience beauté complète réunissant
+      coiffure professionnelle, coloration, mèches, balayage,
+      extensions capillaires, Beauty Bar et boutique.
+      Chaque service est pensé pour révéler votre style
+      et vous faire sentir exceptionnelle.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       LES 3 UNIVERS
+  ========================= -->
+
+  <section class="univers">
+
+    <div class="section-heading">
+
+      <small>
+        Bienvenue chez Bella Bay
+      </small>
+
+      <h2>
+        Découvrez nos univers
+      </h2>
+
+      <p>
+        Tout ce dont vous avez besoin pour votre beauté,
+        réuni dans une seule expérience.
+      </p>
+
+    </div>
+
+
+    <div class="univers-grid">
+
+
+      <!-- COIFFURE -->
+
+      <a
+        href="#coiffure"
+        class="univers-card univers-coiffure">
+
+        <div class="univers-content">
+
+          <h3>
+            Coiffure
+          </h3>
+
+          <p>
+            Coupe, brushing, coloration,
+            couleur fantaisie, mèches et balayage.
+          </p>
+
+          <span class="univers-link">
+            Voir les services →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- BOUTIQUE -->
+
+      <a
+        href="#boutique"
+        class="univers-card univers-boutique">
+
+        <div class="univers-content">
+
+          <h3>
+            Boutique
+          </h3>
+
+          <p>
+            Extensions, ongles, cils, accessoires
+            et soins capillaires.
+          </p>
+
+          <span class="univers-link">
+            Découvrir la boutique →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- BEAUTY BAR -->
+
+      <a
+        href="#beauty"
+        class="univers-card univers-beauty">
+
+        <div class="univers-content">
+
+          <h3>
+            Beauty Bar
+          </h3>
+
+          <p>
+            Extensions capillaires, ongles et cils
+            pour compléter votre look.
+          </p>
+
+          <span class="univers-link">
+            Découvrir le Beauty Bar →
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COIFFURE
+  ========================= -->
+
+  <section class="coiffure" id="coiffure">
+
+    <div class="section-heading">
+
+      <small>
+        Bella Bay Hair
+      </small>
+
+      <h2>
+        Coiffure & Coloration
+      </h2>
+
+      <p>
+        Des services personnalisés pour créer le look
+        que vous désirez.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <!-- COLORATION -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Coloration
+        </h3>
+
+        <p>
+          Coloration racines ou coloration complète
+          selon votre besoin.
+        </p>
+
+        <div class="service-price">
+          À partir de 95 $
+        </div>
+
+      </div>
+
+
+      <!-- COUPE -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Coupe
+        </h3>
+
+        <p>
+          Coupe personnalisée adaptée à votre style
+          et à votre type de cheveux.
+        </p>
+
+        <div class="service-price">
+          À partir de 75 $
+        </div>
+
+      </div>
+
+
+      <!-- BRUSHING -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Brushing
+        </h3>
+
+        <p>
+          Mise en plis et finition professionnelle
+          pour un résultat élégant.
+        </p>
+
+        <div class="service-price">
+          À partir de 50 $
+        </div>
+
+      </div>
+
+
+      <!-- COULEUR FANTAISIE -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Couleur Fantaisie
+        </h3>
+
+        <p>
+          Rose, mauve, rouge, cuivre et autres
+          couleurs créatives selon votre inspiration.
+        </p>
+
+        <div class="service-price">
+          Sur consultation
+        </div>
+
+      </div>
+
+
+      <!-- MECHES -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Mèches
+        </h3>
+
+        <p>
+          Éclaircissement personnalisé avec choix
+          entre demi-tête et tête complète.
+        </p>
+
+        <div class="service-price">
+          À partir de 150 $
+        </div>
+
+      </div>
+
+
+      <!-- BALAYAGE -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          ✦
+        </div>
+
+        <h3>
+          Balayage
+        </h3>
+
+        <p>
+          Balayage personnalisé selon la longueur
+          et le résultat souhaité.
+        </p>
+
+        <div class="service-price">
+          À partir de 180 $
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MECHES -->
+
+    <div class="subcategory">
+
+      <div class="subcategory-box">
+
+        <h3>
+          Mèches ½ tête
+        </h3>
+
+        <p>
+          Un éclaircissement ciblé pour apporter
+          lumière et dimension à votre chevelure.
+        </p>
+
+      </div>
+
+
+      <div class="subcategory-box">
+
+        <h3>
+          Mèches tête complète
+        </h3>
+
+        <p>
+          Une transformation lumineuse plus complète
+          pour un résultat uniforme et éclatant.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- BALAYAGE -->
+
+    <div class="subcategory">
+
+      <div class="subcategory-box">
+
+        <h3>
+          Balayage cheveux courts
+        </h3>
+
+        <p>
+          Technique adaptée aux cheveux courts.
+        </p>
+
+      </div>
+
+
+      <div class="subcategory-box">
+
+        <h3>
+          Balayage mi-longs
+        </h3>
+
+        <p>
+          Placement personnalisé pour cheveux mi-longs.
+        </p>
+
+      </div>
+
+
+      <div class="subcategory-box">
+
+        <h3>
+          Balayage cheveux longs
+        </h3>
+
+        <p>
+          Dimension et lumière sur longueurs importantes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOUTIQUE
+  ========================= -->
+
+  <section class="boutique" id="boutique">
+
+    <div class="section-heading">
+
+      <small>
+        Bella Bay Shop
+      </small>
+
+      <h2>
+        La Boutique
+      </h2>
+
+      <p>
+        Découvrez notre sélection beauté et capillaire.
+        Les produits et prix peuvent être ajoutés directement
+        dans la boutique au fur et à mesure.
+      </p>
+
+    </div>
+
+
+    <!-- EXTENSIONS -->
+
+    <div class="boutique-category">
+
+      <div class="boutique-category-title">
+
+        <span>✦</span>
+
+        <h3>
+          Extensions capillaires
+        </h3>
+
+      </div>
+
+
+      <div class="product-grid">
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=700&q=85"
+            alt="Extensions de cheveux">
+
+          <div class="product-info">
+
+            <small>
+              Extensions
+            </small>
+
+            <h4>
+              Extensions cheveux humains
+            </h4>
+
+            <p>
+              Différentes longueurs et options
+              disponibles.
+            </p>
+
+            <div class="product-price">
+              Sur consultation
+            </div>
+
+            <a
+              href="https://wa.me/15145822856"
+              target="_blank"
+              class="btn btn-dark"
+              style="width:100%; text-align:center;">
+
+              Demander
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85"
+            alt="Extensions longues">
+
+          <div class="product-info">
+
+            <small>
+              Extensions XL
+            </small>
+
+            <h4>
+              Longueurs XL
+            </h4>
+
+            <p>
+              Pour créer longueur et volume.
+            </p>
+
+            <div class="product-price">
+              Sur consultation
+            </div>
+
+            <a
+              href="https://wa.me/15145822856"
+              target="_blank"
+              class="btn btn-dark"
+              style="width:100%; text-align:center;">
+
+              Demander
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ONGLES -->
+
+    <div class="boutique-category">
+
+      <div class="boutique-category-title">
+
+        <span>✦</span>
+
+        <h3>
+          Ongles
+        </h3>
+
+      </div>
+
+
+      <div class="product-grid">
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=85"
+            alt="Ongles">
+
+          <div class="product-info">
+
+            <small>
+              Nails
+            </small>
+
+            <h4>
+              Press-On Nails
+            </h4>
+
+            <p>
+              Designs élégants prêts à porter.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CILS -->
+
+    <div class="boutique-category">
+
+      <div class="boutique-category-title">
+
+        <span>✦</span>
+
+        <h3>
+          Cils
+        </h3>
+
+      </div>
+
+
+      <div class="product-grid">
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=700&q=85"
+            alt="Cils beauté">
+
+          <div class="product-info">
+
+            <small>
+              Lashes
+            </small>
+
+            <h4>
+              Beauté des cils
+            </h4>
+
+            <p>
+              Produits et services pour sublimer
+              votre regard.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ACCESSOIRES -->
+
+    <div class="boutique-category">
+
+      <div class="boutique-category-title">
+
+        <span>✦</span>
+
+        <h3>
+          Accessoires
+        </h3>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
+            alt="Brosse cheveux">
+
+          <div class="product-info">
+
+            <small>
+              Accessoires
+            </small>
+
+            <h4>
+              Brosses
+            </h4>
+
+            <p>
+              Brosses sélectionnées pour votre
+              routine capillaire.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=700&q=85"
+            alt="Accessoires cheveux">
+
+          <div class="product-info">
+
+            <small>
+              Accessoires
+            </small>
+
+            <h4>
+              Pinces & Élastiques
+            </h4>
+
+            <p>
+              Pinces, élastiques et accessoires
+              pour toutes vos coiffures.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=700&q=85"
+            alt="Chouchous cheveux">
+
+          <div class="product-info">
+
+            <small>
+              Accessoires
+            </small>
+
+            <h4>
+              Chouchous
+            </h4>
+
+            <p>
+              Chouchous élégants pour compléter
+              votre style.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=85"
+            alt="Fer à lisser et fer à friser">
+
+          <div class="product-info">
+
+            <small>
+              Outils coiffure
+            </small>
+
+            <h4>
+              Fers à lisser & friser
+            </h4>
+
+            <p>
+              Outils de coiffage pour créer
+              différents styles.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOINS -->
+
+    <div class="boutique-category">
+
+      <div class="boutique-category-title">
+
+        <span>✦</span>
+
+        <h3>
+          Soins capillaires
+        </h3>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=700&q=85"
+            alt="Shampoing">
+
+          <div class="product-info">
+
+            <small>
+              Hair Care
+            </small>
+
+            <h4>
+              Shampoings
+            </h4>
+
+            <p>
+              Shampoings adaptés aux différents
+              besoins capillaires.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=85"
+            alt="Revitalisant">
+
+          <div class="product-info">
+
+            <small>
+              Hair Care
+            </small>
+
+            <h4>
+              Revitalisants
+            </h4>
+
+            <p>
+              Soins pour hydrater et protéger
+              la chevelure.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=85"
+            alt="Traitement capillaire">
+
+          <div class="product-info">
+
+            <small>
+              Hair Care
+            </small>
+
+            <h4>
+              Traitements capillaires
+            </h4>
+
+            <p>
+              Traitements ciblés pour prendre soin
+              de vos cheveux.
+            </p>
+
+            <div class="product-price">
+              À venir
+            </div>
+
+            <button
+              class="product-button"
+              onclick="alert('Produit bientôt disponible dans la boutique Bella Bay.')">
+
+              Bientôt disponible
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BEAUTY BAR
+    ========================= -->
+
+  <section
+    class="beauty-bar"
+    id="beauty">
+
+    <div class="beauty-wrapper">
+
+
+      <div class="beauty-image"></div>
+
+
+      <div class="beauty-text">
+
+        <small>
+          Bella Bay Beauty
+        </small>
+
+        <h2>
+          Beauty Bar
+        </h2>
+
+        <p>
+          Votre espace beauté pour compléter votre
+          transformation Bella Bay. Extensions capillaires,
+          ongles et cils réunis dans une même expérience.
+        </p>
+
+
+        <ul class="beauty-services">
+
+          <li>
+            Extensions capillaires
+          </li>
+
+          <li>
+            Ongles
+          </li>
+
+          <li>
+            Cils
+          </li>
+
+        </ul>
+
+
+        <a
+          href="https://wa.me/15145822856"
+          target="_blank"
+          class="btn btn-or">
+
+          Prendre rendez-vous
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BEAUTY BAR SERVICES
+  ========================= -->
+
+  <section class="beauty-menu">
+
+    <div class="section-heading">
+
+      <small>
+        Bella Bay Beauty
+      </small>
+
+      <h2>
+        Nos services Beauty Bar
+      </h2>
+
+      <p>
+        Choisissez votre service et contactez-nous
+        pour connaître les disponibilités.
+      </p>
+
+    </div>
+
+
+    <div class="beauty-menu-grid">
+
+
+      <div class="beauty-menu-card">
+
+        <div class="icon">
+          💇‍♀️
+        </div>
+
+        <h3>
+          Extensions capillaires
+        </h3>
+
+        <p>
+          Ajoutez longueur, volume et mouvement
+          à votre chevelure.
+        </p>
+
+      </div>
+
+
+      <div class="beauty-menu-card">
+
+        <div class="icon">
+          💅
+        </div>
+
+        <h3>
+          Ongles
+        </h3>
+
+        <p>
+          Une mise en beauté élégante pour
+          compléter votre look.
+        </p>
+
+      </div>
+
+
+      <div class="beauty-menu-card">
+
+        <div class="icon">
+          👁️
+        </div>
+
+        <h3>
+          Cils
+        </h3>
+
+        <p>
+          Sublimez votre regard avec nos services
+          dédiés à la beauté des cils.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GALERIE
+  ========================= -->
+
+  <section class="gallery">
+
+    <div class="section-heading">
+
+      <small>
+        L'univers Bella Bay
+      </small>
+
+      <h2>
+        Galerie
+      </h2>
+
+      <p>
+        Découvrez l'ambiance et l'univers
+        beauté de Bella Bay.
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <img
+        src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85"
+        alt="Coiffure">
+
+      <img
+        src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"
+        alt="Cheveux longs">
+
+      <img
+        src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85"
+        alt="Ongles Beauty Bar">
+
+      <img
+        src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=85"
+        alt="Extensions">
+
+      <img
+        src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=900&q=85"
+        alt="Soins capillaires">
+
+      <img
+        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=85"
+        alt="Beauté">
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section class="cta">
+
+    <h2>
+      Prête pour votre<br>
+      transformation Bella Bay ?
+    </h2>
+
+    <p>
+      Réservez votre moment beauté.
+    </p>
+
+    <a
+      href="https://wa.me/15145822856"
+      target="_blank"
+      class="btn btn-or">
+
+      Réserver maintenant
+
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer id="contact">
-    <div class="footer-content">
-      <h3>Contactez Bella Bay</h3>
-      <div class="footer-contacts">
-        <p>📧 Courriel : <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
-        <p>📞 Téléphone / WhatsApp : <a href="https://wa.me/15145822856" target="_blank">514-582-2856</a></p>
-        <p>📍 Secteur d'activité : Grand Montréal, Laval & Rive-Nord</p>
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          Bella Bay
+        </h3>
+
+        <p>
+          Luxury Coiffure & Beauty Bar.
+          Coiffure mobile, beauté et boutique
+          à Montréal, Laval et sur la Rive-Nord.
+        </p>
+
       </div>
-      <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.6;">&copy; 2026 Bella Bay. Tous droits réservés.</p>
+
+
+      <div>
+
+        <h4>
+          Navigation
+        </h4>
+
+        <p>
+          <a href="#accueil">
+            Accueil
+          </a>
+        </p>
+
+        <p>
+          <a href="#coiffure">
+            Coiffure
+          </a>
+        </p>
+
+        <p>
+          <a href="#boutique">
+            Boutique
+          </a>
+        </p>
+
+        <p>
+          <a href="#beauty">
+            Beauty Bar
+          </a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <p>
+          📍 Montréal · Laval · Rive-Nord
+        </p>
+
+        <p>
+          📞
+          <a href="tel:+15145822856">
+            514-582-2856
+          </a>
+        </p>
+
+        <p>
+          💬
+          <a
+            href="https://wa.me/15145822856"
+            target="_blank">
+            WhatsApp
+          </a>
+        </p>
+
+        <p>
+          📧
+          <a href="mailto:bellabay.coiffure@gmail.com">
+            bellabay.coiffure@gmail.com
+          </a>
+        </p>
+
+      </div>
+
     </div>
+
+
+    <div class="copyright">
+
+      © 2026 Bella Bay — Tous droits réservés.
+
+    </div>
+
   </footer>
 
-  <!-- Bouton direct WhatsApp Flottant -->
-  <a href="https://wa.me/15145822856" class="whatsapp-float" target="_blank" aria-label="Discuter sur WhatsApp">
+
+  <!-- =========================
+       WHATSAPP
+  ========================= -->
+
+  <a
+    href="https://wa.me/15145822856"
+    target="_blank"
+    class="whatsapp"
+    aria-label="Contacter Bella Bay sur WhatsApp">
+
     💬
+
   </a>
+
 
 </body>
 </html>
