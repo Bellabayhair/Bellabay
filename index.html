@@ -149,9 +149,6 @@ header{
     padding:12px 22px;
     border-radius:30px;
     font-weight:700;
-    font-size:11px;
-    letter-spacing:1px;
-    text-transform:uppercase;
 }
 
 
@@ -584,61 +581,21 @@ footer a:hover{
 ========================= */
 
 @media(max-width:950px){
-
-    .nav{
-        display:none;
-    }
-
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .mobile-grid,
-    .story-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+    .nav{ display:none; }
+    .services-grid{ grid-template-columns:repeat(2,1fr); }
+    .mobile-grid, .story-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media(max-width:600px){
-
-    .topbar{
-        font-size:8px;
-        letter-spacing:1px;
-    }
-
-    .hero{
-        min-height:78vh;
-    }
-
-    .hero h1{
-        font-size:57px;
-    }
-
-    .hero p{
-        font-size:13px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .heading h2{
-        font-size:42px;
-    }
-
-    .mobile-text h2,
-    .story-text h2,
-    .future-box h2{
-        font-size:45px;
-    }
+    .topbar{ font-size:8px; letter-spacing:1px; }
+    .hero{ min-height:78vh; }
+    .hero h1{ font-size:57px; }
+    .hero p{ font-size:13px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .heading h2{ font-size:42px; }
+    .mobile-text h2, .story-text h2, .future-box h2{ font-size:45px; }
 }
 
 </style>
@@ -647,831 +604,237 @@ footer a:hover{
 <body>
 
 
-<!-- =========================
-     TOP BAR
-========================= -->
-
 <div class="topbar">
     BELLA BAY • COIFFURE PROFESSIONNELLE • MONTRÉAL • LAVAL • RIVE-NORD
 </div>
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
     <div class="navbar">
-
         <a href="#" class="logo">
-
-            <div class="logo-bb">
-                BB
-            </div>
-
-            <div class="logo-name">
-                Bella <span>Bay</span>
-            </div>
-
+            <div class="logo-bb">BB</div>
+            <div class="logo-name">Bella <span>Bay</span></div>
         </a>
-
 
         <nav class="nav">
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#mobile">
-                Service mobile
-            </a>
-
-            <a href="#histoire">
-                Histoire
-            </a>
-
-            <a href="#salon">
-                Salon
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
+            <a href="#services">Services</a>
+            <a href="#mobile">Service mobile</a>
+            <a href="#histoire">Histoire</a>
+            <a href="#salon">Salon</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-
-        <a
-            class="book"
-            href="https://wa.me/15145822856"
-            target="_blank"
-        >
-            WhatsApp / Contact
-        </a>
-
+        <a class="book" href="https://wa.me/15145822856" target="_blank">WhatsApp</a>
     </div>
-
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
-
     <div class="hero-content">
-
-        <div class="small-title">
-            Bella Bay • B.B
-        </div>
-
-        <h1>
-            Sublimez<br>
-            <span>vos cheveux.</span>
-        </h1>
-
-        <p>
-            Une expérience de coiffure professionnelle,
-            directement chez vous à Montréal, Laval et sur la Rive-Nord.
-        </p>
-
+        <div class="small-title">Bella Bay • B.B</div>
+        <h1>Sublimez<br><span>vos cheveux.</span></h1>
+        <p>Une expérience de coiffure professionnelle, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
         <div class="buttons">
-
-            <a
-                href="https://wa.me/15145822856"
-                target="_blank"
-                class="btn btn-whatsapp"
-            >
-                Contactez-moi sur WhatsApp
-            </a>
-
-            <a
-                href="#services"
-                class="btn btn-outline"
-            >
-                Découvrir Bella Bay
-            </a>
-
+            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Contactez-moi sur WhatsApp</a>
+            <a href="#services" class="btn btn-outline">Découvrir Bella Bay</a>
         </div>
-
     </div>
-
 </section>
 
 
-
-<!-- =========================
-     SERVICES
-========================= -->
-
 <section class="services" id="services">
-
     <div class="heading">
-
-        <div class="eyebrow">
-            Nos prestations & Tarifs
-        </div>
-
-        <h2>
-            Votre style,
-            <span>notre savoir-faire.</span>
-        </h2>
-
-        <p>
-            Des services personnalisés pour prendre soin de votre
-            chevelure et créer le résultat que vous recherchez.
-        </p>
-
+        <div class="eyebrow">Nos prestations & Tarifs</div>
+        <h2>Votre style, <span>notre savoir-faire.</span></h2>
+        <p>Des services personnalisés pour prendre soin de votre chevelure et créer le résultat que vous recherchez.</p>
     </div>
-
 
     <div class="services-grid">
 
-
-        <!-- 01 COLORATION DE BASE -->
-
         <article class="service">
-
-            <img
-                src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000"
-                alt="Coloration de base"
-            >
-
+            <img src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000" alt="Coloration de base">
             <div class="service-info">
-
-                <div class="service-number">
-                    01 — COULEUR
-                </div>
-
-                <h3>
-                    Coloration de base
-                </h3>
-
-                <p>
-                    Une coloration personnalisée adaptée à votre style.
-                </p>
-
-                <div class="service-price">
-                    À partir de 95 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">01 — COULEUR</div>
+                <h3>Coloration de base</h3>
+                <p>Une coloration personnalisée adaptée à votre style.</p>
+                <div class="service-price">À partir de 95 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 02 COLORATION FANTAISIE -->
-
         <article class="service">
-
-            <img
-                src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg"
-                alt="Coloration fantaisie"
-            >
-
+            <img src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg" alt="Coloration fantaisie">
             <div class="service-info">
-
-                <div class="service-number">
-                    02 — CRÉATION
-                </div>
-
-                <h3>
-                    Coloration fantaisie
-                </h3>
-
-                <p>
-                    Une couleur créative pour un look unique et personnalisé.
-                </p>
-
-                <div class="service-price">
-                    À partir de 120 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">02 — CRÉATION</div>
+                <h3>Coloration fantaisie</h3>
+                <p>Une couleur créative pour un look unique et personnalisé.</p>
+                <div class="service-price">À partir de 120 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 03 MÈCHES -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Mèches"
-            >
-
+            <img src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mèches">
             <div class="service-info">
-
-                <div class="service-number">
-                    03 — ÉCLAT
-                </div>
-
-                <h3>
-                    Mèches
-                </h3>
-
-                <p>
-                    Des mèches personnalisées pour apporter lumière et dimension.
-                </p>
-
-                <div class="service-price">
-                    À partir de 110 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">03 — ÉCLAT</div>
+                <h3>Mèches</h3>
+                <p>Des mèches personnalisées pour apporter lumière et dimension.</p>
+                <div class="service-price">À partir de 110 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 04 CONTOURING -->
-
         <article class="service">
-
-            <img
-                src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg"
-                alt="Contouring"
-            >
-
+            <img src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg" alt="Contouring">
             <div class="service-info">
-
-                <div class="service-number">
-                    04 — VISAGE
-                </div>
-
-                <h3>
-                    Contouring
-                </h3>
-
-                <p>
-                    Une technique personnalisée pour illuminer et encadrer le visage.
-                </p>
-
-                <div class="service-price">
-                    À partir de 90 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">04 — VISAGE</div>
+                <h3>Contouring</h3>
+                <p>Une technique personnalisée pour illuminer et encadrer le visage.</p>
+                <div class="service-price">À partir de 90 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 05 BALAYAGE GLACÉ -->
-
         <article class="service">
-
-            <!--
-                PHOTO BALAYAGE FOURNIE
-                Le fichier doit être dans le même dossier
-                que index.html.
-            -->
-
-            <img
-                src="balayage-ice-cool-tones.jpg"
-                alt="Balayage blond froid et lumineux"
-            >
-
+            <!-- VOTRE IMAGE DE BALAYAGE INTÉGRÉE ICI -->
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Ombré Hair & Balayage">
             <div class="service-info">
-
-                <div class="service-number">
-                    05 — LUMIÈRE
-                </div>
-
-                <h3>
-                    Ombré Balayage Glacé
-                </h3>
-
-                <p>
-                    Racines foncées niveau 3/4 + balayage de mèches
-                    platine et argent cendré niveau 10, avec une
-                    patine irisée/cendrée.
-                </p>
-
-                <div class="service-price">
-                    À partir de 130 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">05 — LUMIÈRE</div>
+                <h3>Ombré Hair & Balayage</h3>
+                <p>Un dégradé de couleur fondu et ultra-lumineux, des racines aux pointes[span_0](start_span)[span_0](end_span).</p>
+                <div class="service-price">À partir de 130 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 06 TRAITEMENT CAPILLAIRE -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Traitement capillaire"
-            >
-
+            <img src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Traitement capillaire">
             <div class="service-info">
-
-                <div class="service-number">
-                    06 — SOIN
-                </div>
-
-                <h3>
-                    Traitement capillaire
-                </h3>
-
-                <p>
-                    Un service de soin personnalisé pour votre chevelure.
-                </p>
-
-                <div class="service-price">
-                    À partir de 80 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">06 — SOIN</div>
+                <h3>Traitement capillaire</h3>
+                <p>Un service de soin personnalisé pour votre chevelure.</p>
+                <div class="service-price">À partir de 80 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 07 BOTOX CAPILLAIRE -->
-
         <article class="service">
-
-            <img
-                src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png"
-                alt="Botox capillaire"
-            >
-
+            <img src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png" alt="Botox capillaire">
             <div class="service-info">
-
-                <div class="service-number">
-                    07 — RÉPARATION
-                </div>
-
-                <h3>
-                    Botox capillaire
-                </h3>
-
-                <p>
-                    Une prestation capillaire personnalisée réalisée à domicile.
-                </p>
-
-                <div class="service-price">
-                    À partir de 140 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">07 — RÉPARATION</div>
+                <h3>Botox capillaire</h3>
+                <p>Une prestation capillaire personnalisée réalisée à domicile.</p>
+                <div class="service-price">À partir de 140 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 08 LISSAGE KÉRATINE -->
-
         <article class="service">
-
-            <img
-                src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886"
-                alt="Lissage à la kératine"
-            >
-
+            <img src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886" alt="Lissage à la kératine">
             <div class="service-info">
-
-                <div class="service-number">
-                    08 — LISSAGE
-                </div>
-
-                <h3>
-                    Lissage à la kératine
-                </h3>
-
-                <p>
-                    Une prestation de lissage personnalisée
-                    directement à votre domicile.
-                </p>
-
-                <div class="service-price">
-                    À partir de 180 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">08 — LISSAGE</div>
+                <h3>Lissage à la kératine</h3>
+                <p>Une prestation de lissage personnalisée directement à votre domicile.</p>
+                <div class="service-price">À partir de 180 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-
-        <!-- 09 EXTENSIONS -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/30691549/pexels-photo-30691549.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Extensions capillaires"
-            >
-
+            <img src="https://images.pexels.com/photos/30691549/pexels-photo-30691549.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Extensions capillaires">
             <div class="service-info">
-
-                <div class="service-number">
-                    09 — LONGUEUR
-                </div>
-
-                <h3>
-                    Extensions capillaires
-                </h3>
-
-                <p>
-                    Pose d'extensions sur mesure pour ajouter
-                    longueur et volume.
-                </p>
-
-                <div class="service-price">
-                    Pose à partir de 120 $
-                </div>
-
-                <a
-                    href="https://wa.me/15145822856"
-                    target="_blank"
-                    class="service-link"
-                >
-                    Réserver sur WhatsApp →
-                </a>
-
+                <div class="service-number">09 — LONGUEUR</div>
+                <h3>Extensions capillaires</h3>
+                <p>Pose d'extensions sur mesure pour ajouter longueur et volume.</p>
+                <div class="service-price">Pose à partir de 120 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
-
 
     </div>
-
 </section>
 
-
-
-<!-- =========================
-     SERVICE MOBILE
-========================= -->
 
 <section class="mobile" id="mobile">
-
     <div class="mobile-grid">
-
-
         <div class="mobile-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=85"
-                alt="Service mobile Bella Bay"
-            >
-
+            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=85" alt="Service mobile">
         </div>
-
-
         <div class="mobile-text">
-
-            <div
-                class="eyebrow"
-                style="color:var(--gold-light);"
-            >
-                À domicile
-            </div>
-
-            <h2>
-                Service <span>Mobile</span> d'Exception
-            </h2>
-
-            <p>
-                Profitez d'une prestation de coiffure professionnelle
-                directement chez vous. Bella Bay se déplace sur rendez-vous
-                pour vous offrir une expérience personnalisée.
-            </p>
-
-
+            <div class="eyebrow" style="color:var(--gold-light);">À domicile</div>
+            <h2>Service <span>Mobile</span> d'Exception</h2>
+            <p>Profitez d'une prestation de coiffure professionnelle directement chez vous. Bella Bay se déplace sur rendez-vous pour vous offrir une expérience personnalisée.</p>
             <div class="area">
-
-                <span>
-                    MONTRÉAL
-                </span>
-
-                <span>
-                    LAVAL
-                </span>
-
-                <span>
-                    RIVE-NORD
-                </span>
-
+                <span>MONTRÉAL</span>
+                <span>LAVAL</span>
+                <span>RIVE-NORD</span>
             </div>
-
-
-            <a
-                href="https://wa.me/15145822856"
-                target="_blank"
-                class="btn btn-whatsapp"
-            >
-                Discuter sur WhatsApp
-            </a>
-
+            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Discuter sur WhatsApp</a>
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- =========================
-     HISTOIRE
-========================= -->
 
 <section class="story" id="histoire">
-
     <div class="story-grid">
-
-
         <div class="story-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
-                alt="Histoire Bella Bay"
-            >
-
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Histoire">
         </div>
-
-
         <div class="story-text">
-
-            <div class="eyebrow">
-                Notre Philosophie
-            </div>
-
-            <h2>
-                L'Art de la <span>Coiffure</span>
-            </h2>
-
-            <p>
-                Bella Bay est née d'une vision simple :
-                offrir une coiffure de qualité pour sublimer vos cheveux.
-            </p>
-
-            <p>
-                Aujourd'hui, Bella Bay offre des services privés mobiles
-                et prépare son évolution vers un salon fixe.
-            </p>
-
-
+            <div class="eyebrow">Notre Philosophie</div>
+            <h2>L'Art de la <span>Coiffure</span></h2>
+            <p>Bella Bay est née d'une vision simple : offrir une coiffure de qualité pour sublimer vos cheveux.</p>
+            <p>Aujourd'hui, Bella Bay offre des services privés mobiles et prépare son évolution vers un salon fixe.</p>
             <div class="values">
-
-                <div class="value">
-
-                    <strong>
-                        Qualité
-                    </strong>
-
-                    Des services pensés avec soin.
-
-                </div>
-
-
-                <div class="value">
-
-                    <strong>
-                        Écoute
-                    </strong>
-
-                    Une approche personnalisée.
-
-                </div>
-
+                <div class="value"><strong>Qualité</strong>Des services pensés avec soin.</div>
+                <div class="value"><strong>Écoute</strong>Une approche personnalisée.</div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- =========================
-     SALON FUTUR
-========================= -->
 
 <section class="future" id="salon">
-
     <div class="future-box">
-
-        <div class="eyebrow">
-            Projet futur
-        </div>
-
-        <h2>
-            Notre Futur
-            <span>Salon Physique</span>
-        </h2>
-
-        <p>
-            En attendant l'ouverture de notre espace physique,
-            Bella Bay continue de vous sublimer grâce à son service mobile.
-        </p>
-
-        <a
-            href="https://wa.me/15145822856"
-            target="_blank"
-            class="btn btn-whatsapp"
-        >
-            Découvrir les disponibilités
-        </a>
-
+        <div class="eyebrow">Projet futur</div>
+        <h2>Notre Futur <span>Salon Physique</span></h2>
+        <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
+        <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Découvrir les disponibilités</a>
     </div>
-
 </section>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer id="contact">
-
     <div class="footer-grid">
-
-
         <div class="footer-brand">
-
-            <h3>
-                Bella <span>Bay</span> (B.B)
-            </h3>
-
-            <p>
-                Coiffure professionnelle à Montréal,
-                Laval et sur la Rive-Nord.
-            </p>
-
+            <h3>Bella <span>Bay</span> (B.B)</h3>
+            <p>Coiffure professionnelle à Montréal, Laval et sur la Rive-Nord.</p>
         </div>
-
-
-
         <div>
-
-            <h4>
-                Navigation
-            </h4>
-
-            <a href="#services">
-                Services
-            </a>
-            <br>
-
-            <a href="#mobile">
-                Service mobile
-            </a>
-            <br>
-
-            <a href="#histoire">
-                Histoire
-            </a>
-            <br>
-
-            <a href="#salon">
-                Salon
-            </a>
-
+            <h4>Navigation</h4>
+            <a href="#services">Services</a><br>
+            <a href="#mobile">Service mobile</a><br>
+            <a href="#histoire">Histoire</a><br>
+            <a href="#salon">Salon</a>
         </div>
-
-
-
         <div>
-
-            <h4>
-                Contact
-            </h4>
-
-            <p>
-                📞 514-582-2856
-            </p>
-
-            <p>
-                ✉️
-                <a
-                    href="mailto:bellabay.coiffure@gmail.com"
-                    style="color:#999;"
-                >
-                    bellabay.coiffure@gmail.com
-                </a>
-            </p>
-
-            <p>
-                📍 Montréal, Laval, Rive-Nord
-            </p>
-
+            <h4>Contact</h4>
+            <p>📞 514-582-2856</p>
+            <p>✉️ <a href="mailto:bellabay.coiffure@gmail.com" style="color:#999;">bellabay.coiffure@gmail.com</a></p>
+            <p>📍 Montréal, Laval, Rive-Nord</p>
         </div>
-
-
-
         <div>
-
-            <h4>
-                Contact & Réseau
-            </h4>
-
-            <a
-                href="https://wa.me/15145822856"
-                target="_blank"
-            >
-                WhatsApp Direct
-            </a>
-
-            <br>
-
-            <p style="margin-top:10px;">
-                Instagram : @bellabay.ca
-            </p>
-
+            <h4>Contact & Réseau</h4>
+            <a href="https://wa.me/15145822856" target="_blank">WhatsApp Direct</a><br>
+            <p style="margin-top:10px;">Instagram : @bellabay.ca</p>
         </div>
-
-
     </div>
-
-
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Bella Bay (B.B) — Tous droits réservés.
-        </p>
-
+        <p>© 2026 Bella Bay (B.B) — Tous droits réservés.</p>
     </div>
-
 </footer>
-
 
 </body>
 </html>
+
+```
