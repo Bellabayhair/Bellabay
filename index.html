@@ -13,13 +13,13 @@
 <style>
 :root{
     --pink:#f8e7ee;
-    --pink-light:#fff8fb;
-    --pink-soft:#f3d6e1;
+    --pink-light:#fff5f8;
+    --pink-soft:#fce8f0;
     --gold:#b99652;
     --gold-light:#d8bd7b;
     --dark:#29252a;
     --white:#ffffff;
-    --shadow:0 12px 35px rgba(90,55,70,.10);
+    --shadow:0 12px 35px rgba(185,150,82,.12);
 }
 
 *{
@@ -53,7 +53,7 @@ header{
 
     padding:18px 6%;
 
-    background:rgba(255,255,255,.88);
+    background:rgba(255,245,248,.90);
     backdrop-filter:blur(14px);
 
     border-bottom:1px solid rgba(185,150,82,.18);
@@ -83,18 +83,11 @@ nav a{
 }
 
 nav a:hover{
-    background:var(--pink);
+    background:var(--pink-soft);
     color:var(--gold);
 }
 
 /* ================= HERO ================= */
-
-/*
-IMPORTANT :
-Cette image reste la photo officielle Bella Bay.
-Remplace uniquement le nom du fichier ci-dessous
-par le fichier officiel que tu utilises déjà.
-*/
 
 .hero{
     min-height:92vh;
@@ -110,10 +103,10 @@ par le fichier officiel que tu utilises déjà.
 
     background:
         linear-gradient(
-            rgba(255,245,249,.25),
-            rgba(255,245,249,.35)
+            rgba(255,235,242,.55),
+            rgba(255,240,245,.65)
         ),
-        url("alena-kravchenko.jpg");
+        url("https://generative-ai.googleusercontent.com/image_content?img_url=https%3A%2F%2Fstorage.googleapis.com%2Fgenerative-ai-downloads%2Fimages%2F17721867116812282276.jpg");
 
     background-size:cover;
     background-position:center;
@@ -126,8 +119,8 @@ par le fichier officiel que tu utilises déjà.
 
     background:linear-gradient(
         to bottom,
-        rgba(255,255,255,.05),
-        rgba(255,240,247,.38)
+        rgba(255,255,255,.1),
+        rgba(252,232,240,.45)
     );
 }
 
@@ -145,8 +138,8 @@ par le fichier officiel que tu utilises déjà.
     color:var(--gold);
 
     text-shadow:
-        0 2px 12px rgba(0,0,0,.20),
-        0 0 25px rgba(255,255,255,.65);
+        0 2px 12px rgba(0,0,0,.15),
+        0 0 25px rgba(255,255,255,.9);
 }
 
 .hero .subtitle{
@@ -154,6 +147,7 @@ par le fichier officiel que tu utilises déjà.
     font-family:'Playfair Display',serif;
     font-size:23px;
     color:#40373d;
+    text-shadow: 0 1px 8px rgba(255,255,255,.9);
 }
 
 .hero p{
@@ -161,6 +155,9 @@ par le fichier officiel que tu utilises déjà.
     margin:18px auto 0;
     font-size:15px;
     line-height:1.8;
+    color:#3a3237;
+    font-weight: 500;
+    text-shadow: 0 1px 8px rgba(255,255,255,.9);
 }
 
 .btn{
@@ -242,11 +239,13 @@ par le fichier officiel que tu utilises déjà.
     border:1px solid rgba(185,150,82,.18);
 
     transition:.4s;
+    text-decoration: none;
+    display: block;
 }
 
 .service-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(90,55,70,.16);
+    box-shadow:0 20px 45px rgba(185,150,82,.2);
 }
 
 .service-image{
@@ -265,19 +264,19 @@ par le fichier officiel que tu utilises déjà.
 /* Photos des catégories */
 
 .coloration{
-    background-image:url("coloration.jpg");
+    background-image:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80");
 }
 
 .meches{
-    background-image:url("meches.jpg");
+    background-image:url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80");
 }
 
 .balayage{
-    background-image:url("balayage.jpg");
+    background-image:url("https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80");
 }
 
 .extensions{
-    background-image:url("extensions.jpg");
+    background-image:url("https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=600&q=80");
 }
 
 .service-info{
@@ -320,7 +319,7 @@ par le fichier officiel que tu utilises déjà.
 
 #liste-services{
     padding:90px 7%;
-    background:white;
+    background:var(--white);
 }
 
 .price-container{
@@ -380,7 +379,7 @@ par le fichier officiel que tu utilises déjà.
 .boutique{
     padding:85px 20px;
     text-align:center;
-    background:var(--pink);
+    background:var(--pink-soft);
 }
 
 .boutique h2{
@@ -394,6 +393,7 @@ par le fichier officiel que tu utilises déjà.
     margin:15px auto;
     line-height:1.8;
     font-size:14px;
+    color:#554c51;
 }
 
 /* ================= CONTACT ================= */
@@ -401,7 +401,7 @@ par le fichier officiel que tu utilises déjà.
 .contact{
     padding:80px 20px;
     text-align:center;
-    background:white;
+    background:var(--white);
 }
 
 .contact h2{
@@ -426,7 +426,7 @@ footer{
     text-align:center;
     padding:35px 20px;
 
-    background:#f4dfe7;
+    background:var(--pink);
 
     color:#6d6268;
 
