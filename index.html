@@ -4,32 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bella Bay | Coiffure & Beauté — Montréal, Laval & Rive-Nord</title>
+<title>Bella Bay — Coiffure & Beauté</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   BELLA BAY — IDENTITÉ VISUELLE
-========================================================= */
-
 :root{
-    --black:#090708;
-    --black-soft:#141011;
-    --pink:#f6dce3;
-    --pink-soft:#fff4f6;
-    --rose:#d99aaa;
-    --rose-dark:#a96779;
+    --black:#080607;
+    --black2:#151012;
+    --pink:#f3d3dc;
+    --pink2:#f9e8ed;
+    --rose:#cf8fa1;
+    --rose-dark:#9d6173;
     --gold:#c9a45c;
-    --gold-light:#e5ca91;
-    --white:#fff;
-    --cream:#fffaf8;
+    --gold-light:#e8cf98;
+    --white:#ffffff;
+    --cream:#fffafa;
     --text:#292124;
-    --gray:#81777a;
+    --gray:#756b6f;
 }
 
 *{
@@ -44,14 +38,13 @@ html{
 
 body{
     font-family:'Montserrat',sans-serif;
-    color:var(--text);
     background:var(--cream);
+    color:var(--text);
     overflow-x:hidden;
 }
 
-img{
-    width:100%;
-    display:block;
+h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
 }
 
 a{
@@ -59,50 +52,41 @@ a{
     color:inherit;
 }
 
-button{
-    font-family:inherit;
+img{
+    width:100%;
+    display:block;
 }
 
-h1,h2,h3,h4{
-    font-family:'Cormorant Garamond',serif;
-}
+/* TOP BAR */
 
-/* =========================================================
-   BARRE DU HAUT
-========================================================= */
-
-.top-bar{
+.topbar{
     background:#000;
     color:#eee;
     text-align:center;
-    padding:8px 15px;
-    font-size:11px;
+    padding:8px;
+    font-size:10px;
     letter-spacing:2px;
     text-transform:uppercase;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* HEADER */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(9,7,8,.96);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(229,202,145,.25);
+    background:rgba(8,6,7,.97);
+    border-bottom:1px solid rgba(201,164,92,.25);
 }
 
 .navbar{
     max-width:1400px;
     margin:auto;
-    min-height:82px;
+    min-height:78px;
     padding:0 5%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:30px;
 }
 
 .logo{
@@ -111,70 +95,56 @@ header{
     gap:12px;
 }
 
-.logo-circle{
-    width:48px;
-    height:48px;
+.logo-bb{
+    width:46px;
+    height:46px;
     border:1px solid var(--gold);
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     color:var(--gold-light);
     font-family:'Cormorant Garamond',serif;
     font-size:20px;
-    font-weight:600;
-    box-shadow:0 0 18px rgba(201,164,92,.15);
+    font-weight:bold;
 }
 
-.logo-text{
-    color:#fff;
+.logo-name{
+    color:white;
     font-family:'Cormorant Garamond',serif;
     font-size:25px;
-    letter-spacing:1px;
 }
 
-.logo-text span{
+.logo-name span{
     color:var(--rose);
 }
 
-nav{
+.nav{
     display:flex;
-    gap:25px;
     align-items:center;
+    gap:25px;
 }
 
-nav a{
-    color:#eee;
-    font-size:12px;
+.nav a{
+    color:white;
+    font-size:11px;
     letter-spacing:1px;
     transition:.3s;
 }
 
-nav a:hover{
-    color:var(--rose);
+.nav a:hover{
+    color:var(--pink);
 }
 
-.nav-button{
+.book{
     background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:#171113;
+    color:#171113!important;
     padding:12px 22px;
     border-radius:30px;
-    font-size:11px;
     font-weight:700;
-    letter-spacing:1px;
-    text-transform:uppercase;
 }
 
-.menu{
-    display:none;
-    color:white;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
     min-height:88vh;
@@ -184,37 +154,29 @@ nav a:hover{
     justify-content:center;
     text-align:center;
     color:white;
-    background:
-        linear-gradient(rgba(12,8,10,.30),rgba(12,8,10,.65)),
-        url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2200&q=90")
-        center/cover;
-}
 
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at center,transparent 25%,rgba(0,0,0,.35));
+    background:
+    linear-gradient(rgba(10,7,8,.30),rgba(10,7,8,.70)),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
     max-width:850px;
     padding:30px;
 }
 
-.hero-small{
+.small-title{
     color:var(--gold-light);
     letter-spacing:5px;
-    font-size:12px;
+    font-size:11px;
     text-transform:uppercase;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(55px,9vw,105px);
-    line-height:.85;
+    font-size:clamp(60px,9vw,110px);
+    line-height:.82;
     font-weight:500;
     letter-spacing:3px;
 }
@@ -224,9 +186,9 @@ nav a:hover{
 }
 
 .hero p{
-    margin:30px auto;
     max-width:650px;
-    font-size:16px;
+    margin:30px auto;
+    font-size:15px;
     line-height:1.9;
     font-weight:300;
 }
@@ -239,53 +201,47 @@ nav a:hover{
 }
 
 .btn{
+    display:inline-block;
     padding:15px 28px;
     border-radius:30px;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1.5px;
     text-transform:uppercase;
     transition:.3s;
 }
 
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:#171113;
-}
-
-.btn-pink{
-    background:var(--pink);
-    color:#24171a;
-}
-
-.btn-outline{
-    border:1px solid rgba(255,255,255,.8);
-    color:white;
-}
-
 .btn:hover{
     transform:translateY(-3px);
 }
 
-/* =========================================================
-   INTRO
-========================================================= */
-
-.intro{
-    background:var(--pink-soft);
-    padding:90px 8%;
-    text-align:center;
+.btn-gold{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#151011;
 }
 
-.intro-inner{
+.btn-outline{
+    border:1px solid white;
+    color:white;
+}
+
+/* INTRO */
+
+.intro{
+    padding:90px 8%;
+    text-align:center;
+    background:var(--pink2);
+}
+
+.intro-content{
     max-width:850px;
     margin:auto;
 }
 
 .eyebrow{
     color:var(--rose-dark);
-    font-size:11px;
     letter-spacing:4px;
+    font-size:10px;
     text-transform:uppercase;
     margin-bottom:15px;
 }
@@ -293,7 +249,6 @@ nav a:hover{
 .intro h2{
     font-size:52px;
     font-weight:500;
-    margin-bottom:20px;
 }
 
 .intro h2 span{
@@ -301,40 +256,39 @@ nav a:hover{
 }
 
 .intro p{
-    color:#665b5f;
-    font-size:15px;
+    margin-top:20px;
+    color:var(--gray);
     line-height:2;
+    font-size:14px;
 }
 
-/* =========================================================
-   SERVICES
-========================================================= */
+/* SERVICES */
 
 .services{
     padding:100px 6%;
     background:white;
 }
 
-.section-heading{
-    text-align:center;
+.heading{
     max-width:750px;
+    text-align:center;
     margin:0 auto 55px;
 }
 
-.section-heading h2{
+.heading h2{
     font-size:55px;
     font-weight:500;
 }
 
-.section-heading h2 span{
+.heading h2 span{
     color:var(--rose-dark);
 }
 
-.section-heading p{
+.heading p{
+    margin-top:12px;
     color:var(--gray);
     font-size:14px;
     line-height:1.8;
-    margin-top:12px;
 }
 
 .services-grid{
@@ -345,25 +299,25 @@ nav a:hover{
     gap:22px;
 }
 
-.service-card{
+.service{
+    height:420px;
     position:relative;
-    min-height:410px;
     overflow:hidden;
     background:#111;
-    border-radius:4px;
 }
 
-.service-card img{
+.service img{
+    width:100%;
     height:100%;
     object-fit:cover;
-    transition:transform .7s;
+    transition:.7s;
 }
 
-.service-card:hover img{
-    transform:scale(1.06);
+.service:hover img{
+    transform:scale(1.07);
 }
 
-.service-overlay{
+.service-info{
     position:absolute;
     inset:0;
     display:flex;
@@ -371,66 +325,63 @@ nav a:hover{
     justify-content:flex-end;
     padding:28px;
     color:white;
-    background:linear-gradient(transparent 25%,rgba(0,0,0,.88));
+    background:linear-gradient(transparent 25%,rgba(0,0,0,.9));
 }
 
 .service-number{
     color:var(--gold-light);
-    font-size:11px;
+    font-size:10px;
     letter-spacing:3px;
-    margin-bottom:8px;
 }
 
-.service-overlay h3{
-    font-size:31px;
+.service h3{
+    font-size:32px;
     font-weight:500;
+    margin:6px 0;
 }
 
-.service-overlay p{
+.service p{
+    color:#eee;
     font-size:12px;
     line-height:1.6;
-    color:#eee;
-    margin:8px 0 15px;
+    margin-bottom:12px;
 }
 
 .service-link{
     color:var(--pink);
     font-size:10px;
-    letter-spacing:2px;
     text-transform:uppercase;
+    letter-spacing:2px;
 }
 
-/* =========================================================
-   BANDEAU ROSE
-========================================================= */
+/* ROSE BANNER */
 
-.pink-banner{
-    background:
-        linear-gradient(rgba(218,154,170,.90),rgba(218,154,170,.90)),
-        url("https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1800&q=80")
-        center/cover;
-    padding:80px 8%;
+.rose-banner{
+    padding:85px 8%;
     text-align:center;
     color:white;
+
+    background:
+    linear-gradient(rgba(190,116,137,.90),rgba(190,116,137,.90)),
+    url("https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
 }
 
-.pink-banner h2{
+.rose-banner h2{
     font-size:55px;
     font-weight:500;
 }
 
-.pink-banner p{
+.rose-banner p{
     max-width:700px;
-    margin:15px auto 25px;
+    margin:15px auto 28px;
     line-height:1.8;
     font-size:14px;
 }
 
-/* =========================================================
-   SERVICE MOBILE / CARTE
-========================================================= */
+/* MOBILE */
 
-.mobile-section{
+.mobile{
     padding:100px 7%;
     background:var(--black);
     color:white;
@@ -445,192 +396,195 @@ nav a:hover{
     align-items:center;
 }
 
-.mobile-photo{
-    height:570px;
+.mobile-image{
+    height:560px;
+    border:1px solid rgba(201,164,92,.5);
     overflow:hidden;
-    border:1px solid rgba(229,202,145,.4);
 }
 
-.mobile-photo img{
+.mobile-image img{
+    width:100%;
     height:100%;
     object-fit:cover;
 }
 
-.mobile-content .eyebrow{
-    color:var(--gold-light);
-}
-
-.mobile-content h2{
-    font-size:57px;
-    font-weight:500;
+.mobile-text h2{
+    font-size:58px;
     line-height:1;
-    margin-bottom:25px;
+    font-weight:500;
 }
 
-.mobile-content h2 span{
+.mobile-text h2 span{
     color:var(--pink);
 }
 
-.mobile-content p{
+.mobile-text p{
     color:#ccc;
     font-size:14px;
     line-height:2;
-    margin-bottom:20px;
-}
-
-.area-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin:25px 0;
+    margin:22px 0;
 }
 
 .area{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.area span{
     border:1px solid rgba(229,202,145,.5);
-    padding:10px 15px;
     color:var(--pink);
-    font-size:11px;
+    padding:10px 15px;
+    font-size:10px;
     letter-spacing:1px;
 }
 
-/* =========================================================
-   ZONE / CARTE STYLE GOOGLE MAPS
-========================================================= */
+/* MAP */
 
 .location{
     padding:100px 7%;
-    background:#f8e8ec;
+    background:#f7e4e9;
 }
 
-.map-layout{
+.map-box{
     max-width:1250px;
     margin:auto;
     display:grid;
-    grid-template-columns:380px 1fr;
+    grid-template-columns:370px 1fr;
     min-height:520px;
     background:white;
     box-shadow:0 20px 60px rgba(60,30,40,.12);
 }
 
-.location-info{
+.location-text{
     padding:50px 40px;
 }
 
-.location-info h2{
-    font-size:48px;
+.location-text h2{
+    font-size:50px;
     line-height:1;
     font-weight:500;
-    margin-bottom:20px;
 }
 
-.location-info h2 span{
+.location-text h2 span{
     color:var(--rose-dark);
 }
 
-.location-info p{
-    color:#756b6e;
+.location-text p{
+    margin-top:20px;
+    color:var(--gray);
     font-size:13px;
     line-height:1.8;
 }
 
-.location-list{
+.locations{
     margin-top:30px;
 }
 
-.location-list div{
+.locations div{
     padding:15px 0;
     border-bottom:1px solid #eee;
-    font-size:12px;
+    font-size:11px;
 }
 
-.location-list strong{
+.locations strong{
     display:block;
     font-family:'Cormorant Garamond',serif;
-    font-size:22px;
-    color:#302529;
+    font-size:23px;
 }
 
-.map{
+.fake-map{
     position:relative;
-    min-height:520px;
     overflow:hidden;
     background:
-        linear-gradient(35deg,transparent 48%,rgba(255,255,255,.8) 49%,rgba(255,255,255,.8) 52%,transparent 53%),
-        linear-gradient(-25deg,transparent 48%,rgba(255,255,255,.75) 49%,rgba(255,255,255,.75) 52%,transparent 53%),
-        #eadfd7;
+    linear-gradient(35deg,transparent 48%,rgba(255,255,255,.8) 49%,rgba(255,255,255,.8) 52%,transparent 53%),
+    linear-gradient(-25deg,transparent 48%,rgba(255,255,255,.8) 49%,rgba(255,255,255,.8) 52%,transparent 53%),
+    #e4d8d0;
 }
 
-.map::before{
+.fake-map:before{
     content:"";
     position:absolute;
-    inset:10%;
-    border:55px solid transparent;
-    border-top-color:rgba(190,215,207,.65);
+    width:500px;
+    height:260px;
+    border:50px solid rgba(190,215,207,.65);
     border-radius:50%;
-    transform:rotate(-20deg);
+    top:70px;
+    left:100px;
+    transform:rotate(-15deg);
 }
 
-.map-road{
+.road{
     position:absolute;
-    background:#fff;
-    height:10px;
     width:120%;
+    height:10px;
+    background:white;
     left:-10%;
-    top:48%;
+    top:50%;
     transform:rotate(-10deg);
-    box-shadow:0 1px 4px rgba(0,0,0,.1);
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
 }
 
-.map-road.two{
-    top:63%;
-    transform:rotate(22deg);
+.road.two{
+    top:65%;
+    transform:rotate(20deg);
 }
 
 .pin{
     position:absolute;
-    left:50%;
-    top:45%;
-    transform:translate(-50%,-50%);
-    width:52px;
-    height:52px;
+    width:55px;
+    height:55px;
     border-radius:50% 50% 50% 0;
     background:var(--rose-dark);
-    transform-origin:center;
-    rotate:-45deg;
-    box-shadow:0 8px 20px rgba(100,50,65,.3);
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    box-shadow:0 8px 25px rgba(70,30,40,.3);
 }
 
-.pin::after{
+.pin:after{
     content:"BB";
     position:absolute;
-    inset:10px;
-    background:white;
+    width:27px;
+    height:27px;
     border-radius:50%;
+    background:white;
+    color:var(--rose-dark);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:var(--rose-dark);
+    top:9px;
+    left:9px;
+    font-size:9px;
     font-weight:bold;
-    font-size:11px;
-    rotate:45deg;
+    transform:rotate(45deg);
 }
 
 .map-label{
     position:absolute;
+    padding:9px 13px;
     background:white;
-    padding:10px 15px;
-    box-shadow:0 3px 15px rgba(0,0,0,.1);
-    font-size:11px;
-    border-radius:4px;
+    font-size:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
 }
 
-.label-mtl{top:25%;left:25%}
-.label-laval{top:18%;right:20%}
-.label-rn{bottom:18%;right:25%}
+.mtl{
+    left:22%;
+    top:25%;
+}
 
-/* =========================================================
-   BOUTIQUE
-========================================================= */
+.laval{
+    right:20%;
+    top:18%;
+}
+
+.rn{
+    right:23%;
+    bottom:18%;
+}
+
+/* BOUTIQUE */
 
 .shop{
     padding:100px 7%;
@@ -638,11 +592,11 @@ nav a:hover{
     color:white;
 }
 
-.shop .section-heading h2{
+.shop .heading h2{
     color:white;
 }
 
-.shop .section-heading p{
+.shop .heading p{
     color:#aaa;
 }
 
@@ -656,17 +610,15 @@ nav a:hover{
 
 .product{
     background:#171214;
-    border:1px solid rgba(229,202,145,.22);
-    overflow:hidden;
+    border:1px solid rgba(229,202,145,.25);
 }
 
-.product-img{
+.product-image{
     height:330px;
     overflow:hidden;
-    background:#241b1e;
 }
 
-.product-img img{
+.product-image img{
     height:100%;
     object-fit:cover;
     transition:.6s;
@@ -676,24 +628,24 @@ nav a:hover{
     transform:scale(1.05);
 }
 
-.product-info{
+.product-text{
     padding:25px;
 }
 
-.product-info small{
+.product-text small{
     color:var(--gold-light);
     letter-spacing:2px;
-    text-transform:uppercase;
     font-size:9px;
+    text-transform:uppercase;
 }
 
-.product-info h3{
-    font-size:30px;
-    margin:6px 0;
+.product-text h3{
+    font-size:31px;
     font-weight:500;
+    margin:5px 0;
 }
 
-.product-info p{
+.product-text p{
     color:#aaa;
     font-size:12px;
     line-height:1.7;
@@ -702,21 +654,19 @@ nav a:hover{
 .product-button{
     display:inline-block;
     margin-top:18px;
+    padding:10px 16px;
     border:1px solid var(--rose);
     color:var(--pink);
-    padding:10px 17px;
-    font-size:10px;
+    font-size:9px;
     letter-spacing:1.5px;
     text-transform:uppercase;
 }
 
-/* =========================================================
-   HISTOIRE
-========================================================= */
+/* HISTOIRE */
 
 .story{
     padding:100px 7%;
-    background:var(--pink-soft);
+    background:var(--pink2);
 }
 
 .story-grid{
@@ -729,7 +679,7 @@ nav a:hover{
 }
 
 .story-image{
-    height:570px;
+    height:560px;
     overflow:hidden;
 }
 
@@ -738,35 +688,36 @@ nav a:hover{
     object-fit:cover;
 }
 
-.story-content h2{
+.story-text h2{
     font-size:58px;
     line-height:1;
     font-weight:500;
-    margin-bottom:25px;
 }
 
-.story-content h2 span{
+.story-text h2 span{
     color:var(--rose-dark);
 }
 
-.story-content p{
-    color:#655b5e;
+.story-text p{
+    margin-top:20px;
+    color:var(--gray);
     font-size:14px;
     line-height:2;
-    margin-bottom:18px;
 }
 
 .values{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
     gap:12px;
     margin-top:30px;
 }
 
 .value{
-    padding:18px;
-    border:1px solid #e3c4cb;
     background:white;
+    padding:18px;
+    border:1px solid #e7cbd2;
+    font-size:11px;
+    color:var(--gray);
 }
 
 .value strong{
@@ -774,11 +725,10 @@ nav a:hover{
     color:var(--rose-dark);
     font-family:'Cormorant Garamond',serif;
     font-size:22px;
+    margin-bottom:4px;
 }
 
-/* =========================================================
-   FUTUR SALON
-========================================================= */
+/* SALON */
 
 .future{
     padding:100px 7%;
@@ -791,51 +741,30 @@ nav a:hover{
     margin:auto;
     border:1px solid var(--gold);
     padding:70px 40px;
-    position:relative;
 }
 
-.future-box::before,
-.future-box::after{
-    content:"✦";
-    position:absolute;
-    color:var(--gold);
-    font-size:24px;
-}
-
-.future-box::before{
-    top:20px;
-    left:25px;
-}
-
-.future-box::after{
-    bottom:20px;
-    right:25px;
-}
-
-.future h2{
+.future-box h2{
     font-size:58px;
     font-weight:500;
 }
 
-.future h2 span{
+.future-box h2 span{
     color:var(--rose-dark);
 }
 
-.future p{
+.future-box p{
     max-width:700px;
     margin:20px auto 30px;
-    color:#71676a;
-    line-height:1.9;
+    color:var(--gray);
     font-size:14px;
+    line-height:1.9;
 }
 
-/* =========================================================
-   AVIS
-========================================================= */
+/* REVIEWS */
 
 .reviews{
     padding:100px 7%;
-    background:#f2d9df;
+    background:#f0d7de;
 }
 
 .review-grid{
@@ -859,7 +788,7 @@ nav a:hover{
 }
 
 .review p{
-    color:#62585b;
+    color:var(--gray);
     font-size:13px;
     line-height:1.8;
     font-style:italic;
@@ -869,21 +798,20 @@ nav a:hover{
     display:block;
     margin-top:20px;
     font-family:'Cormorant Garamond',serif;
-    font-size:22px;
+    font-size:21px;
 }
 
-/* =========================================================
-   CTA
-========================================================= */
+/* CTA */
 
 .cta{
-    padding:100px 20px;
-    background:
-        linear-gradient(rgba(8,6,7,.72),rgba(8,6,7,.85)),
-        url("https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=2000&q=90")
-        center/cover;
+    padding:110px 20px;
     text-align:center;
     color:white;
+
+    background:
+    linear-gradient(rgba(8,6,7,.72),rgba(8,6,7,.88)),
+    url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
 }
 
 .cta h2{
@@ -897,15 +825,13 @@ nav a:hover{
 
 .cta p{
     max-width:650px;
-    margin:15px auto 30px;
+    margin:20px auto 30px;
     color:#ddd;
     font-size:14px;
     line-height:1.8;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer{
     background:#050405;
@@ -918,7 +844,7 @@ footer{
     margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:45px;
+    gap:40px;
 }
 
 .footer-brand h3{
@@ -932,24 +858,23 @@ footer{
 
 .footer-brand p{
     color:#999;
-    font-size:12px;
-    line-height:1.8;
     max-width:350px;
     margin-top:12px;
+    font-size:12px;
+    line-height:1.8;
 }
 
 footer h4{
     color:var(--gold-light);
     font-family:'Montserrat',sans-serif;
-    font-size:11px;
-    text-transform:uppercase;
+    font-size:10px;
     letter-spacing:2px;
+    text-transform:uppercase;
     margin-bottom:18px;
 }
 
 footer a,
 footer p{
-    display:block;
     color:#999;
     font-size:12px;
     margin-bottom:10px;
@@ -965,22 +890,12 @@ footer p{
     font-size:10px;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* MOBILE */
 
 @media(max-width:950px){
 
-    nav{
+    .nav{
         display:none;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .navbar{
-        min-height:70px;
     }
 
     .services-grid{
@@ -992,12 +907,7 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .mobile-photo,
-    .story-image{
-        height:450px;
-    }
-
-    .map-layout{
+    .map-box{
         grid-template-columns:1fr;
     }
 
@@ -1016,18 +926,247 @@ footer p{
 
 @media(max-width:600px){
 
-    .top-bar{
+    .topbar{
         font-size:8px;
-        letter-spacing:1px;
     }
 
-    .logo-text{
-        font-size:21px;
+    .hero{
+        min-height:78vh;
     }
 
-    .logo-circle{
-        width:40px;
-        height:40px;
+    .hero h1{
+        font-size:57px;
     }
 
-    .nav
+    .hero p{
+        font-size:13px;
+    }
+
+    .intro,
+    .services,
+    .mobile,
+    .location,
+    .shop,
+    .story,
+    .future,
+    .reviews{
+        padding:70px 5%;
+    }
+
+    .intro h2,
+    .heading h2,
+    .mobile-text h2,
+    .story-text h2,
+    .future-box h2{
+        font-size:42px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service{
+        height:390px;
+    }
+
+    .mobile-image,
+    .story-image{
+        height:380px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .rose-banner h2{
+        font-size:43px;
+    }
+
+    .fake-map{
+        min-height:400px;
+    }
+
+    .values{
+        grid-template-columns:1fr;
+    }
+
+    .cta h2{
+        font-size:48px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    BELLA BAY • COIFFURE PROFESSIONNELLE • MONTRÉAL • LAVAL • RIVE-NORD
+</div>
+
+<header>
+    <div class="navbar">
+
+        <a href="#" class="logo">
+            <div class="logo-bb">BB</div>
+            <div class="logo-name">Bella <span>Bay</span></div>
+        </a>
+
+        <nav class="nav">
+            <a href="#services">Services</a>
+            <a href="#mobile">Service mobile</a>
+            <a href="#boutique">Boutique</a>
+            <a href="#histoire">Histoire</a>
+            <a href="#salon">Salon</a>
+        </nav>
+
+        <a class="book" href="https://www.fresha.com" target="_blank">
+            Réserver
+        </a>
+
+    </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Bella Bay • B.B
+        </div>
+
+        <h1>
+            Sublimez<br>
+            <span>vos cheveux.</span>
+        </h1>
+
+        <p>
+            Une expérience de coiffure professionnelle,
+            directement chez vous à Montréal, Laval et sur la Rive-Nord.
+        </p>
+
+        <div class="buttons">
+
+            <a href="https://www.fresha.com" target="_blank" class="btn btn-gold">
+                Réserver dès maintenant
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+                Découvrir Bella Bay
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="eyebrow">
+            L'univers Bella Bay
+        </div>
+
+        <h2>
+            La beauté commence par
+            <span>vos cheveux.</span>
+        </h2>
+
+        <p>
+            Bella Bay offre déjà des services privés mobiles de coiffure.
+            La marque développe également son univers de produits capillaires
+            et prépare progressivement son évolution vers un salon fixe.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="heading">
+
+        <div class="eyebrow">
+            Nos prestations
+        </div>
+
+        <h2>
+            Votre style,
+            <span>notre savoir-faire.</span>
+        </h2>
+
+        <p>
+            Des services personnalisés pour prendre soin de votre chevelure
+            et créer le résultat que vous recherchez.
+        </p>
+
+    </div>
+
+    <div class="services-grid">
+
+        <article class="service">
+
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Coloration">
+
+            <div class="service-info">
+                <div class="service-number">01 — COULEUR</div>
+                <h3>Coloration</h3>
+                <p>Couleur, racines et uniformisation de la chevelure.</p>
+                <a href="https://www.fresha.com" target="_blank" class="service-link">Réserver →</a>
+            </div>
+
+        </article>
+
+        <article class="service">
+
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=85" alt="Balayage">
+
+            <div class="service-info">
+                <div class="service-number">02 — LUMIÈRE</div>
+                <h3>Balayage</h3>
+                <p>Des nuances lumineuses et personnalisées.</p>
+                <a href="https://www.fresha.com" target="_blank" class="service-link">Réserver →</a>
+            </div>
+
+        </article>
+
+        <article class="service">
+
+            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=85" alt="Mèches">
+
+            <div class="service-info">
+                <div class="service-number">03 — ÉCLAT</div>
+                <h3>Mèches</h3>
+                <p>Apporter lumière et dimension à la chevelure.</p>
+                <a href="https://www.fresha.com" target="_blank" class="service-link">Réserver →</a>
+            </div>
+
+        </article>
+
+        <article class="service">
+
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=85" alt="Contouring">
+
+            <div class="service-info">
+                <div class="service-number">04 — VISAGE</div>
+                <h3>Contouring</h3>
+                <p>Une mise en lumière autour du visage.</p>
+                <a href="https://www.fresha.com" target="_blank" class="service-link">Réserver →</a>
+            </div>
+
+        </article>
+
+        <article class="service">
+
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Coloration fantaisie
