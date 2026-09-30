@@ -89,6 +89,13 @@ nav a:hover{
 
 /* ================= HERO ================= */
 
+/*
+IMPORTANT :
+Cette image reste la photo officielle Bella Bay.
+Remplace uniquement le nom du fichier ci-dessous
+par le fichier officiel que tu utilises déjà.
+*/
+
 .hero{
     min-height:92vh;
 
@@ -101,7 +108,6 @@ nav a:hover{
     position:relative;
     overflow:hidden;
 
-    /* PHOTO OFFICIELLE BELLA BAY — NE PAS CHANGER */
     background:
         linear-gradient(
             rgba(255,245,249,.25),
@@ -256,39 +262,23 @@ nav a:hover{
     transform:scale(1.04);
 }
 
+/* Photos des catégories */
 
-/* =====================================================
-   NOUVELLES IMAGES DES SERVICES BELLA BAY
-   ===================================================== */
-
-/* Coloration : rouge vibrant / coloration fantaisie */
 .coloration{
-    background-image:url("coloration-rouge-vibrant.jpg");
-    background-position:center;
-    background-size:cover;
+    background-image:url("coloration.jpg");
 }
 
-/* Mèches : mèches caramel professionnelles */
 .meches{
-    background-image:url("meches-caramel.jpg");
-    background-position:center;
-    background-size:cover;
+    background-image:url("meches.jpg");
 }
 
-/* Balayage : balayage blond */
 .balayage{
-    background-image:url("balayage-blond.jpg");
-    background-position:center;
-    background-size:cover;
+    background-image:url("balayage.jpg");
 }
 
-/* Extensions : extensions très longues 40 pouces */
 .extensions{
-    background-image:url("extensions-40-pouces.jpg");
-    background-position:center;
-    background-size:cover;
+    background-image:url("extensions.jpg");
 }
-
 
 .service-info{
     padding:18px;
@@ -326,8 +316,7 @@ nav a:hover{
     padding-bottom:3px;
 }
 
-
-/* ================= SERVICES / LISTE DES PRIX ================= */
+/* ================= SERVICES PAGE / LISTE PRIX ================= */
 
 #liste-services{
     padding:90px 7%;
@@ -386,7 +375,6 @@ nav a:hover{
     font-weight:700;
 }
 
-
 /* ================= BOUTIQUE ================= */
 
 .boutique{
@@ -407,7 +395,6 @@ nav a:hover{
     line-height:1.8;
     font-size:14px;
 }
-
 
 /* ================= CONTACT ================= */
 
@@ -433,7 +420,6 @@ nav a:hover{
     text-decoration:none;
 }
 
-
 /* ================= FOOTER ================= */
 
 footer{
@@ -450,7 +436,6 @@ footer{
 footer strong{
     color:var(--gold);
 }
-
 
 /* ================= MOBILE ================= */
 
@@ -517,7 +502,6 @@ footer strong{
 
 <body>
 
-
 <!-- ================= HEADER ================= -->
 
 <header>
@@ -580,98 +564,56 @@ footer strong{
 
     <div class="services-grid">
 
-
-        <!-- COLORATION -->
-
         <a href="#liste-services" class="service-card">
 
             <div class="service-image coloration"></div>
 
             <div class="service-info">
-
                 <h3>Coloration</h3>
-
-                <p>
-                    Couleur & transformations
-                </p>
-
-                <span class="service-link">
-                    Voir les services
-                </span>
-
+                <p>Couleur & transformations</p>
+                <span class="service-link">Voir les services</span>
             </div>
 
         </a>
 
-
-        <!-- MÈCHES -->
 
         <a href="#liste-services" class="service-card">
 
             <div class="service-image meches"></div>
 
             <div class="service-info">
-
                 <h3>Mèches</h3>
-
-                <p>
-                    Lumière & dimension
-                </p>
-
-                <span class="service-link">
-                    Voir les services
-                </span>
-
+                <p>Lumière & dimension</p>
+                <span class="service-link">Voir les services</span>
             </div>
 
         </a>
 
-
-        <!-- BALAYAGE -->
 
         <a href="#liste-services" class="service-card">
 
             <div class="service-image balayage"></div>
 
             <div class="service-info">
-
                 <h3>Balayage</h3>
-
-                <p>
-                    Effet naturel & personnalisé
-                </p>
-
-                <span class="service-link">
-                    Voir les services
-                </span>
-
+                <p>Effet naturel & personnalisé</p>
+                <span class="service-link">Voir les services</span>
             </div>
 
         </a>
 
-
-        <!-- EXTENSIONS -->
 
         <a href="#liste-services" class="service-card">
 
             <div class="service-image extensions"></div>
 
             <div class="service-info">
-
                 <h3>Extensions</h3>
-
-                <p>
-                    Longueur & volume
-                </p>
-
-                <span class="service-link">
-                    Voir les services
-                </span>
-
+                <p>Longueur & volume</p>
+                <span class="service-link">Voir les services</span>
             </div>
 
         </a>
-
 
     </div>
 
@@ -700,15 +642,8 @@ footer strong{
             <h3>Coloration</h3>
 
             <div class="price-row">
-
-                <span>
-                    Coloration Signature
-                </span>
-
-                <span class="price">
-                    95 $+
-                </span>
-
+                <span>Coloration Signature</span>
+                <span class="price">95 $+</span>
             </div>
 
         </div>
@@ -719,15 +654,8 @@ footer strong{
             <h3>Mèches</h3>
 
             <div class="price-row">
-
-                <span>
-                    Mèches
-                </span>
-
-                <span class="price">
-                    150 $+
-                </span>
-
+                <span>Mèches</span>
+                <span class="price">150 $+</span>
             </div>
 
         </div>
@@ -738,15 +666,8 @@ footer strong{
             <h3>Balayage</h3>
 
             <div class="price-row">
-
-                <span>
-                    Balayage
-                </span>
-
-                <span class="price">
-                    180 $+
-                </span>
-
+                <span>Balayage</span>
+                <span class="price">180 $+</span>
             </div>
 
         </div>
@@ -757,15 +678,8 @@ footer strong{
             <h3>Extensions</h3>
 
             <div class="price-row">
-
-                <span>
-                    Extensions — selon la qualité et la quantité
-                </span>
-
-                <span class="price">
-                    Sur mesure
-                </span>
-
+                <span>Extensions — selon la qualité et la quantité</span>
+                <span class="price">Sur mesure</span>
             </div>
 
         </div>
@@ -797,13 +711,9 @@ footer strong{
 
 <section class="contact" id="contact">
 
-    <h2>
-        Réserver votre expérience
-    </h2>
+    <h2>Réserver votre expérience</h2>
 
-    <p>
-        Montréal & Laval
-    </p>
+    <p>Montréal & Laval</p>
 
     <p>
         <a href="tel:+15145822856">
@@ -829,13 +739,11 @@ footer strong{
 <footer>
 
     <strong>Bella Bay (B.B.)</strong><br>
-
     Coiffure mobile — Montréal & Laval<br><br>
 
     © 2026 Bella Bay. Tous droits réservés.
 
 </footer>
-
 
 </body>
 </html>
