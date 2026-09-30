@@ -8,24 +8,39 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* =========================================================
+   BELLA BAY — VARIABLES
+========================================================= */
+
 :root{
     --black:#080607;
     --black2:#151012;
+
     --pink:#f3d3dc;
     --pink2:#f9e8ed;
+
     --rose:#cf8fa1;
     --rose-dark:#9d6173;
+
     --gold:#c9a45c;
     --gold-light:#e8cf98;
+
     --white:#ffffff;
     --cream:#fffafa;
+
     --text:#292124;
     --gray:#756b6f;
 }
+
+
+/* =========================================================
+   BASE
+========================================================= */
 
 *{
     margin:0;
@@ -41,800 +56,2405 @@ body{
     font-family:'Montserrat',sans-serif;
     background:var(--cream);
     color:var(--text);
-    overflow-x:hidden;
+    line-height:1.6;
 }
 
-h1,h2,h3,h4{
-    font-family:'Cormorant Garamond',serif;
+body.modal-open{
+    overflow:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 a{
     text-decoration:none;
-    color:inherit;
-}
-
-img{
-    width:100%;
-    display:block;
 }
 
 
-/* =========================
+/* =========================================================
    TOP BAR
-========================= */
+========================================================= */
 
 .topbar{
-    background:#000;
-    color:#eee;
+    background:#050405;
+    color:var(--gold-light);
     text-align:center;
-    padding:8px;
+    padding:8px 15px;
     font-size:10px;
     letter-spacing:2px;
     text-transform:uppercase;
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
+
     background:rgba(8,6,7,.97);
-    border-bottom:1px solid rgba(201,164,92,.25);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(201,164,92,.35);
 }
 
 .navbar{
-    max-width:1400px;
+    max-width:1250px;
     margin:auto;
-    min-height:78px;
-    padding:0 5%;
+
+    height:82px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    padding:0 25px;
 }
+
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
-}
-
-.logo-bb{
-    width:46px;
-    height:46px;
-    border:1px solid var(--gold);
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--gold-light);
-    font-family:'Cormorant Garamond',serif;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.logo-name{
     color:white;
+}
+
+.logo-circle{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--gold);
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fff1f5 0%,
+            #dba5b4 28%,
+            #8e5265 65%,
+            #1b1014 100%
+        );
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.5),
+        0 4px 12px rgba(0,0,0,.5);
+}
+
+.logo-circle span{
     font-family:'Cormorant Garamond',serif;
-    font-size:25px;
+    font-size:23px;
+    font-weight:700;
+    color:#fff;
 }
 
-.logo-name span{
-    color:var(--rose);
+.logo-text{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:1px;
 }
 
-.nav{
+.logo-text small{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:8px;
+    letter-spacing:3px;
+    color:var(--gold-light);
+    margin-top:-5px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
     display:flex;
     align-items:center;
     gap:25px;
 }
 
-.nav a{
-    color:white;
-    font-size:11px;
-    letter-spacing:1px;
-    transition:.3s;
+nav a{
+    color:#fff;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.5px;
+    transition:.25s ease;
 }
 
-.nav a:hover{
-    color:var(--pink);
-}
-
-.book{
-    background:linear-gradient(135deg,#25d366,#128c7e);
-    color:#ffffff!important;
-    padding:12px 22px;
-    border-radius:30px;
-    font-weight:700;
+nav a:hover{
+    color:var(--gold-light);
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* =========================================================
+   BOUTONS ROSE 3D + OR
+========================================================= */
 
-.hero{
-    min-height:88vh;
-    position:relative;
-    display:flex;
+.book,
+.btn-whatsapp{
+
+    display:inline-flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
-    color:white;
+
+    position:relative;
+    overflow:hidden;
 
     background:
-    linear-gradient(rgba(10,7,8,.30),rgba(10,7,8,.70)),
-    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85")
-    center/cover no-repeat;
+        linear-gradient(
+            145deg,
+            #f9e8ed 0%,
+            #e9b8c6 35%,
+            #cf8fa1 65%,
+            #b86f84 100%
+        );
+
+    color:#24191d !important;
+
+    border:1px solid var(--gold-light);
+
+    padding:12px 23px;
+
+    border-radius:30px;
+
+    font-weight:700;
+    font-size:12px;
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,.75),
+        inset 0 -3px 5px rgba(105,52,65,.28),
+        0 4px 0 #8e5968,
+        0 7px 14px rgba(0,0,0,.30);
+
+    text-shadow:
+        0 1px 1px rgba(255,255,255,.55);
+
+    transition:.25s ease;
+}
+
+.book::before,
+.btn-whatsapp::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:1px;
+    left:10%;
+
+    width:80%;
+    height:35%;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.55),
+            rgba(255,255,255,0)
+        );
+
+    pointer-events:none;
+}
+
+.book:hover,
+.btn-whatsapp:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.8),
+        inset 0 -3px 5px rgba(105,52,65,.25),
+        0 6px 0 #8e5968,
+        0 12px 22px rgba(0,0,0,.35);
+}
+
+.book:active,
+.btn-whatsapp:active{
+
+    transform:translateY(2px);
+
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,.18),
+        0 2px 0 #8e5968,
+        0 4px 8px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:82vh;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,6,7,.92) 0%,
+            rgba(8,6,7,.65) 45%,
+            rgba(8,6,7,.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+
+    color:white;
 }
 
 .hero-content{
-    max-width:850px;
-    padding:30px;
+
+    max-width:1250px;
+    width:100%;
+
+    margin:auto;
+
+    padding:80px 25px;
 }
 
-.small-title{
+.hero-content small{
+
     color:var(--gold-light);
-    letter-spacing:5px;
-    font-size:11px;
+
     text-transform:uppercase;
-    margin-bottom:20px;
+
+    letter-spacing:4px;
+
+    font-size:11px;
 }
 
 .hero h1{
-    font-size:clamp(60px,9vw,110px);
-    line-height:.82;
-    font-weight:500;
-    letter-spacing:3px;
-}
 
-.hero h1 span{
-    color:var(--pink);
+    max-width:720px;
+
+    margin:15px 0;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(55px,8vw,105px);
+
+    line-height:.9;
+
+    font-weight:500;
 }
 
 .hero p{
-    max-width:650px;
-    margin:30px auto;
-    font-size:15px;
-    line-height:1.9;
-    font-weight:300;
+
+    max-width:600px;
+
+    color:#f7e9ed;
+
+    font-size:16px;
+
+    margin-bottom:30px;
 }
 
-.buttons{
+.hero-buttons{
+
     display:flex;
-    justify-content:center;
     gap:15px;
+
     flex-wrap:wrap;
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 28px;
+.btn-outline{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 23px;
+
     border-radius:30px;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    transition:.3s;
+
+    color:#fff !important;
+
+    border:1px solid var(--gold-light);
+
+    background:rgba(8,6,7,.45);
+
+    font-size:12px;
+    font-weight:600;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.15),
+        0 3px 0 #8f713c,
+        0 6px 14px rgba(0,0,0,.3);
+
+    transition:.25s ease;
 }
 
-.btn:hover{
+.btn-outline:hover{
+
+    background:
+        linear-gradient(
+            145deg,
+            #f3d3dc,
+            #cf8fa1
+        );
+
+    color:#24191d !important;
+
     transform:translateY(-3px);
 }
 
-.btn-whatsapp{
-    background:linear-gradient(135deg,#25d366,#128c7e);
-    color:#ffffff;
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+    padding:100px 25px;
 }
 
-.btn-outline{
-    border:1px solid white;
-    color:white;
+.section-dark{
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(207,143,161,.15),
+            transparent 35%
+        ),
+        var(--black);
 }
 
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-    padding:100px 6%;
-    background:white;
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
-.heading{
-    max-width:750px;
+.section-title{
     text-align:center;
-    margin:0 auto 55px;
+    margin-bottom:55px;
 }
 
-.heading h2{
+.section-title small{
+
+    display:block;
+
+    color:var(--rose-dark);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:10px;
+
+    margin-bottom:10px;
+}
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
     font-size:55px;
+
+    line-height:1;
+
     font-weight:500;
 }
 
-.heading h2 span{
-    color:var(--rose-dark);
+.section-title p{
+
+    max-width:650px;
+
+    margin:15px auto 0;
+
+    color:var(--gray);
+
+    font-size:14px;
 }
 
-.heading p{
-    margin-top:12px;
-    color:var(--gray);
-    font-size:14px;
-    line-height:1.8;
-}
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
 
 .services-grid{
-    max-width:1300px;
-    margin:auto;
+
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
-    gap:22px;
+
+    gap:25px;
 }
 
 .service{
-    height:440px;
-    position:relative;
+
+    background:white;
+
+    border:1px solid rgba(201,164,92,.35);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
     overflow:hidden;
-    background:#111;
+
+    transition:.3s ease;
 }
 
-.service img{
+.service:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.15);
+}
+
+.service-image{
+
+    height:340px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#160e11;
+}
+
+.service-image img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
-    transition:.7s;
+
+    transition:.5s ease;
 }
 
-.service:hover img{
-    transform:scale(1.07);
-}
-
-.service-info{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:30px;
-    color:white;
-    background:linear-gradient(
-        transparent 20%,
-        rgba(0,0,0,.92)
-    );
+.service:hover .service-image img{
+    transform:scale(1.04);
 }
 
 .service-number{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(8,6,7,.82);
+
     color:var(--gold-light);
-    font-size:10px;
-    letter-spacing:3px;
+
+    border:1px solid var(--gold);
+
+    font-size:11px;
 }
 
-.service h3{
-    font-size:36px;
-    font-weight:500;
-    margin:6px 0;
+.service-content{
+    padding:25px;
 }
 
-.service p{
-    color:#eee;
-    font-size:12px;
-    line-height:1.7;
+.service-content h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:31px;
+
+    line-height:1;
+
     margin-bottom:10px;
-    max-width:500px;
 }
 
-.service-price{
-    color:var(--gold-light);
+.service-content p{
+
+    color:var(--gray);
+
+    font-size:13px;
+
+    min-height:55px;
+}
+
+.service-bottom{
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid #eee;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.price{
+
+    font-weight:700;
+
+    color:var(--rose-dark);
+
     font-size:14px;
-    font-weight:600;
-    margin-bottom:12px;
 }
 
 .service-link{
-    color:var(--pink);
-    font-size:10px;
+
+    border:none;
+
+    background:none;
+
+    padding:0;
+
+    color:var(--rose-dark);
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:11px;
+
+    font-weight:700;
+
     text-transform:uppercase;
-    letter-spacing:2px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.service-link:hover{
+    color:var(--gold);
 }
 
 
-/* =========================
-   SERVICE MOBILE
-========================= */
+/* =========================================================
+   SERVICE DETAIL MODAL
+========================================================= */
 
-.mobile{
-    padding:100px 7%;
+.service-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+
+    background:rgba(0,0,0,.82);
+
+    backdrop-filter:blur(8px);
+}
+
+.service-modal.active{
+    display:flex;
+}
+
+.modal-box{
+
+    position:relative;
+
+    width:min(700px,100%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafa,
+            #f9e8ed
+        );
+
+    border:1px solid var(--gold);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.55);
+
+    padding:45px;
+}
+
+.modal-number{
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+.modal-box h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:50px;
+
+    line-height:.95;
+
+    margin:8px 0 20px;
+
+    color:#292124;
+}
+
+.modal-box p{
+
+    color:#62575b;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+}
+
+.detail-block{
+
+    margin-top:20px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(201,164,92,.35);
+}
+
+.detail-block h4{
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--rose-dark);
+
+    margin-bottom:8px;
+}
+
+.detail-block p{
+    margin-bottom:0;
+}
+
+.detail-price{
+
+    margin-top:25px;
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border:1px solid var(--gold);
+
+    background:#fff;
+
+    color:var(--rose-dark);
+
+    font-weight:700;
+
+    font-size:13px;
+}
+
+.extension-method{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(201,164,92,.25);
+
+    font-size:12px;
+
+    color:#4d4246;
+}
+
+.extension-method:last-child{
+    border-bottom:none;
+}
+
+.extension-method strong{
+    color:var(--rose-dark);
+}
+
+.modal-close{
+
+    position:absolute;
+
+    top:15px;
+    right:18px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:#080607;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.modal-close:hover{
+
+    background:var(--rose);
+
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   MOBILE SERVICE
+========================================================= */
+
+.mobile-section{
+
     background:var(--black);
+
     color:white;
 }
 
 .mobile-grid{
-    max-width:1250px;
-    margin:auto;
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:60px;
+
+    gap:50px;
+
     align-items:center;
 }
 
 .mobile-image{
-    height:560px;
-    border:1px solid rgba(201,164,92,.5);
+
+    height:550px;
+
     overflow:hidden;
+
+    border:1px solid var(--gold);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.5);
 }
 
 .mobile-image img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
-.mobile-text h2{
-    font-size:58px;
-    line-height:1;
-    font-weight:500;
-}
+.mobile-content small{
 
-.mobile-text h2 span{
-    color:var(--pink);
-}
+    color:var(--gold-light);
 
-.mobile-text p{
-    color:#ccc;
-    font-size:14px;
-    line-height:2;
-    margin:22px 0;
-}
+    letter-spacing:3px;
 
-.area{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:30px;
-}
+    text-transform:uppercase;
 
-.area span{
-    border:1px solid rgba(229,202,145,.5);
-    color:var(--pink);
-    padding:10px 15px;
     font-size:10px;
+}
+
+.mobile-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    line-height:.95;
+
+    margin:15px 0;
+}
+
+.mobile-content p{
+
+    color:#d8ced1;
+
+    font-size:14px;
+
+    max-width:500px;
+}
+
+.area-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0 30px;
+}
+
+.area-list span{
+
+    padding:8px 14px;
+
+    border:1px solid rgba(232,207,152,.55);
+
+    border-radius:30px;
+
+    font-size:9px;
+
     letter-spacing:1px;
+
+    color:var(--gold-light);
 }
 
 
-/* =========================
+/* =========================================================
    HISTOIRE
-========================= */
+========================================================= */
 
 .story{
-    padding:100px 7%;
-    background:var(--pink2);
-}
 
-.story-grid{
-    max-width:1200px;
-    margin:auto;
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:60px;
+
     align-items:center;
 }
 
 .story-image{
-    height:560px;
+
+    height:500px;
+
     overflow:hidden;
 }
 
 .story-image img{
+
+    width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
-.story-text h2{
-    font-size:58px;
-    line-height:1;
-    font-weight:500;
-}
+.story-content small{
 
-.story-text h2 span{
     color:var(--rose-dark);
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    font-size:10px;
 }
 
-.story-text p{
-    margin-top:20px;
+.story-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    line-height:.95;
+
+    margin:12px 0 25px;
+}
+
+.story-content p{
+
     color:var(--gray);
+
     font-size:14px;
-    line-height:2;
+
+    margin-bottom:18px;
 }
 
 .values{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:12px;
+
+    gap:20px;
+
     margin-top:30px;
 }
 
 .value{
-    background:white;
-    padding:18px;
-    border:1px solid #e7cbd2;
-    font-size:11px;
-    color:var(--gray);
+
+    border-top:1px solid var(--gold);
+
+    padding-top:12px;
 }
 
 .value strong{
+
     display:block;
-    color:var(--rose-dark);
+
     font-family:'Cormorant Garamond',serif;
-    font-size:22px;
-    margin-bottom:4px;
+
+    font-size:24px;
 }
 
 
-/* =========================
-   SALON FUTUR
-========================= */
+/* =========================================================
+   FUTUR SALON
+========================================================= */
 
 .future{
-    padding:100px 7%;
-    background:white;
+
+    padding:110px 25px;
+
+    background:
+        linear-gradient(
+            rgba(8,6,7,.9),
+            rgba(8,6,7,.9)
+        ),
+        url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+
+    color:white;
+
     text-align:center;
 }
 
-.future-box{
-    max-width:1000px;
-    margin:auto;
-    border:1px solid var(--gold);
-    padding:70px 40px;
+.future h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:65px;
+
+    line-height:.95;
+
+    max-width:750px;
+
+    margin:0 auto 20px;
 }
 
-.future-box h2{
-    font-size:58px;
-    font-weight:500;
-}
+.future p{
 
-.future-box h2 span{
-    color:var(--rose-dark);
-}
+    max-width:650px;
 
-.future-box p{
-    max-width:700px;
-    margin:20px auto 30px;
-    color:var(--gray);
+    margin:0 auto 30px;
+
+    color:#ddd1d5;
+
     font-size:14px;
-    line-height:1.9;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
+
     background:#050405;
+
     color:white;
-    padding:65px 7% 25px;
+
+    padding:65px 25px 25px;
+
+    border-top:1px solid rgba(201,164,92,.35);
 }
 
 .footer-grid{
-    max-width:1250px;
+
+    max-width:1200px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    grid-template-columns:1.5fr 1fr 1.3fr 1.2fr;
+
     gap:40px;
 }
 
 .footer-brand h3{
+
+    font-family:'Cormorant Garamond',serif;
+
     font-size:35px;
+
     font-weight:500;
 }
 
-.footer-brand h3 span{
-    color:var(--rose);
-}
-
 .footer-brand p{
-    color:#999;
-    max-width:350px;
-    margin-top:12px;
+
+    color:#aaa0a4;
+
     font-size:12px;
-    line-height:1.8;
+
+    max-width:280px;
+
+    margin-top:10px;
 }
 
-footer h4{
+.footer-title{
+
     color:var(--gold-light);
-    font-family:'Montserrat',sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
+
     text-transform:uppercase;
-    margin-bottom:18px;
+
+    letter-spacing:2px;
+
+    font-size:9px;
+
+    margin-bottom:15px;
 }
 
-footer a,
-footer p{
-    color:#999;
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.footer-links a,
+.footer-contact a{
+
+    color:#cfc4c8;
+
     font-size:12px;
-    margin-bottom:10px;
+
+    transition:.2s;
 }
 
-footer a:hover{
-    color:var(--pink);
+.footer-links a:hover,
+.footer-contact a:hover{
+
+    color:var(--gold-light);
+}
+
+.footer-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.footer-social{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.footer-social p{
+
+    color:#aaa0a4;
+
+    font-size:11px;
 }
 
 .footer-bottom{
-    max-width:1250px;
-    margin:50px auto 0;
+
+    max-width:1200px;
+
+    margin:45px auto 0;
+
     padding-top:20px;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     text-align:center;
-    color:#666;
-    font-size:10px;
+
+    color:#777;
+
+    font-size:9px;
+
+    letter-spacing:.5px;
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media(max-width:950px){
-    .nav{ display:none; }
-    .services-grid{ grid-template-columns:repeat(2,1fr); }
-    .mobile-grid, .story-grid{ grid-template-columns:1fr; }
-    .footer-grid{ grid-template-columns:repeat(2,1fr); }
+
+    nav{
+        display:none;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .mobile-grid,
+    .story{
+        grid-template-columns:1fr;
+    }
+
+    .mobile-image{
+        height:450px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
 @media(max-width:600px){
-    .topbar{ font-size:8px; letter-spacing:1px; }
-    .hero{ min-height:78vh; }
-    .hero h1{ font-size:57px; }
-    .hero p{ font-size:13px; }
-    .services-grid{ grid-template-columns:1fr; }
-    .footer-grid{ grid-template-columns:1fr; }
-    .heading h2{ font-size:42px; }
-    .mobile-text h2, .story-text h2, .future-box h2{ font-size:45px; }
+
+    .topbar{
+        font-size:8px;
+        letter-spacing:1px;
+    }
+
+    .navbar{
+        height:70px;
+        padding:0 15px;
+    }
+
+    .logo-circle{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-text{
+        font-size:24px;
+    }
+
+    .hero{
+        min-height:78vh;
+    }
+
+    .hero-content{
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .section{
+        padding:75px 18px;
+    }
+
+    .section-title h2{
+        font-size:45px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-image{
+        height:330px;
+    }
+
+    .mobile-content h2,
+    .story-content h2{
+        font-size:48px;
+    }
+
+    .mobile-image{
+        height:400px;
+    }
+
+    .story-image{
+        height:400px;
+    }
+
+    .future{
+        padding:80px 20px;
+    }
+
+    .future h2{
+        font-size:48px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .values{
+        grid-template-columns:1fr;
+    }
+
+    .modal-box{
+        padding:35px 22px;
+    }
+
+    .modal-box h2{
+        font-size:42px;
+    }
+
+    .extension-method{
+        font-size:11px;
+    }
 }
 
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
 
 <div class="topbar">
     BELLA BAY • COIFFURE PROFESSIONNELLE • MONTRÉAL • LAVAL • RIVE-NORD
 </div>
 
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
+
     <div class="navbar">
+
         <a href="#" class="logo">
-            <div class="logo-bb">BB</div>
-            <div class="logo-name">Bella <span>Bay</span></div>
+
+            <div class="logo-circle">
+                <span>BB</span>
+            </div>
+
+            <div class="logo-text">
+                Bella Bay
+                <small>COIFFURE & BEAUTÉ</small>
+            </div>
+
         </a>
 
-        <nav class="nav">
+
+        <nav>
+
             <a href="#services">Services</a>
+
             <a href="#mobile">Service mobile</a>
+
             <a href="#histoire">Histoire</a>
+
             <a href="#salon">Salon</a>
+
             <a href="#contact">Contact</a>
+
+            <a
+                class="book"
+                href="https://wa.me/15145822856"
+                target="_blank"
+                rel="noopener"
+            >
+                Réserver
+            </a>
+
         </nav>
 
-        <a class="book" href="https://wa.me/15145822856" target="_blank">WhatsApp</a>
     </div>
+
 </header>
 
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
+
     <div class="hero-content">
-        <div class="small-title">Bella Bay • B.B</div>
-        <h1>Sublimez<br><span>vos cheveux.</span></h1>
-        <p>Une expérience de coiffure professionnelle, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
-        <div class="buttons">
-            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Contactez-moi sur WhatsApp</a>
-            <a href="#services" class="btn btn-outline">Découvrir Bella Bay</a>
+
+        <small>COIFFURE • BEAUTÉ • BELLA BAY</small>
+
+        <h1>
+            Sublimez<br>
+            vos cheveux.
+        </h1>
+
+        <p>
+            Une expérience de coiffure professionnelle,
+            directement chez vous à Montréal, Laval et sur la Rive-Nord.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="btn-whatsapp"
+                href="https://wa.me/15145822856"
+                target="_blank"
+                rel="noopener"
+            >
+                Réserver maintenant
+            </a>
+
+            <a
+                class="btn-outline"
+                href="#services"
+            >
+                Découvrir Bella Bay
+            </a>
+
         </div>
+
     </div>
+
 </section>
 
 
-<section class="services" id="services">
-    <div class="heading">
-        <div class="eyebrow">Nos prestations & Tarifs</div>
-        <h2>Votre style, <span>notre savoir-faire.</span></h2>
-        <p>Des services personnalisés pour prendre soin de votre chevelure et créer le résultat que vous recherchez.</p>
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>NOTRE SAVOIR-FAIRE</small>
+
+            <h2>Nos Services</h2>
+
+            <p>
+                Des services professionnels pensés pour révéler,
+                soigner et sublimer votre chevelure.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- =================================================
+                 01 COLORATION DE BASE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000"
+                        alt="Coloration de base Bella Bay"
+                    >
+
+                    <div class="service-number">01</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Coloration de base</h3>
+
+                    <p>
+                        Une couleur uniforme et lumineuse,
+                        adaptée à votre couleur et à votre style.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">95 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('coloration')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 02 COLORATION FANTAISIE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg"
+                        alt="Coloration fantaisie"
+                    >
+
+                    <div class="service-number">02</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Coloration fantaisie</h3>
+
+                    <p>
+                        Des couleurs créatives et personnalisées
+                        pour un look qui vous ressemble.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">120 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('fantaisie')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 03 MÈCHES
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                        alt="Mèches professionnelles"
+                    >
+
+                    <div class="service-number">03</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Mèches</h3>
+
+                    <p>
+                        Des mèches lumineuses pour apporter
+                        dimension, profondeur et éclat.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">110 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('meches')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 04 CONTOURING
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg"
+                        alt="Contouring cheveux"
+                    >
+
+                    <div class="service-number">04</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Contouring</h3>
+
+                    <p>
+                        Une coloration placée autour du visage
+                        pour créer de la lumière et mettre les traits en valeur.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">90 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('contouring')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 05 OMBRÉ HAIR / BALAYAGE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://i.pinimg.com/736x/9a/f7/51/9af75192539b184f1aa0a5feb4aff111.jpg"
+                        alt="Balayage californien foncé à blond très clair"
+                    >
+
+                    <div class="service-number">05</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Ombré Hair & Balayage</h3>
+
+                    <p>
+                        Un dégradé lumineux qui passe progressivement
+                        d'une base foncée à des pointes blondes très claires.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">130 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('balayage')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 06 TRAITEMENT CAPILLAIRE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                        alt="Traitement capillaire"
+                    >
+
+                    <div class="service-number">06</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Traitement capillaire</h3>
+
+                    <p>
+                        Un soin professionnel pour hydrater,
+                        nourrir et améliorer l'apparence des cheveux.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">80 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('traitement')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 07 BOTOX CAPILLAIRE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png"
+                        alt="Botox capillaire"
+                    >
+
+                    <div class="service-number">07</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Botox capillaire</h3>
+
+                    <p>
+                        Un soin profond pour améliorer la douceur,
+                        la brillance et l'apparence de la fibre.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">140 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('botox')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 08 LISSAGE KÉRATINE
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886"
+                        alt="Lissage à la kératine"
+                    >
+
+                    <div class="service-number">08</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Lissage à la kératine</h3>
+
+                    <p>
+                        Une technique qui aide à discipliner,
+                        lisser et faciliter la mise en beauté des cheveux.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">180 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('keratine')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 09 EXTENSIONS
+            ================================================== -->
+
+            <article class="service">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/30691549/pexels-photo-30691549.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                        alt="Extensions capillaires Bella Bay"
+                    >
+
+                    <div class="service-number">09</div>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Extensions capillaires</h3>
+
+                    <p>
+                        Ajoutez longueur, volume ou les deux,
+                        avec une méthode choisie selon vos cheveux
+                        et le résultat recherché.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <span class="price">À partir de 120 $</span>
+
+                        <button
+                            class="service-link"
+                            onclick="openService('extensions')"
+                        >
+                            Découvrir →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
     </div>
 
-    <div class="services-grid">
-
-        <article class="service">
-            <img src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000" alt="Coloration de base">
-            <div class="service-info">
-                <div class="service-number">01 — COULEUR</div>
-                <h3>Coloration de base</h3>
-                <p>Une coloration personnalisée adaptée à votre style.</p>
-                <div class="service-price">À partir de 95 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg" alt="Coloration fantaisie">
-            <div class="service-info">
-                <div class="service-number">02 — CRÉATION</div>
-                <h3>Coloration fantaisie</h3>
-                <p>Une couleur créative pour un look unique et personnalisé.</p>
-                <div class="service-price">À partir de 120 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mèches">
-            <div class="service-info">
-                <div class="service-number">03 — ÉCLAT</div>
-                <h3>Mèches</h3>
-                <p>Des mèches personnalisées pour apporter lumière et dimension.</p>
-                <div class="service-price">À partir de 110 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg" alt="Contouring">
-            <div class="service-info">
-                <div class="service-number">04 — VISAGE</div>
-                <h3>Contouring</h3>
-                <p>Une technique personnalisée pour illuminer et encadrer le visage.</p>
-                <div class="service-price">À partir de 90 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <!-- VOTRE IMAGE DE BALAYAGE INTÉGRÉE ICI -->
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Ombré Hair & Balayage">
-            <div class="service-info">
-                <div class="service-number">05 — LUMIÈRE</div>
-                <h3>Ombré Hair & Balayage</h3>
-                <p>Un dégradé de couleur fondu et ultra-lumineux, des racines aux pointes[span_0](start_span)[span_0](end_span).</p>
-                <div class="service-price">À partir de 130 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Traitement capillaire">
-            <div class="service-info">
-                <div class="service-number">06 — SOIN</div>
-                <h3>Traitement capillaire</h3>
-                <p>Un service de soin personnalisé pour votre chevelure.</p>
-                <div class="service-price">À partir de 80 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png" alt="Botox capillaire">
-            <div class="service-info">
-                <div class="service-number">07 — RÉPARATION</div>
-                <h3>Botox capillaire</h3>
-                <p>Une prestation capillaire personnalisée réalisée à domicile.</p>
-                <div class="service-price">À partir de 140 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886" alt="Lissage à la kératine">
-            <div class="service-info">
-                <div class="service-number">08 — LISSAGE</div>
-                <h3>Lissage à la kératine</h3>
-                <p>Une prestation de lissage personnalisée directement à votre domicile.</p>
-                <div class="service-price">À partir de 180 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-        <article class="service">
-            <img src="https://images.pexels.com/photos/30691549/pexels-photo-30691549.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Extensions capillaires">
-            <div class="service-info">
-                <div class="service-number">09 — LONGUEUR</div>
-                <h3>Extensions capillaires</h3>
-                <p>Pose d'extensions sur mesure pour ajouter longueur et volume.</p>
-                <div class="service-price">Pose à partir de 120 $</div>
-                <a href="#services" class="service-link">Découvrir →</a>
-            </div>
-        </article>
-
-    </div>
 </section>
 
 
-<section class="mobile" id="mobile">
-    <div class="mobile-grid">
-        <div class="mobile-image">
-            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=85" alt="Service mobile">
-        </div>
-        <div class="mobile-text">
-            <div class="eyebrow" style="color:var(--gold-light);">À domicile</div>
-            <h2>Service <span>Mobile</span> d'Exception</h2>
-            <p>Profitez d'une prestation de coiffure professionnelle directement chez vous. Bella Bay se déplace sur rendez-vous pour vous offrir une expérience personnalisée.</p>
-            <div class="area">
-                <span>MONTRÉAL</span>
-                <span>LAVAL</span>
-                <span>RIVE-NORD</span>
+<!-- =========================================================
+     SERVICE MOBILE
+========================================================= -->
+
+<section class="section mobile-section" id="mobile">
+
+    <div class="container">
+
+        <div class="mobile-grid">
+
+            <div class="mobile-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1200&q=90"
+                    alt="Service mobile Bella Bay"
+                >
+
             </div>
-            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Discuter sur WhatsApp</a>
+
+
+            <div class="mobile-content">
+
+                <small>SERVICE PRIVÉ MOBILE</small>
+
+                <h2>
+                    La beauté,<br>
+                    chez vous.
+                </h2>
+
+                <p>
+                    Bella Bay offre déjà des services privés mobiles
+                    directement à domicile, pour vous permettre de profiter
+                    d'une expérience professionnelle dans le confort de votre espace.
+                </p>
+
+
+                <div class="area-list">
+
+                    <span>MONTRÉAL</span>
+                    <span>LAVAL</span>
+                    <span>RIVE-NORD</span>
+
+                </div>
+
+
+                <a
+                    class="btn-whatsapp"
+                    href="https://wa.me/15145822856"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Réserver
+                </a>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
 
-<section class="story" id="histoire">
-    <div class="story-grid">
-        <div class="story-image">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Histoire">
-        </div>
-        <div class="story-text">
-            <div class="eyebrow">Notre Philosophie</div>
-            <h2>L'Art de la <span>Coiffure</span></h2>
-            <p>Bella Bay est née d'une vision simple : offrir une coiffure de qualité pour sublimer vos cheveux.</p>
-            <p>Aujourd'hui, Bella Bay offre des services privés mobiles et prépare son évolution vers un salon fixe.</p>
-            <div class="values">
-                <div class="value"><strong>Qualité</strong>Des services pensés avec soin.</div>
-                <div class="value"><strong>Écoute</strong>Une approche personnalisée.</div>
+<!-- =========================================================
+     HISTOIRE
+========================================================= -->
+
+<section class="section" id="histoire">
+
+    <div class="container">
+
+        <div class="story">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=90"
+                    alt="Bella Bay coiffure"
+                >
+
             </div>
+
+
+            <div class="story-content">
+
+                <small>NOTRE PHILOSOPHIE</small>
+
+                <h2>
+                    L'Art de la<br>
+                    Coiffure
+                </h2>
+
+                <p>
+                    Bella Bay est née d'une vision simple :
+                    offrir une coiffure de qualité et des produits de qualité
+                    pour sublimer vos cheveux.
+                </p>
+
+                <p>
+                    Aujourd'hui, Bella Bay offre déjà des services privés mobiles
+                    et prépare son évolution vers un salon fixe.
+                </p>
+
+
+                <div class="values">
+
+                    <div class="value">
+
+                        <strong>Qualité</strong>
+
+                        <span>
+                            Des services pensés avec soin.
+                        </span>
+
+                    </div>
+
+
+                    <div class="value">
+
+                        <strong>Écoute</strong>
+
+                        <span>
+                            Comprendre chaque cliente pour mieux la conseiller.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
+
+<!-- =========================================================
+     FUTUR SALON
+========================================================= -->
 
 <section class="future" id="salon">
-    <div class="future-box">
-        <div class="eyebrow">Projet futur</div>
-        <h2>Notre Futur <span>Salon Physique</span></h2>
-        <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
-        <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Découvrir les disponibilités</a>
-    </div>
+
+    <h2>
+        Notre Futur<br>
+        Salon Physique
+    </h2>
+
+    <p>
+        En attendant l'ouverture de notre espace physique,
+        Bella Bay continue de vous sublimer grâce à son service mobile.
+    </p>
+
+    <a
+        class="btn-whatsapp"
+        href="https://wa.me/15145822856"
+        target="_blank"
+        rel="noopener"
+    >
+        Réserver
+    </a>
+
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer id="contact">
+
     <div class="footer-grid">
+
+
         <div class="footer-brand">
-            <h3>Bella <span>Bay</span> (B.B)</h3>
-            <p>Coiffure professionnelle à Montréal, Laval et sur la Rive-Nord.</p>
+
+            <h3>Bella Bay</h3>
+
+            <p>
+                Coiffure & Beauté.
+                Sublimer vos cheveux grâce à une expérience
+                professionnelle, personnalisée et attentionnée.
+            </p>
+
         </div>
+
+
         <div>
-            <h4>Navigation</h4>
-            <a href="#services">Services</a><br>
-            <a href="#mobile">Service mobile</a><br>
-            <a href="#histoire">Histoire</a><br>
-            <a href="#salon">Salon</a>
+
+            <div class="footer-title">
+                Navigation
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#services">Services</a>
+
+                <a href="#mobile">Service mobile</a>
+
+                <a href="#histoire">Histoire</a>
+
+                <a href="#salon">Salon</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
         </div>
+
+
         <div>
-            <h4>Contact</h4>
-            <p>📞 514-582-2856</p>
-            <p>✉️ <a href="mailto:bellabay.coiffure@gmail.com" style="color:#999;">bellabay.coiffure@gmail.com</a></p>
-            <p>📍 Montréal, Laval, Rive-Nord</p>
+
+            <div class="footer-title">
+                Contact
+            </div>
+
+            <div class="footer-contact">
+
+                <a href="tel:+15145822856">
+                    514-582-2856
+                </a>
+
+                <a href="mailto:bellabay.coiffure@gmail.com">
+                    bellabay.coiffure@gmail.com
+                </a>
+
+                <span style="color:#cfc4c8;font-size:12px;">
+                    Montréal • Laval • Rive-Nord
+                </span>
+
+            </div>
+
         </div>
-        <div>
-            <h4>Contact & Réseau</h4>
-            <a href="https://wa.me/15145822856" target="_blank">WhatsApp Direct</a><br>
-            <p style="margin-top:10px;">Instagram : @bellabay.ca</p>
+
+
+        <div class="footer-social">
+
+            <div class="footer-title">
+                Contact & Réservation
+            </div>
+
+            <p>
+                Pour une réservation ou une question,
+                contactez Bella Bay directement sur WhatsApp.
+            </p>
+
+            <a
+                class="btn-whatsapp"
+                href="https://wa.me/15145822856"
+                target="_blank"
+                rel="noopener"
+            >
+                Réserver sur WhatsApp
+            </a>
+
+            <a
+                href="https://www.instagram.com/bellabay.ca/"
+                target="_blank"
+                rel="noopener"
+                style="color:#cfc4c8;font-size:11px;"
+            >
+                Instagram · @bellabay.ca
+            </a>
+
         </div>
+
     </div>
+
+
     <div class="footer-bottom">
-        <p>© 2026 Bella Bay (B.B) — Tous droits réservés.</p>
+
+        © 2026 Bella Bay (B.B) — Coiffure & Beauté.
+        Tous droits réservés.
+
     </div>
+
 </footer>
+
+
+<!-- =========================================================
+     MODALE DES SERVICES
+========================================================= -->
+
+<div
+    class="service-modal"
+    id="serviceModal"
+    onclick="closeServiceOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeService()"
+            aria-label="Fermer"
+        >
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+const services = {
+
+    coloration: {
+        number: "SERVICE 01",
+        title: "Coloration de base",
+        description:
+            "Une coloration complète pour uniformiser, raviver ou changer votre couleur tout en créant un résultat lumineux et personnalisé.",
+        technique:
+            "La couleur est appliquée sur l'ensemble des cheveux afin d'obtenir une teinte uniforme et harmonieuse.",
+        result:
+            "Une couleur plus uniforme, brillante et adaptée à votre style.",
+        price:
+            "95 $"
+    },
+
+
+    fantaisie: {
+        number: "SERVICE 02",
+        title: "Coloration fantaisie",
+        description:
+            "Pour celles qui souhaitent ajouter une couleur plus créative, originale ou différente des tons classiques.",
+        technique:
+            "La couleur est choisie selon le résultat désiré. Une préparation éclaircissante peut être nécessaire selon la couleur de départ.",
+        result:
+            "Une couleur expressive et personnalisée.",
+        price:
+            "120 $"
+    },
+
+
+    meches: {
+        number: "SERVICE 03",
+        title: "Mèches",
+        description:
+            "Des mèches permettent d'éclaircir certaines parties de la chevelure afin d'ajouter de la lumière et de la dimension.",
+        technique:
+            "Les cheveux sont séparés en sections et certaines mèches sont éclaircies de façon ciblée.",
+        result:
+            "Une chevelure plus lumineuse et dimensionnelle.",
+        price:
+            "110 $"
+    },
+
+
+    contouring: {
+        number: "SERVICE 04",
+        title: "Contouring",
+        description:
+            "Une technique qui place de la lumière autour du visage afin de créer un effet plus lumineux et personnalisé.",
+        technique:
+            "Les mèches sont concentrées à des endroits stratégiques autour du visage.",
+        result:
+            "Un effet lumineux qui attire naturellement le regard vers le visage.",
+        price:
+            "90 $"
+    },
+
+
+    balayage: {
+        number: "SERVICE 05",
+        title: "Ombré Hair & Balayage",
+        description:
+            "Un éclaircissement progressif qui permet de conserver une base plus foncée tout en créant des longueurs et des pointes très blondes.",
+        technique:
+            "Les éclaircissements sont placés progressivement dans les longueurs pour créer une transition douce entre la couleur foncée et le blond.",
+        result:
+            "Un effet balayage californien lumineux, avec une transition fondue et des pointes très claires.",
+        price:
+            "130 $"
+    },
+
+
+    traitement: {
+        number: "SERVICE 06",
+        title: "Traitement capillaire",
+        description:
+            "Un soin destiné aux cheveux qui ont besoin d'hydratation, de douceur, de nutrition ou d'un coup de revitalisation.",
+        technique:
+            "Le traitement est choisi selon l'état et les besoins de la chevelure.",
+        result:
+            "Des cheveux plus doux, souples et visiblement plus soignés.",
+        price:
+            "80 $"
+    },
+
+
+    botox: {
+        number: "SERVICE 07",
+        title: "Botox capillaire",
+        description:
+            "Un soin profond qui vise à améliorer l'apparence des cheveux secs, ternes ou difficiles à discipliner.",
+        technique:
+            "Le soin est appliqué sur la chevelure puis travaillé afin de favoriser un résultat plus lisse et plus uniforme.",
+        result:
+            "Des cheveux plus doux, brillants et faciles à coiffer.",
+        price:
+            "140 $"
+    },
+
+
+    keratine: {
+        number: "SERVICE 08",
+        title: "Lissage à la kératine",
+        description:
+            "Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",
+        technique:
+            "Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",
+        result:
+            "Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",
+        price:
+            "180 $"
+    },
+
+
+    extensions: {
+        number: "SERVICE 09",
+        title: "Extensions capillaires",
+
+        description:
+            "Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",
+
+        extensionList: true,
+
+        result:
+            "La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",
+
+        price:
+            "À partir de 120 $"
+    }
+
+};
+
+
+function openService(serviceKey){
+
+    const service = services[serviceKey];
+
+    if(!service) return;
+
+    let html = `
+
+        <div class="modal-number">
+            ${service.number}
+        </div>
+
+        <h2>
+            ${service.title}
+        </h2>
+
+        <p>
+            ${service.description}
+        </p>
+
+    `;
+
+
+    if(service.extensionList){
+
+        html += `
+
+            <div class="detail-block">
+
+                <h4>
+                    Méthodes d'extensions
+                </h4>
+
+                <div class="extension-method">
+                    <span>Tape-in</span>
+                    <strong>Tarif à confirmer</strong>
+                </div>
+
+                <div class="extension-method">
+                    <span>Micro-billes / Micro-Link</span>
+                    <strong>Tarif à confirmer</strong>
+                </div>
+
+                <div class="extension-method">
+                    <span>Kératine</span>
+                    <strong>Tarif à confirmer</strong>
+                </div>
+
+                <div class="extension-method">
+                    <span>Clip-in / autres méthodes</span>
+                    <strong>Tarif à confirmer</strong>
+                </div>
+
+            </div>
+
+        `;
+
+    } else {
+
+        html += `
+
+            <div class="detail-block">
+
+                <h4>
+                    Comment ça fonctionne
+                </h4>
+
+                <p>
+                    ${service.technique}
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    html += `
+
+        <div class="detail-block">
+
+            <h4>
+                Le résultat
+            </h4>
+
+            <p>
+                ${service.result}
+            </p>
+
+        </div>
+
+        <div class="detail-price">
+            ${service.price}
+        </div>
+
+    `;
+
+
+    document.getElementById("modalContent").innerHTML = html;
+
+    document
+        .getElementById("serviceModal")
+        .classList.add("active");
+
+    document.body.classList.add("modal-open");
+}
+
+
+function closeService(){
+
+    document
+        .getElementById("serviceModal")
+        .classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+}
+
+
+function closeServiceOutside(event){
+
+    if(event.target.id === "serviceModal"){
+        closeService();
+    }
+
+}
+
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+        closeService();
+    }
+
+});
+
+</script>
+
 
 </body>
 </html>
-
-```
