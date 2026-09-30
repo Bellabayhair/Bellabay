@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bella Bay (B.B.) — Coiffure Professionnelle</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,33 +21,44 @@
     --white:#ffffff;
     --shadow:0 12px 35px rgba(90,55,70,.10);
 }
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
 html{
     scroll-behavior:smooth;
 }
+
 body{
     font-family:'Montserrat',sans-serif;
     background:var(--pink-light);
     color:var(--dark);
 }
+
+/* ================= HEADER ================= */
+
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     padding:18px 6%;
+
     background:rgba(255,255,255,.88);
     backdrop-filter:blur(14px);
+
     border-bottom:1px solid rgba(185,150,82,.18);
 }
+
 .logo{
     font-family:'Playfair Display',serif;
     font-size:25px;
@@ -53,10 +66,12 @@ header{
     letter-spacing:3px;
     color:var(--gold);
 }
+
 nav{
     display:flex;
     gap:10px;
 }
+
 nav a{
     text-decoration:none;
     color:var(--dark);
@@ -66,92 +81,122 @@ nav a{
     border-radius:30px;
     transition:.3s;
 }
+
 nav a:hover{
     background:var(--pink);
     color:var(--gold);
 }
+
+/* ================= HERO ================= */
+
 .hero{
     min-height:92vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
     position:relative;
     overflow:hidden;
+
+    /* PHOTO OFFICIELLE BELLA BAY — NE PAS CHANGER */
     background:
         linear-gradient(
-            rgba(255,245,249,.45),
-            rgba(255,245,249,.55)
+            rgba(255,245,249,.25),
+            rgba(255,245,249,.35)
         ),
-        url("https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600&q=80");
+        url("alena-kravchenko.jpg");
+
     background-size:cover;
     background-position:center;
 }
+
 .hero::after{
     content:"";
     position:absolute;
     inset:0;
+
     background:linear-gradient(
         to bottom,
         rgba(255,255,255,.05),
         rgba(255,240,247,.38)
     );
 }
+
 .hero-content{
     position:relative;
     z-index:2;
     max-width:850px;
     padding:30px;
 }
+
 .hero h1{
     font-family:'Playfair Display',serif;
     font-size:clamp(55px,9vw,100px);
     letter-spacing:5px;
     color:var(--gold);
+
     text-shadow:
-        0 2px 12px rgba(0,0,0,.10),
+        0 2px 12px rgba(0,0,0,.20),
         0 0 25px rgba(255,255,255,.65);
 }
+
 .hero .subtitle{
     margin-top:12px;
     font-family:'Playfair Display',serif;
     font-size:23px;
     color:#40373d;
 }
+
 .hero p{
     max-width:620px;
     margin:18px auto 0;
     font-size:15px;
     line-height:1.8;
 }
+
 .btn{
     display:inline-block;
     margin-top:28px;
+
     padding:14px 30px;
+
     background:var(--gold);
     color:white;
+
     text-decoration:none;
     border-radius:30px;
+
     font-size:13px;
     font-weight:600;
     letter-spacing:.5px;
+
     box-shadow:0 8px 20px rgba(185,150,82,.25);
+
     transition:.3s;
 }
+
 .btn:hover{
     transform:translateY(-3px);
     background:#a98643;
 }
+
+/* ================= INTRO ================= */
+
 .intro{
     text-align:center;
     padding:75px 20px 35px;
     background:var(--pink-light);
 }
+
 .intro h2{
     font-family:'Playfair Display',serif;
     font-size:38px;
     color:var(--gold);
 }
+
 .intro p{
     max-width:650px;
     margin:15px auto;
@@ -159,106 +204,162 @@ nav a:hover{
     font-size:15px;
     color:#615961;
 }
+
+/* ================= SERVICES ================= */
+
 .services{
     padding:45px 6% 90px;
     background:var(--pink-light);
 }
+
 .services-grid{
     max-width:1150px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:22px;
 }
+
 .service-card{
     position:relative;
     min-height:330px;
+
     overflow:hidden;
+
     border-radius:22px;
+
     background:white;
+
     box-shadow:var(--shadow);
+
     border:1px solid rgba(185,150,82,.18);
+
     transition:.4s;
-    text-decoration: none;
-    display: block;
 }
+
 .service-card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 45px rgba(90,55,70,.16);
 }
+
 .service-image{
     height:210px;
+
     background-size:cover;
     background-position:center;
+
     transition:.5s;
 }
+
 .service-card:hover .service-image{
     transform:scale(1.04);
 }
+
+
+/* =====================================================
+   NOUVELLES IMAGES DES SERVICES BELLA BAY
+   ===================================================== */
+
+/* Coloration : rouge vibrant / coloration fantaisie */
 .coloration{
-    background-image:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80");
+    background-image:url("coloration-rouge-vibrant.jpg");
+    background-position:center;
+    background-size:cover;
 }
+
+/* Mèches : mèches caramel professionnelles */
 .meches{
-    background-image:url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80");
+    background-image:url("meches-caramel.jpg");
+    background-position:center;
+    background-size:cover;
 }
+
+/* Balayage : balayage blond */
 .balayage{
-    background-image:url("https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80");
+    background-image:url("balayage-blond.jpg");
+    background-position:center;
+    background-size:cover;
 }
+
+/* Extensions : extensions très longues 40 pouces */
 .extensions{
-    background-image:url("https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=600&q=80");
+    background-image:url("extensions-40-pouces.jpg");
+    background-position:center;
+    background-size:cover;
 }
+
+
 .service-info{
     padding:18px;
     text-align:center;
     background:white;
 }
+
 .service-info h3{
     font-family:'Playfair Display',serif;
     font-size:21px;
     color:var(--gold);
     margin-bottom:8px;
 }
+
 .service-info p{
     font-size:12px;
     color:#777;
     margin-bottom:12px;
 }
+
 .service-link{
     display:inline-block;
+
     color:var(--dark);
     text-decoration:none;
+
     font-size:11px;
     font-weight:700;
+
     letter-spacing:1px;
     text-transform:uppercase;
+
     border-bottom:1px solid var(--gold);
+
     padding-bottom:3px;
 }
+
+
+/* ================= SERVICES / LISTE DES PRIX ================= */
+
 #liste-services{
     padding:90px 7%;
     background:white;
 }
+
 .price-container{
     max-width:900px;
     margin:auto;
 }
+
 .price-title{
     text-align:center;
     margin-bottom:45px;
 }
+
 .price-title h2{
     font-family:'Playfair Display',serif;
     color:var(--gold);
     font-size:40px;
 }
+
 .price-title p{
     margin-top:10px;
     color:#777;
     font-size:14px;
 }
+
 .price-category{
     margin-bottom:35px;
 }
+
 .price-category h3{
     font-family:'Playfair Display',serif;
     font-size:25px;
@@ -267,231 +368,474 @@ nav a:hover{
     padding-bottom:10px;
     margin-bottom:5px;
 }
+
 .price-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     padding:15px 5px;
+
     border-bottom:1px solid #eee;
+
     font-size:14px;
 }
+
 .price{
     color:var(--gold);
     font-weight:700;
 }
+
+
+/* ================= BOUTIQUE ================= */
+
 .boutique{
     padding:85px 20px;
     text-align:center;
     background:var(--pink);
 }
+
 .boutique h2{
     font-family:'Playfair Display',serif;
     font-size:38px;
     color:var(--gold);
 }
+
 .boutique p{
     max-width:600px;
     margin:15px auto;
     line-height:1.8;
     font-size:14px;
 }
+
+
+/* ================= CONTACT ================= */
+
 .contact{
     padding:80px 20px;
     text-align:center;
     background:white;
 }
+
 .contact h2{
     font-family:'Playfair Display',serif;
     font-size:35px;
     color:var(--gold);
 }
+
 .contact p{
     margin:10px 0;
     color:#666;
 }
+
 .contact a{
     color:var(--dark);
     text-decoration:none;
 }
+
+
+/* ================= FOOTER ================= */
+
 footer{
     text-align:center;
     padding:35px 20px;
+
     background:#f4dfe7;
+
     color:#6d6268;
+
     font-size:12px;
 }
+
 footer strong{
     color:var(--gold);
 }
+
+
+/* ================= MOBILE ================= */
+
 @media(max-width:900px){
+
     .services-grid{
         grid-template-columns:repeat(2,1fr);
     }
+
     nav a{
         padding:7px 9px;
         font-size:11px;
     }
 }
+
 @media(max-width:600px){
+
     header{
         padding:14px 18px;
     }
+
     .logo{
         font-size:19px;
     }
+
     nav{
         gap:3px;
     }
+
     nav a{
         font-size:10px;
         padding:6px;
     }
+
     .hero{
         min-height:80vh;
     }
+
     .hero h1{
         letter-spacing:2px;
     }
+
     .hero .subtitle{
         font-size:18px;
     }
+
     .services-grid{
         grid-template-columns:1fr;
         max-width:380px;
     }
+
     .intro h2,
     .price-title h2,
     .boutique h2{
         font-size:30px;
     }
+
     .price-row{
         font-size:13px;
     }
 }
 </style>
 </head>
+
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <div class="logo">BELLA BAY</div>
+
     <nav>
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
         <a href="#boutique">Boutique</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
+
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="accueil">
+
     <div class="hero-content">
+
         <h1>Bella Bay</h1>
-        <div class="subtitle">L’élégance au service de vos cheveux.</div>
+
+        <div class="subtitle">
+            L’élégance au service de vos cheveux.
+        </div>
+
         <p>
             Des services privés de coiffure à domicile à Montréal et Laval,
             pensés pour sublimer vos cheveux et révéler votre style.
         </p>
-        <a href="#services" class="btn">Découvrir Bella Bay</a>
+
+        <a href="#services" class="btn">
+            Découvrir Bella Bay
+        </a>
+
     </div>
+
 </section>
+
+
+<!-- ================= INTRO ================= -->
 
 <section class="intro">
+
     <h2>Votre beauté, votre style.</h2>
-    <p>Bella Bay propose une expérience de coiffure personnalisée, professionnelle et adaptée à chaque cliente.</p>
+
+    <p>
+        Bella Bay propose une expérience de coiffure personnalisée,
+        professionnelle et adaptée à chaque cliente.
+    </p>
+
 </section>
+
+
+<!-- ================= SERVICES ================= -->
 
 <section class="services" id="services">
+
     <div class="services-grid">
+
+
+        <!-- COLORATION -->
+
         <a href="#liste-services" class="service-card">
+
             <div class="service-image coloration"></div>
+
             <div class="service-info">
+
                 <h3>Coloration</h3>
-                <p>Couleur & transformations</p>
-                <span class="service-link">Voir les services</span>
+
+                <p>
+                    Couleur & transformations
+                </p>
+
+                <span class="service-link">
+                    Voir les services
+                </span>
+
             </div>
+
         </a>
+
+
+        <!-- MÈCHES -->
+
         <a href="#liste-services" class="service-card">
+
             <div class="service-image meches"></div>
+
             <div class="service-info">
+
                 <h3>Mèches</h3>
-                <p>Lumière & dimension</p>
-                <span class="service-link">Voir les services</span>
+
+                <p>
+                    Lumière & dimension
+                </p>
+
+                <span class="service-link">
+                    Voir les services
+                </span>
+
             </div>
+
         </a>
+
+
+        <!-- BALAYAGE -->
+
         <a href="#liste-services" class="service-card">
+
             <div class="service-image balayage"></div>
+
             <div class="service-info">
+
                 <h3>Balayage</h3>
-                <p>Effet naturel & personnalisé</p>
-                <span class="service-link">Voir les services</span>
+
+                <p>
+                    Effet naturel & personnalisé
+                </p>
+
+                <span class="service-link">
+                    Voir les services
+                </span>
+
             </div>
+
         </a>
+
+
+        <!-- EXTENSIONS -->
+
         <a href="#liste-services" class="service-card">
+
             <div class="service-image extensions"></div>
+
             <div class="service-info">
+
                 <h3>Extensions</h3>
-                <p>Longueur & volume</p>
-                <span class="service-link">Voir les services</span>
+
+                <p>
+                    Longueur & volume
+                </p>
+
+                <span class="service-link">
+                    Voir les services
+                </span>
+
             </div>
+
         </a>
+
+
     </div>
+
 </section>
+
+
+<!-- ================= LISTE DES PRIX ================= -->
 
 <section id="liste-services">
+
     <div class="price-container">
+
         <div class="price-title">
+
             <h2>Services Bella Bay</h2>
-            <p>Découvrez nos prestations et tarifs.</p>
+
+            <p>
+                Découvrez nos prestations et tarifs.
+            </p>
+
         </div>
+
+
         <div class="price-category">
+
             <h3>Coloration</h3>
+
             <div class="price-row">
-                <span>Coloration Signature</span>
-                <span class="price">95 $+</span>
+
+                <span>
+                    Coloration Signature
+                </span>
+
+                <span class="price">
+                    95 $+
+                </span>
+
             </div>
+
         </div>
+
+
         <div class="price-category">
+
             <h3>Mèches</h3>
+
             <div class="price-row">
-                <span>Mèches</span>
-                <span class="price">150 $+</span>
+
+                <span>
+                    Mèches
+                </span>
+
+                <span class="price">
+                    150 $+
+                </span>
+
             </div>
+
         </div>
+
+
         <div class="price-category">
+
             <h3>Balayage</h3>
+
             <div class="price-row">
-                <span>Balayage</span>
-                <span class="price">180 $+</span>
+
+                <span>
+                    Balayage
+                </span>
+
+                <span class="price">
+                    180 $+
+                </span>
+
             </div>
+
         </div>
+
+
         <div class="price-category">
+
             <h3>Extensions</h3>
+
             <div class="price-row">
-                <span>Extensions — selon la qualité et la quantité</span>
-                <span class="price">Sur mesure</span>
+
+                <span>
+                    Extensions — selon la qualité et la quantité
+                </span>
+
+                <span class="price">
+                    Sur mesure
+                </span>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
+
+
+<!-- ================= BOUTIQUE ================= -->
 
 <section class="boutique" id="boutique">
+
     <h2>Boutique Bella Bay</h2>
-    <p>Découvrez progressivement la gamme de produits capillaires Bella Bay, pensée pour prendre soin de vos cheveux et les sublimer.</p>
-    <a href="#" class="btn">Visiter la boutique</a>
+
+    <p>
+        Découvrez progressivement la gamme de produits capillaires
+        Bella Bay, pensée pour prendre soin de vos cheveux et les sublimer.
+    </p>
+
+    <a href="#" class="btn">
+        Visiter la boutique
+    </a>
+
 </section>
+
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
-    <h2>Réserver votre expérience</h2>
-    <p>Montréal & Laval</p>
-    <p><a href="tel:+15145822856">514-582-2856</a></p>
-    <p><a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
-    <a class="btn" href="#">Réserver maintenant</a>
+
+    <h2>
+        Réserver votre expérience
+    </h2>
+
+    <p>
+        Montréal & Laval
+    </p>
+
+    <p>
+        <a href="tel:+15145822856">
+            514-582-2856
+        </a>
+    </p>
+
+    <p>
+        <a href="mailto:bellabay.coiffure@gmail.com">
+            bellabay.coiffure@gmail.com
+        </a>
+    </p>
+
+    <a class="btn" href="#">
+        Réserver maintenant
+    </a>
+
 </section>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
     <strong>Bella Bay (B.B.)</strong><br>
+
     Coiffure mobile — Montréal & Laval<br><br>
+
     © 2026 Bella Bay. Tous droits réservés.
+
 </footer>
+
 
 </body>
 </html>
