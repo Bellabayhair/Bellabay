@@ -144,8 +144,8 @@ header{
 }
 
 .book{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:#171113!important;
+    background:linear-gradient(135deg,#25d366,#128c7e);
+    color:#ffffff!important;
     padding:12px 22px;
     border-radius:30px;
     font-weight:700;
@@ -225,54 +225,14 @@ header{
     transform:translateY(-3px);
 }
 
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:#151011;
+.btn-whatsapp{
+    background:linear-gradient(135deg,#25d366,#128c7e);
+    color:#ffffff;
 }
 
 .btn-outline{
     border:1px solid white;
     color:white;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-    padding:90px 8%;
-    text-align:center;
-    background:var(--pink2);
-}
-
-.intro-content{
-    max-width:850px;
-    margin:auto;
-}
-
-.eyebrow{
-    color:var(--rose-dark);
-    letter-spacing:4px;
-    font-size:10px;
-    text-transform:uppercase;
-    margin-bottom:15px;
-}
-
-.intro h2{
-    font-size:52px;
-    font-weight:500;
-}
-
-.intro h2 span{
-    color:var(--rose-dark);
-}
-
-.intro p{
-    margin-top:20px;
-    color:var(--gray);
-    line-height:2;
-    font-size:14px;
 }
 
 
@@ -383,151 +343,6 @@ header{
 
 
 /* =========================
-   BOUTIQUE BELLA BAY
-========================= */
-
-.shop{
-    padding:100px 7%;
-    background:var(--black);
-    color:white;
-}
-
-.shop .heading h2{
-    color:white;
-}
-
-.shop .heading p{
-    color:#aaa;
-}
-
-.products{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.product{
-    background:#171214;
-    border:1px solid rgba(229,202,145,.25);
-    transition:.3s;
-    text-align:center;
-}
-
-.product:hover{
-    border-color:var(--gold);
-    transform:translateY(-5px);
-}
-
-.product-visual{
-    height:330px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-        radial-gradient(circle at center, #3a252d 0%, #171214 65%);
-    position:relative;
-    overflow:hidden;
-}
-
-.product-bottle{
-    width:105px;
-    height:210px;
-    border:1px solid var(--gold-light);
-    border-radius:10px 10px 18px 18px;
-    background:linear-gradient(
-        135deg,
-        #f8dce4,
-        #c990a2
-    );
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.5),
-        0 0 25px rgba(201,164,92,.12);
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.product-bottle::before{
-    content:"";
-    position:absolute;
-    top:-22px;
-    width:42px;
-    height:24px;
-    background:#111;
-    border:1px solid var(--gold);
-    border-bottom:none;
-    border-radius:5px 5px 0 0;
-}
-
-.product-label{
-    color:#191114;
-    text-align:center;
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
-    line-height:1.1;
-}
-
-.product-label .bb{
-    display:block;
-    font-size:22px;
-    color:#8e596b;
-}
-
-.product-label .brand{
-    display:block;
-    font-size:13px;
-    letter-spacing:1px;
-    margin-top:5px;
-}
-
-.product-label .type{
-    display:block;
-    font-family:'Montserrat',sans-serif;
-    font-size:7px;
-    letter-spacing:1px;
-    margin-top:12px;
-    text-transform:uppercase;
-}
-
-.product-text{
-    padding:25px;
-}
-
-.product-text small{
-    color:var(--gold-light);
-    letter-spacing:2px;
-    font-size:9px;
-    text-transform:uppercase;
-}
-
-.product-text h3{
-    font-size:31px;
-    font-weight:500;
-    margin:5px 0 10px;
-}
-
-.product-text p{
-    color:#aaa;
-    font-size:12px;
-    line-height:1.7;
-}
-
-.product-button{
-    display:inline-block;
-    margin-top:18px;
-    padding:10px 18px;
-    border:1px solid var(--rose);
-    color:var(--pink);
-    font-size:9px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-}
-
-
-/* =========================
    SERVICE MOBILE
 ========================= */
 
@@ -535,7 +350,6 @@ header{
     padding:100px 7%;
     background:var(--black);
     color:white;
-    border-top:1px solid rgba(201,164,92,.12);
 }
 
 .mobile-grid{
@@ -767,70 +581,21 @@ footer a:hover{
 ========================= */
 
 @media(max-width:950px){
-
-    .nav{
-        display:none;
-    }
-
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .mobile-grid,
-    .story-grid{
-        grid-template-columns:1fr;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+    .nav{ display:none; }
+    .services-grid{ grid-template-columns:repeat(2,1fr); }
+    .mobile-grid, .story-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media(max-width:600px){
-
-    .topbar{
-        font-size:8px;
-        letter-spacing:1px;
-    }
-
-    .hero{
-        min-height:78vh;
-    }
-
-    .hero h1{
-        font-size:57px;
-    }
-
-    .hero p{
-        font-size:13px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .intro h2,
-    .heading h2{
-        font-size:42px;
-    }
-
-    .mobile-text h2,
-    .story-text h2,
-    .future-box h2{
-        font-size:45px;
-    }
+    .topbar{ font-size:8px; letter-spacing:1px; }
+    .hero{ min-height:78vh; }
+    .hero h1{ font-size:57px; }
+    .hero p{ font-size:13px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .heading h2{ font-size:42px; }
+    .mobile-text h2, .story-text h2, .future-box h2{ font-size:45px; }
 }
 
 </style>
@@ -845,913 +610,231 @@ footer a:hover{
 
 
 <header>
-
     <div class="navbar">
-
         <a href="#" class="logo">
-
-            <div class="logo-bb">
-                BB
-            </div>
-
-            <div class="logo-name">
-                Bella <span>Bay</span>
-            </div>
-
+            <div class="logo-bb">BB</div>
+            <div class="logo-name">Bella <span>Bay</span></div>
         </a>
-
 
         <nav class="nav">
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#mobile">
-                Service mobile
-            </a>
-
-            <a href="#boutique">
-                Boutique
-            </a>
-
-            <a href="#histoire">
-                Histoire
-            </a>
-
-            <a href="#salon">
-                Salon
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
+            <a href="#services">Services</a>
+            <a href="#mobile">Service mobile</a>
+            <a href="#histoire">Histoire</a>
+            <a href="#salon">Salon</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-
-        <a class="book"
-           href="https://www.fresha.com"
-           target="_blank">
-
-           Réserver
-
-        </a>
-
+        <a class="book" href="https://wa.me/15145822856" target="_blank">WhatsApp</a>
     </div>
-
 </header>
 
 
 <section class="hero">
-
     <div class="hero-content">
-
-        <div class="small-title">
-            Bella Bay • B.B
-        </div>
-
-        <h1>
-            Sublimez<br>
-            <span>vos cheveux.</span>
-        </h1>
-
-        <p>
-            Une expérience de coiffure professionnelle,
-            directement chez vous à Montréal, Laval
-            et sur la Rive-Nord.
-        </p>
-
+        <div class="small-title">Bella Bay • B.B</div>
+        <h1>Sublimez<br><span>vos cheveux.</span></h1>
+        <p>Une expérience de coiffure professionnelle, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
         <div class="buttons">
-
-            <a href="https://www.fresha.com"
-               target="_blank"
-               class="btn btn-gold">
-
-               Réserver dès maintenant
-
-            </a>
-
-            <a href="#services"
-               class="btn btn-outline">
-
-               Découvrir Bella Bay
-
-            </a>
-
+            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Contactez-moi sur WhatsApp</a>
+            <a href="#services" class="btn btn-outline">Découvrir Bella Bay</a>
         </div>
-
     </div>
-
-</section>
-
-
-<section class="intro">
-
-    <div class="intro-content">
-
-        <div class="eyebrow">
-            L'univers Bella Bay
-        </div>
-
-        <h2>
-            La beauté commence par
-            <span>vos cheveux.</span>
-        </h2>
-
-        <p>
-            Bella Bay offre des services privés mobiles de coiffure.
-            La marque développe également son univers de produits
-            capillaires et prépare progressivement son évolution
-            vers un salon fixe.
-        </p>
-
-    </div>
-
 </section>
 
 
 <section class="services" id="services">
-
     <div class="heading">
-
-        <div class="eyebrow">
-            Nos prestations
-        </div>
-
-        <h2>
-            Votre style,
-            <span>notre savoir-faire.</span>
-        </h2>
-
-        <p>
-            Des services personnalisés pour prendre soin
-            de votre chevelure et créer le résultat
-            que vous recherchez.
-        </p>
-
+        <div class="eyebrow">Nos prestations & Tarifs</div>
+        <h2>Votre style, <span>notre savoir-faire.</span></h2>
+        <p>Des services personnalisés pour prendre soin de votre chevelure et créer le résultat que vous recherchez.</p>
     </div>
-
 
     <div class="services-grid">
 
-
-        <!-- 01 — COLORATION DE BASE -->
-
         <article class="service">
-
-            <img
-                src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000"
-                alt="Femme avec une coloration professionnelle">
-
+            <img src="https://24tv.ua/resources/photos/news/202506/2838066_17325372.jpg?v=1748963115000" alt="Coloration de base">
             <div class="service-info">
-
-                <div class="service-number">
-                    01 — COULEUR
-                </div>
-
-                <h3>
-                    Coloration de base
-                </h3>
-
-                <p>
-                    Une coloration personnalisée adaptée à votre style.
-                </p>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">01 — COULEUR</div>
+                <h3>Coloration de base</h3>
+                <p>Une coloration personnalisée adaptée à votre style.</p>
+                <div class="service-price">À partir de 95 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 02 — COLORATION FANTAISIE -->
-
         <article class="service">
-
-            <img
-                src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg"
-                alt="Femme avec coloration créative">
-
+            <img src="https://i.pinimg.com/736x/ec/45/f2/ec45f28f3fe932bc7f0800c4f4c2982d.jpg" alt="Coloration fantaisie">
             <div class="service-info">
-
-                <div class="service-number">
-                    02 — CRÉATION
-                </div>
-
-                <h3>
-                    Coloration fantaisie
-                </h3>
-
-                <p>
-                    Une couleur créative pour un look unique et personnalisé.
-                </p>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">02 — CRÉATION</div>
+                <h3>Coloration fantaisie</h3>
+                <p>Une couleur créative pour un look unique et personnalisé.</p>
+                <div class="service-price">À partir de 120 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 03 — MÈCHES -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Femme recevant des mèches avec des feuilles d'aluminium">
-
+            <img src="https://images.pexels.com/photos/8468126/pexels-photo-8468126.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mèches">
             <div class="service-info">
-
-                <div class="service-number">
-                    03 — ÉCLAT
-                </div>
-
-                <h3>
-                    Mèches
-                </h3>
-
-                <p>
-                    Des mèches personnalisées pour apporter
-                    lumière et dimension à la chevelure.
-                </p>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">03 — ÉCLAT</div>
+                <h3>Mèches</h3>
+                <p>Des mèches personnalisées pour apporter lumière et dimension.</p>
+                <div class="service-price">À partir de 110 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 04 — CONTOURING -->
-
         <article class="service">
-
-            <img
-                src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg"
-                alt="Femme avec contouring capillaire">
-
+            <img src="https://i.pinimg.com/736x/82/f8/b5/82f8b5d2783aaad37bd3a88dfdfb0188.jpg" alt="Contouring">
             <div class="service-info">
-
-                <div class="service-number">
-                    04 — VISAGE
-                </div>
-
-                <h3>
-                    Contouring
-                </h3>
-
-                <p>
-                    Une technique personnalisée pour illuminer
-                    et encadrer le visage.
-                </p>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">04 — VISAGE</div>
+                <h3>Contouring</h3>
+                <p>Une technique personnalisée pour illuminer et encadrer le visage.</p>
+                <div class="service-price">À partir de 90 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 05 — BALAYAGE -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Femme avec balayage très blond lumineux">
-
+            <!-- VOTRE IMAGE DE BALAYAGE INTÉGRÉE ICI -->
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Ombré Hair & Balayage">
             <div class="service-info">
-
-                <div class="service-number">
-                    05 — LUMIÈRE
-                </div>
-
-                <h3>
-                    Balayage
-                </h3>
-
-                <p>
-                    Un balayage personnalisé aux transitions
-                    douces et lumineuses.
-                </p>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">05 — LUMIÈRE</div>
+                <h3>Ombré Hair & Balayage</h3>
+                <p>Un dégradé de couleur fondu et ultra-lumineux, des racines aux pointes[span_0](start_span)[span_0](end_span).</p>
+                <div class="service-price">À partir de 130 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 06 — TRAITEMENT CAPILLAIRE -->
-
         <article class="service">
-
-            <img
-                src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Femme recevant un traitement capillaire">
-
+            <img src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Traitement capillaire">
             <div class="service-info">
-
-                <div class="service-number">
-                    06 — SOIN
-                </div>
-
-                <h3>
-                    Traitement capillaire
-                </h3>
-
-                <p>
-                    Un service de soin personnalisé
-                    pour votre chevelure.
-                </p>
-
-                <div class="service-price">
-                    À partir de 80 $
-                </div>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">06 — SOIN</div>
+                <h3>Traitement capillaire</h3>
+                <p>Un service de soin personnalisé pour votre chevelure.</p>
+                <div class="service-price">À partir de 80 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 07 — BOTOX CAPILLAIRE -->
-
         <article class="service">
-
-            <img
-                src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png"
-                alt="Transformation avant après Botox capillaire">
-
+            <img src="https://images.squarespace-cdn.com/content/v1/62aa2db8cdfa043fb90749f2/50bb2e0e-0cf7-42f9-9d34-b5b6cd7bf171/Beige%2BMinimalistic%2BBefore%2BAnd%2BAfter%2BInstagram%2BPost.png" alt="Botox capillaire">
             <div class="service-info">
-
-                <div class="service-number">
-                    07 — RÉPARATION
-                </div>
-
-                <h3>
-                    Botox capillaire
-                </h3>
-
-                <p>
-                    Une prestation capillaire personnalisée
-                    réalisée à domicile.
-                </p>
-
-                <div class="service-price">
-                    À partir de 140 $
-                </div>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">07 — RÉPARATION</div>
+                <h3>Botox capillaire</h3>
+                <p>Une prestation capillaire personnalisée réalisée à domicile.</p>
+                <div class="service-price">À partir de 140 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
-
-        <!-- 08 — LISSAGE À LA KÉRATINE -->
-
         <article class="service">
-
-            <img
-                src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886"
-                alt="Transformation avant après lissage à la kératine">
-
+            <img src="https://cdn11.bigcommerce.com/s-erqth8a135/images/stencil/original/image-manager/collage3.jpg?t=1759875886" alt="Lissage à la kératine">
             <div class="service-info">
-
-                <div class="service-number">
-                    08 — LISSAGE
-                </div>
-
-                <h3>
-                    Lissage à la kératine
-                </h3>
-
-                <p>
-                    Une prestation de lissage personnalisée
-                    directement à votre domicile.
-                </p>
-
-                <div class="service-price">
-                    À partir de 180 $
-                </div>
-
-                <a href="https://www.fresha.com"
-                   target="_blank"
-                   class="service-link">
-                   Réserver →
-                </a>
-
+                <div class="service-number">08 — LISSAGE</div>
+                <h3>Lissage à la kératine</h3>
+                <p>Une prestation de lissage personnalisée directement à votre domicile.</p>
+                <div class="service-price">À partir de 180 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
             </div>
-
         </article>
 
+        <article class="service">
+            <img src="https://images.pexels.com/photos/30691549/pexels-photo-30691549.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Extensions capillaires">
+            <div class="service-info">
+                <div class="service-number">09 — LONGUEUR</div>
+                <h3>Extensions capillaires</h3>
+                <p>Pose d'extensions sur mesure pour ajouter longueur et volume.</p>
+                <div class="service-price">Pose à partir de 120 $</div>
+                <a href="#services" class="service-link">Découvrir →</a>
+            </div>
+        </article>
 
     </div>
-
-</section>
-
-
-<section class="shop" id="boutique">
-
-    <div class="heading">
-
-        <div class="eyebrow" style="color:var(--gold-light);">
-            Bella Bay
-        </div>
-
-        <h2>
-            Boutique <span>Bella Bay</span>
-        </h2>
-
-        <p>
-            Découvrez prochainement les produits capillaires
-            Bella Bay directement sur notre site internet.
-        </p>
-
-    </div>
-
-
-    <div class="products">
-
-
-        <!-- SHAMPOOING -->
-
-        <div class="product">
-
-            <div class="product-visual">
-
-                <div class="product-bottle">
-
-                    <div class="product-label">
-
-                        <span class="bb">
-                            B.B
-                        </span>
-
-                        <span class="brand">
-                            BELLA BAY
-                        </span>
-
-                        <span class="type">
-                            Shampooing
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-text">
-
-                <small>
-                    Bientôt disponible
-                </small>
-
-                <h3>
-                    Shampooing
-                </h3>
-
-                <p>
-                    Le shampooing Bella Bay sera bientôt
-                    disponible en ligne.
-                </p>
-
-                <span class="product-button">
-                    Bientôt disponible
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- REVITALISANT -->
-
-        <div class="product">
-
-            <div class="product-visual">
-
-                <div class="product-bottle">
-
-                    <div class="product-label">
-
-                        <span class="bb">
-                            B.B
-                        </span>
-
-                        <span class="brand">
-                            BELLA BAY
-                        </span>
-
-                        <span class="type">
-                            Revitalisant
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-text">
-
-                <small>
-                    Bientôt disponible
-                </small>
-
-                <h3>
-                    Revitalisant
-                </h3>
-
-                <p>
-                    Le revitalisant Bella Bay sera bientôt
-                    disponible en ligne.
-                </p>
-
-                <span class="product-button">
-                    Bientôt disponible
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- MASQUE CAPILLAIRE -->
-
-        <div class="product">
-
-            <div class="product-visual">
-
-                <div class="product-bottle">
-
-                    <div class="product-label">
-
-                        <span class="bb">
-                            B.B
-                        </span>
-
-                        <span class="brand">
-                            BELLA BAY
-                        </span>
-
-                        <span class="type">
-                            Masque capillaire
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-text">
-
-                <small>
-                    Bientôt disponible
-                </small>
-
-                <h3>
-                    Masque capillaire
-                </h3>
-
-                <p>
-                    Le masque capillaire Bella Bay sera bientôt
-                    disponible en ligne.
-                </p>
-
-                <span class="product-button">
-                    Bientôt disponible
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
 </section>
 
 
 <section class="mobile" id="mobile">
-
     <div class="mobile-grid">
-
-
         <div class="mobile-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=85"
-                alt="Femme recevant un service de coiffure à domicile">
-
+            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=85" alt="Service mobile">
         </div>
-
-
         <div class="mobile-text">
-
-            <div class="eyebrow" style="color:var(--gold-light);">
-                À domicile
-            </div>
-
-            <h2>
-                Service
-                <span>Mobile</span>
-                d'Exception
-            </h2>
-
-            <p>
-                Profitez d'une prestation de coiffure
-                professionnelle directement chez vous.
-                Bella Bay se déplace sur rendez-vous
-                pour vous offrir une expérience personnalisée.
-            </p>
-
+            <div class="eyebrow" style="color:var(--gold-light);">À domicile</div>
+            <h2>Service <span>Mobile</span> d'Exception</h2>
+            <p>Profitez d'une prestation de coiffure professionnelle directement chez vous. Bella Bay se déplace sur rendez-vous pour vous offrir une expérience personnalisée.</p>
             <div class="area">
-
-                <span>
-                    MONTRÉAL
-                </span>
-
-                <span>
-                    LAVAL
-                </span>
-
-                <span>
-                    RIVE-NORD
-                </span>
-
+                <span>MONTRÉAL</span>
+                <span>LAVAL</span>
+                <span>RIVE-NORD</span>
             </div>
-
-            <a href="https://www.fresha.com"
-               target="_blank"
-               class="btn btn-gold">
-
-               Prendre rendez-vous
-
-            </a>
-
+            <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Discuter sur WhatsApp</a>
         </div>
-
     </div>
-
 </section>
 
 
 <section class="story" id="histoire">
-
     <div class="story-grid">
-
-
         <div class="story-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
-                alt="Femme représentant l'univers Bella Bay">
-
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85" alt="Histoire">
         </div>
-
-
         <div class="story-text">
-
-            <div class="eyebrow">
-                Notre Philosophie
-            </div>
-
-            <h2>
-                L'Art de la
-                <span>Coiffure</span>
-            </h2>
-
-            <p>
-                Bella Bay est née d'une vision simple :
-                offrir une coiffure de qualité et des produits
-                de qualité pour sublimer vos cheveux.
-            </p>
-
-            <p>
-                Aujourd'hui, Bella Bay offre déjà des services
-                privés mobiles et prépare progressivement son
-                évolution vers un salon fixe et une boutique.
-            </p>
-
-
+            <div class="eyebrow">Notre Philosophie</div>
+            <h2>L'Art de la <span>Coiffure</span></h2>
+            <p>Bella Bay est née d'une vision simple : offrir une coiffure de qualité pour sublimer vos cheveux.</p>
+            <p>Aujourd'hui, Bella Bay offre des services privés mobiles et prépare son évolution vers un salon fixe.</p>
             <div class="values">
-
-
-                <div class="value">
-
-                    <strong>
-                        Qualité
-                    </strong>
-
-                    Des services pensés avec soin
-                    pour chaque cliente.
-
-                </div>
-
-
-                <div class="value">
-
-                    <strong>
-                        Écoute
-                    </strong>
-
-                    Une approche personnalisée
-                    selon vos besoins.
-
-                </div>
-
-
+                <div class="value"><strong>Qualité</strong>Des services pensés avec soin.</div>
+                <div class="value"><strong>Écoute</strong>Une approche personnalisée.</div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 
 <section class="future" id="salon">
-
     <div class="future-box">
-
-        <div class="eyebrow">
-            Projet futur
-        </div>
-
-        <h2>
-            Notre Futur
-            <span>Salon Physique</span>
-        </h2>
-
-        <p>
-            En attendant l'ouverture officielle de notre
-            espace de beauté physique, Bella Bay continue
-            de vous sublimer grâce à son service mobile
-            et prépare le développement de sa boutique
-            en ligne.
-        </p>
-
-        <a href="https://www.fresha.com"
-           target="_blank"
-           class="btn btn-gold"
-           style="background:var(--black);color:white;">
-
-           Réserver une prestation
-
-        </a>
-
+        <div class="eyebrow">Projet futur</div>
+        <h2>Notre Futur <span>Salon Physique</span></h2>
+        <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
+        <a href="https://wa.me/15145822856" target="_blank" class="btn btn-whatsapp">Découvrir les disponibilités</a>
     </div>
-
 </section>
 
 
 <footer id="contact">
-
     <div class="footer-grid">
-
-
         <div class="footer-brand">
-
-            <h3>
-                Bella <span>Bay</span> (B.B)
-            </h3>
-
-            <p>
-                Coiffure professionnelle à Montréal,
-                Laval et sur la Rive-Nord.
-            </p>
-
+            <h3>Bella <span>Bay</span> (B.B)</h3>
+            <p>Coiffure professionnelle à Montréal, Laval et sur la Rive-Nord.</p>
         </div>
-
-
         <div>
-
-            <h4>
-                Navigation
-            </h4>
-
-            <a href="#services">
-                Services
-            </a>
-            <br>
-
-            <a href="#mobile">
-                Service mobile
-            </a>
-            <br>
-
-            <a href="#boutique">
-                Boutique
-            </a>
-            <br>
-
-            <a href="#histoire">
-                Histoire
-            </a>
-            <br>
-
-            <a href="#salon">
-                Salon
-            </a>
-
+            <h4>Navigation</h4>
+            <a href="#services">Services</a><br>
+            <a href="#mobile">Service mobile</a><br>
+            <a href="#histoire">Histoire</a><br>
+            <a href="#salon">Salon</a>
         </div>
-
-
         <div>
-
-            <h4>
-                Contact
-            </h4>
-
-            <p>
-                📞 514-582-2856
-            </p>
-
-            <p>
-                ✉️
-                <a href="mailto:bellabay.coiffure@gmail.com"
-                   style="color:#999;">
-                   bellabay.coiffure@gmail.com
-                </a>
-            </p>
-
-            <p>
-                📍 Montréal, Laval, Rive-Nord
-            </p>
-
+            <h4>Contact</h4>
+            <p>📞 514-582-2856</p>
+            <p>✉️ <a href="mailto:bellabay.coiffure@gmail.com" style="color:#999;">bellabay.coiffure@gmail.com</a></p>
+            <p>📍 Montréal, Laval, Rive-Nord</p>
         </div>
-
-
         <div>
-
-            <h4>
-                Réservation & Suivi
-            </h4>
-
-            <a href="https://www.fresha.com"
-               target="_blank">
-
-               Plateforme Fresha
-
-            </a>
-
-            <br>
-
-            <p style="margin-top:10px;">
-                Instagram : @bellabay.ca
-            </p>
-
+            <h4>Contact & Réseau</h4>
+            <a href="https://wa.me/15145822856" target="_blank">WhatsApp Direct</a><br>
+            <p style="margin-top:10px;">Instagram : @bellabay.ca</p>
         </div>
-
     </div>
-
-
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Bella Bay (B.B)
-            — Tous droits réservés.
-        </p>
-
+        <p>© 2026 Bella Bay (B.B) — Tous droits réservés.</p>
     </div>
-
 </footer>
-
 
 </body>
 </html>
+
+```
