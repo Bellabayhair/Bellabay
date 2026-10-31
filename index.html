@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella Bay - Coiffure & Beauté</title>
     <style>
+        :root {
+            --primary-pink: #fce4ec;
+            --deep-pink: #d81b60;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --gold-accent: #c5a059;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,309 +21,170 @@
         }
 
         body {
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: var(--primary-pink);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        .top-bar {
-            background-color: #000000;
-            color: #dcdcdc;
-            text-align: center;
-            font-size: 0.75rem;
-            padding: 6px 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
         header {
-            background: #ffffff;
-            color: #333333;
-            padding: 12px 20px;
+            background: var(--white);
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-badge {
-            background: #1a1a1a;
-            color: #ffffff;
+            background: var(--text-dark);
+            color: var(--white);
             padding: 8px 12px;
             font-weight: bold;
             border-radius: 4px;
             font-size: 0.9rem;
+        }
+
+        .logo-title {
+            font-size: 1.5rem;
             letter-spacing: 1px;
-        }
-
-        .logo-text h1 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c2c2c;
-            letter-spacing: 0.5px;
-        }
-
-        .logo-text span {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #777777;
+            color: var(--text-dark);
         }
 
         .menu-icon {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #333333;
         }
 
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
-            padding: 40px 20px 50px 20px;
+        .main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.1);
+        }
+
+        h1 {
             text-align: center;
-        }
-
-        .site-url {
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .hero-subtitle-top {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #dfd8d0;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 2.1rem;
-            font-weight: 400;
-            line-height: 1.25;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 span {
-            font-style: italic;
-        }
-
-        .hero-description {
-            font-size: 0.9rem;
-            color: #e2e2e2;
-            max-width: 600px;
-            margin: 0 auto 35px auto;
-            line-height: 1.6;
-        }
-
-        .btn-primary {
-            display: block;
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
-            background-color: #c59b67;
-            color: #ffffff;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            border-radius: 2px;
-            border: none;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #b08755;
-        }
-
-        .btn-outline {
-            display: block;
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
-            background-color: transparent;
-            color: #ffffff;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            border-radius: 2px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            transition: background 0.3s;
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .services-section {
-            background-color: #ffffff;
-            color: #333333;
-            padding: 50px 20px;
-        }
-
-        .services-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .services-section h3 {
-            text-align: center;
-            font-size: 1.8rem;
-            color: #d81b60;
+            color: var(--deep-pink);
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        .services-subtitle {
+        .subtitle {
             text-align: center;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 40px;
-            font-size: 0.95rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background: #fdf2f4;
+        .card {
             border: 1px solid #f8bbd0;
-            padding: 20px;
             border-radius: 8px;
-            transition: transform 0.2s;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fff;
+            transition: transform 0.2s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-3px);
+        .card:hover {
+            transform: translateY(-2px);
         }
 
-        .service-card h4 {
-            color: #d81b60;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+        .card h2 {
+            font-size: 1.2rem;
+            color: var(--deep-pink);
+            margin-bottom: 10px;
         }
 
-        .service-card p {
-            font-size: 0.85rem;
+        .card p {
+            font-size: 0.95rem;
             color: #555;
         }
 
-        .footer-info {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #cccccc;
-            margin-top: 20px;
+        .cta-card {
+            background: #fce4ec;
+            border: 2px solid var(--deep-pink);
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--deep-pink);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ad1457;
+        }
+
+        .link-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--deep-pink);
+            word-break: break-all;
+            text-decoration: underline;
         }
 
         footer {
-            background-color: #111;
-            color: #aaa;
             text-align: center;
-            padding: 25px;
-            font-size: 0.8rem;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        Bella Bay - Coiffure & Beauté · Montréal · Laval · Rive-Nord[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span)
-    </div>
-
     <header>
         <div class="logo-container">
             <div class="logo-badge">B.B</div>
-            <div class="logo-text">
-                <h1>Bella Bay</h1>
-                <span>Coiffure & Beauté</span>
-            </div>
+            <div class="logo-title">Bella Bay</div>
         </div>
         <div class="menu-icon">&#9776;</div>
     </header>
 
-    <section class="hero">
-        <div class="site-url">Bellabay.ca</div>
-        
-        <div class="hero-subtitle-top">Votre beauté, notre signature</div>
-        
-        <h2>Révélez la beauté de vos cheveux avec <span>Bella Bay</span>.</h2>
-        
-        <p class="hero-description">
-            Des services de coiffure personnalisés, des soins professionnels et une attention portée à chaque détail. Bella Bay vient à vous pour sublimer vos cheveux, dans le confort de votre domicile[span_5](start_span)[span_5](end_span).
-        </p>
+    <div class="main-container">
+        <h1>Bella Bay x Cabelo.ca</h1>
+        <div class="subtitle">Partenaire Officiel & Produits Professionnels Haut de Gamme</div>
 
-        <a href="#services" class="btn-primary">Découvrir nos services</a>
-        <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="btn-outline" target="_blank">Explorer la boutique</a>
-
-        <div class="footer-info">
-            Service mobile • Montréal • Laval • Rive-Nord[span_6](start_span)[span_6](end_span)
+        <div class="card">
+            <h2>1. Produits Professionnels Exclusifs</h2>
+            <p>Accédez aux plus grandes marques de coiffure professionnelles (Euforia, Keralisk, etc.) recommandées pour vos cheveux et vos extensions[span_1](start_span)[span_1](end_span).</p>
         </div>
-    </section>
 
-    <section id="services" class="services-section">
-        <div class="services-container">
-            <h3>Nos Services Professionnels</h3>
-            <p class="services-subtitle">Découvrez notre gamme complète de prestations à domicile</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4>1. Coloration & Retouches</h4>
-                    <p>Coloration sur mesure, balayages et mèches réalisés directement chez vous avec des produits haut de gamme.</p>
-                </div>
-                <div class="service-card">
-                    <h4>2. Soins Capillaires Profonds</h4>
-                    <p>Traitements hydratants et réparateurs pour redonner brillance et santé à votre chevelure.</p>
-                </div>
-                <div class="service-card">
-                    <h4>3. Extensions (Clip-in / Tape-in)</h4>
-                    <p>Pose et entretien d'extensions capillaires de qualité supérieure pour un volume et une longueur instantanés.</p>
-                </div>
-                <div class="service-card">
-                    <h4>4. Perruques HD Lace (613)</h4>
-                    <p>Conseils, pose et personnalisation de perruques frontales en dentelle HD pour un rendu ultra-naturel.</p>
-                </div>
-                <div class="service-card">
-                    <h4>5. Coiffure Événementielle</h4>
-                    <p>Chignons, tresses et mise en plie élégantes pour vos mariages, soirées et grandes occasions.</p>
-                </div>
-                <div class="service-card">
-                    <h4>6. Coupe & Brushing</h4>
-                    <p>Coupes tendance et brushings impeccables adaptés à la forme de votre visage et à votre style.</p>
-                </div>
-                <div class="service-card">
-                    <h4>7. Boutiques & Partenaires Cabelo</h4>
-                    <p>Accès à nos recommandations de produits professionnels de salon livrés directement chez vous[span_7](start_span)[span_7](end_span).</p>
-                </div>
-                <div class="service-card">
-                    <h4>8. Espace Beauté & Accessoires</h4>
-                    <p>Sélection d'accessoires de coiffure et de beauté sélectionnés avec soin pour prendre soin de vous.</p>
-                </div>
-                <div class="service-card">
-                    <h4>9. Consultation Beauté Personnalisée</h4>
-                    <p>Diagnostic capillaire et conseils sur mesure pour entretenir vos cheveux au quotidien à la maison.</p>
-                </div>
-            </div>
+        <div class="card">
+            <h2>2. Commandez en Ligne au Canada</h2>
+            <p>Profitez d'une livraison rapide partout au pays et d'une sélection de qualité salon directement chez vous à Laval et Montréal[span_2](start_span)[span_2](end_span).</p>
         </div>
-    </section>
+
+        <div class="cta-card">
+            <h2>CLIQUEZ ICI POUR DÉCOUVRIR LA BOUTIQUE</h2>
+            <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="cta-button" target="_blank">Visiter la boutique</a>
+            <span class="link-text">https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca</span>
+        </div>
+    </div>
 
     <footer>
-        <p>© 2026 Bella Bay - Service Mobile de Coiffure et Beauté • Montréal, Laval & Rive-Nord[span_8](start_span)[span_8](end_span)</p>
+        <p>Service Mobile • Montréal • Laval • Rive-Nord</p>
     </footer>
 
 </body>
