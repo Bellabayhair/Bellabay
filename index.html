@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella Bay - Coiffure & Beauté</title>
     <style>
+        /* ==========================================
+           RESET & STYLES GLOBAUX
+           ========================================== */
         * {
             margin: 0;
             padding: 0;
@@ -18,26 +21,33 @@
             line-height: 1.6;
         }
 
-        /* Barre supérieure */
+        /* ==========================================
+           BARRE SUPÉRIEURE
+           ========================================== */
         .top-bar {
             background-color: #000000;
             color: #dcdcdc;
             text-align: center;
             font-size: 0.75rem;
-            padding: 6px 10px;
+            padding: 8px 10px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* En-tête principal */
+        /* ==========================================
+           HEADER / EN-TÊTE
+           ========================================== */
         header {
             background: #ffffff;
             color: #333333;
-            padding: 12px 20px;
+            padding: 15px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo-container {
@@ -71,16 +81,18 @@
         }
 
         .menu-icon {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
             color: #333333;
         }
 
-        /* Section Héro */
+        /* ==========================================
+           SECTION HÉRO (ACCUEIL)
+           ========================================== */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
-            padding: 40px 20px 50px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 50px 20px 60px 20px;
             text-align: center;
         }
 
@@ -101,7 +113,7 @@
         }
 
         .hero h2 {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 400;
             line-height: 1.25;
             color: #ffffff;
@@ -113,19 +125,27 @@
         }
 
         .hero-description {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #e2e2e2;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 35px auto;
             line-height: 1.6;
         }
 
-        /* Boutons d'action */
+        /* ==========================================
+           BOUTONS D'ACTION
+           ========================================== */
+        .btn-container {
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
         .btn-primary {
             display: block;
             width: 100%;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
             background-color: #c59b67;
             color: #ffffff;
             padding: 14px 20px;
@@ -146,8 +166,6 @@
         .btn-outline {
             display: block;
             width: 100%;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
             background-color: transparent;
             color: #ffffff;
             padding: 14px 20px;
@@ -157,7 +175,7 @@
             letter-spacing: 1.5px;
             font-weight: 600;
             border-radius: 2px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             transition: background 0.3s;
         }
 
@@ -165,43 +183,31 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        .btn-nails {
-            display: block;
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 30px auto;
-            background-color: #d81b60;
-            color: #ffffff;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
+        .footer-info {
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            border-radius: 2px;
-            border: none;
-            transition: background 0.3s;
+            letter-spacing: 1px;
+            color: #cccccc;
+            margin-top: 25px;
         }
 
-        .btn-nails:hover {
-            background-color: #ad1457;
-        }
-
-        /* Section des services détaillés */
+        /* ==========================================
+           SECTION DES 9 SERVICES DÉTAILLÉS
+           ========================================== */
         .services-section {
             background-color: #ffffff;
             color: #333333;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         .services-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .services-section h3 {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #d81b60;
             margin-bottom: 10px;
         }
@@ -209,53 +215,97 @@
         .services-subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 40px;
-            font-size: 0.95rem;
+            margin-bottom: 45px;
+            font-size: 1rem;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
             background: #fdf2f4;
             border: 1px solid #f8bbd0;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .service-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(216, 27, 96, 0.1);
         }
 
         .service-card h4 {
             color: #d81b60;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
         }
 
         .service-card p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #555;
+            line-height: 1.5;
         }
 
-        .footer-info {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #cccccc;
-            margin-top: 20px;
-        }
-
-        footer {
-            background-color: #111;
-            color: #aaa;
+        /* ==========================================
+           SECTION PARTENAIRES (Cabelo)
+           ========================================== */
+        .partners-section {
+            background-color: #f7f3f0;
+            color: #333333;
+            padding: 50px 20px;
             text-align: center;
-            padding: 25px;
-            font-size: 0.8rem;
+            border-top: 1px solid #e5d8d0;
+        }
+
+        .partners-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .partners-section h3 {
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            margin-bottom: 15px;
+        }
+
+        .partners-section p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .partner-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e0d0c5;
+        }
+
+        .partner-box h4 {
+            color: #c59b67;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* ==========================================
+           PIED DE PAGE (FOOTER)
+           ========================================== */
+        footer {
+            background-color: #111111;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -263,7 +313,7 @@
 
     <!-- Barre info supérieure -->
     <div class="top-bar">
-        Bella Bay - Coiffure & Beauté · Montréal · Laval · Rive-Nord[span_0](start_span)[span_0](end_span)
+        Bella Bay - Coiffure & Beauté · Montréal · Laval · Rive-Nord[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span)
     </div>
 
     <!-- En-tête -->
@@ -287,67 +337,82 @@
         <h2>Révélez la beauté de vos cheveux avec <span>Bella Bay</span>.</h2>
         
         <p class="hero-description">
-            Des services de coiffure personnalisés, des soins professionnels et une attention portée à chaque détail. Bella Bay vient à vous pour sublimer vos cheveux, dans le confort de votre domicile[span_1](start_span)[span_1](end_span).
+            Des services de coiffure personnalisés, des soins professionnels et une attention portée à chaque détail. Bella Bay vient à vous pour sublimer vos cheveux, dans le confort de votre domicile[span_2](start_span)[span_2](end_span).
         </p>
 
-        <a href="#services" class="btn-primary">Découvrir nos services</a>
-        <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="btn-outline" target="_blank">Explorer la boutique Cabelo</a>
-        <a href="https://siyounails.com?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" class="btn-nails" target="_blank">💅 Siyou Nails / bbNails (10% rabais code: BELLA)[span_2](start_span)[span_2](end_span)</a>
+        <div class="btn-container">
+            <a href="#services" class="btn-primary">Découvrir nos services</a>
+            <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="btn-outline" target="_blank">Explorer la boutique Cabelo[span_3](start_span)[span_3](end_span)</a>
+        </div>
 
         <div class="footer-info">
-            Service mobile • Montréal • Laval • Rive-Nord[span_3](start_span)[span_3](end_span)
+            Service mobile • Montréal • Laval • Rive-Nord[span_4](start_span)[span_4](end_span)
         </div>
     </section>
 
     <!-- Section des 9 Services Détaillés -->
     <section id="services" class="services-section">
         <div class="services-container">
-            <h3>Nos Services Professionnels</h3>
-            <p class="services-subtitle">Découvrez notre gamme complète de prestations à domicile</p>
+            <h3>Nos 9 Services Professionnels</h3>
+            <p class="services-subtitle">Découvrez notre gamme complète de prestations à domicile et nos boutiques partenaires</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <h4>1. Coloration & Retouches</h4>
-                    <p>Coloration sur mesure, balayages et mèches réalisés directement chez vous avec des produits haut de gamme.</p>
+                    <p>Coloration sur mesure, balayages et mèches réalisés directement chez vous avec des produits haut de gamme adaptés à vos cheveux.</p>
                 </div>
                 <div class="service-card">
                     <h4>2. Soins Capillaires Profonds</h4>
-                    <p>Traitements hydratants et réparateurs pour redonner brillance et santé à votre chevelure.</p>
+                    <p>Traitements hydratants et réparateurs intenses pour redonner brillance, force et santé à votre chevelure au quotidien.</p>
                 </div>
                 <div class="service-card">
                     <h4>3. Extensions (Clip-in / Tape-in)</h4>
-                    <p>Pose et entretien d'extensions capillaires de qualité supérieure pour un volume et une longueur instantanés.</p>
+                    <p>Pose experte et entretien d'extensions capillaires de qualité supérieure pour un volume et une longueur instantanés.</p>
                 </div>
                 <div class="service-card">
                     <h4>4. Perruques HD Lace (613)</h4>
-                    <p>Conseils, pose et personnalisation de perruques frontales en dentelle HD pour un rendu ultra-naturel.</p>
+                    <p>Conseils, pose et personnalisation professionnelle de perruques frontales en dentelle HD pour un rendu ultra-naturel.</p>
                 </div>
                 <div class="service-card">
                     <h4>5. Coiffure Événementielle</h4>
-                    <p>Chignons, tresses et mise en plie élégantes pour vos mariages, soirées et grandes occasions.</p>
+                    <p>Chignons élégants, tresses sophistiquées et mises en pli parfaites pour vos mariages, soirées et grandes occasions.</p>
                 </div>
                 <div class="service-card">
                     <h4>6. Coupe & Brushing</h4>
-                    <p>Coupes tendance et brushings impeccables adaptés à la forme de votre visage et à votre style.</p>
+                    <p>Coupes tendance et brushings impeccables adaptés à la morphologie de votre visage et à votre style de vie.</p>
                 </div>
                 <div class="service-card">
                     <h4>7. Boutiques & Partenaires Cabelo</h4>
-                    <p>Accès à nos recommandations de produits professionnels de salon livrés directement chez vous[span_4](start_span)[span_4](end_span).</p>
+                    <p>Accès à notre sélection exclusive de produits de coiffure professionnels haut de gamme livrés directement chez vous[span_5](start_span)[span_5](end_span).</p>
                 </div>
                 <div class="service-card">
-                    <h4>8. Espace Ongles & Beauté (bbNails)</h4>
-                    <p>Sélection exclusive de press-on nails et accessoires ongulaires avec notre code partenaire Siyou Nails.</p>
+                    <h4>8. Espace Beauté & Accessoires</h4>
+                    <p>Sélection d'accessoires de coiffure et de beauté sélectionnés avec soin pour prendre soin de vous au quotidien.</p>
                 </div>
                 <div class="service-card">
                     <h4>9. Consultation Beauté Personnalisée</h4>
-                    <p>Diagnostic capillaire et conseils sur mesure pour entretenir vos cheveux au quotidien à la maison.</p>
+                    <p>Diagnostic capillaire sur mesure et conseils d'experts pour entretenir vos cheveux et optimiser votre routine à la maison.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Section Partenaires / Boutique en Ligne -->
+    <section class="partners-section">
+        <div class="partners-container">
+            <h3>Notre Boutique Partenaire Officielle</h3>
+            <p>Profitez de recommandations professionnelles sélectionnées par Bella Bay.</p>
+
+            <div class="partner-box">
+                <h4>Boutique Cabelo.ca</h4>
+                <p>Produits professionnels de salon (Euforia, Keralisk, etc.) recommandés pour vos cheveux et extensions[span_6](start_span)[span_6](end_span).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
     <footer>
-        <p>© 2026 Bella Bay - Service Mobile de Coiffure et Beauté • Montréal, Laval & Rive-Nord[span_5](start_span)[span_5](end_span)</p>
+        <p>© 2026 Bella Bay - Service Mobile de Coiffure et Beauté • Montréal, Laval & Rive-Nord[span_7](start_span)[span_7](end_span)</p>
     </footer>
 
 </body>
