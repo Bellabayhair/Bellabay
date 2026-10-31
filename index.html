@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella Bay - Coiffure & Beauté</title>
     <style>
-        *, *::before, *::after { box-sizing: border-box; }
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Playfair Display', serif, sans-serif;
         }
 
         body {
-            background-color: #2b2b2b;
+            background-color: #1a1a1a;
             color: #ffffff;
             line-height: 1.6;
         }
 
         .top-bar {
             background-color: #000000;
-            color: #cccccc;
+            color: #dcdcdc;
             text-align: center;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             padding: 6px 10px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
@@ -55,14 +55,14 @@
         }
 
         .logo-text h1 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #2c2c2c;
             letter-spacing: 0.5px;
         }
 
         .logo-text span {
-            font-size: 0.55rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #777777;
@@ -76,34 +76,33 @@
 
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
-            padding: 35px 20px 45px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            padding: 40px 20px 50px 20px;
             text-align: center;
         }
 
         .site-url {
-            font-size: 1rem;
-            letter-spacing: 1.5px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 300;
-            text-transform: lowercase;
         }
 
         .hero-subtitle-top {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #e5ded8;
-            margin-bottom: 12px;
+            letter-spacing: 2px;
+            color: #dfd8d0;
+            margin-bottom: 15px;
         }
 
         .hero h2 {
-            font-size: 1.9rem;
+            font-size: 2.1rem;
             font-weight: 400;
             line-height: 1.25;
             color: #ffffff;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .hero h2 span {
@@ -111,165 +110,132 @@
         }
 
         .hero-description {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #e2e2e2;
-            max-width: 550px;
-            margin: 0 auto 30px auto;
-            line-height: 1.5;
-        }
-
-        .btn-container {
-            max-width: 420px;
-            margin: 0 auto;
-            display: block;
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
         }
 
         .btn-primary {
             display: block;
             width: 100%;
-            margin: 0 auto 12px auto;
+            max-width: 450px;
+            margin: 0 auto 15px auto;
             background-color: #c59b67;
             color: #ffffff;
-            padding: 13px 20px;
+            padding: 14px 20px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
             border-radius: 2px;
             border: none;
-            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #b08755;
         }
 
         .btn-outline {
             display: block;
             width: 100%;
-            margin: 0 auto 25px auto;
+            max-width: 450px;
+            margin: 0 auto 15px auto;
             background-color: transparent;
             color: #ffffff;
-            padding: 13px 20px;
+            padding: 14px 20px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
             border-radius: 2px;
             border: 1px solid rgba(255, 255, 255, 0.6);
-            text-align: center;
+            transition: background 0.3s;
         }
 
-        .footer-info {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #dcdcdc;
-            margin-top: 15px;
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .services-section {
             background-color: #ffffff;
             color: #333333;
-            padding: 45px 20px;
+            padding: 50px 20px;
         }
 
         .services-container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .services-section h3 {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #d81b60;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .services-subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 35px;
-            font-size: 0.9rem;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .service-card {
             background: #fdf2f4;
             border: 1px solid #f8bbd0;
-            padding: 18px;
-            border-radius: 6px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
         }
 
         .service-card h4 {
             color: #d81b60;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .service-card p {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: #555;
         }
 
-        .partners-section {
-            background-color: #f7f3f0;
-            color: #333333;
-            padding: 45px 20px;
-            text-align: center;
-            border-top: 1px solid #e5d8d0;
-        }
-
-        .partners-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .partners-section h3 {
-            font-size: 1.6rem;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-        }
-
-        .partners-section p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .partner-box {
-            background: #ffffff;
-            padding: 18px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            border: 1px solid #e0d0c5;
-            text-align: left;
-        }
-
-        .partner-box h4 {
-            color: #c59b67;
-            margin-bottom: 6px;
-            font-size: 1.05rem;
+        .footer-info {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #cccccc;
+            margin-top: 20px;
         }
 
         footer {
             background-color: #111;
-            color: #999;
+            color: #aaa;
             text-align: center;
-            padding: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 25px;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        Bella Bay - Coiffure & Beauté · Montréal · Laval · Rive-Nord[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span)
+        Bella Bay - Coiffure & Beauté · Montréal · Laval · Rive-Nord[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span)
     </div>
 
     <header>
@@ -284,29 +250,27 @@
     </header>
 
     <section class="hero">
-        <div class="site-url">bellabay.ca</div>
+        <div class="site-url">Bellabay.ca</div>
         
         <div class="hero-subtitle-top">Votre beauté, notre signature</div>
         
         <h2>Révélez la beauté de vos cheveux avec <span>Bella Bay</span>.</h2>
         
         <p class="hero-description">
-            Des services de coiffure personnalisés, des soins professionnels et une attention portée à chaque détail. Bella Bay vient à vous pour sublimer vos cheveux, dans le confort de votre domicile[span_3](start_span)[span_3](end_span).
+            Des services de coiffure personnalisés, des soins professionnels et une attention portée à chaque détail. Bella Bay vient à vous pour sublimer vos cheveux, dans le confort de votre domicile[span_5](start_span)[span_5](end_span).
         </p>
 
-        <div class="btn-container">
-            <a href="#services" class="btn-primary">Découvrir nos services</a>
-            <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="btn-outline" target="_blank">Explorer la boutique Cabelo[span_4](start_span)[span_4](end_span)</a>
-        </div>
+        <a href="#services" class="btn-primary">Découvrir nos services</a>
+        <a href="https://cabelo.ca/?sca_ref=12646409.h6yrOBoOFvWkZy&sca_source=bellabay.ca" class="btn-outline" target="_blank">Explorer la boutique</a>
 
         <div class="footer-info">
-            Service mobile • Montréal • Laval • Rive-Nord[span_5](start_span)[span_5](end_span)
+            Service mobile • Montréal • Laval • Rive-Nord[span_6](start_span)[span_6](end_span)
         </div>
     </section>
 
     <section id="services" class="services-section">
         <div class="services-container">
-            <h3>Nos 9 Services Professionnels</h3>
+            <h3>Nos Services Professionnels</h3>
             <p class="services-subtitle">Découvrez notre gamme complète de prestations à domicile</p>
             
             <div class="services-grid">
@@ -336,7 +300,7 @@
                 </div>
                 <div class="service-card">
                     <h4>7. Boutiques & Partenaires Cabelo</h4>
-                    <p>Accès à nos recommandations de produits professionnels de salon livrés directement chez vous[span_6](start_span)[span_6](end_span).</p>
+                    <p>Accès à nos recommandations de produits professionnels de salon livrés directement chez vous[span_7](start_span)[span_7](end_span).</p>
                 </div>
                 <div class="service-card">
                     <h4>8. Espace Beauté & Accessoires</h4>
@@ -346,18 +310,6 @@
                     <h4>9. Consultation Beauté Personnalisée</h4>
                     <p>Diagnostic capillaire et conseils sur mesure pour entretenir vos cheveux au quotidien à la maison.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="partners-section">
-        <div class="partners-container">
-            <h3>Notre Boutique Partenaire Officielle</h3>
-            <p>Profitez de recommandations professionnelles sélectionnées par Bella Bay.</p>
-
-            <div class="partner-box">
-                <h4>Boutique Cabelo.ca</h4>
-                <p>Produits professionnels de salon recommandés pour vos cheveux et extensions[span_7](start_span)[span_7](end_span).</p>
             </div>
         </div>
     </section>
