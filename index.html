@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -646,17 +645,35 @@
       font-size: 10px;
     }
 
-    /* BOUTIQUE CABELO (6 CATÉGORIES) */
+    /* BOUTIQUE AMÉLIORÉE (CABELO - ÉPURÉ, VISUELS SOIGNÉS, CONVERSION OPTIMISÉE) */
     .boutique-section {
       background: var(--rose-pale);
     }
 
+    .shop-banner {
+      background: var(--black);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 16px 20px;
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+
+    .shop-banner span {
+      color: var(--white);
+      font-weight: 700;
+    }
+
     .shop-intro {
       max-width: 760px;
-      margin: -18px auto 35px;
+      margin: -25px auto 40px;
       text-align: center;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 12.5px;
       line-height: 1.9;
     }
 
@@ -672,6 +689,7 @@
       overflow: hidden;
       background: var(--white);
       border: 1px solid var(--border);
+      border-radius: 10px;
       box-shadow: 0 8px 24px rgba(33, 20, 20, 0.04);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -679,11 +697,12 @@
     .shop-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow);
+      border-color: var(--gold);
     }
 
     .shop-image-wrap {
       position: relative;
-      height: 225px;
+      height: 230px;
       overflow: hidden;
       background: #eadbd8;
     }
@@ -696,20 +715,21 @@
     }
 
     .shop-card:hover .shop-image {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .shop-badge {
       position: absolute;
       top: 14px;
       left: 14px;
-      padding: 7px 10px;
+      padding: 6px 12px;
       background: rgba(23, 19, 19, 0.88);
       color: var(--gold-light);
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
+      border-radius: 4px;
     }
 
     .shop-card-body {
@@ -717,30 +737,39 @@
       flex: 1;
       flex-direction: column;
       align-items: flex-start;
-      padding: 24px;
+      padding: 26px;
     }
 
     .shop-card h3 {
       margin-bottom: 10px;
       color: var(--black);
-      font-size: 29px;
+      font-size: 26px;
     }
 
     .shop-card p {
       flex-grow: 1;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       color: var(--muted);
-      font-size: 11px;
-      line-height: 1.9;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
     .shop-card .btn {
       width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .shop-card .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
     }
 
     .shop-footnote {
       max-width: 720px;
-      margin: 28px auto 0;
+      margin: 35px auto 0;
       text-align: center;
       color: var(--muted);
       font-size: 10px;
@@ -1388,7 +1417,7 @@
               <h3>Nude & Minimaliste</h3>
               <p>Des teintes poudrées et intemporelles pour un effet seconde peau ultra-chic et discret.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Découvrir la collection</span>
+              <span class="btn btn-dark">Acheter la collection</span>
             </div>
           </a>
 
@@ -1402,21 +1431,21 @@
               <h3>French Nude & Finitions</h3>
               <p>La classique French réinventée sur une base nude pour une élégance absolue au quotidien.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Découvrir la collection</span>
+              <span class="btn btn-dark">Acheter la collection</span>
             </div>
           </a>
 
           <!-- PRODUIT 3 (Accessoires & Kits de pose) -->
           <a href="https://siyounails.com/collections/nail-accessories?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
-              <img class="bbn-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Accessoires et kits de pose Siyou Nails" loading="lazy">
+              <img class="bbn-image" src="https://images.unsplash.com/photo-1632345031435-8727f6c97d34?auto=format&fit=crop&w=800&q=80" alt="Accessoires et kits de pose Siyou Nails" loading="lazy">
               <span class="bbn-badge">Essentiel</span>
             </div>
             <div class="bbn-card-body">
               <h3>Kits & Accessoires Pro</h3>
               <p>Tout le nécessaire de qualité professionnelle pour une pose facile, propre et durable à la maison.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Découvrir les accessoires</span>
+              <span class="btn btn-dark">Acheter les accessoires</span>
             </div>
           </a>
         </div>
@@ -1450,7 +1479,7 @@
       </div>
     </section>
 
-    <!-- BOUTIQUE BELLA BAY (CABELO - 6 CATÉGORIES) -->
+    <!-- BOUTIQUE BELLA BAY (CABELO - AMÉLIORÉE & ÉPURÉE) -->
     <section class="section boutique-section" id="boutique">
       <div class="container">
         <div class="section-heading">
@@ -1462,10 +1491,12 @@
           </p>
         </div>
 
+        <div class="shop-banner">
+          ✨ Partenaire officiel Cabelo — Produits professionnels recommandés par votre coiffeuse
+        </div>
+
         <p class="shop-intro">
-          Explorez notre sélection de soins, d’outils professionnels et
-          de produits coiffants. Les achats sont effectués sur le site
-          du vendeur partenaire.
+          Explorez notre sélection rigoureuse de soins et d’outils professionnels. Les achats sont sécurisés et effectués sur le site de notre partenaire officiel.
         </p>
 
         <div class="shop-grid">
@@ -1473,12 +1504,12 @@
           <article class="shop-card" id="brosses-outils">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Accessoires et outils de coiffure" loading="lazy">
-              <span class="shop-badge">Les essentiels</span>
+              <span class="shop-badge">Outils pro</span>
             </div>
             <div class="shop-card-body">
               <h3>Brosses & outils</h3>
-              <p>Découvrez des outils et accessoires pour faciliter votre routine et réaliser vos coiffures.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Explorer les outils</a>
+              <p>Des accessoires sélectionnés pour structurer, sécher et faciliter votre coiffure quotidienne.</p>
+              <a class="btn" href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
 
@@ -1486,12 +1517,12 @@
           <article class="shop-card" id="soins-capillaires">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80" alt="Produits de soins beauté" loading="lazy">
-              <span class="shop-badge">Prendre soin</span>
+              <span class="shop-badge">Soins</span>
             </div>
             <div class="shop-card-body">
               <h3>Soins capillaires</h3>
-              <p>Explorez les shampoings, revitalisants, masques et soins pour répondre aux besoins de vos cheveux.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir les soins</a>
+              <p>Shampoings, revitalisants et masques haut de gamme pour nourrir et protéger durablement la fibre.</p>
+              <a class="btn" href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
 
@@ -1499,12 +1530,12 @@
           <article class="shop-card" id="coiffage-finition">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" alt="Coiffure et mise en beauté" loading="lazy">
-              <span class="shop-badge">Pour se coiffer</span>
+              <span class="shop-badge">Finition</span>
             </div>
             <div class="shop-card-body">
               <h3>Coiffage & finition</h3>
-              <p>Découvrez des produits coiffants pour vous aider à réaliser votre mise en plis et à finaliser votre style.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Explorer les produits</a>
+              <p>Produits de finition d'exception pour parfaire votre style et apporter un éclat incomparable.</p>
+              <a class="btn" href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
 
@@ -1512,12 +1543,12 @@
           <article class="shop-card" id="collection-varis">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
-              <span class="shop-badge">Collection professionnelle</span>
+              <span class="shop-badge">VARIS</span>
             </div>
             <div class="shop-card-body">
               <h3>Collection VARIS</h3>
-              <p>Consultez la sélection VARIS disponible chez notre vendeur partenaire.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/varis?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Voir la collection</a>
+              <p>Consultez la sélection exclusive VARIS disponible chez notre partenaire pour des résultats de salon.</p>
+              <a class="btn" href="https://cabelo.ca/collections/varis?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
 
@@ -1525,12 +1556,12 @@
           <article class="shop-card" id="catalogue-complet">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
-              <span class="shop-badge">Toute la sélection</span>
+              <span class="shop-badge">Catalogue</span>
             </div>
             <div class="shop-card-body">
               <h3>Tous les produits</h3>
-              <p>Parcourez le catalogue du vendeur partenaire pour découvrir les produits actuellement proposés.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Voir le catalogue</a>
+              <p>Parcourez l'intégralité du catalogue de notre partenaire pour découvrir l'ensemble des gammes.</p>
+              <a class="btn" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
 
@@ -1538,18 +1569,18 @@
           <article class="shop-card" id="nos-decouvertes">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80" alt="Produits sélectionnés pour une routine beauté" loading="lazy">
-              <span class="shop-badge">Nos découvertes</span>
+              <span class="shop-badge">Coups de cœur</span>
             </div>
             <div class="shop-card-body">
               <h3>Nos découvertes</h3>
-              <p>Explorez les possibilités offertes par le catalogue et trouvez des produits pour votre routine capillaire.</p>
-              <a class="btn btn-dark" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la sélection</a>
+              <p>Explorez nos coups de cœur du moment pour composer une routine sur-mesure pour vos cheveux.</p>
+              <a class="btn" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
             </div>
           </article>
         </div>
 
         <p class="shop-footnote">
-          Les produits, prix et disponibilités sont déterminés par le vendeur partenaire et peuvent changer. La commande et le paiement sont effectués sur son site.
+          Les commandes et paiements sont sécurisés et effectués directement sur le site de notre partenaire officiel Cabelo.
         </p>
       </div>
     </section>
@@ -1562,15 +1593,10 @@
           <span class="eyebrow">L’univers Bella Bay</span>
           <h2>La beauté, avec attention et passion</h2>
           <p>
-            Bella Bay est née de l’envie de proposer une expérience de
-            coiffure personnalisée, professionnelle et accessible dans
-            le confort du domicile.
+            Bella Bay est née d’une exigence : offrir une expérience de coiffure sur-mesure, attentive et raffinée, directement chez vous.
           </p>
           <p>
-            Nous croyons que chaque chevelure mérite une attention
-            particulière. C’est pourquoi Bella Bay met l’accent sur
-            l’écoute, les besoins individuels et le choix de produits
-            adaptés à la routine de chacune.
+            Chaque chevelure possède sa propre histoire et mérite des soins adaptés pour révéler toute sa splendeur.
           </p>
           <div class="signature">Bella Bay · B.B</div>
         </div>
@@ -1784,5 +1810,3 @@
   </script>
 </body>
 </html>
-
-```
