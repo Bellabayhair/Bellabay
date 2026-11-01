@@ -1,3 +1,8 @@
+Voici le code complet de ton site. Tout le code d'origine de **Bella Bay** a été conservé **strictement identique**, et nous avons simplement ajouté :
+ 1. L'onglet et la section pour **B.B Nails** dans le menu et sur la page.
+ 2. Le bouton **Press On** avec ton lien d'affiliation Siyou Nails ([https://siyounails.com](https://siyounails.com)?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates) et la mention claire du **rabais de 10% avec le code BELLA**.
+Tu peux copier-coller l'intégralité de ce code :
+```html
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -487,6 +492,70 @@
       text-align: center;
       color: var(--muted);
       font-size: 11px;
+    }
+
+    /* SECTION B.B NAILS */
+
+    .bbn-section {
+      background: var(--rose-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bbn-grid {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .bbn-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 35px;
+      width: 100%;
+      max-width: 450px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .bbn-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(33, 20, 20, 0.12);
+    }
+
+    .bbn-card h3 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: var(--black);
+    }
+
+    .bbn-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .promo-badge {
+      background-color: #fdf5f5;
+      border: 1px dashed var(--gold);
+      color: var(--text);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    .promo-badge span {
+      font-weight: bold;
+      color: #9b6b36;
+      letter-spacing: 1px;
     }
 
     /* SERVICE À DOMICILE */
@@ -1113,6 +1182,8 @@
 
         <a href="#services">Services</a>
 
+        <a href="#bbn-nails">B.B Nails</a>
+
         <a href="#histoire">Notre histoire</a>
 
         <div class="dropdown" id="shopDropdown">
@@ -1517,6 +1588,52 @@
           Le tarif final dépend notamment de la longueur, de la densité
           et des besoins de vos cheveux.
         </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECTION B.B NAILS -->
+
+    <section class="section bbn-section" id="bbn-nails">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">B.B Nails 💅✨</span>
+
+          <h2>Prothèses ongulaires & Press On</h2>
+
+          <p>
+            Sublimez vos mains avec notre sélection exclusive de Press On Nails.
+          </p>
+
+        </div>
+
+        <div class="bbn-grid">
+          <a href="https://siyounails.com?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" 
+             target="_blank" 
+             rel="sponsored noopener noreferrer" 
+             class="bbn-card">
+            
+            <h3>Press On Nails</h3>
+            
+            <p>
+              Pose instantanée, réutilisable et style sur-mesure. Obtenez une manucure parfaite en quelques minutes.
+            </p>
+
+            <div class="promo-badge">
+              Profite de <strong>10% de rabais</strong> avec le code : <span>BELLA</span>
+            </div>
+
+            <span class="btn btn-dark">
+              Découvrir la collection
+            </span>
+
+          </a>
+        </div>
 
       </div>
 
@@ -2514,3 +2631,5 @@
 
 </body>
 </html>
+
+```
