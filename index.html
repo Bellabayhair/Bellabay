@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -595,6 +596,42 @@
       width: 100%;
     }
 
+    /* BANNIÈRE FINALE NUANCIER B.B NAILS (EN DERNIER) */
+    .bbn-banner-bottom {
+      margin-top: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(33, 20, 20, 0.04);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+    }
+
+    .bbn-banner-img {
+      height: 320px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .bbn-banner-content {
+      padding: 40px;
+    }
+
+    .bbn-banner-content h3 {
+      font-size: 28px;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .bbn-banner-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
     /* SERVICE À DOMICILE */
     .mobile-service {
       background: var(--black);
@@ -1063,8 +1100,14 @@
       }
 
       .mobile-service-grid,
-      .story-grid {
-        gap: 35px;
+      .story-grid,
+      .bbn-banner-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .bbn-banner-img {
+        height: 240px;
       }
     }
 
@@ -1399,7 +1442,7 @@
       </div>
     </section>
 
-    <!-- SECTION B.B NAILS (STYLE NUDE ÉPURÉ ET RAFFINÉ) -->
+    <!-- SECTION B.B NAILS (AVEC TON IMAGE DE NUANCIER PLACÉE EN DERNIER) -->
     <section class="section bbn-section" id="bbn-nails">
       <div class="container">
         <div class="section-heading">
@@ -1409,7 +1452,7 @@
         </div>
 
         <div class="bbn-grid">
-          <!-- PRODUIT 1 (Nude Classique) -->
+          <!-- PRODUIT 1 -->
           <a href="https://siyounails.com/collections/clean-minimal?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Press On Nude Classique" loading="lazy">
@@ -1423,7 +1466,7 @@
             </div>
           </a>
 
-          <!-- PRODUIT 2 (French Nude) -->
+          <!-- PRODUIT 2 -->
           <a href="https://siyounails.com/collections/date-night?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" alt="Press On French Manucure Nude" loading="lazy">
@@ -1437,7 +1480,7 @@
             </div>
           </a>
 
-          <!-- PRODUIT 3 (Accessoires & Kits de pose) -->
+          <!-- PRODUIT 3 -->
           <a href="https://siyounails.com/collections/nail-accessories?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=800&q=80" alt="Accessoires et kits de pose Siyou Nails" loading="lazy">
@@ -1450,6 +1493,17 @@
               <span class="btn btn-dark">Voir plus</span>
             </div>
           </a>
+        </div>
+
+        <!-- TON IMAGE DE NUANCIER DE VERNIS PLACÉE EN DERNIER (EN BAS DE LA SECTION) -->
+        <div class="bbn-banner-bottom">
+          <img class="bbn-banner-img" src="https://images.unsplash.com/photo-1632345031435-8727f6c97d34?auto=format&fit=crop&w=1200&q=80" alt="Nuancier de couleurs de vernis B.B Nails" loading="lazy">
+          <div class="bbn-banner-content">
+            <span class="eyebrow">Nuancier exclusif</span>
+            <h3>Trouvez votre teinte parfaite</h3>
+            <p>Explorez notre vaste éventail de nuances pensées pour s'harmoniser avec tous les styles et toutes les occasions. Qualité irréprochable et tenue longue durée.</p>
+            <a href="https://siyounails.com/collections/clean-minimal?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir la collection</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1798,3 +1852,5 @@
   </script>
 </body>
 </html>
+
+```
