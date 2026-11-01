@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -490,7 +489,7 @@
       font-size: 11px;
     }
 
-    /* SECTION B.B NAILS (STYLE NUDE ÉPURÉ) */
+    /* SECTION B.B NAILS */
     .bbn-section {
       background: var(--rose-pale);
       border-top: 1px solid var(--border);
@@ -596,42 +595,6 @@
       width: 100%;
     }
 
-    /* BANNIÈRE FINALE NUANCIER B.B NAILS (EN DERNIER) */
-    .bbn-banner-bottom {
-      margin-top: 40px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(33, 20, 20, 0.04);
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-    }
-
-    .bbn-banner-img {
-      height: 320px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .bbn-banner-content {
-      padding: 40px;
-    }
-
-    .bbn-banner-content h3 {
-      font-size: 28px;
-      color: var(--black);
-      margin-bottom: 12px;
-    }
-
-    .bbn-banner-content p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
     /* SERVICE À DOMICILE */
     .mobile-service {
       background: var(--black);
@@ -682,9 +645,10 @@
       font-size: 10px;
     }
 
-    /* BOUTIQUE POPULAIRE ULTRA-ATTRAYANTE (CABELO) */
+    /* BOUTIQUE HAUT DE GAMME (CABELO) AMÉLIORÉE */
     .boutique-section {
       background: var(--rose-pale);
+      position: relative;
     }
 
     .shop-banner {
@@ -698,6 +662,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(23, 19, 19, 0.08);
     }
 
     .shop-banner span {
@@ -707,17 +672,17 @@
 
     .shop-intro {
       max-width: 760px;
-      margin: -25px auto 40px;
+      margin: -25px auto 45px;
       text-align: center;
       color: var(--muted);
-      font-size: 12.5px;
+      font-size: 13px;
       line-height: 1.9;
     }
 
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 28px;
     }
 
     .shop-card {
@@ -727,30 +692,30 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(33, 20, 20, 0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(33, 20, 20, 0.05);
+      transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
       text-decoration: none;
       color: inherit;
     }
 
     .shop-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow);
+      box-shadow: 0 20px 40px rgba(201, 164, 107, 0.18);
       border-color: var(--gold);
     }
 
     .shop-image-wrap {
       position: relative;
-      height: 240px;
+      height: 260px;
       overflow: hidden;
-      background: #eadbd8;
+      background: #f2e9e6;
     }
 
     .shop-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .shop-card:hover .shop-image {
@@ -769,6 +734,7 @@
       letter-spacing: 1.2px;
       text-transform: uppercase;
       border-radius: 4px;
+      backdrop-filter: blur(4px);
     }
 
     .shop-card-body {
@@ -776,7 +742,7 @@
       flex: 1;
       flex-direction: column;
       align-items: flex-start;
-      padding: 26px;
+      padding: 28px;
     }
 
     .shop-card h3 {
@@ -808,10 +774,10 @@
 
     .shop-footnote {
       max-width: 720px;
-      margin: 35px auto 0;
+      margin: 40px auto 0;
       text-align: center;
       color: var(--muted);
-      font-size: 10px;
+      font-size: 10.5px;
       line-height: 1.8;
     }
 
@@ -853,26 +819,49 @@
       font-style: italic;
     }
 
-    /* SALON FUTUR */
-    .salon-section {
-      background: #f7eeec;
+    /* SECTION FINALE SALON */
+    .salon-showcase-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
     }
 
-    .salon-box {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 50px;
+    .salon-showcase-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
       border: 1px solid var(--gold);
-      text-align: center;
-      background: rgba(255, 253, 252, 0.7);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
     }
 
-    .salon-box p {
-      max-width: 620px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 12px;
+    .salon-showcase-img {
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .salon-showcase-content {
+      padding: 50px;
+    }
+
+    .salon-showcase-content .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .salon-showcase-content h2 {
+      color: var(--white);
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .salon-showcase-content p {
+      color: #d8ccca;
+      font-size: 12.5px;
       line-height: 1.9;
+      margin-bottom: 25px;
     }
 
     /* CONTACT */
@@ -1101,13 +1090,13 @@
 
       .mobile-service-grid,
       .story-grid,
-      .bbn-banner-bottom {
+      .salon-showcase-box {
         grid-template-columns: 1fr;
         gap: 20px;
       }
 
-      .bbn-banner-img {
-        height: 240px;
+      .salon-showcase-img {
+        min-height: 260px;
       }
     }
 
@@ -1204,10 +1193,6 @@
 
       .shop-image-wrap {
         height: 240px;
-      }
-
-      .salon-box {
-        padding: 30px 20px;
       }
 
       .contact-grid {
@@ -1442,7 +1427,7 @@
       </div>
     </section>
 
-    <!-- SECTION B.B NAILS (AVEC TON IMAGE DE NUANCIER PLACÉE EN DERNIER) -->
+    <!-- SECTION B.B NAILS -->
     <section class="section bbn-section" id="bbn-nails">
       <div class="container">
         <div class="section-heading">
@@ -1452,7 +1437,6 @@
         </div>
 
         <div class="bbn-grid">
-          <!-- PRODUIT 1 -->
           <a href="https://siyounails.com/collections/clean-minimal?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Press On Nude Classique" loading="lazy">
@@ -1466,7 +1450,6 @@
             </div>
           </a>
 
-          <!-- PRODUIT 2 -->
           <a href="https://siyounails.com/collections/date-night?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" alt="Press On French Manucure Nude" loading="lazy">
@@ -1480,10 +1463,9 @@
             </div>
           </a>
 
-          <!-- PRODUIT 3 -->
           <a href="https://siyounails.com/collections/nail-accessories?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
-              <img class="bbn-image" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=800&q=80" alt="Accessoires et kits de pose Siyou Nails" loading="lazy">
+              <img class="bbn-image" src="https://images.unsplash.com/photo-1632345031435-8727f6c97d34?auto=format&fit=crop&w=800&q=80" alt="Nuancier de vernis et pose d'ongles" loading="lazy">
               <span class="bbn-badge">Essentiel</span>
             </div>
             <div class="bbn-card-body">
@@ -1493,17 +1475,6 @@
               <span class="btn btn-dark">Voir plus</span>
             </div>
           </a>
-        </div>
-
-        <!-- TON IMAGE DE NUANCIER DE VERNIS PLACÉE EN DERNIER (EN BAS DE LA SECTION) -->
-        <div class="bbn-banner-bottom">
-          <img class="bbn-banner-img" src="https://images.unsplash.com/photo-1632345031435-8727f6c97d34?auto=format&fit=crop&w=1200&q=80" alt="Nuancier de couleurs de vernis B.B Nails" loading="lazy">
-          <div class="bbn-banner-content">
-            <span class="eyebrow">Nuancier exclusif</span>
-            <h3>Trouvez votre teinte parfaite</h3>
-            <p>Explorez notre vaste éventail de nuances pensées pour s'harmoniser avec tous les styles et toutes les occasions. Qualité irréprochable et tenue longue durée.</p>
-            <a href="https://siyounails.com/collections/clean-minimal?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir la collection</a>
-          </div>
         </div>
       </div>
     </section>
@@ -1535,7 +1506,7 @@
       </div>
     </section>
 
-    <!-- BOUTIQUE BELLA BAY (CABELO - PRODUITS POPULAIRES MIS EN AVANT) -->
+    <!-- BOUTIQUE HAUT DE GAMME (CABELO) -->
     <section class="section boutique-section" id="boutique">
       <div class="container">
         <div class="section-heading">
@@ -1555,10 +1526,10 @@
         </p>
 
         <div class="shop-grid">
-          <!-- PRODUIT 1 (Brosses, Outils & VARIS - Populaire) -->
+          <!-- PRODUIT 1 -->
           <a href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="brosses-varis">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80" alt="Brosses, outils et collection VARIS" loading="lazy">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=90" alt="Brosses, outils et collection VARIS haute définition" loading="lazy">
               <span class="shop-badge">Populaire</span>
             </div>
             <div class="shop-card-body">
@@ -1568,10 +1539,10 @@
             </div>
           </a>
 
-          <!-- PRODUIT 2 (Soins capillaires - Indispensable) -->
+          <!-- PRODUIT 2 -->
           <a href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="soins-capillaires">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80" alt="Soins capillaires professionnels" loading="lazy">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=1000&q=90" alt="Soins capillaires professionnels haute définition" loading="lazy">
               <span class="shop-badge">Essentiel</span>
             </div>
             <div class="shop-card-body">
@@ -1581,10 +1552,10 @@
             </div>
           </a>
 
-          <!-- PRODUIT 3 (Coiffage & Finition - Coup de cœur) -->
+          <!-- PRODUIT 3 -->
           <a href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="coiffage-finition">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" alt="Coiffure et mise en beauté" loading="lazy">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1512290900722-9a70f8a82d39?auto=format&fit=crop&w=1000&q=90" alt="Coiffure et mise en beauté haute définition" loading="lazy">
               <span class="shop-badge">Coup de cœur</span>
             </div>
             <div class="shop-card-body">
@@ -1594,10 +1565,10 @@
             </div>
           </a>
 
-          <!-- PRODUIT 4 (Catalogue complet) -->
+          <!-- PRODUIT 4 -->
           <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="catalogue-complet">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=80" alt="Catalogue complet Cabelo" loading="lazy">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1000&q=90" alt="Catalogue complet Cabelo haute définition" loading="lazy">
               <span class="shop-badge">Collection</span>
             </div>
             <div class="shop-card-body">
@@ -1607,10 +1578,10 @@
             </div>
           </a>
 
-          <!-- PRODUIT 5 (Nos découvertes) -->
+          <!-- PRODUIT 5 -->
           <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="nos-decouvertes">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=90" alt="Sélection de produits de beauté haute définition" loading="lazy">
               <span class="shop-badge">Nouveauté</span>
             </div>
             <div class="shop-card-body">
@@ -1641,22 +1612,6 @@
             Chaque chevelure possède sa propre histoire et mérite des soins adaptés pour révéler toute sa splendeur.
           </p>
           <div class="signature">Bella Bay · B.B</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISION DU FUTUR SALON -->
-    <section class="section salon-section" id="vision">
-      <div class="container">
-        <div class="salon-box">
-          <span class="eyebrow">Notre vision</span>
-          <h2>Une vision qui grandit avec vous</h2>
-          <p>
-            Bella Bay souhaite développer progressivement son univers
-            beauté et faire évoluer ses services. Notre vision à long
-            terme est de créer un espace qui réunira coiffure, produits
-            professionnels et conseils personnalisés.
-          </p>
         </div>
       </div>
     </section>
@@ -1693,6 +1648,23 @@
         <div class="contact-actions">
           <a class="btn" href="mailto:bellabay.coiffure@gmail.com">Nous écrire</a>
           <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Nous contacter sur WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE DU SALON PLACÉE STRICTEMENT EN DERNIER (EN BAS DE LA PAGE) -->
+    <section class="section salon-showcase-section" id="salon-futur">
+      <div class="container">
+        <div class="salon-showcase-box">
+          <img class="salon-showcase-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85" alt="Espace salon Bella Bay" loading="lazy">
+          <div class="salon-showcase-content">
+            <span class="eyebrow">Notre vision</span>
+            <h2>Une vision qui grandit avec vous</h2>
+            <p>
+              Bella Bay souhaite développer progressivement son univers beauté et faire évoluer ses services. Notre vision à long terme est de créer un espace physique chaleureux qui réunira coiffure, produits professionnels et conseils personnalisés.
+            </p>
+            <a class="btn" href="#contact">En savoir plus</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1852,5 +1824,3 @@
   </script>
 </body>
 </html>
-
-```
