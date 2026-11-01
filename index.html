@@ -493,11 +493,147 @@
       font-size: 11px;
     }
 
-    /* SECTION B.B NAILS */
-    .bbn-section {
+    /* BOUTIQUE HAUT DE GAMME (CABELO) — JUSTE APRÈS LES SERVICES */
+    .boutique-section {
       background: var(--rose-pale);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .shop-banner {
+      background: var(--black);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 16px 20px;
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(23, 19, 19, 0.08);
+    }
+
+    .shop-banner span {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .shop-intro {
+      max-width: 760px;
+      margin: -25px auto 45px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .shop-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(33, 20, 20, 0.05);
+      transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .shop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(201, 164, 107, 0.18);
+      border-color: var(--gold);
+    }
+
+    .shop-image-wrap {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+      background: #f2e9e6;
+    }
+
+    .shop-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .shop-card:hover .shop-image {
+      transform: scale(1.06);
+    }
+
+    .shop-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 12px;
+      background: rgba(23, 19, 19, 0.9);
+      color: var(--gold-light);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .shop-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
+    }
+
+    .shop-card h3 {
+      margin-bottom: 10px;
+      color: var(--black);
+      font-size: 26px;
+    }
+
+    .shop-card p {
+      flex-grow: 1;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .shop-card .btn {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .shop-card .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    .shop-footnote {
+      max-width: 720px;
+      margin: 40px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 10.5px;
+      line-height: 1.8;
+    }
+
+    /* SECTION B.B NAILS (ONGLES) — JUSTE APRÈS CABELO */
+    .bbn-section {
+      background: var(--white);
     }
 
     .bbn-grid {
@@ -649,145 +785,11 @@
       font-size: 10px;
     }
 
-    /* BOUTIQUE HAUT DE GAMME (CABELO) */
-    .boutique-section {
-      background: var(--rose-pale);
-      position: relative;
-    }
-
-    .shop-banner {
-      background: var(--black);
-      color: var(--gold-light);
-      border: 1px solid var(--gold);
-      padding: 16px 20px;
-      text-align: center;
-      margin-bottom: 35px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      box-shadow: 0 4px 15px rgba(23, 19, 19, 0.08);
-    }
-
-    .shop-banner span {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .shop-intro {
-      max-width: 760px;
-      margin: -25px auto 45px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .shop-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    .shop-card {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(33, 20, 20, 0.05);
-      transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .shop-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(201, 164, 107, 0.18);
-      border-color: var(--gold);
-    }
-
-    .shop-image-wrap {
-      position: relative;
-      height: 260px;
-      overflow: hidden;
-      background: #f2e9e6;
-    }
-
-    .shop-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .shop-card:hover .shop-image {
-      transform: scale(1.06);
-    }
-
-    .shop-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 6px 12px;
-      background: rgba(23, 19, 19, 0.9);
-      color: var(--gold-light);
-      font-size: 8.5px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      border-radius: 4px;
-      backdrop-filter: blur(4px);
-    }
-
-    .shop-card-body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 28px;
-    }
-
-    .shop-card h3 {
-      margin-bottom: 10px;
-      color: var(--black);
-      font-size: 26px;
-    }
-
-    .shop-card p {
-      flex-grow: 1;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .shop-card .btn {
-      width: 100%;
-      background: var(--black);
-      color: var(--white);
-      border-color: var(--black);
-    }
-
-    .shop-card .btn:hover {
-      background: var(--gold);
-      color: var(--black);
-      border-color: var(--gold);
-    }
-
-    .shop-footnote {
-      max-width: 720px;
-      margin: 40px auto 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 10.5px;
-      line-height: 1.8;
-    }
-
     /* HISTOIRE */
     .story-section {
-      background: var(--white);
+      background: var(--rose-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .story-grid {
@@ -1262,6 +1264,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
+        <a href="#boutique">Boutique Cabelo</a>
         <a href="#bbn-nails">B.B Nails</a>
         <a href="#histoire">Notre histoire</a>
 
@@ -1330,7 +1333,7 @@
       </div>
     </section>
 
-    <!-- SERVICES DE COIFFURE (CADRES DORÉS) -->
+    <!-- 1. SERVICES DE COIFFURE -->
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-heading">
@@ -1422,7 +1425,94 @@
       </div>
     </section>
 
-    <!-- SECTION B.B NAILS -->
+    <!-- 2. BOUTIQUE CABELO (AVEC IMAGES CAPILLAIRES ASSOCIÉES) -->
+    <section class="section boutique-section" id="boutique">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">La sélection Bella Bay</span>
+          <h2>La boutique Cabelo</h2>
+          <p>
+            Retrouvez nos produits et outils professionnels coups de cœur pour prolonger les bienfaits de vos soins à la maison.
+          </p>
+        </div>
+
+        <div class="shop-banner">
+          ✨ Partenaire officiel Cabelo — Les indispensables recommandés par votre coiffeuse
+        </div>
+
+        <p class="shop-intro">
+          Explorez nos collections phares et trouvez les produits parfaits pour votre routine capillaire quotidienne.
+        </p>
+
+        <div class="shop-grid">
+          <a href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="brosses-varis">
+            <div class="shop-image-wrap">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=90" alt="Brosses professionnelles et outils de coiffure" loading="lazy">
+              <span class="shop-badge">Populaire</span>
+            </div>
+            <div class="shop-card-body">
+              <h3>Brosses, outils & VARIS</h3>
+              <p>Des kits de brosses professionnelles et la collection exclusive VARIS pour un séchage et un coiffage parfaits.</p>
+              <span class="btn">Voir plus</span>
+            </div>
+          </a>
+
+          <a href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="soins-capillaires">
+            <div class="shop-image-wrap">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=1000&q=90" alt="Bouteilles de soins capillaires professionnels" loading="lazy">
+              <span class="shop-badge">Essentiel</span>
+            </div>
+            <div class="shop-card-body">
+              <h3>Soins capillaires</h3>
+              <p>Shampoings haut de gamme, revitalisants profonds et masques réparateurs pour nourrir intensément vos cheveux.</p>
+              <span class="btn">Voir plus</span>
+            </div>
+          </a>
+
+          <a href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="coiffage-finition">
+            <div class="shop-image-wrap">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=90" alt="Produits de coiffage et mise en plis" loading="lazy">
+              <span class="shop-badge">Coup de cœur</span>
+            </div>
+            <div class="shop-card-body">
+              <h3>Coiffage & finition</h3>
+              <p>Produits de coiffage d'exception pour fixer, texturiser et apporter une brillance éclatante à votre chevelure.</p>
+              <span class="btn">Voir plus</span>
+            </div>
+          </a>
+
+          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="catalogue-complet">
+            <div class="shop-image-wrap">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Gamme complète de produits de coiffure" loading="lazy">
+              <span class="shop-badge">Collection</span>
+            </div>
+            <div class="shop-card-body">
+              <h3>Tous les produits</h3>
+              <p>Parcourez l'intégralité du catalogue de notre partenaire officiel pour découvrir toutes les gammes disponibles.</p>
+              <span class="btn">Voir plus</span>
+            </div>
+          </a>
+
+          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="nos-decouvertes">
+            <div class="shop-image-wrap">
+              <img class="shop-image" src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=90" alt="Nouveautés et essentiels beauté" loading="lazy">
+              <span class="shop-badge">Nouveauté</span>
+            </div>
+            <div class="shop-card-body">
+              <h3>Nos découvertes</h3>
+              <p>Explorez nos nouveautés et coups de cœur du moment pour composer une routine capillaire sur-mesure.</p>
+              <span class="btn">Voir plus</span>
+            </div>
+          </a>
+        </div>
+
+        <p class="shop-footnote">
+          Les commandes et paiements sont sécurisés et effectués directement sur le site de notre partenaire officiel Cabelo.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. SECTION B.B NAILS (ONGLES) -->
     <section class="section bbn-section" id="bbn-nails">
       <div class="container">
         <div class="section-heading">
@@ -1498,94 +1588,6 @@
           <a class="btn" href="#contact">Nous contacter</a>
         </div>
         <div class="mobile-service-image" role="img" aria-label="Espace de coiffure"></div>
-      </div>
-    </section>
-
-    <!-- BOUTIQUE HAUT DE GAMME (CABELO) — IMAGES 100% CAPILLAIRES (SANS LIVRES) -->
-    <section class="section boutique-section" id="boutique">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">La sélection Bella Bay</span>
-          <h2>La boutique beauté</h2>
-          <p>
-            Retrouvez nos produits et outils professionnels coups de cœur pour prolonger les bienfaits de vos soins à la maison.
-          </p>
-        </div>
-
-        <div class="shop-banner">
-          ✨ Partenaire officiel Cabelo — Les indispensables recommandés par votre coiffeuse
-        </div>
-
-        <p class="shop-intro">
-          Explorez nos collections phares et trouvez les produits parfaits pour votre routine capillaire quotidienne.
-        </p>
-
-        <div class="shop-grid">
-          <a href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="brosses-varis">
-            <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=90" alt="Brosses professionnelles et outils de coiffure" loading="lazy">
-              <span class="shop-badge">Populaire</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Brosses, outils & VARIS</h3>
-              <p>Des kits de brosses professionnelles et la collection exclusive VARIS pour un séchage et un coiffage parfaits.</p>
-              <span class="btn">Voir plus</span>
-            </div>
-          </a>
-
-          <a href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="soins-capillaires">
-            <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=1000&q=90" alt="Bouteilles de soins capillaires professionnels" loading="lazy">
-              <span class="shop-badge">Essentiel</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Soins capillaires</h3>
-              <p>Shampoings haut de gamme, revitalisants profonds et masques réparateurs pour nourrir intensément vos cheveux.</p>
-              <span class="btn">Voir plus</span>
-            </div>
-          </a>
-
-          <a href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="coiffage-finition">
-            <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=90" alt="Produits de coiffage et mise en plis" loading="lazy">
-              <span class="shop-badge">Coup de cœur</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Coiffage & finition</h3>
-              <p>Produits de coiffage d'exception pour fixer, texturiser et apporter une brillance éclatante à votre chevelure.</p>
-              <span class="btn">Voir plus</span>
-            </div>
-          </a>
-
-          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="catalogue-complet">
-            <div class="shop-image-wrap">
-              <!-- Image corrigée : Finis les livres, place à une belle image de soins capillaires -->
-              <img class="shop-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Gamme complète de produits de coiffure" loading="lazy">
-              <span class="shop-badge">Collection</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Tous les produits</h3>
-              <p>Parcourez l'intégralité du catalogue de notre partenaire officiel pour découvrir toutes les gammes disponibles.</p>
-              <span class="btn">Voir plus</span>
-            </div>
-          </a>
-
-          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="nos-decouvertes">
-            <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=90" alt="Nouveautés et essentiels beauté" loading="lazy">
-              <span class="shop-badge">Nouveauté</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Nos découvertes</h3>
-              <p>Explorez nos nouveautés et coups de cœur du moment pour composer une routine capillaire sur-mesure.</p>
-              <span class="btn">Voir plus</span>
-            </div>
-          </a>
-        </div>
-
-        <p class="shop-footnote">
-          Les commandes et paiements sont sécurisés et effectués directement sur le site de notre partenaire officiel Cabelo.
-        </p>
       </div>
     </section>
 
