@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -645,7 +646,7 @@
       font-size: 10px;
     }
 
-    /* BOUTIQUE AMÉLIORÉE (CABELO) */
+    /* BOUTIQUE POPULAIRE ULTRA-ATTRAYANTE (CABELO) */
     .boutique-section {
       background: var(--rose-pale);
     }
@@ -689,20 +690,22 @@
       overflow: hidden;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 8px 24px rgba(33, 20, 20, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
     }
 
     .shop-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
       border-color: var(--gold);
     }
 
     .shop-image-wrap {
       position: relative;
-      height: 230px;
+      height: 240px;
       overflow: hidden;
       background: #eadbd8;
     }
@@ -711,11 +714,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.45s ease;
+      transition: transform 0.5s ease;
     }
 
     .shop-card:hover .shop-image {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
     .shop-badge {
@@ -723,7 +726,7 @@
       top: 14px;
       left: 14px;
       padding: 6px 12px;
-      background: rgba(23, 19, 19, 0.88);
+      background: rgba(23, 19, 19, 0.9);
       color: var(--gold-light);
       font-size: 8.5px;
       font-weight: 700;
@@ -1240,11 +1243,11 @@
             Boutique <span aria-hidden="true">⌄</span>
           </button>
           <div class="dropdown-menu" id="shopDropdownMenu">
-            <a href="#brosses-outils">Brosses & outils</a>
+            <a href="#brosses-varis">Brosses, outils & VARIS</a>
             <a href="#soins-capillaires">Soins capillaires</a>
             <a href="#coiffage-finition">Coiffage & finition</a>
-            <a href="#collection-varis">Collection VARIS</a>
             <a href="#catalogue-complet">Tous les produits</a>
+            <a href="#nos-decouvertes">Nos coups de cœur</a>
           </div>
         </div>
 
@@ -1411,13 +1414,13 @@
           <a href="https://siyounails.com/collections/clean-minimal?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Press On Nude Classique" loading="lazy">
-              <span class="bbn-badge">Nude</span>
+              <span class="bbn-badge">Populaire</span>
             </div>
             <div class="bbn-card-body">
               <h3>Nude & Minimaliste</h3>
               <p>Des teintes poudrées et intemporelles pour un effet seconde peau ultra-chic et discret.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Acheter la collection</span>
+              <span class="btn btn-dark">Voir plus</span>
             </div>
           </a>
 
@@ -1431,11 +1434,11 @@
               <h3>French Nude & Finitions</h3>
               <p>La classique French réinventée sur une base nude pour une élégance absolue au quotidien.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Acheter la collection</span>
+              <span class="btn btn-dark">Voir plus</span>
             </div>
           </a>
 
-          <!-- PRODUIT 3 (Accessoires & Kits de pose - Image mise à jour avec le kit d'accessoires de manucure demandé) -->
+          <!-- PRODUIT 3 (Accessoires & Kits de pose) -->
           <a href="https://siyounails.com/collections/nail-accessories?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="bbn-card">
             <div class="bbn-image-wrap">
               <img class="bbn-image" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=800&q=80" alt="Accessoires et kits de pose Siyou Nails" loading="lazy">
@@ -1445,7 +1448,7 @@
               <h3>Kits & Accessoires Pro</h3>
               <p>Tout le nécessaire de qualité professionnelle pour une pose facile, propre et durable à la maison.</p>
               <div class="promo-badge-small">Rabais 10% : <span>BELLA</span></div>
-              <span class="btn btn-dark">Acheter les accessoires</span>
+              <span class="btn btn-dark">Voir plus</span>
             </div>
           </a>
         </div>
@@ -1479,104 +1482,90 @@
       </div>
     </section>
 
-    <!-- BOUTIQUE BELLA BAY (CABELO - AMÉLIORÉE & ÉPURÉE) -->
+    <!-- BOUTIQUE BELLA BAY (CABELO - PRODUITS POPULAIRES MIS EN AVANT) -->
     <section class="section boutique-section" id="boutique">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">La sélection Bella Bay</span>
           <h2>La boutique beauté</h2>
           <p>
-            Découvrez des produits et des outils pour compléter votre
-            routine capillaire et prendre soin de vos cheveux à la maison.
+            Retrouvez nos produits et outils professionnels coups de cœur pour prolonger les bienfaits de vos soins à la maison.
           </p>
         </div>
 
         <div class="shop-banner">
-          ✨ Partenaire officiel Cabelo — Produits professionnels recommandés par votre coiffeuse
+          ✨ Partenaire officiel Cabelo — Les indispensables recommandés par votre coiffeuse
         </div>
 
         <p class="shop-intro">
-          Explorez notre sélection rigoureuse de soins et d’outils professionnels. Les achats sont sécurisés et effectués sur le site de notre partenaire officiel.
+          Explorez nos collections phares et trouvez les produits parfaits pour votre routine capillaire quotidienne.
         </p>
 
         <div class="shop-grid">
-          <!-- CATÉGORIE 1 (Brosses & Outils - Kits de brosses professionnelles) -->
-          <article class="shop-card" id="brosses-outils">
+          <!-- PRODUIT 1 (Brosses, Outils & VARIS - Populaire) -->
+          <a href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="brosses-varis">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80" alt="Kits de brosses et accessoires de coiffure professionnels" loading="lazy">
-              <span class="shop-badge">Outils pro</span>
+              <img class="shop-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80" alt="Brosses, outils et collection VARIS" loading="lazy">
+              <span class="shop-badge">Populaire</span>
             </div>
             <div class="shop-card-body">
-              <h3>Brosses & outils</h3>
-              <p>Des kits de brosses et accessoires sélectionnés pour structurer, sécher et faciliter votre coiffure quotidienne.</p>
-              <a class="btn" href="https://cabelo.ca/collections/brushes-tools?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
+              <h3>Brosses, outils & VARIS</h3>
+              <p>Des kits de brosses professionnelles et la collection exclusive VARIS pour un séchage et un coiffage parfaits.</p>
+              <span class="btn">Voir plus</span>
             </div>
-          </article>
+          </a>
 
-          <!-- CATÉGORIE 2 -->
-          <article class="shop-card" id="soins-capillaires">
+          <!-- PRODUIT 2 (Soins capillaires - Indispensable) -->
+          <a href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="soins-capillaires">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80" alt="Produits de soins beauté" loading="lazy">
-              <span class="shop-badge">Soins</span>
+              <img class="shop-image" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80" alt="Soins capillaires professionnels" loading="lazy">
+              <span class="shop-badge">Essentiel</span>
             </div>
             <div class="shop-card-body">
               <h3>Soins capillaires</h3>
-              <p>Shampoings, revitalisants et masques haut de gamme pour nourrir et protéger durablement la fibre.</p>
-              <a class="btn" href="https://cabelo.ca/collections/hair-care?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
+              <p>Shampoings haut de gamme, revitalisants profonds et masques réparateurs pour nourrir intensément vos cheveux.</p>
+              <span class="btn">Voir plus</span>
             </div>
-          </article>
+          </a>
 
-          <!-- CATÉGORIE 3 -->
-          <article class="shop-card" id="coiffage-finition">
+          <!-- PRODUIT 3 (Coiffage & Finition - Coup de cœur) -->
+          <a href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="coiffage-finition">
             <div class="shop-image-wrap">
               <img class="shop-image" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" alt="Coiffure et mise en beauté" loading="lazy">
-              <span class="shop-badge">Finition</span>
+              <span class="shop-badge">Coup de cœur</span>
             </div>
             <div class="shop-card-body">
               <h3>Coiffage & finition</h3>
-              <p>Produits de finition d'exception pour parfaire votre style et apporter un éclat incomparable.</p>
-              <a class="btn" href="https://cabelo.ca/collections/styling-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
+              <p>Produits de coiffage d'exception pour fixer, texturiser et apporter une brillance éclatante à votre chevelure.</p>
+              <span class="btn">Voir plus</span>
             </div>
-          </article>
+          </a>
 
-          <!-- CATÉGORIE 4 -->
-          <article class="shop-card" id="collection-varis">
+          <!-- PRODUIT 4 (Catalogue complet) -->
+          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="catalogue-complet">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
-              <span class="shop-badge">VARIS</span>
-            </div>
-            <div class="shop-card-body">
-              <h3>Collection VARIS</h3>
-              <p>Consultez la sélection exclusive VARIS disponible chez notre partenaire pour des résultats de salon.</p>
-              <a class="btn" href="https://cabelo.ca/collections/varis?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
-            </div>
-          </article>
-
-          <!-- CATÉGORIE 5 -->
-          <article class="shop-card" id="catalogue-complet">
-            <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
-              <span class="shop-badge">Catalogue</span>
+              <img class="shop-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=80" alt="Catalogue complet Cabelo" loading="lazy">
+              <span class="shop-badge">Collection</span>
             </div>
             <div class="shop-card-body">
               <h3>Tous les produits</h3>
-              <p>Parcourez l'intégralité du catalogue de notre partenaire pour découvrir l'ensemble des gammes.</p>
-              <a class="btn" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
+              <p>Parcourez l'intégralité du catalogue de notre partenaire officiel pour découvrir toutes les gammes disponibles.</p>
+              <span class="btn">Voir plus</span>
             </div>
-          </article>
+          </a>
 
-          <!-- CATÉGORIE 6 -->
-          <article class="shop-card" id="nos-decouvertes">
+          <!-- PRODUIT 5 (Nos découvertes) -->
+          <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="shop-card" id="nos-decouvertes">
             <div class="shop-image-wrap">
-              <img class="shop-image" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80" alt="Produits sélectionnés pour une routine beauté" loading="lazy">
-              <span class="shop-badge">Coups de cœur</span>
+              <img class="shop-image" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80" alt="Sélection de produits de beauté" loading="lazy">
+              <span class="shop-badge">Nouveauté</span>
             </div>
             <div class="shop-card-body">
               <h3>Nos découvertes</h3>
-              <p>Explorez nos coups de cœur du moment pour composer une routine sur-mesure pour vos cheveux.</p>
-              <a class="btn" href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Acheter</a>
+              <p>Explorez nos nouveautés et coups de cœur du moment pour composer une routine capillaire sur-mesure.</p>
+              <span class="btn">Voir plus</span>
             </div>
-          </article>
+          </a>
         </div>
 
         <p class="shop-footnote">
@@ -1810,3 +1799,5 @@
   </script>
 </body>
 </html>
+
+```
