@@ -161,15 +161,16 @@
       color: var(--white);
     }
 
-    /* BARRE D'ANNONCE */
+    /* BARRE D'ANNONCE HAUT DE PAGE */
     .announcement {
       background: var(--black);
       color: var(--rose-light);
       text-align: center;
-      padding: 9px 15px;
-      font-size: 9px;
+      padding: 11px 15px;
+      font-size: 9.5px;
       letter-spacing: 1.8px;
       text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
     }
 
     .announcement span {
@@ -227,7 +228,7 @@
       50% { transform: translateY(-5px); }
     }
 
-    /* EN-TÊTE ET MENU */
+    /* EN-TÊTE ET MENU STICKY */
     .site-header {
       position: sticky;
       top: 0;
@@ -288,7 +289,7 @@
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 21px;
+      gap: 20px;
     }
 
     .main-nav > a {
@@ -331,19 +332,19 @@
       cursor: pointer;
     }
 
-    /* ACCUEIL */
+    /* ACCUEIL WOUAH */
     .hero {
       position: relative;
-      min-height: 610px;
+      min-height: 640px;
       display: flex;
       align-items: center;
       overflow: hidden;
       background:
         linear-gradient(
           90deg,
-          rgba(23, 19, 19, 0.88) 0%,
-          rgba(23, 19, 19, 0.62) 48%,
-          rgba(23, 19, 19, 0.16) 100%
+          rgba(23, 19, 19, 0.90) 0%,
+          rgba(23, 19, 19, 0.65) 50%,
+          rgba(23, 19, 19, 0.20) 100%
         ),
         url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85')
         center 38% / cover no-repeat;
@@ -498,7 +499,7 @@
       font-size: 11px;
     }
 
-    /* BOUTIQUE EUFORA & SOINS CAPILLAIRES */
+    /* BOUTIQUES & PRODUITS (STYLE ÉPURÉ / SANS HUMAINS) */
     .boutique-section {
       background: var(--rose-pale);
       border-top: 1px solid var(--border);
@@ -538,7 +539,7 @@
 
     .spotlight-img-wrap {
       height: 100%;
-      min-height: 360px;
+      min-height: 380px;
       position: relative;
     }
 
@@ -583,7 +584,7 @@
 
     .bbn-hero-img-wrap {
       height: 100%;
-      min-height: 360px;
+      min-height: 380px;
       position: relative;
     }
 
@@ -1007,8 +1008,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
-        <a href="#boutique">Soins Eufora</a>
-        <a href="#outils">Brosses & VARIS</a>
+        <a href="#extensions-exclusives">Extensions</a>
         <a href="#matrix">Boutique Matrix</a>
         <a href="#bbn-nails">B.B Nails</a>
         <a href="#histoire">Notre histoire</a>
@@ -1035,7 +1035,7 @@
           </p>
           <div class="hero-actions">
             <a href="#services" class="btn">Découvrir nos services</a>
-            <a href="#boutique" class="btn btn-outline">Découvrir la boutique</a>
+            <a href="#matrix" class="btn btn-outline">Découvrir la boutique Matrix</a>
           </div>
           <div class="hero-note">Montréal · Laval · Rive-Nord</div>
         </div>
@@ -1152,60 +1152,36 @@
       </div>
     </section>
 
-    <!-- 2. SOINS CAPILLAIRES EUFORA -->
-    <section class="section boutique-section" id="boutique">
+    <!-- 2. SECTION EXTENSIONS PROFESSIONNELLES (100% PRODUITS / SANS VISAGE) -->
+    <section class="section boutique-section" id="extensions-exclusives">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">La sélection Bella Bay</span>
-          <h2>Soins capillaires Eufora</h2>
-          <p>La puissance de formules professionnelles haut de gamme pour nourrir et sublimer vos cheveux.</p>
+          <span class="eyebrow">Collection exclusive B.B</span>
+          <h2>Nos extensions capillaires</h2>
+          <p>Offrez à votre chevelure longueur, volume et mouvement grâce à notre sélection de mèches professionnelles de qualité supérieure.</p>
         </div>
 
         <div class="shop-banner">
-          ✨ Produits professionnels Eufora — Pour des cheveux éclatants de santé
+          ✨ Partenaire officiel Cabelo — Extensions & Rituels de luxe
         </div>
 
         <div class="spotlight-card">
-          <div class="spotlight-img-wrap">
-            <!-- Visuel élégant représentant les soins capillaires professionnels Eufora -->
-            <img class="spotlight-img" src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=90" alt="Soins capillaires professionnels Eufora" loading="lazy">
+          <div class="spotlight-content" style="padding: 50px;">
+            <span class="eyebrow">Qualité salon garantie</span>
+            <h3>L'excellence pour vos longueurs</h3>
+            <p>Des cheveux soyeux, durables et faciles à coiffer. Que ce soit pour un changement radical ou pour sublimer votre coiffure du quotidien, trouvez l'accord parfait pour votre chevelure.</p>
+            <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn">Découvrir le catalogue d'extensions</a>
           </div>
-          <div class="spotlight-content">
-            <span class="eyebrow">L'excellence Eufora</span>
-            <h3>Sublimez vos cheveux au quotidien</h3>
-            <p>Découvrez notre sélection de soins capillaires professionnels Eufora, conçus pour hydrater, réparer et protéger intensément toutes les natures de cheveux.</p>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn">Découvrir les soins Eufora</a>
+          <div class="spotlight-img-wrap">
+            <!-- Visuel professionnel axé sur les produits et mèches de haute qualité sans visage -->
+            <img class="spotlight-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=90" alt="Extensions capillaires professionnelles Bella Bay" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. BROSSES, OUTILS & VARIS (MODÈLE PROFESSIONNEL) -->
-    <section class="section" id="outils" style="background: var(--white);">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Accessoires de coiffure</span>
-          <h2>Brosses, outils & VARIS</h2>
-          <p>Des kits de brosses professionnelles et la collection exclusive VARIS pour un séchage et un coiffage parfaits.</p>
-        </div>
-
-        <div class="spotlight-card" style="background: var(--rose-pale);">
-          <div class="spotlight-content" style="padding: 45px;">
-            <span class="eyebrow">Matériel d'expert</span>
-            <h3>Précision et performance professionnelle</h3>
-            <p>Optimisez votre mise en plis et prenez soin de votre fibre capillaire grâce à notre sélection de brosses haut de gamme et d'outils de coiffage professionnels VARIS.</p>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Découvrir les outils</a>
-          </div>
-          <div class="spotlight-img-wrap">
-            <!-- Belle image professionnelle de brosses et d'outils de coiffure -->
-            <img class="spotlight-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=90" alt="Brosses professionnelles et outils VARIS" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. BOUTIQUE MATRIX (PRÉSENTATION COMPLÈTE) -->
-    <section class="section" id="matrix" style="background: var(--rose-pale); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <!-- 3. BOUTIQUE MATRIX (MISE EN VALEUR PREMIUM DES PRODUITS) -->
+    <section class="section" id="matrix" style="background: var(--white);">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">La sélection Bella Bay</span>
@@ -1213,62 +1189,61 @@
           <p>Les gammes professionnelles Matrix pour sublimer, réparer et entretenir vos cheveux à la maison.</p>
         </div>
 
-        <div class="shop-banner" style="background: var(--black); color: var(--gold-light); border-color: var(--gold);">
-          🌸 Gamme Matrix — Rituels professionnels de salon
+        <div class="shop-banner" style="background: var(--rose-pale); color: var(--black); border-color: var(--gold);">
+          🌸 Soins professionnels Matrix — Recommandés par Bella Bay
         </div>
 
-        <!-- Encadré visuel Matrix -->
-        <div class="spotlight-card" style="margin-bottom: 45px; background: var(--white);">
+        <!-- Encadré visuel vendeur mis en avant pour Matrix -->
+        <div class="spotlight-card" style="margin-bottom: 45px; background: var(--rose-pale);">
           <div class="spotlight-img-wrap">
-            <!-- Troisième visuel soigneusement sélectionné présentant Matrix -->
-            <img class="spotlight-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Présentation de la gamme Matrix" loading="lazy">
+            <img class="spotlight-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Produits de soins capillaires Matrix professionnels" loading="lazy">
           </div>
           <div class="spotlight-content" style="padding: 45px;">
-            <span class="eyebrow">Collection Matrix</span>
-            <h3>L'expertise salon à la maison</h3>
+            <span class="eyebrow">Gamme officielle Matrix</span>
+            <h3>Des rituels de salon directement chez vous</h3>
             <p>Retrouvez toute l'efficacité des formules professionnelles Matrix (hydratation, réparation des liaisons, protection des blonds et brillance) pour des résultats visibles et durables.</p>
-            <a href="https://www.amazon.ca/s?k=Matrix+Hair+Care&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn">Explorer toutes les gammes Matrix</a>
+            <a href="https://www.amazon.ca/s?k=Matrix+Hair+Care&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Explorer toutes les gammes Matrix</a>
           </div>
         </div>
 
         <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
           
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Hydratation intense</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">Food For Soft</h3>
             <p>Shampooing, revitalisant, masque et sérum pour une hydratation en profondeur et une douceur incomparable.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
           </article>
 
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Réparation & Liaisons</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">Instacure Build-A-Bond</h3>
             <p>Shampooing, revitalisant, masque et huile pour réparer et renforcer les cheveux sensibilisés et fragilisés.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+Instacure+Build-A-Bond&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
           </article>
 
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Blonds & Gris éclatants</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">So Silver</h3>
             <p>Shampooing violet, revitalisant et masque pour neutraliser les reflets jaunes indésirables sur cheveux blonds ou gris.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
           </article>
 
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Neutralisation reflets cuivrés</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">Brass Off</h3>
             <p>Shampooing bleu, revitalisant et masque pour neutraliser les reflets cuivrés et orangés sur cheveux châtains à clairs.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+Brass+Off&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
           </article>
 
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Maîtrise des frisottis</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">Mega Sleek</h3>
             <p>Shampooing, revitalisant et masque pour lisser les cheveux rebelles et contrôler durablement les frisottis.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+Mega+Sleek&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
           </article>
 
-          <article class="service-card" style="border-color: var(--gold); background: var(--white);">
+          <article class="service-card" style="border-color: var(--gold);">
             <span class="eyebrow">Volume & Corps</span>
             <h3 style="font-size: 24px; margin-bottom: 10px;">High Amplify</h3>
             <p>Shampooing, revitalisant et soin volume pour donner du corps et du tonus aux cheveux fins ou plats.</p>
@@ -1279,7 +1254,7 @@
       </div>
     </section>
 
-    <!-- 5. SECTION B.B NAILS (SIYOU) -->
+    <!-- 4. SECTION B.B NAILS (SIYOU - CATALOGUE ONGLES) -->
     <section class="section bbn-section" id="bbn-nails">
       <div class="container">
         <div class="section-heading">
@@ -1386,7 +1361,7 @@
       </div>
     </section>
 
-    <!-- SECTION FINALE SALON (STRICTEMENT EN BAS DE PAGE) -->
+    <!-- SECTION FINALE SALON -->
     <section class="section salon-showcase-section" id="salon-futur">
       <div class="container">
         <div class="salon-showcase-box">
@@ -1412,8 +1387,7 @@
       <div class="footer-links">
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
-        <a href="#boutique">Eufora</a>
-        <a href="#outils">Outils</a>
+        <a href="#extensions-exclusives">Extensions</a>
         <a href="#matrix">Matrix</a>
         <a href="#bbn-nails">Ongles</a>
         <a href="#contact">Contact</a>
@@ -1543,5 +1517,3 @@
   </script>
 </body>
 </html>
-
-```
