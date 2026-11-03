@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -176,6 +175,56 @@
     .announcement span {
       color: var(--gold-light);
       font-weight: 700;
+    }
+
+    /* BULLE FLOTTANTE PROMO ONGLES SIYOU */
+    .floating-promo-badge {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1500;
+      background: var(--black);
+      color: var(--rose-light);
+      border: 1px solid var(--gold);
+      padding: 14px 18px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(23, 19, 19, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      animation: floatBadge 3s ease-in-out infinite;
+      transition: transform 0.25s ease;
+    }
+
+    .floating-promo-badge:hover {
+      transform: scale(1.03);
+    }
+
+    .floating-promo-badge span {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .floating-close {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 5px;
+      line-height: 1;
+    }
+
+    .floating-close:hover {
+      color: var(--white);
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     /* EN-TÊTE ET MENU */
@@ -1059,6 +1108,12 @@
     ✨ Nouveauté B.B Nails : Profitez de <span>10% de rabais</span> sur les Press On Siyou avec le code <span>BELLA</span> !
   </div>
 
+  <!-- BULLE FLOTTANTE PROMO ONGLES -->
+  <aside class="floating-promo-badge" id="floatingPromo" aria-label="Promotion ongles Siyou">
+    <span>💅 -10% Siyou</span> avec le code <strong>BELLA</strong>
+    <button class="floating-close" id="closeFloatingPromo" aria-label="Fermer">&times;</button>
+  </aside>
+
   <!-- EN-TÊTE ET MENU -->
   <header class="site-header">
     <div class="container header-inner">
@@ -1083,10 +1138,11 @@
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
         <a href="#boutique">Boutique Cabelo</a>
+        <a href="#matrix">Boutique Matrix</a>
         <a href="#bbn-nails">B.B Nails</a>
         <a href="#histoire">Notre histoire</a>
         <a href="#contact">Contactez-nous</a>
-        <a class="nav-book" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Réserver</a>
+        <a class="nav-book" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Découvrir</a>
       </nav>
     </div>
   </header>
@@ -1252,6 +1308,73 @@
       </div>
     </section>
 
+    <!-- 2. BIS - BOUTIQUE MATRIX (SÉLECTION PROFESSIONNELLE) -->
+    <section class="section" id="matrix" style="background: var(--white);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">La sélection Bella Bay</span>
+          <h2>La boutique Matrix</h2>
+          <p>Les gammes professionnelles Matrix pour sublimer, réparer et entretenir vos cheveux à la maison.</p>
+        </div>
+
+        <div class="shop-banner" style="background: var(--rose-pale); color: var(--black); border-color: var(--gold);">
+          🌸 Soins professionnels Matrix — Recommandés par Bella Bay
+        </div>
+
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
+          
+          <!-- Food For Soft -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Hydratation intense</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">Food For Soft</h3>
+            <p>Shampooing, revitalisant, masque et sérum pour une hydratation en profondeur et une douceur incomparable.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+          <!-- Instacure Build-A-Bond -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Réparation & Liaisons</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">Instacure Build-A-Bond</h3>
+            <p>Shampooing, revitalisant, masque et huile pour réparer et renforcer les cheveux sensibilisés et fragilisés.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+Instacure+Build-A-Bond&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+          <!-- So Silver -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Blonds & Gris éclatants</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">So Silver</h3>
+            <p>Shampooing violet, revitalisant et masque pour neutraliser les reflets jaunes indésirables sur cheveux blonds ou gris.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+          <!-- Brass Off -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Neutralisation reflets cuivrés</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">Brass Off</h3>
+            <p>Shampooing bleu, revitalisant et masque pour neutraliser les reflets cuivrés et orangés sur cheveux châtains à clairs.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+Brass+Off&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+          <!-- Mega Sleek -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Maîtrise des frisottis</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">Mega Sleek</h3>
+            <p>Shampooing, revitalisant et masque pour lisser les cheveux rebelles et contrôler durablement les frisottis.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+Mega+Sleek&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+          <!-- High Amplify -->
+          <article class="service-card" style="border-color: var(--gold);">
+            <span class="eyebrow">Volume & Corps</span>
+            <h3 style="font-size: 24px; margin-bottom: 10px;">High Amplify</h3>
+            <p>Shampooing, revitalisant et soin volume pour donner du corps et du tonus aux cheveux fins ou plats.</p>
+            <a href="https://www.amazon.ca/s?k=Matrix+High+Amplify&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- 3. SECTION B.B NAILS (SIYOU - COUP DE CŒUR & CATALOGUE) -->
     <section class="section bbn-section" id="bbn-nails">
       <div class="container">
@@ -1386,6 +1509,8 @@
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
         <a href="#boutique">Boutique</a>
+        <a href="#matrix">Matrix</a>
+        <a href="#bbn-nails">Ongles</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -1406,6 +1531,15 @@
   <!-- JAVASCRIPT -->
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Gestion de la fermeture de la bulle flottante promo ongles
+    const floatingPromo = document.getElementById("floatingPromo");
+    const closeFloatingPromo = document.getElementById("closeFloatingPromo");
+    if (floatingPromo && closeFloatingPromo) {
+      closeFloatingPromo.addEventListener("click", () => {
+        floatingPromo.style.display = "none";
+      });
+    }
 
     const serviceDetails = {
       "coloration-base": {
@@ -1506,5 +1640,3 @@
   </script>
 </body>
 </html>
-
-```
