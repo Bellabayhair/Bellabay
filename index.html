@@ -12,6 +12,113 @@
   <!-- Script Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8086408253671459" crossorigin="anonymous"></script>
 
+  <!-- Balisage structuré Schema.org - Optimisation prioritaire pour Google, Gemini, ChatGPT & Moteurs de recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "name": "Bella Bay Mobile Service Coiffure",
+    "alternateName": "Bella Bay B.B",
+    "url": "https://www.bellabay.ca",
+    "logo": "https://www.bellabay.ca/logo-bb.png",
+    "description": "Bella est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité que vous apporteront de vrais bienfaits.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Laval",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "areaServed": [
+      "Montreal",
+      "Laval",
+      "Rive-Nord"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Balisage structuré Catalogue Produits (Schema.org Product) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Shampoing Réparateur Profond",
+          "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80",
+          "description": "Formule professionnelle haut de gamme pour nourrir intensément et raviver l'éclat de la fibre capillaire.",
+          "brand": { "@type": "Brand", "name": "Bella Bay" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "28.00", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Matrix Food For Soft",
+          "image": "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80",
+          "description": "Shampooing, revitalisant et sérum professionnel pour une hydratation en profondeur.",
+          "brand": { "@type": "Brand", "name": "Matrix" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "32.50", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Spray Fixation Souple",
+          "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80",
+          "description": "Maintien parfait et naturel sans effet carton pour structurer vos coiffures à domicile.",
+          "brand": { "@type": "Brand", "name": "Bella Bay" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "24.00", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Brosse Démêlante Ergonomique",
+          "image": "https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80",
+          "description": "Conçue pour démêler en douceur tous les types de cheveux sans casser la fibre.",
+          "brand": { "@type": "Brand", "name": "Bella Bay" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "19.99", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "Kit Press On Siyou",
+          "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80",
+          "description": "Manucure impeccable en un instant. Utilisez le code promo BELLA pour un rabais de 10%.",
+          "brand": { "@type": "Brand", "name": "Siyou Nails" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "25.00", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "Masque Nourrissant Argan",
+          "image": "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80",
+          "description": "Soin profond aux huiles précieuses pour redonner souplesse et brillance aux cheveux secs.",
+          "brand": { "@type": "Brand", "name": "Bella Bay" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "34.00", "availability": "https://schema.org/InStock" }
+        }
+      }
+    ]
+  }
+  </script>
+
   <title>Bella Bay (B.B) — Coiffure & Beauté</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -498,7 +605,7 @@
       font-size: 11px;
     }
 
-    /* GRILLE PRODUITS E-COMMERCE HAUT DE GAMME */
+    /* BOUTIQUE / CENTRE D'ACHAT GENERAL (12 PRODUITS STRUCTURÉS) */
     .boutique-section {
       background: var(--rose-pale);
       border-top: 1px solid var(--border);
@@ -511,11 +618,40 @@
       border: 1px solid var(--gold);
       padding: 14px 20px;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
       border-radius: 6px;
+    }
+
+    /* Sous-catégories (Sous-titres du centre d'achat) */
+    .shop-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    .shop-tab-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .shop-tab-btn:hover, .shop-tab-btn.active {
+      background: var(--black);
+      color: var(--gold-light);
+      border-color: var(--black);
+      box-shadow: 0 6px 15px rgba(23, 19, 19, 0.15);
     }
 
     .product-catalog {
@@ -886,7 +1022,7 @@
 
   <!-- BARRE D'ANNONCE -->
   <div class="announcement">
-    ✨ Bella Bay — Sublmez vos cheveux avec des produits et services de qualité. Code promo Siyou : <span>BELLA</span>
+    ✨ Bella Bay — Sublimes vos cheveux avec des produits et services de qualité. Code promo Siyou : <span>BELLA</span>
   </div>
 
   <!-- BULLE FLOTTANTE -->
@@ -911,9 +1047,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
-        <a href="#boutique">Boutique Cabelo</a>
-        <a href="#matrix">Boutique Matrix</a>
-        <a href="#bbn-nails">B.B Nails</a>
+        <a href="#boutique">Boutique & Centre d'achat</a>
         <a href="#histoire">Notre histoire</a>
         <a href="#contact">Contact</a>
         <a class="nav-book" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Découvrir</a>
@@ -928,7 +1062,7 @@
         <div class="hero-content">
           <span class="eyebrow">Bella Bay · Coiffure & Beauté</span>
           <h1>Révélez la beauté de vos cheveux <span>avec Bella Bay.</span></h1>
-          <p>Des services de coiffure professionnels à domicile et une boutique beauté soigneusement sélectionnée pour prendre soin de vos cheveux et révéler leur éclat.</p>
+          <p>Des services de coiffure professionnels à domicile (avec tout l'équipement nécessaire incluant notre <strong>lavabo</strong> portatif) et une boutique beauté soigneusement sélectionnée pour prendre soin de vos cheveux.</p>
           <div class="hero-actions">
             <a href="#services" class="btn">Découvrir nos services</a>
             <a href="#boutique" class="btn btn-outline">Découvrir la boutique</a>
@@ -1025,158 +1159,223 @@
       </div>
     </section>
 
-    <!-- VITRINE PRODUITS CABELO (AFFILIATION DIRECTE PAR PRODUIT) -->
+    <!-- BOUTIQUE / CENTRE D'ACHAT GÉNÉRAL (12 PRODUITS STRUCTURÉS) -->
     <section class="section boutique-section" id="boutique">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">La sélection Bella Bay</span>
-          <h2>La boutique Cabelo</h2>
-          <p>Nos coups de cœur professionnels et extensions capillaires recommandés pour votre routine.</p>
+          <span class="eyebrow">Centre d'achat général Bella Bay</span>
+          <h2>La Boutique & E-commerce</h2>
+          <p>Explorez l'ensemble de notre catalogue de produits professionnels, soins, accessoires et ongles.</p>
         </div>
 
         <div class="shop-banner">
-          ✨ Partenaire officiel Cabelo — Nos coups de cœur exclusifs & Extensions capillaires
+          ✨ Centre d'achat officiel Bella Bay — Soins capillaires, Matrix, Accessoires et Ongles Siyou
         </div>
 
+        <!-- Sous-catégories / Filtres type centre d'achat -->
+        <div class="shop-tabs">
+          <button class="shop-tab-btn active">Tout voir</button>
+          <button class="shop-tab-btn">Soins capillaires</button>
+          <button class="shop-tab-btn">Matrix</button>
+          <button class="shop-tab-btn">Coiffure & Brosses</button>
+          <button class="shop-tab-btn">Ongles (Siyou)</button>
+        </div>
+
+        <!-- Grille complète des 12 produits -->
         <div class="product-catalog">
+          
+          <!-- Produit 1 -->
           <article class="product-card">
             <div class="product-img-wrap">
-              <span class="product-tag">Cabelo</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Extensions de cheveux Cabelo" loading="lazy">
+              <span class="product-tag">Soins</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Shampoing Réparateur" loading="lazy">
             </div>
             <div class="product-info">
-              <h3>Extensions Capillaires</h3>
-              <p>Extensions professionnelles de haute qualité pour sublimer vos longueurs et apporter du volume.</p>
+              <h3>Shampoing Réparateur Profond</h3>
+              <p>Formule professionnelle haut de gamme pour nourrir intensément et raviver l'éclat de la fibre capillaire.</p>
               <div class="product-footer">
-                <span class="product-price">Qualité Pro</span>
-                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+                <span class="product-price">28.00 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
               </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <div class="product-img-wrap">
-              <span class="product-tag">Cabelo</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Soins professionnels Cabelo" loading="lazy">
-            </div>
-            <div class="product-info">
-              <h3>Soins Capillaires</h3>
-              <p>Formules professionnelles pour nourrir, réparer et entretenir l'éclat de vos cheveux au quotidien.</p>
-              <div class="product-footer">
-                <span class="product-price">Essentiel</span>
-                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-img-wrap">
-              <span class="product-tag">Cabelo</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Accessoires et finitions Cabelo" loading="lazy">
-            </div>
-            <div class="product-info">
-              <h3>Accessoires & Finitions</h3>
-              <p>Produits de coiffage et accessoires indispensables pour parfaire votre mise en beauté.</p>
-              <div class="product-footer">
-                <span class="product-price">Coup de cœur</span>
-                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- VITRINE PRODUITS MATRIX (AFFILIATION AMAZON bellabay0c-20) -->
-    <section class="section" id="matrix" style="background: var(--white);">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">La sélection Bella Bay</span>
-          <h2>La boutique Matrix</h2>
-          <p>Les gammes professionnelles Matrix pour sublimer, réparer et entretenir vos cheveux à la maison.</p>
-        </div>
-
-        <div class="shop-banner" style="background: var(--rose-pale); color: var(--black); border-color: var(--gold);">
-          🌸 Soins professionnels Matrix — Recommandés par Bella Bay
-        </div>
-
-        <div class="product-catalog">
+          <!-- Produit 2 -->
           <article class="product-card">
             <div class="product-img-wrap">
               <span class="product-tag">Matrix</span>
               <img class="product-img" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80" alt="Matrix Food For Soft" loading="lazy">
             </div>
             <div class="product-info">
-              <h3>Food For Soft</h3>
-              <p>Shampooing, revitalisant, masque et sérum pour une hydratation en profondeur.</p>
+              <h3>Matrix Food For Soft</h3>
+              <p>Shampooing, revitalisant et sérum professionnel pour une hydratation en profondeur.</p>
               <div class="product-footer">
-                <span class="product-price">Hydratation</span>
-                <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+                <span class="product-price">32.50 $</span>
+                <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
               </div>
             </div>
           </article>
 
+          <!-- Produit 3 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Coiffage</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Spray Fixation Souple" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Spray Fixation Souple</h3>
+              <p>Maintien parfait et naturel sans effet carton pour structurer vos coiffures à domicile.</p>
+              <div class="product-footer">
+                <span class="product-price">24.00 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 4 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Accessoires</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Brosse Démêlante" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Brosse Démêlante Ergonomique</h3>
+              <p>Conçue pour démêler en douceur tous les types de cheveux sans casser la fibre.</p>
+              <div class="product-footer">
+                <span class="product-price">19.99 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 5 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Ongles Siyou</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" alt="Kit Press On Siyou" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Kit Press On Siyou</h3>
+              <p>Manucure impeccable en un instant. Utilisez le code promo <strong>BELLA</strong> pour un rabais de 10%.</p>
+              <div class="product-footer">
+                <span class="product-price">Code : BELLA</span>
+                <a href="https://siyounails.com/?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 6 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Soins</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80" alt="Masque Nourrissant" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Masque Nourrissant Argan</h3>
+              <p>Soin profond aux huiles précieuses pour redonner souplesse et brillance aux cheveux secs.</p>
+              <div class="product-footer">
+                <span class="product-price">34.00 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 7 -->
           <article class="product-card">
             <div class="product-img-wrap">
               <span class="product-tag">Matrix</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Matrix Instacure Build-A-Bond" loading="lazy">
+              <img class="product-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Sérum Lissant Matrix" loading="lazy">
             </div>
             <div class="product-info">
-              <h3>Instacure Build-A-Bond</h3>
-              <p>Répare et renforce les liaisons des cheveux sensibilisés et fragilisés.</p>
+              <h3>Sérum Lissant Matrix</h3>
+              <p>Élimine les frisottis et protège de la chaleur pour un fini ultra-lisse et lumineux.</p>
               <div class="product-footer">
-                <span class="product-price">Réparation</span>
-                <a href="https://www.amazon.ca/s?k=Matrix+Instacure+Build-A-Bond&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+                <span class="product-price">29.99 $</span>
+                <a href="https://www.amazon.ca/s?k=Matrix&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
               </div>
             </div>
           </article>
 
+          <!-- Produit 8 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Coiffage</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Mousse Volume" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Mousse Volume Racines</h3>
+              <p>Apporte du corps et du gonflant dès la racine pour un brushing plein de vitalité.</p>
+              <div class="product-footer">
+                <span class="product-price">22.50 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 9 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Accessoires</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Peigne Carbone" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Peigne en Carbone Antistatique</h3>
+              <p>Indispensable pour séparer les mèches avec précision lors de la coloration et du coiffage.</p>
+              <div class="product-footer">
+                <span class="product-price">14.00 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 10 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Ongles Siyou</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" alt="Huile Cuticules" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Huile Nourrissante Cuticules</h3>
+              <p>Soin hydratant pour des ongles soignés et des cuticules parfaitement nourries.</p>
+              <div class="product-footer">
+                <span class="product-price">16.00 $</span>
+                <a href="https://siyounails.com/?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 11 -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Soins</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Huile Thermique" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Huile Protectrice Thermique</h3>
+              <p>Protège la fibre des appareils chauffants tout en scellant l'hydratation des pointes.</p>
+              <div class="product-footer">
+                <span class="product-price">31.00 $</span>
+                <a href="#contact" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 12 -->
           <article class="product-card">
             <div class="product-img-wrap">
               <span class="product-tag">Matrix</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Matrix So Silver" loading="lazy">
+              <img class="product-img" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80" alt="Matrix So Silver" loading="lazy">
             </div>
             <div class="product-info">
-              <h3>So Silver</h3>
-              <p>Shampooing violet pour neutraliser les reflets jaunes sur cheveux blonds ou gris.</p>
+              <h3>Matrix So Silver</h3>
+              <p>Shampooing neutralisant pour illuminer les cheveux blonds, blancs ou gris.</p>
               <div class="product-footer">
-                <span class="product-price">Blonds éclatants</span>
-                <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+                <span class="product-price">27.00 $</span>
+                <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
               </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- SECTION B.B NAILS (SIYOU) -->
-    <section class="section boutique-section" id="bbn-nails">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">B.B Nails 💅✨</span>
-          <h2>Collection Press On Siyou</h2>
-          <p>Sublimez vos mains avec notre sélection de prothèses ongulaires élégantes.</p>
-        </div>
-
-        <div class="shop-banner">
-          ✨ Profitez de 10% de rabais avec le code promo : <strong style="color:#ffffff; margin-left: 5px;">BELLA</strong>
-        </div>
-
-        <div class="product-catalog" style="grid-template-columns: 1fr; max-width: 550px; margin: 0 auto;">
-          <article class="product-card">
-            <div class="product-img-wrap" style="height: 280px;">
-              <span class="product-tag">Siyou Nails</span>
-              <img class="product-img" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=85" alt="Press On Siyou" loading="lazy">
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <h3>Press On Nude & Minimalistes</h3>
-              <p>Une sélection exclusive de Press On pour un fini parfait en un instant. Utilisez le code <strong>BELLA</strong> à la caisse.</p>
-              <div class="product-footer" style="justify-content: center; gap: 20px;">
-                <span class="product-price">Code : BELLA (-10%)</span>
-                <a href="https://siyounails.com/?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn" style="min-height:40px; padding:8px 20px;">Commander sur Siyou</a>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -1187,7 +1386,7 @@
         <div>
           <span class="eyebrow">Votre beauté, chez vous</span>
           <h2>La coiffure s’invite chez vous</h2>
-          <p>Avec Bella Bay, profitez d’un service de coiffure personnalisé dans le confort de votre domicile.</p>
+          <p>Avec Bella Bay, profitez d’un service de coiffure personnalisé dans le confort de votre domicile. Nous apportons tout le matériel nécessaire, incluant notre <strong>lavabo</strong> portatif.</p>
           <div class="location-list">
             <span>Montréal</span>
             <span>Laval</span>
@@ -1245,21 +1444,6 @@
         </div>
       </div>
     </section>
-
-    <!-- SALON SHOWCASE -->
-    <section class="section salon-showcase-section" id="salon-futur">
-      <div class="container">
-        <div class="salon-showcase-box">
-          <img class="salon-showcase-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85" alt="Salon Bella Bay" loading="lazy">
-          <div class="salon-showcase-content">
-            <span class="eyebrow">Notre vision</span>
-            <h2>Une vision qui grandit avec vous</h2>
-            <p>Notre vision à long terme est de créer un espace physique chaleureux qui réunira coiffure, produits professionnels et conseils personnalisés.</p>
-            <a class="btn" href="#contact">En savoir plus</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -1271,8 +1455,6 @@
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
         <a href="#boutique">Boutique</a>
-        <a href="#matrix">Matrix</a>
-        <a href="#bbn-nails">Ongles</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
