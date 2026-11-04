@@ -1,1614 +1,1366 @@
-<!DOCTYPE html>  <html lang="fr-CA">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <meta name="theme-color" content="#171313">    <meta name="description" content="Bella Bay (B.B) — Haute Coiffure Mobile & Luxury International Beauty Collections. Montréal, Laval, Dubaï.">    <title>Bella Bay (B.B) — Luxury International Hair & Beauty</title>    <link rel="preconnect" href="https://fonts.googleapis.com">  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">    <style>  
-    :root {  
-      --black: #171313;  
-      --black-soft: #211a1b;  
-      --rose: #d9a0a5;  
-      --rose-light: #f4dfe0;  
-      --rose-pale: #fff7f6;  
-      --gold: #c9a46b;  
-      --gold-light: #e5c99a;  
-      --white: #fffdfc;  
-      --text: #382e2e;  
-      --muted: #827474;  
-      --border: rgba(201, 164, 107, 0.4);  
-      --shadow: 0 20px 50px rgba(33, 20, 20, 0.12);  
-    }  
-  
-    * {  
-      box-sizing: border-box;  
-      margin: 0;  
-      padding: 0;  
-    }  
-  
-    html {  
-      scroll-behavior: smooth;  
-      scroll-padding-top: 100px;  
-    }  
-  
-    body {  
-      background: var(--white);  
-      color: var(--text);  
-      font-family: 'Montserrat', sans-serif;  
-      font-size: 14px;  
-      line-height: 1.7;  
-    }  
-  
-    img {  
-      display: block;  
-      width: 100%;  
-      max-width: 100%;  
-    }  
-  
-    a {  
-      color: inherit;  
-      text-decoration: none;  
-    }  
-  
-    button {  
-      font: inherit;  
-    }  
-  
-    button,  
-    a {  
-      -webkit-tap-highlight-color: transparent;  
-    }  
-  
-    .container {  
-      width: min(1240px, 92%);  
-      margin: 0 auto;  
-    }  
-  
-    .section {  
-      padding: 110px 0;  
-    }  
-  
-    .section-heading {  
-      text-align: center;  
-      max-width: 780px;  
-      margin: 0 auto 55px;  
-    }  
-  
-    .eyebrow {  
-      display: inline-block;  
-      color: #a77b45;  
-      text-transform: uppercase;  
-      font-size: 10px;  
-      font-weight: 700;  
-      letter-spacing: 4px;  
-      margin-bottom: 14px;  
-    }  
-  
-    h1,  
-    h2,  
-    h3,  
-    .brand-name {  
-      font-family: 'Cormorant Garamond', serif;  
-      font-weight: 500;  
-      line-height: 1.12;  
-    }  
-  
-    h2 {  
-      font-size: clamp(38px, 5vw, 56px);  
-      color: var(--black);  
-      margin-bottom: 16px;  
-    }  
-  
-    .section-heading p {  
-      color: var(--muted);  
-      font-size: 14px;  
-    }  
-  
-    .btn {  
-      display: inline-flex;  
-      align-items: center;  
-      justify-content: center;  
-      gap: 10px;  
-      min-height: 50px;  
-      padding: 13px 28px;  
-      border: 1px solid var(--gold);  
-      background: var(--gold);  
-      color: var(--black);  
-      font-size: 10px;  
-      font-weight: 700;  
-      letter-spacing: 1.8px;  
-      text-transform: uppercase;  
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);  
-      cursor: pointer;  
-      text-align: center;  
-    }  
-  
-    .btn:hover {  
-      background: var(--gold-light);  
-      border-color: var(--gold-light);  
-      transform: translateY(-3px);  
-      box-shadow: 0 10px 25px rgba(201, 164, 107, 0.35);  
-    }  
-  
-    .btn-outline {  
-      background: transparent;  
-      border-color: var(--gold-light);  
-      color: var(--gold-light);  
-    }  
-  
-    .btn-outline:hover {  
-      background: var(--gold);  
-      color: var(--black);  
-    }  
-  
-    .btn-dark {  
-      background: var(--black);  
-      color: var(--white);  
-      border-color: var(--black);  
-    }  
-  
-    .btn-dark:hover {  
-      background: #2b2223;  
-      color: var(--white);  
-      box-shadow: 0 10px 25px rgba(23, 19, 19, 0.3);  
-    }  
-  
-    /* BARRE D'ANNONCE HAUT DE PAGE (LUXE) */  
-    .announcement {  
-      background: var(--black);  
-      color: var(--rose-light);  
-      text-align: center;  
-      padding: 12px 15px;  
-      font-size: 9.5px;  
-      letter-spacing: 2px;  
-      text-transform: uppercase;  
-      border-bottom: 1px solid var(--gold);  
-    }  
-  
-    .announcement span {  
-      color: var(--gold-light);  
-      font-weight: 700;  
-    }  
-  
-    /* BULLE FLOTTANTE PROMO ONGLES SIYOU */  
-    .floating-promo-badge {  
-      position: fixed;  
-      bottom: 30px;  
-      right: 30px;  
-      z-index: 1500;  
-      background: var(--black);  
-      color: var(--rose-light);  
-      border: 1px solid var(--gold);  
-      padding: 15px 20px;  
-      border-radius: 50px;  
-      box-shadow: 0 15px 35px rgba(23, 19, 19, 0.3);  
-      display: flex;  
-      align-items: center;  
-      gap: 10px;  
-      font-size: 11px;  
-      font-weight: 500;  
-      letter-spacing: 0.5px;  
-      animation: floatBadge 3s ease-in-out infinite;  
-      transition: transform 0.25s ease;  
-    }  
-  
-    .floating-promo-badge:hover {  
-      transform: scale(1.05);  
-    }  
-  
-    .floating-promo-badge span {  
-      color: var(--gold-light);  
-      font-weight: 700;  
-    }  
-  
-    .floating-close {  
-      background: transparent;  
-      border: none;  
-      color: var(--muted);  
-      font-size: 16px;  
-      cursor: pointer;  
-      margin-left: 5px;  
-      line-height: 1;  
-    }  
-  
-    .floating-close:hover {  
-      color: var(--white);  
-    }  
-  
-    @keyframes floatBadge {  
-      0%, 100% { transform: translateY(0); }  
-      50% { transform: translateY(-6px); }  
-    }  
-  
-    /* EN-TÊTE ET MENU STICKY */  
-    .site-header {  
-      position: sticky;  
-      top: 0;  
-      z-index: 1000;  
-      background: rgba(255, 253, 252, 0.96);  
-      border-bottom: 1px solid var(--border);  
-      backdrop-filter: blur(14px);  
-    }  
-  
-    .header-inner {  
-      min-height: 92px;  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-      gap: 24px;  
-    }  
-  
-    .brand {  
-      display: inline-flex;  
-      align-items: center;  
-      gap: 14px;  
-      flex-shrink: 0;  
-    }  
-  
-    .brand-mark {  
-      width: 56px;  
-      height: 56px;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      border: 1px solid var(--gold);  
-      border-radius: 50%;  
-      color: var(--gold);  
-      background: var(--black);  
-      font-family: 'Cormorant Garamond', serif;  
-      font-size: 22px;  
-      letter-spacing: 1px;  
-    }  
-  
-    .brand-copy {  
-      display: flex;  
-      flex-direction: column;  
-    }  
-  
-    .brand-name {  
-      color: var(--black);  
-      font-size: 32px;  
-      letter-spacing: 1.5px;  
-    }  
-  
-    .brand-tagline {  
-      color: #a77b45;  
-      font-size: 8.5px;  
-      letter-spacing: 2.5px;  
-      text-transform: uppercase;  
-    }  
-  
-    .main-nav {  
-      display: flex;  
-      align-items: center;  
-      gap: 22px;  
-    }  
-  
-    .main-nav > a {  
-      border: 0;  
-      background: transparent;  
-      color: var(--text);  
-      font-family: 'Montserrat', sans-serif;  
-      font-size: 10px;  
-      font-weight: 600;  
-      letter-spacing: 0.8px;  
-      cursor: pointer;  
-      white-space: nowrap;  
-      transition: color 0.2s ease;  
-    }  
-  
-    .main-nav > a:hover {  
-      color: #a77b45;  
-    }  
-  
-    .main-nav .nav-book {  
-      padding: 12px 16px;  
-      background: var(--black);  
-      color: var(--gold-light);  
-      border: 1px solid var(--gold);  
-    }  
-  
-    .main-nav .nav-book:hover {  
-      background: var(--gold);  
-      color: var(--black);  
-    }  
-  
-    .mobile-menu-toggle {  
-      display: none;  
-      width: 44px;  
-      height: 44px;  
-      border: 1px solid var(--border);  
-      background: var(--white);  
-      color: var(--black);  
-      font-size: 23px;  
-      cursor: pointer;  
-    }  
-  
-    /* ACCUEIL VIP DUBAÏ / MONTRÉAL */  
-    .hero {  
-      position: relative;  
-      min-height: 680px;  
-      display: flex;  
-      align-items: center;  
-      overflow: hidden;  
-      background:  
-        linear-gradient(  
-          90deg,  
-          rgba(23, 19, 19, 0.94) 0%,  
-          rgba(23, 19, 19, 0.70) 50%,  
-          rgba(23, 19, 19, 0.25) 100%  
-        ),  
-        url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=90')  
-        center 38% / cover no-repeat;  
-    }  
-  
-    .hero-content {  
-      position: relative;  
-      z-index: 1;  
-      max-width: 780px;  
-      padding: 90px 0;  
-      color: var(--white);  
-    }  
-  
-    .hero .eyebrow {  
-      color: var(--gold-light);  
-    }  
-  
-    .hero h1 {  
-      font-size: clamp(50px, 7.5vw, 88px);  
-      margin-bottom: 24px;  
-      color: var(--white);  
-    }  
-  
-    .hero h1 span {  
-      color: var(--rose);  
-      font-style: italic;  
-    }  
-  
-    .hero p {  
-      max-width: 580px;  
-      margin-bottom: 32px;  
-      color: #f5e9e7;  
-      font-size: 15px;  
-      line-height: 1.95;  
-    }  
-  
-    .hero-actions {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 14px;  
-    }  
-  
-    .hero-note {  
-      margin-top: 28px;  
-      color: #e6d6d0;  
-      font-size: 10px;  
-      letter-spacing: 1.5px;  
-      text-transform: uppercase;  
-    }  
-  
-    /* BANDEAU DE VALEURS 7 ÉTOILES */  
-    .value-strip {  
-      background: var(--rose-pale);  
-      border-bottom: 1px solid var(--border);  
-      border-top: 1px solid var(--border);  
-    }  
-  
-    .value-grid {  
-      display: grid;  
-      grid-template-columns: repeat(3, 1fr);  
-    }  
-  
-    .value-item {  
-      text-align: center;  
-      padding: 30px 18px;  
-      border-right: 1px solid var(--border);  
-    }  
-  
-    .value-item:last-child {  
-      border-right: 0;  
-    }  
-  
-    .value-item strong {  
-      display: block;  
-      margin-bottom: 6px;  
-      color: var(--black);  
-      font-family: 'Cormorant Garamond', serif;  
-      font-size: 24px;  
-      font-weight: 600;  
-    }  
-  
-    .value-item span {  
-      color: var(--muted);  
-      font-size: 10.5px;  
-      letter-spacing: 0.5px;  
-    }  
-  
-    /* SERVICES DE COIFFURE */  
-    .services-section {  
-      background: var(--white);  
-    }  
-  
-    .services-grid {  
-      display: grid;  
-      grid-template-columns: repeat(3, minmax(0, 1fr));  
-      gap: 30px;  
-    }  
-  
-    .service-card {  
-      display: flex;  
-      flex-direction: column;  
-      padding: 35px 30px;  
-      background: var(--white);  
-      border: 2px solid var(--gold);  
-      border-radius: 8px;  
-      box-shadow: 0 12px 35px rgba(201, 164, 107, 0.12);  
-      position: relative;  
-      transition: all 0.35s ease;  
-    }  
-  
-    .service-card:hover {  
-      transform: translateY(-8px);  
-      box-shadow: 0 20px 45px rgba(201, 164, 107, 0.28);  
-      border-color: #a77b45;  
-    }  
-  
-    .service-number {  
-      margin-bottom: 14px;  
-      color: #a77b45;  
-      font-family: 'Cormorant Garamond', serif;  
-      font-size: 28px;  
-      font-weight: 700;  
-    }  
-  
-    .service-card h3 {  
-      margin-bottom: 12px;  
-      color: var(--black);  
-      font-size: 28px;  
-    }  
-  
-    .service-card p {  
-      flex-grow: 1;  
-      margin-bottom: 20px;  
-      color: var(--muted);  
-      font-size: 13px;  
-      line-height: 1.85;  
-    }  
-  
-    .service-price {  
-      margin-bottom: 20px;  
-      color: #9b6b36;  
-      font-size: 14px;  
-      font-weight: 700;  
-    }  
-  
-    .service-card .btn {  
-      width: 100%;  
-    }  
-  
-    .price-note {  
-      margin-top: 35px;  
-      text-align: center;  
-      color: var(--muted);  
-      font-size: 11.5px;  
-    }  
-  
-    /* SECTION EXTENSIONS INTERNATIONALES - LUXE 5 ÉTOILES */  
-    .boutique-section {  
-      background: var(--rose-pale);  
-      border-top: 1px solid var(--border);  
-      border-bottom: 1px solid var(--border);  
-    }  
-  
-    .shop-banner {  
-      background: var(--black);  
-      color: var(--gold-light);  
-      border: 1px solid var(--gold);  
-      padding: 18px 26px;  
-      text-align: center;  
-      margin-bottom: 50px;  
-      font-size: 11px;  
-      letter-spacing: 3px;  
-      text-transform: uppercase;  
-      border-radius: 8px;  
-      box-shadow: 0 8px 25px rgba(23, 19, 19, 0.12);  
-    }  
-  
-    .shop-banner span {  
-      color: var(--white);  
-      font-weight: 700;  
-    }  
-  
-    .product-showcase-grid {  
-      display: grid;  
-      grid-template-columns: repeat(4, minmax(0, 1fr));  
-      gap: 28px;  
-    }  
-  
-    .luxury-product-card {  
-      background: var(--white);  
-      border: 1px solid var(--border);  
-      border-radius: 12px;  
-      overflow: hidden;  
-      box-shadow: var(--shadow);  
-      display: flex;  
-      flex-direction: column;  
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);  
-    }  
-  
-    .luxury-product-card:hover {  
-      transform: translateY(-10px);  
-      box-shadow: 0 25px 55px rgba(201, 164, 107, 0.25);  
-      border-color: var(--gold);  
-    }  
-  
-    .luxury-img-wrap {  
-      height: 280px;  
-      position: relative;  
-      overflow: hidden;  
-      background: var(--black-soft);  
-    }  
-  
-    .luxury-img {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: cover;  
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);  
-    }  
-  
-    .luxury-product-card:hover .luxury-img {  
-      transform: scale(1.08);  
-    }  
-  
-    .luxury-badge {  
-      position: absolute;  
-      top: 16px;  
-      left: 16px;  
-      background: var(--black);  
-      color: var(--gold-light);  
-      border: 1px solid var(--gold);  
-      padding: 7px 15px;  
-      font-size: 9.5px;  
-      font-weight: 700;  
-      letter-spacing: 1.5px;  
-      text-transform: uppercase;  
-      border-radius: 4px;  
-      box-shadow: 0 4px 15px rgba(0,0,0,0.35);  
-    }  
-  
-    .luxury-content {  
-      padding: 28px;  
-      display: flex;  
-      flex-direction: column;  
-      flex-grow: 1;  
-    }  
-  
-    .luxury-content h3 {  
-      font-size: 23px;  
-      color: var(--black);  
-      margin-bottom: 12px;  
-    }  
-  
-    .luxury-content p {  
-      color: var(--muted);  
-      font-size: 13px;  
-      line-height: 1.85;  
-      margin-bottom: 22px;  
-      flex-grow: 1;  
-    }  
-  
-    .luxury-footer {  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-      gap: 14px;  
-      margin-top: auto;  
-      padding-top: 18px;  
-      border-top: 1px solid rgba(201, 164, 107, 0.25);  
-    }  
-  
-    .luxury-price-box {  
-      display: flex;  
-      flex-direction: column;  
-    }  
-  
-    .luxury-current-price {  
-      color: #9b6b36;  
-      font-size: 18px;  
-      font-weight: 700;  
-      font-family: 'Cormorant Garamond', serif;  
-    }  
-  
-    .luxury-old-price {  
-      text-decoration: line-through;  
-      color: var(--muted);  
-      font-size: 11px;  
-    }  
-  
-    /* SECTION MATRIX & SIYOU (BOUTIQUE COMPLÈTE) */  
-    .spotlight-card {  
-      display: grid;  
-      grid-template-columns: 1.1fr 1fr;  
-      align-items: center;  
-      background: var(--white);  
-      border: 1px solid var(--border);  
-      border-radius: 14px;  
-      overflow: hidden;  
-      box-shadow: var(--shadow);  
-    }  
-  
-    .spotlight-img-wrap {  
-      height: 100%;  
-      min-height: 400px;  
-      position: relative;  
-    }  
-  
-    .spotlight-img {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: cover;  
-    }  
-  
-    .spotlight-content {  
-      padding: 50px;  
-    }  
-  
-    .spotlight-content h3 {  
-      font-size: 34px;  
-      color: var(--black);  
-      margin-bottom: 15px;  
-    }  
-  
-    .spotlight-content p {  
-      color: var(--muted);  
-      font-size: 13.5px;  
-      line-height: 1.9;  
-      margin-bottom: 28px;  
-    }  
-  
-    .promo-badge-small {  
-      background-color: #fdf5f5;  
-      border: 1px dashed var(--gold);  
-      color: var(--text);  
-      padding: 10px 15px;  
-      border-radius: 6px;  
-      font-size: 11px;  
-      margin-bottom: 22px;  
-      text-align: center;  
-      display: inline-block;  
-    }  
-  
-    .promo-badge-small span {  
-      font-weight: bold;  
-      color: #9b6b36;  
-      letter-spacing: 1px;  
-    }  
-  
-    /* SERVICE DE COIFFURE À DOMICILE (VIP) */  
-    .mobile-service {  
-      background: var(--black);  
-      color: var(--white);  
-    }  
-  
-    .mobile-service-grid {  
-      display: grid;  
-      grid-template-columns: 1fr 1fr;  
-      align-items: center;  
-      gap: 70px;  
-    }  
-  
-    .mobile-service h2 {  
-      color: var(--white);  
-    }  
-  
-    .mobile-service p {  
-      margin-bottom: 20px;  
-      color: #d8ccca;  
-      font-size: 14px;  
-      line-height: 2;  
-    }  
-  
-    .mobile-service .eyebrow {  
-      color: var(--gold-light);  
-    }  
-  
-    .mobile-service-image {  
-      min-height: 440px;  
-      background:  
-        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=90')  
-        center / cover no-repeat;  
-      border: 1px solid var(--gold);  
-      border-radius: 10px;  
-    }  
-  
-    .location-list {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 12px;  
-      margin: 28px 0;  
-    }  
-  
-    .location-list span {  
-      padding: 10px 16px;  
-      border: 1px solid rgba(229, 201, 154, 0.5);  
-      color: var(--gold-light);  
-      font-size: 10.5px;  
-      letter-spacing: 1.5px;  
-      text-transform: uppercase;  
-    }  
-  
-    /* HISTOIRE */  
-    .story-section {  
-      background: var(--rose-pale);  
-      border-top: 1px solid var(--border);  
-      border-bottom: 1px solid var(--border);  
-    }  
-  
-    .story-grid {  
-      display: grid;  
-      grid-template-columns: 0.9fr 1.1fr;  
-      gap: 70px;  
-      align-items: center;  
-    }  
-  
-    .story-image {  
-      min-height: 520px;  
-      background:  
-        url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=90')  
-        center / cover no-repeat;  
-      border-radius: 10px;  
-    }  
-  
-    .story-copy h2 {  
-      margin-bottom: 24px;  
-    }  
-  
-    .story-copy p {  
-      margin-bottom: 18px;  
-      color: var(--muted);  
-      font-size: 13px;  
-      line-height: 2.05;  
-    }  
-  
-    .signature {  
-      margin-top: 26px;  
-      color: #a77b45;  
-      font-family: 'Cormorant Garamond', serif;  
-      font-size: 30px;  
-      font-style: italic;  
-    }  
-  
-    /* SECTION CONTACT */  
-    .contact-section {  
-      background: var(--black);  
-      color: var(--white);  
-    }  
-  
-    .contact-section h2 {  
-      color: var(--white);  
-    }  
-  
-    .contact-section .section-heading p {  
-      color: #d5c8c6;  
-    }  
-  
-    .contact-grid {  
-      display: grid;  
-      grid-template-columns: repeat(3, 1fr);  
-      gap: 26px;  
-    }  
-  
-    .contact-card {  
-      padding: 35px 24px;  
-      text-align: center;  
-      border: 1px solid rgba(201, 164, 107, 0.45);  
-      border-radius: 8px;  
-    }  
-  
-    .contact-card .contact-icon {  
-      margin-bottom: 14px;  
-      color: var(--gold-light);  
-      font-size: 28px;  
-    }  
-  
-    .contact-card h3 {  
-      margin-bottom: 12px;  
-      color: var(--gold-light);  
-      font-size: 26px;  
-    }  
-  
-    .contact-card p,  
-    .contact-card a {  
-      color: #e4d8d6;  
-      font-size: 12px;  
-      overflow-wrap: anywhere;  
-    }  
-  
-    .contact-card a:hover {  
-      color: var(--gold-light);  
-    }  
-  
-    .contact-actions {  
-      display: flex;  
-      justify-content: center;  
-      flex-wrap: wrap;  
-      gap: 14px;  
-      margin-top: 40px;  
-    }  
-  
-    /* SECTION FINALE SALON */  
-    .salon-showcase-section {  
-      background: var(--white);  
-      border-top: 1px solid var(--border);  
-    }  
-  
-    .salon-showcase-box {  
-      background: var(--black);  
-      color: var(--white);  
-      border-radius: 14px;  
-      overflow: hidden;  
-      border: 1px solid var(--gold);  
-      display: grid;  
-      grid-template-columns: 1.1fr 1fr;  
-      align-items: center;  
-    }  
-  
-    .salon-showcase-img {  
-      height: 100%;  
-      min-height: 420px;  
-      object-fit: cover;  
-      width: 100%;  
-    }  
-  
-    .salon-showcase-content {  
-      padding: 60px;  
-    }  
-  
-    .salon-showcase-content .eyebrow {  
-      color: var(--gold-light);  
-    }  
-  
-    .salon-showcase-content h2 {  
-      color: var(--white);  
-      font-size: 38px;  
-      margin-bottom: 18px;  
-    }  
-  
-    .salon-showcase-content p {  
-      color: #d8ccca;  
-      font-size: 13.5px;  
-      line-height: 2;  
-      margin-bottom: 28px;  
-    }  
-  
-    /* PIED DE PAGE */  
-    .site-footer {  
-      padding: 35px 0;  
-      background: #100d0d;  
-      color: #c9bdbc;  
-      border-top: 1px solid rgba(201, 164, 107, 0.3);  
-    }  
-  
-    .footer-inner {  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-      flex-wrap: wrap;  
-      gap: 20px;  
-    }  
-  
-    .footer-brand {  
-      color: var(--gold-light);  
-      font-family: 'Cormorant Garamond', serif;  
-      font-size: 26px;  
-    }  
-  
-    .footer-copy {  
-      font-size: 10px;  
-      letter-spacing: 0.5px;  
-    }  
-  
-    .footer-links {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 20px;  
-      font-size: 11px;  
-    }  
-  
-    .footer-links a:hover {  
-      color: var(--gold-light);  
-    }  
-  
-    /* MODAL */  
-    .modal {  
-      display: none;  
-      position: fixed;  
-      inset: 0;  
-      z-index: 2000;  
-      align-items: center;  
-      justify-content: center;  
-      padding: 20px;  
-      background: rgba(15, 11, 11, 0.82);  
-    }  
-  
-    .modal.active {  
-      display: flex;  
-    }  
-  
-    .modal-content {  
-      position: relative;  
-      width: min(560px, 100%);  
-      max-height: 85vh;  
-      overflow-y: auto;  
-      padding: 40px;  
-      background: var(--white);  
-      border: 1px solid var(--gold);  
-      border-radius: 10px;  
-    }  
-  
-    .modal-close {  
-      position: absolute;  
-      top: 12px;  
-      right: 16px;  
-      width: 36px;  
-      height: 36px;  
-      border: 0;  
-      background: transparent;  
-      color: var(--black);  
-      font-size: 30px;  
-      cursor: pointer;  
-    }  
-  
-    .modal-content h3 {  
-      padding-right: 25px;  
-      margin-bottom: 14px;  
-      color: var(--black);  
-      font-size: 36px;  
-    }  
-  
-    .modal-content p {  
-      margin-bottom: 20px;  
-      color: var(--muted);  
-      font-size: 13px;  
-      line-height: 1.95;  
-    }  
-  
-    .modal-content .modal-price {  
-      color: #9b6b36;  
-      font-size: 15px;  
-      font-weight: 700;  
-    }  
-  
-    @media (max-width: 1050px) {  
-      .header-inner { min-height: 82px; }  
-      .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; }  
-      .main-nav {  
-        display: none;  
-        position: absolute;  
-        top: 100%;  
-        left: 0;  
-        right: 0;  
-        max-height: calc(100vh - 100px);  
-        overflow-y: auto;  
-        padding: 20px 5% 30px;  
-        background: var(--white);  
-        border-bottom: 1px solid var(--border);  
-        box-shadow: var(--shadow);  
-        align-items: stretch;  
-        flex-direction: column;  
-        gap: 0;  
-      }  
-      .main-nav.nav-open { display: flex; }  
-      .main-nav > a {  
-        display: flex;  
-        align-items: center;  
-        width: 100%;  
-        padding: 14px 5px;  
-        text-align: left;  
-        font-size: 12.5px;  
-        border-bottom: 1px solid #f0e5e2;  
-      }  
-      .main-nav .nav-book { margin-top: 14px; justify-content: center; border: 1px solid var(--gold); }  
-      .product-showcase-grid, .spotlight-card, .bbn-hero-banner, .mobile-service-grid, .story-grid, .salon-showcase-box {  
-        grid-template-columns: 1fr;  
-        gap: 24px;  
-      }  
-      .luxury-img-wrap, .spotlight-img-wrap, .salon-showcase-img { min-height: 280px; }  
-    }  
-  
-    @media (max-width: 680px) {  
-      .section { padding: 75px 0; }  
-      .container { width: 90%; }  
-      .hero { min-height: 590px; background-position: 58% center; }  
-      .hero-content { padding: 75px 0; }  
-      .hero h1 { font-size: clamp(44px, 12vw, 64px); }  
-      .hero-actions { flex-direction: column; align-items: stretch; max-width: 340px; }  
-      .value-grid { grid-template-columns: 1fr; }  
-      .value-item { padding: 20px; border-right: 0; border-bottom: 1px solid var(--border); }  
-      .services-grid, .contact-grid { grid-template-columns: 1fr; }  
-      .mobile-service-image { min-height: 310px; grid-row: 1; }  
-      .story-image { min-height: 330px; }  
-      .footer-inner { flex-direction: column; text-align: center; }  
-      .footer-links { justify-content: center; }  
-    }  
-  </style>  </head>  <body>    <!-- BARRE D'ANNONCE -->    <div class="announcement">  
-    ✨ Luxury VIP Lounge : Profitez de <span>10% de rabais</span> sur les Press On Siyou avec le code <span>BELLA</span> !  
-  </div>    <!-- BULLE FLOTTANTE PROMO ONGLES -->    <aside class="floating-promo-badge" id="floatingPromo" aria-label="Promotion ongles Siyou">  
-    <span>💅 -10% Siyou</span> avec le code <strong>BELLA</strong>  
-    <button class="floating-close" id="closeFloatingPromo" aria-label="Fermer">&times;</button>  
-  </aside>    <!-- EN-TÊTE ET MENU -->    <header class="site-header">  
-    <div class="container header-inner">  
-      <a href="#accueil" class="brand" aria-label="Bella Bay, accueil">  
-        <div class="brand-mark">B.B</div>  
-        <div class="brand-copy">  
-          <span class="brand-name">Bella Bay</span>  
-          <span class="brand-tagline">Luxury Hair & Beauty</span>  
-        </div>  
-      </a>  <button  
-    class="mobile-menu-toggle"  
-    id="mobileMenuToggle"  
-    aria-label="Ouvrir le menu"  
-    aria-expanded="false"  
-    aria-controls="mainNav">  
-    ☰  
-  </button>  
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171313">
 
-  <nav class="main-nav" id="mainNav">  
-    <a href="#accueil">Accueil</a>  
-    <a href="#services">Services VIP</a>  
-    <a href="#extensions-exclusives">Extensions 5G</a>  
-    <a href="#matrix">Boutique Matrix</a>  
-    <a href="#bbn-nails">B.B Nails</a>  
-    <a href="#histoire">Notre maison</a>  
-    <a href="#contact">Contact</a>  
-    <a class="nav-book" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Découvrir</a>  
-  </nav>  
-</div>
+  <meta name="description" content="Bella Bay (B.B) — Coiffure mobile à domicile à Montréal, Laval et sur la Rive-Nord. Découvrez nos services professionnels et notre boutique beauté.">
 
-  </header>    <!-- PAGE D'ACCUEIL -->    <main>  
-    <section class="hero" id="accueil">  
-      <div class="container">  
-        <div class="hero-content">  
-          <span class="eyebrow">Bella Bay · Haute Coiffure & Beauté Internationale</span>  
-          <h1>  
-            L'excellence capillaire absolue,  
-            <span>signée Bella Bay.</span>  
-          </h1>  
-          <p>  
-            Une expérience de coiffure mobile d’un raffinement suprême et des collections internationales de luxe rigoureusement sélectionnées pour une clientèle d'exception, de Montréal à Dubaï.  
-          </p>  
-          <div class="hero-actions">  
-            <a href="#services" class="btn">Découvrir nos services VIP</a>  
-            <a href="#extensions-exclusives" class="btn btn-outline">Explorer les extensions 5G</a>  
-          </div>  
-          <div class="hero-note">Montréal · Laval · Rive-Nord · Dubaï International</div>  
-        </div>  
-      </div>  
-    </section>  <!-- NOS VALEURS 7 ÉTOILES -->  
-<section class="value-strip">  
-  <div class="container value-grid">  
-    <div class="value-item">  
-      <strong>Service VIP Privilège</strong>  
-      <span>L'art du sur-mesure à votre domicile</span>  
-    </div>  
-    <div class="value-item">  
-      <strong>Pure Qualité Remy 100%</strong>  
-      <span>Des mèches d'une brillance spectaculaire</span>  
-    </div>  
-    <div class="value-item">  
-      <strong>Standards Internationaux</strong>  
-      <span>Les plus grandes marques mondiales</span>  
-    </div>  
-  </div>  
-</section>  
+  <!-- Balise Meta Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-8086408253671459">
+  <!-- Script Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8086408253671459" crossorigin="anonymous"></script>
 
-<!-- 1. SERVICES DE COIFFURE VIP -->  
-<section class="section services-section" id="services">  
-  <div class="container">  
-    <div class="section-heading">  
-      <span class="eyebrow">Prestations Haute Couture</span>  
-      <h2>Nos services de coiffure d'exception</h2>  
-      <p>  
-        Chaque chevelure est traitée comme une œuvre d'art. Des techniques de pointe et des rituels exclusifs pour sublimer votre éclat naturel.  
-      </p>  
-    </div>  
+  <title>Bella Bay (B.B) — Coiffure & Beauté</title>
 
-    <div class="services-grid">  
-      <article class="service-card">  
-        <span class="service-number">01</span>  
-        <h3>Coloration de base</h3>  
-        <p>Une coloration d'une pureté absolue pour raviver votre chevelure, couvrir les reflets indésirables avec des pigments de haute noblesse.</p>  
-        <div class="service-price">À partir de 95 $</div>  
-        <button class="btn btn-dark service-details" data-service="coloration-base">Détails du service</button>  
-      </article>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-      <article class="service-card">  
-        <span class="service-number">02</span>  
-        <h3>Coloration fantaisie</h3>  
-        <p>Des nuances avant-gardistes et des teintes vibrantes conçues sur-mesure pour refléter votre unicité et votre audace.</p>  
-        <div class="service-price">À partir de 120 $</div>  
-        <button class="btn btn-dark service-details" data-service="coloration-fantaisie">Détails du service</button>  
-      </article>  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-      <article class="service-card">  
-        <span class="service-number">03</span>  
-        <h3>Mèches</h3>  
-        <p>Un travail d'orfèvre pour sculpter la lumière, apporter de la profondeur et créer un relief somptueux dans votre chevelure.</p>  
-        <div class="service-price">À partir de 110 $</div>  
-        <button class="btn btn-dark service-details" data-service="meches">Détails du service</button>  
-      </article>  
+  <style>
+    :root {
+      --black: #171313;
+      --black-soft: #211a1b;
+      --rose: #d9a0a5;
+      --rose-light: #f4dfe0;
+      --rose-pale: #fff7f6;
+      --gold: #c9a46b;
+      --gold-light: #e5c99a;
+      --white: #fffdfc;
+      --text: #382e2e;
+      --muted: #827474;
+      --border: rgba(201, 164, 107, 0.35);
+      --shadow: 0 14px 38px rgba(33, 20, 20, 0.09);
+    }
 
-      <article class="service-card">  
-        <span class="service-number">04</span>  
-        <h3>Contouring</h3>  
-        <p>Une illumination stratégique du visage inspirée des plus grands podiums internationaux pour sculpter vos traits en douceur.</p>  
-        <div class="service-price">À partir de 90 $</div>  
-        <button class="btn btn-dark service-details" data-service="contouring">Détails du service</button>  
-      </article>  
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <article class="service-card">  
-        <span class="service-number">05</span>  
-        <h3>Ombré & balayage</h3>  
-        <p>Des fondus de teintes parfaits et des reflets solaires d'une fluidité remarquable pour un glamour intemporel.</p>  
-        <div class="service-price">À partir de 130 $</div>  
-        <button class="btn btn-dark service-details" data-service="ombre-balayage">Détails du service</button>  
-      </article>  
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
-      <article class="service-card">  
-        <span class="service-number">06</span>  
-        <h3>Traitement capillaire</h3>  
-        <p>Des infusions de principes actifs hautement concentrés pour régénérer la fibre et restaurer une souplesse divine.</p>  
-        <div class="service-price">À partir de 80 $</div>  
-        <button class="btn btn-dark service-details" data-service="traitement">Détails du service</button>  
-      </article>  
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
 
-      <article class="service-card">  
-        <span class="service-number">07</span>  
-        <h3>Botox capillaire</h3>  
-        <p>Le summum de la régénération cellulaire pour redonner au cheveu un toucher soie incomparable et une brillance miroir.</p>  
-        <div class="service-price">À partir de 140 $</div>  
-        <button class="btn btn-dark service-details" data-service="botox">Détails du service</button>  
-      </article>  
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
 
-      <article class="service-card">  
-        <span class="service-number">08</span>  
-        <h3>Kératine</h3>  
-        <p>Un lissage d'exception haut de gamme qui discipline la matière tout en préservant le mouvement naturel et la santé du cheveu.</p>  
-        <div class="service-price">À partir de 180 $</div>  
-        <button class="btn btn-dark service-details" data-service="keratine">Détails du service</button>  
-      </article>  
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      <article class="service-card">  
-        <span class="service-number">09</span>  
-        <h3>Extensions capillaires</h3>  
-        <p>Une pose invisible et luxueuse pour une chevelure somptueuse, dense et d'une longueur majestueuse.</p>  
-        <div class="service-price">À partir de 120 $</div>  
-        <button class="btn btn-dark service-details" data-service="extensions">Détails du service</button>  
-      </article>  
-    </div>  
+    button {
+      font: inherit;
+    }
 
-    <p class="price-note">  
-      Tarification indicative. Le devis exact est établi selon la longueur, la densité et l'exigence spécifique de votre chevelure.  
-    </p>  
-  </div>  
-</section>  
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-<!-- 2. SECTION EXTENSIONS INTERNATIONALES (GLAM SEAMLESS & CABELO - QUALITÉ 5G / DUBAÏ) -->  
-<section class="section boutique-section" id="extensions-exclusives">  
-  <div class="container">  
-    <div class="section-heading">  
-      <span class="eyebrow">International Luxury Collection · Standard 5G</span>  
-      <h2>Professional Hair Extensions</h2>  
-      <p>Sélectionnées pour les têtes couronnées et les icônes de mode internationales. Des mèches 100% Remy de grade supérieur pour un effet waouh saisissant.</p>  
-    </div>  
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
 
-    <div class="shop-banner">  
-      ✨ Official Partners — Glam Seamless & Cabelo International Luxury Editions  
-    </div>  
+    .section {
+      padding: 88px 0;
+    }
 
-    <div class="product-showcase-grid">  
-        
-      <!-- Produit 1 : Glam Seamless Tape-In -->  
-      <article class="luxury-product-card">  
-        <div class="luxury-img-wrap">  
-          <span class="luxury-badge">Glam Seamless</span>  
-          <img class="luxury-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=90" alt="Tape-In Extensions 50g Glam Seamless" loading="lazy">  
-        </div>  
-        <div class="luxury-content">  
-          <h3>Tape-In Extensions (50g)</h3>  
-          <p>Cheveux 100% Remy Grade 5G. Bandes ultra-plates, confort absolu et réutilisables pour un fondu royal et indétectable.</p>  
-          <div class="luxury-footer">  
-            <div class="luxury-price-box">  
-              <span class="luxury-current-price">171,00 CA$</span>  
-              <span class="luxury-old-price">190,00 CA$</span>  
-            </div>  
-            <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>  
-          </div>  
-        </div>  
-      </article>  
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
 
-      <!-- Produit 2 : Glam Seamless Invisible Tape -->  
-      <article class="luxury-product-card">  
-        <div class="luxury-img-wrap">  
-          <span class="luxury-badge">Glam Seamless</span>  
-          <img class="luxury-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=90" alt="Invisible Tape 25g Glam Seamless" loading="lazy">  
-        </div>  
-        <div class="luxury-content">  
-          <h3>Invisible Tape (25g)</h3>  
-          <p>Technologie de pointe simulant l'émergence naturelle du cheveu directement depuis le cuir chevelu. Discrétion absolue.</p>  
-          <div class="luxury-footer">  
-            <div class="luxury-price-box">  
-              <span class="luxury-current-price">160,00 CA$</span>  
-              <span class="luxury-old-price">180,00 CA$</span>  
-            </div>  
-            <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>  
-          </div>  
-        </div>  
-      </article>  
+    .eyebrow {
+      display: inline-block;
+      color: #a77b45;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
 
-      <!-- Produit 3 : Glam Seamless Ombré & Balayage -->  
-      <article class="luxury-product-card">  
-        <div class="luxury-img-wrap">  
-          <span class="luxury-badge">Glam Seamless</span>  
-          <img class="luxury-img" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=90" alt="Ombré & Balayage Tape-In Glam Seamless" loading="lazy">  
-        </div>  
-        <div class="luxury-content">  
-          <h3>Ombré & Balayage Tape-In</h3>  
-          <p>Dégradés somptueux et fondus multi-tonaux pour un éclat solaire et un mouvement d'une sensualité infinie.</p>  
-          <div class="luxury-footer">  
-            <div class="luxury-price-box">  
-              <span class="luxury-current-price">180,00 CA$</span>  
-              <span class="luxury-old-price">200,00 CA$</span>  
-            </div>  
-            <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>  
-          </div>  
-        </div>  
-      </article>  
+    h1,
+    h2,
+    h3,
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      line-height: 1.12;
+    }
 
-      <!-- Produit 4 : Cabelo Professional Collection -->  
-      <article class="luxury-product-card">  
-        <div class="luxury-img-wrap">  
-          <span class="luxury-badge">Cabelo Exclusive</span>  
-          <img class="luxury-img" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=90" alt="Cabelo Professional Hair Collection" loading="lazy">  
-        </div>  
-        <div class="luxury-content">  
-          <h3>Cabelo Professional Collections</h3>  
-          <p>Rituels de luxe et collections d'extensions sur-mesure pour répondre aux exigences des plus grands esthètes.</p>  
-          <div class="luxury-footer">  
-            <div class="luxury-price-box">  
-              <span class="luxury-current-price" style="font-size: 14px;">Catalogue Pro</span>  
-              <span style="font-size: 10px; color: var(--muted);">Sur-mesure</span>  
-            </div>  
-            <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>  
-          </div>  
-        </div>  
-      </article>  
+    h2 {
+      font-size: clamp(35px, 4.5vw, 52px);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
 
-    </div>  
-  </div>  
-</section>  
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-<!-- 3. BOUTIQUE MATRIX (SOINS DE LUXE) -->  
-<section class="section" id="matrix" style="background: var(--white);">  
-  <div class="container">  
-    <div class="section-heading">  
-      <span class="eyebrow">La sélection Bella Bay · Rituels Privés</span>  
-      <h2>Boutique Matrix Professionnelle</h2>  
-      <p>Les formulations scientifiques les plus avancées pour préserver la splendeur et la force de vos cheveux au quotidien.</p>  
-    </div>  
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 47px;
+      padding: 12px 23px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+      cursor: pointer;
+      text-align: center;
+    }
 
-    <div class="shop-banner" style="background: var(--rose-pale); color: var(--black); border-color: var(--gold);">  
-      🌸 Soins haute performance Matrix — Sélection exclusive Bella Bay  
-    </div>  
+    .btn:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
 
-    <div class="spotlight-card" style="margin-bottom: 50px; background: var(--rose-pale);">  
-      <div class="spotlight-img-wrap">  
-        <img class="spotlight-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Produits de soins capillaires Matrix professionnels" loading="lazy">  
-      </div>  
-      <div class="spotlight-content">  
-        <span class="eyebrow">Gamme officielle Matrix</span>  
-        <h3>L'expertise des plus grands salons chez vous</h3>  
-        <p>Hydratation suprême, reconstruction des liaisons capillaires et brillance miroir. Offrez à votre chevelure le traitement royal qu'elle mérite.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+Hair+Care&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Explorer toutes les gammes Matrix</a>  
-      </div>  
-    </div>  
+    .btn-outline {
+      background: transparent;
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
 
-    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">  
-        
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Hydratation suprême</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">Food For Soft</h3>  
-        <p>Infusion d'huile d'avocat pour une souplesse divine et une hydratation incomparable sur tous types de cheveux.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
 
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Réparation & Liaisons</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">Instacure Build-A-Bond</h3>  
-        <p>Technologie de pointe pour réparer en profondeur et fortifier les structures capillaires fragilisées.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+Instacure+Build-A-Bond&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
 
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Blonds d'exception</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">So Silver</h3>  
-        <p>Neutralisation parfaite des faux reflets pour des blonds polaires et des cheveux gris lumineux et éclatants.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    .btn-dark:hover {
+      background: #34292a;
+      color: var(--white);
+    }
 
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Pureté des bruns</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">Brass Off</h3>  
-        <p>Neutralisation des reflets cuivrés et orangés indésirables pour des teintes profondes et sophistiquées.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+Brass+Off&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    /* BARRE D'ANNONCE */
+    .announcement {
+      background: var(--black);
+      color: var(--rose-light);
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 9px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
 
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Maîtrise absolue</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">Mega Sleek</h3>  
-        <p>Contrôle irréprochable des frisottis et lissage haute performance pour un tombé majestueux.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+Mega+Sleek&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    .announcement span {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
 
-      <article class="service-card" style="border-color: var(--gold);">  
-        <span class="eyebrow">Volume & Majesté</span>  
-        <h3 style="font-size: 24px; margin-bottom: 10px;">High Amplify</h3>  
-        <p>Élévation de la racine et corps somptueux pour redonner du tonus aux chevelures en quête de volume.</p>  
-        <a href="https://www.amazon.ca/s?k=Matrix+High+Amplify&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="width: 100%; margin-top: auto;">Découvrir la gamme</a>  
-      </article>  
+    /* BULLE FLOTTANTE PROMO ONGLES SIYOU */
+    .floating-promo-badge {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1500;
+      background: var(--black);
+      color: var(--rose-light);
+      border: 1px solid var(--gold);
+      padding: 14px 18px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(23, 19, 19, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      animation: floatBadge 3s ease-in-out infinite;
+      transition: transform 0.25s ease;
+    }
 
-    </div>  
-  </div>  
-</section>  
+    .floating-promo-badge:hover {
+      transform: scale(1.03);
+    }
 
-<!-- 4. SECTION B.B NAILS (SIYOU) -->  
-<section class="section bbn-section" id="bbn-nails">  
-  <div class="container">  
-    <div class="section-heading">  
-      <span class="eyebrow">B.B Nails 💅✨</span>  
-      <h2>Collection Press On Siyou</h2>  
-      <p>L'élégance ultime au bout des doigts avec nos prothèses ongulaires de luxe au fini irréprochable.</p>  
-    </div>  
+    .floating-promo-badge span {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
 
-    <div class="spotlight-card" style="background: var(--rose-pale);">  
-      <div class="spotlight-img-wrap">  
-        <img class="spotlight-img" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=1000&q=90" alt="Collection ongles Bella Bay" loading="lazy">  
-      </div>  
-      <div class="spotlight-content">  
-        <span class="eyebrow">Nos coups de cœur VIP</span>  
-        <h3>La haute manucure instantanée</h3>  
-        <p>Une sélection exclusive de Press On nude et minimalistes pour un rendu digne des plus grands instituts de Dubaï.</p>  
-        <div class="promo-badge-small">Profitez de 10% de rabais avec le code : <span>BELLA</span></div>  
-        <div>  
-          <a href="https://siyounails.com/?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir le catalogue Siyou</a>  
-        </div>  
-      </div>  
-    </div>  
-  </div>  
-</section>  
+    .floating-close {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 5px;
+      line-height: 1;
+    }
 
-<!-- SERVICE DE COIFFURE À DOMICILE (VIP) -->  
-<section class="section mobile-service" id="domicile">  
-  <div class="container mobile-service-grid">  
-    <div>  
-      <span class="eyebrow">Votre beauté, sans compromis</span>  
-      <h2>Le luxe du sur-mesure à domicile</h2>  
-      <p>  
-        Bella Bay transcende l’art de la coiffure en vous offrant une prise en charge exclusive dans l'intimité et le confort de votre résidence. Une écoute minutieuse et un savoir-faire d'une exigence rare.  
-      </p>  
-      <p>  
-        Présents pour sublimer votre quotidien et vos plus grands événements à travers le grand Montréal, Laval et la Rive-Nord.  
-      </p>  
-      <div class="location-list">  
-        <span>Montréal</span>  
-        <span>Laval</span>  
-        <span>Rive-Nord</span>  
-        <span>Dubaï (Prochainement)</span>  
-      </div>  
-      <a class="btn" href="#contact">Nous contacter</a>  
-    </div>  
-    <div class="mobile-service-image" role="img" aria-label="Espace de coiffure VIP"></div>  
-  </div>  
-</section>  
+    .floating-close:hover {
+      color: var(--white);
+    }
 
-<!-- HISTOIRE DE BELLA BAY -->  
-<section class="section story-section" id="histoire">  
-  <div class="container story-grid">  
-    <div class="story-image" role="img" aria-label="Maison Bella Bay"></div>  
-    <div class="story-copy">  
-      <span class="eyebrow">La Maison Bella Bay</span>  
-      <h2>L'art de sublimer avec passion et noblesse</h2>  
-      <p>  
-        Fondée sur une vision intransigeante de la haute coiffure, Bella Bay s'impose comme la référence du soin capillaire d'élite, alliant technicité irréprochable et raffinement intemporel.  
-      </p>  
-      <p>  
-        Chaque détail est pensé pour éveiller l'admiration et révéler la splendeur unique de chaque chevelure.  
-      </p>  
-      <div class="signature">Bella Bay · B.B</div>  
-    </div>  
-  </div>  
-</section>  
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
 
-<!-- CONTACT -->  
-<section class="section contact-section" id="contact">  
-  <div class="container">  
-    <div class="section-heading">  
-      <span class="eyebrow">Conciergerie Privée</span>  
-      <h2>Contactez Bella Bay</h2>  
-      <p>Une demande spécifique ou un accompagnement sur-mesure ? Notre équipe est à votre entière disposition.</p>  
-    </div>  
+    /* EN-TÊTE ET MENU */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 252, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
 
-    <div class="contact-grid">  
-      <article class="contact-card">  
-        <div class="contact-icon" aria-hidden="true">✉</div>  
-        <h3>Courriel VIP</h3>  
-        <p><a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>  
-      </article>  
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-      <article class="contact-card">  
-        <div class="contact-icon" aria-hidden="true">⌖</div>  
-        <h3>Territoire</h3>  
-        <p>Montréal, Laval, Rive-Nord & International</p>  
-      </article>  
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
 
-      <article class="contact-card">  
-        <div class="contact-icon" aria-hidden="true">✦</div>  
-        <h3>Prestations</h3>  
-        <p>Coiffure à domicile & Boutique de luxe</p>  
-      </article>  
-    </div>  
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      background: var(--black);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
 
-    <div class="contact-actions">  
-      <a class="btn" href="mailto:bellabay.coiffure@gmail.com">Nous écrire</a>  
-      <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Nous contacter sur WhatsApp</a>  
-    </div>  
-  </div>  
-</section>  
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+    }
 
-<!-- SECTION FINALE SALON -->  
-<section class="section salon-showcase-section" id="salon-futur">  
-  <div class="container">  
-    <div class="salon-showcase-box">  
-      <img class="salon-showcase-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=90" alt="Salon Bella Bay" loading="lazy">  
-      <div class="salon-showcase-content">  
-        <span class="eyebrow">Expansion Internationale</span>  
-        <h2>Une vision d'avenir sans frontières</h2>  
-        <p>  
-          Bella Bay s'apprête à porter son empreinte esthétique vers de nouveaux horizons prestigieux, avec pour ambition future d'implanter ses salons de prestige au cœur des métropoles mondiales telles que Dubaï.  
-        </p>  
-        <a class="btn" href="#contact">En savoir plus</a>  
-      </div>  
-    </div>  
-  </div>  
-</section>
+    .brand-name {
+      color: var(--black);
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
 
-  </main>    <!-- PIED DE PAGE -->    <footer class="site-footer">  
-    <div class="container footer-inner">  
-      <div class="footer-brand">Bella Bay · B.B</div>  
-      <div class="footer-copy">© <span id="currentYear"></span> Bella Bay. Tous droits réservés. Standard International 5G.</div>  
-      <div class="footer-links">  
-        <a href="#accueil">Accueil</a>  
-        <a href="#services">Services</a>  
-        <a href="#extensions-exclusives">Extensions</a>  
-        <a href="#matrix">Matrix</a>  
-        <a href="#bbn-nails">Ongles</a>  
-        <a href="#contact">Contact</a>  
-      </div>  
-    </div>  
-  </footer>    <!-- MODAL SERVICES -->    <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">  
-    <div class="modal-content">  
-      <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>  
-      <span class="eyebrow">Bella Bay · Prestations VIP</span>  
-      <h3 id="modalTitle">Détails du service</h3>  
-      <p id="modalDescription"></p>  
-      <p class="modal-price" id="modalPrice"></p>  
-      <a class="btn btn-dark" href="#contact" id="modalContact">Réserver l'expérience</a>  
-    </div>  
-  </div>    <script>  
-    document.getElementById("currentYear").textContent = new Date().getFullYear();  
-  
-    const floatingPromo = document.getElementById("floatingPromo");  
-    const closeFloatingPromo = document.getElementById("closeFloatingPromo");  
-    if (floatingPromo && closeFloatingPromo) {  
-      closeFloatingPromo.addEventListener("click", () => {  
-        floatingPromo.style.display = "none";  
-      });  
-    }  
-  
-    const serviceDetails = {  
-      "coloration-base": {  
-        title: "Coloration de base",  
-        price: "À partir de 95 $",  
-        description: "Une coloration d'une pureté absolue pour raviver votre chevelure, couvrir les reflets indésirables avec des pigments de haute noblesse et un respect total de la fibre."  
-      },  
-      "coloration-fantaisie": {  
-        title: "Coloration fantaisie",  
-        price: "À partir de 120 $",  
-        description: "Des nuances avant-gardistes et des teintes vibrantes conçues sur-mesure pour refléter votre unicité et votre audace avec un éclat spectaculaire."  
-      },  
-      "meches": {  
-        title: "Mèches",  
-        price: "À partir de 110 $",  
-        description: "Un travail d'orfèvre pour sculpter la lumière, apporter de la profondeur et créer un relief somptueux et naturel dans votre chevelure."  
-      },  
-      "contouring": {  
-        title: "Contouring",  
-        price: "À partir de 90 $",  
-        description: "Une illumination stratégique du visage inspirée des plus grands podiums internationaux pour mettre en valeur vos traits avec une élégance infinie."  
-      },  
-      "ombre-balayage": {  
-        title: "Ombré & balayage",  
-        price: "À partir de 130 $",  
-        description: "Des fondus de teintes parfaits et des reflets solaires d'une fluidité remarquable pour un glamour international intemporel."  
-      },  
-      "traitement": {  
-        title: "Traitement capillaire",  
-        price: "À partir de 80 $",  
-        description: "Des infusions de principes actifs hautement concentrés pour régénérer la fibre en profondeur et restaurer une souplesse divine."  
-      },  
-      "botox": {  
-        title: "Botox capillaire",  
-        price: "À partir de 140 $",  
-        description: "Le summum de la régénération cellulaire pour redonner au cheveu un toucher soie incomparable, une hydratation profonde et un miroir de brillance."  
-      },  
-      "keratine": {  
-        title: "Traitement à la kératine",  
-        price: "À partir de 180 $",  
-        description: "Un lissage d'exception haut de gamme qui discipline la matière tout en préservant le mouvement naturel, la légèreté et la santé du cheveu."  
-      },  
-      "extensions": {  
-        title: "Extensions capillaires",  
-        price: "À partir de 120 $",  
-        description: "Découvrez nos différentes méthodes de pose d'extensions de luxe (kératine, adhésives et invisibles 5G) choisies selon les critères les plus stricts."  
-      }  
-    };  
-  
-    const serviceModal = document.getElementById("serviceModal");  
-    const modalTitle = document.getElementById("modalTitle");  
-    const modalDescription = document.getElementById("modalDescription");  
-    const modalPrice = document.getElementById("modalPrice");  
-    const modalClose = document.getElementById("modalClose");  
-    let previousButton = null;  
-  
-    document.querySelectorAll(".service-details").forEach(button => {  
-      button.addEventListener("click", function() {  
-        const details = serviceDetails[this.dataset.service];  
-        if (!details) return;  
-        previousButton = this;  
-        modalTitle.textContent = details.title;  
-        modalDescription.textContent = details.description;  
-        modalPrice.textContent = details.price;  
-        serviceModal.classList.add("active");  
-        document.body.style.overflow = "hidden";  
-        modalClose.focus();  
-      });  
-    });  
-  
-    function closeServiceModal() {  
-      serviceModal.classList.remove("active");  
-      document.body.style.overflow = "";  
-      if (previousButton) previousButton.focus();  
-    }  
-  
-    modalClose.addEventListener("click", closeServiceModal);  
-    serviceModal.addEventListener("click", (e) => { if (e.target === serviceModal) closeServiceModal(); });  
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && serviceModal.classList.contains("active")) closeServiceModal(); });  
-    document.getElementById("modalContact").addEventListener("click", closeServiceModal);  
-  
-    const mobileMenuToggle = document.getElementById("mobileMenuToggle");  
-    const mainNav = document.getElementById("mainNav");  
-  
-    if (mobileMenuToggle && mainNav) {  
-      mobileMenuToggle.addEventListener("click", function() {  
-        const isExpanded = this.getAttribute("aria-expanded") === "true";  
-        this.setAttribute("aria-expanded", String(!isExpanded));  
-        mainNav.classList.toggle("nav-open", !isExpanded);  
-      });  
-      mainNav.querySelectorAll("a").forEach(link => {  
-        link.addEventListener("click", () => {  
-          mainNav.classList.remove("nav-open");  
-          mobileMenuToggle.setAttribute("aria-expanded", "false");  
-        });  
-      });  
-    }  
-  </script>  </body>  
-</html>  
+    .brand-tagline {
+      color: #a77b45;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .main-nav > a {
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .main-nav > a:hover {
+      color: #a77b45;
+    }
+
+    .main-nav .nav-book {
+      padding: 11px 14px;
+      background: var(--black);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+
+    .main-nav .nav-book:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--black);
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* ACCUEIL */
+    .hero {
+      position: relative;
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23, 19, 19, 0.88) 0%,
+          rgba(23, 19, 19, 0.62) 48%,
+          rgba(23, 19, 19, 0.16) 100%
+        ),
+        url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85')
+        center 38% / cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      padding: 85px 0;
+      color: var(--white);
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .hero h1 span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 540px;
+      margin-bottom: 29px;
+      color: #f5e9e7;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 26px;
+      color: #e6d6d0;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* VALEURS */
+    .value-strip {
+      background: var(--rose-pale);
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 25px 16px;
+      border-right: 1px solid var(--border);
+    }
+
+    .value-item:last-child {
+      border-right: 0;
+    }
+
+    .value-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--black);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .value-item span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* SERVICES DE COIFFURE */
+    .services-section {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 26px;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      box-shadow: 0 8px 25px rgba(201, 164, 107, 0.12);
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(201, 164, 107, 0.25);
+      border-color: #a77b45;
+    }
+
+    .service-number {
+      margin-bottom: 14px;
+      color: #a77b45;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .service-card h3 {
+      margin-bottom: 11px;
+      color: var(--black);
+      font-size: 27px;
+    }
+
+    .service-card p {
+      flex-grow: 1;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .service-price {
+      margin-bottom: 18px;
+      color: #9b6b36;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .price-note {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* GRILLE PRODUITS E-COMMERCE HAUT DE GAMME */
+    .boutique-section {
+      background: var(--rose-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .shop-banner {
+      background: var(--black);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 14px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+
+    .product-catalog {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-img-wrap {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--black);
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+    }
+
+    .product-info {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-info h3 {
+      font-size: 20px;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 16px;
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #f0e5e2;
+    }
+
+    .product-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9b6b36;
+    }
+
+    /* SERVICE À DOMICILE */
+    .mobile-service {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .mobile-service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .mobile-service h2 {
+      color: var(--white);
+    }
+
+    .mobile-service p {
+      margin-bottom: 18px;
+      color: #d8ccca;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .mobile-service-image {
+      min-height: 410px;
+      background: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=85') center / cover no-repeat;
+      border: 1px solid var(--gold);
+    }
+
+    .location-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 24px 0;
+    }
+
+    .location-list span {
+      padding: 8px 12px;
+      border: 1px solid rgba(229, 201, 154, 0.45);
+      color: var(--gold-light);
+      font-size: 10px;
+    }
+
+    /* HISTOIRE */
+    .story-section {
+      background: var(--rose-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .story-image {
+      min-height: 490px;
+      background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=85') center / cover no-repeat;
+    }
+
+    .story-copy h2 {
+      margin-bottom: 22px;
+    }
+
+    .story-copy p {
+      margin-bottom: 17px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .signature {
+      margin-top: 24px;
+      color: #a77b45;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .contact-section h2 {
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 27px 20px;
+      text-align: center;
+      border: 1px solid rgba(201, 164, 107, 0.4);
+    }
+
+    .contact-card .contact-icon {
+      margin-bottom: 12px;
+      color: var(--gold-light);
+      font-size: 25px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      color: var(--gold-light);
+      font-size: 25px;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      color: #e4d8d6;
+      font-size: 11px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    /* SALON SHOWCASE */
+    .salon-showcase-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .salon-showcase-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+    }
+
+    .salon-showcase-img {
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .salon-showcase-content {
+      padding: 50px;
+    }
+
+    .salon-showcase-content h2 {
+      color: var(--white);
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .salon-showcase-content p {
+      color: #d8ccca;
+      font-size: 12.5px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 28px 0;
+      background: #100d0d;
+      color: #c9bdbc;
+      border-top: 1px solid rgba(201, 164, 107, 0.3);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-brand {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+    }
+
+    .footer-copy {
+      font-size: 9px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 10px;
+    }
+
+    /* MODALE */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(15, 11, 11, 0.78);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(540px, 100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 35px;
+      background: var(--white);
+      border: 1px solid var(--gold);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      width: 35px;
+      height: 35px;
+      border: 0;
+      background: transparent;
+      color: var(--black);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1050px) {
+      .header-inner { min-height: 78px; }
+      .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding: 18px 5% 25px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+      }
+      .main-nav.nav-open { display: flex; }
+      .main-nav > a {
+        display: flex;
+        width: 100%;
+        padding: 13px 5px;
+        font-size: 12px;
+        border-bottom: 1px solid #f0e5e2;
+      }
+      .product-catalog, .services-grid, .contact-grid { grid-template-columns: 1fr; }
+      .spotlight-card, .bbn-hero-banner, .mobile-service-grid, .story-grid, .salon-showcase-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BARRE D'ANNONCE -->
+  <div class="announcement">
+    ✨ Bella Bay — Sublmez vos cheveux avec des produits et services de qualité. Code promo Siyou : <span>BELLA</span>
+  </div>
+
+  <!-- BULLE FLOTTANTE -->
+  <aside class="floating-promo-badge" id="floatingPromo" aria-label="Promotion ongles Siyou">
+    <span>💅 -10% Siyou</span> avec le code <strong>BELLA</strong>
+    <button class="floating-close" id="closeFloatingPromo" aria-label="Fermer">&times;</button>
+  </aside>
+
+  <!-- EN-TÊTE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" aria-label="Bella Bay, accueil">
+        <div class="brand-mark">B.B</div>
+        <div class="brand-copy">
+          <span class="brand-name">Bella Bay</span>
+          <span class="brand-tagline">Coiffure & Beauté</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#boutique">Boutique Cabelo</a>
+        <a href="#matrix">Boutique Matrix</a>
+        <a href="#bbn-nails">B.B Nails</a>
+        <a href="#histoire">Notre histoire</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-book" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Découvrir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ACCUEIL -->
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Bella Bay · Coiffure & Beauté</span>
+          <h1>Révélez la beauté de vos cheveux <span>avec Bella Bay.</span></h1>
+          <p>Des services de coiffure professionnels à domicile et une boutique beauté soigneusement sélectionnée pour prendre soin de vos cheveux et révéler leur éclat.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn">Découvrir nos services</a>
+            <a href="#boutique" class="btn btn-outline">Découvrir la boutique</a>
+          </div>
+          <div class="hero-note">Montréal · Laval · Rive-Nord</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALEURS -->
+    <section class="value-strip">
+      <div class="container value-grid">
+        <div class="value-item"><strong>À votre domicile</strong><span>Votre confort, notre priorité</span></div>
+        <div class="value-item"><strong>Expertise professionnelle</strong><span>Des soins adaptés à vos cheveux</span></div>
+        <div class="value-item"><strong>Boutique beauté</strong><span>Des produits pour votre routine</span></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Nos prestations</span>
+          <h2>Nos services de coiffure</h2>
+          <p>Des services adaptés à vos envies, à votre style et aux besoins de vos cheveux. Chaque prestation est personnalisée.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Coloration de base</h3>
+            <p>Une coloration personnalisée pour raviver votre couleur, couvrir les cheveux blancs ou obtenir le résultat souhaité.</p>
+            <div class="service-price">À partir de 95 $</div>
+            <button class="btn btn-dark service-details" data-service="coloration-base">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Coloration fantaisie</h3>
+            <p>Des nuances créatives et des couleurs personnalisées pour un résultat qui reflète votre personnalité.</p>
+            <div class="service-price">À partir de 120 $</div>
+            <button class="btn btn-dark service-details" data-service="coloration-fantaisie">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Mèches</h3>
+            <p>Des mèches pour apporter de la dimension, de la lumière et de la profondeur à votre chevelure.</p>
+            <div class="service-price">À partir de 110 $</div>
+            <button class="btn btn-dark service-details" data-service="meches">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3>Contouring</h3>
+            <p>Des nuances lumineuses placées stratégiquement pour mettre en valeur les contours du visage.</p>
+            <div class="service-price">À partir de 90 $</div>
+            <button class="btn btn-dark service-details" data-service="contouring">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">05</span>
+            <h3>Ombré & balayage</h3>
+            <p>Des transitions de couleur harmonieuses et des reflets lumineux pour un résultat personnalisé.</p>
+            <div class="service-price">À partir de 130 $</div>
+            <button class="btn btn-dark service-details" data-service="ombre-balayage">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">06</span>
+            <h3>Traitement capillaire</h3>
+            <p>Un soin adapté à l'état de vos cheveux pour améliorer leur douceur, leur souplesse et leur apparence.</p>
+            <div class="service-price">À partir de 80 $</div>
+            <button class="btn btn-dark service-details" data-service="traitement">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">07</span>
+            <h3>Botox capillaire</h3>
+            <p>Un traitement cosmétique visant à améliorer l'apparence des cheveux et à leur donner un fini plus soyeux.</p>
+            <div class="service-price">À partir de 140 $</div>
+            <button class="btn btn-dark service-details" data-service="botox">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">08</span>
+            <h3>Kératine</h3>
+            <p>Un service de lissage personnalisé selon la nature de vos cheveux et le résultat recherché.</p>
+            <div class="service-price">À partir de 180 $</div>
+            <button class="btn btn-dark service-details" data-service="keratine">Détails du service</button>
+          </article>
+          <article class="service-card">
+            <span class="service-number">09</span>
+            <h3>Extensions capillaires</h3>
+            <p>Un service de pose d'extensions adapté à votre chevelure, à votre style et à la méthode choisie.</p>
+            <div class="service-price">À partir de 120 $</div>
+            <button class="btn btn-dark service-details" data-service="extensions">Détails du service</button>
+          </article>
+        </div>
+        <p class="price-note">Les prix dépendent de la longueur, de la densité et des besoins de vos cheveux.</p>
+      </div>
+    </section>
+
+    <!-- VITRINE PRODUITS CABELO (AFFILIATION DIRECTE PAR PRODUIT) -->
+    <section class="section boutique-section" id="boutique">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">La sélection Bella Bay</span>
+          <h2>La boutique Cabelo</h2>
+          <p>Nos coups de cœur professionnels et extensions capillaires recommandés pour votre routine.</p>
+        </div>
+
+        <div class="shop-banner">
+          ✨ Partenaire officiel Cabelo — Nos coups de cœur exclusifs & Extensions capillaires
+        </div>
+
+        <div class="product-catalog">
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Cabelo</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Extensions de cheveux Cabelo" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Extensions Capillaires</h3>
+              <p>Extensions professionnelles de haute qualité pour sublimer vos longueurs et apporter du volume.</p>
+              <div class="product-footer">
+                <span class="product-price">Qualité Pro</span>
+                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Cabelo</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Soins professionnels Cabelo" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Soins Capillaires</h3>
+              <p>Formules professionnelles pour nourrir, réparer et entretenir l'éclat de vos cheveux au quotidien.</p>
+              <div class="product-footer">
+                <span class="product-price">Essentiel</span>
+                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Cabelo</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Accessoires et finitions Cabelo" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Accessoires & Finitions</h3>
+              <p>Produits de coiffage et accessoires indispensables pour parfaire votre mise en beauté.</p>
+              <div class="product-footer">
+                <span class="product-price">Coup de cœur</span>
+                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Découvrir</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VITRINE PRODUITS MATRIX (AFFILIATION AMAZON bellabay0c-20) -->
+    <section class="section" id="matrix" style="background: var(--white);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">La sélection Bella Bay</span>
+          <h2>La boutique Matrix</h2>
+          <p>Les gammes professionnelles Matrix pour sublimer, réparer et entretenir vos cheveux à la maison.</p>
+        </div>
+
+        <div class="shop-banner" style="background: var(--rose-pale); color: var(--black); border-color: var(--gold);">
+          🌸 Soins professionnels Matrix — Recommandés par Bella Bay
+        </div>
+
+        <div class="product-catalog">
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Matrix</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80" alt="Matrix Food For Soft" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Food For Soft</h3>
+              <p>Shampooing, revitalisant, masque et sérum pour une hydratation en profondeur.</p>
+              <div class="product-footer">
+                <span class="product-price">Hydratation</span>
+                <a href="https://www.amazon.ca/s?k=Matrix+Food+For+Soft&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Matrix</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Matrix Instacure Build-A-Bond" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Instacure Build-A-Bond</h3>
+              <p>Répare et renforce les liaisons des cheveux sensibilisés et fragilisés.</p>
+              <div class="product-footer">
+                <span class="product-price">Réparation</span>
+                <a href="https://www.amazon.ca/s?k=Matrix+Instacure+Build-A-Bond&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag">Matrix</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1608248597359-994b5952136d?auto=format&fit=crop&w=600&q=80" alt="Matrix So Silver" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>So Silver</h3>
+              <p>Shampooing violet pour neutraliser les reflets jaunes sur cheveux blonds ou gris.</p>
+              <div class="product-footer">
+                <span class="product-price">Blonds éclatants</span>
+                <a href="https://www.amazon.ca/s?k=Matrix+So+Silver&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark" style="min-height:36px; padding:6px 14px; font-size:9px;">Voir sur Amazon</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION B.B NAILS (SIYOU) -->
+    <section class="section boutique-section" id="bbn-nails">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">B.B Nails 💅✨</span>
+          <h2>Collection Press On Siyou</h2>
+          <p>Sublimez vos mains avec notre sélection de prothèses ongulaires élégantes.</p>
+        </div>
+
+        <div class="shop-banner">
+          ✨ Profitez de 10% de rabais avec le code promo : <strong style="color:#ffffff; margin-left: 5px;">BELLA</strong>
+        </div>
+
+        <div class="product-catalog" style="grid-template-columns: 1fr; max-width: 550px; margin: 0 auto;">
+          <article class="product-card">
+            <div class="product-img-wrap" style="height: 280px;">
+              <span class="product-tag">Siyou Nails</span>
+              <img class="product-img" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=85" alt="Press On Siyou" loading="lazy">
+            </div>
+            <div class="product-info" style="text-align: center;">
+              <h3>Press On Nude & Minimalistes</h3>
+              <p>Une sélection exclusive de Press On pour un fini parfait en un instant. Utilisez le code <strong>BELLA</strong> à la caisse.</p>
+              <div class="product-footer" style="justify-content: center; gap: 20px;">
+                <span class="product-price">Code : BELLA (-10%)</span>
+                <a href="https://siyounails.com/?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer" class="btn" style="min-height:40px; padding:8px 20px;">Commander sur Siyou</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMICILE -->
+    <section class="section mobile-service" id="domicile">
+      <div class="container mobile-service-grid">
+        <div>
+          <span class="eyebrow">Votre beauté, chez vous</span>
+          <h2>La coiffure s’invite chez vous</h2>
+          <p>Avec Bella Bay, profitez d’un service de coiffure personnalisé dans le confort de votre domicile.</p>
+          <div class="location-list">
+            <span>Montréal</span>
+            <span>Laval</span>
+            <span>Rive-Nord</span>
+          </div>
+          <a class="btn" href="#contact">Nous contacter</a>
+        </div>
+        <div class="mobile-service-image" role="img" aria-label="Espace de coiffure"></div>
+      </div>
+    </section>
+
+    <!-- HISTOIRE -->
+    <section class="section story-section" id="histoire">
+      <div class="container story-grid">
+        <div class="story-image" role="img" aria-label="Univers de la coiffure"></div>
+        <div class="story-copy">
+          <span class="eyebrow">L’univers Bella Bay</span>
+          <h2>La beauté, avec attention et passion</h2>
+          <p>Bella Bay est née d’une exigence : offrir une expérience de coiffure sur-mesure, attentive et raffinée, directement chez vous.</p>
+          <div class="signature">Bella Bay · B.B</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Parlons de vos cheveux</span>
+          <h2>Contactez Bella Bay</h2>
+          <p>Une question sur nos services ou notre boutique ? Contactez-nous pour obtenir plus d’informations.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <div class="contact-icon">✉</div>
+            <h3>Courriel</h3>
+            <p><a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a></p>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">⌖</div>
+            <h3>Territoire</h3>
+            <p>Montréal, Laval et Rive-Nord</p>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">✦</div>
+            <h3>Services</h3>
+            <p>Coiffure à domicile et boutique beauté</p>
+          </article>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn" href="mailto:bellabay.coiffure@gmail.com">Nous écrire</a>
+          <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALON SHOWCASE -->
+    <section class="section salon-showcase-section" id="salon-futur">
+      <div class="container">
+        <div class="salon-showcase-box">
+          <img class="salon-showcase-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85" alt="Salon Bella Bay" loading="lazy">
+          <div class="salon-showcase-content">
+            <span class="eyebrow">Notre vision</span>
+            <h2>Une vision qui grandit avec vous</h2>
+            <p>Notre vision à long terme est de créer un espace physique chaleureux qui réunira coiffure, produits professionnels et conseils personnalisés.</p>
+            <a class="btn" href="#contact">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Bella Bay · B.B</div>
+      <div class="footer-copy">© <span id="currentYear"></span> Bella Bay. Tous droits réservés.</div>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#matrix">Matrix</a>
+        <a href="#bbn-nails">Ongles</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALE -->
+  <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+      <span class="eyebrow">Bella Bay · Nos services</span>
+      <h3 id="modalTitle">Détails du service</h3>
+      <p id="modalDescription"></p>
+      <p class="modal-price" id="modalPrice"></p>
+      <a class="btn btn-dark" href="#contact" id="modalContact">Nous contacter</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const floatingPromo = document.getElementById("floatingPromo");
+    const closeFloatingPromo = document.getElementById("closeFloatingPromo");
+    if (floatingPromo && closeFloatingPromo) {
+      closeFloatingPromo.addEventListener("click", () => {
+        floatingPromo.style.display = "none";
+      });
+    }
+
+    const serviceDetails = {
+      "coloration-base": { title: "Coloration de base", price: "À partir de 95 $", description: "Une coloration personnalisée pour raviver votre couleur, couvrir les cheveux blancs ou obtenir une nouvelle nuance." },
+      "coloration-fantaisie": { title: "Coloration fantaisie", price: "À partir de 120 $", description: "Exprimez votre personnalité avec une coloration créative et des nuances vibrantes adaptées à votre style." },
+      "meches": { title: "Mèches", price: "À partir de 110 $", description: "Apportez de la lumière, de la profondeur et de la dimension à votre chevelure grâce à des mèches sur-mesure." },
+      "contouring": { title: "Contouring", price: "À partir de 90 $", description: "Une technique pour illuminer certaines zones autour du visage afin de mettre en valeur vos traits." },
+      "ombre-balayage": { title: "Ombré & balayage", price: "À partir de 130 $", description: "Obtenez un résultat lumineux et harmonieux grâce à des transitions de couleur douces." },
+      "traitement": { title: "Traitement capillaire", price: "À partir de 80 $", description: "Un soin adapté aux besoins de vos cheveux pour améliorer douceur et souplesse." },
+      "botox": { title: "Botox capillaire", price: "À partir de 140 $", description: "Traitement cosmétique conçu pour réparer l'apparence et donner un fini soyeux." },
+      "keratine": { title: "Traitement à la kératine", price: "À partir de 180 $", description: "Lissage personnalisé pour discipliner les cheveux et réduire les frisottis." },
+      "extensions": { title: "Extensions capillaires", price: "À partir de 120 $", description: "Pose d'extensions choisies selon votre chevelure et la méthode souhaitée." }
+    };
+
+    const serviceModal = document.getElementById("serviceModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalClose = document.getElementById("modalClose");
+    let previousButton = null;
+
+    document.querySelectorAll(".service-details").forEach(button => {
+      button.addEventListener("click", function() {
+        const details = serviceDetails[this.dataset.service];
+        if (!details) return;
+        previousButton = this;
+        modalTitle.textContent = details.title;
+        modalDescription.textContent = details.description;
+        modalPrice.textContent = details.price;
+        serviceModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      });
+    });
+
+    function closeServiceModal() {
+      serviceModal.classList.remove("active");
+      document.body.style.overflow = "";
+      if (previousButton) previousButton.focus();
+    }
+
+    modalClose.addEventListener("click", closeServiceModal);
+    serviceModal.addEventListener("click", (e) => { if (e.target === serviceModal) closeServiceModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && serviceModal.classList.contains("active")) closeServiceModal(); });
+
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mainNav = document.getElementById("mainNav");
+    if (mobileMenuToggle && mainNav) {
+      mobileMenuToggle.addEventListener("click", function() {
+        const isExpanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!isExpanded));
+        mainNav.classList.toggle("nav-open", !isExpanded);
+      });
+      mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("nav-open");
+          mobileMenuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+
+```
