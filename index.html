@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#171313">
 
-  <meta name="description" content="Bella Bay (B.B) — Coiffure mobile à domicile à Montréal, Laval et sur la Rive-Nord. Découvrez nos services professionnels et notre boutique beauté.">
+  <meta name="description" content="Bella Bay (B.B) — Coiffure mobile à domicile à Montréal, Laval et sur la Rive-Nord. Découvrez nos services professionnels et notre boutique beauté internationale.">
 
-  <title>Bella Bay (B.B) — Coiffure & Beauté</title>
+  <title>Bella Bay (B.B) — Coiffure & Beauté Internationale</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
       --text: #382e2e;
       --muted: #827474;
       --border: rgba(201, 164, 107, 0.35);
-      --shadow: 0 14px 38px rgba(33, 20, 20, 0.09);
+      --shadow: 0 16px 40px rgba(33, 20, 20, 0.1);
     }
 
     * {
@@ -70,18 +70,18 @@
     }
 
     .container {
-      width: min(1160px, 90%);
+      width: min(1200px, 90%);
       margin: 0 auto;
     }
 
     .section {
-      padding: 88px 0;
+      padding: 95px 0;
     }
 
     .section-heading {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 42px;
+      max-width: 760px;
+      margin: 0 auto 50px;
     }
 
     .eyebrow {
@@ -90,7 +90,7 @@
       text-transform: uppercase;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       margin-bottom: 12px;
     }
 
@@ -104,14 +104,14 @@
     }
 
     h2 {
-      font-size: clamp(35px, 4.5vw, 52px);
+      font-size: clamp(36px, 4.8vw, 54px);
       color: var(--black);
       margin-bottom: 16px;
     }
 
     .section-heading p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 13.5px;
     }
 
     .btn {
@@ -119,16 +119,16 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 47px;
-      padding: 12px 23px;
+      min-height: 48px;
+      padding: 12px 26px;
       border: 1px solid var(--gold);
       background: var(--gold);
       color: var(--black);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1.3px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      transition: 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       text-align: center;
     }
@@ -137,6 +137,7 @@
       background: var(--gold-light);
       border-color: var(--gold-light);
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201, 164, 107, 0.3);
     }
 
     .btn-outline {
@@ -159,6 +160,7 @@
     .btn-dark:hover {
       background: #34292a;
       color: var(--white);
+      box-shadow: 0 8px 20px rgba(23, 19, 19, 0.25);
     }
 
     /* BARRE D'ANNONCE HAUT DE PAGE */
@@ -335,16 +337,16 @@
     /* ACCUEIL WOUAH */
     .hero {
       position: relative;
-      min-height: 640px;
+      min-height: 650px;
       display: flex;
       align-items: center;
       overflow: hidden;
       background:
         linear-gradient(
           90deg,
-          rgba(23, 19, 19, 0.90) 0%,
-          rgba(23, 19, 19, 0.65) 50%,
-          rgba(23, 19, 19, 0.20) 100%
+          rgba(23, 19, 19, 0.92) 0%,
+          rgba(23, 19, 19, 0.68) 50%,
+          rgba(23, 19, 19, 0.22) 100%
         ),
         url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85')
         center 38% / cover no-repeat;
@@ -353,7 +355,7 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 720px;
+      max-width: 740px;
       padding: 85px 0;
       color: var(--white);
     }
@@ -363,7 +365,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(48px, 7vw, 82px);
+      font-size: clamp(48px, 7.2vw, 84px);
       margin-bottom: 24px;
       color: var(--white);
     }
@@ -374,10 +376,10 @@
     }
 
     .hero p {
-      max-width: 540px;
-      margin-bottom: 29px;
+      max-width: 550px;
+      margin-bottom: 30px;
       color: #f5e9e7;
-      font-size: 14px;
+      font-size: 14.5px;
       line-height: 1.9;
     }
 
@@ -408,7 +410,7 @@
 
     .value-item {
       text-align: center;
-      padding: 25px 16px;
+      padding: 26px 16px;
       border-right: 1px solid var(--border);
     }
 
@@ -421,7 +423,7 @@
       margin-bottom: 4px;
       color: var(--black);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 600;
     }
 
@@ -438,24 +440,24 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 26px;
+      gap: 28px;
     }
 
     .service-card {
       display: flex;
       flex-direction: column;
-      padding: 30px 26px;
+      padding: 32px 28px;
       background: var(--white);
       border: 2px solid var(--gold);
-      border-radius: 4px;
-      box-shadow: 0 8px 25px rgba(201, 164, 107, 0.12);
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(201, 164, 107, 0.12);
       position: relative;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(201, 164, 107, 0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(201, 164, 107, 0.25);
       border-color: #a77b45;
     }
 
@@ -477,14 +479,14 @@
       flex-grow: 1;
       margin-bottom: 18px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 12.5px;
       line-height: 1.8;
     }
 
     .service-price {
       margin-bottom: 18px;
       color: #9b6b36;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
     }
 
@@ -493,32 +495,31 @@
     }
 
     .price-note {
-      margin-top: 30px;
+      margin-top: 32px;
       text-align: center;
       color: var(--muted);
       font-size: 11px;
     }
 
-    /* BOUTIQUES & PRODUITS (STYLE ÉPURÉ / SANS HUMAINS) */
+    /* SECTION EXTENSIONS INTERNATIONALES - VITRINE DE LUXE (WOW EFFECT) */
     .boutique-section {
       background: var(--rose-pale);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      position: relative;
     }
 
     .shop-banner {
       background: var(--black);
       color: var(--gold-light);
       border: 1px solid var(--gold);
-      padding: 14px 20px;
+      padding: 16px 24px;
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 10px;
-      letter-spacing: 2px;
+      margin-bottom: 45px;
+      font-size: 10.5px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      border-radius: 6px;
-      box-shadow: 0 4px 15px rgba(23, 19, 19, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(23, 19, 19, 0.1);
     }
 
     .shop-banner span {
@@ -526,44 +527,110 @@
       font-weight: 700;
     }
 
-    .spotlight-card {
+    .product-showcase-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .luxury-product-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s ease;
     }
 
-    .spotlight-img-wrap {
-      height: 100%;
-      min-height: 380px;
+    .luxury-product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 50px rgba(201, 164, 107, 0.22);
+      border-color: var(--gold);
+    }
+
+    .luxury-img-wrap {
+      height: 280px;
       position: relative;
+      overflow: hidden;
+      background: var(--black-soft);
     }
 
-    .spotlight-img {
+    .luxury-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .spotlight-content {
-      padding: 45px;
+    .luxury-product-card:hover .luxury-img {
+      transform: scale(1.07);
     }
 
-    .spotlight-content h3 {
-      font-size: 32px;
+    .luxury-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--black);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 6px 14px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .luxury-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .luxury-content h3 {
+      font-size: 26px;
       color: var(--black);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .spotlight-content p {
+    .luxury-content p {
       color: var(--muted);
       font-size: 13px;
       line-height: 1.8;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .luxury-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid rgba(201, 164, 107, 0.2);
+    }
+
+    .luxury-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .luxury-current-price {
+      color: #9b6b36;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .luxury-old-price {
+      text-decoration: line-through;
+      color: var(--muted);
+      font-size: 11px;
     }
 
     /* SECTION B.B NAILS (SIYOU) */
@@ -649,7 +716,7 @@
     .mobile-service p {
       margin-bottom: 18px;
       color: #d8ccca;
-      font-size: 13px;
+      font-size: 13.5px;
       line-height: 1.9;
     }
 
@@ -658,25 +725,27 @@
     }
 
     .mobile-service-image {
-      min-height: 410px;
+      min-height: 420px;
       background:
         url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=85')
         center / cover no-repeat;
       border: 1px solid var(--gold);
+      border-radius: 8px;
     }
 
     .location-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin: 24px 0;
+      gap: 10px;
+      margin: 25px 0;
     }
 
     .location-list span {
-      padding: 8px 12px;
+      padding: 9px 14px;
       border: 1px solid rgba(229, 201, 154, 0.45);
       color: var(--gold-light);
       font-size: 10px;
+      letter-spacing: 1px;
     }
 
     /* HISTOIRE */
@@ -694,10 +763,11 @@
     }
 
     .story-image {
-      min-height: 490px;
+      min-height: 500px;
       background:
         url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=85')
         center / cover no-repeat;
+      border-radius: 8px;
     }
 
     .story-copy h2 {
@@ -707,7 +777,7 @@
     .story-copy p {
       margin-bottom: 17px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 12.5px;
       line-height: 2;
     }
 
@@ -736,19 +806,20 @@
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .contact-card {
-      padding: 27px 20px;
+      padding: 30px 22px;
       text-align: center;
       border: 1px solid rgba(201, 164, 107, 0.4);
+      border-radius: 6px;
     }
 
     .contact-card .contact-icon {
       margin-bottom: 12px;
       color: var(--gold-light);
-      font-size: 25px;
+      font-size: 26px;
     }
 
     .contact-card h3 {
@@ -760,7 +831,7 @@
     .contact-card p,
     .contact-card a {
       color: #e4d8d6;
-      font-size: 11px;
+      font-size: 11.5px;
       overflow-wrap: anywhere;
     }
 
@@ -773,7 +844,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 35px;
     }
 
     /* SECTION FINALE SALON */
@@ -795,13 +866,13 @@
 
     .salon-showcase-img {
       height: 100%;
-      min-height: 380px;
+      min-height: 400px;
       object-fit: cover;
       width: 100%;
     }
 
     .salon-showcase-content {
-      padding: 50px;
+      padding: 55px;
     }
 
     .salon-showcase-content .eyebrow {
@@ -810,20 +881,20 @@
 
     .salon-showcase-content h2 {
       color: var(--white);
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: 36px;
+      margin-bottom: 16px;
     }
 
     .salon-showcase-content p {
       color: #d8ccca;
-      font-size: 12.5px;
+      font-size: 13px;
       line-height: 1.9;
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
 
     /* PIED DE PAGE */
     .site-footer {
-      padding: 28px 0;
+      padding: 30px 0;
       background: #100d0d;
       color: #c9bdbc;
       border-top: 1px solid rgba(201, 164, 107, 0.3);
@@ -840,18 +911,18 @@
     .footer-brand {
       color: var(--gold-light);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 23px;
+      font-size: 24px;
     }
 
     .footer-copy {
-      font-size: 9px;
+      font-size: 9.5px;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      font-size: 10px;
+      gap: 18px;
+      font-size: 10.5px;
     }
 
     .footer-links a:hover {
@@ -882,6 +953,7 @@
       padding: 35px;
       background: var(--white);
       border: 1px solid var(--gold);
+      border-radius: 8px;
     }
 
     .modal-close {
@@ -907,13 +979,13 @@
     .modal-content p {
       margin-bottom: 18px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 12.5px;
       line-height: 1.9;
     }
 
     .modal-content .modal-price {
       color: #9b6b36;
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 700;
     }
 
@@ -947,15 +1019,15 @@
         border-bottom: 1px solid #f0e5e2;
       }
       .main-nav .nav-book { margin-top: 12px; justify-content: center; border: 1px solid var(--gold); }
-      .spotlight-card, .bbn-hero-banner, .mobile-service-grid, .story-grid, .salon-showcase-box {
+      .product-showcase-grid, .bbn-hero-banner, .mobile-service-grid, .story-grid, .salon-showcase-box {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 22px;
       }
-      .spotlight-img-wrap, .bbn-hero-img-wrap, .salon-showcase-img { min-height: 260px; }
+      .luxury-img-wrap, .bbn-hero-img-wrap, .salon-showcase-img { min-height: 280px; }
     }
 
     @media (max-width: 680px) {
-      .section { padding: 64px 0; }
+      .section { padding: 68px 0; }
       .container { width: 90%; }
       .hero { min-height: 570px; background-position: 58% center; }
       .hero-content { padding: 70px 0; }
@@ -1023,19 +1095,19 @@
     <section class="hero" id="accueil">
       <div class="container">
         <div class="hero-content">
-          <span class="eyebrow">Bella Bay · Coiffure & Beauté</span>
+          <span class="eyebrow">Bella Bay · Coiffure & Beauté Internationale</span>
           <h1>
             Révélez la beauté de vos cheveux
             <span>avec Bella Bay.</span>
           </h1>
           <p>
             Des services de coiffure professionnels à domicile et une
-            boutique beauté soigneusement sélectionnée pour prendre soin
-            de vos cheveux et révéler leur éclat.
+            boutique internationale soigneusement sélectionnée pour prendre soin
+            de vos cheveux et révéler leur éclat absolu.
           </p>
           <div class="hero-actions">
             <a href="#services" class="btn">Découvrir nos services</a>
-            <a href="#matrix" class="btn btn-outline">Découvrir la boutique Matrix</a>
+            <a href="#extensions-exclusives" class="btn btn-outline">Explorer les extensions</a>
           </div>
           <div class="hero-note">Montréal · Laval · Rive-Nord</div>
         </div>
@@ -1054,8 +1126,8 @@
           <span>Des soins adaptés à vos cheveux</span>
         </div>
         <div class="value-item">
-          <strong>Boutique beauté</strong>
-          <span>Des produits pour votre routine capillaire</span>
+          <strong>Boutique internationale</strong>
+          <span>Les meilleures marques mondiales</span>
         </div>
       </div>
     </section>
@@ -1152,34 +1224,102 @@
       </div>
     </section>
 
-    <!-- 2. SECTION EXTENSIONS PROFESSIONNELLES (VISUEL PUR PRODUITS / SANS VISAGE) -->
+    <!-- 2. SECTION EXTENSIONS INTERNATIONALES - VITRINE DE LUXE (GLAM SEAMLESS & CABELO) -->
     <section class="section boutique-section" id="extensions-exclusives">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Collection exclusive B.B</span>
-          <h2>Nos extensions capillaires</h2>
-          <p>Offrez à votre chevelure longueur, volume et mouvement grâce à notre sélection de mèches professionnelles de qualité supérieure.</p>
+          <span class="eyebrow">International Collection · B.B</span>
+          <h2>Professional Hair Extensions</h2>
+          <p>Offrez à votre chevelure longueur, volume et mouvement grâce à notre sélection internationale de mèches professionnelles de qualité suprême.</p>
         </div>
 
         <div class="shop-banner">
-          ✨ Partenaire officiel Cabelo — Extensions & Rituels de luxe
+          ✨ Official Partners — Glam Seamless & Cabelo Luxury Collections
         </div>
 
-        <div class="spotlight-card">
-          <div class="spotlight-content" style="padding: 50px;">
-            <span class="eyebrow">Qualité salon garantie</span>
-            <h3>L'excellence pour vos longueurs</h3>
-            <p>Des cheveux soyeux, durables et faciles à coiffer. Que ce soit pour un changement radical ou pour sublimer votre coiffure du quotidien, trouvez l'accord parfait pour votre chevelure.</p>
-            <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn">Découvrir le catalogue d'extensions</a>
-          </div>
-          <div class="spotlight-img-wrap">
-            <img class="spotlight-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=90" alt="Extensions capillaires professionnelles Bella Bay" loading="lazy">
-          </div>
+        <div class="product-showcase-grid">
+          
+          <!-- Produit 1 : Glam Seamless Tape-In -->
+          <article class="luxury-product-card">
+            <div class="luxury-img-wrap">
+              <span class="luxury-badge">Glam Seamless</span>
+              <img class="luxury-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=85" alt="Tape-In Extensions 50g Glam Seamless" loading="lazy">
+            </div>
+            <div class="luxury-content">
+              <h3>Tape-In Extensions (50g)</h3>
+              <p>100% Remy human hair. Seamless, comfortable, and reusable for a flawless, natural blend.</p>
+              <div class="luxury-footer">
+                <div class="luxury-price-box">
+                  <span class="luxury-current-price">171,00 CA$</span>
+                  <span class="luxury-old-price">190,00 CA$</span>
+                </div>
+                <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 2 : Glam Seamless Invisible Tape -->
+          <article class="luxury-product-card">
+            <div class="luxury-img-wrap">
+              <span class="luxury-badge">Glam Seamless</span>
+              <img class="luxury-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85" alt="Invisible Tape 25g Glam Seamless" loading="lazy">
+            </div>
+            <div class="luxury-content">
+              <h3>Invisible Tape (25g)</h3>
+              <p>Crafted to mimic natural root growth for absolute, undetectable discretion on top layers.</p>
+              <div class="luxury-footer">
+                <div class="luxury-price-box">
+                  <span class="luxury-current-price">160,00 CA$</span>
+                  <span class="luxury-old-price">180,00 CA$</span>
+                </div>
+                <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 3 : Glam Seamless Ombré & Balayage -->
+          <article class="luxury-product-card">
+            <div class="luxury-img-wrap">
+              <span class="luxury-badge">Glam Seamless</span>
+              <img class="luxury-img" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=85" alt="Ombré & Balayage Tape-In Glam Seamless" loading="lazy">
+            </div>
+            <div class="luxury-content">
+              <h3>Ombré & Balayage Tape-In</h3>
+              <p>Expertly blended gradients and multi-tonal shades for vibrant, sun-kissed depth and movement.</p>
+              <div class="luxury-footer">
+                <div class="luxury-price-box">
+                  <span class="luxury-current-price">180,00 CA$</span>
+                  <span class="luxury-old-price">200,00 CA$</span>
+                </div>
+                <a href="https://www.awin1.com/cread.php?s=8b857c63-757c-4487-9465-290bbc699896&v=3144389" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 4 : Cabelo Luxury Rituels -->
+          <article class="luxury-product-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+            <div class="luxury-img-wrap" style="height: 220px;">
+              <span class="luxury-badge">Cabelo Exclusive</span>
+              <img class="luxury-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Cabelo Professional Collection" loading="lazy">
+            </div>
+            <div class="luxury-content">
+              <h3>Cabelo Luxury Rituels & Collections</h3>
+              <p>Explorez l'intégralité du catalogue professionnel Cabelo pour des collections sur-mesure et des extensions haut de gamme.</p>
+              <div class="luxury-footer">
+                <div class="luxury-price-box">
+                  <span class="luxury-current-price" style="font-size: 15px;">Catalogue Pro</span>
+                  <span style="font-size: 10px; color: var(--muted);">Sur-mesure</span>
+                </div>
+                <a href="https://cabelo.ca/collections/all-products?sca_ref=12646409.h6yr0Bo0FVwKzy&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Découvrir Cabelo</a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- 3. BOUTIQUE MATRIX (MISE EN VALEUR PREMIUM DES PRODUITS) -->
+    <!-- 3. BOUTIQUE MATRIX -->
     <section class="section" id="matrix" style="background: var(--white);">
       <div class="container">
         <div class="section-heading">
@@ -1192,14 +1332,14 @@
           🌸 Soins professionnels Matrix — Recommandés par Bella Bay
         </div>
 
-        <div class="spotlight-card" style="margin-bottom: 45px; background: var(--rose-pale);">
-          <div class="spotlight-img-wrap">
-            <img class="spotlight-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Produits de soins capillaires Matrix professionnels" loading="lazy">
+        <div class="spotlight-card" style="margin-bottom: 45px; background: var(--rose-pale); display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);">
+          <div style="height: 100%; min-height: 350px;">
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=90" alt="Produits de soins capillaires Matrix professionnels" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
           </div>
-          <div class="spotlight-content" style="padding: 45px;">
+          <div style="padding: 45px;">
             <span class="eyebrow">Gamme officielle Matrix</span>
-            <h3>Des rituels de salon directement chez vous</h3>
-            <p>Retrouvez toute l'efficacité des formules professionnelles Matrix (hydratation, réparation des liaisons, protection des blonds et brillance) pour des résultats visibles et durables.</p>
+            <h3 style="font-size: 32px; color: var(--black); margin-bottom: 14px;">Des rituels de salon directement chez vous</h3>
+            <p style="color: var(--muted); font-size: 13px; line-height: 1.8; margin-bottom: 25px;">Retrouvez toute l'efficacité des formules professionnelles Matrix (hydratation, réparation des liaisons, protection des blonds et brillance) pour des résultats visibles et durables.</p>
             <a href="https://www.amazon.ca/s?k=Matrix+Hair+Care&tag=bellabay0c-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-dark">Explorer toutes les gammes Matrix</a>
           </div>
         </div>
