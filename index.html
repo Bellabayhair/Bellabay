@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -19,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root{--black:#080607;--black2:#151012;--pink:#f3d3dc;--pink2:#f9e8ed;--rose:#cf8fa1;--rose-dark:#9d6173;--gold:#c9a45c;--gold-light:#e8cf98;--white:#fff;--cream:#fffafa;--text:#292124;--gray:#756b6f}
+        :root{--black:#080607;--black2:#151012;--pink:#f3d3dc;--pink2:#f9e8ed;--rose:#cf8fa1;--rose-dark:#9d6173;--gold:#c9a45c;--gold-dark:#8c6d2d;--gold-light:#e8cf98;--white:#fff;--cream:#fffafa;--text:#292124;--gray:#756b6f}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:Montserrat,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}body.modal-open{overflow:hidden}img{max-width:100%;display:block}a{text-decoration:none}
         .topbar{background:#050405;color:var(--gold-light);text-align:center;padding:8px 15px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
         header{position:sticky;top:0;z-index:1000;background:rgba(8,6,7,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,164,92,.35)}
@@ -60,11 +59,11 @@
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
         
-        /* Cartes Graphiques Rose & Or Infaillibles */
-        .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fcebefe6,#cf8fa1 60%,#171014);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:1px solid var(--gold)}
-        .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light);letter-spacing:2px;margin-bottom:8px;font-weight:700}
-        .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
-        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.9);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
+        /* Cartes Graphiques Rose & Or Infaillibles - Texte contrasté or foncé chic */
+        .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
+        .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--gold-dark);letter-spacing:2.5px;margin-bottom:8px;font-weight:800;text-shadow:0 1px 2px rgba(255,255,255,0.8)}
+        .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#1c1417;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.9)}
+        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.92);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
         
         .bb-marketplace .bb-product-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}
         .bb-marketplace .bb-product h4{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.05;color:#292124}
@@ -83,9 +82,9 @@
         .bb-ext-header p{color:#e2d3d8;font-size:14px;line-height:1.8}
         .bb-ext-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;max-width:1200px;margin:auto}
         .bb-ext-card{background:#181114;border:1px solid rgba(201,164,92,0.4);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
-        .bb-ext-banner{position:relative;aspect-ratio:4/3;background:radial-gradient(circle at 30% 30%,#f4dfe5,#b87989 60%,#171014);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:1px solid var(--gold)}
+        .bb-ext-banner{position:relative;aspect-ratio:4/3;background:radial-gradient(circle at 30% 30%,#fff2f5,#e8b4c3 60%,#241419);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
         .bb-ext-banner span.bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase;z-index:2}
-        .bb-ext-banner .bb-ext-banner-title{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,0.6);margin-top:10px}
+        .bb-ext-banner .bb-ext-banner-title{font-family:'Cormorant Garamond',serif;font-size:26px;color:#1c1417;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.9);margin-top:10px}
         .bb-ext-content{padding:22px;display:flex;flex-direction:column;flex:1}
         .bb-ext-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:6px}
         .bb-ext-content h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:10px}
@@ -232,7 +231,7 @@
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;margin-bottom:6px;">BELLA BAY B.B</div>
+                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
                     <div class="bb-ext-banner-title">Extensions à Clips</div>
                 </div>
                 <div class="bb-ext-content">
@@ -246,7 +245,7 @@
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;margin-bottom:6px;">BELLA BAY B.B</div>
+                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
                     <div class="bb-ext-banner-title">Extensions Adhésives</div>
                 </div>
                 <div class="bb-ext-content">
@@ -260,7 +259,7 @@
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;margin-bottom:6px;">BELLA BAY B.B</div>
+                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
                     <div class="bb-ext-banner-title">Extensions Halo</div>
                 </div>
                 <div class="bb-ext-content">
@@ -592,5 +591,3 @@
     💬
 </a>
 </html>
-
-```
