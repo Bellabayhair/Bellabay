@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -95,6 +94,25 @@
         .bb-extension-art strong{font:500 32px/.85 'Cormorant Garamond',serif;margin-top:14px;text-shadow:0 2px 10px #0005}
         .bb-catalog-empty{grid-column:1/-1;padding:28px;text-align:center;background:#fff;border:1px solid #d8c6a5;color:#71676a;font-size:12px}
         .bb-shop-disclaimer{max-width:900px;text-align:center;margin:30px auto 0;color:#766d70;font-size:10px;line-height:1.7}
+        /* Style de la page exclusive Extensions */
+        .bb-extensions-showcase{background:linear-gradient(135deg,#1f1418 0%,#0c0a0b 100%);padding:100px 25px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:#fff;margin-bottom:60px}
+        .bb-ext-header{text-align:center;max-width:800px;margin:0 auto 50px}
+        .bb-ext-header small{color:var(--gold-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:12px}
+        .bb-ext-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,64px);line-height:1.05;margin-bottom:20px;font-weight:600}
+        .bb-ext-header h2 span{color:var(--pink);font-style:italic}
+        .bb-ext-header p{color:#e2d3d8;font-size:14px;line-height:1.8}
+        .bb-ext-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;max-width:1200px;margin:auto}
+        .bb-ext-card{background:#181114;border:1px solid rgba(201,164,92,0.4);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+        .bb-ext-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 15px 40px rgba(0,0,0,0.8)}
+        .bb-ext-img-wrap{position:relative;aspect-ratio:4/3;background:#241a1f;overflow:hidden}
+        .bb-ext-img-wrap img{width:100%;height:100%;object-fit:cover;transition:0.4s}
+        .bb-ext-card:hover .bb-ext-img-wrap img{transform:scale(1.05)}
+        .bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase}
+        .bb-ext-content{padding:22px;display:flex;flex-direction:column;flex:1}
+        .bb-ext-content h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:10px}
+        .bb-ext-content p{color:#cfc4c8;font-size:12px;line-height:1.6;margin-bottom:20px;flex:1}
+        .bb-ext-link{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(135deg,#f9e8ed,#cf8fa1);color:#1c1417!important;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:2px;transition:.2s}
+        .bb-ext-link:hover{background:linear-gradient(135deg,#c6a66b,#f2dcc0)}
         /* Relax & Wax */
         .bb-relax-art{background:radial-gradient(circle at 20% 20%,#f4dfe5,#c49b78 55%,#171014)}
         /* Pop-up Black Friday */
@@ -114,8 +132,8 @@
         .bb-blackfriday-cta:hover{transform:translateY(-2px);box-shadow:0 7px 0 #80505e}
         .bb-blackfriday-note{display:block;margin:18px auto 0;max-width:330px;color:#cbbdc2;font-size:9px;line-height:1.5}
         /* Responsive Media Queries */
-        @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.mobile-image{height:450px}.footer-grid{grid-template-columns:1fr 1fr}.bb-marketplace .bb-products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media(max-width:700px){.navbar{min-height:70px;padding:12px 15px}.logo-circle{width:42px;height:42px}.logo-text{font-size:24px}.hero{min-height:78vh}.hero-content{padding:70px 20px}.hero h1{font-size:52px}.hero p{font-size:13px}.section{padding:75px 18px}.section-title h2{font-size:45px}.services-grid{grid-template-columns:1fr}.mobile-content h2,.story-content h2{font-size:48px}.mobile-image,.story-image{height:400px}.future{padding:80px 20px}.future h2{font-size:48px}.footer-grid{grid-template-columns:1fr;gap:30px}.values{grid-template-columns:1fr}.modal-box{padding:35px 22px}.modal-box h2{font-size:42px}.bb-marketplace .bb-products-grid{grid-template-columns:1fr}.bb-catalog-filters{grid-template-columns:1fr 1fr}}
+        @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.mobile-image{height:450px}.footer-grid{grid-template-columns:1fr 1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:700px){.navbar{min-height:70px;padding:12px 15px}.logo-circle{width:42px;height:42px}.logo-text{font-size:24px}.hero{min-height:78vh}.hero-content{padding:70px 20px}.hero h1{font-size:52px}.hero p{font-size:13px}.section{padding:75px 18px}.section-title h2{font-size:45px}.services-grid{grid-template-columns:1fr}.mobile-content h2,.story-content h2{font-size:48px}.mobile-image,.story-image{height:400px}.future{padding:80px 20px}.future h2{font-size:48px}.footer-grid{grid-template-columns:1fr;gap:30px}.values{grid-template-columns:1fr}.modal-box{padding:35px 22px}.modal-box h2{font-size:42px}.bb-marketplace .bb-products-grid,.bb-ext-grid{grid-template-columns:1fr}.bb-catalog-filters{grid-template-columns:1fr 1fr}}
     </style>
 </head>
 <body>
@@ -135,6 +153,7 @@
                 <a href="#services">Services</a>
                 <a href="#mobile">Service mobile</a>
                 <a href="#histoire">Histoire</a>
+                <a href="#extensions-page">Extensions</a>
                 <a href="#boutique">Boutique</a>
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
@@ -147,11 +166,11 @@
                     <a href="#services">Services <i class="fas fa-chevron-right"></i></a>
                     <a href="#mobile">Service mobile <i class="fas fa-chevron-right"></i></a>
                     <a href="#histoire">Notre Histoire <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('extensions'); toggleMenu();">Boutique : Extensions <i class="fas fa-chevron-right"></i></a>
+                    <a href="#extensions-page" onclick="toggleMenu();">✨ Le Comptoir des Extensions <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('soins'); toggleMenu();">Boutique : Soins capillaires <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('outils'); toggleMenu();">Boutique : Outils & Coiffure <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('ongles'); toggleMenu();">Boutique : Ongles <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('esthetique'); toggleMenu();">Boutique : Épilation & Esthétique <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('esthetique'); toggleMenu();">Boutique : Épilation & Cire <i class="fas fa-chevron-right"></i></a>
                     <a href="#salon">Salon <i class="fas fa-chevron-right"></i></a>
                     <a href="#contact">Contact &amp; Zones <i class="fas fa-chevron-right"></i></a>
                     <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">Contactez-nous (WhatsApp) <i class="fab fa-whatsapp"></i></a>
@@ -166,12 +185,67 @@
             <h1>Sublimez vos cheveux avec <span>Bella Bay</span>.</h1>
             <p>Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn-gold">Découvrir nos services</a>
+                <a href="#extensions-page" class="btn-gold">Voir les extensions de rêve</a>
                 <a href="#boutique" class="btn-outline">Explorer la boutique</a>
             </div>
             <div class="hero-footer-info">
                 Service mobile · Montréal · Laval · Rive-Nord
             </div>
+        </div>
+    </section>
+
+    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE -->
+    <section class="bb-extensions-showcase" id="extensions-page">
+        <div class="bb-ext-header">
+            <small>✨ COLLECTION EXCLUSIVE BEAUTY WITHOUT BORDERS & PARTENAIRES</small>
+            <h2>Le Comptoir des <span>Extensions de Rêve</span></h2>
+            <p>Pour toutes les amatrices de mode, de glamour et de belles chevelures : découvrez notre sélection d'extensions haut de gamme en cheveux humains, clips, adhésives et halo pour un volume et une longueur spectaculaires.</p>
+        </div>
+        <div class="bb-ext-grid">
+            <!-- Carte 1 -->
+            <article class="bb-ext-card">
+                <div class="bb-ext-img-wrap">
+                    <span class="bb-ext-badge">Beauty Without Borders</span>
+                    <a href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">
+                        <img src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/clip-in-hair-extensions-100-human-hair-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900" alt="Extensions à clips Beauty Without Borders" loading="lazy">
+                    </a>
+                </div>
+                <div class="bb-ext-content">
+                    <h3>Extensions à Clips</h3>
+                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés sans engagement.</p>
+                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                </div>
+            </article>
+
+            <!-- Carte 2 -->
+            <article class="bb-ext-card">
+                <div class="bb-ext-img-wrap">
+                    <span class="bb-ext-badge">Beauty Without Borders</span>
+                    <a href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">
+                        <img src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/tape-in-hair-extensions-100-human-hair-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900" alt="Extensions Adhésives Tape-In" loading="lazy">
+                    </a>
+                </div>
+                <div class="bb-ext-content">
+                    <h3>Extensions Adhésives / Tape-in</h3>
+                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel irrésistible.</p>
+                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                </div>
+            </article>
+
+            <!-- Carte 3 -->
+            <article class="bb-ext-card">
+                <div class="bb-ext-img-wrap">
+                    <span class="bb-ext-badge">Beauty Without Borders</span>
+                    <a href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">
+                        <img src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/halo-hair-extensions-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900" alt="Extensions Halo" loading="lazy">
+                    </a>
+                </div>
+                <div class="bb-ext-content">
+                    <h3>Extensions Halo</h3>
+                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle ni pression.</p>
+                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -229,16 +303,15 @@
         </div>
     </section>
 
-    <!-- BOUTIQUE AVEC SÉLECTION VISIBLE & FICHES BEAUTY WITHOUT BORDERS -->
+    <!-- BOUTIQUE GÉNÉRALE -->
     <section class="section bb-marketplace" id="boutique">
         <div class="container">
             <div class="section-title">
                 <small>LA SÉLECTION BELLA BAY</small>
                 <h2>La Boutique Intelligente</h2>
-                <p>Cliquez sur un univers ci-dessous pour afficher instantanément tous les produits et fournisseurs associés.</p>
+                <p>Explorez l'ensemble de nos collections partenaires : soins, outils, ongles et épilation professionnelle.</p>
             </div>
 
-            <!-- BOUTONS D'ACCÈS RAPIDE VISIBLE -->
             <div class="bb-smart-assistant" style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
                 <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay</span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:15px;font-weight:500;">Que recherchez-vous aujourd'hui ?</h3>
@@ -247,7 +320,7 @@
                     <button type="button" class="bb-quick-btn" onclick="filterByQuick('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Soins capillaires</button>
                     <button type="button" class="bb-quick-btn" onclick="filterByQuick('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Outils & Coiffure</button>
                     <button type="button" class="bb-quick-btn" onclick="filterByQuick('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Ongles / Press-on</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Épilation & Esthétique</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Épilation & Cire</button>
                     <button type="button" class="bb-quick-btn" onclick="filterByQuick('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Tout voir ✨</button>
                 </div>
             </div>
@@ -268,59 +341,6 @@
             </div>
 
             <div class="bb-products-grid" id="bbCatalogGrid">
-                <!-- EXTENSIONS (Wig Store - Beauty Without Borders) -->
-                <article class="bb-product bb-extension-card" data-brand="Wig Store Hair & Beauty Canada" data-category="extensions">
-                    <a class="bb-product-image" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Beauty Without Borders Clip-In Extensions" loading="lazy" src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/clip-in-hair-extensions-100-human-hair-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900"/>
-                        <span class="bb-product-tag">Beauty Without Borders</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">WIG STORE HAIR & BEAUTY CANADA</span>
-                        <h4>Extensions à clips</h4>
-                        <p>Longueur et volume à clipser, collection exclusive Beauty Without Borders.</p>
-                        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-extension-card" data-brand="Wig Store Hair & Beauty Canada" data-category="extensions">
-                    <a class="bb-product-image" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Beauty Without Borders Tape-In Extensions" loading="lazy" src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/tape-in-hair-extensions-100-human-hair-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900"/>
-                        <span class="bb-product-tag">Beauty Without Borders</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">WIG STORE HAIR & BEAUTY CANADA</span>
-                        <h4>Extensions adhésives / Tape-in</h4>
-                        <p>Une option discrète et haut de gamme pour ajouter longueur et densité.</p>
-                        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-extension-card" data-brand="Wig Store Hair & Beauty Canada" data-category="extensions">
-                    <a class="bb-product-image" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Beauty Without Borders Halo Extensions" loading="lazy" src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/halo-hair-extensions-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900"/>
-                        <span class="bb-product-tag">Beauty Without Borders</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">WIG STORE HAIR & BEAUTY CANADA</span>
-                        <h4>Extensions Halo</h4>
-                        <p>Une solution à fil invisible pour un effet volume et longueur instantané.</p>
-                        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-extension-card" data-brand="Wig Store Hair & Beauty Canada" data-category="extensions">
-                    <a class="bb-product-image" href="https://www.wigstorehairandbeautycanada.ca/collections/human-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Beauty Without Borders Human Hair" loading="lazy" src="https://www.wigstorehairandbeautycanada.ca/cdn/shop/files/human-hair-extensions-wig-store-hair-beauty-canada-738914.jpg?v=1768428988&width=900"/>
-                        <span class="bb-product-tag">Beauty Without Borders</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">WIG STORE HAIR & BEAUTY CANADA</span>
-                        <h4>Cheveux humains</h4>
-                        <p>Découvrez les options en cheveux humains et les textures professionnelles.</p>
-                        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/human-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
-                    </div>
-                </article>
-
                 <!-- SOINS CAPILLAIRES (Cabelo / Eufora) -->
                 <article class="bb-product" data-brand="Cabelo" data-category="soins">
                     <a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
@@ -396,14 +416,14 @@
                 <!-- ESTHÉTIQUE & ÉPILATION (Relax & Wax) -->
                 <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
                     <div class="bb-extension-art bb-relax-art">
-                        <span>BEAUTÉ &amp; ESTHÉTIQUE</span>
+                        <span>ÉPILATION &amp; CIRE</span>
                         <strong>RELAX<br>&amp; WAX</strong>
                     </div>
                     <div class="bb-product-info">
                         <span class="bb-product-brand">RELAX &amp; WAX</span>
                         <h4>Cire &amp; épilation professionnelle</h4>
-                        <p>Découvrez une sélection de produits d'épilation, de cire et d'accessoires pour les soins esthétiques.</p>
-                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" target="_blank" rel="sponsored noopener noreferrer">Découvrir les produits ↗</a>
+                        <p>Découvrez notre sélection de cires professionnelles et de soins d'épilation haute performance pour un résultat impeccable.</p>
+                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" target="_blank" rel="sponsored noopener noreferrer">Découvrir la cire Relax & Wax ↗</a>
                     </div>
                 </article>
 
@@ -472,6 +492,7 @@
                     <a href="#services">Services</a>
                     <a href="#mobile">Service mobile</a>
                     <a href="#histoire">Histoire</a>
+                    <a href="#extensions-page">Extensions</a>
                     <a href="#boutique">Boutique en ligne</a>
                     <a href="#salon">Salon</a>
                     <a href="#contact">Contact</a>
@@ -504,7 +525,7 @@
             <p class="bb-blackfriday-copy" id="bbBlackFridayCopy">Découvrez la sélection Bella Bay et profitez d'un avantage spécial pour le Black Friday.</p>
             <strong class="bb-blackfriday-discount">10 % DE RABAIS</strong>
             <span class="bb-blackfriday-code" aria-label="Code promotionnel BELLA">BELLA</span>
-            <a class="bb-blackfriday-cta" href="#boutique" id="bbBlackFridayShop">PROFITER DE L'OFFRE ↗</a>
+            <a class="bb-blackfriday-cta" href="#extensions-page" id="bbBlackFridayShop">PROFITER DE L'OFFRE ↗</a>
             <small class="bb-blackfriday-note">Entrez le code BELLA auprès du partenaire participant. Offre soumise aux conditions du marchand.</small>
         </section>
     </div>
@@ -525,198 +546,4 @@
         }
         window.addEventListener('click', function(e) {
             const menu = document.getElementById('dropdownMenu');
-            const icon = document.querySelector('.menu-icon');
-            if (menu && icon && !menu.contains(e.target) && !icon.contains(e.target)) {
-                menu.classList.remove('active');
-            }
-        });
-
-        // Fonction de filtrage direct par catégorie (Assistant & Menu)
-        function filterByQuick(categoryKey) {
-            const catSelect = document.getElementById('bbCatalogCategory');
-            if (catSelect) {
-                catSelect.value = categoryKey;
-                catSelect.dispatchEvent(new Event('change'));
-            }
-            const searchInput = document.getElementById('bbCatalogSearch');
-            if (searchInput) {
-                const keywords = { 'extensions': 'extensions', 'soins': 'soin', 'outils': 'outil', 'ongles': 'ongles', 'esthetique': 'cire' };
-                searchInput.value = categoryKey ? (keywords[categoryKey] || '') : '';
-                searchInput.dispatchEvent(new Event('input'));
-            }
-            const boutiqueSec = document.getElementById('boutique');
-            if(boutiqueSec) boutiqueSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Pop-up Black Friday
-        (function(){
-            const popup=document.getElementById('bbBlackFridayPopup');
-            const closeButton=document.getElementById('bbBlackFridayClose');
-            const shopButton=document.getElementById('bbBlackFridayShop');
-            if(!popup||!closeButton||!shopButton)return;
-            const storageKey='bellaBayBlackFridayDismissedAt';
-            let previousFocus=null;
-            const close=()=>{
-                popup.classList.remove('is-open');
-                popup.setAttribute('aria-hidden','true');
-                document.body.style.overflow='';
-                try{localStorage.setItem(storageKey,String(Date.now()));}catch(e){}
-                if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();
-            };
-            const open=()=>{
-                previousFocus=document.activeElement;
-                popup.classList.add('is-open');
-                popup.setAttribute('aria-hidden','false');
-                document.body.style.overflow='hidden';
-                closeButton.focus();
-            };
-            closeButton.addEventListener('click',close);
-            popup.addEventListener('click',event=>{if(event.target===popup)close();});
-            shopButton.addEventListener('click',()=>{
-                popup.classList.remove('is-open');
-                popup.setAttribute('aria-hidden','true');
-                document.body.style.overflow='';
-                try{localStorage.setItem(storageKey,String(Date.now()));}catch(e){}
-            });
-            let dismissed=false;
-            try{const stamp=Number(localStorage.getItem(storageKey)||0);dismissed=stamp>0&&(Date.now()-stamp)<30*24*60*60*1000;}catch(e){}
-            if(!dismissed){window.addEventListener('load',()=>window.setTimeout(open,700));}
-        })();
-
-        // Services modal data
-        const services={
-            coloration:{number:"SERVICE 01",title:"Coloration de base",description:"Une coloration complète pour uniformiser, raviver ou changer votre couleur tout en créant un résultat lumineux et personnalisé.",technique:"La couleur est appliquée sur l'ensemble des cheveux afin d'obtenir une teinte uniforme et harmonieuse.",result:"Une couleur plus uniforme, brillante et adaptée à votre style.",price:"95 $"},
-            fantaisie:{number:"SERVICE 02",title:"Coloration fantaisie",description:"Pour celles qui souhaitent ajouter une couleur plus créative, originale ou différente des tons classiques.",technique:"La couleur est choisie selon le résultat désiré. Une préparation éclaircissante peut être nécessaire selon la couleur de départ.",result:"Une couleur expressive et personnalisée.",price:"120 $"},
-            meches:{number:"SERVICE 03",title:"Mèches",description:"Des mèches permettent d'éclaircir certaines parties de la chevelure afin d'ajouter de la lumière et de la dimension.",technique:"Les cheveux sont séparés en sections et certaines mèches sont éclaircies de façon ciblée.",result:"Une chevelure plus lumineuse et dimensionnelle.",price:"110 $"},
-            contouring:{number:"SERVICE 04",title:"Contouring",description:"Une technique qui place de la lumière autour du visage afin de créer un effet plus lumineux et personnalisé.",technique:"Les mèches sont concentrées à des endroits stratégiques autour du visage.",result:"Un effet lumineux qui attire naturellement le regard vers le visage.",price:"90 $"},
-            balayage:{number:"SERVICE 05",title:"Ombré Hair & Balayage",description:"Un éclaircissement progressif qui permet de conserver une base plus foncée tout en créant des longueurs et des pointes très blondes.",technique:"Les éclaircissements sont placés progressivement dans les longueurs pour créer une transition douce entre la couleur foncée et le blond.",result:"Un effet balayage californien lumineux, avec une transition fondue et des pointes très claires.",price:"À partir de 130 $"},
-            traitement:{number:"SERVICE 06",title:"Traitement capillaire",description:"Un soin destiné aux cheveux qui ont besoin d'hydratation, de douceur, de nutrition ou d'un coup de revitalisation.",technique:"Le traitement est choisi selon l'état et les besoins de la chevelure.",result:"Des cheveux plus doux, souples et visiblement plus soignés.",price:"80 $"},
-            botox:{number:"SERVICE 07",title:"Botox capillaire",description:"Un soin profond qui vise à améliorer l'apparence des cheveux secs, ternes ou difficiles à discipliner.",technique:"Le soin est appliqué sur la chevelure puis travaillé afin de favoriser un résultat plus lisse et plus uniforme.",result:"Des cheveux plus doux, brillants et faciles à coiffer.",price:"140 $"},
-            keratine:{number:"SERVICE 08",title:"Lissage à la kératine",description:"Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",technique:"Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",result:"Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",price:"180 $"},
-            extensions:{number:"SERVICE 09",title:"Extensions capillaires",description:"Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",extensionList:true,result:"La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",price:"À partir de 120 $"}
-        };
-        function openService(serviceKey){
-            const service=services[serviceKey];if(!service)return;
-            let html=`<div class="modal-number">${service.number}</div><h2>${service.title}</h2><p>${service.description}</p>`;
-            if(service.extensionList){html+=`<div class="detail-block"><h4>Méthodes d'extensions</h4><div class="extension-method"><span>Tape-in</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Micro-billes / Micro-Link</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Kératine</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Clip-in / autres méthodes</span><strong>Tarif à confirmer</strong></div></div>`;}
-            else{html+=`<div class="detail-block"><h4>Comment ça fonctionne</h4><p>${service.technique}</p></div>`;}
-            html+=`<div class="detail-block"><h4>Le résultat</h4><p>${service.result}</p></div><div class="detail-price">${service.price}</div>`;
-            document.getElementById("modalContent").innerHTML=html;document.getElementById("serviceModal").classList.add("active");document.body.classList.add("modal-open");
-        }
-        function closeService(){document.getElementById("serviceModal").classList.remove("active");document.body.classList.remove("modal-open");}
-        function closeServiceOutside(event){if(event.target.id==="serviceModal")closeService();}
-
-        // Boutique catalogue filtering & search
-        document.addEventListener('DOMContentLoaded',()=>{
-            const grid=document.getElementById('bbCatalogGrid'); if(!grid)return;
-            const cards=[...grid.querySelectorAll('.bb-product')];
-            const search=document.getElementById('bbCatalogSearch');
-            const searchButton=document.getElementById('bbCatalogSearchButton');
-            const brand=document.getElementById('bbCatalogBrand');
-            const category=document.getElementById('bbCatalogCategory');
-            const sort=document.getElementById('bbCatalogSort');
-            const count=document.getElementById('bbCatalogCount');
-            const external=document.getElementById('bbExternalCatalogSearch');
-            const norm=s=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
-            const esc=s=>encodeURIComponent(s.trim());
-            cards.forEach((card,i)=>{
-                card.dataset.original=i;
-                const label=(card.querySelector('.bb-product-brand')?.textContent||card.dataset.brand||'').toLowerCase();
-                if(!card.dataset.brand){
-                    card.dataset.brand=label.includes('wig store')?'Wig Store Hair & Beauty Canada':(label.includes('cabelo')||label.includes('eufora')||label.includes('varis')?'Cabelo':(label.includes('matrix')?'Matrix':(label.includes('siyou')?'SIYOU Nails':(label.includes('relax')?'Relax & Wax':'BaBylissPRO'))));
-                }
-                if(!card.dataset.category){
-                    card.dataset.category=
-                        card.dataset.brand==='Wig Store Hair & Beauty Canada'?'extensions':
-                        card.dataset.brand==='Relax & Wax'?'esthetique':
-                        card.dataset.brand==='Cabelo'||card.dataset.brand==='Matrix'?'soins':
-                        card.dataset.brand==='SIYOU Nails'?'ongles':'outils';
-                }
-            });
-            function supplierLinks(q){
-                if(!q){external.hidden=true;external.innerHTML='';return;}
-                const e=esc(q);
-                const links=[
-                    ['Wig Store · Extensions','https://www.wigstorehairandbeautycanada.ca/search?q='+e+'&sca_ref=12701283.1pkGN8eTfQ'],
-                    ['Cabelo · Soins & outils','https://cabelo.ca/search?q='+e+'&ref=RB5GWIU3TO'],
-                    ['BaBylissPRO · Appareils','https://www.google.com/search?q='+encodeURIComponent('site:babylisspro.com '+q)],
-                    ['Matrix Professional · Recherche produits','https://www.google.com/search?q='+encodeURIComponent('site:matrixprofessional.ca/fr-ca/produits '+q)],
-                    ['SIYOU Nails · Press-on & collections','https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates'],
-                    ['Relax & Wax · Cire & épilation','https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c']
-                ];
-                external.innerHTML='<strong>Continuer la recherche dans les catalogues partenaires</strong><div class="bb-external-links">'+links.map(([label,url])=>'<a href="'+url.replace(/&/g,'&amp;')+'" target="_blank" rel="sponsored noopener noreferrer">'+label+' ↗</a>').join('')+'</div>';
-                external.hidden=false;
-            }
-            function render(openSupplierSearch=false){
-                const q=norm(search.value.trim());
-                const catVal=category.value;
-                let visible=cards.filter(c=>{
-                    const text=norm(c.textContent+' '+(c.querySelector('img')?.alt||''));
-                    const matchQuery=!q||text.includes(q);
-                    const matchCategory=!catVal||c.dataset.category===catVal;
-                    return matchQuery && matchCategory;
-                });
-                if(sort.value==='name')visible.sort((a,b)=>(a.querySelector('h4')?.textContent||a.querySelector('h3')?.textContent||'').localeCompare(b.querySelector('h4')?.textContent||b.querySelector('h3')?.textContent||'','fr'));
-                else visible.sort((a,b)=>Number(a.dataset.original)-Number(b.dataset.original));
-                cards.forEach(c=>c.hidden=true);
-                visible.forEach(c=>{c.hidden=false;grid.appendChild(c)});
-                    let empty=grid.querySelector('.bb-catalog-empty');
-                if(!visible.length){
-                    if(!empty){
-                        empty=document.createElement('div');
-                        empty.className='bb-catalog-empty';
-                        empty.textContent='Aucun produit correspondant dans la sélection affichée. Utilisez les liens ci-dessous pour chercher dans les catalogues complets des partenaires.';
-                        grid.appendChild(empty);
-                    }
-                }else if(empty)empty.remove();
-                count.textContent=visible.length+' produit(s) correspondant(s) dans la sélection Bella Bay ('+cards.length+' fiches affichées).';
-                if(openSupplierSearch)supplierLinks(search.value.trim());
-                else if(!search.value.trim())supplierLinks('');
-            }
-            if(searchButton)searchButton.addEventListener('click',()=>render(true));
-            if(search){
-                search.addEventListener('keydown',e=>{
-                    if(e.key==='Enter'){
-                        e.preventDefault();
-                        render(true);
-                    }
-                });
-                search.addEventListener('input',()=>render(false));
-            }
-            [brand,category,sort].forEach(el=>{
-                if(el)el.addEventListener('change',()=>render(false));
-            });
-            render(false);
-        });
-    </script>
-</body>
-
-<!-- BOUTON WHATSAPP FLOTTANT BELLA BAY -->
-<style>
-    .bb-whatsapp-float {
-        position: fixed;
-        bottom: 22px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #25D366;
-        color: white;
-        font-size: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,.35);
-        z-index: 9999;
-        text-decoration: none;
-        transition: .3s;
-    }
-    .bb-whatsapp-float:hover {
-        transform: scale(1.1);
-        background: #128C7E;
-    }
-</style>
-<a href="https://wa.me/15145822856?text=Bonjour%20Bella%20Bay%20!%20Je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20ou%20votre%20boutique.%20✨" class="bb-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacter Bella Bay sur WhatsApp">
-    💬
-</a>
-</html>
+            const
