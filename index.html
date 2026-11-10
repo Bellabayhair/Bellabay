@@ -21,82 +21,55 @@
         :root{--black:#080607;--black2:#151012;--pink:#f3d3dc;--pink2:#f9e8ed;--rose:#cf8fa1;--rose-dark:#9d6173;--gold:#c9a45c;--gold-light:#e8cf98;--white:#fff;--cream:#fffafa;--text:#292124;--gray:#756b6f}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:Montserrat,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}body.modal-open{overflow:hidden}img{max-width:100%;display:block}a{text-decoration:none}
         .topbar{background:#050405;color:var(--gold-light);text-align:center;padding:8px 15px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
-        /* Header & Menu Déroulant */
         header{position:sticky;top:0;z-index:1000;background:rgba(8,6,7,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,164,92,.35)}
         .navbar{max-width:1250px;margin:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 25px}
         .logo{display:flex;align-items:center;gap:12px;color:white}.logo-circle{width:48px;height:48px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);background:radial-gradient(circle at 30% 25%,#fff1f5 0%,#dba5b4 28%,#8e5265 65%,#1b1014 100%);box-shadow:inset 0 2px 4px #ffffff80,0 4px 12px #0008}.logo-circle span{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;color:#fff}.logo-text{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;letter-spacing:1px}.logo-text small{display:block;font-family:Montserrat,sans-serif;font-size:8px;letter-spacing:3px;color:var(--gold-light);margin-top:-5px}
-        /* Menu Dropdown & Nav */
         nav{display:flex;align-items:center;gap:20px}nav a{color:#fff;font-size:11px;font-weight:500;letter-spacing:.3px;transition:.25s}nav a:hover{color:var(--gold-light)}
         .menu-container{position:relative;display:none}
         .menu-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(201,164,92,0.1);border:1px solid rgba(201,164,92,0.4);color:var(--gold-light);font-size:18px;cursor:pointer;border-radius:3px;transition:0.3s}
-        .menu-icon:hover{background:rgba(201,164,92,0.25)}
         .dropdown-menu{position:absolute;top:55px;right:0;width:300px;background:linear-gradient(145deg,#241a1f,#171014);border:1.5px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,0.9);display:none;flex-direction:column;z-index:2000;padding:15px 0}
         .dropdown-menu.active{display:flex;animation:fadeIn 0.3s ease}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
         .dropdown-header{padding:10px 20px 15px;border-bottom:1px solid rgba(201,164,92,0.2);font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-light);font-weight:600}
         .dropdown-menu a{padding:12px 20px;color:#f0e4e7;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;text-decoration:none;transition:0.2s;display:flex;align-items:center;justify-content:space-between}
         .dropdown-menu a:hover{background:rgba(201,164,92,0.2);color:var(--gold-light);padding-left:25px}
-        .dropdown-menu a.whatsapp-link{color:#25d366}
-        .dropdown-menu a.whatsapp-link:hover{background:rgba(37,211,102,0.15)}
-        .book,.btn-whatsapp,.cabelo-button{display:inline-flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#f9e8ed 0%,#e9b8c6 35%,#cf8fa1 65%,#b86f84 100%);color:#24191d!important;border:1px solid var(--gold-light);padding:12px 23px;border-radius:30px;font-weight:700;font-size:12px;box-shadow:inset 0 2px 3px #ffffffbf,inset 0 -3px 5px #69344147,0 4px 0 #8e5968,0 7px 14px #0000004d;text-shadow:0 1px 1px #ffffff8c;transition:.25s}.book:hover,.btn-whatsapp:hover,.cabelo-button:hover{transform:translateY(-3px);box-shadow:inset 0 2px 4px #ffffffcc,0 6px 0 #8e5968,0 12px 22px #00000059}
-        /* Hero Section */
+        .book,.btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f9e8ed 0%,#e9b8c6 35%,#cf8fa1 65%,#b86f84 100%);color:#24191d!important;border:1px solid var(--gold-light);padding:12px 23px;border-radius:30px;font-weight:700;font-size:12px;box-shadow:0 4px 0 #8e5968,0 7px 14px #0000004d;transition:.25s}
         .hero{min-height:85vh;display:flex;align-items:center;position:relative;background:linear-gradient(180deg, rgba(12,10,11,0.75) 0%, rgba(12,10,11,0.9) 100%), url("https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1400&q=90") center/cover;color:white;text-align:center}
-        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 25%, rgba(245,178,199,0.18) 0%, transparent 65%), rgba(12,10,11,0.65);z-index:1}
         .hero-content{position:relative;z-index:2;max-width:750px;width:100%;margin:auto;padding:70px 25px;display:flex;flex-direction:column;align-items:center}
         .hero-content small{color:var(--pink);text-transform:uppercase;letter-spacing:3.5px;font-size:10px;font-weight:700;margin-bottom:15px}
         .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6.5vw,68px);line-height:1.15;font-weight:600;color:var(--white);margin-bottom:20px}
         .hero h1 span{font-style:italic;color:var(--pink)}
         .hero p{max-width:600px;color:#f0e4e7;font-size:15px;line-height:1.8;margin-bottom:35px}
         .hero-buttons{display:flex;flex-direction:column;gap:15px;width:100%;max-width:380px;margin-bottom:25px}
-        .btn-gold{background:linear-gradient(135deg,#f2dcc0,#c6a66b);color:#1c1417;padding:15px 25px;border-radius:3px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,0.4);text-decoration:none;display:inline-block;transition:0.2s}
-        .btn-gold:hover{filter:brightness(1.05)}
-        .btn-outline{background:transparent;color:var(--white);padding:15px 25px;border-radius:3px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:1.5px solid var(--gold-light);cursor:pointer;text-decoration:none;display:inline-block;transition:0.2s}
-        .btn-outline:hover{background:rgba(245,178,199,0.2);border-color:var(--pink)}
-        .hero-footer-info{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px}
-        .section{padding:100px 25px}.section-dark{background:radial-gradient(circle at top right,#cf8fa126,transparent 35%),var(--black)}.container{max-width:1200px;margin:auto}.section-title{text-align:center;margin-bottom:55px}.section-title small{display:block;color:var(--rose-dark);letter-spacing:4px;text-transform:uppercase;font-size:10px;margin-bottom:10px}.section-title h2{font-family:'Cormorant Garamond',serif;font-size:55px;line-height:1;font-weight:500}.section-title p{max-width:650px;margin:15px auto 0;color:var(--gray);font-size:14px}
-        .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
-        .service{position:relative;padding-top:42px;background:#fff;border:1px solid var(--gold);box-shadow:0 12px 34px #2117190d}
-        .service-number{position:absolute;top:13px;left:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#080607d1;color:var(--gold-light);border:1px solid var(--gold);font-size:10px}
-        .service-content{padding:20px 25px 25px}.service-content h3{font-family:'Cormorant Garamond',serif;font-size:31px;line-height:1;margin-bottom:10px}.service-content p{color:var(--gray);font-size:13px;min-height:55px}.service-bottom{margin-top:20px;padding-top:15px;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;gap:15px}.price{font-weight:700;color:var(--rose-dark);font-size:14px}.service-link{border:0;background:none;padding:0;color:var(--rose-dark);font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer}.service-link:hover{color:var(--gold)}
-        .service-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:25px;background:#000d;backdrop-filter:blur(8px)}.service-modal.active{display:flex}.modal-box{position:relative;width:min(700px,100%);max-height:90vh;overflow-y:auto;background:linear-gradient(145deg,#fffafa,#f9e8ed);border:1px solid var(--gold);box-shadow:0 25px 80px #0000008c;padding:45px}.modal-number{color:var(--gold);font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.modal-box h2{font-family:'Cormorant Garamond',serif;font-size:50px;line-height:.95;margin:8px 0 20px;color:#292124}.modal-box p{color:#62575b;font-size:14px;margin-bottom:18px}.detail-block{margin-top:20px;padding-top:18px;border-top:1px solid #c9a45c59}.detail-block h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose-dark);margin-bottom:8px}.detail-block p{margin-bottom:0}.detail-price{margin-top:25px;display:inline-block;padding:10px 18px;border:1px solid var(--gold);background:#fff;color:var(--rose-dark);font-weight:700;font-size:13px}.extension-method{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #c9a45c40;font-size:12px;color:#4d4246}.extension-method:last-child{border-bottom:none}.modal-close{position:absolute;top:15px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:#080607;color:white;font-size:20px;cursor:pointer}.modal-close:hover{background:var(--rose);transform:rotate(90deg)}
-        .mobile-section{background:var(--black);color:white}.mobile-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.mobile-image{height:550px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 15px 50px #0008}.mobile-image img{width:100%;height:100%;object-fit:cover}.mobile-content small{color:var(--gold-light);letter-spacing:3px;text-transform:uppercase;font-size:10px}.mobile-content h2{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.95;margin:15px 0}.mobile-content p{color:#d8ced1;font-size:14px;max-width:500px}.area-list{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 30px}.area-list span{padding:8px 14px;border:1px solid #e8cf988c;border-radius:30px;font-size:9px;letter-spacing:1px;color:var(--gold-light)}
-        .story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.story-image{height:500px;overflow:hidden}.story-image img{width:100%;height:100%;object-fit:cover}.story-content small{color:var(--rose-dark);letter-spacing:3px;text-transform:uppercase;font-size:10px}.story-content h2{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.95;margin:12px 0 25px}.story-content p{color:var(--gray);font-size:14px;margin-bottom:18px}.values{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.value{border-top:1px solid var(--gold);padding-top:12px}.value strong{display:block;font-family:'Cormorant Garamond',serif;font-size:24px}
-        .future{padding:110px 25px;background:linear-gradient(#080607e6,#080607e6),url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=90") center/cover;color:white;text-align:center}.future h2{font-family:'Cormorant Garamond',serif;font-size:65px;line-height:.95;max-width:750px;margin:0 auto 20px}.future p{max-width:650px;margin:0 auto 30px;color:#ddd1d5;font-size:14px}
-        footer{background:#050405;color:white;padding:65px 25px 25px;border-top:1px solid #c9a45c59}.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1.3fr 1.2fr;gap:40px}.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:35px;font-weight:500}.footer-brand p{color:#aaa0a4;font-size:12px;max-width:280px;margin-top:10px}.footer-title{color:var(--gold-light);text-transform:uppercase;letter-spacing:2px;font-size:9px;margin-bottom:15px}.footer-links,.footer-contact,.footer-social{display:flex;flex-direction:column;gap:10px}.footer-links a,.footer-contact a,.footer-social>a:not(.btn-whatsapp){color:#cfc4c8;font-size:12px;transition:.2s}.footer-links a:hover,.footer-contact a:hover,.footer-social>a:hover{color:var(--gold-light)}.footer-social p{color:#aaa0a4;font-size:11px}.footer-bottom{max-width:1200px;margin:45px auto 0;padding-top:20px;border-top:1px solid #ffffff14;text-align:center;color:#777;font-size:9px;letter-spacing:.5px}
-        /* Boutique styles */
+        .btn-gold{background:linear-gradient(135deg,#f2dcc0,#c6a66b);color:#1c1417;padding:15px 25px;border-radius:3px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+        .btn-outline{background:transparent;color:var(--white);padding:15px 25px;border-radius:3px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:1.5px solid var(--gold-light);cursor:pointer;text-decoration:none;display:inline-block}
+        .section{padding:100px 25px}.container{max-width:1200px;margin:auto}.section-title{text-align:center;margin-bottom:55px}.section-title small{display:block;color:var(--rose-dark);letter-spacing:4px;text-transform:uppercase;font-size:10px;margin-bottom:10px}.section-title h2{font-family:'Cormorant Garamond',serif;font-size:55px;line-height:1;font-weight:500}.section-title p{max-width:650px;margin:15px auto 0;color:var(--gray);font-size:14px}
+        
+        /* Boutique Intelligente */
         .bb-catalog-panel{max-width:980px;margin:0 auto 32px;padding:24px;background:#fff;border:1px solid #c9a45c;box-shadow:0 12px 30px #2117190b}
         .bb-search-label{display:block;color:#80616a;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;margin-bottom:9px}
         #bbCatalogSearch{width:100%;padding:15px 17px;border:1px solid #c9a45c;background:#fffafa;color:#292124;font:13px Montserrat,sans-serif;outline:none}
-        #bbCatalogSearch:focus{box-shadow:0 0 0 3px #c9a45c30}
         .bb-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
-        .bb-search-button{padding:0 24px;border:1px solid #c9a45c;background:linear-gradient(135deg,#171014,#35242b);color:#f4dfb5;font:700 10px Montserrat,sans-serif;letter-spacing:1px;cursor:pointer;transition:.2s}
-        .bb-search-button:hover{background:linear-gradient(135deg,#cf8fa1,#ead8b8);color:#211a1d}
+        .bb-search-button{padding:0 24px;border:1px solid #c9a45c;background:linear-gradient(135deg,#171014,#35242b);color:#f4dfb5;font:700 10px Montserrat,sans-serif;letter-spacing:1px;cursor:pointer}
         .bb-external-search{margin-top:16px;padding:15px;background:#fffafa;border:1px solid #eadcc1}
         .bb-external-search strong{display:block;color:#51464a;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
         .bb-external-links{display:flex;flex-wrap:wrap;gap:8px}
         .bb-external-links a{display:inline-flex;padding:9px 12px;background:#171014;color:#f4dfb5;border:1px solid #c9a45c;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-        .bb-external-links a:hover{background:#cf8fa1;color:#211a1d}
-        .bb-catalog-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:10px;margin-top:12px}
-        .bb-catalog-filters select,.bb-catalog-filters button{min-width:0;padding:11px 12px;border:1px solid #d8c6a5;background:#fff;color:#51464a;font:10px Montserrat,sans-serif}
-        .bb-catalog-filters button{background:#171014;color:#f4dfb5;border-color:#c9a45c;cursor:pointer;text-transform:uppercase;letter-spacing:.7px}
         .bb-catalog-count{margin:12px 0 0;color:#80616a;font-size:10px}
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
-        .bb-marketplace .bb-product[hidden]{display:none!important}
-        .bb-marketplace .bb-product-image{aspect-ratio:1/1;background:#faf8f5;position:relative}
+        .bb-marketplace .bb-product-image{aspect-ratio:1/1;background:#faf8f5;position:relative;overflow:hidden}
         .bb-marketplace .bb-product-image img{width:100%;height:100%;object-fit:cover;object-position:center}
-        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.85);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase}
+        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.85);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
         .bb-marketplace .bb-product-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}
         .bb-marketplace .bb-product h4{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.05;color:#292124}
         .bb-marketplace .bb-product-info p{font-size:11px;color:#71676a;line-height:1.65;min-height:36px}
+        .bb-product-price{font-weight:700;color:var(--rose-dark);font-size:13px}
         .bb-marketplace .bb-product-btn{display:flex;justify-content:center;margin-top:auto;padding:12px 10px;background:linear-gradient(135deg,#ead8b8,#c6a66b);border:1px solid #c6a66b;color:#211a1d;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border-radius:2px}
-        .bb-extension-art{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 20% 20%,#f4dfe5,#b87989 55%,#171014);color:white;position:relative;overflow:hidden}
-        .bb-extension-art:before{content:"";position:absolute;inset:12px;border:1px solid #e8cf98;pointer-events:none}
-        .bb-extension-art span{font-size:9px;letter-spacing:3px;color:#f5dfb3;font-weight:700}
-        .bb-extension-art strong{font:500 32px/.85 'Cormorant Garamond',serif;margin-top:14px;text-shadow:0 2px 10px #0005}
         .bb-catalog-empty{grid-column:1/-1;padding:28px;text-align:center;background:#fff;border:1px solid #d8c6a5;color:#71676a;font-size:12px}
         .bb-shop-disclaimer{max-width:900px;text-align:center;margin:30px auto 0;color:#766d70;font-size:10px;line-height:1.7}
-        /* Style de la page exclusive Extensions (Beauty Without Borders) - Images stables et nettes */
+        
+        /* Extensions showcase */
         .bb-extensions-showcase{background:linear-gradient(135deg,#1f1418 0%,#0c0a0b 100%);padding:100px 25px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:#fff;margin-bottom:60px}
         .bb-ext-header{text-align:center;max-width:800px;margin:0 auto 50px}
         .bb-ext-header small{color:var(--gold-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:12px}
@@ -104,39 +77,52 @@
         .bb-ext-header h2 span{color:var(--pink);font-style:italic}
         .bb-ext-header p{color:#e2d3d8;font-size:14px;line-height:1.8}
         .bb-ext-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;max-width:1200px;margin:auto}
-        .bb-ext-card{background:#181114;border:1px solid rgba(201,164,92,0.4);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
-        .bb-ext-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 15px 40px rgba(0,0,0,0.8)}
+        .bb-ext-card{background:#181114;border:1px solid rgba(201,164,92,0.4);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
         .bb-ext-img-wrap{position:relative;aspect-ratio:4/3;background:#faf8f5;overflow:hidden}
-        .bb-ext-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:0.4s}
-        .bb-ext-card:hover .bb-ext-img-wrap img{transform:scale(1.05)}
+        .bb-ext-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center}
         .bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase;z-index:2}
         .bb-ext-content{padding:22px;display:flex;flex-direction:column;flex:1}
         .bb-ext-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:6px}
         .bb-ext-content h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:10px}
         .bb-ext-content p{color:#cfc4c8;font-size:12px;line-height:1.6;margin-bottom:20px;flex:1}
-        .bb-ext-link{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(135deg,#f9e8ed,#cf8fa1);color:#1c1417!important;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:2px;transition:.2s}
-        .bb-ext-link:hover{background:linear-gradient(135deg,#c6a66b,#f2dcc0)}
-        /* Relax & Wax */
-        .bb-relax-art{background:radial-gradient(circle at 20% 20%,#f4dfe5,#c49b78 55%,#171014)}
-        /* Pop-up Black Friday */
-        .bb-blackfriday-overlay{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(5,3,5,.82);backdrop-filter:blur(7px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility .35s ease}
-        .bb-blackfriday-overlay.is-open{opacity:1;visibility:visible;pointer-events:auto}
-        .bb-blackfriday-dialog{position:relative;width:min(100%,480px);overflow:hidden;text-align:center;padding:48px 34px 36px;background:radial-gradient(circle at 50% 0%,#53313c 0%,#1b1116 48%,#090708 100%);color:#fff;border:1px solid var(--gold);box-shadow:0 25px 90px #000b,inset 0 0 0 5px #c9a45c12}
-        .bb-blackfriday-dialog:before,.bb-blackfriday-dialog:after{content:"";position:absolute;width:130px;height:130px;border:1px solid #c9a45c55;transform:rotate(45deg);pointer-events:none}
-        .bb-blackfriday-dialog:before{top:-95px;left:-75px}.bb-blackfriday-dialog:after{bottom:-95px;right:-75px}
-        .bb-blackfriday-close{position:absolute;top:12px;right:15px;width:36px;height:36px;border:1px solid #c9a45c88;border-radius:50%;background:#100b0e;color:#f3d3dc;font-size:25px;line-height:1;cursor:pointer;z-index:2}
-        .bb-blackfriday-eyebrow{display:block;color:var(--gold-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:13px}
-        .bb-blackfriday-title{font-family:'Cormorant Garamond',serif;font-size:clamp(43px,9vw,68px);line-height:.92;font-weight:600;letter-spacing:1px;color:#fff;margin:0 0 15px;text-transform:uppercase}
-        .bb-blackfriday-title span{display:block;color:var(--rose)}
-        .bb-blackfriday-copy{max-width:330px;margin:0 auto 20px;color:#f2e7ea;font-size:13px;line-height:1.7}
-        .bb-blackfriday-discount{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(48px,10vw,66px);font-weight:700;line-height:1;color:var(--gold-light);text-shadow:0 2px 20px #c9a45c35;margin:10px 0 14px}
-        .bb-blackfriday-code{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:9px 24px;border:1px dashed var(--gold-light);color:#fff;background:#ffffff0b;font-size:17px;font-weight:700;letter-spacing:5px;margin-bottom:22px}
-        .bb-blackfriday-cta{display:flex;align-items:center;justify-content:center;max-width:280px;margin:0 auto;padding:13px 22px;border:1px solid var(--gold-light);border-radius:30px;background:linear-gradient(145deg,#f9e8ed,#cf8fa1);color:#24191d!important;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;box-shadow:0 5px 0 #80505e;transition:transform .2s,box-shadow .2s}
-        .bb-blackfriday-cta:hover{transform:translateY(-2px);box-shadow:0 7px 0 #80505e}
-        .bb-blackfriday-note{display:block;margin:18px auto 0;max-width:330px;color:#cbbdc2;font-size:9px;line-height:1.5}
-        /* Responsive Media Queries */
-        @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.mobile-image{height:450px}.footer-grid{grid-template-columns:1fr 1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media(max-width:700px){.navbar{min-height:70px;padding:12px 15px}.logo-circle{width:42px;height:42px}.logo-text{font-size:24px}.hero{min-height:78vh}.hero-content{padding:70px 20px}.hero h1{font-size:52px}.hero p{font-size:13px}.section{padding:75px 18px}.section-title h2{font-size:45px}.services-grid{grid-template-columns:1fr}.mobile-content h2,.story-content h2{font-size:48px}.mobile-image,.story-image{height:400px}.future{padding:80px 20px}.future h2{font-size:48px}.footer-grid{grid-template-columns:1fr;gap:30px}.values{grid-template-columns:1fr}.modal-box{padding:35px 22px}.modal-box h2{font-size:42px}.bb-marketplace .bb-products-grid,.bb-ext-grid{grid-template-columns:1fr}.bb-catalog-filters{grid-template-columns:1fr 1fr}}
+        .bb-ext-link{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(135deg,#f9e8ed,#cf8fa1);color:#1c1417!important;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:2px}
+
+        /* Services & Modales */
+        .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+        .service{position:relative;padding-top:42px;background:#fff;border:1px solid var(--gold);box-shadow:0 12px 34px #2117190d}
+        .service-number{position:absolute;top:13px;left:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#080607d1;color:var(--gold-light);border:1px solid var(--gold);font-size:10px}
+        .service-content{padding:20px 25px 25px}.service-content h3{font-family:'Cormorant Garamond',serif;font-size:31px;line-height:1;margin-bottom:10px}.service-content p{color:var(--gray);font-size:13px;min-height:55px}
+        .service-bottom{margin-top:20px;padding-top:15px;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;gap:15px}
+        .price{font-weight:700;color:var(--rose-dark);font-size:14px}
+        .service-link{border:0;background:none;padding:0;color:var(--rose-dark);font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer}
+        .service-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:25px;background:#000d;backdrop-filter:blur(8px)}.service-modal.active{display:flex}
+        .modal-box{position:relative;width:min(700px,100%);max-height:90vh;overflow-y:auto;background:linear-gradient(145deg,#fffafa,#f9e8ed);border:1px solid var(--gold);box-shadow:0 25px 80px #0000008c;padding:45px}
+        .modal-number{color:var(--gold);font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+        .modal-box h2{font-family:'Cormorant Garamond',serif;font-size:50px;line-height:.95;margin:8px 0 20px;color:#292124}
+        .modal-box p{color:#62575b;font-size:14px;margin-bottom:18px}
+        .detail-block{margin-top:20px;padding-top:18px;border-top:1px solid #c9a45c59}
+        .detail-block h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose-dark);margin-bottom:8px}
+        .detail-price{margin-top:25px;display:inline-block;padding:10px 18px;border:1px solid var(--gold);background:#fff;color:var(--rose-dark);font-weight:700;font-size:13px}
+        .extension-method{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #c9a45c40;font-size:12px;color:#4d4246}
+        .modal-close{position:absolute;top:15px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:#080607;color:white;font-size:20px;cursor:pointer}
+
+        /* Mobile & Story & Footer */
+        .mobile-section{background:var(--black);color:white}.mobile-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.mobile-image{height:550px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 15px 50px #0008}.mobile-image img{width:100%;height:100%;object-fit:cover}
+        .mobile-content small{color:var(--gold-light);letter-spacing:3px;text-transform:uppercase;font-size:10px}.mobile-content h2{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.95;margin:15px 0}.mobile-content p{color:#d8ced1;font-size:14px;max-width:500px}
+        .area-list{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 30px}.area-list span{padding:8px 14px;border:1px solid #e8cf988c;border-radius:30px;font-size:9px;letter-spacing:1px;color:var(--gold-light)}
+        .story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.story-image{height:500px;overflow:hidden}.story-image img{width:100%;height:100%;object-fit:cover}
+        .story-content small{color:var(--rose-dark);letter-spacing:3px;text-transform:uppercase;font-size:10px}.story-content h2{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.95;margin:12px 0 25px}.story-content p{color:var(--gray);font-size:14px;margin-bottom:18px}
+        .values{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.value{border-top:1px solid var(--gold);padding-top:12px}.value strong{display:block;font-family:'Cormorant Garamond',serif;font-size:24px}
+        .future{padding:110px 25px;background:linear-gradient(#080607e6,#080607e6),url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=90") center/cover;color:white;text-align:center}.future h2{font-family:'Cormorant Garamond',serif;font-size:65px;line-height:.95;max-width:750px;margin:0 auto 20px}.future p{max-width:650px;margin:0 auto 30px;color:#ddd1d5;font-size:14px}
+        footer{background:#050405;color:white;padding:65px 25px 25px;border-top:1px solid #c9a45c59}.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1.3fr 1.2fr;gap:40px}
+        .footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:35px;font-weight:500}.footer-brand p{color:#aaa0a4;font-size:12px;max-width:280px;margin-top:10px}
+        .footer-title{color:var(--gold-light);text-transform:uppercase;letter-spacing:2px;font-size:9px;margin-bottom:15px}
+        .footer-links,.footer-contact,.footer-social{display:flex;flex-direction:column;gap:10px}
+        .footer-links a,.footer-contact a,.footer-social>a:not(.btn-whatsapp){color:#cfc4c8;font-size:12px}
+        .footer-bottom{max-width:1200px;margin:45px auto 0;padding-top:20px;border-top:1px solid #ffffff14;text-align:center;color:#777;font-size:9px}
+
+        @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:700px){.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -166,18 +152,14 @@
                 <div class="menu-icon" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></div>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <div class="dropdown-header">Navigation</div>
-                    <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche <i class="fas fa-chevron-right"></i></a>
-                    <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA) <i class="fas fa-chevron-right"></i></a>
-                    <a href="#mobile" onclick="toggleMenu();">Service mobile <i class="fas fa-chevron-right"></i></a>
-                    <a href="#histoire" onclick="toggleMenu();">Notre Histoire <i class="fas fa-chevron-right"></i></a>
-                    <a href="#extensions-page" onclick="toggleMenu();">✨ Le Comptoir des Extensions <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('soins'); toggleMenu();">Boutique : Soins capillaires <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('outils'); toggleMenu();">Boutique : Outils & Coiffure <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('ongles'); toggleMenu();">Boutique : Ongles <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique" onclick="filterByQuick('esthetique'); toggleMenu();">Boutique : Épilation & Cire <i class="fas fa-chevron-right"></i></a>
-                    <a href="#salon" onclick="toggleMenu();">Salon <i class="fas fa-chevron-right"></i></a>
-                    <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones <i class="fas fa-chevron-right"></i></a>
-                    <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">Contactez-nous (WhatsApp) <i class="fab fa-whatsapp"></i></a>
+                    <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche</a>
+                    <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
+                    <a href="#mobile" onclick="toggleMenu();">Service mobile</a>
+                    <a href="#histoire" onclick="toggleMenu();">Notre Histoire</a>
+                    <a href="#extensions-page" onclick="toggleMenu();">✨ Extensions de Rêve</a>
+                    <a href="#salon" onclick="toggleMenu();">Salon</a>
+                    <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones</a>
+                    <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -192,234 +174,45 @@
                 <a href="#boutique" class="btn-gold">Explorer la boutique intelligente</a>
                 <a href="#extensions-page" class="btn-outline">Voir les extensions de rêve</a>
             </div>
-            <div class="hero-footer-info">
+            <div class="hero-footer-info" style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px;">
                 Service mobile · Montréal · Laval · Rive-Nord
             </div>
         </div>
     </section>
 
-    <!-- BOUTIQUE INTELLIGENTE EN TOUT PREMIER PLAN -->
+    <!-- BOUTIQUE INTELLIGENTE UNIFIÉE & SÉCURISÉE -->
     <section class="section bb-marketplace" id="boutique">
         <div class="container">
             <div class="section-title">
                 <small>LA SÉLECTION BELLA BAY — -10 % AVEC LE CODE BELLA</small>
                 <h2>La Boutique Intelligente</h2>
-                <p>Recherchez instantanément vos produits préférés ou explorez nos sélections par catégorie ci-dessous.</p>
+                <p>Recherchez instantanément vos produits préférés ou explorez par catégorie ci-dessous.</p>
             </div>
 
-            <div class="bb-smart-assistant" style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
+            <div style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
                 <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
-                <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:15px;font-weight:500;">Que recherchez-vous aujourd'hui ?</h3>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Extensions</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Soins capillaires</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Outils & Coiffure</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Ongles / Press-on</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Épilation & Cire</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Tout voir ✨</button>
+                    <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins capillaires</button>
+                    <button type="button" onclick="filterByCategory('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Outils & Coiffure</button>
+                    <button type="button" onclick="filterByCategory('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Cire</button>
+                    <button type="button" onclick="filterByCategory('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Tout voir ✨</button>
                 </div>
             </div>
 
             <div class="bb-catalog-panel">
                 <label class="bb-search-label" for="bbCatalogSearch">Recherche libre</label>
                 <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Ex. extensions, shampoing, brosse, lisseur, cire…" autocomplete="off">
+                    <input id="bbCatalogSearch" type="search" placeholder="Ex. sérum, shampooing, lisseur, cire…" autocomplete="off">
                     <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
-                </div>
-                <div class="bb-catalog-filters" style="display:none;">
-                    <select id="bbCatalogBrand"><option value=""></option></select>
-                    <select id="bbCatalogCategory"><option value=""></option></select>
-                    <select id="bbCatalogSort"><option value="popular"></option></select>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
             </div>
 
-            <div class="bb-products-grid" id="bbCatalogGrid">
-                <!-- SOINS CAPILLAIRES -->
-                <article class="bb-product" data-brand="Cabelo" data-category="soins">
-                    <a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Eufora Beautifying Serum 120 ml" loading="lazy" src="https://images.unsplash.com/photo-1608248597359-9742617f6942?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Soins · Top 1</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">EUFORA</span>
-                        <h4>Eufora Beautifying Serum</h4>
-                        <p>Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.</p>
-                        <div class="bb-product-price">61,25 $ CAD (Code BELLA)</div>
-                        <a class="bb-product-btn" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
-                    </div>
-                </article>
+            <!-- Grille de produits générée automatiquement et sans faille -->
+            <div class="bb-products-grid" id="bbCatalogGrid"></div>
 
-                <article class="bb-product" data-brand="Cabelo" data-category="soins">
-                    <a class="bb-product-image" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Eufora Bodifying Shampoo 280 ml" loading="lazy" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Soins · Top 2</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">EUFORA</span>
-                        <h4>Eufora Bodifying Shampoo</h4>
-                        <p>Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.</p>
-                        <div class="bb-product-price">58,10 $ CAD (Code BELLA)</div>
-                        <a class="bb-product-btn" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-partner-card" data-brand="Matrix" data-category="soins">
-                    <div class="bb-extension-art bb-matrix-art">
-                        <span>SOINS PROFESSIONNELS</span>
-                        <strong>MATRIX<br>PROFESSIONAL</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">MATRIX PROFESSIONAL CANADA</span>
-                        <h4>Soins capillaires Matrix (Top 3)</h4>
-                        <p>Shampooings, revitalisants et masques pour cheveux colorés, bouclés ou abîmés.</p>
-                        <a class="bb-product-btn" href="https://www.matrixprofessional.ca/fr-ca/produits" target="_blank" rel="noopener noreferrer">Explorer Matrix ↗</a>
-                    </div>
-                </article>
-
-                <!-- ÉPILATION & CIRE (RELAX & WAX) -->
-                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
-                    <a class="bb-product-image" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Relax and Wax No Scream Cream" loading="lazy" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Épilation · Top 1</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">RELAX &amp; WAX</span>
-                        <h4>No Scream Cream</h4>
-                        <p>La célèbre crème anesthésiante pré-épilation pour un confort absolu et sans douleur.</p>
-                        <div class="bb-product-price">29,99 $ USD (Code BELLA)</div>
-                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Relax & Wax ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
-                    <a class="bb-product-image" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Relax and Wax Hard Wax" loading="lazy" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Épilation · Top 2</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">RELAX &amp; WAX</span>
-                        <h4>Cire dure professionnelle</h4>
-                        <p>Cire haute performance spécialement formulée pour une épilation douce et impeccable.</p>
-                        <div class="bb-product-price">24,99 $ USD (Code BELLA)</div>
-                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Relax & Wax ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
-                    <div class="bb-extension-art bb-relax-art">
-                        <span>SOIN POST-ÉPILATION</span>
-                        <strong>RELAX<br>&amp; WAX (Top 3)</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">RELAX &amp; WAX</span>
-                        <h4>Gamme complète épilation</h4>
-                        <p>Découvrez l'affiche officielle et la sélection complète des soins anti-repousse et hydratants.</p>
-                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Découvrir la cire ↗</a>
-                    </div>
-                </article>
-
-                <!-- OUTILS BABYLISSPRO (COLLECTION COMPLÈTE) -->
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Nano Titanium Prima3000" loading="lazy" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Outils · Top 1</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">NANO TITANIUM</span>
-                        <h4>Prima3000 1¼″ Ionic Styling Iron</h4>
-                        <p>Outil polyvalent professionnel pour lisser, onduler ou boucler.</p>
-                        <div class="bb-product-price">209,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Style Switch 5-in-1 styler" loading="lazy" src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Outils · Top 2</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">STYLESWITCH</span>
-                        <h4>Style/Switch 5-en-1 Air Styler</h4>
-                        <p>Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.</p>
-                        <div class="bb-product-price">249,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Portofino dryer" loading="lazy" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Outils · Top 3</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">PORTOFINO</span>
-                        <h4>Sèche-cheveux Portofino</h4>
-                        <p>Moteur AC italien de 2000 W et technologie Nano Titanium.</p>
-                        <div class="bb-product-price">149,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/volare-hair-dryer/BFV1.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Volare dryer" loading="lazy" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Ferrari Engine</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">VOLARE</span>
-                        <h4>Sèche-cheveux Volare V1</h4>
-                        <p>Conçu en collaboration avec Ferrari, moteur V12 turbo haute performance.</p>
-                        <div class="bb-product-price">229,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/volare-hair-dryer/BFV1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-ultra-thin-straightening-iron/BNT4073TUC.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Ultra Thin Straightening Iron" loading="lazy" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Lisseur Pro</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">NANO TITANIUM</span>
-                        <h4>Ultra-Thin Straightening Iron 1½″</h4>
-                        <p>Plaques extra-larges en titane pour un lissage rapide et miroir.</p>
-                        <div class="bb-product-price">169,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-ultra-thin-straightening-iron/BNT4073TUC.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/miracurl-professional-curl-machine/BABNTMC1.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO MiraCurl" loading="lazy" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80"/>
-                        <span class="bb-product-tag">Boucleur auto</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">MIRACURL</span>
-                        <h4>MiraCurl Professional Curl Machine</h4>
-                        <p>Machine à boucler automatique révolutionnaire pour des boucles parfaites sans effort.</p>
-                        <div class="bb-product-price">179,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/miracurl-professional-curl-machine/BABNTMC1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <!-- ONGLES (SIYOU NAILS) -->
-                <article class="bb-product bb-partner-card" data-brand="SIYOU Nails" data-category="ongles">
-                    <div class="bb-extension-art bb-siyou-art">
-                        <span>PRESS-ON NAILS</span>
-                        <strong>SIYOU<br>NAILS (Top 1)</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">SIYOU NAILS</span>
-                        <h4>Press-on nails &amp; collections</h4>
-                        <p>Faux ongles tendance et meilleures ventes SIYOU.</p>
-                        <a class="bb-product-btn" href="https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer">Découvrir SIYOU ↗</a>
-                    </div>
-                </article>
-            </div>
-            <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et peuvent générer une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
+            <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et génèrent une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
         </div>
     </section>
 
@@ -431,39 +224,36 @@
             <p>Pour toutes les amatrices de mode, de glamour et de belles chevelures : découvrez notre sélection d'extensions haut de gamme en cheveux humains, clips, adhésives et halo pour un volume et une longueur spectaculaires.</p>
         </div>
         <div class="bb-ext-grid">
-            <!-- Carte 1 : Clips -->
             <article class="bb-ext-card">
                 <div class="bb-ext-img-wrap">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
                     <a href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">
-                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=900&q=90" alt="Extensions à clips Beauty Without Borders" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=900&q=90" alt="Extensions à clips" loading="lazy">
                     </a>
                 </div>
                 <div class="bb-ext-content">
                     <div class="bb-ext-slogan">Beauty Without Borders</div>
                     <h3>Extensions à Clips</h3>
-                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés sans engagement.</p>
+                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés.</p>
                     <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
                 </div>
             </article>
 
-            <!-- Carte 2 : Tape-in -->
             <article class="bb-ext-card">
                 <div class="bb-ext-img-wrap">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
                     <a href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=90" alt="Extensions Adhésives Tape-In" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=90" alt="Extensions Adhésives" loading="lazy">
                     </a>
                 </div>
                 <div class="bb-ext-content">
                     <div class="bb-ext-slogan">Beauty Without Borders</div>
                     <h3>Extensions Adhésives / Tape-in</h3>
-                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel irrésistible.</p>
+                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel.</p>
                     <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
                 </div>
             </article>
 
-            <!-- Carte 3 : Halo -->
             <article class="bb-ext-card">
                 <div class="bb-ext-img-wrap">
                     <span class="bb-ext-badge">Beauty Without Borders</span>
@@ -474,13 +264,14 @@
                 <div class="bb-ext-content">
                     <div class="bb-ext-slogan">Beauty Without Borders</div>
                     <h3>Extensions Halo</h3>
-                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle ni pression.</p>
+                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle.</p>
                     <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
                 </div>
             </article>
         </div>
     </section>
 
+    <!-- SERVICES DE COIFFURE -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
@@ -489,19 +280,20 @@
                 <p>Des services professionnels pensés pour révéler, soigner et sublimer votre chevelure.</p>
             </div>
             <div class="services-grid">
-                <article class="service"><div class="service-number">01</div><div class="service-content"><h3>Coloration de base</h3><p>Une couleur uniforme et lumineuse, adaptée à votre couleur et à votre style.</p><div class="service-bottom"><span class="price">95 $</span><button class="service-link" onclick="openService('coloration')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">02</div><div class="service-content"><h3>Coloration fantaisie</h3><p>Des couleurs créatives et personnalisées pour un look qui vous ressemble.</p><div class="service-bottom"><span class="price">120 $</span><button class="service-link" onclick="openService('fantaisie')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">03</div><div class="service-content"><h3>Mèches</h3><p>Des mèches lumineuses pour apporter dimension, profondeur et éclat.</p><div class="service-bottom"><span class="price">110 $</span><button class="service-link" onclick="openService('meches')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">04</div><div class="service-content"><h3>Contouring</h3><p>Une coloration placée autour du visage pour créer de la lumière et mettre les traits en valeur.</p><div class="service-bottom"><span class="price">90 $</span><button class="service-link" onclick="openService('contouring')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">05</div><div class="service-content"><h3>Ombré Hair & Balayage</h3><p>Un dégradé lumineux qui passe progressivement d'une base foncée à des pointes blondes très claires.</p><div class="service-bottom"><span class="price">À partir de 130 $</span><button class="service-link" onclick="openService('balayage')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">06</div><div class="service-content"><h3>Traitement capillaire</h3><p>Un soin professionnel pour hydrater, nourrir et améliorer l'apparence des cheveux.</p><div class="service-bottom"><span class="price">80 $</span><button class="service-link" onclick="openService('traitement')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">07</div><div class="service-content"><h3>Botox capillaire</h3><p>Un soin profond pour améliorer la douceur, la brillance et l'apparence de la fibre.</p><div class="service-bottom"><span class="price">140 $</span><button class="service-link" onclick="openService('botox')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">08</div><div class="service-content"><h3>Lissage à la kératine</h3><p>Une technique qui aide à discipliner, lisser et faciliter la mise en beauté des cheveux.</p><div class="service-bottom"><span class="price">180 $</span><button class="service-link" onclick="openService('keratine')">Découvrir →</button></div></div></article>
-                <article class="service"><div class="service-number">09</div><div class="service-content"><h3>Extensions capillaires</h3><p>Ajoutez longueur, volume ou les deux, avec une méthode choisie selon vos cheveux et le résultat recherché.</p><div class="service-bottom"><span class="price">À partir de 120 $</span><button class="service-link" onclick="openService('extensions')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">01</div><div class="service-content"><h3>Coloration de base</h3><p>Une couleur uniforme et lumineuse, adaptée à votre style.</p><div class="service-bottom"><span class="price">95 $</span><button class="service-link" onclick="openService('coloration')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">02</div><div class="service-content"><h3>Coloration fantaisie</h3><p>Des couleurs créatives et personnalisées pour un look unique.</p><div class="service-bottom"><span class="price">120 $</span><button class="service-link" onclick="openService('fantaisie')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">03</div><div class="service-content"><h3>Mèches</h3><p>Des mèches lumineuses pour apporter dimension et profondeur.</p><div class="service-bottom"><span class="price">110 $</span><button class="service-link" onclick="openService('meches')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">04</div><div class="service-content"><h3>Contouring</h3><p>Une coloration placée autour du visage pour mettre les traits en valeur.</p><div class="service-bottom"><span class="price">90 $</span><button class="service-link" onclick="openService('contouring')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">05</div><div class="service-content"><h3>Ombré Hair & Balayage</h3><p>Un dégradé lumineux qui passe d'une base foncée à des pointes claires.</p><div class="service-bottom"><span class="price">À partir de 130 $</span><button class="service-link" onclick="openService('balayage')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">06</div><div class="service-content"><h3>Traitement capillaire</h3><p>Un soin professionnel pour hydrater, nourrir et revitaliser la chevelure.</p><div class="service-bottom"><span class="price">80 $</span><button class="service-link" onclick="openService('traitement')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">07</div><div class="service-content"><h3>Botox capillaire</h3><p>Un soin profond pour améliorer la douceur, la brillance et la fibre.</p><div class="service-bottom"><span class="price">140 $</span><button class="service-link" onclick="openService('botox')">Découvrir →</button></div></div></article>
+                <article class="service"><div class="service-number">08</div><div class="service-content"><h3>Lissage à la kératine</h3><p>Une technique qui aide à discipliner et lisser durablement vos cheveux.</p><div class="service-bottom"><span class="price">180 $</span><button class="service-link" onclick="openService('keratine')">Découvrir →</button></div></div></article>
+                <article class="service" style="grid-column: 1/-1;"><div class="service-number">09</div><div class="service-content"><h3>Extensions capillaires</h3><p>Ajoutez longueur, volume ou les deux, avec une méthode choisie sur mesure.</p><div class="service-bottom"><span class="price">À partir de 120 $</span><button class="service-link" onclick="openService('extensions')">Découvrir →</button></div></div></article>
             </div>
         </div>
     </section>
 
+    <!-- SERVICE MOBILE -->
     <section class="section mobile-section" id="mobile">
         <div class="container">
             <div class="mobile-grid">
@@ -509,7 +301,7 @@
                 <div class="mobile-content">
                     <small>SERVICE PRIVÉ MOBILE</small>
                     <h2>La beauté,<br>chez vous.</h2>
-                    <p>Bella Bay offre déjà des services privés mobiles directement à domicile, pour vous permettre de profiter d'une expérience professionnelle dans le confort de votre espace.</p>
+                    <p>Bella Bay offre des services privés mobiles directement à domicile, pour vous permettre de profiter d'une expérience professionnelle dans le confort de votre espace.</p>
                     <div class="area-list"><span>MONTRÉAL</span><span>LAVAL</span><span>RIVE-NORD</span></div>
                     <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver (-10% avec BELLA)</a>
                 </div>
@@ -517,6 +309,7 @@
         </div>
     </section>
 
+    <!-- NOTRE HISTOIRE -->
     <section class="section" id="histoire">
         <div class="container">
             <div class="story">
@@ -535,12 +328,14 @@
         </div>
     </section>
 
+    <!-- FUTUR SALON -->
     <section class="future" id="salon">
         <h2>Notre Futur<br>Salon Physique</h2>
         <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
         <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
     </section>
 
+    <!-- FOOTER -->
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -569,29 +364,15 @@
             </div>
             <div class="footer-social">
                 <div class="footer-title">Contact & Réservation</div>
-                <p>Pour une réservation ou une question, contactez Bella Bay directement sur WhatsApp.</p>
+                <p style="color:#aaa0a4;font-size:11px">Pour une réservation ou une question, contactez Bella Bay directement sur WhatsApp.</p>
                 <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver sur WhatsApp</a>
-                <a href="https://www.instagram.com/bellabay.ca/" target="_blank" rel="noopener noreferrer">Instagram · @bellabay.ca</a>
+                <a href="https://www.instagram.com/bellabay.ca/" target="_blank" rel="noopener noreferrer" style="color:#cfc4c8;font-size:12px">Instagram · @bellabay.ca</a>
             </div>
         </div>
         <div class="footer-bottom">© 2026 Bella Bay (B.B) — Coiffure & Beauté. Tous droits réservés.</div>
     </footer>
 
-    <!-- Pop-up Promo -->
-    <div class="bb-blackfriday-overlay" id="bbBlackFridayPopup" aria-hidden="true">
-        <section class="bb-blackfriday-dialog" role="dialog" aria-modal="true" aria-labelledby="bbBlackFridayTitle" aria-describedby="bbBlackFridayCopy">
-            <button class="bb-blackfriday-close" type="button" id="bbBlackFridayClose" aria-label="Fermer la publicité">×</button>
-            <span class="bb-blackfriday-eyebrow">OFFRE SPÉCIALE BELLA BAY</span>
-            <h2 class="bb-blackfriday-title" id="bbBlackFridayTitle">-10 % DE <span>RABAIS</span></h2>
-            <p class="bb-blackfriday-copy" id="bbBlackFridayCopy">Profitez de 10 % de rabais sur tous nos services de coiffure et sur la boutique en ligne avec notre code exclusif !</p>
-            <strong class="bb-blackfriday-discount">- 10 %</strong>
-            <span class="bb-blackfriday-code" aria-label="Code promotionnel BELLA">BELLA</span>
-            <a class="bb-blackfriday-cta" href="#boutique" id="bbBlackFridayShop">PROFITER DE L'OFFRE ↗</a>
-            <small class="bb-blackfriday-note">Entrez le code BELLA lors de votre réservation ou auprès des partenaires participants.</small>
-        </section>
-    </div>
-
-    <!-- Service Modal -->
+    <!-- MODAL SERVICES -->
     <div class="service-modal" id="serviceModal" onclick="closeServiceOutside(event)">
         <div class="modal-box">
             <button class="modal-close" onclick="closeService()" aria-label="Fermer">×</button>
@@ -599,203 +380,199 @@
         </div>
     </div>
 
+    <!-- SCRIPT & DONNÉES UNIFIÉES DE LA BOUTIQUE -->
     <script>
-        // Menu déroulant
         function toggleMenu() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.classList.toggle('active');
-        }
-        window.addEventListener('click', function(e) {
-            const menu = document.getElementById('dropdownMenu');
-            const icon = document.querySelector('.menu-icon');
-            if (menu && icon && !menu.contains(e.target) && !icon.contains(e.target)) {
-                menu.classList.remove('active');
-            }
-        });
-
-        // Fonction de filtrage direct par catégorie
-        function filterByQuick(categoryKey) {
-            const catSelect = document.getElementById('bbCatalogCategory');
-            if (catSelect) {
-                catSelect.value = categoryKey;
-                catSelect.dispatchEvent(new Event('change'));
-            }
-            const searchInput = document.getElementById('bbCatalogSearch');
-            if (searchInput) {
-                const keywords = { 'extensions': 'extensions', 'soins': 'soin', 'outils': 'outil', 'ongles': 'ongles', 'esthetique': 'cire' };
-                searchInput.value = categoryKey ? (keywords[categoryKey] || '') : '';
-                searchInput.dispatchEvent(new Event('input'));
-            }
-            const boutiqueSec = document.getElementById('boutique');
-            if(boutiqueSec) boutiqueSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('dropdownMenu').classList.toggle('active');
         }
 
-        // Pop-up Promo
-        (function(){
-            const popup=document.getElementById('bbBlackFridayPopup');
-            const closeButton=document.getElementById('bbBlackFridayClose');
-            const shopButton=document.getElementById('bbBlackFridayShop');
-            if(!popup||!closeButton||!shopButton)return;
-            const storageKey='bellaBayPromoDismissedAt';
-            let previousFocus=null;
-            const close=()=>{
-                popup.classList.remove('is-open');
-                popup.setAttribute('aria-hidden','true');
-                document.body.style.overflow='';
-                try{localStorage.setItem(storageKey,String(Date.now()));}catch(e){}
-                if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();
-            };
-            const open=()=>{
-                previousFocus=document.activeElement;
-                popup.classList.add('is-open');
-                popup.setAttribute('aria-hidden','false');
-                document.body.style.overflow='hidden';
-                closeButton.focus();
-            };
-            closeButton.addEventListener('click',close);
-            popup.addEventListener('click',event=>{if(event.target===popup)close();});
-            shopButton.addEventListener('click',()=>{
-                popup.classList.remove('is-open');
-                popup.setAttribute('aria-hidden','true');
-                document.body.style.overflow='';
-                try{localStorage.setItem(storageKey,String(Date.now()));}catch(e){}
+        // Tableau unique et sécurisé : chaque produit a son image, son prix et son lien parfaitement reliés
+        const bbProducts = [
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Soins · Top 1",
+                title: "Eufora Beautifying Serum",
+                desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.",
+                price: "61,25 $ CAD (Code BELLA)",
+                image: "https://images.unsplash.com/photo-1608248597359-9742617f6942?auto=format&fit=crop&w=900&q=80",
+                link: "https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Soins · Top 2",
+                title: "Eufora Bodifying Shampoo",
+                desc: "Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.",
+                price: "58,10 $ CAD (Code BELLA)",
+                image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=900&q=80",
+                link: "https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
+                brand: "RELAX & WAX",
+                category: "esthetique",
+                tag: "Épilation · Top 1",
+                title: "No Scream Cream",
+                desc: "La célèbre crème anesthésiante pré-épilation pour un confort absolu et sans douleur.",
+                price: "29,99 $ USD (Code BELLA)",
+                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
+                link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
+                linkText: "Acheter chez Relax & Wax ↗"
+            },
+            {
+                brand: "RELAX & WAX",
+                category: "esthetique",
+                tag: "Épilation · Top 2",
+                title: "Cire dure professionnelle",
+                desc: "Cire haute performance spécialement formulée pour une épilation douce et impeccable.",
+                price: "24,99 $ USD (Code BELLA)",
+                image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80",
+                link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
+                linkText: "Acheter chez Relax & Wax ↗"
+            },
+            {
+                brand: "NANO TITANIUM",
+                category: "outils",
+                tag: "Outils · Top 1",
+                title: "Prima3000 1¼″ Ionic Styling Iron",
+                desc: "Outil polyvalent professionnel pour lisser, onduler ou boucler.",
+                price: "209,99 $ USD",
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+                link: "https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html",
+                linkText: "Voir le produit ↗"
+            },
+            {
+                brand: "STYLESWITCH",
+                category: "outils",
+                tag: "Outils · Top 2",
+                title: "Style/Switch 5-en-1 Air Styler",
+                desc: "Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.",
+                price: "249,99 $ USD",
+                image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=900&q=80",
+                link: "https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html",
+                linkText: "Voir le produit ↗"
+            },
+            {
+                brand: "PORTOFINO",
+                category: "outils",
+                tag: "Outils · Top 3",
+                title: "Sèche-cheveux Portofino",
+                desc: "Moteur AC italien de 2000 W et technologie Nano Titanium.",
+                price: "149,99 $ USD",
+                image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80",
+                link: "https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html",
+                linkText: "Voir le produit ↗"
+            }
+        ];
+
+        let activeCategory = '';
+
+        function filterByCategory(cat) {
+            activeCategory = cat;
+            document.getElementById('bbCatalogSearch').value = '';
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('bbCatalogGrid');
+            const searchVal = document.getElementById('bbCatalogSearch').value.toLowerCase().trim();
+            const external = document.getElementById('bbExternalCatalogSearch');
+            
+            const filtered = bbProducts.filter(p => {
+                const matchCat = !activeCategory || p.category === activeCategory;
+                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc).toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
             });
-            let dismissed=false;
-            try{const stamp=Number(localStorage.getItem(storageKey)||0);dismissed=stamp>0&&(Date.now()-stamp)<7*24*60*60*1000;}catch(e){}
-            if(!dismissed){window.addEventListener('load',()=>window.setTimeout(open,700));}
-        })();
 
-        // Services modal data
-        const services={
-            coloration:{number:"SERVICE 01",title:"Coloration de base (-10% avec BELLA)",description:"Une coloration complète pour uniformiser, raviver ou changer votre couleur tout en créant un résultat lumineux et personnalisé.",technique:"La couleur est appliquée sur l'ensemble des cheveux afin d'obtenir une teinte uniforme et harmonieuse.",result:"Une couleur plus uniforme, brillante et adaptée à votre style.",price:"95 $ (Rabais -10% avec le code BELLA)"},
-            fantaisie:{number:"SERVICE 02",title:"Coloration fantaisie (-10% avec BELLA)",description:"Pour celles qui souhaitent ajouter une couleur plus créative, originale ou différente des tons classiques.",technique:"La couleur est choisie selon le résultat désiré. Une préparation éclaircissante peut être nécessaire selon la couleur de départ.",result:"Une couleur expressive et personnalisée.",price:"120 $ (Rabais -10% avec le code BELLA)"},
-            meches:{number:"SERVICE 03",title:"Mèches (-10% avec BELLA)",description:"Des mèches permettent d'éclaircir certaines parties de la chevelure afin d'ajouter de la lumière et de la dimension.",technique:"Les cheveux sont séparés en sections et certaines mèches sont éclaircies de façon ciblée.",result:"Une chevelure plus lumineuse et dimensionnelle.",price:"110 $ (Rabais -10% avec le code BELLA)"},
-            contouring:{number:"SERVICE 04",title:"Contouring (-10% avec BELLA)",description:"Une technique qui place de la lumière autour du visage afin de créer un effet plus lumineux et personnalisé.",technique:"Les mèches sont concentrées à des endroits stratégiques autour du visage.",result:"Un effet lumineux qui attire naturellement le regard vers le visage.",price:"90 $ (Rabais -10% avec le code BELLA)"},
-            balayage:{number:"SERVICE 05",title:"Ombré Hair & Balayage (-10% avec BELLA)",description:"Un éclaircissement progressif qui permet de conserver une base plus foncée tout en créant des longueurs et des pointes très blondes.",technique:"Les éclaircissements sont placés progressivement dans les longueurs pour créer une transition douce entre la couleur foncée et le blond.",result:"Un effet balayage californien lumineux, avec une transition fondue et des pointes très claires.",price:"À partir de 130 $ (Rabais -10% avec le code BELLA)"},
-            traitement:{number:"SERVICE 06",title:"Traitement capillaire (-10% avec BELLA)",description:"Un soin destiné aux cheveux qui ont besoin d'hydratation, de douceur, de nutrition ou d'un coup de revitalisation.",technique:"Le traitement est choisi selon l'état et les besoins de la chevelure.",result:"Des cheveux plus doux, souples et visiblement plus soignés.",price:"80 $ (Rabais -10% avec le code BELLA)"},
-            botox:{number:"SERVICE 07",title:"Botox capillaire (-10% avec BELLA)",description:"Un soin profond qui vise à améliorer l'apparence des cheveux secs, ternes ou difficiles à discipliner.",technique:"Le soin est appliqué sur la chevelure puis travaillé afin de favoriser un résultat plus lisse et plus uniforme.",result:"Des cheveux plus doux, brillants et faciles à coiffer.",price:"140 $ (Rabais -10% avec le code BELLA)"},
-            keratine:{number:"SERVICE 08",title:"Lissage à la kératine (-10% avec BELLA)",description:"Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",technique:"Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",result:"Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",price:"180 $ (Rabais -10% avec le code BELLA)"},
-            extensions:{number:"SERVICE 09",title:"Extensions capillaires (-10% avec BELLA)",description:"Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",extensionList:true,result:"La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",price:"À partir de 120 $ (Rabais -10% avec le code BELLA)"}
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="bb-catalog-empty">Aucun produit ne correspond à votre recherche dans la sélection.</div>';
+            } else {
+                grid.innerHTML = filtered.map(p => `
+                    <article class="bb-product">
+                        <a class="bb-product-image" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">
+                            <img alt="${p.title}" loading="lazy" src="${p.image}"/>
+                            <span class="bb-product-tag">${p.tag}</span>
+                        </a>
+                        <div class="bb-product-info">
+                            <span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">${p.brand}</span>
+                            <h4>${p.title}</h4>
+                            <p>${p.desc}</p>
+                            <div class="bb-product-price">${p.price}</div>
+                            <a class="bb-product-btn" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">${p.linkText}</a>
+                        </div>
+                    </article>
+                `).join('');
+            }
+
+            document.getElementById('bbCatalogCount').textContent = filtered.length + ' produit(s) affiché(s).';
+
+            if (searchVal) {
+                external.hidden = false;
+                external.innerHTML = `<strong>Continuer la recherche dans les catalogues partenaires</strong>
+                    <div class="bb-external-links">
+                        <a href="https://cabelo.ca/search?q=${encodeURIComponent(searchVal)}&ref=RB5GWIU3TO" target="_blank" rel="sponsored noopener noreferrer">Cabelo ↗</a>
+                        <a href="https://www.wigstorehairandbeautycanada.ca/search?q=${encodeURIComponent(searchVal)}&sca_ref=12701283.1pkGN8eTfQ" target="_blank" rel="sponsored noopener noreferrer">Wig Store ↗</a>
+                    </div>`;
+            } else {
+                external.hidden = true;
+            }
+        }
+
+        document.getElementById('bbCatalogSearch').addEventListener('input', () => {
+            activeCategory = '';
+            renderCatalog();
+        });
+        document.getElementById('bbCatalogSearchButton').addEventListener('click', renderCatalog);
+
+        renderCatalog();
+
+        // Données des modales de services
+        const services = {
+            coloration: {number:"SERVICE 01", title:"Coloration de base (-10% avec BELLA)", description:"Une coloration complète pour uniformiser ou raviver votre couleur.", technique:"Appliquée sur l'ensemble des cheveux pour une teinte harmonieuse.", result:"Une couleur uniforme, brillante et adaptée à votre style.", price:"95 $ (Rabais -10% avec le code BELLA)"},
+            fantaisie: {number:"SERVICE 02", title:"Coloration fantaisie (-10% avec BELLA)", description:"Pour une couleur créative, originale ou différente des tons classiques.", technique:"Choisie selon le résultat désiré (une base éclaircissante peut être requise).", result:"Une couleur expressive et personnalisée.", price:"120 $ (Rabais -10% avec le code BELLA)"},
+            meches: {number:"SERVICE 03", title:"Mèches (-10% avec BELLA)", description:"Pour éclaircir certaines parties de la chevelure et apporter de la lumière.", technique:"Séparation en sections et éclaircissement ciblé.", result:"Une chevelure lumineuse et dimensionnelle.", price:"110 $ (Rabais -10% avec le code BELLA)"},
+            contouring: {number:"SERVICE 04", title:"Contouring (-10% avec BELLA)", description:"Une technique pour placer de la lumière autour du visage.", technique:"Mèches concentrées sur les zones stratégiques du visage.", result:"Un effet lumineux qui met en valeur les traits.", price:"90 $ (Rabais -10% avec le code BELLA)"},
+            balayage: {number:"SERVICE 05", title:"Ombré Hair & Balayage (-10% avec BELLA)", description:"Un éclaircissement progressif entre une base foncée et des pointes claires.", technique:"Transitions douces appliquées progressivement dans les longueurs.", result:"Un effet balayage californien lumineux.", price:"À partir de 130 $ (Rabais -10% avec le code BELLA)"},
+            traitement: {number:"SERVICE 06", title:"Traitement capillaire (-10% avec BELLA)", description:"Un soin pour hydrater, nourrir et revitaliser vos cheveux.", technique:"Soin sélectionné selon l'état exact de votre chevelure.", result:"Des cheveux doux, souples et soignés.", price:"80 $ (Rabais -10% avec le code BELLA)"},
+            botox: {number:"SERVICE 07", title:"Botox capillaire (-10% avec BELLA)", description:"Un soin profond pour sublimer les cheveux secs ou ternes.", technique:"Application minutieuse pour lisser et uniformiser la fibre.", result:"Des cheveux extrêmement doux et brillants.", price:"140 $ (Rabais -10% avec le code BELLA)"},
+            keratine: {number:"SERVICE 08", title:"Lissage à la kératine (-10% avec BELLA)", description:"Une solution idéale pour réduire les frisottis au quotidien.", technique:"Application du produit activé par la chaleur.", result:"Des cheveux disciplinés, lisses et faciles à coiffer.", price:"180 $ (Rabais -10% avec le code BELLA)"},
+            extensions: {number:"SERVICE 09", title:"Extensions capillaires (-10% avec BELLA)", description:"Pour ajouter longueur, volume ou les deux selon vos envies.", extensionList:true, result:"Méthode choisie sur mesure selon votre chevelure.", price:"À partir de 120 $ (Rabais -10% avec le code BELLA)"}
         };
-        function openService(serviceKey){
-            const service=services[serviceKey];if(!service)return;
-            let html=`<div class="modal-number">${service.number}</div><h2>${service.title}</h2><p>${service.description}</p>`;
-            if(service.extensionList){html+=`<div class="detail-block"><h4>Méthodes d'extensions</h4><div class="extension-method"><span>Tape-in</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Micro-billes / Micro-Link</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Kératine</span><strong>Tarif à confirmer</strong></div><div class="extension-method"><span>Clip-in / autres méthodes</span><strong>Tarif à confirmer</strong></div></div>`;}
-            else{html+=`<div class="detail-block"><h4>Comment ça fonctionne</h4><p>${service.technique}</p></div>`;}
-            html+=`<div class="detail-block"><h4>Le résultat</h4><p>${service.result}</p></div><div class="detail-price">${service.price}</div>`;
-            document.getElementById("modalContent").innerHTML=html;document.getElementById("serviceModal").classList.add("active");document.body.classList.add("modal-open");
-        }
-        function closeService(){document.getElementById("serviceModal").classList.remove("active");document.body.classList.remove("modal-open");}
-        function closeServiceOutside(event){if(event.target.id==="serviceModal")closeService();}
 
-        // Boutique catalogue filtering & search
-        document.addEventListener('DOMContentLoaded',()=>{
-            const grid=document.getElementById('bbCatalogGrid'); if(!grid)return;
-            const cards=[...grid.querySelectorAll('.bb-product')];
-            const search=document.getElementById('bbCatalogSearch');
-            const searchButton=document.getElementById('bbCatalogSearchButton');
-            const brand=document.getElementById('bbCatalogBrand');
-            const category=document.getElementById('bbCatalogCategory');
-            const sort=document.getElementById('bbCatalogSort');
-            const count=document.getElementById('bbCatalogCount');
-            const external=document.getElementById('bbExternalCatalogSearch');
-            const norm=s=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
-            const esc=s=>encodeURIComponent(s.trim());
-            cards.forEach((card,i)=>{
-                card.dataset.original=i;
-                const label=(card.querySelector('.bb-product-brand')?.textContent||card.dataset.brand||'').toLowerCase();
-                if(!card.dataset.brand){
-                    card.dataset.brand=label.includes('cabelo')||label.includes('eufora')||label.includes('varis')?'Cabelo':(label.includes('matrix')?'Matrix':(label.includes('siyou')?'SIYOU Nails':(label.includes('relax')?'Relax & Wax':'BaBylissPRO')));
-                }
-                if(!card.dataset.category){
-                    card.dataset.category=
-                        card.dataset.brand==='Relax & Wax'?'esthetique':
-                        card.dataset.brand==='Cabelo'||card.dataset.brand==='Matrix'?'soins':
-                        card.dataset.brand==='SIYOU Nails'?'ongles':'outils';
-                }
-            });
-            function supplierLinks(q){
-                if(!q){external.hidden=true;external.innerHTML='';return;}
-                const e=esc(q);
-                const links=[
-                    ['Wig Store · Extensions','https://www.wigstorehairandbeautycanada.ca/search?q='+e+'&sca_ref=12701283.1pkGN8eTfQ'],
-                    ['Cabelo · Soins & outils','https://cabelo.ca/search?q='+e+'&ref=RB5GWIU3TO'],
-                    ['BaBylissPRO · Appareils','https://www.google.com/search?q='+encodeURIComponent('site:babylisspro.com '+q)],
-                    ['Matrix Professional · Recherche produits','https://www.google.com/search?q='+encodeURIComponent('site:matrixprofessional.ca/fr-ca/produits '+q)],
-                    ['SIYOU Nails · Press-on & collections','https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates'],
-                    ['Relax & Wax · Cire & épilation','https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c']
-                ];
-                external.innerHTML='<strong>Continuer la recherche dans les catalogues partenaires</strong><div class="bb-external-links">'+links.map(([label,url])=>'<a href="'+url.replace(/&/g,'&amp;')+'" target="_blank" rel="sponsored noopener noreferrer">'+label+' ↗</a>').join('')+'</div>';
-                external.hidden=false;
+        function openService(serviceKey) {
+            const service = services[serviceKey]; if(!service) return;
+            let html = `<div class="modal-number">${service.number}</div><h2>${service.title}</h2><p>${service.description}</p>`;
+            if(service.extensionList){
+                html += `<div class="detail-block"><h4>Méthodes d'extensions</h4><div class="extension-method"><span>Tape-in / Adhésives</span><strong>Sur consultation</strong></div><div class="extension-method"><span>Micro-billes</span><strong>Sur consultation</strong></div><div class="extension-method"><span>Kératine</span><strong>Sur consultation</strong></div><div class="extension-method"><span>Clips & Halo</span><strong>Sur consultation</strong></div></div>`;
+            } else {
+                html += `<div class="detail-block"><h4>Comment ça fonctionne</h4><p>${service.technique}</p></div>`;
             }
-            function render(openSupplierSearch=false){
-                const q=norm(search.value.trim());
-                const catVal=category.value;
-                let visible=cards.filter(c=>{
-                    const text=norm(c.textContent+' '+(c.querySelector('img')?.alt||''));
-                    const matchQuery=!q||text.includes(q);
-                    const matchCategory=!catVal||c.dataset.category===catVal;
-                    return matchQuery && matchCategory;
-                });
-                if(sort.value==='name')visible.sort((a,b)=>(a.querySelector('h4')?.textContent||a.querySelector('h3')?.textContent||'').localeCompare(b.querySelector('h4')?.textContent||b.querySelector('h3')?.textContent||'','fr'));
-                else visible.sort((a,b)=>Number(a.dataset.original)-Number(b.dataset.original));
-                cards.forEach(c=>c.hidden=true);
-                visible.forEach(c=>{c.hidden=false;grid.appendChild(c)});
-                let empty=grid.querySelector('.bb-catalog-empty');
-                if(!visible.length){
-                    if(!empty){
-                        empty=document.createElement('div');
-                        empty.className='bb-catalog-empty';
-                        empty.textContent='Aucun produit correspondant dans la sélection affichée. Utilisez les liens ci-dessous pour chercher dans les catalogues complets des partenaires.';
-                        grid.appendChild(empty);
-                    }
-                }else if(empty)empty.remove();
-                count.textContent=visible.length+' produit(s) correspondant(s) dans la sélection Bella Bay ('+cards.length+' fiches affichées).';
-                if(openSupplierSearch)supplierLinks(search.value.trim());
-                else if(!search.value.trim())supplierLinks('');
-            }
-            if(searchButton)searchButton.addEventListener('click',()=>render(true));
-            if(search){
-                search.addEventListener('keydown',e=>{
-                    if(e.key==='Enter'){
-                        e.preventDefault();
-                        render(true);
-                    }
-                });
-                search.addEventListener('input',()=>render(false));
-            }
-            [brand,category,sort].forEach(el=>{
-                if(el)el.addEventListener('change',()=>render(false));
-            });
-            render(false);
-        });
+            html += `<div class="detail-block"><h4>Le résultat</h4><p>${service.result}</p></div><div class="detail-price">${service.price}</div>`;
+            document.getElementById("modalContent").innerHTML = html;
+            document.getElementById("serviceModal").classList.add("active");
+            document.body.classList.add("modal-open");
+        }
+        function closeService() {
+            document.getElementById("serviceModal").classList.remove("active");
+            document.body.classList.remove("modal-open");
+        }
+        function closeServiceOutside(event) {
+            if(event.target.id === "serviceModal") closeService();
+        }
     </script>
 </body>
 
-<!-- BOUTON WHATSAPP FLOTTANT BELLA BAY -->
+<!-- BOUTON WHATSAPP FLOTTANT -->
 <style>
     .bb-whatsapp-float {
-        position: fixed;
-        bottom: 22px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #25D366;
-        color: white;
-        font-size: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,.35);
-        z-index: 9999;
-        text-decoration: none;
-        transition: .3s;
+        position: fixed; bottom: 22px; right: 20px; width: 60px; height: 60px;
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        background: #25D366; color: white; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,.35);
+        z-index: 9999; text-decoration: none; transition: .3s;
     }
-    .bb-whatsapp-float:hover {
-        transform: scale(1.1);
-        background: #128C7E;
-    }
+    .bb-whatsapp-float:hover { transform: scale(1.1); background: #128C7E; }
 </style>
 <a href="https://wa.me/15145822856?text=Bonjour%20Bella%20Bay%20!%20Je%20souhaite%20profiter%20du%20rabais%20de%2010%%20avec%20le%20code%20BELLA.%20✨" class="bb-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacter Bella Bay sur WhatsApp">
     💬
