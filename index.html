@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -59,7 +60,7 @@
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
         
-        /* Cartes Graphiques Rose & Or Infaillibles pour la Boutique */
+        /* Cartes Graphiques Rose & Or Infaillibles */
         .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fcebefe6,#cf8fa1 60%,#171014);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:1px solid var(--gold)}
         .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light);letter-spacing:2px;margin-bottom:8px;font-weight:700}
         .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
@@ -73,7 +74,7 @@
         .bb-catalog-empty{grid-column:1/-1;padding:28px;text-align:center;background:#fff;border:1px solid #d8c6a5;color:#71676a;font-size:12px}
         .bb-shop-disclaimer{max-width:900px;text-align:center;margin:30px auto 0;color:#766d70;font-size:10px;line-height:1.7}
         
-        /* Extensions showcase avec Bannières Rose & Or Luxueuses et Stables */
+        /* Extensions showcase */
         .bb-extensions-showcase{background:linear-gradient(135deg,#1f1418 0%,#0c0a0b 100%);padding:100px 25px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:#fff;margin-bottom:60px}
         .bb-ext-header{text-align:center;max-width:800px;margin:0 auto 50px}
         .bb-ext-header small{color:var(--gold-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:12px}
@@ -196,7 +197,7 @@
             <div style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
                 <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-                    <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins capillaires</button>
+                    <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins & Shampooings</button>
                     <button type="button" onclick="filterByCategory('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Outils & Coiffure</button>
                     <button type="button" onclick="filterByCategory('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Cire</button>
                     <button type="button" onclick="filterByCategory('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Tout voir ✨</button>
@@ -204,23 +205,23 @@
             </div>
 
             <div class="bb-catalog-panel">
-                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre</label>
+                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, matrix, eufora, sérum…)</label>
                 <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Ex. sérum, shampooing, lisseur, cire…" autocomplete="off">
+                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, matrix, eufora…" autocomplete="off">
                     <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
             </div>
 
-            <!-- Grille de produits avec bannières rose & or garanties sans bug -->
+            <!-- Grille de produits officielle (Matrix, Eufora, Relax & Wax, BaBylissPRO) -->
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
 
             <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et génèrent une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
         </div>
     </section>
 
-    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE (AVEC BANNIÈRES DESIGN STABLES) -->
+    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE -->
     <section class="bb-extensions-showcase" id="extensions-page">
         <div class="bb-ext-header">
             <small>✨ COLLECTION EXCLUSIVE BEAUTY WITHOUT BORDERS</small>
@@ -381,7 +382,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE LA BOUTIQUE AVEC CARTES GRAPHIQUES ROBUSTES ET STABLES -->
+    <!-- SCRIPT DE LA BOUTIQUE OFFICIEL (MATRIX, EUFORA, RELAX & WAX, BABYLISSPRO) -->
     <script>
         function toggleMenu() {
             document.getElementById('dropdownMenu').classList.toggle('active');
@@ -389,9 +390,29 @@
 
         const bbProducts = [
             {
+                brand: "MATRIX PROFESSIONAL",
+                category: "soins",
+                tag: "Shampooing · Top 1",
+                title: "Matrix Total Results Bond Keepers / Mega Sleek Shampooing",
+                desc: "Shampooing professionnel haute performance pour fortifier et lisser la fibre capillaire.",
+                price: "Max 20,00 $ CAD (Code BELLA)",
+                link: "https://cabelo.ca/collections/matrix?ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
+                brand: "MATRIX PROFESSIONAL",
+                category: "soins",
+                tag: "Soins · Top 2",
+                title: "Matrix Instacure Anti-Breakage Solution",
+                desc: "Soin professionnel revitalisant anti-cassure pour cheveux fragilisés et colorés.",
+                price: "Max 20,00 $ CAD (Code BELLA)",
+                link: "https://cabelo.ca/collections/matrix?ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
                 brand: "EUFORA",
                 category: "soins",
-                tag: "Soins · Top 1",
+                tag: "Soins · Top 3",
                 title: "Eufora Beautifying Serum",
                 desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.",
                 price: "61,25 $ CAD (Code BELLA)",
@@ -401,10 +422,10 @@
             {
                 brand: "EUFORA",
                 category: "soins",
-                tag: "Soins · Top 2",
+                tag: "Shampooing · Top 4",
                 title: "Eufora Bodifying Shampoo",
                 desc: "Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.",
-                price: "58,10 $ CAD (Code BELLA)",
+                price: "Max 20,00 $ CAD (Code BELLA)",
                 link: "https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO",
                 linkText: "Acheter chez Cabelo ↗"
             },
@@ -571,3 +592,5 @@
     💬
 </a>
 </html>
+
+```
