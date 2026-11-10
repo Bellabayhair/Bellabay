@@ -147,7 +147,11 @@
                     <a href="#services">Services <i class="fas fa-chevron-right"></i></a>
                     <a href="#mobile">Service mobile <i class="fas fa-chevron-right"></i></a>
                     <a href="#histoire">Notre Histoire <i class="fas fa-chevron-right"></i></a>
-                    <a href="#boutique">Boutique &amp; SIYOU <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('extensions'); toggleMenu();">Boutique : Extensions <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('soins'); toggleMenu();">Boutique : Soins capillaires <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('outils'); toggleMenu();">Boutique : Outils & Coiffure <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('ongles'); toggleMenu();">Boutique : Ongles <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="filterByQuick('esthetique'); toggleMenu();">Boutique : Épilation & Esthétique <i class="fas fa-chevron-right"></i></a>
                     <a href="#salon">Salon <i class="fas fa-chevron-right"></i></a>
                     <a href="#contact">Contact &amp; Zones <i class="fas fa-chevron-right"></i></a>
                     <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">Contactez-nous (WhatsApp) <i class="fab fa-whatsapp"></i></a>
@@ -225,12 +229,26 @@
         </div>
     </section>
 
+    <!-- BOUTIQUE AVEC SYSTÈME INTELLIGENT -->
     <section class="section bb-marketplace" id="boutique">
         <div class="container">
             <div class="section-title">
                 <small>LA SÉLECTION BELLA BAY</small>
-                <h2>La Boutique</h2>
-                <p>Extensions, soins capillaires, outils professionnels et essentiels beauté. Recherchez un produit, filtrez par univers, puis ouvrez directement sa fiche chez le marchand.</p>
+                <h2>La Boutique Intelligente</h2>
+                <p>Trouvez exactement le produit qu'il vous faut en un clic grâce à notre assistant de recherche multi-fournisseurs.</p>
+            </div>
+
+            <!-- ASSISTANT INTELLIGENT DE SÉLECTION RAPIDE -->
+            <div class="bb-smart-assistant" style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:20px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
+                <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Assistant Beauté Bella Bay</span>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:15px;font-weight:500;">Que recherchez-vous aujourd'hui ?</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+                    <button type="button" onclick="filterByQuick('extensions')" style="padding:8px 16px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Extensions</button>
+                    <button type="button" onclick="filterByQuick('soins')" style="padding:8px 16px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins capillaires</button>
+                    <button type="button" onclick="filterByQuick('outils')" style="padding:8px 16px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Outils & Coiffure</button>
+                    <button type="button" onclick="filterByQuick('ongles')" style="padding:8px 16px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Ongles / Press-on</button>
+                    <button type="button" onclick="filterByQuick('esthetique')" style="padding:8px 16px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Esthétique</button>
+                </div>
             </div>
 
             <div class="bb-catalog-panel">
@@ -519,6 +537,17 @@
             }
         });
 
+        // Fonction de filtrage rapide (Assistant & Menu)
+        function filterByQuick(categoryKey) {
+            const categorySelect = document.getElementById('bbCatalogCategory');
+            if (categorySelect) {
+                categorySelect.value = categoryKey;
+                categorySelect.dispatchEvent(new Event('change'));
+                const boutiqueSec = document.getElementById('boutique');
+                if(boutiqueSec) boutiqueSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         // Pop-up Black Friday
         (function(){
             const popup=document.getElementById('bbBlackFridayPopup');
@@ -697,4 +726,6 @@
 <a href="https://wa.me/15145822856?text=Bonjour%20Bella%20Bay%20!%20Je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20ou%20votre%20boutique.%20✨" class="bb-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacter Bella Bay sur WhatsApp">
     💬
 </a>
-</html
+</html>
+
+```
