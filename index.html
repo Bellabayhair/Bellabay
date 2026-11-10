@@ -45,7 +45,7 @@
         .btn-outline{background:transparent;color:var(--white);padding:15px 25px;border-radius:3px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:1.5px solid var(--gold-light);cursor:pointer;text-decoration:none;display:inline-block}
         .section{padding:100px 25px}.container{max-width:1200px;margin:auto}.section-title{text-align:center;margin-bottom:55px}.section-title small{display:block;color:var(--rose-dark);letter-spacing:4px;text-transform:uppercase;font-size:10px;margin-bottom:10px}.section-title h2{font-family:'Cormorant Garamond',serif;font-size:55px;line-height:1;font-weight:500}.section-title p{max-width:650px;margin:15px auto 0;color:var(--gray);font-size:14px}
         
-        /* Boutique Intelligente */
+        /* Boutique Intelligente avec Design Rose & Or Impeccable */
         .bb-catalog-panel{max-width:980px;margin:0 auto 32px;padding:24px;background:#fff;border:1px solid #c9a45c;box-shadow:0 12px 30px #2117190b}
         .bb-search-label{display:block;color:#80616a;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;margin-bottom:9px}
         #bbCatalogSearch{width:100%;padding:15px 17px;border:1px solid #c9a45c;background:#fffafa;color:#292124;font:13px Montserrat,sans-serif;outline:none}
@@ -58,9 +58,13 @@
         .bb-catalog-count{margin:12px 0 0;color:#80616a;font-size:10px}
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
-        .bb-marketplace .bb-product-image{aspect-ratio:1/1;background:#171014;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-        .bb-marketplace .bb-product-image img{width:100%;height:100%;object-fit:cover;object-position:center}
-        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.85);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
+        
+        /* Carte Visuelle Ultra-Chic Rose & Or (Garantie sans bug d'image externe) */
+        .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fcebefe6,#cf8fa1 60%,#171014);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:1px solid var(--gold)}
+        .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-light);letter-spacing:2px;margin-bottom:8px;font-weight:700}
+        .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+        .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.9);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
+        
         .bb-marketplace .bb-product-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}
         .bb-marketplace .bb-product h4{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.05;color:#292124}
         .bb-marketplace .bb-product-info p{font-size:11px;color:#71676a;line-height:1.65;min-height:36px}
@@ -209,14 +213,14 @@
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
             </div>
 
-            <!-- Grille de produits générée automatiquement et sans faille -->
+            <!-- Grille de produits générée avec des bannières élégantes garanties sans bug -->
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
 
             <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et génèrent une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
         </div>
     </section>
 
-    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE (BEAUTY WITHOUT BORDERS) -->
+    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE -->
     <section class="bb-extensions-showcase" id="extensions-page">
         <div class="bb-ext-header">
             <small>✨ COLLECTION EXCLUSIVE BEAUTY WITHOUT BORDERS</small>
@@ -380,13 +384,13 @@
         </div>
     </div>
 
-    <!-- SCRIPT & DONNÉES UNIFIÉES DE LA BOUTIQUE (IMAGES CORRIGÉES ET ASSOCIÉES À 100%) -->
+    <!-- SCRIPT DE LA BOUTIQUE AVEC CARTES GRAPHIQUES ROBUSTES ET STABLES -->
     <script>
         function toggleMenu() {
             document.getElementById('dropdownMenu').classList.toggle('active');
         }
 
-        // Tableau unifié parfait : chaque produit possède sa propre image exacte et indissociable
+        // Tableau unifié parfait : chaque produit possède son design graphique rose et or dédié et verrouillé
         const bbProducts = [
             {
                 brand: "EUFORA",
@@ -395,7 +399,6 @@
                 title: "Eufora Beautifying Serum",
                 desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.",
                 price: "61,25 $ CAD (Code BELLA)",
-                image: "https://images.unsplash.com/photo-1608248597359-9742617f6942?auto=format&fit=crop&w=900&q=80",
                 link: "https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO",
                 linkText: "Acheter chez Cabelo ↗"
             },
@@ -406,7 +409,6 @@
                 title: "Eufora Bodifying Shampoo",
                 desc: "Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.",
                 price: "58,10 $ CAD (Code BELLA)",
-                image: "https://images.unsplash.com/photo-1585232351982-f09c855a805b?auto=format&fit=crop&w=900&q=80",
                 link: "https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO",
                 linkText: "Acheter chez Cabelo ↗"
             },
@@ -417,7 +419,6 @@
                 title: "No Scream Cream",
                 desc: "La célèbre crème anesthésiante pré-épilation pour un confort absolu et sans douleur.",
                 price: "29,99 $ USD (Code BELLA)",
-                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80",
                 link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
                 linkText: "Acheter chez Relax & Wax ↗"
             },
@@ -428,7 +429,6 @@
                 title: "Cire dure professionnelle",
                 desc: "Cire haute performance spécialement formulée pour une épilation douce et impeccable.",
                 price: "24,99 $ USD (Code BELLA)",
-                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
                 link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
                 linkText: "Acheter chez Relax & Wax ↗"
             },
@@ -439,7 +439,6 @@
                 title: "Prima3000 1¼″ Ionic Styling Iron",
                 desc: "Outil polyvalent professionnel pour lisser, onduler ou boucler.",
                 price: "209,99 $ USD",
-                image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
                 link: "https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html",
                 linkText: "Voir le produit ↗"
             },
@@ -450,7 +449,6 @@
                 title: "Style/Switch 5-en-1 Air Styler",
                 desc: "Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.",
                 price: "249,99 $ USD",
-                image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80",
                 link: "https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html",
                 linkText: "Voir le produit ↗"
             },
@@ -461,7 +459,6 @@
                 title: "Sèche-cheveux Portofino",
                 desc: "Moteur AC italien de 2000 W et technologie Nano Titanium.",
                 price: "149,99 $ USD",
-                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
                 link: "https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html",
                 linkText: "Voir le produit ↗"
             }
@@ -491,9 +488,10 @@
             } else {
                 grid.innerHTML = filtered.map(p => `
                     <article class="bb-product">
-                        <a class="bb-product-image" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">
-                            <img alt="${p.title}" loading="lazy" src="${p.image}"/>
+                        <a class="bb-product-banner" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">
                             <span class="bb-product-tag">${p.tag}</span>
+                            <div class="bb-banner-logo">BELLA BAY B.B</div>
+                            <div class="bb-banner-title">${p.title}</div>
                         </a>
                         <div class="bb-product-info">
                             <span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">${p.brand}</span>
