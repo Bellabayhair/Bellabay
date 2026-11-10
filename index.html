@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -20,6 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
 :root{--black:#080607;--black2:#151012;--pink:#f3d3dc;--pink2:#f9e8ed;--rose:#cf8fa1;--rose-dark:#9d6173;--gold:#c9a45c;--gold-light:#e8cf98;--white:#fff;--cream:#fffafa;--text:#292124;--gray:#756b6f}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:Montserrat,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}body.modal-open{overflow:hidden}img{max-width:100%;display:block}a{text-decoration:none}
@@ -32,11 +32,9 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,7,.97);backdrop-fi
 
 /* Menu Dropdown & Nav */
 nav{display:flex;align-items:center;gap:20px}nav a{color:#fff;font-size:11px;font-weight:500;letter-spacing:.3px;transition:.25s}nav a:hover{color:var(--gold-light)}
-
 .menu-container{position:relative;display:none}
 .menu-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(201,164,92,0.1);border:1px solid rgba(201,164,92,0.4);color:var(--gold-light);font-size:18px;cursor:pointer;border-radius:3px;transition:0.3s}
 .menu-icon:hover{background:rgba(201,164,92,0.25)}
-
 .dropdown-menu{position:absolute;top:55px;right:0;width:300px;background:linear-gradient(145deg,#241a1f,#171014);border:1.5px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,0.9);display:none;flex-direction:column;z-index:2000;padding:15px 0}
 .dropdown-menu.active{display:flex;animation:fadeIn 0.3s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
@@ -57,7 +55,6 @@ nav{display:flex;align-items:center;gap:20px}nav a{color:#fff;font-size:11px;fon
 .hero h1 span{font-style:italic;color:var(--pink)}
 .hero p{max-width:600px;color:#f0e4e7;font-size:15px;line-height:1.8;margin-bottom:35px}
 .hero-buttons{display:flex;flex-direction:column;gap:15px;width:100%;max-width:380px;margin-bottom:25px}
-
 .btn-gold{background:linear-gradient(135deg,#f2dcc0,#c6a66b);color:#1c1417;padding:15px 25px;border-radius:3px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,0.4);text-decoration:none;display:inline-block;transition:0.2s}
 .btn-gold:hover{filter:brightness(1.05)}
 .btn-outline{background:transparent;color:var(--white);padding:15px 25px;border-radius:3px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border:1.5px solid var(--gold-light);cursor:pointer;text-decoration:none;display:inline-block;transition:0.2s}
@@ -70,7 +67,7 @@ nav{display:flex;align-items:center;gap:20px}nav a{color:#fff;font-size:11px;fon
 .service-number{position:absolute;top:13px;left:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#080607d1;color:var(--gold-light);border:1px solid var(--gold);font-size:10px}
 .service-content{padding:20px 25px 25px}.service-content h3{font-family:'Cormorant Garamond',serif;font-size:31px;line-height:1;margin-bottom:10px}.service-content p{color:var(--gray);font-size:13px;min-height:55px}.service-bottom{margin-top:20px;padding-top:15px;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;gap:15px}.price{font-weight:700;color:var(--rose-dark);font-size:14px}.service-link{border:0;background:none;padding:0;color:var(--rose-dark);font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer}.service-link:hover{color:var(--gold)}
 
-.service-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:25px;background:#000d;backdrop-filter:blur(8px)}.service-modal.active{display:flex}.modal-box{position:relative;width:min(700px,100%);max-height:90vh;overflow-y:auto;background:linear-gradient(145deg,#fffafa,#f9e8ed);border:1px solid var(--gold);box-shadow:0 25px 80px #0000008c;padding:45px}.modal-number{color:var(--gold);font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.modal-box h2{font-family:'Cormorant Garamond',serif;font-size:50px;line-height:.95;margin:8px 0 20px;color:#292124}.modal-box p{color:#62575b;font-size:14px;margin-bottom:18px}.detail-block{margin-top:20px;padding-top:18px;border-top:1px solid #c9a45c59}.detail-block h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose-dark);margin-bottom:8px}.detail-block p{margin-bottom:0}.detail-price{margin-top:25px;display:inline-block;padding:10px 18px;border:1px solid var(--gold);background:#fff;color:var(--rose-dark);font-weight:700;font-size:13px}.extension-method{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #c9a45c40;font-size:12px;color:#4d4246}.extension-method:last-child{border-bottom:none}.extension-method strong{color:var(--rose-dark)}.modal-close{position:absolute;top:15px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:#080607;color:white;font-size:20px;cursor:pointer}.modal-close:hover{background:var(--rose);transform:rotate(90deg)}
+.service-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:25px;background:#000d;backdrop-filter:blur(8px)}.service-modal.active{display:flex}.modal-box{position:relative;width:min(700px,100%);max-height:90vh;overflow-y:auto;background:linear-gradient(145deg,#fffafa,#f9e8ed);border:1px solid var(--gold);box-shadow:0 25px 80px #0000008c;padding:45px}.modal-number{color:var(--gold);font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.modal-box h2{font-family:'Cormorant Garamond',serif;font-size:50px;line-height:.95;margin:8px 0 20px;color:#292124}.modal-box p{color:#62575b;font-size:14px;margin-bottom:18px}.detail-block{margin-top:20px;padding-top:18px;border-top:1px solid #c9a45c59}.detail-block h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose-dark);margin-bottom:8px}.detail-block p{margin-bottom:0}.detail-price{margin-top:25px;display:inline-block;padding:10px 18px;border:1px solid var(--gold);background:#fff;color:var(--rose-dark);font-weight:700;font-size:13px}.extension-method{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #c9a45c40;font-size:12px;color:#4d4246}.extension-method:last-child{border-bottom:none}.modal-close{position:absolute;top:15px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:#080607;color:white;font-size:20px;cursor:pointer}.modal-close:hover{background:var(--rose);transform:rotate(90deg)}
 
 .mobile-section{background:var(--black);color:white}.mobile-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.mobile-image{height:550px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 15px 50px #0008}.mobile-image img{width:100%;height:100%;object-fit:cover}.mobile-content small{color:var(--gold-light);letter-spacing:3px;text-transform:uppercase;font-size:10px}.mobile-content h2{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.95;margin:15px 0}.mobile-content p{color:#d8ced1;font-size:14px;max-width:500px}.area-list{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 30px}.area-list span{padding:8px 14px;border:1px solid #e8cf988c;border-radius:30px;font-size:9px;letter-spacing:1px;color:var(--gold-light)}
 
@@ -111,6 +108,9 @@ footer{background:#050405;color:white;padding:65px 25px 25px;border-top:1px soli
 .bb-extension-art strong{font:500 32px/.85 'Cormorant Garamond',serif;margin-top:14px;text-shadow:0 2px 10px #0005}
 .bb-catalog-empty{grid-column:1/-1;padding:28px;text-align:center;background:#fff;border:1px solid #d8c6a5;color:#71676a;font-size:12px}
 .bb-shop-disclaimer{max-width:900px;text-align:center;margin:30px auto 0;color:#766d70;font-size:10px;line-height:1.7}
+
+/* Relax & Wax */
+.bb-relax-art{background:radial-gradient(circle at 20% 20%,#f4dfe5,#c49b78 55%,#171014)}
 
 /* Pop-up Black Friday */
 .bb-blackfriday-overlay{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(5,3,5,.82);backdrop-filter:blur(7px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility .35s ease}
@@ -162,6 +162,7 @@ footer{background:#050405;color:white;padding:65px 25px 25px;border-top:1px soli
 }
 </style>
 </head>
+
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTHHWZRZ"
@@ -176,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="logo-circle"><span>B.B</span></div>
       <div class="logo-text">Bella Bay<small>COIFFURE & BEAUTÉ</small></div>
     </a>
-    
+
     <nav>
       <a href="#services">Services</a>
       <a href="#mobile">Service mobile</a>
@@ -208,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <small>Votre beauté, notre signature</small>
     <h1>Sublimez vos cheveux avec <span>Bella Bay</span>.</h1>
     <p>Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
-    
+
     <div class="hero-buttons">
       <a href="#services" class="btn-gold">Découvrir nos services</a>
       <a href="#boutique" class="btn-outline">Explorer la boutique</a>
@@ -276,37 +277,220 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="section bb-marketplace" id="boutique">
  <div class="container">
-  <div class="section-title"><small>LA SÉLECTION BELLA BAY</small><h2>La Boutique</h2><p>Extensions, soins capillaires et outils professionnels. Recherchez un produit, filtrez par univers, puis ouvrez directement sa fiche chez le marchand.</p></div>
+  <div class="section-title">
+    <small>LA SÉLECTION BELLA BAY</small>
+    <h2>La Boutique</h2>
+    <p>Extensions, soins capillaires, outils professionnels et essentiels beauté. Recherchez un produit, filtrez par univers, puis ouvrez directement sa fiche chez le marchand.</p>
+  </div>
+
   <div class="bb-catalog-panel">
    <label class="bb-search-label" for="bbCatalogSearch">Rechercher un produit</label>
    <div class="bb-search-row">
-    <input id="bbCatalogSearch" type="search" placeholder="Ex. extensions à clips, shampoing, brosse, lisseur…" autocomplete="off">
+    <input id="bbCatalogSearch" type="search" placeholder="Ex. extensions à clips, shampoing, brosse, lisseur, cire…" autocomplete="off">
     <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
    </div>
+
    <div class="bb-catalog-filters">
-    <select id="bbCatalogBrand" aria-label="Filtrer par marque"><option value="">Toutes les marques</option><option value="Wig Store Hair &amp; Beauty Canada">Wig Store Hair &amp; Beauty Canada</option><option value="Cabelo">Cabelo</option><option value="BaBylissPRO">BaBylissPRO</option><option value="Matrix">Matrix Professional</option><option value="SIYOU Nails">SIYOU Nails</option></select>
-    <select id="bbCatalogCategory" aria-label="Filtrer par catégorie"><option value="">Toutes les catégories</option><option value="extensions">Extensions</option><option value="soins">Soins capillaires</option><option value="outils">Outils professionnels</option><option value="ongles">Press-on nails &amp; accessoires</option></select>
-    <select id="bbCatalogSort" aria-label="Trier les produits"><option value="popular">Sélection Bella Bay</option><option value="name">Nom A–Z</option></select>
+    <select id="bbCatalogBrand" aria-label="Filtrer par marque">
+      <option value="">Toutes les marques</option>
+      <option value="Wig Store Hair &amp; Beauty Canada">Wig Store Hair &amp; Beauty Canada</option>
+      <option value="Cabelo">Cabelo</option>
+      <option value="BaBylissPRO">BaBylissPRO</option>
+      <option value="Matrix">Matrix Professional</option>
+      <option value="SIYOU Nails">SIYOU Nails</option>
+      <option value="Relax &amp; Wax">Relax &amp; Wax</option>
+    </select>
+
+    <select id="bbCatalogCategory" aria-label="Filtrer par catégorie">
+      <option value="">Toutes les catégories</option>
+      <option value="extensions">Extensions</option>
+      <option value="soins">Soins capillaires</option>
+      <option value="outils">Outils professionnels</option>
+      <option value="ongles">Press-on nails &amp; accessoires</option>
+      <option value="esthetique">Épilation &amp; Esthétique</option>
+    </select>
+
+    <select id="bbCatalogSort" aria-label="Trier les produits">
+      <option value="popular">Sélection Bella Bay</option>
+      <option value="name">Nom A–Z</option>
+    </select>
+
     <button type="button" id="bbCatalogReset">Réinitialiser</button>
    </div>
+
    <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite"></p>
    <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
   </div>
-    <div class="bb-products-grid" id="bbCatalogGrid">
-      <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions"><div class="bb-extension-art"><span>CLIPS</span><strong>Beauty<br>Without<br>Borders</strong></div><div class="bb-product-info"><span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span><h4>Extensions à clips</h4><p>Longueur et volume à clipser, pour une pose flexible.</p><a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a></div></article>
-      <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions"><div class="bb-extension-art"><span>TAPE-IN</span><strong>Beauty<br>Without<br>Borders</strong></div><div class="bb-product-info"><span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span><h4>Extensions adhésives / Tape-in</h4><p>Une option discrète pour ajouter longueur et densité.</p><a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a></div></article>
-      <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions"><div class="bb-extension-art"><span>HALO</span><strong>Beauty<br>Without<br>Borders</strong></div><div class="bb-product-info"><span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span><h4>Extensions Halo</h4><p>Une solution à fil invisible pour un effet volume et longueur.</p><a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a></div></article>
-      <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions"><div class="bb-extension-art"><span>HUMAN HAIR</span><strong>Beauty<br>Without<br>Borders</strong></div><div class="bb-product-info"><span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span><h4>Cheveux humains</h4><p>Découvrez les options en cheveux humains et les différentes textures.</p><a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/human-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a></div></article>
-      <article class="bb-product" data-brand="Cabelo" data-category="soins"><a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank"><img alt="Eufora Beautifying Serum 120 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/beautifying-serum51-oz-120-ml-4229391.jpg?v=1768429273&amp;width=900"/><span class="bb-product-tag">Best seller Cabelo</span></a><div class="bb-product-info"><span class="bb-product-brand">EUFORA</span><h4>Eufora Beautifying Serum</h4><p>Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.</p><div class="bb-product-price">61,25 $ CAD</div><a class="bb-product-btn" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a></div></article>
-      <article class="bb-product" data-brand="Cabelo" data-category="soins"><a class="bb-product-image" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank"><img alt="Eufora Bodifying Shampoo 280 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/bodifying-shampoo95-fl-oz-280-ml-3965751.jpg?v=1773775514&amp;width=900"/><span class="bb-product-tag">Best seller Cabelo</span></a><div class="bb-product-info"><span class="bb-product-brand">EUFORA</span><h4>Eufora Bodifying Shampoo</h4><p>Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.</p><div class="bb-product-price">58,10 $ CAD</div><a class="bb-product-btn" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a></div></article>
-      <article class="bb-product" data-brand="Cabelo" data-category="outils"><a class="bb-product-image" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank"><img alt="VARIS Boar Brush" loading="lazy" src="https://cabelo.ca/cdn/shop/files/boar-brushsmall-25mm-barrel-size-1049372.jpg?v=1768428988&amp;width=900"/><span class="bb-product-tag">Best seller Cabelo</span></a><div class="bb-product-info"><span class="bb-product-brand">VARIS</span><h4>VARIS Boar Brush</h4><p>Brosse ronde en poils de sanglier et nylon pour lisser et mettre en forme.</p><div class="bb-product-price">50,00 $ CAD</div><a class="bb-product-btn" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a></div></article>
-      <article class="bb-product bb-partner-card" data-brand="Matrix" data-category="soins"><div class="bb-extension-art bb-matrix-art"><span>SOINS PROFESSIONNELS</span><strong>MATRIX<br>PROFESSIONAL</strong></div><div class="bb-product-info"><span class="bb-product-brand">MATRIX PROFESSIONAL CANADA</span><h4>Soins capillaires Matrix</h4><p>Explorez les shampooings, revitalisants, masques, huiles et traitements pour cheveux secs, colorés, bouclés ou abîmés.</p><a class="bb-product-btn" href="https://www.matrixprofessional.ca/fr-ca/produits" target="_blank" rel="noopener noreferrer">Explorer le catalogue Matrix ↗</a></div></article>
-      <article class="bb-product bb-partner-card" data-brand="SIYOU Nails" data-category="ongles"><div class="bb-extension-art bb-siyou-art"><span>PRESS-ON NAILS</span><strong>SIYOU<br>NAILS</strong></div><div class="bb-product-info"><span class="bb-product-brand">SIYOU NAILS</span><h4>Press-on nails &amp; collections</h4><p>Découvrez les collections de faux ongles, les styles tendance et les meilleures ventes SIYOU.</p><a class="bb-product-btn" href="https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&amp;utm_source=ZstBNGvBXQ&amp;utm_medium=affiliate&amp;utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer">Découvrir SIYOU ↗</a></div></article>
-      <article class="bb-product" data-brand="BaBylissPRO" data-category="outils"><a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank"><img alt="BaBylissPRO Nano Titanium Prima3000 styling iron" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw64841b30/BNT3000TUC_Infographic_0000.jpg?sh=1200&amp;sm=fit&amp;sw=1200"/><span class="bb-product-tag">Best seller</span></a><div class="bb-product-info"><span class="bb-product-brand">NANO TITANIUM</span><h4>Prima3000 1¼″ Ionic Styling Iron</h4><p>Outil polyvalent pour lisser, onduler ou boucler.</p><div class="bb-product-price">209,99 $ USD</div><a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a></div></article>
-      <article class="bb-product" data-brand="BaBylissPRO" data-category="outils"><a class="bb-product-image" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank"><img alt="BaBylissPRO Style Switch 5-in-1 styler" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw96de6933/BNTSSSW_Main_0000_Award.png?sh=1200&amp;sm=fit&amp;sw=1200"/><span class="bb-product-tag">Best seller</span></a><div class="bb-product-info"><span class="bb-product-brand">STYLESWITCH</span><h4>Style/Switch 5-en-1</h4><p>Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.</p><div class="bb-product-price">249,99 $ USD</div><a class="bb-product-btn" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a></div></article>
-      <article class="bb-product" data-brand="BaBylissPRO" data-category="outils"><a class="bb-product-image" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank"><img alt="BaBylissPRO Portofino dryer" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sh=1200&amp;sm=fit&amp;sw=1200"/><span class="bb-product-tag">Best seller</span></a><div class="bb-product-info"><span class="bb-product-brand">PORTOFINO</span><h4>Sèche-cheveux Portofino</h4><p>Moteur AC italien de 2000 W et technologie Nano Titanium.</p><div class="bb-product-price">149,99 $ USD</div><a class="bb-product-btn" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a></div></article>
-    </div>
-    <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et peuvent générer une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
+
+  <div class="bb-products-grid" id="bbCatalogGrid">
+
+    <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions">
+      <div class="bb-extension-art"><span>CLIPS</span><strong>Beauty<br>Without<br>Borders</strong></div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span>
+        <h4>Extensions à clips</h4>
+        <p>Longueur et volume à clipser, pour une pose flexible.</p>
+        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions">
+      <div class="bb-extension-art"><span>TAPE-IN</span><strong>Beauty<br>Without<br>Borders</strong></div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span>
+        <h4>Extensions adhésives / Tape-in</h4>
+        <p>Une option discrète pour ajouter longueur et densité.</p>
+        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions">
+      <div class="bb-extension-art"><span>HALO</span><strong>Beauty<br>Without<br>Borders</strong></div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span>
+        <h4>Extensions Halo</h4>
+        <p>Une solution à fil invisible pour un effet volume et longueur.</p>
+        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product bb-extension-card" data-brand="Wig Store Hair &amp; Beauty Canada" data-category="extensions">
+      <div class="bb-extension-art"><span>HUMAN HAIR</span><strong>Beauty<br>Without<br>Borders</strong></div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">WIG STORE HAIR &amp; BEAUTY CANADA</span>
+        <h4>Cheveux humains</h4>
+        <p>Découvrez les options en cheveux humains et les différentes textures.</p>
+        <a class="bb-product-btn" href="https://www.wigstorehairandbeautycanada.ca/collections/human-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&amp;sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="Cabelo" data-category="soins">
+      <a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
+        <img alt="Eufora Beautifying Serum 120 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/beautifying-serum51-oz-120-ml-4229391.jpg?v=1768429273&amp;width=900"/>
+        <span class="bb-product-tag">Best seller Cabelo</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">EUFORA</span>
+        <h4>Eufora Beautifying Serum</h4>
+        <p>Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.</p>
+        <div class="bb-product-price">61,25 $ CAD</div>
+        <a class="bb-product-btn" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="Cabelo" data-category="soins">
+      <a class="bb-product-image" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
+        <img alt="Eufora Bodifying Shampoo 280 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/bodifying-shampoo95-fl-oz-280-ml-3965751.jpg?v=1773775514&amp;width=900"/>
+        <span class="bb-product-tag">Best seller Cabelo</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">EUFORA</span>
+        <h4>Eufora Bodifying Shampoo</h4>
+        <p>Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.</p>
+        <div class="bb-product-price">58,10 $ CAD</div>
+        <a class="bb-product-btn" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="Cabelo" data-category="outils">
+      <a class="bb-product-image" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
+        <img alt="VARIS Boar Brush" loading="lazy" src="https://cabelo.ca/cdn/shop/files/boar-brushsmall-25mm-barrel-size-1049372.jpg?v=1768428988&amp;width=900"/>
+        <span class="bb-product-tag">Best seller Cabelo</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">VARIS</span>
+        <h4>VARIS Boar Brush</h4>
+        <p>Brosse ronde en poils de sanglier et nylon pour lisser et mettre en forme.</p>
+        <div class="bb-product-price">50,00 $ CAD</div>
+        <a class="bb-product-btn" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&amp;ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product bb-partner-card" data-brand="Matrix" data-category="soins">
+      <div class="bb-extension-art bb-matrix-art">
+        <span>SOINS PROFESSIONNELS</span>
+        <strong>MATRIX<br>PROFESSIONAL</strong>
+      </div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">MATRIX PROFESSIONAL CANADA</span>
+        <h4>Soins capillaires Matrix</h4>
+        <p>Explorez les shampooings, revitalisants, masques, huiles et traitements pour cheveux secs, colorés, bouclés ou abîmés.</p>
+        <a class="bb-product-btn" href="https://www.matrixprofessional.ca/fr-ca/produits" target="_blank" rel="noopener noreferrer">Explorer le catalogue Matrix ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product bb-partner-card" data-brand="SIYOU Nails" data-category="ongles">
+      <div class="bb-extension-art bb-siyou-art">
+        <span>PRESS-ON NAILS</span>
+        <strong>SIYOU<br>NAILS</strong>
+      </div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">SIYOU NAILS</span>
+        <h4>Press-on nails &amp; collections</h4>
+        <p>Découvrez les collections de faux ongles, les styles tendance et les meilleures ventes SIYOU.</p>
+        <a class="bb-product-btn" href="https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&amp;utm_source=ZstBNGvBXQ&amp;utm_medium=affiliate&amp;utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer">Découvrir SIYOU ↗</a>
+      </div>
+    </article>
+
+    <!-- RELAX & WAX — NOUVEAU PARTENAIRE AFFILIÉ -->
+    <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
+      <div class="bb-extension-art bb-relax-art">
+        <span>BEAUTÉ &amp; ESTHÉTIQUE</span>
+        <strong>RELAX<br>&amp; WAX</strong>
+      </div>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">RELAX &amp; WAX</span>
+        <h4>Cire &amp; épilation professionnelle</h4>
+        <p>Découvrez une sélection de produits d'épilation, de cire et d'accessoires pour les soins esthétiques.</p>
+        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" target="_blank" rel="sponsored noopener noreferrer">Découvrir les produits ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+      <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">
+        <img alt="BaBylissPRO Nano Titanium Prima3000 styling iron" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw64841b30/BNT3000TUC_Infographic_0000.jpg?sh=1200&amp;sm=fit&amp;sw=1200"/>
+        <span class="bb-product-tag">Best seller</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">NANO TITANIUM</span>
+        <h4>Prima3000 1¼″ Ionic Styling Iron</h4>
+        <p>Outil polyvalent pour lisser, onduler ou boucler.</p>
+        <div class="bb-product-price">209,99 $ USD</div>
+        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+      <a class="bb-product-image" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">
+        <img alt="BaBylissPRO Style Switch 5-in-1 styler" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw96de6933/BNTSSSW_Main_0000_Award.png?sh=1200&amp;sm=fit&amp;sw=1200"/>
+        <span class="bb-product-tag">Best seller</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">STYLESWITCH</span>
+        <h4>Style/Switch 5-en-1</h4>
+        <p>Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.</p>
+        <div class="bb-product-price">249,99 $ USD</div>
+        <a class="bb-product-btn" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+      </div>
+    </article>
+
+    <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+      <a class="bb-product-image" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">
+        <img alt="BaBylissPRO Portofino dryer" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sh=1200&amp;sm=fit&amp;sw=1200"/>
+        <span class="bb-product-tag">Best seller</span>
+      </a>
+      <div class="bb-product-info">
+        <span class="bb-product-brand">PORTOFINO</span>
+        <h4>Sèche-cheveux Portofino</h4>
+        <p>Moteur AC italien de 2000 W et technologie Nano Titanium.</p>
+        <div class="bb-product-price">149,99 $ USD</div>
+        <a class="bb-product-btn" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et peuvent générer une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
  </div>
 </section>
 
@@ -434,6 +618,7 @@ botox:{number:"SERVICE 07",title:"Botox capillaire",description:"Un soin profond
 keratine:{number:"SERVICE 08",title:"Lissage à la kératine",description:"Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",technique:"Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",result:"Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",price:"180 $"},
 extensions:{number:"SERVICE 09",title:"Extensions capillaires",description:"Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",extensionList:true,result:"La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",price:"À partir de 120 $"}
 };
+
 function openService(serviceKey){
 const service=services[serviceKey];if(!service)return;
 let html=`<div class="modal-number">${service.number}</div><h2>${service.title}</h2><p>${service.description}</p>`;
@@ -458,50 +643,93 @@ document.addEventListener('DOMContentLoaded',()=>{
  const external=document.getElementById('bbExternalCatalogSearch');
  const norm=s=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
  const esc=s=>encodeURIComponent(s.trim());
+
  cards.forEach((card,i)=>{
    card.dataset.original=i;
    const label=(card.querySelector('.bb-product-brand')?.textContent||card.dataset.brand||'').toLowerCase();
    if(!card.dataset.brand){
-     card.dataset.brand=label.includes('wig store')?'Wig Store Hair & Beauty Canada':(label.includes('cabelo')||label.includes('eufora')||label.includes('varis')?'Cabelo':(label.includes('matrix')?'Matrix':(label.includes('siyou')?'SIYOU Nails':'BaBylissPRO')));
+     card.dataset.brand=label.includes('wig store')?'Wig Store Hair & Beauty Canada':(label.includes('cabelo')||label.includes('eufora')||label.includes('varis')?'Cabelo':(label.includes('matrix')?'Matrix':(label.includes('siyou')?'SIYOU Nails':(label.includes('relax')?'Relax & Wax':'BaBylissPRO'))));
    }
-   if(!card.dataset.category){card.dataset.category=card.dataset.brand==='Wig Store Hair & Beauty Canada'?'extensions':(card.dataset.brand==='Cabelo'||card.dataset.brand==='Matrix'?'soins':(card.dataset.brand==='SIYOU Nails'?'ongles':'outils'));}
+   if(!card.dataset.category){
+     card.dataset.category=
+       card.dataset.brand==='Wig Store Hair & Beauty Canada'?'extensions':
+       card.dataset.brand==='Relax & Wax'?'esthetique':
+       card.dataset.brand==='Cabelo'||card.dataset.brand==='Matrix'?'soins':
+       card.dataset.brand==='SIYOU Nails'?'ongles':'outils';
+   }
  });
+
  function supplierLinks(q){
    if(!q){external.hidden=true;external.innerHTML='';return;}
    const e=esc(q);
    const links=[
-    ['Wig Store · Extensions','https://www.wigstorehairandbeautycanada.ca/search?q='+e],
+    ['Wig Store · Extensions','https://www.wigstorehairandbeautycanada.ca/search?q='+e+'&sca_ref=12701283.1pkGN8eTfQ'],
     ['Cabelo · Soins & outils','https://cabelo.ca/search?q='+e+'&ref=RB5GWIU3TO'],
     ['BaBylissPRO · Appareils','https://www.google.com/search?q='+encodeURIComponent('site:babylisspro.com '+q)],
     ['Matrix Professional · Recherche produits','https://www.google.com/search?q='+encodeURIComponent('site:matrixprofessional.ca/fr-ca/produits '+q)],
-    ['SIYOU Nails · Press-on & collections','https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates']
+    ['SIYOU Nails · Press-on & collections','https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates'],
+    ['Relax & Wax · Cire & épilation','https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c']
    ];
-   external.innerHTML='<strong>Continuer la recherche dans les catalogues partenaires</strong><div class="bb-external-links">'+links.map(([label,url])=>'<a href="'+url.replace(/&/g,'&amp;')+'" target="_blank" rel="noopener noreferrer">'+label+' ↗</a>').join('')+'</div>';
+   external.innerHTML='<strong>Continuer la recherche dans les catalogues partenaires</strong><div class="bb-external-links">'+links.map(([label,url])=>'<a href="'+url.replace(/&/g,'&amp;')+'" target="_blank" rel="sponsored noopener noreferrer">'+label+' ↗</a>').join('')+'</div>';
    external.hidden=false;
  }
+
  function render(openSupplierSearch=false){
   const q=norm(search.value.trim());
   let visible=cards.filter(c=>{
    const text=norm(c.textContent+' '+(c.querySelector('img')?.alt||''));
    return (!q||text.includes(q))&&(!brand.value||c.dataset.brand===brand.value)&&(!category.value||c.dataset.category===category.value);
   });
+
   if(sort.value==='name')visible.sort((a,b)=>(a.querySelector('h4')?.textContent||a.querySelector('h3')?.textContent||'').localeCompare(b.querySelector('h4')?.textContent||b.querySelector('h3')?.textContent||'','fr'));
   else visible.sort((a,b)=>Number(a.dataset.original)-Number(b.dataset.original));
-  cards.forEach(c=>c.hidden=true); visible.forEach(c=>{c.hidden=false;grid.appendChild(c)});
+
+  cards.forEach(c=>c.hidden=true);
+  visible.forEach(c=>{c.hidden=false;grid.appendChild(c)});
+
   let empty=grid.querySelector('.bb-catalog-empty');
-  if(!visible.length){if(!empty){empty=document.createElement('div');empty.className='bb-catalog-empty';empty.textContent='Aucun produit correspondant dans la sélection affichée. Utilisez les liens ci-dessous pour chercher dans les catalogues complets des partenaires.';grid.appendChild(empty)}}else if(empty)empty.remove();
+  if(!visible.length){
+    if(!empty){
+      empty=document.createElement('div');
+      empty.className='bb-catalog-empty';
+      empty.textContent='Aucun produit correspondant dans la sélection affichée. Utilisez les liens ci-dessous pour chercher dans les catalogues complets des partenaires.';
+      grid.appendChild(empty);
+    }
+  }else if(empty)empty.remove();
+
   count.textContent=visible.length+' produit(s) correspondant(s) dans la sélection Bella Bay ('+cards.length+' fiches affichées).';
+
   if(openSupplierSearch)supplierLinks(search.value.trim());
   else if(!search.value.trim())supplierLinks('');
  }
+
  if(searchButton)searchButton.addEventListener('click',()=>render(true));
+
  if(search){
-   search.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render(true)}});
+   search.addEventListener('keydown',e=>{
+     if(e.key==='Enter'){
+       e.preventDefault();
+       render(true);
+     }
+   });
    search.addEventListener('input',()=>render(false));
  }
- [brand,category,sort].forEach(el=>{if(el)el.addEventListener('change',()=>render(false))});
+
+ [brand,category,sort].forEach(el=>{
+   if(el)el.addEventListener('change',()=>render(false));
+ });
+
  const resetBtn=document.getElementById('bbCatalogReset');
- if(resetBtn)resetBtn.addEventListener('click',()=>{search.value='';brand.value='';category.value='';sort.value='popular';supplierLinks('');render(false);search.focus()});
+ if(resetBtn)resetBtn.addEventListener('click',()=>{
+   search.value='';
+   brand.value='';
+   category.value='';
+   sort.value='popular';
+   supplierLinks('');
+   render(false);
+   search.focus();
+ });
+
  render(false);
 });
 </script>
@@ -545,4 +773,3 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 </html>
 
-```
