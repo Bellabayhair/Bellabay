@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -85,7 +84,7 @@
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
         .bb-marketplace .bb-product[hidden]{display:none!important}
         .bb-marketplace .bb-product-image{aspect-ratio:1/1;background:#faf8f5;position:relative}
-        .bb-marketplace .bb-product-image img{width:100%;height:100%;object-fit:cover}
+        .bb-marketplace .bb-product-image img{width:100%;height:100%;object-fit:cover;object-position:center}
         .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.85);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase}
         .bb-marketplace .bb-product-info{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}
         .bb-marketplace .bb-product h4{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.05;color:#292124}
@@ -107,10 +106,10 @@
         .bb-ext-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;max-width:1200px;margin:auto}
         .bb-ext-card{background:#181114;border:1px solid rgba(201,164,92,0.4);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
         .bb-ext-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 15px 40px rgba(0,0,0,0.8)}
-        .bb-ext-img-wrap{position:relative;aspect-ratio:4/3;background:#241a1f;overflow:hidden}
-        .bb-ext-img-wrap img{width:100%;height:100%;object-fit:cover;transition:0.4s}
+        .bb-ext-img-wrap{position:relative;aspect-ratio:4/3;background:#faf8f5;overflow:hidden}
+        .bb-ext-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:0.4s}
         .bb-ext-card:hover .bb-ext-img-wrap img{transform:scale(1.05)}
-        .bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase}
+        .bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase;z-index:2}
         .bb-ext-content{padding:22px;display:flex;flex-direction:column;flex:1}
         .bb-ext-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:6px}
         .bb-ext-content h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:10px}
@@ -145,7 +144,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTHHWZRZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="topbar">BLACK FRIDAY SIYOU : -10 % AVEC LE CODE BELLA</div>
+    <div class="topbar">✨ OFFRE SPÉCIALE : -10 % SUR VOS SERVICES ET LA BOUTIQUE AVEC LE CODE <strong style="color:#fff;">BELLA</strong> ✨</div>
 
     <header>
         <div class="navbar">
@@ -154,11 +153,11 @@
                 <div class="logo-text">Bella Bay<small>COIFFURE & BEAUTÉ</small></div>
             </a>
             <nav>
+                <a href="#boutique">Boutique</a>
                 <a href="#services">Services</a>
                 <a href="#mobile">Service mobile</a>
                 <a href="#histoire">Histoire</a>
                 <a href="#extensions-page">Extensions</a>
-                <a href="#boutique">Boutique</a>
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
                 <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
@@ -167,16 +166,17 @@
                 <div class="menu-icon" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></div>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <div class="dropdown-header">Navigation</div>
-                    <a href="#services">Services <i class="fas fa-chevron-right"></i></a>
-                    <a href="#mobile">Service mobile <i class="fas fa-chevron-right"></i></a>
-                    <a href="#histoire">Notre Histoire <i class="fas fa-chevron-right"></i></a>
+                    <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche <i class="fas fa-chevron-right"></i></a>
+                    <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA) <i class="fas fa-chevron-right"></i></a>
+                    <a href="#mobile" onclick="toggleMenu();">Service mobile <i class="fas fa-chevron-right"></i></a>
+                    <a href="#histoire" onclick="toggleMenu();">Notre Histoire <i class="fas fa-chevron-right"></i></a>
                     <a href="#extensions-page" onclick="toggleMenu();">✨ Le Comptoir des Extensions <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('soins'); toggleMenu();">Boutique : Soins capillaires <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('outils'); toggleMenu();">Boutique : Outils & Coiffure <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('ongles'); toggleMenu();">Boutique : Ongles <i class="fas fa-chevron-right"></i></a>
                     <a href="#boutique" onclick="filterByQuick('esthetique'); toggleMenu();">Boutique : Épilation & Cire <i class="fas fa-chevron-right"></i></a>
-                    <a href="#salon">Salon <i class="fas fa-chevron-right"></i></a>
-                    <a href="#contact">Contact &amp; Zones <i class="fas fa-chevron-right"></i></a>
+                    <a href="#salon" onclick="toggleMenu();">Salon <i class="fas fa-chevron-right"></i></a>
+                    <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones <i class="fas fa-chevron-right"></i></a>
                     <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">Contactez-nous (WhatsApp) <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -185,16 +185,241 @@
 
     <section class="hero">
         <div class="hero-content">
-            <small>Votre beauté, notre signature</small>
+            <small>Votre beauté, notre signature · Code promo : BELLA (-10%)</small>
             <h1>Sublimez vos cheveux avec <span>Bella Bay</span>.</h1>
             <p>Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
             <div class="hero-buttons">
-                <a href="#extensions-page" class="btn-gold">Voir les extensions de rêve</a>
-                <a href="#boutique" class="btn-outline">Explorer la boutique</a>
+                <a href="#boutique" class="btn-gold">Explorer la boutique intelligente</a>
+                <a href="#extensions-page" class="btn-outline">Voir les extensions de rêve</a>
             </div>
             <div class="hero-footer-info">
                 Service mobile · Montréal · Laval · Rive-Nord
             </div>
+        </div>
+    </section>
+
+    <!-- BOUTIQUE INTELLIGENTE EN TOUT PREMIER PLAN -->
+    <section class="section bb-marketplace" id="boutique">
+        <div class="container">
+            <div class="section-title">
+                <small>LA SÉLECTION BELLA BAY — -10 % AVEC LE CODE BELLA</small>
+                <h2>La Boutique Intelligente</h2>
+                <p>Recherchez instantanément vos produits préférés ou explorez nos sélections par catégorie ci-dessous.</p>
+            </div>
+
+            <div class="bb-smart-assistant" style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
+                <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:15px;font-weight:500;">Que recherchez-vous aujourd'hui ?</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Extensions</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Soins capillaires</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Outils & Coiffure</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Ongles / Press-on</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Épilation & Cire</button>
+                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Tout voir ✨</button>
+                </div>
+            </div>
+
+            <div class="bb-catalog-panel">
+                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre</label>
+                <div class="bb-search-row">
+                    <input id="bbCatalogSearch" type="search" placeholder="Ex. extensions, shampoing, brosse, lisseur, cire…" autocomplete="off">
+                    <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
+                </div>
+                <div class="bb-catalog-filters" style="display:none;">
+                    <select id="bbCatalogBrand"><option value=""></option></select>
+                    <select id="bbCatalogCategory"><option value=""></option></select>
+                    <select id="bbCatalogSort"><option value="popular"></option></select>
+                </div>
+                <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
+                <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
+            </div>
+
+            <div class="bb-products-grid" id="bbCatalogGrid">
+                <!-- SOINS CAPILLAIRES -->
+                <article class="bb-product" data-brand="Cabelo" data-category="soins">
+                    <a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
+                        <img alt="Eufora Beautifying Serum 120 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/beautifying-serum51-oz-120-ml-4229391.jpg?v=1768429273&width=900"/>
+                        <span class="bb-product-tag">Soins · Top 1</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">EUFORA</span>
+                        <h4>Eufora Beautifying Serum</h4>
+                        <p>Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.</p>
+                        <div class="bb-product-price">61,25 $ CAD (Code BELLA)</div>
+                        <a class="bb-product-btn" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="Cabelo" data-category="soins">
+                    <a class="bb-product-image" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
+                        <img alt="Eufora Bodifying Shampoo 280 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/bodifying-shampoo95-fl-oz-280-ml-3965751.jpg?v=1773775514&width=900"/>
+                        <span class="bb-product-tag">Soins · Top 2</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">EUFORA</span>
+                        <h4>Eufora Bodifying Shampoo</h4>
+                        <p>Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.</p>
+                        <div class="bb-product-price">58,10 $ CAD (Code BELLA)</div>
+                        <a class="bb-product-btn" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product bb-partner-card" data-brand="Matrix" data-category="soins">
+                    <div class="bb-extension-art bb-matrix-art">
+                        <span>SOINS PROFESSIONNELS</span>
+                        <strong>MATRIX<br>PROFESSIONAL</strong>
+                    </div>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">MATRIX PROFESSIONAL CANADA</span>
+                        <h4>Soins capillaires Matrix (Top 3)</h4>
+                        <p>Shampooings, revitalisants et masques pour cheveux colorés, bouclés ou abîmés.</p>
+                        <a class="bb-product-btn" href="https://www.matrixprofessional.ca/fr-ca/produits" target="_blank" rel="noopener noreferrer">Explorer Matrix ↗</a>
+                    </div>
+                </article>
+
+                <!-- ÉPILATION & CIRE (RELAX & WAX) AVEC AFFICHES ET VISUELS -->
+                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
+                    <a class="bb-product-image" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">
+                        <img alt="Relax and Wax No Scream Cream" loading="lazy" src="https://www.relaxnwax.com/cdn/shop/files/no-scream-cream-relax-wax-1.jpg?v=1700000000&width=900" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80'"/>
+                        <span class="bb-product-tag">Épilation · Top 1</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">RELAX &amp; WAX</span>
+                        <h4>No Scream Cream</h4>
+                        <p>La célèbre crème anesthésiante pré-épilation pour un confort absolu et sans douleur.</p>
+                        <div class="bb-product-price">29,99 $ USD (Code BELLA)</div>
+                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Relax & Wax ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
+                    <a class="bb-product-image" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">
+                        <img alt="Relax and Wax Hard Wax" loading="lazy" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80"/>
+                        <span class="bb-product-tag">Épilation · Top 2</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">RELAX &amp; WAX</span>
+                        <h4>Cire dure professionnelle</h4>
+                        <p>Cire haute performance spécialement formulée pour une épilation douce et impeccable.</p>
+                        <div class="bb-product-price">24,99 $ USD (Code BELLA)</div>
+                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Relax & Wax ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
+                    <div class="bb-extension-art bb-relax-art">
+                        <span>SOIN POST-ÉPILATION</span>
+                        <strong>RELAX<br>&amp; WAX (Top 3)</strong>
+                    </div>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">RELAX &amp; WAX</span>
+                        <h4>Gamme complète épilation</h4>
+                        <p>Découvrez l'affiche officielle et la sélection complète des soins anti-repousse et hydratants.</p>
+                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" rel="sponsored noopener noreferrer" target="_blank">Découvrir la cire ↗</a>
+                    </div>
+                </article>
+
+                <!-- OUTILS BABYLISSPRO (COLLECTION COMPLÈTE) -->
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO Nano Titanium Prima3000" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw64841b30/BNT3000TUC_Infographic_0000.jpg?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Outils · Top 1</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">NANO TITANIUM</span>
+                        <h4>Prima3000 1¼″ Ionic Styling Iron</h4>
+                        <p>Outil polyvalent professionnel pour lisser, onduler ou boucler.</p>
+                        <div class="bb-product-price">209,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO Style Switch 5-in-1 styler" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw96de6933/BNTSSSW_Main_0000_Award.png?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Outils · Top 2</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">STYLESWITCH</span>
+                        <h4>Style/Switch 5-en-1 Air Styler</h4>
+                        <p>Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.</p>
+                        <div class="bb-product-price">249,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO Portofino dryer" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Outils · Top 3</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">PORTOFINO</span>
+                        <h4>Sèche-cheveux Portofino</h4>
+                        <p>Moteur AC italien de 2000 W et technologie Nano Titanium.</p>
+                        <div class="bb-product-price">149,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/volare-hair-dryer/BFV1.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO Volare dryer" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw8c2794e7/volare-hair-dryer-bfv1-1.jpg?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Ferrari Engine</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">VOLARE</span>
+                        <h4>Sèche-cheveux Volare V1</h4>
+                        <p>Conçu en collaboration avec Ferrari, moteur V12 turbo haute performance.</p>
+                        <div class="bb-product-price">229,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/volare-hair-dryer/BFV1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-ultra-thin-straightening-iron/BNT4073TUC.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO Ultra Thin Straightening Iron" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwc6295577/bnt4073tuc-1.jpg?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Lisseur Pro</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">NANO TITANIUM</span>
+                        <h4>Ultra-Thin Straightening Iron 1½″</h4>
+                        <p>Plaques extra-larges en titane pour un lissage rapide et miroir.</p>
+                        <div class="bb-product-price">169,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-ultra-thin-straightening-iron/BNT4073TUC.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
+                    <a class="bb-product-image" href="https://www.babylisspro.com/miracurl-professional-curl-machine/BABNTMC1.html" rel="noopener noreferrer" target="_blank">
+                        <img alt="BaBylissPRO MiraCurl" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw15147388/babntmc1-1.jpg?sh=1200&sm=fit&sw=1200"/>
+                        <span class="bb-product-tag">Boucleur auto</span>
+                    </a>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">MIRACURL</span>
+                        <h4>MiraCurl Professional Curl Machine</h4>
+                        <p>Machine à boucler automatique révolutionnaire pour des boucles parfaites sans effort.</p>
+                        <div class="bb-product-price">179,99 $ USD</div>
+                        <a class="bb-product-btn" href="https://www.babylisspro.com/miracurl-professional-curl-machine/BABNTMC1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
+                    </div>
+                </article>
+
+                <!-- ONGLES (SIYOU NAILS) -->
+                <article class="bb-product bb-partner-card" data-brand="SIYOU Nails" data-category="ongles">
+                    <div class="bb-extension-art bb-siyou-art">
+                        <span>PRESS-ON NAILS</span>
+                        <strong>SIYOU<br>NAILS (Top 1)</strong>
+                    </div>
+                    <div class="bb-product-info">
+                        <span class="bb-product-brand">SIYOU NAILS</span>
+                        <h4>Press-on nails &amp; collections</h4>
+                        <p>Faux ongles tendance et meilleures ventes SIYOU.</p>
+                        <a class="bb-product-btn" href="https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer">Découvrir SIYOU ↗</a>
+                    </div>
+                </article>
+            </div>
+            <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et peuvent générer une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
         </div>
     </section>
 
@@ -259,7 +484,7 @@
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
-                <small>NOTRE SAVOIR-FAIRE</small>
+                <small>NOTRE SAVOIR-FAIRE — -10 % AVEC LE CODE BELLA</small>
                 <h2>Nos Services</h2>
                 <p>Des services professionnels pensés pour révéler, soigner et sublimer votre chevelure.</p>
             </div>
@@ -286,7 +511,7 @@
                     <h2>La beauté,<br>chez vous.</h2>
                     <p>Bella Bay offre déjà des services privés mobiles directement à domicile, pour vous permettre de profiter d'une expérience professionnelle dans le confort de votre espace.</p>
                     <div class="area-list"><span>MONTRÉAL</span><span>LAVAL</span><span>RIVE-NORD</span></div>
-                    <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
+                    <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver (-10% avec BELLA)</a>
                 </div>
             </div>
         </div>
@@ -310,177 +535,6 @@
         </div>
     </section>
 
-    <!-- BOUTIQUE GÉNÉRALE -->
-    <section class="section bb-marketplace" id="boutique">
-        <div class="container">
-            <div class="section-title">
-                <small>LA SÉLECTION BELLA BAY</small>
-                <h2>La Boutique Intelligente</h2>
-                <p>Explorez l'ensemble de nos collections partenaires : soins, outils, ongles et épilation professionnelle.</p>
-            </div>
-
-            <div class="bb-smart-assistant" style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
-                <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay</span>
-                <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:15px;font-weight:500;">Que recherchez-vous aujourd'hui ?</h3>
-                <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Extensions</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Soins capillaires</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Outils & Coiffure</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Ongles / Press-on</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Épilation & Cire</button>
-                    <button type="button" class="bb-quick-btn" onclick="filterByQuick('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;transition:.2s;">Tout voir ✨</button>
-                </div>
-            </div>
-
-            <div class="bb-catalog-panel">
-                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre</label>
-                <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Ex. extensions, shampoing, brosse, lisseur, cire…" autocomplete="off">
-                    <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
-                </div>
-                <div class="bb-catalog-filters" style="display:none;">
-                    <select id="bbCatalogBrand"><option value=""></option></select>
-                    <select id="bbCatalogCategory"><option value=""></option></select>
-                    <select id="bbCatalogSort"><option value="popular"></option></select>
-                </div>
-                <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
-                <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
-            </div>
-
-            <div class="bb-products-grid" id="bbCatalogGrid">
-                <!-- SOINS CAPILLAIRES (Cabelo / Eufora) -->
-                <article class="bb-product" data-brand="Cabelo" data-category="soins">
-                    <a class="bb-product-image" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Eufora Beautifying Serum 120 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/beautifying-serum51-oz-120-ml-4229391.jpg?v=1768429273&width=900"/>
-                        <span class="bb-product-tag">Best seller Cabelo</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">EUFORA</span>
-                        <h4>Eufora Beautifying Serum</h4>
-                        <p>Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.</p>
-                        <div class="bb-product-price">61,25 $ CAD</div>
-                        <a class="bb-product-btn" href="https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="Cabelo" data-category="soins">
-                    <a class="bb-product-image" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="Eufora Bodifying Shampoo 280 ml" loading="lazy" src="https://cabelo.ca/cdn/shop/files/bodifying-shampoo95-fl-oz-280-ml-3965751.jpg?v=1773775514&width=900"/>
-                        <span class="bb-product-tag">Best seller Cabelo</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">EUFORA</span>
-                        <h4>Eufora Bodifying Shampoo</h4>
-                        <p>Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.</p>
-                        <div class="bb-product-price">58,10 $ CAD</div>
-                        <a class="bb-product-btn" href="https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
-                    </div>
-                </article>
-
-                <!-- ACCESSOIRES & OUTILS (Cabelo / Varis) -->
-                <article class="bb-product" data-brand="Cabelo" data-category="outils">
-                    <a class="bb-product-image" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">
-                        <img alt="VARIS Boar Brush" loading="lazy" src="https://cabelo.ca/cdn/shop/files/boar-brushsmall-25mm-barrel-size-1049372.jpg?v=1768428988&width=900"/>
-                        <span class="bb-product-tag">Best seller Cabelo</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">VARIS</span>
-                        <h4>VARIS Boar Brush</h4>
-                        <p>Brosse ronde en poils de sanglier et nylon pour lisser et mettre en forme.</p>
-                        <div class="bb-product-price">50,00 $ CAD</div>
-                        <a class="bb-product-btn" href="https://cabelo.ca/products/varis-boar-brush?variant=46916407656668&ref=RB5GWIU3TO" rel="sponsored noopener noreferrer" target="_blank">Acheter chez Cabelo ↗</a>
-                    </div>
-                </article>
-
-                <!-- SOINS & PRODUITS (Matrix Professional) -->
-                <article class="bb-product bb-partner-card" data-brand="Matrix" data-category="soins">
-                    <div class="bb-extension-art bb-matrix-art">
-                        <span>SOINS PROFESSIONNELS</span>
-                        <strong>MATRIX<br>PROFESSIONAL</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">MATRIX PROFESSIONAL CANADA</span>
-                        <h4>Soins capillaires Matrix</h4>
-                        <p>Explorez les shampooings, revitalisants, masques, huiles et traitements pour cheveux secs, colorés, bouclés ou abîmés.</p>
-                        <a class="bb-product-btn" href="https://www.matrixprofessional.ca/fr-ca/produits" target="_blank" rel="noopener noreferrer">Explorer le catalogue Matrix ↗</a>
-                    </div>
-                </article>
-
-                <!-- ONGLES (SIYOU Nails) -->
-                <article class="bb-product bb-partner-card" data-brand="SIYOU Nails" data-category="ongles">
-                    <div class="bb-extension-art bb-siyou-art">
-                        <span>PRESS-ON NAILS</span>
-                        <strong>SIYOU<br>NAILS</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">SIYOU NAILS</span>
-                        <h4>Press-on nails &amp; collections</h4>
-                        <p>Découvrez les collections de faux ongles, les styles tendance et les meilleures ventes SIYOU.</p>
-                        <a class="bb-product-btn" href="https://siyounails.com/collections/best-sellers?bg_ref=ZstBNGvBXQ&utm_source=ZstBNGvBXQ&utm_medium=affiliate&utm_campaign=SIYOU%20Affiliates" target="_blank" rel="sponsored noopener noreferrer">Découvrir SIYOU ↗</a>
-                    </div>
-                </article>
-
-                <!-- ESTHÉTIQUE & ÉPILATION (Relax & Wax) -->
-                <article class="bb-product bb-partner-card" data-brand="Relax &amp; Wax" data-category="esthetique">
-                    <div class="bb-extension-art bb-relax-art">
-                        <span>ÉPILATION &amp; CIRE</span>
-                        <strong>RELAX<br>&amp; WAX</strong>
-                    </div>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">RELAX &amp; WAX</span>
-                        <h4>Cire &amp; épilation professionnelle</h4>
-                        <p>Découvrez notre sélection de cires professionnelles et de soins d'épilation haute performance pour un résultat impeccable.</p>
-                        <a class="bb-product-btn" href="https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c" target="_blank" rel="sponsored noopener noreferrer">Découvrir la cire Relax & Wax ↗</a>
-                    </div>
-                </article>
-
-                <!-- OUTILS BABYLISSPRO -->
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Nano Titanium Prima3000 styling iron" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw64841b30/BNT3000TUC_Infographic_0000.jpg?sh=1200&sm=fit&sw=1200"/>
-                        <span class="bb-product-tag">Best seller</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">NANO TITANIUM</span>
-                        <h4>Prima3000 1¼″ Ionic Styling Iron</h4>
-                        <p>Outil polyvalent pour lisser, onduler ou boucler.</p>
-                        <div class="bb-product-price">209,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Style Switch 5-in-1 styler" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw96de6933/BNTSSSW_Main_0000_Award.png?sh=1200&sm=fit&sw=1200"/>
-                        <span class="bb-product-tag">Best seller</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">STYLESWITCH</span>
-                        <h4>Style/Switch 5-en-1</h4>
-                        <p>Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.</p>
-                        <div class="bb-product-price">249,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-
-                <article class="bb-product" data-brand="BaBylissPRO" data-category="outils">
-                    <a class="bb-product-image" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">
-                        <img alt="BaBylissPRO Portofino dryer" loading="lazy" src="https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sh=1200&sm=fit&sw=1200"/>
-                        <span class="bb-product-tag">Best seller</span>
-                    </a>
-                    <div class="bb-product-info">
-                        <span class="bb-product-brand">PORTOFINO</span>
-                        <h4>Sèche-cheveux Portofino</h4>
-                        <p>Moteur AC italien de 2000 W et technologie Nano Titanium.</p>
-                        <div class="bb-product-price">149,99 $ USD</div>
-                        <a class="bb-product-btn" href="https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html" rel="noopener noreferrer" target="_blank">Voir le produit ↗</a>
-                    </div>
-                </article>
-            </div>
-            <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et peuvent générer une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
-        </div>
-    </section>
-
     <section class="future" id="salon">
         <h2>Notre Futur<br>Salon Physique</h2>
         <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
@@ -496,11 +550,11 @@
             <div>
                 <div class="footer-title">Navigation</div>
                 <div class="footer-links">
+                    <a href="#boutique">Boutique en ligne</a>
                     <a href="#services">Services</a>
                     <a href="#mobile">Service mobile</a>
                     <a href="#histoire">Histoire</a>
                     <a href="#extensions-page">Extensions</a>
-                    <a href="#boutique">Boutique en ligne</a>
                     <a href="#salon">Salon</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -523,17 +577,17 @@
         <div class="footer-bottom">© 2026 Bella Bay (B.B) — Coiffure & Beauté. Tous droits réservés.</div>
     </footer>
 
-    <!-- Pop-up Black Friday -->
+    <!-- Pop-up Black Friday / Code Promo -->
     <div class="bb-blackfriday-overlay" id="bbBlackFridayPopup" aria-hidden="true">
         <section class="bb-blackfriday-dialog" role="dialog" aria-modal="true" aria-labelledby="bbBlackFridayTitle" aria-describedby="bbBlackFridayCopy">
             <button class="bb-blackfriday-close" type="button" id="bbBlackFridayClose" aria-label="Fermer la publicité">×</button>
-            <span class="bb-blackfriday-eyebrow">UNE OFFRE EXCLUSIVE BELLA BAY</span>
-            <h2 class="bb-blackfriday-title" id="bbBlackFridayTitle">BLACK <span>FRIDAY</span></h2>
-            <p class="bb-blackfriday-copy" id="bbBlackFridayCopy">Découvrez la sélection Bella Bay et profitez d'un avantage spécial pour le Black Friday.</p>
-            <strong class="bb-blackfriday-discount">10 % DE RABAIS</strong>
+            <span class="bb-blackfriday-eyebrow">OFFRE SPÉCIALE BELLA BAY</span>
+            <h2 class="bb-blackfriday-title" id="bbBlackFridayTitle">-10 % DE <span>RABAIS</span></h2>
+            <p class="bb-blackfriday-copy" id="bbBlackFridayCopy">Profitez de 10 % de rabais sur tous nos services de coiffure et sur la boutique en ligne avec notre code exclusif !</p>
+            <strong class="bb-blackfriday-discount">- 10 %</strong>
             <span class="bb-blackfriday-code" aria-label="Code promotionnel BELLA">BELLA</span>
-            <a class="bb-blackfriday-cta" href="#extensions-page" id="bbBlackFridayShop">PROFITER DE L'OFFRE ↗</a>
-            <small class="bb-blackfriday-note">Entrez le code BELLA auprès du partenaire participant. Offre soumise aux conditions du marchand.</small>
+            <a class="bb-blackfriday-cta" href="#boutique" id="bbBlackFridayShop">PROFITER DE L'OFFRE ↗</a>
+            <small class="bb-blackfriday-note">Entrez le code BELLA lors de votre réservation ou auprès des partenaires participants.</small>
         </section>
     </div>
 
@@ -576,13 +630,13 @@
             if(boutiqueSec) boutiqueSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Pop-up Black Friday
+        // Pop-up Promo
         (function(){
             const popup=document.getElementById('bbBlackFridayPopup');
             const closeButton=document.getElementById('bbBlackFridayClose');
             const shopButton=document.getElementById('bbBlackFridayShop');
             if(!popup||!closeButton||!shopButton)return;
-            const storageKey='bellaBayBlackFridayDismissedAt';
+            const storageKey='bellaBayPromoDismissedAt';
             let previousFocus=null;
             const close=()=>{
                 popup.classList.remove('is-open');
@@ -607,21 +661,21 @@
                 try{localStorage.setItem(storageKey,String(Date.now()));}catch(e){}
             });
             let dismissed=false;
-            try{const stamp=Number(localStorage.getItem(storageKey)||0);dismissed=stamp>0&&(Date.now()-stamp)<30*24*60*60*1000;}catch(e){}
+            try{const stamp=Number(localStorage.getItem(storageKey)||0);dismissed=stamp>0&&(Date.now()-stamp)<7*24*60*60*1000;}catch(e){}
             if(!dismissed){window.addEventListener('load',()=>window.setTimeout(open,700));}
         })();
 
         // Services modal data
         const services={
-            coloration:{number:"SERVICE 01",title:"Coloration de base",description:"Une coloration complète pour uniformiser, raviver ou changer votre couleur tout en créant un résultat lumineux et personnalisé.",technique:"La couleur est appliquée sur l'ensemble des cheveux afin d'obtenir une teinte uniforme et harmonieuse.",result:"Une couleur plus uniforme, brillante et adaptée à votre style.",price:"95 $"},
-            fantaisie:{number:"SERVICE 02",title:"Coloration fantaisie",description:"Pour celles qui souhaitent ajouter une couleur plus créative, originale ou différente des tons classiques.",technique:"La couleur est choisie selon le résultat désiré. Une préparation éclaircissante peut être nécessaire selon la couleur de départ.",result:"Une couleur expressive et personnalisée.",price:"120 $"},
-            meches:{number:"SERVICE 03",title:"Mèches",description:"Des mèches permettent d'éclaircir certaines parties de la chevelure afin d'ajouter de la lumière et de la dimension.",technique:"Les cheveux sont séparés en sections et certaines mèches sont éclaircies de façon ciblée.",result:"Une chevelure plus lumineuse et dimensionnelle.",price:"110 $"},
-            contouring:{number:"SERVICE 04",title:"Contouring",description:"Une technique qui place de la lumière autour du visage afin de créer un effet plus lumineux et personnalisé.",technique:"Les mèches sont concentrées à des endroits stratégiques autour du visage.",result:"Un effet lumineux qui attire naturellement le regard vers le visage.",price:"90 $"},
-            balayage:{number:"SERVICE 05",title:"Ombré Hair & Balayage",description:"Un éclaircissement progressif qui permet de conserver une base plus foncée tout en créant des longueurs et des pointes très blondes.",technique:"Les éclaircissements sont placés progressivement dans les longueurs pour créer une transition douce entre la couleur foncée et le blond.",result:"Un effet balayage californien lumineux, avec une transition fondue et des pointes très claires.",price:"À partir de 130 $"},
-            traitement:{number:"SERVICE 06",title:"Traitement capillaire",description:"Un soin destiné aux cheveux qui ont besoin d'hydratation, de douceur, de nutrition ou d'un coup de revitalisation.",technique:"Le traitement est choisi selon l'état et les besoins de la chevelure.",result:"Des cheveux plus doux, souples et visiblement plus soignés.",price:"80 $"},
-            botox:{number:"SERVICE 07",title:"Botox capillaire",description:"Un soin profond qui vise à améliorer l'apparence des cheveux secs, ternes ou difficiles à discipliner.",technique:"Le soin est appliqué sur la chevelure puis travaillé afin de favoriser un résultat plus lisse et plus uniforme.",result:"Des cheveux plus doux, brillants et faciles à coiffer.",price:"140 $"},
-            keratine:{number:"SERVICE 08",title:"Lissage à la kératine",description:"Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",technique:"Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",result:"Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",price:"180 $"},
-            extensions:{number:"SERVICE 09",title:"Extensions capillaires",description:"Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",extensionList:true,result:"La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",price:"À partir de 120 $"}
+            coloration:{number:"SERVICE 01",title:"Coloration de base (-10% avec BELLA)",description:"Une coloration complète pour uniformiser, raviver ou changer votre couleur tout en créant un résultat lumineux et personnalisé.",technique:"La couleur est appliquée sur l'ensemble des cheveux afin d'obtenir une teinte uniforme et harmonieuse.",result:"Une couleur plus uniforme, brillante et adaptée à votre style.",price:"95 $ (Rabais -10% avec le code BELLA)"},
+            fantaisie:{number:"SERVICE 02",title:"Coloration fantaisie (-10% avec BELLA)",description:"Pour celles qui souhaitent ajouter une couleur plus créative, originale ou différente des tons classiques.",technique:"La couleur est choisie selon le résultat désiré. Une préparation éclaircissante peut être nécessaire selon la couleur de départ.",result:"Une couleur expressive et personnalisée.",price:"120 $ (Rabais -10% avec le code BELLA)"},
+            meches:{number:"SERVICE 03",title:"Mèches (-10% avec BELLA)",description:"Des mèches permettent d'éclaircir certaines parties de la chevelure afin d'ajouter de la lumière et de la dimension.",technique:"Les cheveux sont séparés en sections et certaines mèches sont éclaircies de façon ciblée.",result:"Une chevelure plus lumineuse et dimensionnelle.",price:"110 $ (Rabais -10% avec le code BELLA)"},
+            contouring:{number:"SERVICE 04",title:"Contouring (-10% avec BELLA)",description:"Une technique qui place de la lumière autour du visage afin de créer un effet plus lumineux et personnalisé.",technique:"Les mèches sont concentrées à des endroits stratégiques autour du visage.",result:"Un effet lumineux qui attire naturellement le regard vers le visage.",price:"90 $ (Rabais -10% avec le code BELLA)"},
+            balayage:{number:"SERVICE 05",title:"Ombré Hair & Balayage (-10% avec BELLA)",description:"Un éclaircissement progressif qui permet de conserver une base plus foncée tout en créant des longueurs et des pointes très blondes.",technique:"Les éclaircissements sont placés progressivement dans les longueurs pour créer une transition douce entre la couleur foncée et le blond.",result:"Un effet balayage californien lumineux, avec une transition fondue et des pointes très claires.",price:"À partir de 130 $ (Rabais -10% avec le code BELLA)"},
+            traitement:{number:"SERVICE 06",title:"Traitement capillaire (-10% avec BELLA)",description:"Un soin destiné aux cheveux qui ont besoin d'hydratation, de douceur, de nutrition ou d'un coup de revitalisation.",technique:"Le traitement est choisi selon l'état et les besoins de la chevelure.",result:"Des cheveux plus doux, souples et visiblement plus soignés.",price:"80 $ (Rabais -10% avec le code BELLA)"},
+            botox:{number:"SERVICE 07",title:"Botox capillaire (-10% avec BELLA)",description:"Un soin profond qui vise à améliorer l'apparence des cheveux secs, ternes ou difficiles à discipliner.",technique:"Le soin est appliqué sur la chevelure puis travaillé afin de favoriser un résultat plus lisse et plus uniforme.",result:"Des cheveux plus doux, brillants et faciles à coiffer.",price:"140 $ (Rabais -10% avec le code BELLA)"},
+            keratine:{number:"SERVICE 08",title:"Lissage à la kératine (-10% avec BELLA)",description:"Une solution pour réduire l'apparence des frisottis et faciliter la mise en beauté quotidienne.",technique:"Le produit est appliqué sur les cheveux puis activé avec la chaleur selon la méthode utilisée.",result:"Des cheveux plus disciplinés, plus lisses et plus faciles à coiffer.",price:"180 $ (Rabais -10% avec le code BELLA)"},
+            extensions:{number:"SERVICE 09",title:"Extensions capillaires (-10% avec BELLA)",description:"Les extensions permettent d'ajouter de la longueur, du volume ou les deux, selon vos cheveux et le résultat que vous recherchez.",extensionList:true,result:"La méthode est choisie selon votre chevelure, votre objectif et le résultat souhaité.",price:"À partir de 120 $ (Rabais -10% avec le code BELLA)"}
         };
         function openService(serviceKey){
             const service=services[serviceKey];if(!service)return;
@@ -743,9 +797,7 @@
         background: #128C7E;
     }
 </style>
-<a href="https://wa.me/15145822856?text=Bonjour%20Bella%20Bay%20!%20Je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20extensions.%20✨" class="bb-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacter Bella Bay sur WhatsApp">
+<a href="https://wa.me/15145822856?text=Bonjour%20Bella%20Bay%20!%20Je%20souhaite%20profiter%20du%20rabais%20de%2010%%20avec%20le%20code%20BELLA.%20✨" class="bb-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacter Bella Bay sur WhatsApp">
     💬
 </a>
 </html>
-
-```
