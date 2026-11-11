@@ -17,6 +17,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org Données Structurées pour Google Merchant & Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OnlineStore",
+      "name": "Bella Bay",
+      "url": "https://bellabay.ca",
+      "logo": "https://bellabay.ca/assets/logo-bb.png",
+      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=90",
+      "description": "Maison de coiffure, extensions et boutique beauté à Montréal, Laval et sur la Rive-Nord.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Laval",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "telephone": "+1-514-582-2856",
+      "priceRange": "$$"
+    }
+    </script>
+
     <style>
         :root{--black:#080607;--black2:#151012;--pink:#f3d3dc;--pink2:#f9e8ed;--rose:#cf8fa1;--rose-dark:#9d6173;--gold:#c9a45c;--gold-dark:#8c6d2d;--gold-light:#e8cf98;--white:#fff;--cream:#fffafa;--text:#292124;--gray:#756b6f}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:Montserrat,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}body.modal-open{overflow:hidden}img{max-width:100%;display:block}a{text-decoration:none}
@@ -59,7 +81,7 @@
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
         
-        /* Cartes Graphiques Rose & Or Infaillibles - Texte contrasté or foncé chic */
+        /* Cartes Graphiques Rose & Or Infaillibles */
         .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
         .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--gold-dark);letter-spacing:2.5px;margin-bottom:8px;font-weight:800;text-shadow:0 1px 2px rgba(255,255,255,0.8)}
         .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#1c1417;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.9)}
@@ -213,7 +235,7 @@
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
             </div>
 
-            <!-- Grille de produits officielle (Matrix, Eufora, Relax & Wax, BaBylissPRO) -->
+            <!-- Grille de produits officielle -->
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
 
             <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et génèrent une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
@@ -381,7 +403,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE LA BOUTIQUE OFFICIEL (MATRIX, EUFORA, RELAX & WAX, BABYLISSPRO) -->
+    <!-- SCRIPT DE LA BOUTIQUE -->
     <script>
         function toggleMenu() {
             document.getElementById('dropdownMenu').classList.toggle('active');
