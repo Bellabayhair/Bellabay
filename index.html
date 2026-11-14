@@ -176,11 +176,39 @@
         .bb-cart-note{font-size:10px;color:#766d70;margin-top:10px;line-height:1.6}
         .bb-cart-checkout{width:100%;padding:15px;background:linear-gradient(135deg,#f2dcc0,#c6a66b);border:1px solid #c6a66b;color:#1c1417;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border-radius:3px}
 
+        .bb-holiday-bar{background:linear-gradient(90deg,#1f4d2e,#2c6b40,#1f4d2e);color:#f4e6c2;text-align:center;padding:10px 14px;font:600 12px Montserrat,sans-serif;letter-spacing:1px;}
+        .bb-holiday-bar strong{color:#fff;}
+        .bb-snow{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden;}
+        .bb-snow span{position:absolute;top:-12px;color:#fff;opacity:.5;animation:bbSnowFall linear infinite;}
+        @keyframes bbSnowFall{to{transform:translateY(105vh);}}
+        .bb-snow span:nth-child(1){left:4%;animation-duration:17s;animation-delay:0s;font-size:10px;}
+        .bb-snow span:nth-child(2){left:12%;animation-duration:21s;animation-delay:3s;font-size:14px;}
+        .bb-snow span:nth-child(3){left:20%;animation-duration:15s;animation-delay:6s;font-size:9px;}
+        .bb-snow span:nth-child(4){left:28%;animation-duration:23s;animation-delay:1s;font-size:12px;}
+        .bb-snow span:nth-child(5){left:37%;animation-duration:18s;animation-delay:8s;font-size:10px;}
+        .bb-snow span:nth-child(6){left:45%;animation-duration:22s;animation-delay:4s;font-size:13px;}
+        .bb-snow span:nth-child(7){left:53%;animation-duration:16s;animation-delay:2s;font-size:9px;}
+        .bb-snow span:nth-child(8){left:61%;animation-duration:20s;animation-delay:7s;font-size:14px;}
+        .bb-snow span:nth-child(9){left:70%;animation-duration:15s;animation-delay:5s;font-size:10px;}
+        .bb-snow span:nth-child(10){left:78%;animation-duration:24s;animation-delay:0s;font-size:12px;}
+        .bb-snow span:nth-child(11){left:87%;animation-duration:18s;animation-delay:9s;font-size:11px;}
+        .bb-snow span:nth-child(12){left:95%;animation-duration:21s;animation-delay:3s;font-size:13px;}
+        .bb-trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:28px 0 6px;}
+        .bb-trust div{border:1px solid #e8dcc8;background:#fffaf3;border-radius:6px;padding:16px 12px;text-align:center;}
+        .bb-trust span{font-size:22px;display:block;margin-bottom:6px;}
+        .bb-trust strong{display:block;font:700 12px Montserrat,sans-serif;color:#241a1f;letter-spacing:.5px;}
+        .bb-trust small{display:block;font-size:11px;color:#766d70;margin-top:4px;}
+        @media(max-width:700px){.bb-trust{grid-template-columns:repeat(2,minmax(0,1fr));}}
         @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
         @media(max-width:700px){.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
+    <!-- BANNIÈRE DES FÊTES -->
+    <div class="bb-holiday-bar">
+        <span>🎄 Offres des Fêtes — <strong>-10 % sur toute la boutique avec le code BELLA</strong> 🎁 <span id="bbXmasCount"></span></span>
+    </div>
+    <div class="bb-snow" aria-hidden="true"><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span><span>❄</span></div>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTHHWZRZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -198,7 +226,7 @@
                 <a href="#services">Services</a>
                 <a href="#mobile">Service mobile</a>
                 <a href="#histoire">Histoire</a>
-                <a href="#extensions-page">Extensions</a>
+                <a href="#boutique">Extensions</a>
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
                 <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
@@ -212,7 +240,7 @@
                     <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
                     <a href="#mobile" onclick="toggleMenu();">Service mobile</a>
                     <a href="#histoire" onclick="toggleMenu();">Notre Histoire</a>
-                    <a href="#extensions-page" onclick="toggleMenu();">✨ Extensions de Rêve</a>
+                    <a href="#boutique" onclick="toggleMenu();">✨ Extensions de Rêve</a>
                     <a href="#salon" onclick="toggleMenu();">Salon</a>
                     <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();toggleCart(true);">🛒 Mon panier</a>
@@ -229,7 +257,7 @@
             <p>Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
             <div class="hero-buttons">
                 <a href="#boutique" class="btn-gold">Explorer la boutique intelligente</a>
-                <a href="#extensions-page" class="btn-outline">Voir les extensions de rêve</a>
+                <a href="#boutique" class="btn-outline">Voir les extensions de rêve</a>
             </div>
             <div class="hero-footer-info" style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px;">
                 Service mobile · Montréal · Laval · Rive-Nord
@@ -241,15 +269,18 @@
     <section class="section bb-marketplace" id="boutique">
         <div class="container">
             <div class="section-title">
-                <small>LA SÉLECTION BELLA BAY — -10 % AVEC LE CODE BELLA</small>
+                <small>🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄</small>
                 <h2>La Boutique Intelligente</h2>
-                <p>Recherchez instantanément vos produits préférés ou explorez par catégorie ci-dessous.</p>
+                <p>Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — par exemple « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.</p>
             </div>
 
             <div style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
                 <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+                    <button type="button" onclick="filterByCategory('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Extensions</button>
                     <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins & Shampooings</button>
+                    <button type="button" onclick="filterByCategory('coiffage')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Coiffage</button>
+                    <button type="button" onclick="filterByCategory('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Ongles</button>
                     <button type="button" onclick="filterByCategory('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Outils & Coiffure</button>
                     <button type="button" onclick="filterByCategory('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Cire</button>
                     <button type="button" onclick="filterByCategory('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Tout voir ✨</button>
@@ -257,10 +288,19 @@
             </div>
 
             <div class="bb-catalog-panel">
-                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, eufora, sérum…)</label>
+                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, ongles, sérum…)</label>
                 <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, eufora…" autocomplete="off">
+                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, ongles, sérum…" autocomplete="off">
                     <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap;">
+                    <label for="bbSortSelect" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;">Trier par</label>
+                    <select id="bbSortSelect" onchange="changeSort(this.value)" style="padding:9px 12px;border:1px solid #d8b98a;border-radius:4px;background:#fff;font:600 13px Montserrat,sans-serif;color:#241a1f;">
+                        <option value="pop">Plus populaire</option>
+                        <option value="rating">Mieux noté</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                    </select>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
@@ -268,62 +308,19 @@
 
             <!-- Grille de produits officielle -->
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
+            <div id="bbPagination" style="display:flex;gap:8px;justify-content:center;align-items:center;margin:26px 0 8px;flex-wrap:wrap;"></div>
 
-            <p class="bb-shop-disclaimer">Commandez directement sur Bella Bay : ajoutez vos produits au panier et finalisez votre commande sur WhatsApp. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.</p>
+            <div class="bb-trust">
+                <div><span>🔒</span><strong>Paiement sécurisé</strong><small>PayPal ou carte bancaire</small></div>
+                <div><span>✨</span><strong>Produits authentiques</strong><small>Vérifiés un par un</small></div>
+                <div><span>🎁</span><strong>Idées cadeaux</strong><small>Pour vos proches ou pour vous</small></div>
+                <div><span>💗</span><strong>Code BELLA -10 %</strong><small>Sur tout le panier</small></div>
+            </div>
+
+            <p class="bb-shop-disclaimer">Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.</p>
         </div>
     </section>
 
-    <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE -->
-    <section class="bb-extensions-showcase" id="extensions-page">
-        <div class="bb-ext-header">
-            <small>✨ COLLECTION EXTENSIONS — CHEVEUX HUMAINS 100 % REMY</small>
-            <h2>Le Comptoir des <span>Extensions de Rêve</span></h2>
-            <p>Pour toutes les amatrices de mode, de glamour et de belles chevelures : découvrez notre sélection d'extensions haut de gamme en cheveux humains, clips, adhésives et halo pour un volume et une longueur spectaculaires.</p>
-        </div>
-        <div class="bb-ext-grid">
-            <article class="bb-ext-card">
-                <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
-                    <img src="https://pahairextensions.com/cdn/shop/files/7-51_60-Clip-In-Hair-Extensions.jpg?v=1771915142&width=800" alt="Extensions à clips Remy AiryHair" loading="lazy">
-                    <div class="bb-ext-banner-title">Extensions à Clips</div>
-                </div>
-                <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
-                    <h3>Extensions à Clips</h3>
-                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés. Dès 28,40 $ CAD.</p>
-                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-clips')">Ajouter au panier 🛒</button>
-                </div>
-            </article>
-
-            <article class="bb-ext-card">
-                <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
-                    <img src="https://googoohair.com/cdn/shop/files/goo_goo_tape_in_hair_extensions_ash_blonde_highlights_17a60_4_8a6f8ead-e388-4652-a488-c1b3ed05f054.jpg?crop=center&height=800&v=1782719533&width=800" alt="Extensions adhésives tape-in Remy AiryHair" loading="lazy">
-                    <div class="bb-ext-banner-title">Extensions Adhésives</div>
-                </div>
-                <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
-                    <h3>Extensions Adhésives / Tape-in</h3>
-                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel. Dès 18,41 $ CAD.</p>
-                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-tapein')">Ajouter au panier 🛒</button>
-                </div>
-            </article>
-
-            <article class="bb-ext-card">
-                <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
-                    <img src="https://i.ebayimg.com/images/g/J-YAAOSwETdkPKOe/s-l1200.webp" alt="Extensions halo sur mesure AiryHair" loading="lazy">
-                    <div class="bb-ext-banner-title">Extensions Halo</div>
-                </div>
-                <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
-                    <h3>Extensions Halo</h3>
-                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle. Dès 28,40 $ CAD.</p>
-                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-halo')">Ajouter au panier 🛒</button>
-                </div>
-            </article>
-        </div>
-    </section>
 
     <!-- SERVICES DE COIFFURE -->
     <section class="section" id="services">
@@ -403,7 +400,7 @@
                     <a href="#services">Services</a>
                     <a href="#mobile">Service mobile</a>
                     <a href="#histoire">Histoire</a>
-                    <a href="#extensions-page">Extensions</a>
+                    <a href="#boutique">Extensions</a>
                     <a href="#salon">Salon</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -434,10 +431,20 @@
         </div>
         <div class="bb-cart-items" id="bbCartItems"></div>
         <div class="bb-cart-foot">
+            <div class="bb-promo" id="bbPromoBox">
+                <label for="bbPromoInput" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;">Code promo</label>
+                <div style="display:flex;gap:8px;margin-top:6px;">
+                    <input id="bbPromoInput" type="text" placeholder="Ex. BELLA" autocomplete="off" style="flex:1;padding:10px;border:1px solid #d8b98a;border-radius:4px;text-transform:uppercase;min-width:0;">
+                    <button type="button" onclick="applyPromo()" class="bb-search-button" style="padding:10px 16px;white-space:nowrap;">Appliquer</button>
+                </div>
+                <p id="bbPromoMsg" style="font-size:12px;margin:8px 0 0;color:#8a5a6b;"></p>
+            </div>
+            <div class="bb-cart-total" id="bbCartSubtotalRow" style="display:none"><span>Sous-total</span><span id="bbCartSubtotal">0,00 $ CAD</span></div>
+            <div class="bb-cart-total" id="bbCartDiscountRow" style="display:none"><span>Rabais BELLA (-10 %)</span><span id="bbCartDiscount">-0,00 $ CAD</span></div>
             <div class="bb-cart-total"><span>Total</span><span id="bbCartTotal">0,00 $ CAD</span></div>
             <div id="bbPaypalButtons"></div>
             <p class="bb-cart-note" id="bbPaypalNote" style="display:none">Paiement PayPal en cours d'activation : remplacez YOUR_PAYPAL_CLIENT_ID par votre identifiant PayPal (voir le commentaire dans le code, une seule ligne).</p>
-            <p class="bb-cart-note">Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies.</p>
+            <p class="bb-cart-note">Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies. 🎄 Pour les Fêtes, pensez à commander tôt pour recevoir vos cadeaux à temps.</p>
             <p class="bb-cart-note" id="bbCartSuccess" style="display:none"></p>
         </div>
     </div>
@@ -460,10 +467,70 @@
 
         const bbProducts = [
             {
+                brand: "AIRYHAIR",
+                category: "extensions",
+                tag: "Extensions · Best-seller",
+                id: "ext-clips",
+                priceCAD: 28.40,
+                rating: 4.9,
+                reviews: 172,
+                title: "Extensions à Clips",
+                desc: "La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés. Cheveux humains 100 % Remy.",
+                price: "Dès 28,40 $ CAD (Code BELLA)",
+                img: "https://pahairextensions.com/cdn/shop/files/7-51_60-Clip-In-Hair-Extensions.jpg?v=1771915142&width=800"
+            },
+            {
+                brand: "AIRYHAIR",
+                category: "extensions",
+                tag: "Extensions · Adhésives",
+                id: "ext-tapein",
+                priceCAD: 18.41,
+                rating: 4.9,
+                reviews: 123,
+                title: "Extensions Adhésives / Tape-in",
+                desc: "L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel. Cheveux humains 100 % Remy.",
+                price: "Dès 18,41 $ CAD (Code BELLA)",
+                img: "https://googoohair.com/cdn/shop/files/goo_goo_tape_in_hair_extensions_ash_blonde_highlights_17a60_4_8a6f8ead-e388-4652-a488-c1b3ed05f054.jpg?crop=center&height=800&v=1782719533&width=800"
+            },
+            {
+                brand: "AIRYHAIR",
+                category: "extensions",
+                tag: "Extensions · Halo",
+                id: "ext-halo",
+                priceCAD: 28.40,
+                title: "Extensions Halo",
+                desc: "Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle. Cheveux humains 100 % Remy.",
+                price: "Dès 28,40 $ CAD (Code BELLA)",
+                img: "https://i.ebayimg.com/images/g/J-YAAOSwETdkPKOe/s-l1200.webp"
+            },
+            {
+                brand: "AIRYHAIR",
+                category: "extensions",
+                tag: "Extensions · Queue de cheval",
+                id: "ext-ponytail",
+                priceCAD: 42.67,
+                title: "Extensions Queue de Cheval (Wrap)",
+                desc: "Queue de cheval enveloppante facile à attacher, sans pinces. Cheveux humains 100 % Remy, longueurs et couleurs au choix.",
+                price: "29,90 $ USD · environ 42,67 $ CAD",
+                img: "https://www.airyhair.com/images/curly-hq.jpg"
+            },
+            {
+                brand: "AIRYHAIR",
+                category: "extensions",
+                tag: "Extensions · Trame",
+                id: "ext-weft",
+                priceCAD: 65.50,
+                title: "Extensions à Trame (Weft)",
+                desc: "Trame Remy 100 % cheveux humains à coudre ou à coller. Longueur jusqu'à 40 pouces, densité au choix.",
+                price: "45,90 $ USD · environ 65,50 $ CAD",
+                img: "https://www.airyhair.com/images/super-soft-hair-hq.jpg"
+            },
+            {
                 brand: "EUFORA",
                 category: "soins",
                 tag: "Soins · Best-seller",
                 id: "eufora-serum",
+                gift: true,
                 priceCAD: 61.25,
                 title: "Eufora Beautifying Serum",
                 desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse. Pour tous les types de cheveux.",
@@ -512,6 +579,188 @@
                 linkText: "Acheter chez Cabelo ↗"
             },
             {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Shampooing · Réparation",
+                id: "eufora-urgent-repair-shampoo",
+                priceCAD: 53.25,
+                title: "Eufora Urgent Repair Shampoo",
+                desc: "Shampooing réparateur pour cheveux abîmés et stressés. Clarifie le cuir chevelu, renforce la fibre et améliore douceur et maniabilité.",
+                price: "53,25 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/urgent-repair-shampoo95-fl-oz-280-ml-1473064.jpg?v=1768429473&width=3840"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Shampooing · Volume",
+                id: "eufora-volumizing-shampoo",
+                priceCAD: 41.58,
+                title: "Eufora Volumizing Shampoo",
+                desc: "Shampooing léger qui donne du volume et du corps aux cheveux fins à moyens, sans les alourdir ni les dessécher.",
+                price: "41,58 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/volumizing-shampoo95-fl-oz-280-ml-9807825.jpg?v=1768429298&width=3840"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Shampooing · Cuir chevelu",
+                id: "eufora-complete-shampoo",
+                priceCAD: 43.20,
+                title: "Eufora Complete Shampoo",
+                desc: "Shampooing quotidien qui équilibre le cuir chevelu et aide les cheveux fins à paraître plus denses.",
+                price: "43,20 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/complete-shampoo300-ml-4121376.jpg?v=1768429421&width=3840"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Revitalisant · Hydratation",
+                id: "eufora-moisture-conditioner",
+                priceCAD: 46.58,
+                title: "Eufora Moisture Solution Conditioner",
+                desc: "Revitalisant hydratant pour cheveux secs. Douceur, brillance et maniabilité au quotidien.",
+                price: "46,58 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/moisture-solution-conditioner95-fl-oz-280-ml-5725381.jpg?v=1768429101&width=1200"
+            },
+            {
+                brand: "EUFORA",
+                category: "coiffage",
+                tag: "Coiffage · Laque",
+                id: "eufora-elevate",
+                priceCAD: 47.15,
+                rating: 5.0,
+                reviews: 1,
+                title: "Eufora Elevate Finishing Spray",
+                desc: "Laque de finition à tenue ferme mais modulable. Cheveux souples et mobiles, sans effet carton, avec protection solaire.",
+                price: "47,15 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/elevate300-ml-8294867.jpg?v=1768429361&width=3840"
+            },
+            {
+                brand: "EUFORA",
+                category: "coiffage",
+                tag: "Coiffage · Volume",
+                id: "eufora-full-effect",
+                priceCAD: 43.60,
+                title: "Eufora Full Effect",
+                desc: "Spray volumateur qui donne du corps et de la tenue aux cheveux fins. Volume durable, fini naturel.",
+                price: "43,60 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/full-effect-2253239.jpg?v=1768429205&width=1200"
+            },
+            {
+                brand: "BEAVER PRO",
+                category: "soins",
+                tag: "Cuir chevelu · Duo",
+                id: "beaver-starter-duo",
+                gift: true,
+                priceCAD: 69.92,
+                title: "Beaver Pro Duo Découverte (shampooing + sérum)",
+                desc: "Duo shampooing densité et sérum cuir chevelu pour réduire la chute et redonner de la densité. Sérum 25 ml + shampooing 100 ml.",
+                price: "49,00 $ USD · environ 69,92 $ CAD",
+                img: "https://beaverscalpro.com/cdn/shop/files/startersizeduo25mlnewserum_100mlnewshampoowithfreemassagermainpic.jpg?v=1792491674&width=1200"
+            },
+            {
+                brand: "BEAVER PRO",
+                category: "soins",
+                tag: "Cuir chevelu · Duo complet",
+                id: "beaver-full-duo",
+                priceCAD: 138.42,
+                title: "Beaver Pro Duo Complet (shampooing + sérum)",
+                desc: "Le système complet cuir chevelu : shampooing densité 300 ml + sérum 50 ml pour des cheveux visiblement plus denses.",
+                price: "97,00 $ USD · environ 138,42 $ CAD",
+                img: "https://beaverscalpro.com/cdn/shop/files/fullsizeduo50mlnewserum_300mlnewshampoowithfreecombmainpic.jpg?v=1792485130&width=1200"
+            },
+            {
+                brand: "BEAVER PRO",
+                category: "soins",
+                tag: "Cuir chevelu · Sérum",
+                id: "beaver-serum",
+                priceCAD: 84.20,
+                title: "Beaver Pro Sérum Densité 50 ml",
+                desc: "Sérum cuir chevelu concentré pour réduire la chute et améliorer la densité. Absorption instantanée, sans résidu.",
+                price: "59,00 $ USD · environ 84,20 $ CAD",
+                img: "https://beaverscalpro.com/cdn/shop/files/50ml_density_serum_transparent_bg.png?v=1792726989&width=1200"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Best-seller",
+                id: "siyou-seashell",
+                gift: true,
+                priceCAD: 27.10,
+                rating: 4.5,
+                reviews: 2,
+                title: "SIYOU Seashell Pearl — Ongles press-on",
+                desc: "Ongles press-on faits main, amande courts, blanc nacré et rose perle. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "18,99 $ USD · environ 27,10 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/seashell-pearl-1001751.webp?v=1775832368&width=1080"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Best-seller",
+                id: "siyou-aurora",
+                priceCAD: 32.81,
+                rating: 5.0,
+                reviews: 2,
+                title: "SIYOU Aurora Blush Ombre — Ongles press-on",
+                desc: "Ongles press-on faits main, ombré blush et or, amande courts. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "22,99 $ USD · environ 32,81 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/aurora-blush-ombre-5743663.webp?v=1776745840&width=1080"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Hiver",
+                id: "siyou-winter",
+                priceCAD: 29.95,
+                rating: 5.0,
+                reviews: 1,
+                title: "SIYOU Winter Stars Glow — Ongles press-on",
+                desc: "Ongles press-on faits main, bleu glacé et flocons, amande longs. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "20,99 $ USD · environ 29,95 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/winter-stars-glow-3908024.webp?v=1765220661&width=1080"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Best-seller",
+                id: "siyou-ocean",
+                priceCAD: 32.81,
+                rating: 5.0,
+                reviews: 3,
+                title: "SIYOU Ocean of Stars — Ongles press-on",
+                desc: "Ongles press-on faits main, bleu nuit et argent pailleté, amande courts. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "22,99 $ USD · environ 32,81 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/shopify_image_7_2167ebd4-9662-4260-9d7a-71aa7fa93a4a.png?v=1777314290&width=1080"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Best-seller",
+                id: "siyou-petallic",
+                priceCAD: 32.81,
+                rating: 5.0,
+                reviews: 2,
+                title: "SIYOU Petallic Cat Eye — Ongles press-on",
+                desc: "Ongles press-on faits main, mauve œil-de-chat et fleurs blanches, amande courts. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "22,99 $ USD · environ 32,81 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/petallic-cat-eye-2228288.webp?v=1775832547&width=1080"
+            },
+            {
+                brand: "SIYOU",
+                category: "ongles",
+                tag: "Ongles · Best-seller",
+                id: "siyou-luxy",
+                gift: true,
+                priceCAD: 27.10,
+                rating: 5.0,
+                reviews: 3,
+                title: "SIYOU Luxy Bay — Ongles press-on",
+                desc: "Ongles press-on faits main, marbre rose et blanc, amande courts. Tenue 7 à 10 jours, réutilisables. Tailles S, M, L — taille à confirmer avec Bella Bay.",
+                price: "18,99 $ USD · environ 27,10 $ CAD",
+                img: "https://siyounails.com/cdn/shop/files/luxy-bay-7824546.webp?v=1775832600&width=1080"
+            },
+            {
                 brand: "RELAX & WAX",
                 category: "esthetique",
                 tag: "Épilation · Best-seller",
@@ -555,6 +804,7 @@
                 category: "outils",
                 tag: "Outils · Top 2",
                 id: "styleswitch",
+                gift: true,
                 priceCAD: 356.75,
                 title: "Style/Switch 5-en-1 Air Styler",
                 desc: "Système multifonction pour sécher, lisser, donner du volume et créer des ondulations. 5 accessoires inclus.",
@@ -575,15 +825,55 @@
                 img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sw=1200&sh=1200&sm=fit",
                 link: "https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html",
                 linkText: "Voir le produit ↗"
+            },
+            {
+                brand: "BABYLISSPRO",
+                category: "outils",
+                tag: "Outils · Séchoir",
+                id: "rapido",
+                priceCAD: 285.39,
+                title: "Sèche-cheveux Rapido 2.0",
+                desc: "Séchoir italien haute vitesse, moteur puissant et technologie ionique. Séchage rapide, fini lisse et brillant.",
+                price: "199,99 $ USD · environ 285,39 $ CAD",
+                img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw4654cb3e/BRAP2_front.jpg?sw=1200&sh=1200&sm=fit"
+            },
+            {
+                brand: "BABYLISSPRO",
+                category: "outils",
+                tag: "Outils · Fer à boucler",
+                id: "spring-curling",
+                priceCAD: 99.88,
+                rating: 4.1,
+                reviews: 746,
+                title: "Fer à boucler Nano Titanium 1 po",
+                desc: "Fer à friser à ressort 1 po pour des boucles définies et durables. Chaleur uniforme, fini brillant.",
+                price: "69,99 $ USD · environ 99,88 $ CAD",
+                img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw0a0ed0cf/images/Gray_Redesign/WEB%20ASSET-IMAGES%2004-21-22/IRONS%20-%20web%20assets%20-%20JPEGs/bnt1000s%20Web%20Assets/BNT1000S%20GB_web.jpg?sw=1200&sh=1200&sm=fit"
             }
         ];
 
         let activeCategory = '';
+        let bbSort = 'pop';
+        let bbPage = 1;
+        const BB_PER_PAGE = 12;
 
         function filterByCategory(cat) {
             activeCategory = cat;
+            bbPage = 1;
             document.getElementById('bbCatalogSearch').value = '';
             renderCatalog();
+        }
+
+        function changeSort(v){ bbSort = v; bbPage = 1; renderCatalog(); }
+
+        function bbGoPage(n){ bbPage = n; renderCatalog(); const g = document.getElementById('bbCatalogGrid'); if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); } }
+
+        function bbSortProducts(list){
+            const arr = list.slice();
+            if(bbSort === 'price-asc'){ arr.sort((a,b)=>a.priceCAD-b.priceCAD); }
+            else if(bbSort === 'price-desc'){ arr.sort((a,b)=>b.priceCAD-a.priceCAD); }
+            else if(bbSort === 'rating'){ arr.sort((a,b)=>((b.rating||0)-(a.rating||0)) || ((b.reviews||0)-(a.reviews||0))); }
+            return arr;
         }
 
         function renderCatalog() {
@@ -591,16 +881,21 @@
             const searchVal = document.getElementById('bbCatalogSearch').value.toLowerCase().trim();
             const external = document.getElementById('bbExternalCatalogSearch');
             
-            const filtered = bbProducts.filter(p => {
+            const filtered = bbSortProducts(bbProducts.filter(p => {
                 const matchCat = !activeCategory || p.category === activeCategory;
                 const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc).toLowerCase().includes(searchVal);
                 return matchCat && matchSearch;
-            });
+            }));
+
+            const totalPages = Math.max(1, Math.ceil(filtered.length / BB_PER_PAGE));
+            if(bbPage > totalPages){ bbPage = totalPages; }
+            if(bbPage < 1){ bbPage = 1; }
+            const pageItems = filtered.slice((bbPage-1)*BB_PER_PAGE, bbPage*BB_PER_PAGE);
 
             if (filtered.length === 0) {
                 grid.innerHTML = '<div class="bb-catalog-empty">Aucun produit ne correspond à votre recherche dans la sélection.</div>';
             } else {
-                grid.innerHTML = filtered.map(p => `
+                grid.innerHTML = pageItems.map(p => `
                     <article class="bb-product">
                         <div class="bb-product-banner">
                             <span class="bb-product-tag">${p.tag}</span>
@@ -610,6 +905,9 @@
                             <span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">${p.brand}</span>
                             <h4>${p.title}</h4>
                             <p>${p.desc}</p>
+                            ${p.rating ? `<div style="font-size:12px;color:#a5760a;font-weight:700;margin:2px 0;">★ ${String(p.rating.toFixed(1)).replace('.', ',')}${p.reviews ? ' · ' + p.reviews + ' avis' : ''}</div>` : ''}
+                            ${p.gift ? `<div><span style="display:inline-block;background:#1f4d2e;color:#f4e6c2;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;">🎁 Idée cadeau</span></div>` : ''}
+                            <div style="font-size:11px;color:#2e7d32;font-weight:700;margin:4px 0;">● En stock</div>
                             <div class="bb-product-price">${p.price}</div>
                             <button type="button" class="bb-add-btn" onclick="addToCart('${p.id}')">Ajouter au panier 🛒</button>
                         </div>
@@ -617,12 +915,27 @@
                 `).join('');
             }
 
-            document.getElementById('bbCatalogCount').textContent = filtered.length + ' produit(s) affiché(s).';
+            const pag = document.getElementById('bbPagination');
+            if(pag){
+                if(totalPages <= 1){ pag.innerHTML = ''; }
+                else {
+                    const btnStyle = "padding:9px 14px;border:1px solid #d8b98a;border-radius:4px;background:#fff;font:600 13px Montserrat,sans-serif;color:#241a1f;cursor:pointer;";
+                    const btnActive = "padding:9px 14px;border:1px solid #d8b98a;border-radius:4px;background:#e8cf98;font:700 13px Montserrat,sans-serif;color:#241a1f;cursor:pointer;";
+                    const btnDisabled = "padding:9px 14px;border:1px solid #e5d9c3;border-radius:4px;background:#faf6ef;font:600 13px Montserrat,sans-serif;color:#b9a98d;cursor:default;";
+                    let html = `<button type="button" onclick="bbGoPage(${bbPage-1})" style="${bbPage===1?btnDisabled:btnStyle}" ${bbPage===1?'disabled':''}>← Précédent</button>`;
+                    for(let i=1;i<=totalPages;i++){ html += `<button type="button" onclick="bbGoPage(${i})" style="${i===bbPage?btnActive:btnStyle}">${i}</button>`; }
+                    html += `<button type="button" onclick="bbGoPage(${bbPage+1})" style="${bbPage===totalPages?btnDisabled:btnStyle}" ${bbPage===totalPages?'disabled':''}>Suivant →</button>`;
+                    pag.innerHTML = html;
+                }
+            }
+
+            document.getElementById('bbCatalogCount').textContent = filtered.length + ' produit(s) affiché(s)' + (totalPages > 1 ? ' — page ' + bbPage + ' sur ' + totalPages : '') + '.';
             external.hidden = true;
         }
 
         document.getElementById('bbCatalogSearch').addEventListener('input', () => {
             activeCategory = '';
+            bbPage = 1;
             renderCatalog();
         });
         document.getElementById('bbCatalogSearchButton').addEventListener('click', renderCatalog);
@@ -644,7 +957,24 @@
         function saveCart(){ try { localStorage.setItem('bbCart', JSON.stringify(bbCart)); } catch(e){} renderCart(); }
         function changeQty(id, delta){ const line = bbCart.find(l => l.id === id); if(!line) return; line.qty += delta; if(line.qty <= 0){ bbCart = bbCart.filter(l => l.id !== id); } saveCart(); }
         function removeFromCart(id){ bbCart = bbCart.filter(l => l.id !== id); saveCart(); }
-        function cartTotal(){ return bbCart.reduce((s,l)=>{ const p=bbFindProduct(l.id); return s + (p ? p.priceCAD*l.qty : 0); },0); }
+        function cartSubtotal(){ return bbCart.reduce((s,l)=>{ const p=bbFindProduct(l.id); return s + (p ? p.priceCAD*l.qty : 0); },0); }
+        let bbPromo = '';
+        function cartDiscount(){ return bbPromo === 'BELLA' ? cartSubtotal() * 0.10 : 0; }
+        function cartTotal(){ return cartSubtotal() - cartDiscount(); }
+        function applyPromo(){
+            const input = document.getElementById('bbPromoInput');
+            const msg = document.getElementById('bbPromoMsg');
+            const v = (input ? input.value : '').trim().toUpperCase();
+            if(bbCart.length === 0){ if(msg){ msg.textContent = 'Votre panier est vide pour le moment.'; } return; }
+            if(v === 'BELLA'){
+                bbPromo = 'BELLA';
+                if(msg){ msg.textContent = 'Code BELLA appliqué : -10 % sur votre commande. 💗'; }
+            } else {
+                bbPromo = '';
+                if(msg){ msg.textContent = 'Ce code promo n’est pas valide. Essayez BELLA.'; }
+            }
+            renderCart();
+        }
         function cartCount(){ return bbCart.reduce((s,l)=> s + l.qty, 0); }
         function toggleCart(open){ document.getElementById('bbCartDrawer').classList.toggle('active', !!open); if(open){ document.body.classList.add('modal-open'); } else { document.body.classList.remove('modal-open'); } renderCart(); }
         function renderCart(){
@@ -663,6 +993,15 @@
             }
             const totalEl = document.getElementById('bbCartTotal');
             if(totalEl){ totalEl.textContent = bbMoney(cartTotal()); }
+            const subRow = document.getElementById('bbCartSubtotalRow');
+            const discRow = document.getElementById('bbCartDiscountRow');
+            const subEl = document.getElementById('bbCartSubtotal');
+            const discEl = document.getElementById('bbCartDiscount');
+            const showDiscount = bbPromo === 'BELLA' && cartSubtotal() > 0;
+            if(subRow){ subRow.style.display = showDiscount ? 'flex' : 'none'; }
+            if(discRow){ discRow.style.display = showDiscount ? 'flex' : 'none'; }
+            if(subEl){ subEl.textContent = bbMoney(cartSubtotal()); }
+            if(discEl){ discEl.textContent = '-' + bbMoney(cartDiscount()); }
         }
         function bbOrderLines(){
             return bbCart.map(l => { const p = bbFindProduct(l.id); return p ? `• ${l.qty} x ${p.title} — ${bbMoney(p.priceCAD*l.qty)}` : ''; }).filter(Boolean);
@@ -689,14 +1028,28 @@
                             success.style.display = 'block';
                             success.innerHTML = 'Merci ! Votre paiement est confirmé. Commande PayPal : ' + details.id + '. Bella Bay vous contacte très vite. 💗';
                         }
-                        bbCart = []; saveCart();
+                        bbCart = []; bbPromo = '';
+                        const promoInput = document.getElementById('bbPromoInput');
+                        if(promoInput){ promoInput.value = ''; }
+                        const promoMsg = document.getElementById('bbPromoMsg');
+                        if(promoMsg){ promoMsg.textContent = ''; }
+                        saveCart();
                     });
                 },
-                onError: function(err){ alert('Le paiement PayPal n’a pas abouti. Essayez WhatsApp ou réessayez.'); }
+                onError: function(err){ alert('Le paiement PayPal n’a pas abouti. Veuillez réessayer.'); }
             }).render('#bbPaypalButtons');
         }
         initPayPal();
         renderCart();
+        /* ---- Compte à rebours de Noël ---- */
+        (function(){
+            const el = document.getElementById('bbXmasCount');
+            if(!el) return;
+            const now = new Date();
+            const xmas = new Date(now.getFullYear(), 11, 25);
+            const diff = Math.ceil((xmas - now) / 86400000);
+            el.textContent = diff > 0 ? '· Noël dans ' + diff + ' jours' : (diff === 0 ? '· Joyeux Noël !' : '· Joyeuses Fêtes !');
+        })();
 
         const services = {
             coloration: {number:"SERVICE 01", title:"Coloration de base (-10% avec BELLA)", description:"Une coloration complète pour uniformiser ou raviver votre couleur.", technique:"Appliquée sur l'ensemble des cheveux pour une teinte harmonieuse.", result:"Une couleur uniforme, brillante et adaptée à votre style.", price:"95 $ (Rabais -10% avec le code BELLA)"},
