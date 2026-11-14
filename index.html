@@ -83,6 +83,7 @@
         
         /* Cartes Graphiques Rose & Or Infaillibles */
         .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
+        .bb-product-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
         .bb-product-banner .bb-banner-logo{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--gold-dark);letter-spacing:2.5px;margin-bottom:8px;font-weight:800;text-shadow:0 1px 2px rgba(255,255,255,0.8)}
         .bb-product-banner .bb-banner-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.15;color:#1c1417;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.9)}
         .bb-product-tag{position:absolute;top:10px;left:10px;background:rgba(8,6,7,0.92);color:var(--gold-light);border:1px solid var(--gold);font-size:8px;font-weight:700;padding:4px 8px;letter-spacing:1px;text-transform:uppercase;z-index:2}
@@ -107,6 +108,8 @@
         .bb-ext-banner{position:relative;aspect-ratio:4/3;background:radial-gradient(circle at 30% 30%,#fff2f5,#e8b4c3 60%,#241419);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
         .bb-ext-banner span.bb-ext-badge{position:absolute;top:12px;left:12px;background:rgba(8,6,7,0.85);border:1px solid var(--gold);color:var(--gold-light);font-size:8px;font-weight:700;letter-spacing:2px;padding:5px 10px;text-transform:uppercase;z-index:2}
         .bb-ext-banner .bb-ext-banner-title{font-family:'Cormorant Garamond',serif;font-size:26px;color:#1c1417;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.9);margin-top:10px}
+        .bb-ext-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+        .bb-ext-banner .bb-ext-banner-title{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(8,6,7,.8));color:#fff;text-shadow:none;margin-top:0;z-index:2}
         .bb-ext-content{padding:22px;display:flex;flex-direction:column;flex:1}
         .bb-ext-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);font-size:14px;margin-bottom:6px}
         .bb-ext-content h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:10px}
@@ -147,6 +150,32 @@
         .footer-links a,.footer-contact a,.footer-social>a:not(.btn-whatsapp){color:#cfc4c8;font-size:12px}
         .footer-bottom{max-width:1200px;margin:45px auto 0;padding-top:20px;border-top:1px solid #ffffff14;text-align:center;color:#777;font-size:9px}
 
+        /* Panier Bella Bay */
+        .bb-cart-btn{position:relative;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f2dcc0,#c6a66b);color:#1c1417;padding:10px 18px;border-radius:30px;font-weight:700;font-size:12px;border:1px solid var(--gold-light);cursor:pointer}
+        .bb-cart-count{background:#080607;color:var(--gold-light);border-radius:50%;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0 5px}
+        .bb-add-btn{display:flex;justify-content:center;width:100%;margin-top:8px;padding:12px 10px;background:#171014;color:#f4dfb5;border:1px solid #c9a45c;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border-radius:2px;cursor:pointer}
+        .bb-add-btn:hover{background:#35242b}
+        .bb-cart-drawer{position:fixed;top:0;right:0;width:min(420px,100%);height:100%;background:#fffafa;z-index:4000;box-shadow:-10px 0 40px #0006;display:none;flex-direction:column;border-left:1px solid var(--gold)}
+        .bb-cart-drawer.active{display:flex}
+        .bb-cart-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid #c9a45c59}
+        .bb-cart-head h3{font-family:'Cormorant Garamond',serif;font-size:28px}
+        .bb-cart-close{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);background:#080607;color:#fff;font-size:18px;cursor:pointer}
+        .bb-cart-items{flex:1;overflow-y:auto;padding:10px 20px}
+        .bb-cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eadcc1;align-items:center}
+        .bb-cart-item img{width:64px;height:64px;object-fit:cover;border:1px solid #e5ddd4;flex-shrink:0}
+        .bb-cart-item-ph{width:64px;height:64px;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);border:1px solid #e5ddd4;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff}
+        .bb-cart-item-info{flex:1;min-width:0}
+        .bb-cart-item-info strong{display:block;font-size:12px;line-height:1.3}
+        .bb-cart-item-info span{font-size:11px;color:#71676a}
+        .bb-cart-qty{display:flex;gap:8px;align-items:center;margin-top:6px}
+        .bb-cart-qty button{width:24px;height:24px;border:1px solid #c9a45c;background:#fff;cursor:pointer;font-weight:700}
+        .bb-cart-remove{border:0;background:none;color:var(--rose-dark);font-size:11px;cursor:pointer;padding:0}
+        .bb-cart-foot{padding:20px;border-top:1px solid #c9a45c59}
+        .bb-cart-total{display:flex;justify-content:space-between;font-weight:700;margin-bottom:12px;font-size:14px}
+        .bb-cart-empty{padding:30px;text-align:center;color:#71676a;font-size:12px}
+        .bb-cart-note{font-size:10px;color:#766d70;margin-top:10px;line-height:1.6}
+        .bb-cart-checkout{width:100%;padding:15px;background:linear-gradient(135deg,#f2dcc0,#c6a66b);border:1px solid #c6a66b;color:#1c1417;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border-radius:3px}
+
         @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
         @media(max-width:700px){.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
     </style>
@@ -173,6 +202,7 @@
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
                 <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
+                <button type="button" class="bb-cart-btn" onclick="toggleCart(true)">🛒 Panier <span class="bb-cart-count" id="bbCartCount">0</span></button>
             </nav>
             <div class="menu-container">
                 <div class="menu-icon" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></div>
@@ -185,6 +215,7 @@
                     <a href="#extensions-page" onclick="toggleMenu();">✨ Extensions de Rêve</a>
                     <a href="#salon" onclick="toggleMenu();">Salon</a>
                     <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();toggleCart(true);">🛒 Mon panier</a>
                     <a href="https://wa.me/15145822856" target="_blank" class="whatsapp-link">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -226,9 +257,9 @@
             </div>
 
             <div class="bb-catalog-panel">
-                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, matrix, eufora, sérum…)</label>
+                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, eufora, sérum…)</label>
                 <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, matrix, eufora…" autocomplete="off">
+                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, eufora…" autocomplete="off">
                     <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
@@ -238,59 +269,117 @@
             <!-- Grille de produits officielle -->
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
 
-            <p class="bb-shop-disclaimer">Les commandes, paiements, prix, stocks et livraisons sont gérés par les boutiques partenaires. Certains liens sont affiliés et génèrent une commission pour Bella Bay, sans frais supplémentaires pour vous.</p>
+            <p class="bb-shop-disclaimer">Commandez directement sur Bella Bay : ajoutez vos produits au panier et finalisez votre commande sur WhatsApp. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.</p>
         </div>
     </section>
 
     <!-- SECTION EXCLUSIVE : LE COMPTOIR DES EXTENSIONS DE RÊVE -->
     <section class="bb-extensions-showcase" id="extensions-page">
         <div class="bb-ext-header">
-            <small>✨ COLLECTION EXCLUSIVE BEAUTY WITHOUT BORDERS</small>
+            <small>✨ COLLECTION EXTENSIONS — CHEVEUX HUMAINS 100 % REMY</small>
             <h2>Le Comptoir des <span>Extensions de Rêve</span></h2>
             <p>Pour toutes les amatrices de mode, de glamour et de belles chevelures : découvrez notre sélection d'extensions haut de gamme en cheveux humains, clips, adhésives et halo pour un volume et une longueur spectaculaires.</p>
         </div>
         <div class="bb-ext-grid">
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
+                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
+                    <img src="https://www.airyhair.com/images/beautiful-clipin-hair-extensions.jpg" alt="Extensions à clips Remy AiryHair" loading="lazy">
                     <div class="bb-ext-banner-title">Extensions à Clips</div>
                 </div>
                 <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">Beauty Without Borders</div>
+                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
                     <h3>Extensions à Clips</h3>
-                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés.</p>
-                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/clip-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                    <p>La liberté absolue du glamour. Posez et retirez vos mèches en quelques minutes pour un volume et une longueur instantanés. Dès 28,40 $ CAD.</p>
+                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-clips')">Ajouter au panier 🛒</button>
                 </div>
             </article>
 
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
+                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
+                    <img src="https://www.airyhair.com/images/super-soft-hair-hq.jpg" alt="Extensions adhésives tape-in Remy AiryHair" loading="lazy">
                     <div class="bb-ext-banner-title">Extensions Adhésives</div>
                 </div>
                 <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">Beauty Without Borders</div>
+                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
                     <h3>Extensions Adhésives / Tape-in</h3>
-                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel.</p>
-                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/tape-in-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                    <p>L'alliance parfaite de la discrétion et du confort longue durée. Des bandes invisibles et ultra-plates pour un fondu naturel. Dès 18,41 $ CAD.</p>
+                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-tapein')">Ajouter au panier 🛒</button>
                 </div>
             </article>
 
             <article class="bb-ext-card">
                 <div class="bb-ext-banner">
-                    <span class="bb-ext-badge">Beauty Without Borders</span>
-                    <div style="font-size:10px;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;font-weight:700;">BELLA BAY B.B</div>
+                    <span class="bb-ext-badge">AiryHair · 100 % Remy</span>
+                    <img src="https://www.airyhair.com/images/colorfulhairext.jpg" alt="Extensions halo sur mesure AiryHair" loading="lazy">
                     <div class="bb-ext-banner-title">Extensions Halo</div>
                 </div>
                 <div class="bb-ext-content">
-                    <div class="bb-ext-slogan">Beauty Without Borders</div>
+                    <div class="bb-ext-slogan">AiryHair — 100 % cheveux humains Remy</div>
                     <h3>Extensions Halo</h3>
-                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle.</p>
-                    <a class="bb-ext-link" href="https://www.wigstorehairandbeautycanada.ca/collections/halo-hair-extensions?sca_ref=12701283.1pkGN8eTfQ&sca_source=bellabay.ca" target="_blank" rel="sponsored noopener noreferrer">Découvrir la collection ↗</a>
+                    <p>Le secret des stars en un tour de main. Un fil invisible ultra-confortable pour un volume de rêve en quelques secondes, sans colle. Dès 28,40 $ CAD.</p>
+                    <button type="button" class="bb-add-btn" onclick="addExtToCart('ext-halo')">Ajouter au panier 🛒</button>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <!-- BOUTIQUES PARTENAIRES -->
+    <section class="section" id="partenaires" style="padding-top:0">
+        <div class="container">
+            <div class="section-title">
+                <small>ENCORE PLUS DE BEAUTÉ</small>
+                <h2>Nos boutiques partenaires</h2>
+                <p>Découvrez d'autres univers beauté sélectionnés par Bella Bay.</p>
+            </div>
+            <div class="bb-ext-grid">
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>Cabelo</h3>
+                    <p>Soins professionnels Eufora et KMS, en stock, livraison gratuite dès 79 $.</p>
+                    <a class="bb-ext-link" href="https://cabelo.ca" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>AiryHair</h3>
+                    <p>Extensions 100 % Remy : clips, tape-in et halo, livraison directe.</p>
+                    <a class="bb-ext-link" href="https://www.airyhair.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>SIYOU Nails</h3>
+                    <p>Ongles press-on faits main, modèles tendance et éditions limitées.</p>
+                    <a class="bb-ext-link" href="https://siyounails.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>ND Nails Supply</h3>
+                    <p>Press-on et fournitures d'ongles en gros, livraison gratuite dès 75 $.</p>
+                    <a class="bb-ext-link" href="https://ndnailsupply.com/collections/press-on-nails" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>Relax &amp; Wax</h3>
+                    <p>Cires et soins d'épilation professionnels, pour salons et à domicile.</p>
+                    <a class="bb-ext-link" href="https://www.relaxnwax.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>BaBylissPRO</h3>
+                    <p>Outils professionnels : fers, sèche-cheveux et stylers primés.</p>
+                    <a class="bb-ext-link" href="https://www.babylisspro.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>Beaver Pro</h3>
+                    <p>Soins du cuir chevelu et produits capillaires science du scalp.</p>
+                    <a class="bb-ext-link" href="https://beaverscalpro.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>REVERSIBLE</h3>
+                    <p>Beauté de luxe et prestige : plus de 700 boutiques vérifiées.</p>
+                    <a class="bb-ext-link" href="https://www.reversible.com/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+                <div class="bb-ext-card"><div class="bb-ext-content">
+                    <h3>Amazon.ca — Beauté</h3>
+                    <p>Produits de beauté, soins et accessoires, livraison rapide.</p>
+                    <a class="bb-ext-link" href="https://www.amazon.ca/" target="_blank" rel="noopener noreferrer">Visiter la boutique ↗</a>
+                </div></div>
+            </div>
         </div>
     </section>
 
@@ -389,11 +478,25 @@
                 <div class="footer-title">Contact & Réservation</div>
                 <p style="color:#aaa0a4;font-size:11px">Pour une réservation ou une question, contactez Bella Bay directement sur WhatsApp.</p>
                 <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver sur WhatsApp</a>
-                <a href="https://www.instagram.com/bellabay.ca/" target="_blank" rel="noopener noreferrer" style="color:#cfc4c8;font-size:12px">Instagram · @bellabay.ca</a>
+                <a href="https://www.instagram.com/bellabay.coiffure/" target="_blank" rel="noopener noreferrer" style="color:#cfc4c8;font-size:12px">Instagram · @bellabay.coiffure</a>
             </div>
         </div>
         <div class="footer-bottom">© 2026 Bella Bay (B.B) — Coiffure & Beauté. Tous droits réservés.</div>
     </footer>
+
+    <!-- PANIER BELLA BAY -->
+    <div class="bb-cart-drawer" id="bbCartDrawer" aria-label="Panier">
+        <div class="bb-cart-head">
+            <h3>Mon panier</h3>
+            <button class="bb-cart-close" onclick="toggleCart(false)" aria-label="Fermer">×</button>
+        </div>
+        <div class="bb-cart-items" id="bbCartItems"></div>
+        <div class="bb-cart-foot">
+            <div class="bb-cart-total"><span>Total</span><span id="bbCartTotal">0,00 $ CAD</span></div>
+            <button type="button" class="bb-cart-checkout" onclick="checkoutWhatsApp()">Commander sur WhatsApp 💬</button>
+            <p class="bb-cart-note">Votre commande est envoyée à Bella Bay sur WhatsApp. Paiement et livraison confirmés avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies.</p>
+        </div>
+    </div>
 
     <!-- MODAL SERVICES -->
     <div class="service-modal" id="serviceModal" onclick="closeServiceOutside(event)">
@@ -411,92 +514,119 @@
 
         const bbProducts = [
             {
-                brand: "MATRIX PROFESSIONAL",
-                category: "soins",
-                tag: "Shampooing · Top 1",
-                title: "Matrix Total Results Bond Keepers / Mega Sleek Shampooing",
-                desc: "Shampooing professionnel haute performance pour fortifier et lisser la fibre capillaire.",
-                price: "Max 20,00 $ CAD (Code BELLA)",
-                link: "https://cabelo.ca/collections/matrix?ref=RB5GWIU3TO",
-                linkText: "Acheter chez Cabelo ↗"
-            },
-            {
-                brand: "MATRIX PROFESSIONAL",
-                category: "soins",
-                tag: "Soins · Top 2",
-                title: "Matrix Instacure Anti-Breakage Solution",
-                desc: "Soin professionnel revitalisant anti-cassure pour cheveux fragilisés et colorés.",
-                price: "Max 20,00 $ CAD (Code BELLA)",
-                link: "https://cabelo.ca/collections/matrix?ref=RB5GWIU3TO",
-                linkText: "Acheter chez Cabelo ↗"
-            },
-            {
                 brand: "EUFORA",
                 category: "soins",
-                tag: "Soins · Top 3",
+                tag: "Soins · Best-seller",
+                id: "eufora-serum",
+                priceCAD: 61.25,
                 title: "Eufora Beautifying Serum",
-                desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse.",
+                desc: "Huile de soin nourrissante pour apporter douceur, brillance et fini lisse. Pour tous les types de cheveux.",
                 price: "61,25 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/beautifying-serum51-oz-120-ml-4229391.jpg?v=1768429273&width=3840",
                 link: "https://cabelo.ca/products/beautifying-serum?variant=46838046130396&ref=RB5GWIU3TO",
                 linkText: "Acheter chez Cabelo ↗"
             },
             {
                 brand: "EUFORA",
                 category: "soins",
-                tag: "Shampooing · Top 4",
+                tag: "Shampooing · Best-seller",
+                id: "eufora-bodifying-shampoo",
+                priceCAD: 58.10,
                 title: "Eufora Bodifying Shampoo",
-                desc: "Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux.",
-                price: "Max 20,00 $ CAD (Code BELLA)",
+                desc: "Shampooing volumisant pour cheveux fins à moyens, avec un nettoyage doux. Volume léger, sans résidu.",
+                price: "58,10 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/bodifying-shampoo95-fl-oz-280-ml-3965751.jpg?v=1773775514&width=3840",
                 link: "https://cabelo.ca/products/bodifying-shampoo?variant=46814789763292&ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Shampooing · Hydratation",
+                id: "eufora-hydrating-shampoo",
+                priceCAD: 41.58,
+                title: "Eufora Hydrating Shampoo",
+                desc: "Shampooing nourrissant hydratant, poids léger. Hydratation, brillance et force pour cheveux normaux à secs.",
+                price: "41,58 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/hydrating-shampoo95-fl-oz-280-ml-5651123.jpg?v=1768429471&width=3840",
+                link: "https://cabelo.ca/products/eufora-hydrating-shampoo?variant=46831351365852&ref=RB5GWIU3TO",
+                linkText: "Acheter chez Cabelo ↗"
+            },
+            {
+                brand: "EUFORA",
+                category: "soins",
+                tag: "Soin · Volume",
+                id: "eufora-bodifying-conditioner",
+                priceCAD: 58.10,
+                title: "Eufora Bodifying Conditioner",
+                desc: "Revitalisant léger qui lisse et adoucit sans alourdir. Volume, force et clarté de la couleur.",
+                price: "58,10 $ CAD (Code BELLA)",
+                img: "https://cabelo.ca/cdn/shop/files/bodifying-conditioner95-fl-oz-280-ml-9689085.jpg?v=1773775514&width=3840",
+                link: "https://cabelo.ca/products/bodifying-conditioner?variant=46814789828828&ref=RB5GWIU3TO",
                 linkText: "Acheter chez Cabelo ↗"
             },
             {
                 brand: "RELAX & WAX",
                 category: "esthetique",
-                tag: "Épilation · Top 1",
-                title: "No Scream Cream",
-                desc: "La célèbre crème anesthésiante pré-épilation pour un confort absolu et sans douleur.",
-                price: "29,99 $ USD (Code BELLA)",
+                tag: "Épilation · Best-seller",
+                id: "nsc-cream",
+                priceCAD: 29.97,
+                title: "No Scream Cream 1 oz",
+                desc: "La célèbre crème anesthésiante pré-épilation (20 % benzocaïne, approuvée FDA) pour un confort absolu et sans douleur.",
+                price: "21,00 $ USD · environ 29,97 $ CAD",
+                img: "https://relaxnwax.com/cdn/shop/products/FLUFFMEDIA-9624.jpg?v=1660678223&width=700",
                 link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
                 linkText: "Acheter chez Relax & Wax ↗"
             },
             {
                 brand: "RELAX & WAX",
                 category: "esthetique",
-                tag: "Épilation · Top 2",
-                title: "Cire dure professionnelle",
-                desc: "Cire haute performance spécialement formulée pour une épilation douce et impeccable.",
-                price: "24,99 $ USD (Code BELLA)",
+                tag: "Épilation · Soin après",
+                id: "bump-outta-here",
+                priceCAD: 34.25,
+                title: "Get The Bump Outta Here! 3 oz",
+                desc: "Soin après-épilation aux AHA de fruits pour une peau lisse, sans poils incarnés ni boutons.",
+                price: "24,00 $ USD · environ 34,25 $ CAD",
+                img: "https://relaxnwax.com/cdn/shop/products/getthebumpouttahere-9627.jpg?v=1782239267&width=700",
                 link: "https://www.relaxnwax.com?sca_ref=12741130.p8TOY2G13c",
                 linkText: "Acheter chez Relax & Wax ↗"
             },
             {
-                brand: "NANO TITANIUM",
+                brand: "BABYLISSPRO",
                 category: "outils",
                 tag: "Outils · Top 1",
+                id: "prima3000",
+                priceCAD: 299.66,
                 title: "Prima3000 1¼″ Ionic Styling Iron",
-                desc: "Outil polyvalent professionnel pour lisser, onduler ou boucler.",
-                price: "209,99 $ USD",
+                desc: "Outil polyvalent professionnel pour lisser, onduler ou boucler. Plaques Nano Titanium, jusqu'à 465 °F.",
+                price: "209,99 $ USD · environ 299,66 $ CAD",
+                img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw64841b30/BNT3000TUC_Infographic_0000.jpg?sw=1200&sh=1200&sm=fit",
                 link: "https://www.babylisspro.com/nano-titanium-prima3000-1-1-4-inch-ionic-hair-styling-iron/BNT3000TUC-N.html",
                 linkText: "Voir le produit ↗"
             },
             {
-                brand: "STYLESWITCH",
+                brand: "BABYLISSPRO",
                 category: "outils",
                 tag: "Outils · Top 2",
+                id: "styleswitch",
+                priceCAD: 356.75,
                 title: "Style/Switch 5-en-1 Air Styler",
-                desc: "Système multifonction pour sécher, lisser, donner du volume et créer des ondulations.",
-                price: "249,99 $ USD",
+                desc: "Système multifonction pour sécher, lisser, donner du volume et créer des ondulations. 5 accessoires inclus.",
+                price: "249,99 $ USD · environ 356,75 $ CAD",
+                img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dw96de6933/BNTSSSW_Main_0000_Award.png?sw=1200&sh=1200&sm=fit",
                 link: "https://www.babylisspro.com/styleswitch-5-in-1-air-styler-for-straight-wavy-hair/BNTSSSW-4PK-N.html",
                 linkText: "Voir le produit ↗"
             },
             {
-                brand: "PORTOFINO",
+                brand: "BABYLISSPRO",
                 category: "outils",
                 tag: "Outils · Top 3",
+                id: "portofino",
+                priceCAD: 214.04,
                 title: "Sèche-cheveux Portofino",
-                desc: "Moteur AC italien de 2000 W et technologie Nano Titanium.",
-                price: "149,99 $ USD",
+                desc: "Moteur AC italien de 2000 W et technologie Nano Titanium. 6 réglages chaleur/vitesse, garantie 4 ans.",
+                price: "149,99 $ USD · environ 214,04 $ CAD",
+                img: "https://www.babylisspro.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-master-us-babylisspro/default/dwe1ec59e8/bnt6610_profile_new_concentrator_left_PL_uniform_bg.jpeg?sw=1200&sh=1200&sm=fit",
                 link: "https://www.babylisspro.com/portofino-hair-dryer/BPOR1.html",
                 linkText: "Voir le produit ↗"
             }
@@ -526,34 +656,23 @@
             } else {
                 grid.innerHTML = filtered.map(p => `
                     <article class="bb-product">
-                        <a class="bb-product-banner" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">
+                        <div class="bb-product-banner">
                             <span class="bb-product-tag">${p.tag}</span>
-                            <div class="bb-banner-logo">BELLA BAY B.B</div>
-                            <div class="bb-banner-title">${p.title}</div>
-                        </a>
+                            ${p.img ? `<img src="${p.img}" alt="${p.title}" loading="lazy">` : `<div class="bb-banner-logo">BELLA BAY B.B</div><div class="bb-banner-title">${p.title}</div>`}
+                        </div>
                         <div class="bb-product-info">
                             <span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">${p.brand}</span>
                             <h4>${p.title}</h4>
                             <p>${p.desc}</p>
                             <div class="bb-product-price">${p.price}</div>
-                            <a class="bb-product-btn" href="${p.link}" target="_blank" rel="sponsored noopener noreferrer">${p.linkText}</a>
+                            <button type="button" class="bb-add-btn" onclick="addToCart('${p.id}')">Ajouter au panier 🛒</button>
                         </div>
                     </article>
                 `).join('');
             }
 
             document.getElementById('bbCatalogCount').textContent = filtered.length + ' produit(s) affiché(s).';
-
-            if (searchVal) {
-                external.hidden = false;
-                external.innerHTML = `<strong>Continuer la recherche dans les catalogues partenaires</strong>
-                    <div class="bb-external-links">
-                        <a href="https://cabelo.ca/search?q=${encodeURIComponent(searchVal)}&ref=RB5GWIU3TO" target="_blank" rel="sponsored noopener noreferrer">Cabelo ↗</a>
-                        <a href="https://www.wigstorehairandbeautycanada.ca/search?q=${encodeURIComponent(searchVal)}&sca_ref=12701283.1pkGN8eTfQ" target="_blank" rel="sponsored noopener noreferrer">Wig Store ↗</a>
-                    </div>`;
-            } else {
-                external.hidden = true;
-            }
+            external.hidden = true;
         }
 
         document.getElementById('bbCatalogSearch').addEventListener('input', () => {
@@ -564,11 +683,54 @@
 
         renderCatalog();
 
+        /* ---- Panier Bella Bay ---- */
+        const bbExtProducts = {
+            'ext-clips': {id:'ext-clips', title:'Extensions à Clips — AiryHair', brand:'AIRYHAIR', priceCAD:28.40, img:'https://www.airyhair.com/images/beautiful-clipin-hair-extensions.jpg'},
+            'ext-tapein': {id:'ext-tapein', title:'Extensions Adhésives / Tape-in — AiryHair', brand:'AIRYHAIR', priceCAD:18.41, img:'https://www.airyhair.com/images/super-soft-hair-hq.jpg'},
+            'ext-halo': {id:'ext-halo', title:'Extensions Halo — AiryHair', brand:'AIRYHAIR', priceCAD:28.40, img:'https://www.airyhair.com/images/colorfulhairext.jpg'}
+        };
+        let bbCart = [];
+        try { bbCart = JSON.parse(localStorage.getItem('bbCart') || '[]'); } catch(e) { bbCart = []; }
+        function bbMoney(n){ return n.toFixed(2).replace('.', ',') + ' $ CAD'; }
+        function bbFindProduct(id){ return bbProducts.find(p => p.id === id) || bbExtProducts[id] || null; }
+        function addToCart(id){ const p = bbFindProduct(id); if(!p) return; const line = bbCart.find(l => l.id === id); if(line){ line.qty += 1; } else { bbCart.push({id:id, qty:1}); } saveCart(); toggleCart(true); }
+        function addExtToCart(id){ addToCart(id); }
+        function saveCart(){ try { localStorage.setItem('bbCart', JSON.stringify(bbCart)); } catch(e){} renderCart(); }
+        function changeQty(id, delta){ const line = bbCart.find(l => l.id === id); if(!line) return; line.qty += delta; if(line.qty <= 0){ bbCart = bbCart.filter(l => l.id !== id); } saveCart(); }
+        function removeFromCart(id){ bbCart = bbCart.filter(l => l.id !== id); saveCart(); }
+        function cartTotal(){ return bbCart.reduce((s,l)=>{ const p=bbFindProduct(l.id); return s + (p ? p.priceCAD*l.qty : 0); },0); }
+        function cartCount(){ return bbCart.reduce((s,l)=> s + l.qty, 0); }
+        function toggleCart(open){ document.getElementById('bbCartDrawer').classList.toggle('active', !!open); if(open){ document.body.classList.add('modal-open'); } else { document.body.classList.remove('modal-open'); } renderCart(); }
+        function renderCart(){
+            const box = document.getElementById('bbCartItems');
+            const countEl = document.getElementById('bbCartCount');
+            if(countEl){ countEl.textContent = cartCount(); }
+            if(!box) return;
+            if(bbCart.length === 0){
+                box.innerHTML = '<div class="bb-cart-empty">Votre panier est vide.<br>Ajoutez vos produits préférés depuis la boutique.</div>';
+            } else {
+                box.innerHTML = bbCart.map(l => {
+                    const p = bbFindProduct(l.id); if(!p) return '';
+                    const imgHtml = p.img ? `<img src="${p.img}" alt="${p.title}">` : `<div class="bb-cart-item-ph">B.B</div>`;
+                    return `<div class="bb-cart-item">${imgHtml}<div class="bb-cart-item-info"><strong>${p.title}</strong><span>${bbMoney(p.priceCAD)} · ${p.brand || ''}</span><div class="bb-cart-qty"><button type="button" onclick="changeQty('${l.id}', -1)" aria-label="Moins">−</button><span>${l.qty}</span><button type="button" onclick="changeQty('${l.id}', 1)" aria-label="Plus">+</button><button type="button" class="bb-cart-remove" onclick="removeFromCart('${l.id}')">Retirer</button></div></div><strong>${bbMoney(p.priceCAD*l.qty)}</strong></div>`;
+                }).join('');
+            }
+            const totalEl = document.getElementById('bbCartTotal');
+            if(totalEl){ totalEl.textContent = bbMoney(cartTotal()); }
+        }
+        function checkoutWhatsApp(){
+            if(bbCart.length === 0){ alert('Votre panier est vide.'); return; }
+            const lines = bbCart.map(l => { const p = bbFindProduct(l.id); return p ? `• ${l.qty} x ${p.title} — ${bbMoney(p.priceCAD*l.qty)}` : ''; }).filter(Boolean);
+            const msg = `Bonjour Bella Bay ! Je souhaite commander :\n${lines.join('\n')}\nTotal : ${bbMoney(cartTotal())}\nMerci de me confirmer la commande, le paiement et la livraison. ✨`;
+            window.open('https://wa.me/15145822856?text=' + encodeURIComponent(msg), '_blank');
+        }
+        renderCart();
+
         const services = {
             coloration: {number:"SERVICE 01", title:"Coloration de base (-10% avec BELLA)", description:"Une coloration complète pour uniformiser ou raviver votre couleur.", technique:"Appliquée sur l'ensemble des cheveux pour une teinte harmonieuse.", result:"Une couleur uniforme, brillante et adaptée à votre style.", price:"95 $ (Rabais -10% avec le code BELLA)"},
             fantaisie: {number:"SERVICE 02", title:"Coloration fantaisie (-10% avec BELLA)", description:"Pour une couleur créative, originale ou différente des tons classiques.", technique:"Choisie selon le résultat désiré (une base éclaircissante peut être requise).", result:"Une couleur expressive et personnalisée.", price:"120 $ (Rabais -10% avec le code BELLA)"},
             meches: {number:"SERVICE 03", title:"Mèches (-10% avec BELLA)", description:"Pour éclaircir certaines parties de la chevelure et apporter de la lumière.", technique:"Séparation en sections et éclaircissement ciblé.", result:"Une chevelure lumineuse et dimensionnelle.", price:"110 $ (Rabais -10% avec le code BELLA)"},
-            contouring: {number:"SERVICE 04", title:"Contouring (-10% avec BELLA)", description:"Une technique pour placer de la lumière autour du visage.", technique:"Mèches concentrées sur les zones stratégiques du visage.", result:"Un effet lumineux qui met en valeur les traits.", price:"90 $ (Rabais -10% avec le code BELLA)"},
+            contouring: {number:"SERVICE 04", title:"Contouring (-10% avec BELLA)", description:"Une coloration placée autour du visage pour mettre les traits en valeur.", technique:"Mèches concentrées sur les zones stratégiques du visage.", result:"Un effet lumineux qui met en valeur les traits.", price:"90 $ (Rabais -10% avec le code BELLA)"},
             balayage: {number:"SERVICE 05", title:"Ombré Hair & Balayage (-10% avec BELLA)", description:"Un éclaircissement progressif entre une base foncée et des pointes claires.", technique:"Transitions douces appliquées progressivement dans les longueurs.", result:"Un effet balayage californien lumineux.", price:"À partir de 130 $ (Rabais -10% avec le code BELLA)"},
             traitement: {number:"SERVICE 06", title:"Traitement capillaire (-10% avec BELLA)", description:"Un soin pour hydrater, nourrir et revitaliser vos cheveux.", technique:"Soin sélectionné selon l'état exact de votre chevelure.", result:"Des cheveux doux, souples et soignés.", price:"80 $ (Rabais -10% avec le code BELLA)"},
             botox: {number:"SERVICE 07", title:"Botox capillaire (-10% avec BELLA)", description:"Un soin profond pour sublimer les cheveux secs ou ternes.", technique:"Application minutieuse pour lisser et uniformiser la fibre.", result:"Des cheveux extrêmement doux et brillants.", price:"140 $ (Rabais -10% avec le code BELLA)"},
