@@ -435,8 +435,10 @@
         <div class="bb-cart-items" id="bbCartItems"></div>
         <div class="bb-cart-foot">
             <div class="bb-cart-total"><span>Total</span><span id="bbCartTotal">0,00 $ CAD</span></div>
-            <button type="button" class="bb-cart-checkout" onclick="checkoutWhatsApp()">Commander sur WhatsApp 💬</button>
-            <p class="bb-cart-note">Votre commande est envoyée à Bella Bay sur WhatsApp. Paiement et livraison confirmés avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies.</p>
+            <div id="bbPaypalButtons"></div>
+            <p class="bb-cart-note" id="bbPaypalNote" style="display:none">Paiement PayPal en cours d'activation : remplacez YOUR_PAYPAL_CLIENT_ID par votre identifiant PayPal (voir le commentaire dans le code, une seule ligne).</p>
+            <p class="bb-cart-note">Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies.</p>
+            <p class="bb-cart-note" id="bbCartSuccess" style="display:none"></p>
         </div>
     </div>
 
@@ -449,6 +451,8 @@
     </div>
 
     <!-- SCRIPT DE LA BOUTIQUE -->
+    <!-- PayPal : remplacez YOUR_PAYPAL_CLIENT_ID par votre identifiant Client ID PayPal (compte PayPal Business gratuit -> developer.paypal.com -> My Apps & Credentials -> Client ID). Aucun frais mensuel, environ 2,9 % + 0,30 $ par vente. -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA04xc5CjNOEUwin0GjvZ-j1WLYTATg0iL1LLlIMVv1CxGwSo1-IuOzw-Taz-UwZww7LBXSLy8A4nGB9Q&currency=CAD&intent=capture"></script>
     <script>
         function toggleMenu() {
             document.getElementById('dropdownMenu').classList.toggle('active');
@@ -660,12 +664,38 @@
             const totalEl = document.getElementById('bbCartTotal');
             if(totalEl){ totalEl.textContent = bbMoney(cartTotal()); }
         }
-        function checkoutWhatsApp(){
-            if(bbCart.length === 0){ alert('Votre panier est vide.'); return; }
-            const lines = bbCart.map(l => { const p = bbFindProduct(l.id); return p ? `• ${l.qty} x ${p.title} — ${bbMoney(p.priceCAD*l.qty)}` : ''; }).filter(Boolean);
-            const msg = `Bonjour Bella Bay ! Je souhaite commander :\n${lines.join('\n')}\nTotal : ${bbMoney(cartTotal())}\nMerci de me confirmer la commande, le paiement et la livraison. ✨`;
-            window.open('https://wa.me/15145822856?text=' + encodeURIComponent(msg), '_blank');
+        function bbOrderLines(){
+            return bbCart.map(l => { const p = bbFindProduct(l.id); return p ? `• ${l.qty} x ${p.title} — ${bbMoney(p.priceCAD*l.qty)}` : ''; }).filter(Boolean);
         }
+        /* ---- Paiement PayPal (compte PayPal Business gratuit, aucune mensualité) ---- */
+        function initPayPal(){
+            const box = document.getElementById('bbPaypalButtons');
+            const note = document.getElementById('bbPaypalNote');
+            if(!box) return;
+            if(!window.paypal){
+                if(note){ note.style.display = 'block'; }
+                return;
+            }
+            paypal.Buttons({
+                style: {layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal'},
+                createOrder: function(data, actions){
+                    if(bbCart.length === 0){ alert('Votre panier est vide.'); return; }
+                    return actions.order.create({purchase_units: [{amount: {currency_code: 'CAD', value: cartTotal().toFixed(2)}}]});
+                },
+                onApprove: function(data, actions){
+                    return actions.order.capture().then(function(details){
+                        const success = document.getElementById('bbCartSuccess');
+                        if(success){
+                            success.style.display = 'block';
+                            success.innerHTML = 'Merci ! Votre paiement est confirmé. Commande PayPal : ' + details.id + '. Bella Bay vous contacte très vite. 💗';
+                        }
+                        bbCart = []; saveCart();
+                    });
+                },
+                onError: function(err){ alert('Le paiement PayPal n’a pas abouti. Essayez WhatsApp ou réessayez.'); }
+            }).render('#bbPaypalButtons');
+        }
+        initPayPal();
         renderCart();
 
         const services = {
