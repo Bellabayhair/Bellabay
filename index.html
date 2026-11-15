@@ -289,6 +289,10 @@
                     <button type="button" onclick="filterByCategory('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Cire</button>
                     <button type="button" onclick="filterByCategory('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Tout voir ✨</button>
                 </div>
+                <div style="margin-top:16px;">
+                    <button type="button" onclick="openGiftBuilder()" style="padding:14px 26px;background:#241a1f;border:1px solid #e8cf98;color:#e8cf98;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">🎁 Créez votre propre panier cadeau — pour les Fêtes</button>
+                    <div style="font-size:12px;color:#f3e3c8;margin-top:8px;">Choisissez vos produits, votre boîte cadeau et votre papier d'emballage. Tout est pensé pour vous — prêt à offrir.</div>
+                </div>
             </div>
 
             <div class="bb-catalog-panel">
@@ -488,6 +492,122 @@
             <p style="font-weight:700;color:#8a5a6b;">🎁 Coffret Cils Bella Bay — 49,99 $ CAD<br><span style="font-weight:400;font-size:13px;">Les trois, réunis dans un beau coffret cadeau. Idéal pour les Fêtes.</span></p>
             <p style="font-size:13px;">-10 % avec le code <strong>BELLA</strong> • Livraison mondiale • Concours 250 $ — tirage le 25 décembre 2026</p>
             <button type="button" onclick="goToLashes()" style="padding:14px 28px;background:#e8cf98;border:none;color:#1c1417;font:700 13px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">Découvrir les cils 👁️</button>
+        </div>
+    </div>
+
+    <!-- CONSTRUCTEUR PANIER CADEAU BELLA BAY -->
+    <div class="service-modal" id="giftBuilderModal" onclick="closeGiftBuilderOutside(event)">
+        <div class="modal-box" style="text-align:left;max-width:640px;">
+            <button class="modal-close" onclick="closeGiftBuilder()" aria-label="Fermer">×</button>
+            <div class="modal-number">Pour les Fêtes • Bella Bay</div>
+            <h2 style="font-size:30px;text-align:center;">🎁 Créez votre propre panier cadeau</h2>
+            <p style="text-align:center;">Choisissez vos produits, votre belle boîte cadeau et votre papier d'emballage. Tout est pensé pour vous — prêt à offrir, avec une carte concours incluse.</p>
+            <h3 style="font-size:15px;margin:18px 0 8px;">1 • Choisissez vos produits</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-daily-repair-shampoo" data-gift-price="34.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Shampooing Daily Repair</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">34,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-daily-repair-conditioner" data-gift-price="34.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Revitalisant Daily Repair</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">34,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-luxe-leavein" data-gift-price="34.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Spray Luxe sans rinçage</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">34,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-bounce-boost-mousse" data-gift-price="44.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Mousse Bounce Boost</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">44,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-glow-mask" data-gift-price="49.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Masque Glow</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">49,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-mascara" data-gift-price="22.0" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Mascara Bella Bay</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">22,0 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-lash-rejuvenator" data-gift-price="33.3" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Sérum Cils Lash Rejuvenator</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">33,3 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-cils-bande" data-gift-price="19.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Cils Bande 3D</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">19,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-cils-individuels" data-gift-price="19.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Cils Individuels</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">19,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-cils-magnetiques" data-gift-price="24.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Cils Magnétiques</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">24,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-lipstick-red-audacity" data-gift-price="24.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Rouge à lèvres — Red Audacity</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">24,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-candle-bergamot-lemon" data-gift-price="49.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Bougie — Bergamot + Lemon</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">49,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-soap-rose-honey" data-gift-price="19.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Savon — Rose & Honey</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">19,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-solid-fragrance-rose-sandalwood" data-gift-price="19.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Parfum solide — Rose Sandalwood</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">19,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-stipple-blend-brush" data-gift-price="34.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Pinceau Stipple & Blend</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">34,99 $</span>
+    </label><label style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8cf98;border-radius:4px;padding:10px 12px;cursor:pointer;text-align:left;">
+        <input type="checkbox" data-gift-pid="bb-coffret-cils" data-gift-price="49.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;width:18px;height:18px;">
+        <span style="flex:1;font-size:13px;font-weight:600;">Coffret Cils Bella Bay</span>
+        <span style="font-size:13px;color:#8a5a6b;font-weight:700;">49,99 $</span>
+    </label></div>
+            <h3 style="font-size:15px;margin:18px 0 8px;">2 • Choisissez votre boîte cadeau</h3>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:12px;cursor:pointer;text-align:center;">
+                    <input type="radio" name="giftSize" value="petit" data-gift-size-price="11.99" checked onchange="updateGiftTotal()" style="accent-color:#8a5a6b;">
+                    <div style="font-weight:700;font-size:13px;margin-top:6px;">🎁 Petit</div>
+                    <div style="font-size:12px;color:#8a5a6b;">Belle boîte + papier de soie + ruban</div>
+                    <div style="font-weight:700;font-size:13px;margin-top:4px;">11,99 $</div>
+                    <div style="font-size:11px;color:#666;">1 à 3 produits</div>
+                </label>
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:12px;cursor:pointer;text-align:center;">
+                    <input type="radio" name="giftSize" value="moyen" data-gift-size-price="14.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;">
+                    <div style="font-weight:700;font-size:13px;margin-top:6px;">🎁 Moyen</div>
+                    <div style="font-size:12px;color:#8a5a6b;">Belle boîte + papier de soie + ruban + carte message</div>
+                    <div style="font-weight:700;font-size:13px;margin-top:4px;">14,99 $</div>
+                    <div style="font-size:11px;color:#666;">3 à 5 produits</div>
+                </label>
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:12px;cursor:pointer;text-align:center;">
+                    <input type="radio" name="giftSize" value="grand" data-gift-size-price="19.99" onchange="updateGiftTotal()" style="accent-color:#8a5a6b;">
+                    <div style="font-weight:700;font-size:13px;margin-top:6px;">🎁 Grand</div>
+                    <div style="font-size:12px;color:#8a5a6b;">Grande boîte + papier de soie + ruban + carte + pétales</div>
+                    <div style="font-weight:700;font-size:13px;margin-top:4px;">19,99 $</div>
+                    <div style="font-size:11px;color:#666;">5 produits et plus</div>
+                </label>
+            </div>
+            <h3 style="font-size:15px;margin:18px 0 8px;">3 • Choisissez votre papier d'emballage</h3>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:10px;cursor:pointer;text-align:center;font-size:12px;font-weight:600;"><input type="radio" name="giftWrap" value="Rose soie" checked style="accent-color:#8a5a6b;"> 🌸 Rose soie</label>
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:10px;cursor:pointer;text-align:center;font-size:12px;font-weight:600;"><input type="radio" name="giftWrap" value="Or" style="accent-color:#8a5a6b;"> ✨ Or</label>
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:10px;cursor:pointer;text-align:center;font-size:12px;font-weight:600;"><input type="radio" name="giftWrap" value="Rouge Noël" style="accent-color:#8a5a6b;"> 🎄 Rouge Noël</label>
+                <label style="background:#fff;border:2px solid #e8cf98;border-radius:4px;padding:10px;cursor:pointer;text-align:center;font-size:12px;font-weight:600;"><input type="radio" name="giftWrap" value="Perles et diamants" style="accent-color:#8a5a6b;"> 💎 Perles</label>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;background:#241a1f;color:#fff;border-radius:4px;padding:14px 18px;margin-top:20px;">
+                <span style="font-size:13px;letter-spacing:1px;text-transform:uppercase;">Votre panier cadeau</span>
+                <strong id="giftBuilderTotal" style="font-size:20px;color:#e8cf98;">11,99 $ CAD</strong>
+            </div>
+            <p id="giftBuilderMsg" style="font-size:13px;color:#8a5a6b;text-align:center;margin:10px 0 0;"></p>
+            <div style="text-align:center;margin-top:14px;">
+                <button type="button" onclick="addGiftBasketToCart()" style="padding:14px 28px;background:#e8cf98;border:none;color:#1c1417;font:700 13px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">Ajouter mon panier cadeau au panier 🎁</button>
+            </div>
+            <p style="font-size:12px;text-align:center;color:#666;margin-top:10px;">-10 % avec le code <strong>BELLA</strong> • Livraison mondiale • Concours 250 $ — tirage le 25 décembre 2026</p>
         </div>
     </div>
 
@@ -2660,7 +2780,8 @@
         let bbCart = [];
         try { bbCart = JSON.parse(localStorage.getItem('bbCart') || '[]'); } catch(e) { bbCart = []; }
         function bbMoney(n){ return n.toFixed(2).replace('.', ',') + ' $ CAD'; }
-        function bbFindProduct(id){ return bbProducts.find(p => p.id === id) || bbExtProducts[id] || null; }
+        const bbCustomProducts = {};
+        function bbFindProduct(id){ return bbProducts.find(p => p.id === id) || bbExtProducts[id] || bbCustomProducts[id] || null; }
         function addToCart(id){ const p = bbFindProduct(id); if(!p) return; const line = bbCart.find(l => l.id === id); if(line){ line.qty += 1; } else { bbCart.push({id:id, qty:1}); } saveCart(); toggleCart(true); }
         function addExtToCart(id){ addToCart(id); }
         function saveCart(){ try { localStorage.setItem('bbCart', JSON.stringify(bbCart)); } catch(e){} renderCart(); }
@@ -2802,6 +2923,48 @@
         }
         function closeLashOutside(event) {
             if(event.target.id === "lashModal") closeLashPopup();
+        }
+        /* ---- Constructeur panier cadeau Bella Bay ---- */
+        function openGiftBuilder(){ document.getElementById('giftBuilderModal').classList.add('active'); updateGiftTotal(); }
+        function closeGiftBuilder(){ document.getElementById('giftBuilderModal').classList.remove('active'); }
+        function closeGiftBuilderOutside(event){ if(event.target.id === 'giftBuilderModal') closeGiftBuilder(); }
+        function giftSelectedProducts(){
+            return Array.from(document.querySelectorAll('#giftBuilderModal input[data-gift-pid]:checked')).map(cb => ({id: cb.getAttribute('data-gift-pid'), price: parseFloat(cb.getAttribute('data-gift-price'))}));
+        }
+        function giftSelectedSize(){
+            const r = document.querySelector('#giftBuilderModal input[name="giftSize"]:checked');
+            return r ? {name: r.value, price: parseFloat(r.getAttribute('data-gift-size-price'))} : {name: 'petit', price: 11.99};
+        }
+        function giftSelectedWrap(){
+            const r = document.querySelector('#giftBuilderModal input[name="giftWrap"]:checked');
+            return r ? r.value : 'Rose soie';
+        }
+        function giftBasketTotal(){
+            const prods = giftSelectedProducts();
+            const size = giftSelectedSize();
+            return prods.reduce((s,p)=> s + p.price, 0) + size.price;
+        }
+        function updateGiftTotal(){
+            const totalEl = document.getElementById('giftBuilderTotal');
+            if(totalEl){ totalEl.textContent = bbMoney(giftBasketTotal()); }
+            const msg = document.getElementById('giftBuilderMsg');
+            const n = giftSelectedProducts().length;
+            if(msg){ msg.textContent = n === 0 ? 'Choisissez au moins un produit pour composer votre panier.' : n + (n > 1 ? ' produits choisis' : ' produit choisi') + ' • Boîte ' + giftSelectedSize().name + ' • Papier ' + giftSelectedWrap(); }
+        }
+        function addGiftBasketToCart(){
+            const prods = giftSelectedProducts();
+            if(prods.length === 0){ const msg = document.getElementById('giftBuilderMsg'); if(msg){ msg.textContent = 'Choisissez au moins un produit pour composer votre panier.'; } return; }
+            const size = giftSelectedSize();
+            const wrap = giftSelectedWrap();
+            const total = giftBasketTotal();
+            const names = prods.map(p => { const pr = bbFindProduct(p.id); return pr ? pr.title : p.id; });
+            const id = 'bb-custom-gift-' + Date.now();
+            const sizeLabel = size.name === 'petit' ? 'Petit' : (size.name === 'moyen' ? 'Moyen' : 'Grand');
+            bbCustomProducts[id] = {id: id, title: 'Panier cadeau personnalisé Bella Bay — ' + sizeLabel, brand: 'BELLA BAY', priceCAD: Math.round(total * 100) / 100, img: null, desc: 'Panier cadeau personnalisé : ' + names.join(', ') + '. Boîte ' + sizeLabel.toLowerCase() + ', papier ' + wrap + '. Carte concours incluse.'};
+            bbCart.push({id: id, qty: 1});
+            saveCart();
+            closeGiftBuilder();
+            toggleCart(true);
         }
         function goToLashes() {
             closeLashPopup();
