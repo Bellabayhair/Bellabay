@@ -51,10 +51,12 @@
         nav{display:flex;align-items:center;gap:20px}nav a{color:#fff;font-size:11px;font-weight:500;letter-spacing:.3px;transition:.25s}nav a:hover{color:var(--gold-light)}
         .menu-container{position:relative;display:none}
         .menu-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(201,164,92,0.1);border:1px solid rgba(201,164,92,0.4);color:var(--gold-light);font-size:18px;cursor:pointer;border-radius:3px;transition:0.3s}
-        .dropdown-menu{position:absolute;top:55px;right:0;width:300px;background:linear-gradient(145deg,#241a1f,#171014);border:1.5px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,0.9);display:none;flex-direction:column;z-index:2000;padding:15px 0}
+        .dropdown-menu{position:absolute;top:55px;right:0;width:300px;max-height:calc(100vh - 70px);overflow-y:auto;background:linear-gradient(145deg,#241a1f,#171014);border:1.5px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,0.9);display:none;flex-direction:column;z-index:2000;padding:15px 0}
         .dropdown-menu.active{display:flex;animation:fadeIn 0.3s ease}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
         .dropdown-header{padding:10px 20px 15px;border-bottom:1px solid rgba(201,164,92,0.2);font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-light);font-weight:600}
+        .dropdown-subheader{padding:12px 20px 6px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid rgba(201,164,92,0.2);margin-top:6px}
+        .dropdown-menu a.sub{padding:10px 20px 10px 30px;font-size:11px}
         .dropdown-menu a{padding:12px 20px;color:#f0e4e7;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;text-decoration:none;transition:0.2s;display:flex;align-items:center;justify-content:space-between}
         .dropdown-menu a:hover{background:rgba(201,164,92,0.2);color:var(--gold-light);padding-left:25px}
         .book,.btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f9e8ed 0%,#e9b8c6 35%,#cf8fa1 65%,#b86f84 100%);color:#24191d!important;border:1px solid var(--gold-light);padding:12px 23px;border-radius:30px;font-weight:700;font-size:12px;box-shadow:0 4px 0 #8e5968,0 7px 14px #0000004d;transition:.25s}
@@ -225,10 +227,12 @@
             </a>
             <nav>
                 <a href="#boutique">Boutique</a>
+                <a href="#boutique" onclick="openGiftBuilder();">🎁 Panier cadeau</a>
+                <a href="#boutique" onclick="bbMenuCategory('cils');">Cils 👁️</a>
                 <a href="#services">Services</a>
                 <a href="#mobile">Service mobile</a>
                 <a href="#histoire">Histoire</a>
-                <a href="#boutique">Extensions</a>
+                <a href="#boutique" onclick="bbMenuCategory('extensions');">Extensions</a>
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
                 <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
@@ -239,10 +243,32 @@
                 <div class="dropdown-menu" id="dropdownMenu">
                     <div class="dropdown-header">Navigation</div>
                     <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche</a>
+                    <a href="#boutique" onclick="toggleMenu();openGiftBuilder();">🎁 Créez votre propre panier cadeau</a>
+                    <div class="dropdown-header">Nos collections B.B 💎</div>
+                    <a href="#boutique" onclick="toggleMenu();bbMenuCategory('bella-bay');">💎 Tous les produits Bella Bay</a>
+                    <div class="dropdown-subheader">💇 Produits capillaires B.B</div>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('capillaire');">Tous les soins capillaires</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('shampooing');">Shampooing</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('revitalisant');">Revitalisant</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('rinçage');">Spray volumisant (sans rinçage)</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('masque');">Masque</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('mousse');">Mousse</a>
+                    <div class="dropdown-subheader">👁️ Cils B.B</div>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('cils');">Tous les cils</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('magnétique');">Cils magnétiques</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('cils bande');">Cils bande 3D</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('individuel');">Cils individuels</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('coffret cils');">Coffret cils</a>
+                    <div class="dropdown-subheader">💄 Make-up B.B</div>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('maquillage');">Tout le make-up</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('gloss');">Gloss</a>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('rouge à lèvres');">Rouge à lèvres</a>
+                    <div class="dropdown-subheader">✨ Hair B.B</div>
+                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('extensions');">Extensions — toutes</a>
+                    <div class="dropdown-subheader">Bella Bay</div>
                     <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
                     <a href="#mobile" onclick="toggleMenu();">Service mobile</a>
                     <a href="#histoire" onclick="toggleMenu();">Notre Histoire</a>
-                    <a href="#boutique" onclick="toggleMenu();">✨ Extensions de Rêve</a>
                     <a href="#salon" onclick="toggleMenu();">Salon</a>
                     <a href="#contact" onclick="toggleMenu();">Contact &amp; Zones</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();toggleCart(true);">🛒 Mon panier</a>
@@ -2685,11 +2711,30 @@
         let bbPage = 1;
         const BB_PER_PAGE = 12;
 
+        /* Groupes du menu B.B : filtrés par étiquette produit (tag), marque Bella Bay uniquement */
+        const bbTagGroups = {
+            'capillaire': ['Shampooing','Revitalisant','Soin sans rinçage','Mousse coiffante','Masque visage','Capillaire'],
+            'maquillage': ['Rouge','Crayon','Correcteur','Fard','Gloss','Fond de teint','BB Crème','Blush','Khôl','Poudre','Palette','Eyeliner','Mascara','Base paupières','Baume','Beurre à lèvres','Repulpant','Pinceau']
+        };
         function filterByCategory(cat) {
             activeCategory = cat;
             bbPage = 1;
             document.getElementById('bbCatalogSearch').value = '';
             renderCatalog();
+        }
+        function bbMenuCategory(cat){
+            filterByCategory(cat);
+            const g = document.getElementById('bbCatalogGrid');
+            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        function bbMenuSearch(keyword){
+            activeCategory = '';
+            bbPage = 1;
+            const inp = document.getElementById('bbCatalogSearch');
+            if(inp){ inp.value = keyword; }
+            renderCatalog();
+            const g = document.getElementById('bbCatalogGrid');
+            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
 
         function changeSort(v){ bbSort = v; bbPage = 1; renderCatalog(); }
@@ -2711,7 +2756,9 @@
             
             const filtered = bbSortProducts(bbProducts.filter(p => {
                 const isLash = p.id.indexOf('cils') !== -1 || p.id === 'bb-mascara' || p.id === 'bb-lash-rejuvenator';
-                const matchCat = !activeCategory || p.category === activeCategory || (activeCategory === 'cils' && isLash);
+                const tagGroup = bbTagGroups[activeCategory];
+                const matchTagGroup = !tagGroup || (p.category === 'bella-bay' && tagGroup.some(k => ((p.tag || '') + ' ' + (p.title || '')).includes(k)));
+                const matchCat = !activeCategory || p.category === activeCategory || (activeCategory === 'cils' && isLash) || matchTagGroup;
                 const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc).toLowerCase().includes(searchVal);
                 return matchCat && matchSearch;
             }));
