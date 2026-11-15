@@ -280,6 +280,7 @@
                 <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
                     <button type="button" onclick="filterByCategory('bella-bay')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Bella Bay 💎</button>
+                    <button type="button" onclick="filterByCategory('cils')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Cils 👁️</button>
                     <button type="button" onclick="filterByCategory('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Extensions</button>
                     <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins & Shampooings</button>
                     <button type="button" onclick="filterByCategory('coiffage')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Coiffage</button>
@@ -457,6 +458,36 @@
         <div class="modal-box">
             <button class="modal-close" onclick="closeService()" aria-label="Fermer">×</button>
             <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- POPOUT CILS BELLA BAY -->
+    <div class="service-modal" id="lashModal" onclick="closeLashOutside(event)">
+        <div class="modal-box" style="text-align:center;">
+            <button class="modal-close" onclick="closeLashPopup()" aria-label="Fermer">×</button>
+            <div class="modal-number">Nouveauté • Bella Bay</div>
+            <h2 style="font-size:42px;">La Collection Cils 👁️</h2>
+            <p>Le regard parfait, à la Bella Bay. Trois façons de sublimer vos cils, dans un écrin soie rose et or.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;">
+                <div style="background:#fff;border:1px solid #e8cf98;padding:14px;border-radius:4px;">
+                    <div style="font-size:26px;">✨</div>
+                    <div style="font-weight:700;font-size:13px;margin:6px 0;">Cils Bande 3D</div>
+                    <div style="color:#8a5a6b;font-size:13px;">19,99 $ CAD</div>
+                </div>
+                <div style="background:#fff;border:1px solid #e8cf98;padding:14px;border-radius:4px;">
+                    <div style="font-size:26px;">💎</div>
+                    <div style="font-weight:700;font-size:13px;margin:6px 0;">Cils Individuels</div>
+                    <div style="color:#8a5a6b;font-size:13px;">19,99 $ CAD</div>
+                </div>
+                <div style="background:#fff;border:1px solid #e8cf98;padding:14px;border-radius:4px;">
+                    <div style="font-size:26px;">🧲</div>
+                    <div style="font-weight:700;font-size:13px;margin:6px 0;">Cils Magnétiques</div>
+                    <div style="color:#8a5a6b;font-size:13px;">24,99 $ CAD</div>
+                </div>
+            </div>
+            <p style="font-weight:700;color:#8a5a6b;">🎁 Coffret Cils Bella Bay — 49,99 $ CAD<br><span style="font-weight:400;font-size:13px;">Les trois, réunis dans un beau coffret cadeau. Idéal pour les Fêtes.</span></p>
+            <p style="font-size:13px;">-10 % avec le code <strong>BELLA</strong> • Livraison mondiale • Concours 250 $ — tirage le 25 décembre 2026</p>
+            <button type="button" onclick="goToLashes()" style="padding:14px 28px;background:#e8cf98;border:none;color:#1c1417;font:700 13px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">Découvrir les cils 👁️</button>
         </div>
     </div>
 
@@ -2559,7 +2590,8 @@
             const external = document.getElementById('bbExternalCatalogSearch');
             
             const filtered = bbSortProducts(bbProducts.filter(p => {
-                const matchCat = !activeCategory || p.category === activeCategory;
+                const isLash = p.id.indexOf('cils') !== -1 || p.id === 'bb-mascara' || p.id === 'bb-lash-rejuvenator';
+                const matchCat = !activeCategory || p.category === activeCategory || (activeCategory === 'cils' && isLash);
                 const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc).toLowerCase().includes(searchVal);
                 return matchCat && matchSearch;
             }));
@@ -2760,6 +2792,33 @@
         function closeServiceOutside(event) {
             if(event.target.id === "serviceModal") closeService();
         }
+        function openLashPopup() {
+            document.getElementById("lashModal").classList.add("active");
+            document.body.classList.add("modal-open");
+        }
+        function closeLashPopup() {
+            document.getElementById("lashModal").classList.remove("active");
+            document.body.classList.remove("modal-open");
+        }
+        function closeLashOutside(event) {
+            if(event.target.id === "lashModal") closeLashPopup();
+        }
+        function goToLashes() {
+            closeLashPopup();
+            filterByCategory('cils');
+            const g = document.getElementById('bbCatalogGrid');
+            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        window.addEventListener('load', function(){
+            try {
+                if(!sessionStorage.getItem('bbLashPopupShown')){
+                    setTimeout(function(){
+                        openLashPopup();
+                        sessionStorage.setItem('bbLashPopupShown', '1');
+                    }, 2500);
+                }
+            } catch(e) {}
+        });
     </script>
 </body>
 
