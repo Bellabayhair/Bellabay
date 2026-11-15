@@ -334,6 +334,8 @@
                         <option value="rating">Mieux noté</option>
                         <option value="price-asc">Prix croissant</option>
                         <option value="price-desc">Prix décroissant</option>
+                        <option value="name-asc">A à Z</option>
+                        <option value="name-desc">Z à A</option>
                     </select>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
@@ -2753,6 +2755,8 @@
             if(bbSort === 'price-asc'){ arr.sort((a,b)=>a.priceCAD-b.priceCAD); }
             else if(bbSort === 'price-desc'){ arr.sort((a,b)=>b.priceCAD-a.priceCAD); }
             else if(bbSort === 'rating'){ arr.sort((a,b)=>((b.rating||0)-(a.rating||0)) || ((b.reviews||0)-(a.reviews||0))); }
+            else if(bbSort === 'name-asc'){ arr.sort((a,b)=>(a.title||'').localeCompare(b.title||'', 'fr')); }
+            else if(bbSort === 'name-desc'){ arr.sort((a,b)=>(b.title||'').localeCompare(a.title||'', 'fr')); }
             return arr;
         }
 
