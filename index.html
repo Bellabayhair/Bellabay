@@ -322,6 +322,26 @@
         .bb-section-all{display:block;margin:0 auto 8px;padding:12px 26px;background:#241a1f;border:1px solid #e8cf98;color:#e8cf98;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px}
         .bb-section-all:hover{background:#35242b}
         .bb-section-note{text-align:center;color:#96405a;font-size:12px;max-width:640px;margin:0 auto 18px}
+        /* Bella Bay v2 — langue, audio, extensions de reve, livraison */
+        .bb-lang-select{display:flex;gap:4px;align-items:center;margin-left:10px}
+        .bb-lang-btn{background:transparent;border:1px solid #c9a45c;color:#f5d98b;font:700 11px Montserrat,sans-serif;padding:5px 8px;border-radius:20px;cursor:pointer;letter-spacing:.5px}
+        .bb-lang-btn.active{background:#c9a45c;color:#241a1f}
+        .bb-audio-btn{background:transparent;border:1px solid #c9a45c;color:#f5d98b;font-size:15px;width:32px;height:32px;border-radius:50%;cursor:pointer;margin-left:8px;line-height:1}
+        .bb-lang-row{display:flex;gap:4px;margin-top:8px}
+        .bb-lang-mini{background:#fff;border:1px solid #d8b98a;color:#96405a;font:700 10px Montserrat,sans-serif;padding:3px 8px;border-radius:20px;cursor:pointer}
+        .bb-lang-mini.active{background:#96405a;color:#fff;border-color:#96405a}
+        .bb-section-group{grid-column:1/-1;font:700 13px Montserrat,sans-serif;color:#96405a;letter-spacing:2px;text-transform:uppercase;margin:12px 0 0;text-align:center}
+        .bb-ext-reve{background:linear-gradient(135deg,#f9e2ea,#fdeef2 55%,#fff6ec);border:1.5px solid #c9a45c;border-radius:20px;padding:28px 20px;margin:0 auto 22px;max-width:760px;text-align:center}
+        .bb-ext-reve h3{font-family:'Cormorant Garamond',serif;font-size:34px;color:#5b2333;margin:0 0 4px}
+        .bb-ext-reve .bb-ext-sub{font:700 12px Montserrat,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#96405a;margin:0 0 10px}
+        .bb-ext-reve p{color:#5b2333;font-size:14px;line-height:1.7;margin:0 auto 12px;max-width:620px}
+        .bb-ext-cta{display:inline-block;background:#0d0d0d;color:#f5d98b;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px;margin-top:6px}
+        .bb-delivery-note{font-size:12px;color:#96405a;line-height:1.6;margin:10px 0 0}
+        .bb-section-foot{text-align:center;color:#96405a;font-size:13px;margin:6px auto 18px;max-width:640px;line-height:1.7}
+        .bb-section-foot a{color:#96405a;font-weight:700}
+        .bb-sub-desc{font-size:11px;color:#8a5a6b;font-weight:400;margin-top:4px;line-height:1.5}
+        [dir="rtl"] .bb-product-info,[dir="rtl"] .bb-section-desc,[dir="rtl"] .bb-section-title{text-align:right}
+        [dir="rtl"] .bb-lang-row{justify-content:flex-end}
     </style>
     <!-- Bella Bay — PWA : boutique installable (Ajouter a l'ecran d'accueil, telephone et tablette) -->
     <meta name="description" content="Bella Bay — coiffure, extensions, maquillage, cils et bijoux. Boutique en ligne a Laval, Montreal et Rive-Nord. Livraison mondiale.">
@@ -355,18 +375,20 @@
                 <div class="logo-text">Bella Bay<small>COIFFURE & BEAUTÉ</small></div>
             </a>
             <nav>
-                <a href="#boutique">Boutique</a>
-                <a href="#boutique" onclick="openGiftBuilder();">🎁 Panier cadeau</a>
-                <a href="javascript:void(0)" onclick="bbMenuCategory('cils');">Cils 👁️</a>
-                <a href="javascript:void(0)" onclick="bbMenuCategory('bijoux');">Bijoux 💎</a>
-                <a href="#services">Services</a>
-                <a href="#mobile">Service mobile</a>
-                <a href="#histoire">Histoire</a>
-                <a href="javascript:void(0)" onclick="bbMenuCategory('extensions');">Extensions</a>
-                <a href="#salon">Salon</a>
-                <a href="#contact">Contact</a>
-                <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
-                <button type="button" class="bb-cart-btn" onclick="toggleCart(true)">🛒 Panier <span class="bb-cart-count" id="bbCartCount">0</span></button>
+                <a href="#boutique" data-i18n="nav.boutique">Boutique</a>
+                <a href="#boutique" onclick="openGiftBuilder();" data-i18n="nav.gift">🎁 Panier cadeau</a>
+                <a href="javascript:void(0)" onclick="bbMenuCategory('cils');" data-i18n="nav.cils">Cils 👁️</a>
+                <a href="javascript:void(0)" onclick="bbMenuCategory('bijoux');" data-i18n="nav.bijoux">Bijoux 💎</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#mobile" data-i18n="nav.mobile">Service mobile</a>
+                <a href="#histoire" data-i18n="nav.story">Histoire</a>
+                <a href="javascript:void(0)" onclick="bbMenuCategory('extensions');" data-i18n="nav.extensions">Extensions</a>
+                <a href="#salon" data-i18n="nav.salon">Salon</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer" data-i18n="nav.book">Réserver</a>
+                <button type="button" class="bb-cart-btn" onclick="toggleCart(true)">🛒 <span data-i18n="nav.cart">Panier</span> <span class="bb-cart-count" id="bbCartCount">0</span></button>
+        <span class="bb-lang-select" role="group" aria-label="Langue / Language / Lingua"><button type="button" class="bb-lang-btn" data-bb-lang="fr" onclick="bbSetLang('fr')">FR</button><button type="button" class="bb-lang-btn" data-bb-lang="en" onclick="bbSetLang('en')">EN</button><button type="button" class="bb-lang-btn" data-bb-lang="it" onclick="bbSetLang('it')">IT</button><button type="button" class="bb-lang-btn" data-bb-lang="ar" onclick="bbSetLang('ar')">ع</button></span>
+        <button type="button" class="bb-audio-btn" onclick="bbToggleWelcomeAudio()" aria-label="Écouter l'accueil Bella Bay" title="Écouter l'accueil Bella Bay">🔊</button>
             </nav>
             <div class="menu-container">
                 <div class="menu-icon" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></div>
@@ -375,17 +397,23 @@
                     <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche</a>
                     <a href="#boutique" onclick="toggleMenu();openGiftBuilder();">🎁 Créez votre propre panier cadeau</a>
                     <div class="dropdown-header">Nos grandes sections 💎</div>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbShowAll();">💎 Tous les produits Bella Bay</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('panier');">🎁 Faites votre panier</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('capillaire');">💇 Produits capillaires</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('visage');">🌸 Visage</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('corps');">🫧 Corps</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('cire');">🕯️ Cire et wax</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('epilation-machines');">⚡ Machines épilation définitive</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('maquillage');">💄 Beauté — Maquillage</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('cils');">👁️ Cils</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('bijoux');">💎 Bijoux</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('piercings');">✨ Piercings</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('soins-peau');">🧴 Soins pour la peau</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('accessoires');">🎀 Accessoires</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('ongles');">💅 Ongles</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('enfants');">🧒 Univers Enfants</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('capillaire');">💇 Produits capillaires B.B</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuSearch('trio capillaire');">🎁 Coffret Trio</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('cils');">👁️ Cils B.B</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('maquillage');">💄 Make-up B.B</a>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('extensions');">✨ Extensions — toutes</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('coffret-trio');">🎁 Coffret Trio</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('extensions');">✨ Extensions de rêve</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('accessoires');">🎀 Accessoires</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbShowAll();">💎 Tous les produits Bella Bay</a>
+                    <a href="#livraison" onclick="toggleMenu();">📦 Livraison</a>
                     <div class="dropdown-subheader">Bella Bay</div>
                     <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
                     <a href="#mobile" onclick="toggleMenu();">Service mobile</a>
@@ -401,14 +429,14 @@
 
     <section class="hero">
         <div class="hero-content">
-            <small>Votre beauté, notre signature · Code promo : BELLA (-10%)</small>
-            <h1>Sublimez vos cheveux avec <span>Bella Bay</span>.</h1>
-            <p>Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
+            <small data-i18n="hero.small">Votre beauté, notre signature · Code promo : BELLA (-10%)</small>
+            <h1 data-i18n="hero.title">Sublimez vos cheveux avec <span>Bella Bay</span>.</h1>
+            <p data-i18n="hero.text">Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.</p>
             <div class="hero-buttons">
-                <a href="#boutique" class="btn-gold">Explorer la boutique intelligente</a>
-                <a href="#boutique" class="btn-outline">Voir les extensions de rêve</a>
+                <a href="#boutique" class="btn-gold" onclick="bbWelcomeAudio();" data-i18n="hero.explore">Explorer la boutique intelligente</a>
+                <a href="javascript:void(0)" onclick="bbWelcomeAudio();bbMenuCategory('extensions');" class="btn-outline" data-i18n="hero.extensions">Voir les extensions de rêve</a>
             </div>
-            <div class="hero-footer-info" style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px;">
+            <div class="hero-footer-info" style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px;" data-i18n="hero.info">
                 Service mobile · Montréal · Laval · Rive-Nord
             </div>
         </div>
@@ -418,45 +446,45 @@
     <section class="section bb-marketplace" id="boutique">
         <div class="container">
             <div class="section-title">
-                <small>🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄</small>
-                <h2>La Boutique Intelligente</h2>
-                <p>Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — par exemple « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.</p>
+                <small data-i18n="shop.small">🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄</small>
+                <h2 data-i18n="shop.title">La Boutique Intelligente</h2>
+                <p data-i18n="shop.text">Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — par exemple « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.</p>
             </div>
 
             <div style="background:linear-gradient(135deg,#241a1f,#171014);border:1px solid var(--gold);padding:22px;margin-bottom:30px;border-radius:4px;text-align:center;color:#fff;">
-                <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
+                <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:8px;" data-i18n="shop.universe">✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)</span>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-                    <button type="button" onclick="filterByCategory('bella-bay')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Bella Bay 💎</button>
-                    <button type="button" onclick="filterByCategory('cils')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Cils 👁️</button>
-                    <button type="button" onclick="filterByCategory('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Extensions</button>
-                    <button type="button" onclick="filterByCategory('soins')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Soins & Shampooings</button>
-                    <button type="button" onclick="filterByCategory('coiffage')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Coiffage</button>
-                    <button type="button" onclick="filterByCategory('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Ongles</button>
-                    <button type="button" onclick="filterByCategory('outils')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Outils & Coiffure</button>
-                    <button type="button" onclick="filterByCategory('esthetique')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Épilation & Cire</button>
-                    <button type="button" onclick="filterByCategory('')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;">Tout voir ✨</button>
+                    <button type="button" onclick="bbMenuCategory('capillaire')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fCheveux">Cheveux 💇</button>
+                    <button type="button" onclick="bbMenuCategory('cils')" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fCils">Cils 👁️</button>
+                    <button type="button" onclick="bbMenuCategory('extensions')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fExtensions">Extensions ✨</button>
+                    <button type="button" onclick="bbMenuCategory('visage')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fVisage">Visage 🌸</button>
+                    <button type="button" onclick="bbMenuCategory('corps')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fCorps">Corps 🫧</button>
+                    <button type="button" onclick="bbMenuCategory('ongles')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fOngles">Ongles 💅</button>
+                    <button type="button" onclick="bbMenuCategory('bijoux')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fBijoux">Bijoux 💎</button>
+                    <button type="button" onclick="bbMenuCategory('cire')" style="padding:10px 18px;background:#cf8fa1;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fEpi">Épilation 🕯️</button>
+                    <button type="button" onclick="bbShowAll()" style="padding:10px 18px;background:#e8cf98;border:none;color:#1c1417;font:700 10px Montserrat,sans-serif;cursor:pointer;border-radius:20px;text-transform:uppercase;" data-i18n="shop.fAll">Tout voir 👀</button>
                 </div>
                 <div style="margin-top:16px;">
-                    <button type="button" onclick="openGiftBuilder()" style="padding:14px 26px;background:#241a1f;border:1px solid #e8cf98;color:#e8cf98;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">🎁 Créez votre propre panier cadeau — pour les Fêtes</button>
-                    <div style="font-size:12px;color:#f3e3c8;margin-top:8px;">Choisissez vos produits, votre boîte cadeau et votre papier d'emballage. Tout est pensé pour vous — prêt à offrir.</div>
+                    <button type="button" onclick="openGiftBuilder()" style="padding:14px 26px;background:#241a1f;border:1px solid #e8cf98;color:#e8cf98;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;" data-i18n="shop.giftBtn">🎁 Créez votre propre panier cadeau — pour les Fêtes</button>
+                    <div style="font-size:12px;color:#f3e3c8;margin-top:8px;" data-i18n="shop.giftNote">Choisissez vos produits, votre boîte cadeau et votre papier d'emballage. Tout est pensé pour vous — prêt à offrir.</div>
                 </div>
             </div>
 
             <div class="bb-catalog-panel">
-                <label class="bb-search-label" for="bbCatalogSearch">Recherche libre (ex. shampooing, ongles, sérum…)</label>
+                <label class="bb-search-label" for="bbCatalogSearch" data-i18n="shop.search">Recherche libre (ex. shampooing, ongles, sérum…)</label>
                 <div class="bb-search-row">
-                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, ongles, sérum…" autocomplete="off">
-                    <button type="button" id="bbCatalogSearchButton" class="bb-search-button">RECHERCHER</button>
+                    <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, ongles, sérum…" data-i18n-ph="shop.searchPh" autocomplete="off">
+                    <button type="button" id="bbCatalogSearchButton" class="bb-search-button" data-i18n="shop.searchBtn">RECHERCHER</button>
                 </div>
                 <div style="display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap;">
-                    <label for="bbSortSelect" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;">Trier par</label>
+                    <label for="bbSortSelect" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;" data-i18n="shop.sort">Trier par</label>
                     <select id="bbSortSelect" onchange="changeSort(this.value)" style="padding:9px 12px;border:1px solid #d8b98a;border-radius:4px;background:#fff;font:600 13px Montserrat,sans-serif;color:#241a1f;">
-                        <option value="pop">Plus populaire</option>
-                        <option value="rating">Mieux noté</option>
-                        <option value="price-asc">Prix croissant</option>
-                        <option value="price-desc">Prix décroissant</option>
-                        <option value="name-asc">A à Z</option>
-                        <option value="name-desc">Z à A</option>
+                        <option value="pop" data-i18n="shop.sortPop">Plus populaire</option>
+                        <option value="rating" data-i18n="shop.sortRating">Mieux noté</option>
+                        <option value="priceAsc" data-i18n="shop.sortPriceAsc">Prix croissant</option>
+                        <option value="priceDesc" data-i18n="shop.sortPriceDesc">Prix décroissant</option>
+                        <option value="nameAsc" data-i18n="shop.sortNameAsc">A à Z</option>
+                        <option value="nameDesc" data-i18n="shop.sortNameDesc">Z à A</option>
                     </select>
                 </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
@@ -470,24 +498,41 @@
             <div id="bbPagination" style="display:flex;gap:8px;justify-content:center;align-items:center;margin:26px 0 8px;flex-wrap:wrap;"></div>
 
             <div class="bb-trust">
-                <div><span>🔒</span><strong>Paiement sécurisé</strong><small>PayPal ou carte bancaire</small></div>
-                <div><span>✨</span><strong>Produits authentiques</strong><small>Vérifiés un par un</small></div>
-                <div><span>🎁</span><strong>Idées cadeaux</strong><small>Pour vos proches ou pour vous</small></div>
-                <div><span>💗</span><strong>Code BELLA -10 %</strong><small>Sur tout le panier</small></div>
+                <div><span>🔒</span><strong data-i18n="trust.pay">Paiement sécurisé</strong><small data-i18n="trust.paySub">PayPal ou carte bancaire</small></div>
+                <div><span>✨</span><strong data-i18n="trust.auth">Produits authentiques</strong><small data-i18n="trust.authSub">Vérifiés un par un</small></div>
+                <div><span>🎁</span><strong data-i18n="trust.gift">Idées cadeaux</strong><small data-i18n="trust.giftSub">Pour vos proches ou pour vous</small></div>
+                <div><span>💗</span><strong data-i18n="trust.code">Code BELLA -10 %</strong><small data-i18n="trust.codeSub">Sur tout le panier</small></div>
             </div>
 
-            <p class="bb-shop-disclaimer">Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.</p>
+            <p class="bb-shop-disclaimer" data-i18n="shop.disclaimer">Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.</p>
         </div>
     </section>
 
+
+    <!-- LIVRAISON BELLA BAY -->
+    <section class="section" id="livraison">
+        <div class="container">
+            <div class="section-title">
+                <small data-i18n="livraison.small">BELLA BAY — PARTOUT DANS LE MONDE</small>
+                <h2 data-i18n="livraison.title">📦 Livraison Bella Bay</h2>
+                <p data-i18n="livraison.p1">Votre commande est livrée en 5 à 7 jours, partout dans le monde.</p>
+            </div>
+            <div style="max-width:720px;margin:0 auto;text-align:center;">
+                <p style="color:#5b2333;font-size:15px;line-height:1.8;" data-i18n="livraison.p2">Chaque commande est préparée avec soin dans un emballage personnalisé Bella Bay, avec une carte plastifiée : QR code, courriel bellabay.coiffure@gmail.com, site bellabay.ca et téléphone / WhatsApp 514-582-2856.</p>
+                <p style="color:#5b2333;font-size:15px;line-height:1.8;" data-i18n="livraison.p3">Le suivi et la confirmation de votre livraison se font sur WhatsApp.</p>
+                <p class="bb-delivery-note" data-i18n="livraison.note">Certains produits sur commande (bijoux, produits CJ) prennent 15 à 25 jours — le délai exact est indiqué sur chaque fiche produit.</p>
+                <a class="btn-gold" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:18px;" data-i18n="livraison.cta">Suivre ma commande sur WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
     <!-- SERVICES DE COIFFURE -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
-                <small>NOTRE SAVOIR-FAIRE — -10 % AVEC LE CODE BELLA</small>
-                <h2>Nos Services</h2>
-                <p>Des services professionnels pensés pour révéler, soigner et sublimer votre chevelure.</p>
+                <small data-i18n="services.small">NOTRE SAVOIR-FAIRE — -10 % AVEC LE CODE BELLA</small>
+                <h2 data-i18n="services.title">Nos Services</h2>
+                <p data-i18n="services.text">Des services professionnels pensés pour révéler, soigner et sublimer votre chevelure.</p>
             </div>
             <div class="bb-price-card">
                 <div class="bb-price-card-head">
@@ -589,8 +634,8 @@
 
     <!-- FUTUR SALON -->
     <section class="future" id="salon">
-        <h2>Notre Futur<br>Salon Physique</h2>
-        <p>En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
+        <h2 data-i18n="salon.title">Notre Futur<br>Salon Physique</h2>
+        <p data-i18n="salon.text">En attendant l'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.</p>
         <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
     </section>
 
@@ -599,22 +644,23 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>Bella Bay</h3>
-                <p>Coiffure & Beauté. Sublimer vos cheveux grâce à une expérience professionnelle, personnalisée et attentionnée.</p>
+                <p data-i18n="footer.brand">Coiffure & Beauté. Sublimer vos cheveux grâce à une expérience professionnelle, personnalisée et attentionnée.</p>
             </div>
             <div>
-                <div class="footer-title">Navigation</div>
+                <div class="footer-title" data-i18n="footer.nav">Navigation</div>
                 <div class="footer-links">
                     <a href="#boutique">Boutique en ligne</a>
                     <a href="#services">Services</a>
                     <a href="#mobile">Service mobile</a>
                     <a href="#histoire">Histoire</a>
-                    <a href="#boutique">Extensions</a>
+                    <a href="javascript:void(0)" onclick="bbMenuCategory('extensions');">Extensions</a>
                     <a href="#salon">Salon</a>
+                    <a href="#livraison" data-i18n="footer.delivery">📦 Livraison</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
             <div>
-                <div class="footer-title">Contact</div>
+                <div class="footer-title" data-i18n="footer.contact">Contact</div>
                 <div class="footer-contact">
                     <a href="tel:+15145822856">514-582-2856</a>
                     <a href="mailto:bellabay.coiffure@gmail.com">bellabay.coiffure@gmail.com</a>
@@ -622,7 +668,7 @@
                 </div>
             </div>
             <div class="footer-social">
-                <div class="footer-title">Contact & Réservation</div>
+                <div class="footer-title" data-i18n="footer.book">Contact & Réservation</div>
                 <p style="color:#aaa0a4;font-size:11px">Pour une réservation ou une question, contactez Bella Bay directement sur WhatsApp.</p>
                 <a class="btn-whatsapp" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver sur WhatsApp</a>
                 <a href="https://www.instagram.com/bellabay.coiffure/" target="_blank" rel="noopener noreferrer" style="color:#cfc4c8;font-size:12px">Instagram · @bellabay.coiffure</a>
@@ -634,25 +680,26 @@
     <!-- PANIER BELLA BAY -->
     <div class="bb-cart-drawer" id="bbCartDrawer" aria-label="Panier">
         <div class="bb-cart-head">
-            <h3>Mon panier</h3>
+            <h3 data-i18n="cart.title">Mon panier</h3>
             <button class="bb-cart-close" onclick="toggleCart(false)" aria-label="Fermer">×</button>
         </div>
         <div class="bb-cart-items" id="bbCartItems"></div>
         <div class="bb-cart-foot">
             <div class="bb-promo" id="bbPromoBox">
-                <label for="bbPromoInput" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;">Code promo</label>
+                <label for="bbPromoInput" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;" data-i18n="cart.promo">Code promo</label>
                 <div style="display:flex;gap:8px;margin-top:6px;">
                     <input id="bbPromoInput" type="text" placeholder="Ex. BELLA" autocomplete="off" style="flex:1;padding:10px;border:1px solid #d8b98a;border-radius:4px;text-transform:uppercase;min-width:0;">
-                    <button type="button" onclick="applyPromo()" class="bb-search-button" style="padding:10px 16px;white-space:nowrap;">Appliquer</button>
+                    <button type="button" onclick="applyPromo()" class="bb-search-button" style="padding:10px 16px;white-space:nowrap;" data-i18n="cart.apply">Appliquer</button>
                 </div>
                 <p id="bbPromoMsg" style="font-size:12px;margin:8px 0 0;color:#8a5a6b;"></p>
             </div>
-            <div class="bb-cart-total" id="bbCartSubtotalRow" style="display:none"><span>Sous-total</span><span id="bbCartSubtotal">0,00 $ CAD</span></div>
-            <div class="bb-cart-total" id="bbCartDiscountRow" style="display:none"><span>Rabais BELLA (-10 %)</span><span id="bbCartDiscount">-0,00 $ CAD</span></div>
-            <div class="bb-cart-total"><span>Total</span><span id="bbCartTotal">0,00 $ CAD</span></div>
+            <div class="bb-cart-total" id="bbCartSubtotalRow" style="display:none"><span data-i18n="cart.subtotal">Sous-total</span><span id="bbCartSubtotal">0,00 $ CAD</span></div>
+            <div class="bb-cart-total" id="bbCartDiscountRow" style="display:none"><span data-i18n="cart.discount">Rabais BELLA (-10 %)</span><span id="bbCartDiscount">-0,00 $ CAD</span></div>
+            <div class="bb-cart-total"><span data-i18n="cart.total">Total</span><span id="bbCartTotal">0,00 $ CAD</span></div>
             <div id="bbPaypalButtons"></div>
             <p class="bb-cart-note" id="bbPaypalNote" style="display:none">Paiement PayPal en cours d'activation : remplacez YOUR_PAYPAL_CLIENT_ID par votre identifiant PayPal (voir le commentaire dans le code, une seule ligne).</p>
-            <p class="bb-cart-note">Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies. 🎄 Pour les Fêtes, pensez à commander tôt pour recevoir vos cadeaux à temps.</p>
+            <p class="bb-cart-note" data-i18n="cart.note">Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies. 🎄 Pour les Fêtes, pensez à commander tôt pour recevoir vos cadeaux à temps.</p>
+            <p class="bb-delivery-note" data-i18n="cart.delivery">🚚 Livraison en 5 à 7 jours — emballage Bella Bay personnalisé, avec une carte plastifiée. Suivi et confirmation sur WhatsApp.</p>
             <div id="bbCartSuccess" style="display:none"></div>
         </div>
     </div>
@@ -3013,6 +3060,103 @@
         let bbPage = 1;
         const BB_PER_PAGE = 9;
 
+        /* ============================================================
+           Bella Bay v2 — Multilingue LEGER (FR | EN | IT | AR)
+           Les libelles du site sont dans bbI18n. Les noms de produits se
+           traduisent mot a mot (bbI18nWords). Chaque produit peut avoir une
+           courte description traduite (p.t = {en, it, ar}).
+           Les descriptions completes en 4 langues pour les 186 produits
+           feraient exploser la taille du fichier : on commence par les
+           libelles + le nom + une courte description par produit.
+           ============================================================ */
+        let bbLang = 'fr';
+        try { bbLang = localStorage.getItem('bbLang') || 'fr'; } catch(e) { bbLang = 'fr'; }
+        if(!['fr','en','it','ar'].includes(bbLang)) bbLang = 'fr';
+        const bbI18n = {'nav.boutique':{fr:'Boutique',en:'Shop',it:'Negozio',ar:'المتجر'},'nav.gift':{fr:'🎁 Panier cadeau',en:'🎁 Gift basket',it:'🎁 Cesto regalo',ar:'🎁 سلة هدايا'},'nav.cils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'nav.bijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'nav.services':{fr:'Services',en:'Services',it:'Servizi',ar:'الخدمات'},'nav.mobile':{fr:'Service mobile',en:'Mobile service',it:'Servizio a domicilio',ar:'خدمة منزلية'},'nav.story':{fr:'Histoire',en:'Our story',it:'La nostra storia',ar:'قصتنا'},'nav.extensions':{fr:'Extensions',en:'Extensions',it:'Extension',ar:'وصلات الشعر'},'nav.salon':{fr:'Salon',en:'Salon',it:'Salone',ar:'الصالون'},'nav.contact':{fr:'Contact',en:'Contact',it:'Contatti',ar:'اتصل بنا'},'nav.book':{fr:'Réserver',en:'Book now',it:'Prenota',ar:'احجز'},'nav.cart':{fr:'Panier',en:'Cart',it:'Carrello',ar:'السلة'},'hero.small':{fr:'Votre beauté, notre signature · Code promo : BELLA (-10%)',en:'Your beauty, our signature · Promo code: BELLA (-10%)',it:'La tua bellezza, la nostra firma · Codice promo: BELLA (-10%)',ar:'جمالك، توقيعنا · رمز الخصم: BELLA (-10%)'},'hero.title':{fr:'Sublimez vos cheveux avec <span>Bella Bay</span>.',en:'Enhance your hair with <span>Bella Bay</span>.',it:'Valorizza i tuoi capelli con <span>Bella Bay</span>.',ar:'أبرزي جمال شعرك مع <span>Bella Bay</span>.'},'hero.text':{fr:'Bella Bay est là pour sublimer vos cheveux avec des produits de qualité et un service de qualité qui vous apporteront de vrais bienfaits, directement chez vous à Montréal, Laval et sur la Rive-Nord.',en:'Bella Bay is here to enhance your hair with quality products and quality service that will bring you real benefits, directly at your home in Montreal, Laval and the North Shore.',it:'Bella Bay è qui per valorizzare i tuoi capelli con prodotti di qualità e un servizio di qualità che ti porteranno veri benefici, direttamente a casa tua a Montreal, Laval e Rive-Nord.',ar:'بيلا باي هنا لتبرز جمال شعرك بمنتجات عالية الجودة وخدمة عالية الجودة تجلب لك فوائد حقيقية، مباشرة إلى منزلك في مونتريال ولافال والضفة الشمالية.'},'hero.explore':{fr:'Explorer la boutique intelligente',en:'Explore the smart boutique',it:'Esplora la boutique intelligente',ar:'اكتشفي المتجر الذكي'},'hero.extensions':{fr:'Voir les extensions de rêve',en:'See the dream extensions',it:'Vedi le extension da sogno',ar:'شاهدي وصلات الأحلام'},'hero.info':{fr:'Service mobile · Montréal · Laval · Rive-Nord',en:'Mobile service · Montreal · Laval · North Shore',it:'Servizio a domicilio · Montreal · Laval · Rive-Nord',ar:'خدمة منزلية · مونتريال · لافال · الضفة الشمالية'},'shop.small':{fr:'🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄',en:'🎄 HOLIDAY SELECTION — -10% WITH CODE BELLA 🎄',it:'🎄 SELEZIONE DELLE FESTE — -10% CON IL CODICE BELLA 🎄',ar:'🎄 تشكيلة الأعياد — خصم 10% مع الرمز BELLA 🎄'},'shop.title':{fr:'La Boutique Intelligente',en:'The Smart Boutique',it:'La Boutique Intelligente',ar:'المتجر الذكي'},'shop.text':{fr:'Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — par exemple « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.',en:'The Bella Bay catalogue brings together products from all our boutiques: extensions, care, styling, nails, wax and tools. Type a word — for example \'shampoo\' — to see all matching products. 🎁 Gift ideas for your loved ones: give (or treat yourself to) beauty.',it:'Il catalogo Bella Bay riunisce i prodotti di tutte le nostre boutique: extension, cura, styling, unghie, cera e strumenti. Digita una parola — ad esempio «shampoo» — per vedere tutti i prodotti corrispondenti. 🎁 Idee regalo per i tuoi cari: regala (o regalati) la bellezza.',ar:'يجمع متجر بيلا باي منتجات جميع متاجرنا: الوصلات والعناية والتصفيف والأظافر والشمع والأدوات. اكتبي كلمة — مثلاً «شامبو» — لرؤية جميع المنتجات المطابقة. 🎁 أفكار هدايا لأحبائك: أهدي (أو أهدي نفسك) الجمال.'},'shop.universe':{fr:'✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)',en:'✨ Bella Bay Beauty Universe (Enjoy -10% with code BELLA)',it:'✨ Universo Bellezza Bella Bay (Approfitta del -10% con il codice BELLA)',ar:'✨ عالم الجمال بيلا باي (استفيدي من خصم 10% مع الرمز BELLA)'},'shop.fCheveux':{fr:'Cheveux 💇',en:'Hair 💇',it:'Capelli 💇',ar:'الشعر 💇'},'shop.fCils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'shop.fExtensions':{fr:'Extensions ✨',en:'Extensions ✨',it:'Extension ✨',ar:'وصلات الشعر ✨'},'shop.fVisage':{fr:'Visage 🌸',en:'Face 🌸',it:'Viso 🌸',ar:'الوجه 🌸'},'shop.fCorps':{fr:'Corps 🫧',en:'Body 🫧',it:'Corpo 🫧',ar:'الجسم 🫧'},'shop.fOngles':{fr:'Ongles 💅',en:'Nails 💅',it:'Unghie 💅',ar:'الأظافر 💅'},'shop.fBijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'shop.fEpi':{fr:'Épilation 🕯️',en:'Hair removal 🕯️',it:'Depilazione 🕯️',ar:'إزالة الشعر 🕯️'},'shop.fAll':{fr:'Tout voir 👀',en:'See all 👀',it:'Vedi tutto 👀',ar:'عرض الكل 👀'},'shop.giftBtn':{fr:'🎁 Créez votre propre panier cadeau — pour les Fêtes',en:'🎁 Create your own gift basket — for the Holidays',it:'🎁 Crea il tuo cesto regalo — per le Feste',ar:'🎁 اصنعي سلة هديتك الخاصة — للأعياد'},'shop.giftNote':{fr:'Choisissez vos produits, votre boîte cadeau et votre papier d\'emballage. Tout est pensé pour vous — prêt à offrir.',en:'Choose your products, your gift box and your wrapping paper. Everything is thought out for you — ready to give.',it:'Scegli i tuoi prodotti, la tua scatola regalo e la tua carta da regalo. Tutto è pensato per te — pronto da regalare.',ar:'اختاري منتجاتك وعلبة الهدية وورق التغليف. كل شيء مُعد لك — جاهز للإهداء.'},'shop.search':{fr:'Recherche libre (ex. shampooing, ongles, sérum…)',en:'Free search (e.g. shampoo, nails, serum…)',it:'Ricerca libera (es. shampoo, unghie, siero…)',ar:'بحث حر (مثال: شامبو، أظافر، سيروم…)'},'shop.searchPh':{fr:'Tapez shampooing, ongles, sérum…',en:'Type shampoo, nails, serum…',it:'Digita shampoo, unghie, siero…',ar:'اكتبي شامبو، أظافر، سيروم…'},'shop.searchBtn':{fr:'RECHERCHER',en:'SEARCH',it:'CERCA',ar:'بحث'},'shop.sort':{fr:'Trier par',en:'Sort by',it:'Ordina per',ar:'ترتيب حسب'},'shop.sortPop':{fr:'Plus populaire',en:'Most popular',it:'Più popolari',ar:'الأكثر شعبية'},'shop.sortRating':{fr:'Mieux noté',en:'Top rated',it:'Più votati',ar:'الأعلى تقييمًا'},'shop.sortPriceAsc':{fr:'Prix croissant',en:'Price: low to high',it:'Prezzo crescente',ar:'السعر: من الأقل للأعلى'},'shop.sortPriceDesc':{fr:'Prix décroissant',en:'Price: high to low',it:'Prezzo decrescente',ar:'السعر: من الأعلى للأقل'},'shop.sortNameAsc':{fr:'A à Z',en:'A to Z',it:'Dalla A alla Z',ar:'من الألف إلى الياء'},'shop.sortNameDesc':{fr:'Z à A',en:'Z to A',it:'Dalla Z alla A',ar:'من الياء إلى الألف'},'shop.disclaimer':{fr:'Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.',en:'Order directly on Bella Bay: add your products to the cart and pay online with PayPal or by bank card. Payment and delivery confirmed with Bella Bay. Prices in CAD $.',it:'Ordina direttamente su Bella Bay: aggiungi i tuoi prodotti al carrello e paga online con PayPal o con carta bancaria. Pagamento e consegna confermati con Bella Bay. Prezzi in $ CAD.',ar:'اطلبي مباشرة من بيلا باي: أضيفي منتجاتك إلى السلة وادفعي عبر الإنترنت بباي بال أو بالبطاقة البنكية. الدفع والتسليم مؤكدان مع بيلا باي. الأسعار بالدولار الكندي.'},'trust.pay':{fr:'Paiement sécurisé',en:'Secure payment',it:'Pagamento sicuro',ar:'دفع آمن'},'trust.paySub':{fr:'PayPal ou carte bancaire',en:'PayPal or bank card',it:'PayPal o carta bancaria',ar:'باي بال أو بطاقة بنكية'},'trust.auth':{fr:'Produits authentiques',en:'Authentic products',it:'Prodotti autentici',ar:'منتجات أصلية'},'trust.authSub':{fr:'Vérifiés un par un',en:'Verified one by one',it:'Verificati uno per uno',ar:'تم التحقق منها واحدًا تلو الآخر'},'trust.gift':{fr:'Idées cadeaux',en:'Gift ideas',it:'Idee regalo',ar:'أفكار هدايا'},'trust.giftSub':{fr:'Pour vos proches ou pour vous',en:'For your loved ones or for you',it:'Per i tuoi cari o per te',ar:'لأحبائك أو لك'},'trust.code':{fr:'Code BELLA -10 %',en:'Code BELLA -10%',it:'Codice BELLA -10%',ar:'الرمز BELLA -10%'},'trust.codeSub':{fr:'Sur tout le panier',en:'On the whole cart',it:'Su tutto il carrello',ar:'على كامل السلة'},'cart.title':{fr:'Mon panier',en:'My cart',it:'Il mio carrello',ar:'سلتي'},'cart.promo':{fr:'Code promo',en:'Promo code',it:'Codice promo',ar:'رمز الخصم'},'cart.apply':{fr:'Appliquer',en:'Apply',it:'Applica',ar:'تطبيق'},'cart.subtotal':{fr:'Sous-total',en:'Subtotal',it:'Subtotale',ar:'المجموع الفرعي'},'cart.discount':{fr:'Rabais BELLA (-10 %)',en:'BELLA discount (-10%)',it:'Sconto BELLA (-10%)',ar:'خصم BELLA (-10%)'},'cart.total':{fr:'Total',en:'Total',it:'Totale',ar:'المجموع'},'cart.note':{fr:'Paiement sécurisé par PayPal ou par carte bancaire. Commande confirmée avec Bella Bay. Pour les extensions, le prix final est confirmé selon la longueur et la couleur choisies. 🎄 Pour les Fêtes, pensez à commander tôt pour recevoir vos cadeaux à temps.',en:'Secure payment by PayPal or bank card. Order confirmed with Bella Bay. For extensions, the final price is confirmed according to the chosen length and colour. 🎄 For the Holidays, order early to receive your gifts on time.',it:'Pagamento sicuro con PayPal o carta bancaria. Ordine confermato con Bella Bay. Per le extension, il prezzo finale viene confermato in base alla lunghezza e al colore scelti. 🎄 Per le Feste, ordina presto per ricevere i tuoi regali in tempo.',ar:'دفع آمن عبر باي بال أو البطاقة البنكية. الطلب مؤكد مع بيلا باي. بالنسبة للوصلات، يُحدد السعر النهائي حسب الطول واللون المختارين. 🎄 للأعياد، اطلبي مبكرًا لتصلك هداياك في الوقت المناسب.'},'cart.delivery':{fr:'🚚 Livraison en 5 à 7 jours — emballage Bella Bay personnalisé, avec une carte plastifiée. Suivi et confirmation sur WhatsApp.',en:'🚚 Delivery in 5 to 7 days — personalised Bella Bay packaging, with a laminated card. Tracking and confirmation on WhatsApp.',it:'🚚 Consegna in 5-7 giorni — confezione Bella Bay personalizzata, con una carta plastificata. Tracciamento e conferma su WhatsApp.',ar:'🚚 التسليم خلال 5 إلى 7 أيام — تغليف بيلا باي مخصص، مع بطاقة مغلفة. التتبع والتأكيد عبر واتساب.'},'cart.empty':{fr:'Votre panier est vide.<br>Ajoutez vos produits préférés depuis la boutique.',en:'Your cart is empty.<br>Add your favourite products from the boutique.',it:'Il tuo carrello è vuoto.<br>Aggiungi i tuoi prodotti preferiti dalla boutique.',ar:'سلتك فارغة.<br>أضيفي منتجاتك المفضلة من المتجر.'},'cart.remove':{fr:'Retirer',en:'Remove',it:'Rimuovi',ar:'إزالة'},'livraison.small':{fr:'BELLA BAY — PARTOUT DANS LE MONDE',en:'BELLA BAY — WORLDWIDE',it:'BELLA BAY — IN TUTTO IL MONDO',ar:'بيلا باي — في جميع أنحاء العالم'},'livraison.title':{fr:'📦 Livraison Bella Bay',en:'📦 Bella Bay delivery',it:'📦 Consegna Bella Bay',ar:'📦 توصيل بيلا باي'},'livraison.p1':{fr:'Votre commande est livrée en 5 à 7 jours, partout dans le monde.',en:'Your order is delivered in 5 to 7 days, worldwide.',it:'Il tuo ordine viene consegnato in 5-7 giorni, in tutto il mondo.',ar:'يتم توصيل طلبك خلال 5 إلى 7 أيام، في جميع أنحاء العالم.'},'livraison.p2':{fr:'Chaque commande est préparée avec soin dans un emballage personnalisé Bella Bay, avec une carte plastifiée : QR code, courriel bellabay.coiffure@gmail.com, site bellabay.ca et téléphone / WhatsApp 514-582-2856.',en:'Each order is carefully prepared in personalised Bella Bay packaging, with a laminated card: QR code, email bellabay.coiffure@gmail.com, website bellabay.ca and phone / WhatsApp 514-582-2856.',it:'Ogni ordine viene preparato con cura in una confezione personalizzata Bella Bay, con una carta plastificata: codice QR, email bellabay.coiffure@gmail.com, sito bellabay.ca e telefono / WhatsApp 514-582-2856.',ar:'يتم تحضير كل طلب بعناية في تغليف بيلا باي المخصص، مع بطاقة مغلفة: رمز QR، البريد الإلكتروني bellabay.coiffure@gmail.com، الموقع bellabay.ca والهاتف / واتساب 514-582-2856.'},'livraison.p3':{fr:'Le suivi et la confirmation de votre livraison se font sur WhatsApp.',en:'Delivery tracking and confirmation are done on WhatsApp.',it:'Il tracciamento e la conferma della consegna avvengono su WhatsApp.',ar:'يتم تتبع طلبك وتأكيد التسليم عبر واتساب.'},'livraison.note':{fr:'Certains produits sur commande (bijoux, produits CJ) prennent 15 à 25 jours — le délai exact est indiqué sur chaque fiche produit.',en:'Some made-to-order products (jewelry, CJ products) take 15 to 25 days — the exact delay is shown on each product page.',it:'Alcuni prodotti su ordinazione (gioielli, prodotti CJ) richiedono 15-25 giorni — il tempo esatto è indicato su ogni scheda prodotto.',ar:'بعض المنتجات المصنوعة عند الطلب (المجوهرات، منتجات CJ) تستغرق 15 إلى 25 يومًا — المدة الدقيقة مذكورة في كل صفحة منتج.'},'livraison.cta':{fr:'Suivre ma commande sur WhatsApp',en:'Track my order on WhatsApp',it:'Segui il mio ordine su WhatsApp',ar:'تتبعي طلبي عبر واتساب'},'services.small':{fr:'NOTRE SAVOIR-FAIRE — -10 % AVEC LE CODE BELLA',en:'OUR EXPERTISE — -10% WITH CODE BELLA',it:'LA NOSTRA ESPERIENZA — -10% CON IL CODICE BELLA',ar:'خبرتنا — خصم 10% مع الرمز BELLA'},'services.title':{fr:'Nos Services',en:'Our Services',it:'I nostri servizi',ar:'خدماتنا'},'services.text':{fr:'Des services professionnels pensés pour révéler, soigner et sublimer votre chevelure.',en:'Professional services designed to reveal, care for and enhance your hair.',it:'Servizi professionali pensati per rivelare, curare e valorizzare i tuoi capelli.',ar:'خدمات احترافية مصممة لإبراز شعرك والعناية به وتجميله.'},'salon.title':{fr:'Notre Futur<br>Salon Physique',en:'Our Future<br>Physical Salon',it:'Il nostro futuro<br>salone fisico',ar:'صالوننا<br>المستقبلي'},'salon.text':{fr:'En attendant l\'ouverture de notre espace physique, Bella Bay continue de vous sublimer grâce à son service mobile.',en:'While waiting for our physical space to open, Bella Bay continues to enhance your beauty with its mobile service.',it:'In attesa dell\'apertura del nostro spazio fisico, Bella Bay continua a valorizzarti grazie al suo servizio a domicilio.',ar:'بانتظار افتتاح مساحتنا الفعلية، تواصل بيلا باي إبراز جمالك من خلال خدمتها المنزلية.'},'footer.nav':{fr:'Navigation',en:'Navigation',it:'Navigazione',ar:'التنقل'},'footer.book':{fr:'Contact & Réservation',en:'Contact & Booking',it:'Contatti e prenotazioni',ar:'الاتصال والحجز'},'footer.contact':{fr:'Contact',en:'Contact',it:'Contatti',ar:'اتصل بنا'},'footer.brand':{fr:'Coiffure & Beauté. Sublimer vos cheveux grâce à une expérience professionnelle, personnalisée et attentionnée.',en:'Hair & Beauty. Enhance your hair with a professional, personalised and caring experience.',it:'Capelli & Bellezza. Valorizza i tuoi capelli con un\'esperienza professionale, personalizzata e attenta.',ar:'شعر وجمال. نبرز جمال شعرك من خلال تجربة احترافية وشخصية ومهتمة.'},'footer.delivery':{fr:'📦 Livraison',en:'📦 Delivery',it:'📦 Consegna',ar:'📦 التوصيل'},'sec.all':{fr:'Voir tous les produits',en:'See all products',it:'Vedi tutti i prodotti',ar:'عرض كل المنتجات'},'sec.pending':{fr:'En attente de confirmation',en:'Awaiting confirmation',it:'In attesa di conferma',ar:'بانتظار التأكيد'},'sec.instock':{fr:'En stock',en:'In stock',it:'Disponibile',ar:'متوفر'},'sec.add':{fr:'Ajouter au panier 🛒',en:'Add to cart 🛒',it:'Aggiungi al carrello 🛒',ar:'أضيفي إلى السلة 🛒'},'sec.gift':{fr:'Idée cadeau',en:'Gift idea',it:'Idea regalo',ar:'فكرة هدية'},'sec.products':{fr:'produit(s) affiché(s)',en:'product(s) shown',it:'prodotto/i mostrato/i',ar:'منتج معروض'},'sec.none':{fr:'Aucun produit ne correspond à votre recherche pour le moment.',en:'No product matches your search right now.',it:'Nessun prodotto corrisponde alla tua ricerca al momento.',ar:'لا يوجد منتج يطابق بحثك حاليًا.'},'sec.new':{fr:'Nouveauté',en:'New',it:'Novità',ar:'جديد'},'sec.view':{fr:'Voir la section',en:'View the section',it:'Vedi la sezione',ar:'عرض القسم'},'sec.cj':{fr:'Nos extensions CJ (cheveux brésiliens, kératine, cousu, perruques) arrivent dès confirmation — En attente de confirmation.',en:'Our CJ extensions (Brazilian hair, keratin, sew-in, wigs) arrive as soon as confirmed — Awaiting confirmation.',it:'Le nostre extension CJ (capelli brasiliani, cheratina, cucite, parrucche) arrivano appena confermate — In attesa di conferma.',ar:'وصلات CJ الخاصة بنا (شعر برازيلي، كيراتين، خياطة، باروكات) تصل فور التأكيد — بانتظار التأكيد.'},'sec.dreamTitle':{fr:'Extensions de rêve',en:'Dream extensions',it:'Extension da sogno',ar:'وصلات الأحلام'},'sec.dreamSub':{fr:'Beauty Without Borders — la gamme Bella Bay',en:'Beauty Without Borders — the Bella Bay range',it:'Beauty Without Borders — la gamma Bella Bay',ar:'الجمال بلا حدود — تشكيلة بيلا باي'}};
+        function bbT(k){ const d = bbI18n[k]; return (d && d[bbLang]) || (d && d.fr) || k; }
+        const bbI18nWords = {en:{'Rouge à lèvres':'Lipstick','Fond de teint':'Foundation','BB Crème':'BB Cream','Revitalisant sans rinçage':'Leave-in conditioner','Soin sans rinçage':'Leave-in care','Sans rinçage':'Leave-in','Crème de nuit':'Night cream','Crème collagène':'Collagen cream','Contour des yeux':'Eye contour','Contour des paupières':'Eyelid contour','Contour des lèvres':'Lip contour','Fard à paupières':'Eyeshadow','Sèche-cheveux':'Hair dryer','Fer à boucler':'Curling iron','Queue de cheval':'Ponytail','Huile à barbe':'Beard oil','Savon à sourcils':'Brow soap','Papiers matifiants':'Blotting papers','Éponge konjac':'Konjac sponge','Pince à épiler':'Tweezers','Bande 3D':'3D Strip','Coffret Trio':'Trio gift set','Coffret Cils':'Lash gift set','Coffret Perle':'Pearl gift set','Coffret Cadeau':'Gift set','Gel douche':'Shower gel','Beurre corporel':'Body butter','Parfum solide':'Solid perfume','Bougie parfumée':'Scented candle','Sérum niacinamide':'Niacinamide serum','Sérum anti-âge':'Anti-ageing serum','Sérum raffermissant':'Firming serum','Crème hydratante':'Moisturising cream','Crème raffermissante':'Firming cream','Poudre autobronzante':'Self-tanning powder','Gouttes autobronzantes':'Self-tanning drops','Mousse coiffante':'Styling mousse','Masque Glow':'Glow mask','Cils Bande 3D':'3D Strip Lashes','Cils Individuels':'Individual Lashes','Cils Magnétiques':'Magnetic Lashes','Collier Papillon':'Butterfly Necklace','Boucles Bohème':'Bohemian Earrings','Bague Vague':'Wave Ring','Bracelet Cubain':'Cuban Bracelet','Ensemble Bohème':'Bohemian Set','Collier Asymétrique':'Asymmetric Necklace','Boucles Vintage':'Vintage Earrings','Pinceau Stipple':'Stipple Brush','Lisseur Pro':'Pro Straightener','Extensions à clips':'Clip-in Extensions','Extensions Tape-in':'Tape-in Extensions','Extensions Halo':'Halo Extensions','Extensions Queue de cheval':'Ponytail Extensions','Extensions Trame':'Weft Extensions','Crayon à lèvres':'Lip pencil','Crayon khôl':'Kohl pencil','Crayon yeux':'Eye pencil','Correcteur couvrant':'Full-coverage concealer','Palette de fards':'Eyeshadow palette','Poudre illuminatrice':'Illuminating powder','Blush liquide':'Liquid blush','Baume à lèvres':'Lip balm','Beurre à lèvres':'Lip butter','Repulpant à lèvres':'Lip plumper','Base paupières':'Eyelid primer','Eyeliner gel':'Gel eyeliner','Rouge crème luxe':'Luxury cream lipstick','Fond de teint couvrant':'Full-coverage foundation','Savon naturel':'Natural soap','Nettoyant visage':'Face cleanser','Huile d’argan':'Argan oil','Huile de ricin':'Castor oil','Coloration de base':'Base colour','Lissage kératine':'Keratin smoothing','Botox capillaire':'Hair botox','Shampooing':'Shampoo','Revitalisant':'Conditioner','Masque':'Mask','Huile':'Oil','Lotion':'Lotion','Sérum':'Serum','Crème':'Cream','Gel':'Gel','Spray':'Spray','Mousse':'Mousse','Baume':'Balm','Beurre':'Butter','Savon':'Soap','Bougie':'Candle','Parfum':'Perfume','Crayon':'Pencil','Fard':'Shadow','Blush':'Blush','Poudre':'Powder','Palette':'Palette','Eyeliner':'Eyeliner','Khôl':'Kohl','Mascara':'Mascara','Cils':'Lashes','Bande':'Strip','Individuels':'Individuals','Magnétiques':'Magnetic','Coffret':'Gift set','Trio':'Trio','Collier':'Necklace','Boucles':'Earrings','Bague':'Ring','Bracelet':'Bracelet','Ensemble':'Set','Perle':'Pearl','Perles':'Pearls','Coquillage':'Seashell','Papillon':'Butterfly','Doré':'Gold','Dorée':'Gold','Or':'Gold','Argent':'Silver','Rose':'Pink','Rouge':'Red','Noir':'Black','Blanc':'White','Nude':'Nude','Pinceau':'Brush','Pince':'Clip','Éponge':'Sponge','Gommage':'Scrub','Exfoliant':'Exfoliant','Nettoyant':'Cleanser','Hydratant':'Moisturising','Réparateur':'Repairing','Cheveux':'Hair','Visage':'Face','Corps':'Body','Peau':'Skin','Ongles':'Nails','Press-on':'Press-on','Kit':'Kit','Manucure':'Manicure','Lisseur':'Straightener','Styler':'Styler','Extensions':'Extensions','Tape-in':'Tape-in','Clips':'Clip-in','Halo':'Halo','Trame':'Weft','Perruque':'Wig','Synthétique':'Synthetic','Brésilien':'Brazilian','Kératine':'Keratin','Protéines':'Proteins','Croissance':'Growth','Luxe':'Luxury','Éclat':'Glow','Soin':'Care','Quotidien':'Daily','Nuit':'Night','Jour':'Day','Solide':'Solid','Liquide':'Liquid','Naturel':'Natural','Végan':'Vegan','Professionnel':'Professional','Pro':'Pro','Mini':'Mini','Grand':'Large','Petit':'Small','Moyen':'Medium','Noël':'Christmas','Fêtes':'Holidays','Cadeau':'Gift','Panier':'Basket','Voyage':'Travel','Débutant':'Starter','Duo':'Duo','Brillance':'Shine','Volume':'Volume','Lisse':'Smooth','Frisé':'Curly','Sec':'Dry','Gras':'Oily','Sensible':'Sensitive','Mixte':'Combination','Homme':'Men','Femme':'Women','Enfant':'Kids','Bébé':'Baby','Bain':'Bath','Douche':'Shower','Pieds':'Feet','Mains':'Hands','Lèvres':'Lips','Yeux':'Eyes','Sourcils':'Brows','Teint':'Complexion','Contour':'Contour','Correcteur':'Concealer','Base':'Base','Paupières':'Eyelids','Repulpant':'Plumping','Paillettes':'Glitter','Scintillant':'Shimmering','Mat':'Matte','Satin':'Satin','Velours':'Velvet','Classique':'Classic','Élégant':'Elegant','Audace':'Bold','Poudré':'Powdery','Vintage':'Vintage','Bohème':'Bohemian','Asymétrique':'Asymmetric','Cubain':'Cuban','Vague':'Wave','Cristaux':'Crystals','Diamant':'Diamond','Plaqué':'Plated','Chaîne':'Chain','Fermoir':'Clasp','Longueur':'Length','Taille':'Size','Couleur':'Colour','Teinte':'Shade','Longue tenue':'Long-lasting','Waterproof':'Waterproof','Sans parfum':'Fragrance-free','Hypoallergénique':'Hypoallergenic','Fait main':'Handmade','Exclusif':'Exclusive','Édition limitée':'Limited edition','Nouveau':'New','Best-seller':'Best-seller','Premium':'Premium','Spa':'Spa','Hammam':'Hammam','Rituel':'Ritual','Traitement':'Treatment','Régénérant':'Regenerating','Fortifiant':'Strengthening','Protecteur':'Protective','Apaisant':'Soothing','Calmant':'Calming','Rafraîchissant':'Refreshing','Tonifiant':'Toning','Purifiant':'Purifying','Détox':'Detox','Lumière':'Light','Glow':'Glow','Soie':'Silk','Cristal':'Crystal','Platine':'Platinum','Cuivre':'Copper','Bronze':'Bronze','Titane':'Titanium','Acier':'Steel','Chirurgical':'Surgical','Sans nickel':'Nickel-free'},it:{'Rouge à lèvres':'Rossetto','Fond de teint':'Fondotinta','BB Crème':'BB Cream','Revitalisant sans rinçage':'Balsamo senza risciacquo','Soin sans rinçage':'Trattamento senza risciacquo','Sans rinçage':'Senza risciacquo','Crème de nuit':'Crema notte','Crème collagène':'Crema al collagene','Contour des yeux':'Contorno occhi','Contour des paupières':'Contorno palpebre','Contour des lèvres':'Contorno labbra','Fard à paupières':'Ombretto','Sèche-cheveux':'Asciugacapelli','Fer à boucler':'Ferro arricciacapelli','Queue de cheval':'Coda di cavallo','Huile à barbe':'Olio da barba','Savon à sourcils':'Sapone per sopracciglia','Papiers matifiants':'Carta assorbente','Éponge konjac':'Spugna konjac','Pince à épiler':'Pinzetta','Bande 3D':'Striscia 3D','Coffret Trio':'Cofanetto Trio','Coffret Cils':'Cofanetto Ciglia','Coffret Perle':'Cofanetto Perla','Coffret Cadeau':'Cofanetto regalo','Gel douche':'Gel doccia','Beurre corporel':'Burro corpo','Parfum solide':'Profumo solido','Bougie parfumée':'Candela profumata','Sérum niacinamide':'Siero alla niacinamide','Sérum anti-âge':'Siero anti-età','Sérum raffermissant':'Siero rassodante','Crème hydratante':'Crema idratante','Crème raffermissante':'Crema rassodante','Poudre autobronzante':'Cipria autoabbronzante','Gouttes autobronzantes':'Gocce autoabbronzanti','Mousse coiffante':'Mousse styling','Masque Glow':'Maschera Glow','Cils Bande 3D':'Ciglia Striscia 3D','Cils Individuels':'Ciglia Individuali','Cils Magnétiques':'Ciglia Magnetiche','Collier Papillon':'Collana Farfalla','Boucles Bohème':'Orecchini Bohémien','Bague Vague':'Anello Onda','Bracelet Cubain':'Bracciale Cubano','Ensemble Bohème':'Set Bohémien','Collier Asymétrique':'Collana Asimmetrica','Boucles Vintage':'Orecchini Vintage','Pinceau Stipple':'Pennello Stipple','Lisseur Pro':'Piastra Pro','Extensions à clips':'Extension a clip','Extensions Tape-in':'Extension Tape-in','Extensions Halo':'Extension Halo','Extensions Queue de cheval':'Extension Coda di cavallo','Extensions Trame':'Extension Trama','Crayon à lèvres':'Matita labbra','Crayon khôl':'Matita kohl','Crayon yeux':'Matita occhi','Correcteur couvrant':'Correttore coprente','Palette de fards':'Palette di ombretti','Poudre illuminatrice':'Cipria illuminante','Blush liquide':'Blush liquido','Baume à lèvres':'Balsamo labbra','Beurre à lèvres':'Burro labbra','Repulpant à lèvres':'Rimpolpante labbra','Base paupières':'Base palpebre','Eyeliner gel':'Eyeliner gel','Rouge crème luxe':'Rossetto crema lusso','Fond de teint couvrant':'Fondotinta coprente','Savon naturel':'Sapone naturale','Nettoyant visage':'Detergente viso','Huile d’argan':'Olio di argan','Huile de ricin':'Olio di ricino','Coloration de base':'Colorazione base','Lissage kératine':'Lisciatura alla cheratina','Botox capillaire':'Botox capelli','Shampooing':'Shampoo','Revitalisant':'Balsamo','Masque':'Maschera','Huile':'Olio','Lotion':'Lozione','Sérum':'Siero','Crème':'Crema','Gel':'Gel','Spray':'Spray','Mousse':'Mousse','Baume':'Balsamo','Beurre':'Burro','Savon':'Sapone','Bougie':'Candela','Parfum':'Profumo','Crayon':'Matita','Fard':'Ombretto','Blush':'Blush','Poudre':'Cipria','Palette':'Palette','Eyeliner':'Eyeliner','Khôl':'Kohl','Mascara':'Mascara','Cils':'Ciglia','Bande':'Striscia','Individuels':'Individuali','Magnétiques':'Magnetici','Coffret':'Cofanetto','Trio':'Trio','Collier':'Collana','Boucles':'Orecchini','Bague':'Anello','Bracelet':'Bracciale','Ensemble':'Set','Perle':'Perla','Perles':'Perle','Coquillage':'Conchiglia','Papillon':'Farfalla','Doré':'Dorato','Dorée':'Dorata','Or':'Oro','Argent':'Argento','Rose':'Rosa','Rouge':'Rosso','Noir':'Nero','Blanc':'Bianco','Nude':'Nude','Pinceau':'Pennello','Pince':'Pinza','Éponge':'Spugna','Gommage':'Scrub','Exfoliant':'Esfoliante','Nettoyant':'Detergente','Hydratant':'Idratante','Réparateur':'Riparatore','Cheveux':'Capelli','Visage':'Viso','Corps':'Corpo','Peau':'Pelle','Ongles':'Unghie','Press-on':'Press-on','Kit':'Kit','Manucure':'Manicure','Lisseur':'Piastra','Styler':'Styler','Extensions':'Extension','Tape-in':'Tape-in','Clips':'Clip-in','Halo':'Halo','Trame':'Trama','Perruque':'Parrucca','Synthétique':'Sintetico','Brésilien':'Brasiliano','Kératine':'Cheratina','Protéines':'Proteine','Croissance':'Crescita','Luxe':'Lusso','Éclat':'Luminosità','Soin':'Cura','Quotidien':'Quotidiano','Nuit':'Notte','Jour':'Giorno','Solide':'Solido','Liquide':'Liquido','Naturel':'Naturale','Végan':'Vegano','Professionnel':'Professionale','Pro':'Pro','Mini':'Mini','Grand':'Grande','Petit':'Piccolo','Moyen':'Medio','Noël':'Natale','Fêtes':'Feste','Cadeau':'Regalo','Panier':'Cesto','Voyage':'Viaggio','Débutant':'Starter','Duo':'Duo','Brillance':'Lucentezza','Volume':'Volume','Lisse':'Liscio','Frisé':'Riccio','Sec':'Secco','Gras':'Grasso','Sensible':'Sensibile','Mixte':'Mista','Homme':'Uomo','Femme':'Donna','Enfant':'Bambini','Bébé':'Bebè','Bain':'Bagno','Douche':'Doccia','Pieds':'Piedi','Mains':'Mani','Lèvres':'Labbra','Yeux':'Occhi','Sourcils':'Sopracciglia','Teint':'Incarnato','Contour':'Contorno','Correcteur':'Correttore','Base':'Base','Paupières':'Palpebre','Repulpant':'Rimpolpante','Paillettes':'Glitter','Scintillant':'Scintillante','Mat':'Opaco','Satin':'Satin','Velours':'Velluto','Classique':'Classico','Élégant':'Elegante','Audace':'Audace','Poudré':'Cipriato','Vintage':'Vintage','Bohème':'Bohémien','Asymétrique':'Asimmetrico','Cubain':'Cubano','Vague':'Onda','Cristaux':'Cristalli','Diamant':'Diamante','Plaqué':'Placcato','Chaîne':'Catena','Fermoir':'Chiusura','Longueur':'Lunghezza','Taille':'Taglia','Couleur':'Colore','Teinte':'Tonalità','Longue tenue':'Lunga tenuta','Waterproof':'Waterproof','Sans parfum':'Senza profumo','Hypoallergénique':'Ipoallergenico','Fait main':'Fatto a mano','Exclusif':'Esclusivo','Édition limitée':'Edizione limitata','Nouveau':'Nuovo','Best-seller':'Best-seller','Premium':'Premium','Spa':'Spa','Hammam':'Hammam','Rituel':'Rituale','Traitement':'Trattamento','Régénérant':'Rigenerante','Fortifiant':'Rinforzante','Protecteur':'Protettivo','Apaisant':'Lenitivo','Calmant':'Calmante','Rafraîchissant':'Rinfrescante','Tonifiant':'Tonificante','Purifiant':'Purificante','Détox':'Detox','Lumière':'Luce','Glow':'Glow','Soie':'Seta','Cristal':'Cristallo','Platine':'Platino','Cuivre':'Rame','Bronze':'Bronzo','Titane':'Titanio','Acier':'Acciaio','Chirurgical':'Chirurgico','Sans nickel':'Senza nichel'},ar:{'Rouge à lèvres':'أحمر شفاه','Fond de teint':'كريم أساس','BB Crème':'بي بي كريم','Revitalisant sans rinçage':'بلسم بدون شطف','Soin sans rinçage':'عناية بدون شطف','Sans rinçage':'بدون شطف','Crème de nuit':'كريم ليلي','Crème collagène':'كريم الكولاجين','Contour des yeux':'محيط العينين','Contour des paupières':'محيط الجفون','Contour des lèvres':'محيط الشفاه','Fard à paupières':'ظلال عيون','Sèche-cheveux':'مجفف شعر','Fer à boucler':'مكواة تجعيد','Queue de cheval':'ذيل حصان','Huile à barbe':'زيت اللحية','Savon à sourcils':'صابون الحواجب','Papiers matifiants':'أوراق ماصة','Éponge konjac':'إسفنجة كونجاك','Pince à épiler':'ملقط','Bande 3D':'شريط ثلاثي الأبعاد','Coffret Trio':'علبة الثلاثي','Coffret Cils':'علبة الرموش','Coffret Perle':'علبة اللؤلؤة','Coffret Cadeau':'علبة هدية','Gel douche':'جل استحمام','Beurre corporel':'زبدة جسم','Parfum solide':'عطر صلب','Bougie parfumée':'شمعة معطرة','Sérum niacinamide':'سيروم النياسيناميد','Sérum anti-âge':'سيروم مضاد للشيخوخة','Sérum raffermissant':'سيروم مشدود','Crème hydratante':'كريم مرطب','Crème raffermissante':'كريم مشدود','Poudre autobronzante':'بودرة تسمير ذاتي','Gouttes autobronzantes':'قطرات تسمير ذاتي','Mousse coiffante':'موس تصفيف','Masque Glow':'قناع التوهج','Cils Bande 3D':'رموش شريط ثلاثي الأبعاد','Cils Individuels':'رموش فردية','Cils Magnétiques':'رموش مغناطيسية','Collier Papillon':'قلادة الفراشة','Boucles Bohème':'أقراط بوهيمية','Bague Vague':'خاتم الموجة','Bracelet Cubain':'سوار كوبي','Ensemble Bohème':'طقم بوهيمي','Collier Asymétrique':'قلادة غير متماثلة','Boucles Vintage':'أقراط فينتج','Pinceau Stipple':'فرشاة ستيبل','Lisseur Pro':'مملس احترافي','Extensions à clips':'وصلات مشابك','Extensions Tape-in':'وصلات شريط لاصق','Extensions Halo':'وصلات هالة','Extensions Queue de cheval':'وصلات ذيل حصان','Extensions Trame':'وصلات خصلة','Crayon à lèvres':'قلم شفاه','Crayon khôl':'قلم كحل','Crayon yeux':'قلم عيون','Correcteur couvrant':'مصحح تغطية كاملة','Palette de fards':'لوحة ظلال','Poudre illuminatrice':'بودرة مضيئة','Blush liquide':'أحمر خدود سائل','Baume à lèvres':'بلسم شفاه','Beurre à lèvres':'زبدة شفاه','Repulpant à lèvres':'مكثف شفاه','Base paupières':'أساس الجفون','Eyeliner gel':'آيلاينر جل','Rouge crème luxe':'أحمر شفاه كريمي فاخر','Fond de teint couvrant':'كريم أساس تغطية كاملة','Savon naturel':'صابون طبيعي','Nettoyant visage':'منظف وجه','Huile d’argan':'زيت الأرغان','Huile de ricin':'زيت الخروع','Coloration de base':'صبغة أساسية','Lissage kératine':'تمليس الكيراتين','Botox capillaire':'بوتوكس الشعر','Shampooing':'شامبو','Revitalisant':'بلسم','Masque':'قناع','Huile':'زيت','Lotion':'لوشن','Sérum':'سيروم','Crème':'كريم','Gel':'جل','Spray':'سبراي','Mousse':'موس','Baume':'بلسم','Beurre':'زبدة','Savon':'صابون','Bougie':'شمعة','Parfum':'عطر','Crayon':'قلم','Fard':'ظلال','Blush':'أحمر خدود','Poudre':'بودرة','Palette':'لوحة','Eyeliner':'آيلاينر','Khôl':'كحل','Mascara':'ماسكارا','Cils':'رموش','Bande':'شريط','Individuels':'فردية','Magnétiques':'مغناطيسية','Coffret':'علبة هدية','Trio':'ثلاثي','Collier':'قلادة','Boucles':'أقراط','Bague':'خاتم','Bracelet':'سوار','Ensemble':'طقم','Perle':'لؤلؤة','Perles':'لآلئ','Coquillage':'صدفة','Papillon':'فراشة','Doré':'ذهبي','Dorée':'ذهبية','Or':'ذهب','Argent':'فضة','Rose':'وردي','Rouge':'أحمر','Noir':'أسود','Blanc':'أبيض','Nude':'نيود','Pinceau':'فرشاة','Pince':'مشبك','Éponge':'إسفنجة','Gommage':'مقشر','Exfoliant':'مقشر','Nettoyant':'منظف','Hydratant':'مرطب','Réparateur':'مُصلح','Cheveux':'شعر','Visage':'وجه','Corps':'جسم','Peau':'بشرة','Ongles':'أظافر','Press-on':'أظافر لاصقة','Kit':'طقم','Manucure':'مانيكير','Lisseur':'مملس','Styler':'مصفف','Extensions':'وصلات','Tape-in':'شريط لاصق','Clips':'مشابك','Halo':'هالة','Trame':'خصلة','Perruque':'باروكة','Synthétique':'صناعي','Brésilien':'برازيلي','Kératine':'كيراتين','Protéines':'بروتينات','Croissance':'نمو','Luxe':'فاخر','Éclat':'إشراق','Soin':'عناية','Quotidien':'يومي','Nuit':'ليلي','Jour':'نهاري','Solide':'صلب','Liquide':'سائل','Naturel':'طبيعي','Végan':'نباتي','Professionnel':'احترافي','Pro':'احترافي','Mini':'صغير','Grand':'كبير','Petit':'صغير','Moyen':'متوسط','Noël':'عيد الميلاد','Fêtes':'الأعياد','Cadeau':'هدية','Panier':'سلة','Voyage':'سفر','Débutant':'مبتدئ','Duo':'ثنائي','Brillance':'لمعان','Volume':'حجم','Lisse':'أملس','Frisé':'مجعد','Sec':'جاف','Gras':'دهني','Sensible':'حساسة','Mixte':'مختلطة','Homme':'رجال','Femme':'نساء','Enfant':'أطفال','Bébé':'طفل','Bain':'حمام','Douche':'دش','Pieds':'قدمين','Mains':'يدين','Lèvres':'شفاه','Yeux':'عيون','Sourcils':'حواجب','Teint':'بشرة','Contour':'كونتور','Correcteur':'مصحح','Base':'أساس','Paupières':'جفون','Repulpant':'مكثف','Paillettes':'لمعان','Scintillant':'متلألئ','Mat':'مطفي','Satin':'ساتان','Velours':'مخمل','Classique':'كلاسيكي','Élégant':'أنيق','Audace':'جريء','Poudré':'بودري','Vintage':'فينتج','Bohème':'بوهيمي','Asymétrique':'غير متماثل','Cubain':'كوبي','Vague':'موجة','Cristaux':'بلورات','Diamant':'ماسة','Plaqué':'مطلي','Chaîne':'سلسلة','Fermoir':'قفل','Longueur':'طول','Taille':'مقاس','Couleur':'لون','Teinte':'درجة','Longue tenue':'ثبات طويل','Waterproof':'مقاوم للماء','Sans parfum':'بدون عطر','Hypoallergénique':'مضاد للحساسية','Fait main':'صنع يدويًا','Exclusif':'حصري','Édition limitée':'إصدار محدود','Nouveau':'جديد','Best-seller':'الأكثر مبيعًا','Premium':'فاخر','Spa':'سبا','Hammam':'حمام','Rituel':'طقس','Traitement':'علاج','Régénérant':'مجدد','Fortifiant':'مقوٍّ','Protecteur':'واقٍ','Apaisant':'مهدئ','Calmant':'مهدئ','Rafraîchissant':'منعش','Tonifiant':'منشط','Purifiant':'منقٍّ','Détox':'ديتوكس','Lumière':'ضوء','Glow':'توهج','Soie':'حرير','Cristal':'بلورة','Platine':'بلاتين','Cuivre':'نحاس','Bronze':'برونز','Titane':'تيتانيوم','Acier':'فولاذ','Chirurgical':'جراحي','Sans nickel':'بدون نيكل'}};
+        function bbTranslateTitle(t, lang){
+            if(lang === 'fr' || !bbI18nWords[lang]) return t;
+            const dict = bbI18nWords[lang];
+            const keys = Object.keys(dict).sort((a,b)=>b.length-a.length);
+            let out = ' ' + t + ' ';
+            keys.forEach(k=>{
+                const v = dict[k];
+                out = out.split(' ' + k + ' ').join(' ' + v + ' ');
+                out = out.split(' ' + k + ',').join(' ' + v + ',');
+                out = out.split(' ' + k + ' —').join(' ' + v + ' —');
+                out = out.split(' ' + k + ':').join(' ' + v + ':');
+                out = out.split(' ' + k + ' (').join(' ' + v + ' (');
+            });
+            return out.trim();
+        }
+        const bbI18nShort = {'Shampooing':{en:'Gentle daily shampoo for soft, shiny hair.',it:'Shampoo delicato quotidiano per capelli morbidi e lucenti.',ar:'شامبو يومي لطيف لشعر ناعم ولامع.'},'Revitalisant':{en:'Conditioner that detangles and nourishes, for silky hair.',it:'Balsamo che districa e nutre, per capelli setosi.',ar:'بلسم يفك التشابك ويغذي، لشعر حريري.'},'Soin sans rinçage':{en:'Leave-in care: detangles, protects and adds shine, no rinsing.',it:'Trattamento senza risciacquo: districa, protegge e dona lucentezza.',ar:'عناية بدون شطف: تفك التشابك وتحمي وتضفي لمعانًا.'},'Mousse coiffante':{en:'Styling mousse for volume and bouncy curls.',it:'Mousse styling per volume e ricci elastici.',ar:'موس تصفيف للحجم وتجعيدات مرنة.'},'Masque':{en:'Hair mask: deep repair and intense nutrition.',it:'Maschera per capelli: riparazione profonda e nutrimento intenso.',ar:'قناع شعر: إصلاح عميق وتغذية مكثفة.'},'Sérum':{en:'Serum: targeted care, light and fast-absorbing.',it:'Siero: trattamento mirato, leggero e ad assorbimento rapido.',ar:'سيروم: عناية مستهدفة، خفيف وسريع الامتصاص.'},'Crème':{en:'Cream: gentle hydration for soft skin.',it:'Crema: idratazione delicata per una pelle morbida.',ar:'كريم: ترطيب لطيف لبشرة ناعمة.'},'Gloss':{en:'Gloss: shine and colour for your lips.',it:'Gloss: lucentezza e colore per le tue labbra.',ar:'ملمع: لمعان ولون لشفتيك.'},'Rouge':{en:'Lipstick: rich colour, comfortable wear.',it:'Rossetto: colore intenso, comfort assoluto.',ar:'أحمر شفاه: لون غني وراحة تامة.'},'Fond de teint':{en:'Foundation: even complexion, natural finish.',it:'Fondotinta: incarnato uniforme, finish naturale.',ar:'كريم أساس: بشرة موحدة ولمسة طبيعية.'},'BB Crème':{en:'BB cream: hydration, coverage and glow in one step.',it:'BB cream: idratazione, copertura e luminosità in un solo gesto.',ar:'بي بي كريم: ترطيب وتغطية وإشراق في خطوة واحدة.'},'Cils':{en:'False lashes: an intense look in seconds.',it:'Ciglia finte: uno sguardo intenso in pochi secondi.',ar:'رموش مستعارة: نظرة جذابة في ثوانٍ.'},'Collier':{en:'Necklace: seashell and pearls, the Bella Bay signature.',it:'Collana: conchiglia e perle, la firma Bella Bay.',ar:'قلادة: صدفة ولآلئ، توقيع بيلا باي.'},'Boucles':{en:'Earrings: light, elegant, to wear every day.',it:'Orecchini: leggeri, eleganti, da indossare ogni giorno.',ar:'أقراط: خفيفة وأنيقة، تُلبس كل يوم.'},'Bague':{en:'Ring: a golden touch, the Bella Bay signature.',it:'Anello: un tocco dorato, la firma Bella Bay.',ar:'خاتم: لمسة ذهبية، توقيع بيلا باي.'},'Bracelet':{en:'Bracelet: golden and elegant, to wear every day.',it:'Bracciale: dorato ed elegante, da indossare ogni giorno.',ar:'سوار: ذهبي وأنيق، يُلبس كل يوم.'},'Coffret':{en:'Gift set: the perfect present, ready to give.',it:'Cofanetto: il regalo perfetto, pronto da regalare.',ar:'علبة هدية: الهدية المثالية، جاهزة للإهداء.'},'Press-on':{en:'Press-on nails: perfect nails in minutes, no salon needed.',it:'Unghie press-on: unghie perfette in pochi minuti, senza salone.',ar:'أظافر لاصقة: أظافر مثالية في دقائق، بدون صالون.'},'Savon':{en:'Soap: gentle cleansing, soft skin.',it:'Sapone: detersione delicata, pelle morbida.',ar:'صابون: تنظيف لطيف، بشرة ناعمة.'},'Bougie':{en:'Scented candle: a warm, relaxing atmosphere.',it:'Candela profumata: un\'atmosfera calda e rilassante.',ar:'شمعة معطرة: أجواء دافئة ومريحة.'},'Parfum solide':{en:'Solid perfume: a delicate scent, easy to carry.',it:'Profumo solido: una fragranza delicata, facile da portare.',ar:'عطر صلب: رائحة رقيقة، سهل الحمل.'},'Extensions':{en:'Hair extensions: length and volume, natural look.',it:'Extension per capelli: lunghezza e volume, effetto naturale.',ar:'وصلات شعر: طول وحجم، مظهر طبيعي.'},'Pinceau':{en:'Brush: flawless, professional application.',it:'Pennello: applicazione impeccabile e professionale.',ar:'فرشاة: تطبيق مثالي واحترافي.'},'Éponge':{en:'Sponge: flawless, even makeup.',it:'Spugna: trucco impeccabile e uniforme.',ar:'إسفنجة: مكياج مثالي ومتساوٍ.'},'Nettoyant':{en:'Cleanser: fresh, clean skin, every day.',it:'Detergente: pelle fresca e pulita, ogni giorno.',ar:'منظف: بشرة منعشة ونظيفة كل يوم.'},'Gel douche':{en:'Shower gel: gentle cleansing, soft skin.',it:'Gel doccia: detersione delicata, pelle morbida.',ar:'جل استحمام: تنظيف لطيف، بشرة ناعمة.'},'Beurre corporel':{en:'Body butter: deep hydration, soft skin.',it:'Burro corpo: idratazione profonda, pelle morbida.',ar:'زبدة جسم: ترطيب عميق، بشرة ناعمة.'},'Poudre':{en:'Powder: a matte, luminous finish.',it:'Cipria: un finish opaco e luminoso.',ar:'بودرة: لمسة مطفية ومشرقة.'},'Blush':{en:'Blush: a healthy glow, instantly.',it:'Blush: un colorito sano, in un attimo.',ar:'أحمر خدود: إشراق صحي فورًا.'},'Eyeliner':{en:'Eyeliner: a precise, intense line.',it:'Eyeliner: una linea precisa e intensa.',ar:'آيلاينر: خط دقيق وجذاب.'},'Mascara':{en:'Mascara: volume and length for your lashes.',it:'Mascara: volume e lunghezza per le tue ciglia.',ar:'ماسكارا: حجم وطول لرموشك.'},'Crayon':{en:'Pencil: precise definition, easy to apply.',it:'Matita: definizione precisa, facile da applicare.',ar:'قلم: تحديد دقيق وسهل التطبيق.'},'Palette':{en:'Palette: several shades, endless looks.',it:'Palette: diverse tonalità, look infiniti.',ar:'لوحة: عدة درجات، إطلالات لا نهائية.'},'Ongles':{en:'Nails: colour and shine for perfect hands.',it:'Unghie: colore e lucentezza per mani perfette.',ar:'أظافر: لون ولمعان لأيدٍ مثالية.'},'Lisseur':{en:'Straightener: smooth, shiny hair, fast.',it:'Piastra: capelli lisci e lucenti, in fretta.',ar:'مملس: شعر أملس ولامع بسرعة.'},'Sèche-cheveux':{en:'Hair dryer: fast drying, shiny hair.',it:'Asciugacapelli: asciugatura rapida, capelli lucenti.',ar:'مجفف شعر: تجفيف سريع، شعر لامع.'},'Fer à boucler':{en:'Curling iron: perfect curls, shiny hair.',it:'Ferro arricciacapelli: ricci perfetti, capelli lucenti.',ar:'مكواة تجعيد: تجعيدات مثالية، شعر لامع.'},'Huile':{en:'Oil: nourishes and adds shine.',it:'Olio: nutre e dona lucentezza.',ar:'زيت: يغذي ويضفي لمعانًا.'},'Baume':{en:'Balm: soft, nourished lips.',it:'Balsamo: labbra morbide e nutrite.',ar:'بلسم: شفاه ناعمة ومغذاة.'},'Correcteur':{en:'Concealer: hides imperfections, even complexion.',it:'Correttore: nasconde le imperfezioni, incarnato uniforme.',ar:'مصحح: يخفي العيوب، بشرة موحدة.'},'Khôl':{en:'Kohl: an intense, captivating look.',it:'Kohl: uno sguardo intenso e affascinante.',ar:'كحل: نظرة جذابة وآسرة.'},'default':{en:'Bella Bay product — quality and elegance, for your beauty.',it:'Prodotto Bella Bay — qualità ed eleganza, per la tua bellezza.',ar:'منتج بيلا باي — جودة وأناقة، لجمالك.'}};
+        function bbShortDesc(p){
+            if(p.t && p.t[bbLang]) return p.t[bbLang];
+            const hay = (p.tag || '') + ' ' + p.title;
+            for(const k of Object.keys(bbI18nShort)){
+                if(k !== 'default' && hay.indexOf(k) !== -1) return bbI18nShort[k][bbLang] || bbI18nShort[k].en;
+            }
+            return bbI18nShort['default'][bbLang] || bbI18nShort['default'].en;
+        }
+        function bbApplyI18n(){
+            document.documentElement.setAttribute('lang', bbLang);
+            document.documentElement.setAttribute('dir', bbLang === 'ar' ? 'rtl' : 'ltr');
+            document.querySelectorAll('[data-i18n]').forEach(el=>{
+                el.innerHTML = bbT(el.getAttribute('data-i18n'));
+            });
+            document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+                el.setAttribute('placeholder', bbT(el.getAttribute('data-i18n-ph')));
+            });
+            document.querySelectorAll('[data-bb-lang]').forEach(b=>{
+                b.classList.toggle('active', b.getAttribute('data-bb-lang') === bbLang);
+            });
+            document.querySelectorAll('.bb-lang-mini').forEach(b=>{
+                b.classList.toggle('active', b.getAttribute('data-bb-lang') === bbLang);
+            });
+        }
+        function bbSetLang(l){
+            if(!['fr','en','it','ar'].includes(l)) return;
+            bbLang = l;
+            try { localStorage.setItem('bbLang', l); } catch(e) {}
+            bbApplyI18n();
+            renderCatalog();
+        }
+        /* ============================================================
+           Bella Bay v2 — Audio d'accueil (synthese vocale, aucun fichier)
+           Se lance apres un clic sur les boutons d'accueil (autoplay
+           autorise) et une seule fois par session. Bouton haut-parleur
+           pour reecouter / couper le son.
+           ============================================================ */
+        let bbAudioPlayed = false;
+        let bbAudioOn = true;
+        function bbSpeakWelcome(){
+            if(!bbAudioOn) return;
+            if(!('speechSynthesis' in window)) return;
+            try { window.speechSynthesis.cancel(); } catch(e) {}
+            const u = new SpeechSynthesisUtterance('Welcome to Bella Bay, when beauty meets elegance.');
+            u.lang = 'en-US'; u.rate = 0.92; u.pitch = 1.05; u.volume = 1;
+            try {
+                const vs = window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
+                const soft = vs.filter(v=>v.lang && v.lang.toLowerCase().indexOf('en') === 0 && /female|samantha|zira|google us english|aria|jenny|natural/i.test(v.name));
+                if(soft.length) u.voice = soft[0];
+            } catch(e) {}
+            window.speechSynthesis.speak(u);
+        }
+        function bbWelcomeAudio(){
+            if(bbAudioPlayed) return;
+            bbAudioPlayed = true;
+            try { sessionStorage.setItem('bbWelcomeAudio', '1'); } catch(e) {}
+            bbSpeakWelcome();
+        }
+        function bbToggleWelcomeAudio(){
+            bbAudioOn = !bbAudioOn;
+            if(!bbAudioOn){ try { window.speechSynthesis.cancel(); } catch(e) {} return; }
+            bbSpeakWelcome();
+        }
+        try { if(sessionStorage.getItem('bbWelcomeAudio')) bbAudioPlayed = true; } catch(e) {}
+
+
         /* Groupes du menu B.B : filtrés par étiquette produit (tag), marque Bella Bay uniquement */
         const bbTagGroups = {
             'capillaire': ['Shampooing','Revitalisant','Soin sans rinçage','Mousse coiffante','Masque visage','Capillaire'],
@@ -3023,13 +3167,73 @@
            Règle CJ : aucune sous-section sans produit confirmé n'affiche de faux produit ;
            les sous-sections en attente affichent « En attente de confirmation ». */
         const bbSections = {
+            'panier': {icon:'🎁', title:'Faites votre panier', gift:true, desc:"Créez votre propre panier cadeau Bella Bay — choisissez vos produits, votre boîte cadeau et votre papier d'emballage. Petit 11,99 $, Moyen 14,99 $, Grand 19,99 $. Ou choisissez un de nos coffrets cadeaux prêts à offrir.", subs:[
+                {id:'personnalise', label:'Panier personnalisé', icon:'🎁', action:'gift'},
+                {id:'coffrets', label:'Coffrets cadeaux', icon:'🎀', giftOnly:true}
+            ]},
+            'capillaire': {icon:'💇', title:'Produits capillaires', tagGroup:'capillaire', matchCats:['soins','coiffage','outils'], desc:"Les cheveux d'abord — la priorité Bella Bay. Shampooings, revitalisants, soins, mousses et outils coiffants, pour des cheveux réparés, nourris et brillants.", subs:[
+                {id:'shampooings', label:'Shampooings', icon:'🧴', tagkw:['Shampooing']},
+                {id:'revitalisants', label:'Revitalisants', icon:'💧', tagkw:['Revitalisant']},
+                {id:'soin', label:'Soin', icon:'✨', tagkw:['Masque','Huile','Lotion'], notkw:['barbe','Barbe']},
+                {id:'sans-rincage', label:'Soins sans rinçage', icon:'💦', tagkw:['Soin sans rinçage']},
+                {id:'mousses', label:'Mousses coiffantes', icon:'☁️', tagkw:['Mousse coiffante']},
+                {id:'coiffage', label:'Coiffage', icon:'💨', tagkw:['Coiffage']},
+                {id:'outils', label:'Outils coiffants', icon:'🔌', catkw:['outils']}
+            ]},
+            'visage': {icon:'🌸', title:'Visage', tagkw:['Nettoyant visage','Crème de nuit','Crème collagène','Crème contour','Contour des yeux','Sérum anti-âge','Sérum niacinamide','Sérum raffermissant','Scrub','Exfoliant','Savon à sourcils','Papiers matifiants','Éponge konjac'], desc:"Le visage d'abord — nettoyants, crèmes et sérums doux pour une peau éclatante. Nos scrubs et exfoliants arrivent dès que notre fournisseur les confirme.", subs:[
+                {id:'nettoyants', label:'Nettoyants', icon:'🫧', tagkw:['Nettoyant visage']},
+                {id:'cremes-visage', label:'Crèmes visage', icon:'🧴', tagkw:['Crème de nuit','Crème collagène','Crème contour','Contour des yeux']},
+                {id:'serums', label:'Sérums', icon:'💧', tagkw:['Sérum anti-âge','Sérum niacinamide','Sérum raffermissant']},
+                {id:'scrub', label:'Scrub / Exfoliant', icon:'🧖', tagkw:['Scrub','Exfoliant']},
+                {id:'accessoires-visage', label:'Accessoires visage', icon:'✨', tagkw:['Savon à sourcils','Papiers matifiants','Éponge konjac']}
+            ]},
+            'corps': {icon:'🫧', title:'Corps', tagkw:['Gel douche','Beurre corporel','Savon naturel','Huile à barbe','Bougie parfumée','Parfum solide','Autobronzant','Crème corps'], desc:"Le corps — gels douche, beurres corporels, savons et parfums, pour une peau douce et parfumée. Et bientôt nos soins pour les pieds, dignes d'un spa.", subs:[
+                {id:'cremes-corps', label:'Crèmes corps', icon:'🧴', tagkw:['Beurre corporel','Crème corps']},
+                {id:'soins-corps', label:'Soins corps', icon:'🫧', tagkw:['Gel douche','Savon naturel','Autobronzant','Huile à barbe']},
+                {id:'parfums', label:'Parfums & bougies', icon:'🕯️', tagkw:['Bougie parfumée','Parfum solide']},
+                {id:'soins-pieds', label:'Soins pour les pieds', icon:'🦶', desc:"Bains de pieds de luxe, style Homedics — trois types de massage, simple mais professionnel et deluxe."}
+            ]},
+            'cire': {icon:'🕯️', title:'Cire et wax', matchCats:['esthetique'], desc:"L'épilation douce Bella Bay — cire, wax et soins avant / après, pour une peau lisse et apaisée.", subs:[
+                {id:'cire-visage', label:'Cire visage', icon:'🌸'},
+                {id:'cire-corps', label:'Cire corps', icon:'🫧', catkw:['esthetique']},
+                {id:'wax', label:'Wax', icon:'✨'},
+                {id:'appareils', label:'Appareils', icon:'⚡', goto:'epilation-machines'}
+            ]},
+            'epilation-machines': {icon:'⚡', title:'Machines épilation définitive', pending:true, desc:"Les machines d'épilation définitive Bella Bay — IPL et laser, pour une peau lisse durablement. Nos appareils arrivent dès que notre fournisseur les confirme.", subs:[
+                {id:'ipl', label:'IPL', icon:'💡'},
+                {id:'laser', label:'Laser', icon:'🔦'},
+                {id:'accessoires-machines', label:'Accessoires', icon:'🔌'}
+            ]},
+            'maquillage': {icon:'💄', title:'Beauté — Maquillage', tagGroup:'maquillage', desc:"Le maquillage Bella Bay — lèvres, teint, yeux : des couleurs qui tiennent, pour tous les jours comme pour les Fêtes.", subs:[
+                {id:'rouges', label:'Rouges à lèvres', icon:'💋', tagkw:['Rouge'], group:'Lèvres'},
+                {id:'gloss', label:'Gloss', icon:'✨', tagkw:['Gloss'], group:'Lèvres'},
+                {id:'crayons-levres', label:'Crayons lèvres', icon:'✏️', tagkw:['Crayon lèvres','Crayon contour'], group:'Lèvres'},
+                {id:'baumes', label:'Baumes & repulpants', icon:'💗', tagkw:['Baume','Beurre à lèvres','Repulpant'], group:'Lèvres'},
+                {id:'fonds-teint', label:'Fonds de teint & BB crèmes', icon:'🎨', tagkw:['Fond de teint','BB Crème'], group:'Teint'},
+                {id:'correcteurs', label:'Correcteurs', icon:'🖌️', tagkw:['Correcteur'], group:'Teint'},
+                {id:'blush', label:'Blush', icon:'🌸', tagkw:['Blush'], group:'Teint'},
+                {id:'poudres', label:'Poudres', icon:'☁️', tagkw:['Poudre'], group:'Teint'},
+                {id:'fards', label:'Fards & palettes', icon:'🎭', tagkw:['Fard à paupières','Palette fards'], group:'Yeux'},
+                {id:'eyeliner', label:'Eyeliner & khôl', icon:'👁️', tagkw:['Eyeliner','Khôl','Crayon yeux','Crayon couleur'], group:'Yeux'},
+                {id:'mascara', label:'Mascara', icon:'✨', tagkw:['Mascara'], group:'Yeux'},
+                {id:'bases', label:'Bases paupières', icon:'🌟', tagkw:['Base paupières'], group:'Yeux'},
+                {id:'pinceaux', label:'Pinceaux', icon:'🖌️', tagkw:['Pinceau'], group:'Outils'}
+            ]},
+            'cils': {icon:'👁️', title:'Cils', lash:true, matchIds:['bb-mascara'], desc:"Les cils Bella Bay — bande 3D, individuels, magnétiques : le regard parfait, en quelques secondes.", subs:[
+                {id:'bande-3d', label:'Bande 3D', icon:'✨', idkw:['cils-bande']},
+                {id:'individuels', label:'Individuels', icon:'🌟', idkw:['cils-individuels']},
+                {id:'magnetiques', label:'Magnétiques', icon:'🧲', idkw:['cils-magnetiques']},
+                {id:'coffret-cils', label:'Coffret Cils', icon:'🎁', idkw:['coffret-cils']},
+                {id:'serum-cils', label:'Sérum cils', icon:'💧', idkw:['lash-rejuvenator']},
+                {id:'mascara-cils', label:'Mascara', icon:'✨', idkw:['mascara']}
+            ]},
             'bijoux': {icon:'💎', title:'Bijoux', desc:"La collection Bijoux Bella Bay — coquillage, perles et or, pour briller tous les jours comme pour les Fêtes. De 19,99 $ à 1 500 $ : bijoux plaqués or 18K, et bientôt l'or véritable 18K avec diamants naturels certifiés, affichés du plus cher au moins cher. Choisissez une catégorie :", subs:[
-                {id:'bagues', label:'Bagues', icon:'💍'},
-                {id:'colliers', label:'Colliers', icon:'📿'},
-                {id:'bracelets', label:'Bracelets', icon:'⛓️'},
-                {id:'boucles', label:"Boucles d'oreilles", icon:'✨'},
-                {id:'coffret', label:'Coffret Perle', icon:'🎁'},
-                {id:'or-veritable', label:'Or véritable', icon:'👑'}
+                {id:'bagues', label:'Bagues', icon:'💍', group:'Bijoux plaqués'},
+                {id:'colliers', label:'Colliers', icon:'📿', group:'Bijoux plaqués'},
+                {id:'bracelets', label:'Bracelets', icon:'⛓️', group:'Bijoux plaqués'},
+                {id:'boucles', label:"Boucles d'oreilles", icon:'✨', group:'Bijoux plaqués'},
+                {id:'coffret', label:'Coffret Perle', icon:'🎁', group:'Coffrets'},
+                {id:'or-veritable', label:'Or véritable', icon:'👑', group:'Or véritable'}
             ]},
             'piercings': {icon:'✨', title:'Piercings', pending:true, desc:"Les piercings Bella Bay arrivent bientôt — titane et acier chirurgical, pour oreilles, nez, sourcils, lèvres, langue et nombril.", subs:[
                 {id:'oreilles', label:'Oreilles', icon:'👂'},
@@ -3039,18 +3243,11 @@
                 {id:'langue', label:'Langue', icon:'👅'},
                 {id:'nombril', label:'Nombril', icon:'✨'}
             ]},
-            'soins-peau': {icon:'🧴', title:'Soins pour la peau', pending:true, desc:"Des soins doux pour peau sensible — exfoliants et crèmes hydratantes. Nos produits arrivent dès que notre fournisseur les confirme.", subs:[
-                {id:'scrub', label:'Scrub / Exfoliant', icon:'🧖'},
-                {id:'cremes-visage', label:'Crèmes visage', icon:'🧴'},
-                {id:'cremes-corps', label:'Crèmes corps', icon:'🫧'}
-            ]},
-            'accessoires': {icon:'🎀', title:'Accessoires', pending:true, desc:"Pinces, élastiques, chouchous et accessoires de coiffure et de beauté — la touche finale Bella Bay. Bientôt aussi : les éponges à fond de teint, avec les brosses à maquillage — et nos pinces, dont une pince de coiffure avec des perles dessus.", subs:[
-                {id:'pinces', label:'Pinces', icon:'📎'},
-                {id:'elastiques', label:'Élastiques', icon:'➰'},
-                {id:'chouchous', label:'Chouchous', icon:'🎀'},
-                {id:'coiffure', label:'Coiffure', icon:'💇'},
-                {id:'beaute', label:'Beauté', icon:'💄'},
-                {id:'eponges', label:'Éponges à fond de teint', icon:'🧽'}
+            'ongles': {icon:'💅', title:'Ongles', desc:"Les ongles Bella Bay — press-on, kits manucure et couleurs vibrantes, pour des ongles parfaits en quelques minutes. Nos produits maison arrivent — en attendant, découvrez nos press-on SIYOU.", foot:'💅 Et pour le regard : découvrez aussi nos <a href="javascript:void(0)" onclick="bbMenuCategory(\'cils\')">cils Bella Bay</a> →', subs:[
+                {id:'kit-manucure', label:'Kit manucure', icon:'🧰'},
+                {id:'press-on', label:'Press-on', icon:'💅', tagkw:['Ongles']},
+                {id:'machines-uv', label:'Machines UV', icon:'💡'},
+                {id:'couleurs', label:'Couleurs', icon:'🎨'}
             ]},
             'enfants': {icon:'🧒', title:'Univers Enfants', pending:true, desc:"Univers Enfants — un monde coloré et ludique, rien que pour les enfants. Coffrets et kits, en plaqué or et en or véritable aussi, plein de couleurs, style bling bling et diamant. Nos montres : un fond rose où on voit B.B. Perles, breloques, montres et kits créatifs.", subs:[
                 {id:'breloques', label:'Breloques', icon:'🔮'},
@@ -3059,26 +3256,98 @@
                 {id:'perles-kits', label:'Perles et Kits', icon:'📿'},
                 {id:'montres', label:'Montres', icon:'⌚'},
                 {id:'kits-enfants', label:'Kits Enfants', icon:'🎁'}
+            ]},
+            'coffret-trio': {icon:'🎁', title:'Coffret Trio', matchIds:['bb-coffret-trio'], desc:"Le Coffret Cadeau Trio Capillaire Bella Bay — Shampooing Daily Repair, Revitalisant Daily Repair et Revitalisant sans rinçage Luxe, dans un écrin soie rose. 99 $ — le cadeau parfait.", subs:[
+                {id:'trio', label:'Coffret Trio Capillaire — 99 $', icon:'🎁', matchIds:['bb-coffret-trio']}
+            ]},
+            'extensions': {icon:'✨', title:'Extensions de rêve', dream:true, desc:"Extensions de rêve Bella Bay — Beauty Without Borders. Tape-in, kératine, cousu, perruques synthétiques et vrais cheveux : des cheveux brésiliens naturels de la meilleure qualité, et l'option synthétique. Un autre monde, rien que pour vous.", subs:[
+                {id:'tape-in', label:'Tape-in', icon:'✨', idkw:['tapein']},
+                {id:'clips', label:'Clips', icon:'📎', idkw:['clips']},
+                {id:'halo', label:'Halo', icon:'😇', idkw:['halo']},
+                {id:'queue-cheval', label:'Queue de cheval', icon:'🐴', idkw:['ponytail']},
+                {id:'trame', label:'Trame (Weft)', icon:'🧵', idkw:['weft']},
+                {id:'keratine', label:'Kératine', icon:'💎'},
+                {id:'cousu', label:'Cousu', icon:'🪡'},
+                {id:'perruques-synthetiques', label:'Perruques synthétiques', icon:'💇'},
+                {id:'perruques-vrais-cheveux', label:'Perruques vrais cheveux', icon:'👑'},
+                {id:'bresiliens', label:'Cheveux brésiliens', icon:'🌟'}
+            ]},
+            'accessoires': {icon:'🎀', title:'Accessoires', pending:true, desc:"Pinces, élastiques, chouchous et accessoires de coiffure et de beauté — la touche finale Bella Bay. Bientôt aussi : les éponges à fond de teint, avec les brosses à maquillage — et nos pinces, dont une pince de coiffure avec des perles dessus.", subs:[
+                {id:'pinces', label:'Pinces', icon:'📎', group:'Accessoire cheveux'},
+                {id:'elastiques', label:'Élastiques', icon:'➰', group:'Accessoire cheveux'},
+                {id:'chouchous', label:'Chouchous', icon:'🎀', group:'Accessoire cheveux'},
+                {id:'coiffure', label:'Coiffure', icon:'💇', group:'Accessoire cheveux'},
+                {id:'eponges', label:'Éponges à fond de teint', icon:'🧽', group:'Accessoire beauté & spa'},
+                {id:'beaute', label:'Beauté', icon:'💄', group:'Accessoire beauté'}
             ]}
         };
+        /* Bella Bay v2 — correspondance generique section / sous-section.
+           Une section peut matcher par : categorie, gift, tagGroup, lash,
+           tagkw, matchCats, matchIds. Une sous-section par : p.sub, idkw,
+           catkw, tagkw (+ notkw), matchIds, giftOnly. */
+        function bbHay(p){ return ((p.tag || '') + ' ' + (p.title || '')).toLowerCase(); }
+        function bbIsLash(p){ var h=bbHay(p); return h.indexOf('cils')!==-1 || h.indexOf('lash')!==-1 || h.indexOf('faux cils')!==-1; }
+        function bbSectionMatch(p, key){
+            const sec = bbSections[key]; if(!sec) return false;
+            if(p.category === key) return true;
+            if(sec.gift && p.gift) return true;
+            if(sec.lash && bbIsLash(p)) return true;
+            if(sec.tagGroup && bbTagGroups[sec.tagGroup] && bbTagGroups[sec.tagGroup].some(function(k){ return bbHay(p).indexOf(k.toLowerCase()) !== -1; })) return true;
+            if(sec.tagkw && sec.tagkw.some(function(k){ return bbHay(p).indexOf(k.toLowerCase()) !== -1; })) return true;
+            if(sec.matchCats && sec.matchCats.indexOf(p.category) !== -1) return true;
+            if(sec.matchIds && sec.matchIds.indexOf(p.id) !== -1) return true;
+            return false;
+        }
+        function bbSubMatch(p, key, subId){
+            const sec = bbSections[key]; if(!sec || !sec.subs) return false;
+            const sub = sec.subs.find(function(x){ return x.id === subId; }); if(!sub) return false;
+            if(sub.action || sub.goto) return false;
+            if(!bbSectionMatch(p, key)) return false;
+            if(sub.giftOnly) return !!p.gift;
+            if(p.sub === subId) return true;
+            if(sub.matchIds && sub.matchIds.indexOf(p.id) !== -1) return true;
+            if(sub.idkw && sub.idkw.some(function(k){ return p.id.indexOf(k) !== -1; })) return true;
+            if(sub.catkw && sub.catkw.indexOf(p.category) !== -1) return true;
+            if(sub.tagkw && sub.tagkw.some(function(k){ return bbHay(p).indexOf(k.toLowerCase()) !== -1; })){
+                if(sub.notkw && sub.notkw.some(function(k){ return bbHay(p).indexOf(k.toLowerCase()) !== -1; })) return false;
+                return true;
+            }
+            return false;
+        }
         function bbProductSubs(p){ return p.subs ? p.subs.slice() : (p.sub ? [p.sub] : []); }
         function bbSubLabel(sectionKey, subId){
             const sec = bbSections[sectionKey]; if(!sec){ return ''; }
             const s = sec.subs.find(function(x){ return x.id === subId; });
             return s ? s.label : '';
         }
+        const bbSubLabelsCache = {};
         function bbSubLabels(p){
+            if(bbSubLabelsCache[p.id]) return bbSubLabelsCache[p.id];
             const labels = [];
+            if(p.sub && bbSections.bijoux && bbSections.bijoux.subs){
+                const s = bbSections.bijoux.subs.find(function(x){ return x.id === p.sub; });
+                if(s) labels.push(s.label);
+            }
             Object.keys(bbSections).forEach(function(k){
-                bbProductSubs(p).forEach(function(sid){ const l = bbSubLabel(k, sid); if(l){ labels.push(l); } });
+                const sec = bbSections[k];
+                (sec.subs || []).forEach(function(sub){
+                    if(sub.action || sub.goto) return;
+                    if(bbSubMatch(p, k, sub.id) && labels.indexOf(sub.label) === -1) labels.push(sub.label);
+                });
             });
-            return labels.join(' ');
+            bbSubLabelsCache[p.id] = labels.join(' ');
+            return bbSubLabelsCache[p.id];
         }
         function bbCountSub(sectionKey, subId){
-            return bbProducts.filter(function(p){ return p.category === sectionKey && bbProductSubs(p).indexOf(subId) !== -1; }).length;
+            const sec = bbSections[sectionKey]; if(!sec || !sec.subs) return 0;
+            const sub = sec.subs.find(function(x){ return x.id === subId; });
+            if(!sub) return 0;
+            if(sub.action) return 0;
+            if(sub.goto) return bbCountSection(sub.goto);
+            return bbProducts.filter(function(p){ return bbSubMatch(p, sectionKey, subId); }).length;
         }
         function bbCountSection(sectionKey){
-            return bbProducts.filter(function(p){ return p.category === sectionKey; }).length;
+            return bbProducts.filter(function(p){ return bbSectionMatch(p, sectionKey); }).length;
         }
         function bbSetBreadcrumb(parts){
             const el = document.getElementById('bbBreadcrumb');
@@ -3105,6 +3374,7 @@
         function bbShowSection(key){
             const sec = bbSections[key];
             if(!sec){ return; }
+            if(sec.dream){ bbShowExtensionsReve(); return; }
             activeCategory = key; activeSub = ''; bbPage = 1;
             document.getElementById('bbCatalogSearch').value = '';
             const view = document.getElementById('bbSectionView');
@@ -3114,21 +3384,72 @@
             if(grid){ grid.style.display = 'none'; }
             if(pag){ pag.style.display = 'none'; }
             if(cnt){ cnt.style.display = 'none'; }
-            let cards = sec.subs.map(function(s){
+            let lastGroup = null;
+            let cards = '';
+            (sec.subs || []).forEach(function(s){
+                if(s.group && s.group !== lastGroup){
+                    cards += '<div class="bb-section-group">' + s.group + '</div>';
+                    lastGroup = s.group;
+                }
                 const n = bbCountSub(key, s.id);
-                const pending = sec.pending || n === 0;
-                return '<button type="button" class="bb-sub-card" onclick="bbShowSub(\'' + key + '\',\'' + s.id + '\')">'
+                const pending = sec.pending || (n === 0 && !s.action);
+                let onclick = "bbShowSub('" + key + "','" + s.id + "')";
+                if(s.action === 'gift'){ onclick = 'openGiftBuilder()'; }
+                else if(s.goto){ onclick = "bbMenuCategory('" + s.goto + "')"; }
+                cards += '<button type="button" class="bb-sub-card" onclick="' + onclick + '">'
                     + '<span class="bb-sub-icon">' + (s.icon || '✨') + '</span>'
                     + '<span class="bb-sub-label">' + s.label + '</span>'
-                    + (pending ? '<span class="bb-sub-pending">En attente de confirmation</span>' : '<span class="bb-sub-count">' + n + ' produit' + (n > 1 ? 's' : '') + '</span>')
+                    + (s.desc ? '<span class="bb-sub-desc">' + s.desc + '</span>' : '')
+                    + (pending ? '<span class="bb-sub-pending">' + bbT('sec.pending') + '</span>' : (s.action ? '<span class="bb-sub-count">' + bbT('sec.view') + ' →</span>' : '<span class="bb-sub-count">' + n + ' ' + bbT('sec.products') + '</span>'))
                     + '</button>';
-            }).join('');
+            });
             let html2 = '<h3 class="bb-section-title">' + sec.icon + ' ' + sec.title + '</h3>'
                 + '<p class="bb-section-desc">' + sec.desc + '</p>'
-                + (sec.pending ? '<p class="bb-section-note">⏳ En attente de confirmation — aucun produit n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).</p>' : '')
+                + (sec.pending ? '<p class="bb-section-note">⏳ ' + bbT('sec.pending') + ' — aucun produit n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).</p>' : '')
                 + '<div class="bb-section-cards">' + cards + '</div>';
             if(bbCountSection(key) > 0){
-                html2 += '<button type="button" class="bb-section-all" onclick="bbShowSectionAll(\'' + key + '\')">Voir tous les produits ' + sec.title + ' →</button>';
+                html2 += '<button type="button" class="bb-section-all" onclick="bbShowSectionAll(\'' + key + '\')">' + bbT('sec.all') + ' ' + sec.title + ' →</button>';
+            }
+            if(sec.foot){ html2 += '<p class="bb-section-foot">' + sec.foot + '</p>'; }
+            view.innerHTML = html2;
+            view.hidden = false;
+            bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec.title}]);
+            const sec_el = document.getElementById('boutique');
+            if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        /* Page exclusive « Extensions de rêve » — fond rose, Beauty Without Borders.
+           Les extensions AiryHair deja en ligne s'y affichent ; les extensions CJ
+           (cheveux bresiliens, keratine, cousu, perruques) sont en attente. */
+        function bbShowExtensionsReve(){
+            const key = 'extensions';
+            const sec = bbSections[key];
+            activeCategory = key; activeSub = ''; bbPage = 1;
+            document.getElementById('bbCatalogSearch').value = '';
+            const view = document.getElementById('bbSectionView');
+            const grid = document.getElementById('bbCatalogGrid');
+            const pag = document.getElementById('bbPagination');
+            const cnt = document.getElementById('bbCatalogCount');
+            if(grid){ grid.style.display = 'none'; }
+            if(pag){ pag.style.display = 'none'; }
+            if(cnt){ cnt.style.display = 'none'; }
+            let cards = '';
+            (sec.subs || []).forEach(function(s){
+                const n = bbCountSub(key, s.id);
+                const pending = n === 0;
+                cards += '<button type="button" class="bb-sub-card" onclick="bbShowSub(\'' + key + '\',\'' + s.id + '\')">'
+                    + '<span class="bb-sub-icon">' + (s.icon || '✨') + '</span>'
+                    + '<span class="bb-sub-label">' + s.label + '</span>'
+                    + (pending ? '<span class="bb-sub-pending">' + bbT('sec.pending') + '</span>' : '<span class="bb-sub-count">' + n + ' ' + bbT('sec.products') + '</span>')
+                    + '</button>';
+            });
+            let html2 = '<div class="bb-ext-reve"><h3>✨ ' + bbT('sec.dreamTitle') + '</h3>'
+                + '<p class="bb-ext-sub">' + bbT('sec.dreamSub') + '</p>'
+                + '<p>' + sec.desc + '</p>'
+                + '<p>' + bbT('sec.cj') + '</p>'
+                + '<a class="bb-ext-cta" href="javascript:void(0)" onclick="bbShowSectionAll(\'extensions\')">' + bbT('sec.all') + ' →</a></div>'
+                + '<div class="bb-section-cards">' + cards + '</div>';
+            if(bbCountSection(key) > 0){
+                html2 += '<button type="button" class="bb-section-all" onclick="bbShowSectionAll(\'' + key + '\')">' + bbT('sec.all') + ' ' + sec.title + ' →</button>';
             }
             view.innerHTML = html2;
             view.hidden = false;
@@ -3176,6 +3497,7 @@
             renderCatalog();
         }
         function bbMenuCategory(cat){
+            if(cat === 'soins-peau'){ cat = 'visage'; }
             if(bbSections[cat]){ bbShowSection(cat); return; }
             filterByCategory(cat);
             bbFocusFirstResult();
@@ -3219,18 +3541,44 @@
             return arr;
         }
 
+        /* Carte produit Bella Bay — avec boutons de langue FR | EN | IT | AR
+           sous la description. En FR : description complete. Dans les autres
+           langues : nom traduit + courte description traduite. */
+        function bbProductCard(p){
+            const t = bbTranslateTitle(p.title, bbLang);
+            const d = bbLang === 'fr' ? p.desc : bbShortDesc(p);
+            const langBtns = '<div class="bb-lang-row" role="group" aria-label="Langue"><button type="button" class="bb-lang-mini" data-bb-lang="fr" onclick="bbSetLang(\'fr\')">FR</button><button type="button" class="bb-lang-mini" data-bb-lang="en" onclick="bbSetLang(\'en\')">EN</button><button type="button" class="bb-lang-mini" data-bb-lang="it" onclick="bbSetLang(\'it\')">IT</button><button type="button" class="bb-lang-mini" data-bb-lang="ar" onclick="bbSetLang(\'ar\')">AR</button></div>';
+            return '<article class="bb-product">'
+                + '<div class="bb-product-banner">'
+                + '<span class="bb-product-tag">' + p.tag + '</span>'
+                + (p.img ? '<img src="' + p.img + '" alt="' + t + '" loading="lazy">' : '<div class="bb-banner-logo">BELLA BAY B.B</div><div class="bb-banner-title">' + t + '</div>')
+                + '</div>'
+                + '<div class="bb-product-info">'
+                + '<span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">' + p.brand + '</span>'
+                + '<h4>' + t + '</h4>'
+                + '<p>' + d + '</p>'
+                + langBtns
+                + (p.rating ? '<div style="font-size:12px;color:#a5760a;font-weight:700;margin:2px 0;">★ ' + String(p.rating.toFixed(1)).replace('.', ',') + (p.reviews ? ' · ' + p.reviews + ' avis' : '') + '</div>' : '')
+                + (p.gift ? '<div><span style="display:inline-block;background:#1f4d2e;color:#f4e6c2;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;">🎁 ' + bbT('sec.gift') + '</span></div>' : '')
+                + '<div style="font-size:11px;color:#2e7d32;font-weight:700;margin:4px 0;">● ' + bbT('sec.instock') + '</div>'
+                + '<div class="bb-product-price">' + p.price + '</div>'
+                + '<button type="button" class="bb-add-btn" onclick="addToCart(\'' + p.id + '\')">' + bbT('sec.add') + '</button>'
+                + '</div></article>';
+        }
         function renderCatalog() {
             const grid = document.getElementById('bbCatalogGrid');
             const searchVal = document.getElementById('bbCatalogSearch').value.toLowerCase().trim();
             const external = document.getElementById('bbExternalCatalogSearch');
-            
+
             const filtered = bbSortProducts(bbProducts.filter(p => {
-                const isLash = p.id.indexOf('cils') !== -1 || p.id === 'bb-mascara' || p.id === 'bb-lash-rejuvenator';
-                const tagGroup = bbTagGroups[activeCategory];
-                const matchTagGroup = !tagGroup || (p.category === 'bella-bay' && tagGroup.some(k => ((p.tag || '') + ' ' + (p.title || '')).includes(k)));
-                const matchCat = !activeCategory || p.category === activeCategory || (activeCategory === 'cils' && isLash) || matchTagGroup;
-                const matchSub = !activeSub || bbProductSubs(p).indexOf(activeSub) !== -1;
-                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc + ' ' + bbSubLabels(p)).toLowerCase().includes(searchVal);
+                let matchCat = true;
+                if(activeCategory){
+                    if(bbSections[activeCategory]){ matchCat = bbSectionMatch(p, activeCategory); }
+                    else if(bbTagGroups[activeCategory]){ matchCat = p.category === 'bella-bay' && bbTagGroups[activeCategory].some(k => ((p.tag || '') + ' ' + (p.title || '')).includes(k)); }
+                    else { matchCat = p.category === activeCategory; }
+                }
+                const matchSub = !activeSub || bbSubMatch(p, activeCategory, activeSub);
+                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc + ' ' + bbSubLabels(p) + ' ' + bbTranslateTitle(p.title, bbLang)).toLowerCase().includes(searchVal);
                 return matchCat && matchSearch && matchSub;
             }));
 
@@ -3242,29 +3590,12 @@
             if (filtered.length === 0) {
                 const secPend = bbSections[activeCategory];
                 if (activeSub && secPend) {
-                    grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — En attente de confirmation.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbShowSection(\'' + activeCategory + '\')" style="color:#a5760a;font-weight:700;">← Retour à la section ' + secPend.title + '</a></div>';
+                    grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — ' + bbT('sec.pending') + '.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbShowSection(\'' + activeCategory + '\')" style="color:#a5760a;font-weight:700;">← Retour à la section ' + secPend.title + '</a></div>';
                 } else {
-                    grid.innerHTML = '<div class="bb-catalog-empty">Aucun produit ne correspond à votre recherche dans la sélection.</div>';
+                    grid.innerHTML = '<div class="bb-catalog-empty">' + bbT('sec.none') + '</div>';
                 }
             } else {
-                grid.innerHTML = pageItems.map(p => `
-                    <article class="bb-product">
-                        <div class="bb-product-banner">
-                            <span class="bb-product-tag">${p.tag}</span>
-                            ${p.img ? `<img src="${p.img}" alt="${p.title}" loading="lazy">` : `<div class="bb-banner-logo">BELLA BAY B.B</div><div class="bb-banner-title">${p.title}</div>`}
-                        </div>
-                        <div class="bb-product-info">
-                            <span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">${p.brand}</span>
-                            <h4>${p.title}</h4>
-                            <p>${p.desc}</p>
-                            ${p.rating ? `<div style="font-size:12px;color:#a5760a;font-weight:700;margin:2px 0;">★ ${String(p.rating.toFixed(1)).replace('.', ',')}${p.reviews ? ' · ' + p.reviews + ' avis' : ''}</div>` : ''}
-                            ${p.gift ? `<div><span style="display:inline-block;background:#1f4d2e;color:#f4e6c2;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;">🎁 Idée cadeau</span></div>` : ''}
-                            <div style="font-size:11px;color:#2e7d32;font-weight:700;margin:4px 0;">● En stock</div>
-                            <div class="bb-product-price">${p.price}</div>
-                            <button type="button" class="bb-add-btn" onclick="addToCart('${p.id}')">Ajouter au panier 🛒</button>
-                        </div>
-                    </article>
-                `).join('');
+                grid.innerHTML = pageItems.map(function(p){ return bbProductCard(p); }).join('');
             }
 
             const pag = document.getElementById('bbPagination');
@@ -3281,7 +3612,7 @@
                 }
             }
 
-            document.getElementById('bbCatalogCount').textContent = filtered.length + ' produit(s) affiché(s)' + (totalPages > 1 ? ' — page ' + bbPage + ' sur ' + totalPages : '') + '.';
+            document.getElementById('bbCatalogCount').textContent = filtered.length + ' ' + bbT('sec.products') + (totalPages > 1 ? ' — page ' + bbPage + ' sur ' + totalPages : '') + '.';
             external.hidden = true;
         }
 
@@ -3339,12 +3670,12 @@
             if(countEl){ countEl.textContent = cartCount(); }
             if(!box) return;
             if(bbCart.length === 0){
-                box.innerHTML = '<div class="bb-cart-empty">Votre panier est vide.<br>Ajoutez vos produits préférés depuis la boutique.</div>';
+                box.innerHTML = '<div class="bb-cart-empty">' + bbT('cart.empty') + '</div>';
             } else {
                 box.innerHTML = bbCart.map(l => {
                     const p = bbFindProduct(l.id); if(!p) return '';
                     const imgHtml = p.img ? `<img src="${p.img}" alt="${p.title}">` : `<div class="bb-cart-item-ph">B.B</div>`;
-                    return `<div class="bb-cart-item">${imgHtml}<div class="bb-cart-item-info"><strong>${p.title}</strong><span>${bbMoney(p.priceCAD)} · ${p.brand || ''}</span><div class="bb-cart-qty"><button type="button" onclick="changeQty('${l.id}', -1)" aria-label="Moins">−</button><span>${l.qty}</span><button type="button" onclick="changeQty('${l.id}', 1)" aria-label="Plus">+</button><button type="button" class="bb-cart-remove" onclick="removeFromCart('${l.id}')">Retirer</button></div></div><strong>${bbMoney(p.priceCAD*l.qty)}</strong></div>`;
+                    return `<div class="bb-cart-item">${imgHtml}<div class="bb-cart-item-info"><strong>${p.title}</strong><span>${bbMoney(p.priceCAD)} · ${p.brand || ''}</span><div class="bb-cart-qty"><button type="button" onclick="changeQty('${l.id}', -1)" aria-label="Moins">−</button><span>${l.qty}</span><button type="button" onclick="changeQty('${l.id}', 1)" aria-label="Plus">+</button><button type="button" class="bb-cart-remove" onclick="removeFromCart('${l.id}')">' + bbT('cart.remove') + '</button></div></div><strong>${bbMoney(p.priceCAD*l.qty)}</strong></div>`;
                 }).join('');
             }
             const totalEl = document.getElementById('bbCartTotal');
@@ -3405,6 +3736,7 @@
         }
         initPayPal();
         renderCart();
+        bbApplyI18n();
         /* ---- Compte à rebours de Noël ---- */
         (function(){
             const el = document.getElementById('bbXmasCount');
