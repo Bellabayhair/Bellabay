@@ -304,6 +304,24 @@
         @media(max-width:700px){.bb-trust{grid-template-columns:repeat(2,minmax(0,1fr));}}
         @media(max-width:950px){nav{display:none}.menu-container{display:block}.mobile-grid,.story{grid-template-columns:1fr}.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
         @media(max-width:700px){.bb-marketplace .bb-products-grid,.bb-ext-grid,.services-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+
+        /* ---- Pages de section Bella Bay (grandes sections + sous-sections) ---- */
+        .bb-breadcrumb{font-size:12px;color:#8a5a6b;margin:0 0 14px;font-weight:600}
+        .bb-breadcrumb a{color:#a5760a;cursor:pointer;text-decoration:underline}
+        .bb-breadcrumb a:hover{color:#241a1f}
+        .bb-breadcrumb span{color:#241a1f}
+        .bb-section-title{font:700 26px 'Playfair Display',serif;color:#241a1f;text-align:center;margin:6px 0}
+        .bb-section-desc{text-align:center;color:#766d70;font-size:14px;max-width:640px;margin:0 auto 22px}
+        .bb-section-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:22px}
+        .bb-sub-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 12px;background:#fff;border:1px solid #e8dcc8;border-radius:8px;cursor:pointer;font-family:inherit;transition:transform .15s ease,box-shadow .15s ease}
+        .bb-sub-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(36,26,31,.12);border-color:#c9a45c}
+        .bb-sub-icon{font-size:30px}
+        .bb-sub-label{font:700 14px Montserrat,sans-serif;color:#241a1f;letter-spacing:.5px;text-align:center}
+        .bb-sub-count{font-size:11px;color:#2e7d32;font-weight:700}
+        .bb-sub-pending{font-size:11px;color:#96405a;font-weight:700;background:#f6e3dd;border-radius:20px;padding:3px 10px;text-align:center}
+        .bb-section-all{display:block;margin:0 auto 8px;padding:12px 26px;background:#241a1f;border:1px solid #e8cf98;color:#e8cf98;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px}
+        .bb-section-all:hover{background:#35242b}
+        .bb-section-note{text-align:center;color:#96405a;font-size:12px;max-width:640px;margin:0 auto 18px}
     </style>
 </head>
 <body>
@@ -344,48 +362,17 @@
                     <div class="dropdown-header">Navigation</div>
                     <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche</a>
                     <a href="#boutique" onclick="toggleMenu();openGiftBuilder();">🎁 Créez votre propre panier cadeau</a>
-                    <div class="dropdown-header">Nos collections B.B 💎</div>
-                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('bella-bay');">💎 Tous les produits Bella Bay</a>
-                    <div class="bb-acc-group">
-                        <button type="button" class="bb-acc-head" aria-expanded="false" onclick="bbToggleAcc(this)">💇 Produits capillaires B.B <span class="bb-acc-chev">▾</span></button>
-                        <div class="bb-acc-body">
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('capillaire');">Tous les soins capillaires</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('shampooing');">Shampooing</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('revitalisant');">Revitalisant</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('rinçage');">Spray volumisant (sans rinçage)</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('masque');">Masque</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('mousse');">Mousse</a>
-                        </div>
-                    </div>
-                    <div class="bb-acc-group">
-                        <button type="button" class="bb-acc-head" aria-expanded="false" onclick="bbToggleAcc(this)">👁️ Cils B.B <span class="bb-acc-chev">▾</span></button>
-                        <div class="bb-acc-body">
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('cils');">Tous les cils</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('magnétique');">Cils magnétiques</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('cils bande');">Cils bande 3D</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('individuel');">Cils individuels</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('coffret cils');">Coffret cils</a>
-                        </div>
-                    </div>
-                    <div class="bb-acc-group">
-                        <button type="button" class="bb-acc-head" aria-expanded="false" onclick="bbToggleAcc(this)">💎 Bijoux B.B <span class="bb-acc-chev">▾</span></button>
-                        <div class="bb-acc-body">
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('bijoux');">Tous les bijoux</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('collier');">Colliers</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('boucles');">Boucles d'oreilles</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('bague');">Bagues</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('bracelet');">Bracelets</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('coffret perle');">Coffret perle</a>
-                        </div>
-                    </div>
-                    <div class="bb-acc-group">
-                        <button type="button" class="bb-acc-head" aria-expanded="false" onclick="bbToggleAcc(this)">💄 Make-up B.B <span class="bb-acc-chev">▾</span></button>
-                        <div class="bb-acc-body">
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('maquillage');">Tout le make-up</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('gloss');">Gloss</a>
-                            <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('rouge à lèvres');">Rouge à lèvres</a>
-                        </div>
-                    </div>
+                    <div class="dropdown-header">Nos grandes sections 💎</div>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbShowAll();">💎 Tous les produits Bella Bay</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('bijoux');">💎 Bijoux</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('piercings');">✨ Piercings</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('soins-peau');">🧴 Soins pour la peau</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('accessoires');">🎀 Accessoires</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('enfants');">🧒 Univers Enfants</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuSearch('trio capillaire');">🎁 Coffret Trio</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('capillaire');">💇 Produits capillaires B.B</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('cils');">👁️ Cils B.B</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('maquillage');">💄 Make-up B.B</a>
                     <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('extensions');">✨ Extensions — toutes</a>
                     <div class="dropdown-subheader">Bella Bay</div>
                     <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
@@ -465,6 +452,8 @@
             </div>
 
             <!-- Grille de produits officielle -->
+            <div id="bbBreadcrumb" class="bb-breadcrumb" hidden></div>
+            <div id="bbSectionView" hidden></div>
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
             <div id="bbPagination" style="display:flex;gap:8px;justify-content:center;align-items:center;margin:26px 0 8px;flex-wrap:wrap;"></div>
 
@@ -2903,6 +2892,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-collier-papillon",
+                sub: "colliers",
                 gift: true,
                 priceCAD: 24.99,
                 title: "Collier Papillon Coquillage & Perles Bella Bay",
@@ -2915,6 +2905,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-collier-asymetrique",
+                sub: "colliers",
                 gift: true,
                 priceCAD: 22.99,
                 title: "Collier Asymétrique Perles & Cristaux Bella Bay",
@@ -2927,6 +2918,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-boucles-boheme",
+                sub: "boucles",
                 gift: true,
                 priceCAD: 19.99,
                 title: "Boucles d'oreilles Bohème Coquillage Bella Bay",
@@ -2939,6 +2931,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-boucles-vintage",
+                sub: "boucles",
                 gift: true,
                 priceCAD: 19.99,
                 title: "Boucles d'oreilles Vintage Perle Goutte Bella Bay",
@@ -2951,6 +2944,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-bague-vague",
+                sub: "bagues",
                 gift: true,
                 priceCAD: 24.99,
                 title: "Bague Vague Dorée Bella Bay",
@@ -2963,6 +2957,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-bracelet-cubain",
+                sub: "bracelets",
                 gift: true,
                 priceCAD: 24.99,
                 title: "Bracelet Cubain Doré Bella Bay",
@@ -2975,6 +2970,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-ensemble-boheme",
+                subs: ["colliers","bracelets"],
                 gift: true,
                 priceCAD: 24.99,
                 title: "Ensemble Bohème Coquillage & Perle Bella Bay",
@@ -2987,6 +2983,7 @@
                 category: "bijoux",
                 tag: "Bella Bay · Bijoux",
                 id: "bb-bijou-coffret-perle",
+                sub: "coffret",
                 gift: true,
                 priceCAD: 29.99,
                 title: "Coffret Perle Bella Bay",
@@ -2997,6 +2994,7 @@
         ];
 
         let activeCategory = '';
+        let activeSub = '';
         let bbSort = 'pop';
         let bbPage = 1;
         const BB_PER_PAGE = 12;
@@ -3006,21 +3004,171 @@
             'capillaire': ['Shampooing','Revitalisant','Soin sans rinçage','Mousse coiffante','Masque visage','Capillaire'],
             'maquillage': ['Rouge','Crayon','Correcteur','Fard','Gloss','Fond de teint','BB Crème','Blush','Khôl','Poudre','Palette','Eyeliner','Mascara','Base paupières','Baume','Beurre à lèvres','Repulpant','Pinceau']
         };
+
+        /* Grandes sections Bella Bay : page de section -> sous-sections -> page de sous-section.
+           Règle CJ : aucune sous-section sans produit confirmé n'affiche de faux produit ;
+           les sous-sections en attente affichent « En attente de confirmation ». */
+        const bbSections = {
+            'bijoux': {icon:'💎', title:'Bijoux', desc:"La collection Bijoux Bella Bay — coquillage, perles et or, pour briller tous les jours comme pour les Fêtes. Choisissez une catégorie :", subs:[
+                {id:'bagues', label:'Bagues', icon:'💍'},
+                {id:'colliers', label:'Colliers', icon:'📿'},
+                {id:'bracelets', label:'Bracelets', icon:'⛓️'},
+                {id:'boucles', label:"Boucles d'oreilles", icon:'✨'},
+                {id:'coffret', label:'Coffret Perle', icon:'🎁'}
+            ]},
+            'piercings': {icon:'✨', title:'Piercings', pending:true, desc:"Les piercings Bella Bay arrivent bientôt — titane et acier chirurgical, pour oreilles, nez, sourcils, lèvres, langue et nombril.", subs:[
+                {id:'oreilles', label:'Oreilles', icon:'👂'},
+                {id:'nez', label:'Nez', icon:'👃'},
+                {id:'sourcils', label:'Sourcils', icon:'🤨'},
+                {id:'levres', label:'Lèvres', icon:'👄'},
+                {id:'langue', label:'Langue', icon:'👅'},
+                {id:'nombril', label:'Nombril', icon:'✨'}
+            ]},
+            'soins-peau': {icon:'🧴', title:'Soins pour la peau', pending:true, desc:"Des soins doux pour peau sensible — exfoliants et crèmes hydratantes. Nos produits arrivent dès que notre fournisseur les confirme.", subs:[
+                {id:'scrub', label:'Scrub / Exfoliant', icon:'🧖'},
+                {id:'cremes-visage', label:'Crèmes visage', icon:'🧴'},
+                {id:'cremes-corps', label:'Crèmes corps', icon:'🫧'}
+            ]},
+            'accessoires': {icon:'🎀', title:'Accessoires', pending:true, desc:"Pinces, élastiques, chouchous et accessoires de coiffure et de beauté — la touche finale Bella Bay.", subs:[
+                {id:'pinces', label:'Pinces', icon:'📎'},
+                {id:'elastiques', label:'Élastiques', icon:'➰'},
+                {id:'chouchous', label:'Chouchous', icon:'🎀'},
+                {id:'coiffure', label:'Coiffure', icon:'💇'},
+                {id:'beaute', label:'Beauté', icon:'💄'}
+            ]},
+            'enfants': {icon:'🧒', title:'Univers Enfants', pending:true, desc:"Univers Enfants — un monde coloré et ludique, rien que pour les enfants. Perles, breloques, montres et kits créatifs.", subs:[
+                {id:'breloques', label:'Breloques', icon:'🔮'},
+                {id:'pinces-enfants', label:'Pinces', icon:'📎'},
+                {id:'bijoux-enfants', label:'Bijoux Enfants', icon:'💎'},
+                {id:'perles-kits', label:'Perles et Kits', icon:'📿'},
+                {id:'montres', label:'Montres', icon:'⌚'},
+                {id:'kits-enfants', label:'Kits Enfants', icon:'🎁'}
+            ]}
+        };
+        function bbProductSubs(p){ return p.subs ? p.subs.slice() : (p.sub ? [p.sub] : []); }
+        function bbSubLabel(sectionKey, subId){
+            const sec = bbSections[sectionKey]; if(!sec){ return ''; }
+            const s = sec.subs.find(function(x){ return x.id === subId; });
+            return s ? s.label : '';
+        }
+        function bbSubLabels(p){
+            const labels = [];
+            Object.keys(bbSections).forEach(function(k){
+                bbProductSubs(p).forEach(function(sid){ const l = bbSubLabel(k, sid); if(l){ labels.push(l); } });
+            });
+            return labels.join(' ');
+        }
+        function bbCountSub(sectionKey, subId){
+            return bbProducts.filter(function(p){ return p.category === sectionKey && bbProductSubs(p).indexOf(subId) !== -1; }).length;
+        }
+        function bbCountSection(sectionKey){
+            return bbProducts.filter(function(p){ return p.category === sectionKey; }).length;
+        }
+        function bbSetBreadcrumb(parts){
+            const el = document.getElementById('bbBreadcrumb');
+            if(!el){ return; }
+            if(!parts || parts.length === 0){ el.hidden = true; el.innerHTML = ''; return; }
+            el.hidden = false;
+            el.innerHTML = parts.map(function(part, i){
+                const last = i === parts.length - 1;
+                if(last){ return '<span>' + part.label + '</span>'; }
+                return '<a onclick="' + part.onclick + '">' + part.label + '</a> &nbsp;›&nbsp; ';
+            }).join('');
+        }
+        function bbHideSectionView(){
+            const view = document.getElementById('bbSectionView');
+            const grid = document.getElementById('bbCatalogGrid');
+            const pag = document.getElementById('bbPagination');
+            const cnt = document.getElementById('bbCatalogCount');
+            if(view){ view.hidden = true; view.innerHTML = ''; }
+            if(grid){ grid.style.display = ''; }
+            if(pag){ pag.style.display = ''; }
+            if(cnt){ cnt.style.display = ''; }
+            bbSetBreadcrumb(null);
+        }
+        function bbShowSection(key){
+            const sec = bbSections[key];
+            if(!sec){ return; }
+            activeCategory = key; activeSub = ''; bbPage = 1;
+            document.getElementById('bbCatalogSearch').value = '';
+            const view = document.getElementById('bbSectionView');
+            const grid = document.getElementById('bbCatalogGrid');
+            const pag = document.getElementById('bbPagination');
+            const cnt = document.getElementById('bbCatalogCount');
+            if(grid){ grid.style.display = 'none'; }
+            if(pag){ pag.style.display = 'none'; }
+            if(cnt){ cnt.style.display = 'none'; }
+            let cards = sec.subs.map(function(s){
+                const n = bbCountSub(key, s.id);
+                const pending = sec.pending || n === 0;
+                return '<button type="button" class="bb-sub-card" onclick="bbShowSub(\'' + key + '\',\'' + s.id + '\')">'
+                    + '<span class="bb-sub-icon">' + (s.icon || '✨') + '</span>'
+                    + '<span class="bb-sub-label">' + s.label + '</span>'
+                    + (pending ? '<span class="bb-sub-pending">En attente de confirmation</span>' : '<span class="bb-sub-count">' + n + ' produit' + (n > 1 ? 's' : '') + '</span>')
+                    + '</button>';
+            }).join('');
+            let html2 = '<h3 class="bb-section-title">' + sec.icon + ' ' + sec.title + '</h3>'
+                + '<p class="bb-section-desc">' + sec.desc + '</p>'
+                + (sec.pending ? '<p class="bb-section-note">⏳ En attente de confirmation — aucun produit n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).</p>' : '')
+                + '<div class="bb-section-cards">' + cards + '</div>';
+            if(bbCountSection(key) > 0){
+                html2 += '<button type="button" class="bb-section-all" onclick="bbShowSectionAll(\'' + key + '\')">Voir tous les produits ' + sec.title + ' →</button>';
+            }
+            view.innerHTML = html2;
+            view.hidden = false;
+            bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec.title}]);
+            const sec_el = document.getElementById('boutique');
+            if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        function bbShowSectionAll(key){
+            const sec = bbSections[key];
+            activeCategory = key; activeSub = ''; bbPage = 1;
+            document.getElementById('bbCatalogSearch').value = '';
+            bbHideSectionView();
+            renderCatalog();
+            bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec ? sec.title : key}]);
+            const g = document.getElementById('bbCatalogGrid');
+            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        function bbShowSub(key, subId){
+            const sec = bbSections[key];
+            activeCategory = key; activeSub = subId; bbPage = 1;
+            document.getElementById('bbCatalogSearch').value = '';
+            bbHideSectionView();
+            renderCatalog();
+            bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec ? sec.title : key, onclick:"bbShowSection('" + key + "')"}, {label: bbSubLabel(key, subId)}]);
+            const g = document.getElementById('bbCatalogGrid');
+            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
+        function bbShowAll(){
+            activeCategory = ''; activeSub = ''; bbPage = 1;
+            const inp = document.getElementById('bbCatalogSearch');
+            if(inp){ inp.value = ''; }
+            bbHideSectionView();
+            renderCatalog();
+            const sec_el = document.getElementById('boutique');
+            if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        }
         function filterByCategory(cat) {
             activeCategory = cat;
+            activeSub = '';
             bbPage = 1;
             document.getElementById('bbCatalogSearch').value = '';
+            bbHideSectionView();
             renderCatalog();
         }
         function bbMenuCategory(cat){
+            if(bbSections[cat]){ bbShowSection(cat); return; }
             filterByCategory(cat);
             bbFocusFirstResult();
         }
         function bbMenuSearch(keyword){
             activeCategory = '';
+            activeSub = '';
             bbPage = 1;
             const inp = document.getElementById('bbCatalogSearch');
             if(inp){ inp.value = keyword; }
+            bbHideSectionView();
             renderCatalog();
             bbFocusFirstResult();
         }
@@ -3063,8 +3211,9 @@
                 const tagGroup = bbTagGroups[activeCategory];
                 const matchTagGroup = !tagGroup || (p.category === 'bella-bay' && tagGroup.some(k => ((p.tag || '') + ' ' + (p.title || '')).includes(k)));
                 const matchCat = !activeCategory || p.category === activeCategory || (activeCategory === 'cils' && isLash) || matchTagGroup;
-                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc).toLowerCase().includes(searchVal);
-                return matchCat && matchSearch;
+                const matchSub = !activeSub || bbProductSubs(p).indexOf(activeSub) !== -1;
+                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc + ' ' + bbSubLabels(p)).toLowerCase().includes(searchVal);
+                return matchCat && matchSearch && matchSub;
             }));
 
             const totalPages = Math.max(1, Math.ceil(filtered.length / BB_PER_PAGE));
@@ -3073,7 +3222,12 @@
             const pageItems = filtered.slice((bbPage-1)*BB_PER_PAGE, bbPage*BB_PER_PAGE);
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<div class="bb-catalog-empty">Aucun produit ne correspond à votre recherche dans la sélection.</div>';
+                const secPend = bbSections[activeCategory];
+                if (activeSub && secPend) {
+                    grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — En attente de confirmation.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbShowSection(\'' + activeCategory + '\')" style="color:#a5760a;font-weight:700;">← Retour à la section ' + secPend.title + '</a></div>';
+                } else {
+                    grid.innerHTML = '<div class="bb-catalog-empty">Aucun produit ne correspond à votre recherche dans la sélection.</div>';
+                }
             } else {
                 grid.innerHTML = pageItems.map(p => `
                     <article class="bb-product">
@@ -3115,7 +3269,9 @@
 
         document.getElementById('bbCatalogSearch').addEventListener('input', () => {
             activeCategory = '';
+            activeSub = '';
             bbPage = 1;
+            bbHideSectionView();
             renderCatalog();
         });
         document.getElementById('bbCatalogSearchButton').addEventListener('click', function(){ renderCatalog(); bbFocusFirstResult(); });
