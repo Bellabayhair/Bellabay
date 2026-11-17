@@ -150,6 +150,8 @@
         .bb-catalog-count{margin:12px 0 0;color:#80616a;font-size:10px}
         .bb-marketplace .bb-products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
+        .bb-marketplace .bb-product.bb-highlight{outline:3px solid #c9a45c;outline-offset:5px;box-shadow:0 0 0 6px rgba(201,164,92,.25),0 8px 22px #2117190a}
+        #bbCatalogGrid .bb-product.bb-highlight{outline:3px solid #c9a45c;outline-offset:5px;box-shadow:0 0 0 6px rgba(201,164,92,.25),0 8px 22px #2117190a}
         
         /* Cartes Graphiques Rose & Or Infaillibles */
         .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
@@ -294,11 +296,11 @@
             <nav>
                 <a href="#boutique">Boutique</a>
                 <a href="#boutique" onclick="openGiftBuilder();">🎁 Panier cadeau</a>
-                <a href="#boutique" onclick="bbMenuCategory('cils');">Cils 👁️</a>
+                <a href="javascript:void(0)" onclick="bbMenuCategory('cils');">Cils 👁️</a>
                 <a href="#services">Services</a>
                 <a href="#mobile">Service mobile</a>
                 <a href="#histoire">Histoire</a>
-                <a href="#boutique" onclick="bbMenuCategory('extensions');">Extensions</a>
+                <a href="javascript:void(0)" onclick="bbMenuCategory('extensions');">Extensions</a>
                 <a href="#salon">Salon</a>
                 <a href="#contact">Contact</a>
                 <a class="book" href="https://wa.me/15145822856" target="_blank" rel="noopener noreferrer">Réserver</a>
@@ -311,26 +313,26 @@
                     <a href="#boutique" onclick="toggleMenu();">✨ Boutique &amp; Recherche</a>
                     <a href="#boutique" onclick="toggleMenu();openGiftBuilder();">🎁 Créez votre propre panier cadeau</a>
                     <div class="dropdown-header">Nos collections B.B 💎</div>
-                    <a href="#boutique" onclick="toggleMenu();bbMenuCategory('bella-bay');">💎 Tous les produits Bella Bay</a>
+                    <a href="javascript:void(0)" onclick="toggleMenu();bbMenuCategory('bella-bay');">💎 Tous les produits Bella Bay</a>
                     <div class="dropdown-subheader">💇 Produits capillaires B.B</div>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('capillaire');">Tous les soins capillaires</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('shampooing');">Shampooing</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('revitalisant');">Revitalisant</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('rinçage');">Spray volumisant (sans rinçage)</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('masque');">Masque</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('mousse');">Mousse</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('capillaire');">Tous les soins capillaires</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('shampooing');">Shampooing</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('revitalisant');">Revitalisant</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('rinçage');">Spray volumisant (sans rinçage)</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('masque');">Masque</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('mousse');">Mousse</a>
                     <div class="dropdown-subheader">👁️ Cils B.B</div>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('cils');">Tous les cils</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('magnétique');">Cils magnétiques</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('cils bande');">Cils bande 3D</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('individuel');">Cils individuels</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('coffret cils');">Coffret cils</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('cils');">Tous les cils</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('magnétique');">Cils magnétiques</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('cils bande');">Cils bande 3D</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('individuel');">Cils individuels</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('coffret cils');">Coffret cils</a>
                     <div class="dropdown-subheader">💄 Make-up B.B</div>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('maquillage');">Tout le make-up</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('gloss');">Gloss</a>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuSearch('rouge à lèvres');">Rouge à lèvres</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('maquillage');">Tout le make-up</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('gloss');">Gloss</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuSearch('rouge à lèvres');">Rouge à lèvres</a>
                     <div class="dropdown-subheader">✨ Hair B.B</div>
-                    <a href="#boutique" class="sub" onclick="toggleMenu();bbMenuCategory('extensions');">Extensions — toutes</a>
+                    <a href="javascript:void(0)" class="sub" onclick="toggleMenu();bbMenuCategory('extensions');">Extensions — toutes</a>
                     <div class="dropdown-subheader">Bella Bay</div>
                     <a href="#services" onclick="toggleMenu();">Services (-10% avec BELLA)</a>
                     <a href="#mobile" onclick="toggleMenu();">Service mobile</a>
@@ -2835,8 +2837,7 @@
         }
         function bbMenuCategory(cat){
             filterByCategory(cat);
-            const g = document.getElementById('bbCatalogGrid');
-            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+            bbFocusFirstResult();
         }
         function bbMenuSearch(keyword){
             activeCategory = '';
@@ -2844,8 +2845,21 @@
             const inp = document.getElementById('bbCatalogSearch');
             if(inp){ inp.value = keyword; }
             renderCatalog();
-            const g = document.getElementById('bbCatalogGrid');
-            if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+            bbFocusFirstResult();
+        }
+        /* Recherche : descendre directement sur le premier produit trouvé et le surligner */
+        function bbFocusFirstResult(){
+            const grid = document.getElementById('bbCatalogGrid');
+            const first = grid ? grid.querySelector('.bb-product') : null;
+            if(first){
+                document.querySelectorAll('.bb-product.bb-highlight').forEach(function(el){ el.classList.remove('bb-highlight'); });
+                first.classList.add('bb-highlight');
+                first.scrollIntoView({behavior: 'smooth', block: 'center'});
+                setTimeout(function(){ first.scrollIntoView({behavior: 'smooth', block: 'center'}); }, 120);
+                setTimeout(function(){ first.classList.remove('bb-highlight'); }, 4000);
+            } else if(grid){
+                grid.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
         }
 
         function changeSort(v){ bbSort = v; bbPage = 1; renderCatalog(); }
@@ -2927,7 +2941,8 @@
             bbPage = 1;
             renderCatalog();
         });
-        document.getElementById('bbCatalogSearchButton').addEventListener('click', renderCatalog);
+        document.getElementById('bbCatalogSearchButton').addEventListener('click', function(){ renderCatalog(); bbFocusFirstResult(); });
+        document.getElementById('bbCatalogSearch').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); renderCatalog(); bbFocusFirstResult(); } });
 
         renderCatalog();
 
