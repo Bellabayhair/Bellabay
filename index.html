@@ -3648,50 +3648,51 @@
         };
 
 
-        function bbUsageFor(p){
+        function bbUsageFor(p, lang){
+            const L = lang || bbLang;
             const s = ((p.tag || '') + ' ' + (p.title || '')).toLowerCase();
             const has = function(){ for(let i=0;i<arguments.length;i++){ if(s.indexOf(arguments[i]) !== -1) return true; } return false; };
-            if(has('rouge à lèvres')) return bbUsage.lipstick[bbLang] || bbUsage.lipstick.fr;
-            if(has('gloss')) return bbUsage.gloss[bbLang] || bbUsage.gloss.fr;
-            if(has('crayon lèvres')) return bbUsage.lipliner[bbLang] || bbUsage.lipliner.fr;
-            if(has('khôl','crayon yeux','crayon couleur','eyeliner')) return bbUsage.eyeliner[bbLang] || bbUsage.eyeliner.fr;
-            if(has('mascara')) return bbUsage.mascara[bbLang] || bbUsage.mascara.fr;
-            if(has('blush')) return bbUsage.blush[bbLang] || bbUsage.blush.fr;
-            if(has('fond de teint')) return bbUsage.foundation[bbLang] || bbUsage.foundation.fr;
-            if(has('bb crème')) return bbUsage.bbcream[bbLang] || bbUsage.bbcream.fr;
-            if(has('correcteur')) return bbUsage.concealer[bbLang] || bbUsage.concealer.fr;
-            if(has('poudre')) return bbUsage.powder[bbLang] || bbUsage.powder.fr;
-            if(has('fard','palette')) return bbUsage.eyeshadow[bbLang] || bbUsage.eyeshadow.fr;
-            if(has('baume','repulpant','beurre à lèvres')) return bbUsage.lipbalm[bbLang] || bbUsage.lipbalm.fr;
-            if(has('pinceau','éponge','papiers matifiants','pince à épiler')) return bbUsage.makeuptool[bbLang] || bbUsage.makeuptool.fr;
-            if(has('cuir chevelu')) return bbUsage.scalp[bbLang] || bbUsage.scalp.fr;
-            if(has('contour des yeux')) return bbUsage.eyecontour[bbLang] || bbUsage.eyecontour.fr;
-            if(has('épilation','cire','wax')) return bbUsage.wax[bbLang] || bbUsage.wax.fr;
-            if(has('sans rinçage','mousse','leave')) return bbUsage.leavein[bbLang] || bbUsage.leavein.fr;
-            if(has('shampooing','shampoo')) return bbUsage.shampoo[bbLang] || bbUsage.shampoo.fr;
-            if(has('revitalisant','conditioner')) return bbUsage.conditioner[bbLang] || bbUsage.conditioner.fr;
-            if(has('masque visage')) return bbUsage.facemask[bbLang] || bbUsage.facemask.fr;
-            if(has('masque')) return bbUsage.mask[bbLang] || bbUsage.mask.fr;
-            if(has('huile','oil')) return bbUsage.oil[bbLang] || bbUsage.oil.fr;
-            if(has('sérum','serum')) return bbUsage.serum[bbLang] || bbUsage.serum.fr;
-            if(has('crème','cream')) return bbUsage.cream[bbLang] || bbUsage.cream.fr;
-            if(has('nettoyant')) return bbUsage.cleanser[bbLang] || bbUsage.cleanser.fr;
-            if(has('savon')) return bbUsage.soap[bbLang] || bbUsage.soap.fr;
-            if(has('gommage','exfoliant','scrub')) return bbUsage.scrub[bbLang] || bbUsage.scrub.fr;
-            if(has('bougie')) return bbUsage.candle[bbLang] || bbUsage.candle.fr;
-            if(has('parfum')) return bbUsage.perfume[bbLang] || bbUsage.perfume.fr;
-            if(has('autobronzant')) return bbUsage.selftanner[bbLang] || bbUsage.selftanner.fr;
-            if(has('gel douche','beurre corporel')) return bbUsage.bodycare[bbLang] || bbUsage.bodycare.fr;
-            if(has('base paupières')) return bbUsage.eyeshadow[bbLang] || bbUsage.eyeshadow.fr;
-            if(has('press-on','ongles')) return bbUsage.presson[bbLang] || bbUsage.presson.fr;
-            if(has('cils')) return bbUsage.lashes[bbLang] || bbUsage.lashes.fr;
-            if(has('bijoux')) return bbUsage.jewelry[bbLang] || bbUsage.jewelry.fr;
-            if(has('coffret','panier')) return bbUsage.giftset[bbLang] || bbUsage.giftset.fr;
-            if(has('extension')) return bbUsage.extensions[bbLang] || bbUsage.extensions.fr;
-            if(has('bain')) return bbUsage.footbath[bbLang] || bbUsage.footbath.fr;
-            if(has('outils','fer à boucler','séchoir','sèche-cheveux','lisseur')) return bbUsage.hairtools[bbLang] || bbUsage.hairtools.fr;
-            if(has('laque','coiffage')) return bbUsage.styling[bbLang] || bbUsage.styling.fr;
-            return bbUsage.generic[bbLang] || bbUsage.generic.fr;
+            if(has('rouge à lèvres')) return bbUsage.lipstick[L] || bbUsage.lipstick.fr;
+            if(has('gloss')) return bbUsage.gloss[L] || bbUsage.gloss.fr;
+            if(has('crayon lèvres')) return bbUsage.lipliner[L] || bbUsage.lipliner.fr;
+            if(has('khôl','crayon yeux','crayon couleur','eyeliner')) return bbUsage.eyeliner[L] || bbUsage.eyeliner.fr;
+            if(has('mascara')) return bbUsage.mascara[L] || bbUsage.mascara.fr;
+            if(has('blush')) return bbUsage.blush[L] || bbUsage.blush.fr;
+            if(has('fond de teint')) return bbUsage.foundation[L] || bbUsage.foundation.fr;
+            if(has('bb crème')) return bbUsage.bbcream[L] || bbUsage.bbcream.fr;
+            if(has('correcteur')) return bbUsage.concealer[L] || bbUsage.concealer.fr;
+            if(has('poudre')) return bbUsage.powder[L] || bbUsage.powder.fr;
+            if(has('fard','palette')) return bbUsage.eyeshadow[L] || bbUsage.eyeshadow.fr;
+            if(has('baume','repulpant','beurre à lèvres')) return bbUsage.lipbalm[L] || bbUsage.lipbalm.fr;
+            if(has('pinceau','éponge','papiers matifiants','pince à épiler')) return bbUsage.makeuptool[L] || bbUsage.makeuptool.fr;
+            if(has('cuir chevelu')) return bbUsage.scalp[L] || bbUsage.scalp.fr;
+            if(has('contour des yeux')) return bbUsage.eyecontour[L] || bbUsage.eyecontour.fr;
+            if(has('épilation','cire','wax')) return bbUsage.wax[L] || bbUsage.wax.fr;
+            if(has('sans rinçage','mousse','leave')) return bbUsage.leavein[L] || bbUsage.leavein.fr;
+            if(has('shampooing','shampoo')) return bbUsage.shampoo[L] || bbUsage.shampoo.fr;
+            if(has('revitalisant','conditioner')) return bbUsage.conditioner[L] || bbUsage.conditioner.fr;
+            if(has('masque visage')) return bbUsage.facemask[L] || bbUsage.facemask.fr;
+            if(has('masque')) return bbUsage.mask[L] || bbUsage.mask.fr;
+            if(has('huile','oil')) return bbUsage.oil[L] || bbUsage.oil.fr;
+            if(has('sérum','serum')) return bbUsage.serum[L] || bbUsage.serum.fr;
+            if(has('crème','cream')) return bbUsage.cream[L] || bbUsage.cream.fr;
+            if(has('nettoyant')) return bbUsage.cleanser[L] || bbUsage.cleanser.fr;
+            if(has('savon')) return bbUsage.soap[L] || bbUsage.soap.fr;
+            if(has('gommage','exfoliant','scrub')) return bbUsage.scrub[L] || bbUsage.scrub.fr;
+            if(has('bougie')) return bbUsage.candle[L] || bbUsage.candle.fr;
+            if(has('parfum')) return bbUsage.perfume[L] || bbUsage.perfume.fr;
+            if(has('autobronzant')) return bbUsage.selftanner[L] || bbUsage.selftanner.fr;
+            if(has('gel douche','beurre corporel')) return bbUsage.bodycare[L] || bbUsage.bodycare.fr;
+            if(has('base paupières')) return bbUsage.eyeshadow[L] || bbUsage.eyeshadow.fr;
+            if(has('press-on','ongles')) return bbUsage.presson[L] || bbUsage.presson.fr;
+            if(has('cils')) return bbUsage.lashes[L] || bbUsage.lashes.fr;
+            if(has('bijoux')) return bbUsage.jewelry[L] || bbUsage.jewelry.fr;
+            if(has('coffret','panier')) return bbUsage.giftset[L] || bbUsage.giftset.fr;
+            if(has('extension')) return bbUsage.extensions[L] || bbUsage.extensions.fr;
+            if(has('bain')) return bbUsage.footbath[L] || bbUsage.footbath.fr;
+            if(has('outils','fer à boucler','séchoir','sèche-cheveux','lisseur')) return bbUsage.hairtools[L] || bbUsage.hairtools.fr;
+            if(has('laque','coiffage')) return bbUsage.styling[L] || bbUsage.styling.fr;
+            return bbUsage.generic[L] || bbUsage.generic.fr;
         }
 
         /* Carte produit Bella Bay — avec boutons de langue FR | EN | IT | AR
@@ -3710,8 +3711,8 @@
                 + '<span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">' + p.brand + '</span>'
                 + '<h4>' + (bbShadeColor[p.id] ? '<span style="display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #d8b98a;vertical-align:-3px;margin-right:7px;background:' + bbShadeColor[p.id] + '"></span>' : '') + t + '</h4>'
                 + '<p>' + d + '</p>'
-                + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">INCI : ' + (p.inci ? p.inci : bbT('sec.inciPending')) + '</p>'
-                + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">' + bbT('sec.usage') + ' : ' + bbUsageFor(p) + '</p>'
+                + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">INCI : ' + (p.inci ? p.inci : bbI18n['sec.inciPending'].fr + ' / ' + bbI18n['sec.inciPending'].en) + '</p>'
+                + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">' + bbI18n['sec.usage'].fr + ' : ' + bbUsageFor(p,'fr') + ' / ' + bbI18n['sec.usage'].en + ': ' + bbUsageFor(p,'en') + '</p>'
                 + langBtns
                 + (p.rating ? '<div style="font-size:12px;color:#a5760a;font-weight:700;margin:2px 0;">★ ' + String(p.rating.toFixed(1)).replace('.', ',') + (p.reviews ? ' · ' + p.reviews + ' avis' : '') + '</div>' : '')
                 + (p.gift ? '<div><span style="display:inline-block;background:#1f4d2e;color:#f4e6c2;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;">🎁 ' + bbT('sec.gift') + '</span></div>' : '')
