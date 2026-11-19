@@ -96,7 +96,68 @@
           {
             "@type": "Offer",
             "name": "Coupe + brushing",
-            "price": "50",
+            "price": "75",
+            "priceCurrency": "CAD"
+          }          ,
+          {
+            "@type": "Offer",
+            "name": "Coupe normale",
+            "price": "95",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coupe stylisée",
+            "description": "Effilage, amincissant, asymétrique, coupe flyé, style fantasy.",
+            "price": "100",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coupe stylisée + couleur",
+            "price": "180",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coupe stylisée + couleur fantaisie",
+            "price": "225",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mèches au bonnet",
+            "price": "120",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mèches au bonnet + couleur fantaisie",
+            "price": "180",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coloration racines",
+            "price": "75",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coloration globale",
+            "price": "95",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Coloration globale + flash",
+            "price": "120",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Botox Aloe — spécial jusqu'au 22 novembre 2026",
+            "price": "99",
             "priceCurrency": "CAD"
           }
         ]
@@ -546,15 +607,25 @@
                 </div>
                 <ul class="bb-price-list">
                 <li><div class="bb-price-name"><strong>Coloration de base + Brushing</strong><span>Promotion du moment · Brushing inclus · Transport inclus à Laval, Montréal et Rive-Nord</span></div><span class="bb-price-tag promo">99 $</span><button type="button" class="bb-price-details" onclick="openService('coloration')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coloration racines</strong><span>Retouche des racines pour raviver votre couleur</span></div><span class="bb-price-tag">75 $</span><button type="button" class="bb-price-details" onclick="openService('colorationRacines')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coloration globale</strong><span>Une couleur complète et uniforme, de la racine aux pointes</span></div><span class="bb-price-tag">95 $</span><button type="button" class="bb-price-details" onclick="openService('colorationGlobale')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coloration globale + flash</strong><span>Couleur complète perfectionnée avec un peu de flash</span></div><span class="bb-price-tag">120 $</span><button type="button" class="bb-price-details" onclick="openService('colorationFlash')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Mèches</strong><span>Des mèches lumineuses pour apporter dimension et profondeur</span></div><span class="bb-price-tag">dès 180 $</span><button type="button" class="bb-price-details" onclick="openService('meches')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Mèches au bonnet</strong><span>Des mèches lumineuses réalisées au bonnet</span></div><span class="bb-price-tag">dès 120 $</span><button type="button" class="bb-price-details" onclick="openService('mechesBonnet')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Mèches au bonnet + couleur fantaisie</strong><span>Mèches au bonnet avec une couleur fantaisie</span></div><span class="bb-price-tag">180 $</span><button type="button" class="bb-price-details" onclick="openService('mechesBonnetFantaisie')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Botox capillaire</strong><span>Un soin profond pour améliorer la douceur, la brillance et la fibre</span></div><span class="bb-price-tag">dès 195 $</span><button type="button" class="bb-price-details" onclick="openService('botox')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Botox Aloe</strong><span>Botox capillaire à l'aloe — spécial jusqu'au dimanche 22 novembre 2026</span></div><span class="bb-price-tag">99 $</span><button type="button" class="bb-price-details" onclick="openService('botoxAloe')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Lissage à la kératine</strong><span>Une technique qui aide à discipliner et lisser durablement vos cheveux</span></div><span class="bb-price-tag">180 $</span><button type="button" class="bb-price-details" onclick="openService('keratine')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Ombré / Balayage</strong><span>Un vrai balayage — un dégradé lumineux, base foncée vers pointes claires</span></div><span class="bb-price-tag">dès 160 $</span><button type="button" class="bb-price-details" onclick="openService('balayage')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Extensions Tape-in</strong><span>Ajoutez longueur, volume ou les deux · Autres méthodes : sur consultation</span></div><span class="bb-price-tag">dès 150 $</span><button type="button" class="bb-price-details" onclick="openService('extensions')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Coloration fantaisie</strong><span>Des couleurs créatives et personnalisées pour un look unique</span></div><span class="bb-price-tag">120 $</span><button type="button" class="bb-price-details" onclick="openService('fantaisie')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Contouring</strong><span>Une coloration placée autour du visage pour mettre les traits en valeur</span></div><span class="bb-price-tag">90 $</span><button type="button" class="bb-price-details" onclick="openService('contouring')">Détails →</button></li>
                 <li><div class="bb-price-name"><strong>Traitement capillaire</strong><span>Un soin professionnel pour hydrater, nourrir et revitaliser la chevelure</span></div><span class="bb-price-tag">80 $</span><button type="button" class="bb-price-details" onclick="openService('traitement')">Détails →</button></li>
-                <li><div class="bb-price-name"><strong>Coupe + brushing</strong><span>Une coupe soignée, terminée par un brushing impeccable</span></div><span class="bb-price-tag">50 $</span></li>
+                <li><div class="bb-price-name"><strong>Coupe + brushing</strong><span>Une coupe soignée, terminée par un brushing impeccable</span></div><span class="bb-price-tag">75 $</span><button type="button" class="bb-price-details" onclick="openService('coupe')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coupe normale</strong><span>Une coupe classique soignée, adaptée à votre visage</span></div><span class="bb-price-tag">95 $</span><button type="button" class="bb-price-details" onclick="openService('coupeNormale')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coupe stylisée</strong><span>Effilage, amincissant, asymétrique, coupe flyé, style fantasy — ciseaux effilage et amincissants</span></div><span class="bb-price-tag">100 $</span><button type="button" class="bb-price-details" onclick="openService('coupeStylisee')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coupe stylisée + couleur</strong><span>Coupe stylisée avec une couleur</span></div><span class="bb-price-tag">180 $</span><button type="button" class="bb-price-details" onclick="openService('coupeStyliseeCouleur')">Détails →</button></li>
+                <li><div class="bb-price-name"><strong>Coupe stylisée + couleur fantaisie</strong><span>Coupe stylisée avec une couleur fantaisie</span></div><span class="bb-price-tag">dès 225 $</span><button type="button" class="bb-price-details" onclick="openService('coupeStyliseeFantaisie')">Détails →</button></li>
                 </ul>
                 <div class="bb-price-foot">
                     <p>✨ <strong>-10 % sur tous les services avec le code BELLA</strong><br>Service privé mobile, directement chez vous.</p>
@@ -3979,14 +4050,25 @@
 
         const services = {
             coloration: {number:"SERVICE 01", title:"Coloration de base + Brushing (-10% avec BELLA)", description:"Une coloration complète pour uniformiser ou raviver votre couleur. Brushing inclus — la promotion du moment. Transport inclus partout à Laval, Montréal et Rive-Nord.", technique:"Appliquée sur l'ensemble des cheveux pour une teinte harmonieuse, suivie d'un brushing.", result:"Une couleur uniforme, brillante et adaptée à votre style, avec un brushing impeccable. Service à domicile — transport inclus à Laval, Montréal et Rive-Nord.", price:"99 $ — brushing inclus (Rabais -10% avec le code BELLA)"},
+            colorationRacines: {number:"SERVICE 17", title:"Coloration racines (-10% avec BELLA)", description:"Retouche des racines pour raviver votre couleur.", technique:"Application ciblée sur les racines.", result:"Des racines fraîches et une couleur ravivée.", price:"75 $ (Rabais -10% avec le code BELLA)"},
+            colorationGlobale: {number:"SERVICE 18", title:"Coloration globale (-10% avec BELLA)", description:"Une couleur complète et uniforme, de la racine aux pointes.", technique:"Application complète sur toute la chevelure.", result:"Une couleur uniforme et éclatante.", price:"95 $ (Rabais -10% avec le code BELLA)"},
+            colorationFlash: {number:"SERVICE 19", title:"Coloration globale + flash (-10% avec BELLA)", description:"Couleur complète perfectionnée avec un peu de flash.", technique:"Couleur globale, puis des touches flash pour illuminer.", result:"Une couleur complète avec des reflets lumineux.", price:"120 $ (Rabais -10% avec le code BELLA)"},
             fantaisie: {number:"SERVICE 02", title:"Coloration fantaisie (-10% avec BELLA)", description:"Pour une couleur créative, originale ou différente des tons classiques.", technique:"Choisie selon le résultat désiré (une base éclaircissante peut être requise).", result:"Une couleur expressive et personnalisée.", price:"120 $ (Rabais -10% avec le code BELLA)"},
             meches: {number:"SERVICE 03", title:"Mèches (-10% avec BELLA)", description:"Pour éclaircir certaines parties de la chevelure et apporter de la lumière.", technique:"Séparation en sections et éclaircissement ciblé.", result:"Une chevelure lumineuse et dimensionnelle.", price:"À partir de 180 $ (Rabais -10% avec le code BELLA)"},
+            mechesBonnet: {number:"SERVICE 15", title:"Mèches au bonnet (-10% avec BELLA)", description:"Des mèches lumineuses réalisées au bonnet.", technique:"Mèches au bonnet, placement précis.", result:"Des mèches lumineuses et naturelles.", price:"dès 120 $ (Rabais -10% avec le code BELLA)"},
+            mechesBonnetFantaisie: {number:"SERVICE 16", title:"Mèches au bonnet + couleur fantaisie (-10% avec BELLA)", description:"Mèches au bonnet avec une couleur fantaisie.", technique:"Mèches au bonnet, puis couleur fantaisie.", result:"Des mèches lumineuses avec une touche fantaisie.", price:"180 $ (Rabais -10% avec le code BELLA)"},
             contouring: {number:"SERVICE 04", title:"Contouring (-10% avec BELLA)", description:"Une coloration placée autour du visage pour mettre les traits en valeur.", technique:"Mèches concentrées sur les zones stratégiques du visage.", result:"Un effet lumineux qui met en valeur les traits.", price:"90 $ (Rabais -10% avec le code BELLA)"},
             balayage: {number:"SERVICE 05", title:"Ombré Hair & Balayage (-10% avec BELLA)", description:"Un éclaircissement progressif entre une base foncée et des pointes claires.", technique:"Transitions douces appliquées progressivement dans les longueurs.", result:"Un effet balayage californien lumineux.", price:"À partir de 160 $ (Rabais -10% avec le code BELLA)"},
             traitement: {number:"SERVICE 06", title:"Traitement capillaire (-10% avec BELLA)", description:"Un soin pour hydrater, nourrir et revitaliser vos cheveux.", technique:"Soin sélectionné selon l'état exact de votre chevelure.", result:"Des cheveux doux, souples et soignés.", price:"80 $ (Rabais -10% avec le code BELLA)"},
             botox: {number:"SERVICE 07", title:"Botox capillaire (-10% avec BELLA)", description:"Un soin profond pour sublimer les cheveux secs ou ternes.", technique:"Application minutieuse pour lisser et uniformiser la fibre.", result:"Des cheveux extrêmement doux et brillants.", price:"À partir de 195 $ (Rabais -10% avec le code BELLA)"},
+            botoxAloe: {number:"SERVICE 20", title:"Botox Aloe — Spécial 99 $", description:"Botox capillaire à l'aloe, en spécial jusqu'au dimanche 22 novembre 2026. Prix spécial, non cumulable avec le code BELLA.", technique:"Application du soin botox à l'aloe pour nourrir et lisser.", result:"Des cheveux doux, brillants et disciplinés.", price:"99 $ — spécial jusqu'au dimanche 22 novembre 2026"},
             keratine: {number:"SERVICE 08", title:"Lissage à la kératine (-10% avec BELLA)", description:"Une solution idéale pour réduire les frisottis au quotidien.", technique:"Application du produit activé par la chaleur.", result:"Des cheveux disciplinés, lisses et faciles à coiffer.", price:"180 $ (Rabais -10% avec le code BELLA)"},
-            extensions: {number:"SERVICE 09", title:"Extensions capillaires (-10% avec BELLA)", description:"Pour ajouter longueur, volume ou les deux selon vos envies.", extensionList:true, result:"Méthode choisie sur mesure selon votre chevelure.", price:"Tape-in dès 150 $ — autres méthodes sur consultation (Rabais -10% avec le code BELLA)"}
+            coupe: {number:"SERVICE 09", title:"Coupe + brushing (-10% avec BELLA)", description:"Une coupe soignée, terminée par un brushing impeccable. Pas en bas de 75 $.", technique:"Coupe adaptée à votre visage et à votre style, terminée par un brushing.", result:"Une coupe soignée et un brushing impeccable.", price:"75 $ (Rabais -10% avec le code BELLA)"},
+            coupeNormale: {number:"SERVICE 11", title:"Coupe normale (-10% avec BELLA)", description:"Une coupe classique soignée, adaptée à votre visage.", technique:"Coupe nette et structurée, finition soignée.", result:"Une coupe propre et élégante.", price:"95 $ (Rabais -10% avec le code BELLA)"},
+            coupeStylisee: {number:"SERVICE 12", title:"Coupe stylisée (-10% avec BELLA)", description:"Effilage, amincissant, asymétrique, coupe flyé, style fantasy — des techniques pour donner de la dimension.", technique:"Ciseaux à effilage et ciseaux amincissants, techniques spécialisées selon le look désiré.", result:"Un look stylisé, avec du mouvement et de la dimension.", price:"100 $ (Rabais -10% avec le code BELLA)"},
+            coupeStyliseeCouleur: {number:"SERVICE 13", title:"Coupe stylisée + couleur (-10% avec BELLA)", description:"Coupe stylisée avec une couleur.", technique:"Coupe stylisée, puis couleur choisie avec vous.", result:"Un look stylisé et une couleur harmonieuse.", price:"180 $ (Rabais -10% avec le code BELLA)"},
+            coupeStyliseeFantaisie: {number:"SERVICE 14", title:"Coupe stylisée + couleur fantaisie (-10% avec BELLA)", description:"Coupe stylisée avec une couleur fantaisie.", technique:"Coupe stylisée, puis couleur fantaisie créative.", result:"Un look unique, stylisé et coloré.", price:"dès 225 $ (Rabais -10% avec le code BELLA)"},
+            extensions: {number:"SERVICE 10", title:"Extensions capillaires (-10% avec BELLA)", description:"Pour ajouter longueur, volume ou les deux selon vos envies.", extensionList:true, result:"Méthode choisie sur mesure selon votre chevelure.", price:"Tape-in dès 150 $ — autres méthodes sur consultation (Rabais -10% avec le code BELLA)"}
         };
 
         function openService(serviceKey) {
