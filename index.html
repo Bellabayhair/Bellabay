@@ -3811,7 +3811,7 @@
             const t = bbTranslateTitle(p.title, bbLang);
             const d = bbLang === 'fr' ? p.desc : bbShortDesc(p);
             const langBtns = '<div class="bb-lang-row" role="group" aria-label="Langue"><button type="button" class="bb-lang-mini" data-bb-lang="fr" onclick="bbSetLang(\'fr\')">FR</button><button type="button" class="bb-lang-mini" data-bb-lang="en" onclick="bbSetLang(\'en\')">EN</button><button type="button" class="bb-lang-mini" data-bb-lang="it" onclick="bbSetLang(\'it\')">IT</button><button type="button" class="bb-lang-mini" data-bb-lang="ar" onclick="bbSetLang(\'ar\')">AR</button></div>';
-            return '<article class="bb-product">'
+            return '<article class="bb-product" id="bb-prod-' + p.id + '">'
                 + '<div class="bb-product-banner">'
                 + '<span class="bb-product-tag">' + bbTranslateTitle(p.tag, bbLang) + '</span>'
                 + (p.img ? '<img src="' + p.img + '" alt="' + t + '" loading="lazy">' : '<div class="bb-banner-logo">BELLA BAY B.B</div><div class="bb-banner-title">' + t + '</div>')
@@ -4151,6 +4151,51 @@
             const g = document.getElementById('bbCatalogGrid');
             if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
+        /* ---- Liens directs produits : bellabay.ca#produit-<id> ----
+           Ex. : https://bellabay.ca#produit-bb-lash-rejuvenator
+           Au chargement (ou quand le hash change) : on efface les filtres,
+           on affiche la page du catalogue qui contient le produit, on le
+           surligne (style .bb-highlight déjà présent sur le site) et on
+           descend jusqu'à lui. Si le lien produit est valide, on n'ouvre
+           pas le pop-up cils (il cacherait le produit). Produit inconnu :
+           on ne fait rien, la boutique s'affiche normalement. */
+        function bbProductDeepLinkId(){
+            const h = (window.location.hash || '');
+            if(h.indexOf('#produit-') !== 0) return '';
+            try { return decodeURIComponent(h.slice(9)).trim(); } catch(e){ return ''; }
+        }
+        function bbOpenProductById(id){
+            const p = bbFindProduct(id);
+            if(!p) return false;
+            const idx = bbProducts.indexOf(p);
+            if(idx === -1) return false;
+            activeCategory = ''; activeSub = '';
+            bbPage = Math.floor(idx / BB_PER_PAGE) + 1;
+            const inp = document.getElementById('bbCatalogSearch');
+            if(inp){ inp.value = ''; }
+            bbHideSectionView();
+            renderCatalog();
+            const card = document.getElementById('bb-prod-' + p.id);
+            if(!card) return false;
+            document.querySelectorAll('.bb-product.bb-highlight').forEach(function(el){ el.classList.remove('bb-highlight'); });
+            card.classList.add('bb-highlight');
+            card.scrollIntoView({behavior: 'smooth', block: 'center'});
+            setTimeout(function(){ card.scrollIntoView({behavior: 'smooth', block: 'center'}); }, 150);
+            setTimeout(function(){ card.classList.remove('bb-highlight'); }, 6000);
+            return true;
+        }
+        function bbHandleProductDeepLink(){
+            const id = bbProductDeepLinkId();
+            if(!id) return false;
+            if(bbOpenProductById(id)){
+                try { sessionStorage.setItem('bbLashPopupShown', '1'); } catch(e){}
+                return true;
+            }
+            return false;
+        }
+        window.addEventListener('load', function(){ bbHandleProductDeepLink(); });
+        window.addEventListener('hashchange', function(){ bbHandleProductDeepLink(); });
+
         window.addEventListener('load', function(){
             try {
                 if(!sessionStorage.getItem('bbLashPopupShown')){
