@@ -221,6 +221,31 @@
         .bb-marketplace .bb-product{display:flex;flex-direction:column;background:#fff;border:1px solid #e5ddd4;box-shadow:0 8px 22px #2117190a;min-width:0}
         .bb-marketplace .bb-product.bb-highlight{outline:3px solid #c9a45c;outline-offset:5px;box-shadow:0 0 0 6px rgba(201,164,92,.25),0 8px 22px #2117190a}
         #bbCatalogGrid .bb-product.bb-highlight{outline:3px solid #c9a45c;outline-offset:5px;box-shadow:0 0 0 6px rgba(201,164,92,.25),0 8px 22px #2117190a}
+        /* ---- Bella Bay — options intelligentes (2026-11-20, 0 $) ---- */
+        .bb-fav-section{margin:0 0 28px;text-align:center}
+        .bb-fav-section h3{font-family:'Cormorant Garamond',serif;font-size:28px;color:#5b2333;margin:0 0 6px}
+        .bb-fav-section p{color:#8a5a6b;font-size:13px;margin:0 0 14px}
+        .bb-fav-row{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory}
+        .bb-fav-card{flex:0 0 168px;scroll-snap-align:start;background:#fff;border:1px solid #e8cf98;border-radius:10px;padding:10px;text-align:left}
+        .bb-fav-card img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+        .bb-fav-card strong{display:block;font-size:12.5px;color:#241a1f;margin:8px 0 2px;line-height:1.35;min-height:34px}
+        .bb-fav-card span{font-size:13px;font-weight:700;color:#96405a}
+        .bb-fav-card button{display:block;width:100%;margin-top:8px;padding:9px 6px;background:#241a1f;color:#f5d98b;border:none;border-radius:20px;font:700 11px Montserrat,sans-serif;cursor:pointer}
+        .bb-fav-ph{height:130px;display:flex;align-items:center;justify-content:center;background:#fdf2f5;color:#96405a;font-weight:700;border-radius:6px}
+        .bb-quiz-options{display:grid;gap:10px;margin:16px 0 4px}
+        .bb-quiz-options button{padding:14px 16px;text-align:left;background:#fff;border:1.5px solid #d8b98a;border-radius:10px;font:600 14px Montserrat,sans-serif;color:#241a1f;cursor:pointer}
+        .bb-quiz-options button:hover{background:#fdf2f5;border-color:#c9a45c}
+        .bb-rec-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+        @media(max-width:640px){.bb-rec-row{grid-template-columns:1fr 1fr}}
+        .bb-rec-card{background:#fff;border:1px solid #e8cf98;border-radius:10px;padding:10px;text-align:left}
+        .bb-rec-card img{width:100%;height:90px;object-fit:cover;border-radius:6px;display:block}
+        .bb-rec-card strong{display:block;font-size:12px;color:#241a1f;margin:7px 0 2px;line-height:1.35;min-height:32px}
+        .bb-rec-card span{font-size:12.5px;font-weight:700;color:#96405a}
+        .bb-rec-card button{margin-top:7px;padding:7px 10px;background:#fff;border:1px solid #c9a45c;border-radius:20px;font:700 11px Montserrat,sans-serif;color:#5b2333;cursor:pointer}
+        .bb-rec-card .bb-rec-add{background:#241a1f;color:#f5d98b;border-color:#241a1f}
+        .bb-routine-box{margin-top:14px;padding:14px;border:1.5px solid #c9a45c;border-radius:10px;background:linear-gradient(135deg,#fdf2f5,#fffaf0)}
+        .bb-routine-box>strong{font-size:13px;color:#5b2333}
+        .bb-routine-box>p{font-size:12px;color:#8a5a6b;margin:4px 0 0}
         
         /* Cartes Graphiques Rose & Or Infaillibles */
         .bb-product-banner{aspect-ratio:1/1;background:radial-gradient(circle at 35% 30%,#fff2f5,#e8b4c3 60%,#241419);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;border-bottom:2px solid var(--gold)}
@@ -529,6 +554,10 @@
                         <option value="nameDesc" data-i18n="shop.sortNameDesc">Z à A</option>
                     </select>
                 </div>
+                <div style="margin-top:14px;">
+                    <button type="button" onclick="bbQuizOpen()" style="padding:13px 24px;background:linear-gradient(135deg,#241a1f,#3a2530);color:#f5d98b;border:1px solid #c9a45c;font:700 12px Montserrat,sans-serif;cursor:pointer;border-radius:30px;letter-spacing:1px;">✨ Trouvez votre produit idéal — quiz 30 secondes</button>
+                    <span style="font-size:12px;color:#8a5a6b;margin-left:8px;">4 questions, une sélection faite pour vous.</span>
+                </div>
                 <p id="bbCatalogCount" class="bb-catalog-count" aria-live="polite" style="margin-top:12px;"></p>
                 <div id="bbExternalCatalogSearch" class="bb-external-search" hidden aria-live="polite"></div>
             </div>
@@ -554,6 +583,13 @@
             </div>
 
 
+
+            <!-- NOS COUPS DE CŒUR — Top 20 Bella Bay (marges et qualité vérifiées, rapport perfectionnement 2026-11-19) -->
+            <div class="bb-fav-section" id="bbFavSection">
+                <h3>💗 Nos coups de cœur</h3>
+                <p>Les 20 produits préférés de Bella Bay — choisis pour leur qualité. Faites défiler →</p>
+                <div class="bb-fav-row" id="bbFavRow"></div>
+            </div>
 
             <!-- Grille de produits officielle -->
             <div id="bbBreadcrumb" class="bb-breadcrumb" hidden></div>
@@ -824,6 +860,22 @@
             <p style="font-size:13px;">-10 % avec le code <strong>BELLA</strong> • Livraison mondiale • Concours 250 $ — tirage le 25 décembre 2026</p>
             <button type="button" onclick="goToLashes()" style="padding:14px 28px;background:#e8cf98;border:none;color:#1c1417;font:700 13px Montserrat,sans-serif;cursor:pointer;border-radius:30px;text-transform:uppercase;letter-spacing:1px;">Découvrir les cils 👁️</button>
             <p style="margin-top:14px;"><button type="button" onclick="bbReplayWelcome()" style="background:transparent;border:1px solid #c9a45c;color:#8a5a6b;padding:8px 16px;border-radius:30px;cursor:pointer;font-size:12px;">🔊 Écouter le message de bienvenue</button></p>
+        </div>
+    </div>
+
+    <!-- FICHE PRODUIT BELLA BAY — avec « Vous aimerez aussi » -->
+    <div class="service-modal" id="bbProductModal" onclick="bbCloseProductOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="bbCloseProduct()" aria-label="Fermer">×</button>
+            <div id="bbProductModalContent"></div>
+        </div>
+    </div>
+
+    <!-- QUIZ BELLA BAY — Trouvez votre produit idéal -->
+    <div class="service-modal" id="bbQuizModal" onclick="bbCloseQuizOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="bbCloseQuiz()" aria-label="Fermer">×</button>
+            <div id="bbQuizContent"></div>
         </div>
     </div>
 
@@ -3814,11 +3866,11 @@
             return '<article class="bb-product" id="bb-prod-' + p.id + '">'
                 + '<div class="bb-product-banner">'
                 + '<span class="bb-product-tag">' + bbTranslateTitle(p.tag, bbLang) + '</span>'
-                + (p.img ? '<img src="' + p.img + '" alt="' + t + '" loading="lazy">' : '<div class="bb-banner-logo">BELLA BAY B.B</div><div class="bb-banner-title">' + t + '</div>')
+                + (p.img ? '<img src="' + p.img + '" alt="' + t + '" loading="lazy" onclick="bbOpenProduct(\'' + p.id + '\')" style="cursor:pointer" title="Voir la fiche produit">' : '<div class="bb-banner-logo" onclick="bbOpenProduct(\'' + p.id + '\')" style="cursor:pointer">BELLA BAY B.B</div><div class="bb-banner-title">' + t + '</div>')
                 + '</div>'
                 + '<div class="bb-product-info">'
                 + '<span style="font-size:9px;color:var(--rose-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;">' + p.brand + '</span>'
-                + '<h4>' + (bbShadeColor[p.id] ? '<span style="display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #d8b98a;vertical-align:-3px;margin-right:7px;background:' + bbShadeColor[p.id] + '"></span>' : '') + t + '</h4>'
+                + '<h4 onclick="bbOpenProduct(\'' + p.id + '\')" style="cursor:pointer" title="Voir la fiche produit">' + (bbShadeColor[p.id] ? '<span style="display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #d8b98a;vertical-align:-3px;margin-right:7px;background:' + bbShadeColor[p.id] + '"></span>' : '') + t + '</h4>'
                 + '<p>' + d + '</p>'
                 + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">INCI : ' + (p.inci ? p.inci : bbI18n['sec.inciPending'].fr + ' / ' + bbI18n['sec.inciPending'].en) + '</p>'
                 + '<p style="font-size:10px;color:#8a7a72;margin:2px 0 0;">' + bbI18n['sec.usage'].fr + ' : ' + bbUsageFor(p,'fr') + ' / ' + bbI18n['sec.usage'].en + ': ' + bbUsageFor(p,'en') + '</p>'
@@ -3843,7 +3895,7 @@
                     else { matchCat = p.category === activeCategory; }
                 }
                 const matchSub = !activeSub || bbSubMatch(p, activeCategory, activeSub);
-                const matchSearch = !searchVal || (p.title + ' ' + p.brand + ' ' + p.desc + ' ' + bbSubLabels(p) + ' ' + bbTranslateTitle(p.title, bbLang)).toLowerCase().includes(searchVal);
+                const matchSearch = !searchVal || bbSmartMatch(p, searchVal);
                 return matchCat && matchSearch && matchSub;
             }));
 
@@ -3857,7 +3909,7 @@
                 if (activeSub && secPend) {
                     grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — ' + bbT('sec.pending') + '.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbShowSection(\'' + activeCategory + '\')" style="color:#a5760a;font-weight:700;">← Retour à la section ' + secPend.title + '</a></div>';
                 } else {
-                    grid.innerHTML = '<div class="bb-catalog-empty">' + bbT('sec.none') + '</div>';
+                    grid.innerHTML = '<div class="bb-catalog-empty">' + bbT('sec.none') + bbDidYouMeanHtml(searchVal) + '</div>';
                 }
             } else {
                 grid.innerHTML = pageItems.map(function(p){ return bbProductCard(p); }).join('');
@@ -3892,6 +3944,318 @@
         document.getElementById('bbCatalogSearch').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); renderCatalog(); bbFocusFirstResult(); } });
 
         renderCatalog();
+
+        /* ==== Bella Bay — options intelligentes (2026-11-20, 0 $, 100 % dans le navigateur) ====
+           Recommandations, routine panier, recherche intelligente, quiz, coups de cœur.
+           Aucun prix modifié, aucun avis inventé, aucune donnée envoyée ailleurs.
+           Les recommandations restent dans la même marque : jamais de mélange
+           entre les produits propres Bella Bay et les produits affiliés. */
+        const BB_FAV_IDS = ['bb-lash-rejuvenator','bb-glow-mask','bb-coffret-trio','bb-bounce-boost-mousse','bb-stipple-blend-brush','bb-daily-repair-shampoo','bb-daily-repair-conditioner','bb-cils-magnetiques','bb-cils-bande','bb-cils-individuels','bb-coffret-cils','bb-bijou-collier-papillon','bb-bijou-collier-asymetrique','bb-bijou-boucles-boheme','bb-bijou-bague-vague','bb-bijou-coffret-perle','bb-mascara','bb-lip-gloss-warm-rose','bb-lipstick-red-audacity','bb-luxe-leavein'];
+
+        /* --- Normalisation + tolérance aux fautes de frappe --- */
+        function bbNorm(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+        function bbLev(a, b){
+            if(a === b) return 0;
+            const la = a.length, lb = b.length;
+            if(!la) return lb; if(!lb) return la;
+            if(Math.abs(la - lb) > 2) return 3;
+            let prev = [], cur = [];
+            for(let j = 0; j <= lb; j++){ prev[j] = j; }
+            for(let i = 1; i <= la; i++){
+                cur[0] = i;
+                let minRow = cur[0];
+                for(let j = 1; j <= lb; j++){
+                    const cost = a[i-1] === b[j-1] ? 0 : 1;
+                    cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + cost);
+                    if(cur[j] < minRow) minRow = cur[j];
+                }
+                if(minRow > 2) return 3;
+                const tmp = prev; prev = cur; cur = tmp;
+            }
+            return prev[lb];
+        }
+        /* Synonymes et fautes courantes : chaque mot tapé est élargi, jamais remplacé. */
+        const BB_SYNONYMS = {
+            'shampoing': ['shampooing','shampoo'], 'shampoo': ['shampooing'], 'shampoin': ['shampooing'],
+            'apres-shampooing': ['conditioner','revitalisant'], 'apres-shampoing': ['conditioner','revitalisant'],
+            'revitalisant': ['conditioner','revitalisant'], 'conditioner': ['revitalisant','conditioner'],
+            'cils': ['cils','lash','lashes'], 'faux-cils': ['cils','lash'], 'faux-cil': ['cils','lash'],
+            'keratine': ['keratine','keratin'], 'keratin': ['keratine'],
+            'serum': ['serum'], 'mascara': ['mascara'],
+            'ongle': ['ongle','nail'], 'ongles': ['ongles','nails'],
+            'bijou': ['bijou','bijoux','jewelry'], 'bijoux': ['bijoux','jewelry'],
+            'collier': ['collier','necklace'], 'bague': ['bague','ring'],
+            'boucle': ['boucle','earring'], 'boucles': ['boucles','earrings'],
+            'rouge': ['rouge','lipstick'], 'levre': ['levre','lip'], 'levres': ['levres','lips'],
+            'fond-de-teint': ['fond','foundation'], 'bb-creme': ['bb'], 'creme': ['creme','cream'],
+            'gommage': ['gommage','scrub','exfoliant'], 'exfoliant': ['exfoliant','scrub'],
+            'savon': ['savon','soap'], 'bougie': ['bougie','candle'],
+            'pinceau': ['pinceau','brush'], 'brosse': ['brosse','brush'],
+            'epilation': ['epilation','wax'], 'cire': ['cire','wax'],
+            'extension': ['extension','extensions'], 'coffret': ['coffret','coffrets','gift'],
+            'cadeau': ['cadeau','gift','coffret'], 'lissage': ['lissage','keratine'],
+            'teint': ['teint','foundation','bb'], 'visage': ['visage','face'],
+            'cheveux': ['cheveux','hair'], 'peau': ['peau','skin']
+        };
+        function bbTokenMatches(tok, hayWords, hayStr){
+            const alts = BB_SYNONYMS[tok] || [tok];
+            for(let a = 0; a < alts.length; a++){
+                const alt = alts[a];
+                if(hayStr.indexOf(alt) !== -1) return true;
+                const thr = alt.length <= 4 ? 1 : 2;
+                for(let w = 0; w < hayWords.length; w++){
+                    if(Math.abs(hayWords[w].length - alt.length) <= 2 && bbLev(alt, hayWords[w]) <= thr) return true;
+                }
+            }
+            return false;
+        }
+        function bbSearchHaystack(p){
+            return bbNorm((p.title || '') + ' ' + (p.brand || '') + ' ' + (p.desc || '') + ' ' + (p.tag || '') + ' ' + (p.category || '') + ' ' + bbSubLabels(p) + ' ' + bbTranslateTitle(p.title, bbLang));
+        }
+        function bbSmartMatch(p, q){
+            const query = bbNorm(q);
+            if(!query) return true;
+            const hay = bbSearchHaystack(p);
+            const words = hay.split(' ').filter(Boolean);
+            const tokens = query.split(' ').filter(Boolean);
+            for(let i = 0; i < tokens.length; i++){
+                if(!bbTokenMatches(tokens[i], words, hay)) return false;
+            }
+            return true;
+        }
+        function bbDidYouMeanHtml(q){
+            const query = bbNorm(q);
+            const tokens = query.split(' ').filter(Boolean);
+            if(!tokens.length) return '';
+            const scored = bbProducts.map(function(p){
+                const hay = bbSearchHaystack(p);
+                const words = hay.split(' ').filter(Boolean);
+                let total = 0;
+                tokens.forEach(function(t){
+                    let best = 99;
+                    words.forEach(function(w){ const d = bbLev(t, w); if(d < best) best = d; });
+                    total += best;
+                });
+                return {p: p, score: total};
+            }).filter(function(x){ return x.score <= tokens.length * 2; }).sort(function(a, b){ return a.score - b.score; }).slice(0, 3);
+            if(!scored.length) return '';
+            return '<br><br><span style="font-weight:700;color:#5b2333;">Vous vouliez dire :</span><br><span style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px;">'
+                + scored.map(function(x){ return '<button type="button" onclick="bbSearchFor(\'' + x.p.id + '\')" style="padding:8px 14px;border:1px solid #c9a45c;border-radius:20px;background:#fff;font:600 13px Montserrat,sans-serif;color:#5b2333;cursor:pointer;">' + bbEscapeHtml(bbTranslateTitle(x.p.title, bbLang)) + '</button>'; }).join('') + '</span>';
+        }
+        function bbSearchFor(id){
+            const p = bbFindProduct(id); if(!p) return;
+            const inp = document.getElementById('bbCatalogSearch');
+            if(inp){ inp.value = bbTranslateTitle(p.title, bbLang); }
+            activeCategory = ''; activeSub = ''; bbPage = 1;
+            bbHideSectionView(); renderCatalog(); bbFocusFirstResult();
+        }
+
+        /* --- Recommandations « Vous aimerez aussi » (même marque d'abord) --- */
+        const BB_ROUTINE = {
+            'bb-daily-repair-shampoo': ['bb-daily-repair-conditioner','bb-luxe-leavein','bb-coffret-trio'],
+            'bb-daily-repair-conditioner': ['bb-daily-repair-shampoo','bb-luxe-leavein','bb-bounce-boost-mousse'],
+            'bb-luxe-leavein': ['bb-daily-repair-shampoo','bb-daily-repair-conditioner','bb-bounce-boost-mousse'],
+            'bb-bounce-boost-mousse': ['bb-daily-repair-shampoo','bb-luxe-leavein','bb-glow-mask'],
+            'bb-glow-mask': ['bb-lash-rejuvenator','bb-mascara','bb-stipple-blend-brush'],
+            'bb-mascara': ['bb-lash-rejuvenator','bb-cils-bande','bb-stipple-blend-brush'],
+            'bb-lash-rejuvenator': ['bb-mascara','bb-cils-magnetiques','bb-cils-bande'],
+            'bb-cils-bande': ['bb-cils-individuels','bb-cils-magnetiques','bb-coffret-cils'],
+            'bb-cils-individuels': ['bb-cils-bande','bb-cils-magnetiques','bb-coffret-cils'],
+            'bb-cils-magnetiques': ['bb-cils-bande','bb-cils-individuels','bb-coffret-cils'],
+            'bb-coffret-cils': ['bb-lash-rejuvenator','bb-mascara','bb-cils-bande'],
+            'bb-stipple-blend-brush': ['bb-mascara','bb-glow-mask','bb-lip-gloss-warm-rose'],
+            'bb-lip-gloss-warm-rose': ['bb-lipstick-red-audacity','bb-mascara','bb-stipple-blend-brush'],
+            'bb-lipstick-red-audacity': ['bb-lip-gloss-warm-rose','bb-mascara','bb-stipple-blend-brush'],
+            'bb-bijou-collier-papillon': ['bb-bijou-boucles-boheme','bb-bijou-bague-vague','bb-bijou-coffret-perle'],
+            'bb-bijou-collier-asymetrique': ['bb-bijou-collier-papillon','bb-bijou-boucles-boheme','bb-bijou-coffret-perle'],
+            'bb-bijou-boucles-boheme': ['bb-bijou-collier-papillon','bb-bijou-bague-vague','bb-bijou-coffret-perle'],
+            'bb-bijou-bague-vague': ['bb-bijou-collier-papillon','bb-bijou-boucles-boheme','bb-bijou-coffret-perle'],
+            'bb-bijou-coffret-perle': ['bb-bijou-collier-papillon','bb-bijou-boucles-boheme','bb-bijou-bague-vague'],
+            'bb-coffret-trio': ['bb-daily-repair-shampoo','bb-daily-repair-conditioner','bb-luxe-leavein']
+        };
+        function bbRecommendations(p, n){
+            n = n || 3;
+            const out = [];
+            const push = function(id){
+                if(out.length >= n) return;
+                const q = bbFindProduct(id);
+                if(q && q.id !== p.id && out.indexOf(q) === -1) out.push(q);
+            };
+            (BB_ROUTINE[p.id] || []).forEach(push);
+            bbProducts.forEach(function(q){ if(out.length < n && q.id !== p.id && q.brand === p.brand && q.category === p.category && out.indexOf(q) === -1) out.push(q); });
+            bbProducts.forEach(function(q){ if(out.length < n && q.id !== p.id && q.brand === p.brand && out.indexOf(q) === -1) out.push(q); });
+            return out;
+        }
+        function bbRecCardHtml(q, withAdd){
+            const t = bbTranslateTitle(q.title, bbLang);
+            const imgHtml = q.img ? '<img src="' + q.img + '" alt="' + bbEscapeHtml(t).replace(/"/g, '') + '" loading="lazy">' : '<div style="height:90px;display:flex;align-items:center;justify-content:center;background:#fdf2f5;color:#96405a;font-weight:700;">B.B</div>';
+            return '<div class="bb-rec-card">' + imgHtml
+                + '<strong>' + bbEscapeHtml(t) + '</strong>'
+                + '<span>' + bbMoney(q.priceCAD) + '</span>'
+                + '<div style="display:flex;gap:6px;flex-wrap:wrap;">'
+                + '<button type="button" onclick="bbOpenProduct(\'' + q.id + '\')">Voir</button>'
+                + (withAdd ? '<button type="button" class="bb-rec-add" onclick="bbRecAdd(\'' + q.id + '\')">+ Panier</button>' : '')
+                + '</div></div>';
+        }
+        function bbRecAdd(id){ bbCloseProduct(); bbCloseQuiz(); addToCart(id); }
+
+        /* --- Fiche produit (modale) avec « Vous aimerez aussi » --- */
+        function bbOpenProduct(id){
+            const p = bbFindProduct(id); if(!p) return;
+            const recs = bbRecommendations(p, 3);
+            const t = bbTranslateTitle(p.title, bbLang);
+            const d = bbLang === 'fr' ? p.desc : bbShortDesc(p);
+            let html = '<div class="modal-number">' + bbEscapeHtml(p.brand || 'BELLA BAY') + (p.tag ? ' · ' + bbEscapeHtml(p.tag) : '') + '</div>'
+                + '<h2>' + bbEscapeHtml(t) + '</h2>'
+                + (p.img ? '<img src="' + p.img + '" alt="' + bbEscapeHtml(t).replace(/"/g, '') + '" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;margin:10px 0;">' : '')
+                + '<p>' + bbEscapeHtml(d) + '</p>'
+                + '<div class="detail-price">' + bbEscapeHtml(p.price) + '</div>'
+                + '<button type="button" class="bb-add-btn" style="width:100%;margin:12px 0 4px;" onclick="bbRecAdd(\'' + p.id + '\')">' + bbT('sec.add') + '</button>'
+                + '<p style="font-size:12px;color:#8a5a6b;">' + bbT('sec.instock') + ' · -10 % avec le code BELLA · <a href="#produit-' + p.id + '" onclick="bbCloseProduct()" style="color:#96405a;font-weight:700;">Voir dans le catalogue ↓</a></p>';
+            if(recs.length){
+                html += '<div class="detail-block"><h4>💗 Vous aimerez aussi</h4><div class="bb-rec-row">' + recs.map(function(q){ return bbRecCardHtml(q, true); }).join('') + '</div></div>';
+            }
+            document.getElementById('bbProductModalContent').innerHTML = html;
+            document.getElementById('bbProductModal').classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+        function bbCloseProduct(){ const m = document.getElementById('bbProductModal'); if(m) m.classList.remove('active'); document.body.classList.remove('modal-open'); }
+        function bbCloseProductOutside(event){ if(event.target.id === 'bbProductModal') bbCloseProduct(); }
+
+        /* --- « Complétez votre routine » dans le panier --- */
+        function bbRoutineHtml(){
+            if(!bbCart.length) return '';
+            const inCart = {};
+            bbCart.forEach(function(l){ inCart[l.id] = true; });
+            const out = [];
+            bbCart.forEach(function(l){
+                const p = bbFindProduct(l.id); if(!p) return;
+                bbRecommendations(p, 3).forEach(function(q){
+                    if(!inCart[q.id] && out.indexOf(q) === -1 && out.length < 3) out.push(q);
+                });
+            });
+            if(!out.length) return '';
+            return '<div class="bb-routine-box"><strong>✨ Complétez votre routine</strong>'
+                + '<p>Pour aller avec votre panier :</p><div class="bb-rec-row">'
+                + out.map(function(q){ return bbRecCardHtml(q, true); }).join('') + '</div></div>';
+        }
+
+        /* --- Coups de cœur (Top 20) --- */
+        function bbRenderFavs(){
+            const row = document.getElementById('bbFavRow');
+            if(!row) return;
+            const items = BB_FAV_IDS.map(function(id){ return bbFindProduct(id); }).filter(Boolean);
+            row.innerHTML = items.map(function(p){
+                const t = bbTranslateTitle(p.title, bbLang);
+                return '<article class="bb-fav-card">'
+                    + (p.img ? '<img src="' + p.img + '" alt="' + bbEscapeHtml(t).replace(/"/g, '') + '" loading="lazy">' : '<div class="bb-fav-ph">B.B</div>')
+                    + '<strong>' + bbEscapeHtml(t) + '</strong>'
+                    + '<span>' + bbMoney(p.priceCAD) + '</span>'
+                    + '<button type="button" onclick="bbOpenProductById(\'' + p.id + '\')">Voir le produit →</button>'
+                    + '</article>';
+            }).join('');
+        }
+        bbRenderFavs();
+
+        /* --- Quiz « Trouvez votre produit idéal » (marque propre Bella Bay seulement) --- */
+        const BB_QUIZ_STEPS = [
+            {key: 'envie', q: 'Qu’est-ce qui vous fait envie aujourd’hui ?', options: [
+                {label: '💇 Cheveux — soins et coiffage', kw: ['shampooing','revitalisant','cheveux','mousse','spray','botox'], fam: ['shampooing','cheveux']},
+                {label: '🌸 Visage — soins et teint', kw: ['visage','peau','teint','masque','glow','bb','fond'], fam: ['visage','peau']},
+                {label: '💄 Maquillage — regard et lèvres', kw: ['mascara','rouge','gloss','cils','lash','pinceau'], fam: ['mascara','gloss','rouge']},
+                {label: '👁️ Cils — le regard parfait', kw: ['cils','lash','regard'], fam: ['faux cils']},
+                {label: '💎 Bijoux — pour briller', kw: ['collier','bague','boucle','bijou','perle'], fam: ['collier','bague','boucles','perle']},
+                {label: '🎁 Un cadeau — pour offrir', kw: ['coffret','cadeau','panier'], gift: true, fam: ['coffret']},
+            ]},
+            {key: 'besoin', q: 'Votre besoin principal ?', options: [
+                {label: 'Réparer et nourrir', kw: ['repair','répare','nourrit','daily','soin']},
+                {label: 'Volume et brillance', kw: ['volume','brillance','bounce','boost','brillant']},
+                {label: 'Un beau regard', kw: ['cils','lash','mascara','regard']},
+                {label: 'Un teint parfait', kw: ['teint','fond','bb','correcteur','glow']},
+                {label: 'Offrir quelque chose de beau', kw: ['coffret','cadeau','panier'], gift: true}
+            ]},
+            {key: 'budget', q: 'Votre budget ?', options: [
+                {label: 'Moins de 25 $', max: 25},
+                {label: '25 $ à 50 $', min: 25, max: 50},
+                {label: 'Plus de 50 $', min: 50},
+                {label: 'Peu importe', }
+            ]},
+            {key: 'pour', q: 'C’est pour qui ?', options: [
+                {label: 'Pour moi 💗', },
+                {label: 'Pour offrir 🎁', gift: true}
+            ]}
+        ];
+        let bbQuizAnswers = [];
+        let bbQuizStep = 0;
+        function bbQuizOpen(){
+            bbQuizAnswers = []; bbQuizStep = 0;
+            bbQuizRender();
+            document.getElementById('bbQuizModal').classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+        function bbCloseQuiz(){ const m = document.getElementById('bbQuizModal'); if(m) m.classList.remove('active'); document.body.classList.remove('modal-open'); }
+        function bbCloseQuizOutside(event){ if(event.target.id === 'bbQuizModal') bbCloseQuiz(); }
+        function bbQuizAnswer(idx){
+            const step = BB_QUIZ_STEPS[bbQuizStep];
+            bbQuizAnswers.push(step.options[idx]);
+            bbQuizStep++;
+            bbQuizRender();
+        }
+        function bbQuizBack(){ if(bbQuizStep > 0){ bbQuizStep--; bbQuizAnswers.pop(); bbQuizRender(); } }
+        function bbQuizRender(){
+            const box = document.getElementById('bbQuizContent');
+            if(!box) return;
+            if(bbQuizStep < BB_QUIZ_STEPS.length){
+                const step = BB_QUIZ_STEPS[bbQuizStep];
+                let html = '<div class="modal-number">Question ' + (bbQuizStep + 1) + ' sur ' + BB_QUIZ_STEPS.length + ' · Trouvez votre produit idéal</div>'
+                    + '<h2>' + step.q + '</h2>'
+                    + '<div class="bb-quiz-options">'
+                    + step.options.map(function(o, i){ return '<button type="button" onclick="bbQuizAnswer(' + i + ')">' + o.label + '</button>'; }).join('')
+                    + '</div>'
+                    + (bbQuizStep > 0 ? '<p style="margin-top:14px;"><button type="button" onclick="bbQuizBack()" style="background:transparent;border:none;color:#96405a;font-weight:700;cursor:pointer;">← Question précédente</button></p>' : '');
+                box.innerHTML = html;
+            } else {
+                box.innerHTML = bbQuizResultsHtml();
+            }
+        }
+        function bbQuizScore(p){
+            let s = 0;
+            const hay = bbNorm((p.title || '') + ' ' + (p.desc || '') + ' ' + (p.tag || ''));
+            bbQuizAnswers.forEach(function(a){
+                if(a.kw){ a.kw.forEach(function(k){ if(hay.indexOf(bbNorm(k)) !== -1) s += 2; }); }
+                if(a.fam && a.fam.some(function(f){ return hay.indexOf(bbNorm(f)) !== -1; })) s += 6;
+                if(a.gift && p.gift) s += 4;
+            });
+            const b = bbQuizAnswers.filter(function(a){ return a.max !== undefined || a.min !== undefined; })[0];
+            if(b){
+                if(b.max !== undefined && p.priceCAD <= b.max) s += 2;
+                if(b.min !== undefined && p.priceCAD >= b.min) s += 2;
+            }
+            const favIdx = BB_FAV_IDS.indexOf(p.id);
+            if(favIdx !== -1) s += (20 - favIdx) / 20;
+            return s;
+        }
+        function bbQuizResultsHtml(){
+            const b = bbQuizAnswers.filter(function(a){ return a.max !== undefined || a.min !== undefined; })[0];
+            let cands = bbProducts.filter(function(p){
+                if(p.brand !== 'BELLA BAY') return false;
+                if(b && b.max !== undefined && p.priceCAD > b.max) return false;
+                if(b && b.min !== undefined && p.priceCAD < b.min) return false;
+                return true;
+            });
+            if(!cands.length) cands = bbProducts.filter(function(p){ return p.brand === 'BELLA BAY'; });
+            const ranked = cands.map(function(p){ return {p: p, s: bbQuizScore(p)}; })
+                .sort(function(a, b){ return b.s - a.s; }).slice(0, 3);
+            let html = '<div class="modal-number">✨ Votre sélection Bella Bay</div>'
+                + '<h2>Voici vos produits idéaux</h2>'
+                + '<p>Choisis pour vous, selon vos réponses — prix en $ CAD, -10 % avec le code BELLA.</p>'
+                + '<div class="bb-rec-row">' + ranked.map(function(x){ return bbRecCardHtml(x.p, true); }).join('') + '</div>'
+                + '<p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">'
+                + '<button type="button" onclick="bbQuizOpen()" style="padding:12px 20px;background:#241a1f;color:#f5d98b;border:none;border-radius:30px;font:700 12px Montserrat,sans-serif;cursor:pointer;">↻ Recommencer le quiz</button>'
+                + '<button type="button" onclick="bbCloseQuiz();bbShowAll();" style="padding:12px 20px;background:#e8cf98;border:none;color:#1c1417;border-radius:30px;font:700 12px Montserrat,sans-serif;cursor:pointer;">Voir tout le catalogue →</button>'
+                + '</p>';
+            return html;
+        }
 
         /* ---- Panier Bella Bay ---- */
         const bbExtProducts = {
@@ -3963,7 +4327,7 @@
                     const p = bbFindProduct(l.id); if(!p) return '';
                     const imgHtml = p.img ? `<img src="${p.img}" alt="${bbTranslateTitle(p.title, bbLang)}">` : `<div class="bb-cart-item-ph">B.B</div>`;
                     return `<div class="bb-cart-item">${imgHtml}<div class="bb-cart-item-info"><strong>${bbTranslateTitle(p.title, bbLang)}</strong><span>${bbMoney(p.priceCAD)} · ${p.brand || ''}</span><div class="bb-cart-qty"><button type="button" onclick="changeQty('${l.id}', -1)" aria-label="Moins">−</button><span>${l.qty}</span><button type="button" onclick="changeQty('${l.id}', 1)" aria-label="Plus">+</button><button type="button" class="bb-cart-remove" onclick="removeFromCart('${l.id}')">' + bbT('cart.remove') + '</button></div></div><strong>${bbMoney(p.priceCAD*l.qty)}</strong></div>`;
-                }).join('');
+                }).join('') + bbRoutineHtml();
             }
             const totalEl = document.getElementById('bbCartTotal');
             if(totalEl){ totalEl.textContent = bbMoney(cartTotal()); }
