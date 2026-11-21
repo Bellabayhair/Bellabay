@@ -3984,8 +3984,7 @@
             view.innerHTML = html2;
             view.hidden = false;
             bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec.title}]);
-            const sec_el = document.getElementById('boutique');
-            if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+            if(view){ view.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         /* Page exclusive « Extensions de rêve » — fond rose, Beauty Without Borders.
            Les extensions AiryHair deja en ligne s'y affichent ; les extensions CJ
@@ -4025,8 +4024,7 @@
             view.innerHTML = html2;
             view.hidden = false;
             bbSetBreadcrumb([{label:'Boutique', onclick:"bbShowAll()"}, {label: sec.title}]);
-            const sec_el = document.getElementById('boutique');
-            if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+            if(view){ view.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function bbShowSectionAll(key){
             const sec = bbSections[key];
@@ -4092,7 +4090,7 @@
                 first.classList.add('bb-highlight');
                 first.scrollIntoView({behavior: 'smooth', block: 'center'});
                 setTimeout(function(){ first.scrollIntoView({behavior: 'smooth', block: 'center'}); }, 120);
-                setTimeout(function(){ first.classList.remove('bb-highlight'); }, 4000);
+                setTimeout(function(){ first.classList.remove('bb-highlight'); }, 6000);
             } else if(grid){
                 grid.scrollIntoView({behavior: 'smooth', block: 'start'});
             }
