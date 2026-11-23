@@ -698,6 +698,64 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d0d'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='%23c9a45c' text-anchor='middle'%3EB.B%3C/text%3E%3C/svg%3E">
     <!-- Bella Bay — chance, pouvoir, richesse -->
     <meta name="bella-bay" content="chance, pouvoir, richesse">
+
+    <style id="bb-luxe-v3">
+        /* Bella Bay — Refonte visuelle 1 M$ v3 (2026-11-23) : luxe accessible, catalogue beaute, recherche hero, enfants, IA. 0 $, 100 % navigateur. */
+        .hero{min-height:92vh}
+        .hero-stats{display:flex;flex-wrap:wrap;gap:12px 0;justify-content:center;margin-top:30px;padding-top:24px;border-top:1px solid rgba(201,164,92,.5);max-width:820px}
+        .hero-stats div{padding:0 22px}
+        .hero-stats div+div{border-left:1px solid rgba(201,164,92,.45)}
+        .hero-stats b{display:block;font:700 15px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#f5d98b}
+        .bb-catalog-panel{max-width:1020px;padding:34px 30px 28px;border-radius:22px;background:linear-gradient(180deg,#fffdf8,#fdf2f5);border:1px solid #c9a45c;box-shadow:0 24px 50px rgba(33,23,25,.14)}
+        .bb-search-label{font-size:12px!important;letter-spacing:2.5px!important;color:#5b2333!important}
+        #bbCatalogSearch{font-size:16px!important;padding:17px 22px!important;border-radius:999px!important;border:1.5px solid #c9a45c!important;background:#fff!important}
+        #bbCatalogSearch:focus{box-shadow:0 0 0 4px rgba(201,164,92,.22)!important}
+        .bb-search-button{padding:0 30px!important;font-size:12px!important;letter-spacing:2px!important;border-radius:999px!important;background:linear-gradient(135deg,#c9a45c,#e8cf98)!important;color:#241a1f!important;border:1px solid #c9a45c!important}
+        .bb-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center}
+        .bb-chips-label{font:700 10px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;align-self:center}
+        .bb-chips button{border:1px solid #d8b98a;background:#fff;color:#5b2333;border-radius:999px;padding:8px 15px;font:600 12px Montserrat,sans-serif;cursor:pointer}
+        .bb-chips button:hover{background:#241a1f;color:#f5d98b;border-color:#241a1f}
+        .bb-catalog-panel button[onclick="bbQuizOpen()"],.bb-catalog-panel button[onclick="bbAiOpen()"]{width:100%;justify-content:center;padding:15px 24px!important;font-size:13px!important}
+        .bb-salon-strip{max-width:1020px;margin:0 auto 30px;padding:26px 28px;text-align:center;background:linear-gradient(135deg,#241a1f,#4a1020 55%,#241a1f);border:1px solid #c9a45c;border-radius:20px;color:#fdf2f5}
+        .bb-salon-strip small{display:block;font:700 10px Montserrat,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#e8cf98;margin-bottom:10px}
+        .bb-salon-strip p{font:500 22px 'Cormorant Garamond',serif;line-height:1.4;margin:0}
+        .bb-cat-tiles{gap:14px}
+        .bb-cat-tile{position:relative;overflow:hidden;border:none!important;border-radius:20px!important;padding:30px 10px 20px!important;min-height:150px;justify-content:flex-end!important;color:#fff}
+        .bb-cat-tile::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.45));z-index:0}
+        .bb-cat-tile>*{position:relative;z-index:1}
+        .bb-cat-tile .bb-cat-tile-icon{font-size:40px!important;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+        .bb-cat-tile strong{font-family:'Cormorant Garamond',serif!important;font-size:22px!important;font-weight:700!important;color:#fff!important;letter-spacing:.5px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+        .bb-cat-tile span{color:rgba(255,255,255,.92)}
+        .bb-cat-tile .bb-cat-count-pill{display:inline-block;background:rgba(255,255,255,.94);color:#241a1f!important;border-radius:999px;padding:4px 12px;font:700 11px Montserrat,sans-serif;letter-spacing:1px}
+        .bb-cat-tile .bb-cat-count-pill span{color:#241a1f!important}
+        .bb-cat-tile .bb-cat-tile-soon{display:inline-block;background:#fff;color:#800020!important;border-radius:999px;padding:4px 12px;font:700 11px Montserrat,sans-serif}
+        .bb-cat-tile:hover{transform:translateY(-6px)!important;box-shadow:0 18px 34px rgba(33,23,25,.25)!important}
+        .bb-cat-cheveux{background:linear-gradient(160deg,#800020,#c05a78 55%,#e8a7b8)}
+        .bb-cat-maquillage{background:linear-gradient(160deg,#241a1f,#800020 60%,#c9a45c)}
+        .bb-cat-cils{background:linear-gradient(160deg,#171014,#3a2530 55%,#c9a45c)}
+        .bb-cat-bijoux{background:linear-gradient(160deg,#8c6d2d,#D6B76C 55%,#f5e3b8)}
+        .bb-cat-ongles{background:linear-gradient(160deg,#c05a78,#e8a7b8 60%,#fdf2f5)}
+        .bb-cat-visage{background:linear-gradient(160deg,#f3d3dc,#e8a7b8 50%,#c05a78)}
+        .bb-cat-corps{background:linear-gradient(160deg,#1e3d2f,#3f6b52 55%,#c9a45c)}
+        .bb-cat-coffrets{background:linear-gradient(160deg,#800020,#241a1f 60%,#D6B76C)}
+        .bb-cat-enfants{background:linear-gradient(160deg,#e8a7b8,#f3d3dc 45%,#D6B76C)}
+        .bb-cat-extensions{background:linear-gradient(160deg,#241a1f,#800020 55%,#1e3d2f)}
+        .bb-cats-fashion{text-align:center;font:600 12px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#8c6d2d;margin:0 0 18px}
+        .bb-kids-banner{max-width:1020px;margin:0 auto 30px;padding:30px 28px;border-radius:22px;background:linear-gradient(135deg,#fdeef2,#f9e8ed 45%,#f5e3b8);border:1px solid #c9a45c;box-shadow:0 18px 40px rgba(33,23,25,.12);text-align:center}
+        .bb-kids-banner h3{font:700 34px 'Cormorant Garamond',serif;color:#5b2333;margin:0 0 8px}
+        .bb-kids-banner p{color:#5b2333;font-size:15px;line-height:1.7;max-width:640px;margin:0 auto 18px}
+        .bb-kids-banner .bb-kids-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .bb-kids-banner .bb-kids-btns button,.bb-kids-banner .bb-kids-btns a{padding:13px 24px;border-radius:999px;font:700 12px Montserrat,sans-serif;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block}
+        .bb-kids-discover{background:#241a1f!important;color:#f5d98b!important;border:1px solid #241a1f!important}
+        .bb-kids-yt{background:#fff!important;color:#5b2333!important;border:1px solid #c9a45c!important}
+        .bb-section-eyebrow{text-align:center;font:700 10px Montserrat,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#8c6d2d;margin-bottom:10px}
+        .bb-section-title{font-family:'Cormorant Garamond',serif!important;font-size:clamp(36px,5vw,52px)!important;font-weight:600!important}
+        .bb-section-title::after{content:'';display:block;width:72px;height:1px;background:linear-gradient(90deg,transparent,#c9a45c,transparent);margin:18px auto 0}
+        .bb-section-desc{font-size:16px!important;line-height:1.8!important}
+        .bb-sub-card{border-radius:16px!important;padding:26px 14px!important}
+        .bb-marketplace .bb-product-price{font-size:18px!important;color:#8c6d2d!important}
+        @media(max-width:700px){.bb-catalog-panel{padding:24px 16px}.bb-cat-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-stats{gap:8px 0}.hero-stats div{padding:0 12px}.bb-kids-banner h3{font-size:28px}.bb-salon-strip p{font-size:19px}}
+    </style>
 </head>
 <body>
     <div class="bb-fond-rose" aria-hidden="true"></div>
@@ -782,6 +840,12 @@
             <div class="hero-footer-info" style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;margin-top:10px;" data-i18n="hero.info">
                 Service mobile · Montréal · Laval · Rive-Nord
             </div>
+            <div class="hero-stats">
+                <div><b data-i18n="hero.s1">208 produits</b></div>
+                <div><b data-i18n="hero.s2">5,0/5 · 4 avis</b></div>
+                <div><b data-i18n="hero.s3">Livraison mondiale</b></div>
+                <div><b data-i18n="hero.s4">Code BELLA -10 %</b></div>
+            </div>
             <a class="bb-scroll-cue" href="#boutique" data-i18n="hero.scroll" aria-label="Défiler vers la boutique">Défiler</a>
         </div>
     </section>
@@ -800,6 +864,14 @@
                 <div class="bb-search-row">
                     <input id="bbCatalogSearch" type="search" placeholder="Tapez shampooing, ongles, sérum…" data-i18n-ph="shop.searchPh" autocomplete="off">
                     <button type="button" id="bbCatalogSearchButton" class="bb-search-button" data-i18n="shop.searchBtn">RECHERCHER</button>
+                </div>
+                <div class="bb-chips"><span class="bb-chips-label" data-i18n="shop.chipsLabel">Populaires :</span>
+                    <button type="button" data-kw="shampooing" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip1">Shampooing</span></button>
+                    <button type="button" data-kw="cils magnétiques" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip2">Cils magnétiques</span></button>
+                    <button type="button" data-kw="bijoux" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip3">Bijoux</span></button>
+                    <button type="button" data-kw="coffret cadeau" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip4">Coffret cadeau</span></button>
+                    <button type="button" data-kw="sérum" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip5">Sérum</span></button>
+                    <button type="button" data-kw="rouge à lèvres" onclick="bbMenuSearch(this.dataset.kw)"><span data-i18n="shop.chip6">Rouge à lèvres</span></button>
                 </div>
                 <div style="display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap;">
                     <label for="bbSortSelect" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a5a6b;font-weight:700;" data-i18n="shop.sort">Trier par</label>
@@ -825,6 +897,11 @@
             </div>
 
 
+
+            <div class="bb-salon-strip">
+                <small data-i18n="shop.salonEyebrow">Qualité salon — Fashion · Beauté · Couleurs</small>
+                <p data-i18n="shop.salonStrip">L'exigence des coulisses des défilés parisiens — qualité professionnelle, pour sublimer chaque femme.</p>
+            </div>
 
             <!-- BARRE CATEGORIES style SHEIN — navigation boutique (2026-11-20) -->
             <div class="bb-catbar" role="navigation" aria-label="Catégories de la boutique">
@@ -867,57 +944,67 @@
                     <h3 data-i18n="shop.catsTitle">🛍️ Parcourir par catégorie</h3>
                 </div>
                 <p data-i18n="shop.catsSub">Trouvez vite ce que vous cherchez — chaque catégorie mène à ses produits.</p>
+                <p class="bb-cats-fashion" data-i18n="shop.catsFashion">Fashion · Beauté · Couleurs — chaque catégorie est une page complète du catalogue.</p>
                 <div class="bb-cat-tiles">
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('capillaire')">
+                    <button type="button" class="bb-cat-tile bb-cat-cheveux" onclick="bbMenuCategory('capillaire')">
                         <span class="bb-cat-tile-icon">💇</span>
                         <strong data-i18n="shop.fCheveux">Cheveux</strong>
-                        <span><span data-bb-count="capillaire">26</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="capillaire">26</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('maquillage')">
+                    <button type="button" class="bb-cat-tile bb-cat-maquillage" onclick="bbMenuCategory('maquillage')">
                         <span class="bb-cat-tile-icon">💄</span>
                         <strong data-i18n="shop.fMaq">Maquillage</strong>
-                        <span><span data-bb-count="maquillage">100</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="maquillage">100</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('cils')">
+                    <button type="button" class="bb-cat-tile bb-cat-cils" onclick="bbMenuCategory('cils')">
                         <span class="bb-cat-tile-icon">👁️</span>
                         <strong data-i18n="shop.fCils">Cils</strong>
-                        <span><span data-bb-count="cils">7</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="cils">7</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('bijoux')">
+                    <button type="button" class="bb-cat-tile bb-cat-bijoux" onclick="bbMenuCategory('bijoux')">
                         <span class="bb-cat-tile-icon">💎</span>
                         <strong data-i18n="shop.fBijoux">Bijoux</strong>
-                        <span><span data-bb-count="bijoux">8</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="bijoux">8</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('ongles')">
+                    <button type="button" class="bb-cat-tile bb-cat-ongles" onclick="bbMenuCategory('ongles')">
                         <span class="bb-cat-tile-icon">💅</span>
                         <strong data-i18n="shop.fOngles">Ongles</strong>
-                        <span><span data-bb-count="ongles">6</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="ongles">6</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('visage')">
+                    <button type="button" class="bb-cat-tile bb-cat-visage" onclick="bbMenuCategory('visage')">
                         <span class="bb-cat-tile-icon">🌸</span>
                         <strong data-i18n="shop.fVisage">Visage</strong>
-                        <span><span data-bb-count="visage">11</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="visage">11</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('corps')">
+                    <button type="button" class="bb-cat-tile bb-cat-corps" onclick="bbMenuCategory('corps')">
                         <span class="bb-cat-tile-icon">🫧</span>
                         <strong data-i18n="shop.fCorps">Corps</strong>
-                        <span><span data-bb-count="corps">17</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="corps">17</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('coffrets')">
+                    <button type="button" class="bb-cat-tile bb-cat-coffrets" onclick="bbMenuCategory('coffrets')">
                         <span class="bb-cat-tile-icon">🎁</span>
                         <strong data-i18n="shop.fCoffrets">Coffrets</strong>
-                        <span><span data-bb-count="coffrets">11</span> <span data-i18n="shop.catProducts">produits</span></span>
+                        <span class="bb-cat-count-pill"><span data-bb-count="coffrets">11</span> <span data-i18n="shop.catProducts">produits</span></span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('enfants')">
+                    <button type="button" class="bb-cat-tile bb-cat-enfants" onclick="bbMenuCategory('enfants')">
                         <span class="bb-cat-tile-icon">🧒</span>
                         <strong data-i18n="shop.fEnfants">Enfants</strong>
                         <span class="bb-cat-tile-soon" data-i18n="shop.catSoon">Bientôt</span>
                     </button>
-                    <button type="button" class="bb-cat-tile" onclick="bbMenuCategory('extensions')">
+                    <button type="button" class="bb-cat-tile bb-cat-extensions" onclick="bbMenuCategory('extensions')">
                         <span class="bb-cat-tile-icon">✨</span>
                         <strong data-i18n="shop.fExtensions">Extensions</strong>
                         <span class="bb-cat-tile-soon" data-i18n="shop.catSoon">Bientôt</span>
                     </button>
+                </div>
+            </div>
+
+            <div class="bb-kids-banner">
+                <h3 data-i18n="shop.kidsTitle">🧒 Univers Enfants</h3>
+                <p data-i18n="shop.kidsText">La beauté des petits, en grand — bijoux, coffrets et surprises pour les enfants. La collection arrive bientôt.</p>
+                <div class="bb-kids-btns">
+                    <button type="button" class="bb-kids-discover" onclick="bbMenuCategory('enfants')" data-i18n="shop.kidsBtn">Découvrir l'Univers Enfants</button>
+                    <a class="bb-kids-yt" href="https://www.youtube.com/@BB_Kids_story" target="_blank" rel="noopener" data-i18n="shop.kidsYt">BB Kids Story sur YouTube</a>
                 </div>
             </div>
 
@@ -4119,7 +4206,7 @@
         const bbI18n = {'nav.boutique':{fr:'Boutique',en:'Shop',it:'Negozio',ar:'المتجر'},'nav.gift':{fr:'🎁 Panier cadeau',en:'🎁 Gift basket',it:'🎁 Cesto regalo',ar:'🎁 سلة هدايا'},'nav.cils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'nav.bijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'nav.services':{fr:'Services',en:'Services',it:'Servizi',ar:'الخدمات'},'nav.mobile':{fr:'Service mobile',en:'Mobile service',it:'Servizio a domicilio',ar:'خدمة منزلية'},'nav.story':{fr:'Histoire',en:'Our story',it:'La nostra storia',ar:'قصتنا'},'nav.extensions':{fr:'Extensions',en:'Extensions',it:'Extension',ar:'وصلات الشعر'},'nav.salon':{fr:'Salon',en:'Salon',it:'Salone',ar:'الصالون'},'nav.contact':{fr:'Contact',en:'Contact',it:'Contatti',ar:'اتصل بنا'},'nav.book':{fr:'Réserver',en:'Book now',it:'Prenota',ar:'احجز'},'nav.cart':{fr:'Panier',en:'Cart',it:'Carrello',ar:'السلة'},'hero.small':{fr:'Votre beauté, notre signature · Code promo : BELLA (-10%)',en:'Your beauty, our signature · Promo code: BELLA (-10%)',it:'La tua bellezza, la nostra firma · Codice promo: BELLA (-10%)',ar:'جمالك، توقيعنا · رمز الخصم: BELLA (-10%)'},'hero.title':{fr:'La beauté a son <span>adresse</span>.',en:'Beauty has an <span>address</span>.',it:'La bellezza ha un <span>indirizzo</span>.',ar:'للجمال <span>عنوان</span>.'},'hero.text':{fr:'208 produits de beauté Bella Bay — cheveux, maquillage, cils, bijoux, ongles et coffrets cadeaux — livrés partout dans le monde. Qualité professionnelle, prix en $ CAD, code BELLA -10 %.',en:'208 Bella Bay beauty products — hair, makeup, lashes, jewellery, nails and gift sets — delivered worldwide. Professional quality, prices in CAD $, code BELLA -10 %.',it:'208 prodotti di bellezza Bella Bay — capelli, trucco, ciglia, gioielli, unghie e set regalo — spediti in tutto il mondo. Qualità professionale, prezzi in $ CAD, codice BELLA -10 %.',ar:'208 منتج تجميل من بيلا باي — شعر، مكياج، رموش، مجوهرات، أظافر ومجموعات هدايا — مع توصيل حول العالم. جودة احترافية، الأسعار بالدولار الكندي، الرمز BELLA -10 %.'},'hero.explore':{fr:'Découvrir la boutique',en:'Discover the boutique',it:'Scopri la boutique',ar:'اكتشفي المتجر'},'hero.extensions':{fr:'Nos services à domicile',en:'Our home services',it:'I nostri servizi a domicilio',ar:'خدماتنا المنزلية'},'hero.info':{fr:'Service mobile · Montréal · Laval · Rive-Nord',en:'Mobile service · Montreal · Laval · North Shore',it:'Servizio a domicilio · Montreal · Laval · Rive-Nord',ar:'خدمة منزلية · مونتريال · لافال · الضفة الشمالية'},'shop.small':{fr:'🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄',en:'🎄 HOLIDAY SELECTION — -10% WITH CODE BELLA 🎄',it:'🎄 SELEZIONE DELLE FESTE — -10% CON IL CODICE BELLA 🎄',ar:'🎄 تشكيلة الأعياد — خصم 10% مع الرمز BELLA 🎄'},'shop.title':{fr:'La Boutique Intelligente',en:'The Smart Boutique',it:'La Boutique Intelligente',ar:'المتجر الذكي'},'shop.text':{fr:'Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — par exemple « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.',en:'The Bella Bay catalogue brings together products from all our boutiques: extensions, care, styling, nails, wax and tools. Type a word — for example \'shampoo\' — to see all matching products. 🎁 Gift ideas for your loved ones: give (or treat yourself to) beauty.',it:'Il catalogo Bella Bay riunisce i prodotti di tutte le nostre boutique: extension, cura, styling, unghie, cera e strumenti. Digita una parola — ad esempio «shampoo» — per vedere tutti i prodotti corrispondenti. 🎁 Idee regalo per i tuoi cari: regala (o regalati) la bellezza.',ar:'يجمع متجر بيلا باي منتجات جميع متاجرنا: الوصلات والعناية والتصفيف والأظافر والشمع والأدوات. اكتبي كلمة — مثلاً «شامبو» — لرؤية جميع المنتجات المطابقة. 🎁 أفكار هدايا لأحبائك: أهدي (أو أهدي نفسك) الجمال.'},'shop.universe':{fr:'✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)',en:'✨ Bella Bay Beauty Universe (Enjoy -10% with code BELLA)',it:'✨ Universo Bellezza Bella Bay (Approfitta del -10% con il codice BELLA)',ar:'✨ عالم الجمال بيلا باي (استفيدي من خصم 10% مع الرمز BELLA)'},'shop.fCheveux':{fr:'Cheveux 💇',en:'Hair 💇',it:'Capelli 💇',ar:'الشعر 💇'},'shop.fCils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'shop.fExtensions':{fr:'Extensions ✨',en:'Extensions ✨',it:'Extension ✨',ar:'وصلات الشعر ✨'},'shop.fVisage':{fr:'Visage 🌸',en:'Face 🌸',it:'Viso 🌸',ar:'الوجه 🌸'},'shop.fCorps':{fr:'Corps 🫧',en:'Body 🫧',it:'Corpo 🫧',ar:'الجسم 🫧'},'shop.fOngles':{fr:'Ongles 💅',en:'Nails 💅',it:'Unghie 💅',ar:'الأظافر 💅'},'shop.fBijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'shop.fEpi':{fr:'Épilation 🕯️',en:'Hair removal 🕯️',it:'Depilazione 🕯️',ar:'إزالة الشعر 🕯️'},'shop.fMaq':{fr:'Maquillage 💄',en:'Makeup 💄',it:'Trucco 💄',ar:'مكياج 💄'},'shop.fAll':{fr:'Tout voir 👀',en:'See all 👀',it:'Vedi tutto 👀',ar:'عرض الكل 👀'},'shop.giftBtn':{fr:'🎁 Créez votre propre panier cadeau — pour les Fêtes',en:'🎁 Create your own gift basket — for the Holidays',it:'🎁 Crea il tuo cesto regalo — per le Feste',ar:'🎁 اصنعي سلة هديتك الخاصة — للأعياد'},'shop.giftNote':{fr:'Choisissez vos produits, votre boîte cadeau et votre papier d\'emballage. Tout est pensé pour vous — prêt à offrir.',en:'Choose your products, your gift box and your wrapping paper. Everything is thought out for you — ready to give.',it:'Scegli i tuoi prodotti, la tua scatola regalo e la tua carta da regalo. Tutto è pensato per te — pronto da regalare.',ar:'اختاري منتجاتك وعلبة الهدية وورق التغليف. كل شيء مُعد لك — جاهز للإهداء.'},'shop.search':{fr:'🔍 Recherche dans tout le catalogue Bella Bay',en:'🔍 Search the whole Bella Bay catalog',it:'🔍 Cerca in tutto il catalogo Bella Bay',ar:'🔍 ابحثي في كل كتالوج بيلا باي'},'shop.searchPh':{fr:'Tapez shampooing, ongles, sérum…',en:'Type shampoo, nails, serum…',it:'Digita shampoo, unghie, siero…',ar:'اكتبي شامبو، أظافر، سيروم…'},'shop.searchBtn':{fr:'RECHERCHER',en:'SEARCH',it:'CERCA',ar:'بحث'},'shop.sort':{fr:'Trier par',en:'Sort by',it:'Ordina per',ar:'ترتيب حسب'},'shop.sortPop':{fr:'Plus populaire',en:'Most popular',it:'Più popolari',ar:'الأكثر شعبية'},'shop.sortRating':{fr:'Mieux noté',en:'Top rated',it:'Più votati',ar:'الأعلى تقييمًا'},'shop.sortPriceAsc':{fr:'Prix croissant',en:'Price: low to high',it:'Prezzo crescente',ar:'السعر: من الأقل للأعلى'},'shop.sortPriceDesc':{fr:'Prix décroissant',en:'Price: high to low',it:'Prezzo decrescente',ar:'السعر: من الأعلى للأقل'},'shop.sortNameAsc':{fr:'A à Z',en:'A to Z',it:'Dalla A alla Z',ar:'من الألف إلى الياء'},'shop.sortNameDesc':{fr:'Z à A',en:'Z to A',it:'Dalla Z alla A',ar:'من الياء إلى الألف'},'shop.disclaimer':{fr:'Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.',en:'Order directly on Bella Bay: add your products to the cart and pay online with PayPal or by bank card. Payment and delivery confirmed with Bella Bay. Prices in CAD $.',it:'Ordina direttamente su Bella Bay: aggiungi i tuoi prodotti al carrello e paga online con PayPal o con carta bancaria. Pagamento e consegna confermati con Bella Bay. Prezzi in $ CAD.',ar:'اطلبي مباشرة من بيلا باي: أضيفي منتجاتك إلى السلة وادفعي عبر الإنترنت بباي بال أو بالبطاقة البنكية. الدفع والتسليم مؤكدان مع بيلا باي. الأسعار بالدولار الكندي.'},'shop.bestTitle':{fr:'🔥 Meilleures ventes',en:'🔥 Best sellers',it:'🔥 I più venduti',ar:'🔥 الأكثر مبيعاً'}
 ,'shop.bestSub':{fr:'Les préférés de la boutique — choisis par Bella Bay pour leur qualité. Faites défiler →',en:'The boutique’s favourites — hand-picked by Bella Bay for quality. Scroll →',it:'I preferiti della boutique — scelti da Bella Bay per la qualità. Scorri →',ar:'مفضلات المتجر — اختارتها بيلا باي لجودتها. مرّري →'}
 ,'shop.bestAll':{fr:'Voir toutes les meilleures ventes →',en:'View all best sellers →',it:'Vedi tutti i più venduti →',ar:'عرض كل الأكثر مبيعاً ←'}
-,'shop.newTitle':{fr:'✨ Nouveautés',en:'✨ New arrivals',it:'✨ Novità',ar:'✨ وصل حديثاً'},'shop.newAll':{fr:'Voir toutes les nouveautés →',en:'See all new arrivals →',it:'Vedi tutte le novità →',ar:'عرض كل المنتجات الجديدة →'},'ai.title':{fr:'✨ Bella — ton assistante IA',en:'✨ Bella — your AI assistant',it:'✨ Bella — la tua assistente IA',ar:'✨ بيلا — مساعدتك الذكية'}
+,'shop.newTitle':{fr:'✨ Nouveautés',en:'✨ New arrivals',it:'✨ Novità',ar:'✨ وصل حديثاً'},'shop.newAll':{fr:'Voir toutes les nouveautés →',en:'See all new arrivals →',it:'Vedi tutte le novità →',ar:'عرض كل المنتجات الجديدة →'},'hero.s1':{fr:'208 produits',en:'208 products',it:'208 prodotti',ar:'208 منتج'},'hero.s2':{fr:'5,0/5 · 4 avis',en:'5.0/5 · 4 reviews',it:'5,0/5 · 4 recensioni',ar:'5.0/5 · 4 تقييمات'},'hero.s3':{fr:'Livraison mondiale',en:'Worldwide delivery',it:'Consegna mondiale',ar:'توصيل حول العالم'},'hero.s4':{fr:'Code BELLA -10 %',en:'Code BELLA -10%',it:'Codice BELLA -10%',ar:'الرمز BELLA -10%'},'shop.chipsLabel':{fr:'Populaires :',en:'Popular:',it:'Popolari:',ar:'الأكثر بحثًا:'},'shop.chip1':{fr:'Shampooing',en:'Shampoo',it:'Shampoo',ar:'شامبو'},'shop.chip2':{fr:'Cils magnétiques',en:'Magnetic lashes',it:'Ciglia magnetiche',ar:'رموش مغناطيسية'},'shop.chip3':{fr:'Bijoux',en:'Jewellery',it:'Gioielli',ar:'مجوهرات'},'shop.chip4':{fr:'Coffret cadeau',en:'Gift set',it:'Set regalo',ar:'مجموعة هدايا'},'shop.chip5':{fr:'Sérum',en:'Serum',it:'Siero',ar:'سيروم'},'shop.chip6':{fr:'Rouge à lèvres',en:'Lipstick',it:'Rossetto',ar:'أحمر شفاه'},'shop.catsFashion':{fr:'Fashion · Beauté · Couleurs — chaque catégorie est une page complète du catalogue.',en:'Fashion · Beauty · Colours — every category is a full page of the catalogue.',it:'Fashion · Bellezza · Colori — ogni categoria è una pagina completa del catalogo.',ar:'أزياء · جمال · ألوان — كل فئة صفحة كاملة في الكتالوج.'},'shop.salonEyebrow':{fr:'Qualité salon — Fashion · Beauté · Couleurs',en:'Salon quality — Fashion · Beauty · Colours',it:'Qualità da salone — Fashion · Bellezza · Colori',ar:'جودة الصالون — أزياء · جمال · ألوان'},'shop.salonStrip':{fr:'L\'exigence des coulisses des défilés parisiens — qualité professionnelle, pour sublimer chaque femme.',en:'The standard of Parisian runway backstage — professional quality, to enhance every woman.',it:'L\'esigenza del backstage delle sfilate parigine — qualità professionale, per valorizzare ogni donna.',ar:'معايير كواليس عروض باريس — جودة احترافية، لإبراز جمال كل امرأة.'},'shop.kidsTitle':{fr:'🧒 Univers Enfants',en:'🧒 Kids\' Universe',it:'🧒 Universo Bambini',ar:'🧒 عالم الأطفال'},'shop.kidsText':{fr:'La beauté des petits, en grand — bijoux, coffrets et surprises pour les enfants. La collection arrive bientôt.',en:'Little ones\' beauty, in a big way — jewellery, gift sets and surprises for kids. The collection is coming soon.',it:'La bellezza dei piccoli, in grande — gioielli, set regalo e sorprese per i bambini. La collezione arriva presto.',ar:'جمال الصغار، بشكل كبير — مجوهرات وعلب هدايا ومفاجآت للأطفال. المجموعة قادمة قريبًا.'},'shop.kidsBtn':{fr:'Découvrir l\'Univers Enfants',en:'Discover the Kids\' Universe',it:'Scopri l\'Universo Bambini',ar:'اكتشفي عالم الأطفال'},'shop.kidsYt':{fr:'BB Kids Story sur YouTube',en:'BB Kids Story on YouTube',it:'BB Kids Story su YouTube',ar:'BB Kids Story على يوتيوب'},'sec.eyebrow':{fr:'Catalogue Beauté · Fashion · Beauté · Couleurs',en:'Beauty Catalogue · Fashion · Beauty · Colours',it:'Catalogo Bellezza · Fashion · Bellezza · Colori',ar:'كتالوج الجمال · أزياء · جمال · ألوان'},'ai.title':{fr:'✨ Bella — ton assistante IA',en:'✨ Bella — your AI assistant',it:'✨ Bella — la tua assistente IA',ar:'✨ بيلا — مساعدتك الذكية'}
 ,'ai.sub':{fr:'Elle te trouve le bon produit en quelques secondes.',en:'She finds the right product for you in seconds.',it:'Trova il prodotto giusto per te in pochi secondi.',ar:'تجد لك المنتج المناسب في ثوانٍ.'}
 ,'ai.hello':{fr:'Bonjour ma belle ! 💗 Dis-moi ce que tu cherches — cheveux, visage, maquillage, un cadeau… ou ton budget, et je te propose les meilleurs produits Bella Bay.',en:'Hello beautiful! 💗 Tell me what you are looking for — hair, face, makeup, a gift… or your budget, and I will suggest the best Bella Bay products.',it:'Ciao bella! 💗 Dimmi cosa cerchi — capelli, viso, trucco, un regalo… o il tuo budget, e ti propongo i migliori prodotti Bella Bay.',ar:'مرحبًا جميلتي! 💗 أخبريني بما تبحثين عنه — شعر، وجه، مكياج، هدية… أو ميزانيتك، وسأقترح عليك أفضل منتجات بيلا باي.'}
 ,'ai.ph':{fr:'Écris ici… ex : shampooing cheveux secs',en:'Type here… e.g. shampoo for dry hair',it:'Scrivi qui… es. shampoo per capelli secchi',ar:'اكتبي هنا… مثال: شامبو للشعر الجاف'}
@@ -4531,7 +4618,7 @@
                     + (pending ? '<span class="bb-sub-pending">' + bbT('sec.pending') + '</span>' : (s.action ? '<span class="bb-sub-count">' + bbT('sec.view') + ' →</span>' : '<span class="bb-sub-count">' + n + ' ' + bbT('sec.products') + '</span>'))
                     + '</button>';
             });
-            let html2 = '<h3 class="bb-section-title">' + sec.icon + ' ' + sec.title + '</h3>'
+            let html2 = '<div class="bb-section-eyebrow">' + bbT('sec.eyebrow') + '</div>' + '<h3 class="bb-section-title">' + sec.icon + ' ' + sec.title + '</h3>'
                 + '<p class="bb-section-desc">' + sec.desc + '</p>'
                 + (sec.pending ? '<p class="bb-section-note">⏳ ' + bbT('sec.pending') + ' — aucun produit n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).</p>' : '')
                 + '<div class="bb-section-cards">' + cards + '</div>';
