@@ -451,6 +451,9 @@
         .bb-breadcrumb a{color:#a5760a;cursor:pointer;text-decoration:underline}
         .bb-breadcrumb a:hover{color:#241a1f}
         .bb-breadcrumb span{color:#241a1f}
+        .bb-back-btn{display:inline-flex;align-items:center;gap:6px;background:#ffe3f1;border:1.5px solid #d63384;color:#d63384;font:700 13px Montserrat,sans-serif;padding:8px 16px;border-radius:30px;cursor:pointer;margin:0 0 12px;box-shadow:0 2px 10px rgba(214,51,132,.18)}
+        .bb-back-btn:hover{background:#d63384;color:#fff}
+        .bb-back-btn[hidden]{display:none}
         .bb-section-title{font:700 26px 'Playfair Display',serif;color:#d63384;text-align:center;margin:6px 0}
         .bb-section-desc{text-align:center;color:#766d70;font-size:14px;max-width:640px;margin:0 auto 22px}
         .bb-section-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:22px}
@@ -1111,6 +1114,7 @@
             </div>
 
             <!-- Grille de produits officielle -->
+            <button type="button" id="bbBackBtn" class="bb-back-btn" onclick="bbGoBack()" data-i18n="nav.back" hidden>← Retour</button>
             <div id="bbBreadcrumb" class="bb-breadcrumb" hidden></div>
             <div id="bbSectionView" hidden></div>
             <div class="bb-products-grid" id="bbCatalogGrid"></div>
@@ -1451,7 +1455,7 @@
     <!-- FICHE PRODUIT BELLA BAY — avec « Vous aimerez aussi » -->
     <div class="service-modal" id="bbProductModal" onclick="bbCloseProductOutside(event)">
         <div class="modal-box">
-            <button class="modal-close" onclick="bbCloseProduct()" aria-label="Fermer">×</button>
+            <button class="modal-close" onclick="bbCloseProduct(true)" aria-label="Fermer">×</button>
             <div id="bbProductModalContent"></div>
         </div>
     </div>
@@ -4748,7 +4752,7 @@
         const bbI18n = {'nav.boutique':{fr:'Boutique',en:'Shop',it:'Negozio',ar:'المتجر'},'nav.gift':{fr:'🎁 Panier cadeau',en:'🎁 Gift basket',it:'🎁 Cesto regalo',ar:'🎁 سلة هدايا'},'nav.cils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'nav.bijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'nav.services':{fr:'Services',en:'Services',it:'Servizi',ar:'الخدمات'},'nav.mobile':{fr:'Service mobile',en:'Mobile service',it:'Servizio a domicilio',ar:'خدمة منزلية'},'nav.story':{fr:'Histoire',en:'Our story',it:'La nostra storia',ar:'قصتنا'},'nav.extensions':{fr:'Extensions',en:'Extensions',it:'Extension',ar:'وصلات الشعر'},'nav.salon':{fr:'Salon',en:'Salon',it:'Salone',ar:'الصالون'},'nav.contact':{fr:'Contact',en:'Contact',it:'Contatti',ar:'اتصل بنا'},'nav.book':{fr:'Réserver',en:'Book now',it:'Prenota',ar:'احجز'},'nav.cart':{fr:'Panier',en:'Cart',it:'Carrello',ar:'السلة'},'hero.small':{fr:'Votre beauté, notre signature · Code promo : BELLA (-10%)',en:'Your beauty, our signature · Promo code: BELLA (-10%)',it:'La tua bellezza, la nostra firma · Codice promo: BELLA (-10%)',ar:'جمالك، توقيعنا · رمز الخصم: BELLA (-10%)'},'hero.title':{fr:'La beauté a son <span>adresse</span>.',en:'Beauty has an <span>address</span>.',it:'La bellezza ha un <span>indirizzo</span>.',ar:'للجمال <span>عنوان</span>.'},'hero.text':{fr:'240 produits de beauté Bella Bay — cheveux, extensions, maquillage, cils, bijoux, ongles et coffrets cadeaux — livrés partout dans le monde. Qualité professionnelle, prix en $ CAD, code BELLA -10 %.',en:'240 Bella Bay beauty products — hair, extensions, makeup, lashes, jewellery, nails and gift sets — delivered worldwide. Professional quality, prices in CAD $, code BELLA -10 %.',it:'240 prodotti di bellezza Bella Bay — capelli, extension, trucco, ciglia, gioielli, unghie e set regalo — spediti in tutto il mondo. Qualità professionale, prezzi in $ CAD, codice BELLA -10 %.',ar:'240 منتج تجميل من بيلا باي — شعر، وصلات الشعر، مكياج، رموش، مجوهرات، أظافر ومجموعات هدايا — مع توصيل حول العالم. جودة احترافية، الأسعار بالدولار الكندي، الرمز BELLA -10 %.'},'hero.explore':{fr:'Découvrir la boutique',en:'Discover the boutique',it:'Scopri la boutique',ar:'اكتشفي المتجر'},'hero.extensions':{fr:'Nos services à domicile',en:'Our home services',it:'I nostri servizi a domicilio',ar:'خدماتنا المنزلية'},'hero.info':{fr:'Service mobile · Montréal · Laval · Rive-Nord',en:'Mobile service · Montreal · Laval · North Shore',it:'Servizio a domicilio · Montreal · Laval · Rive-Nord',ar:'خدمة منزلية · مونتريال · لافال · الضفة الشمالية'},'shop.small':{fr:'🎄 LA SÉLECTION DES FÊTES — -10 % AVEC LE CODE BELLA 🎄',en:'🎄 HOLIDAY SELECTION — -10% WITH CODE BELLA 🎄',it:'🎄 SELEZIONE DELLE FESTE — -10% CON IL CODICE BELLA 🎄',ar:'🎄 تشكيلة الأعياد — خصم 10% مع الرمز BELLA 🎄'},'shop.title':{fr:'La Boutique Intelligente',en:'The Smart Boutique',it:'La Boutique Intelligente',ar:'المتجر الذكي'},'shop.text':{fr:'Le catalogue Bella Bay réunit les produits de toutes nos boutiques : extensions, soins, coiffage, ongles, cire et outils. Tapez un mot — comme « shampooing » — pour voir tous les produits correspondants. 🎁 Idées cadeaux pour vos proches : offrez (ou offrez-vous) la beauté.',en:'The Bella Bay catalogue brings together products from all our boutiques: extensions, care, styling, nails, wax and tools. Type a word — like \'shampoo\' — to see all matching products. 🎁 Gift ideas for your loved ones: give (or treat yourself to) beauty.',it:'Il catalogo Bella Bay riunisce i prodotti di tutte le nostre boutique: extension, cura, styling, unghie, cera e strumenti. Digita una parola — come «shampoo» — per vedere tutti i prodotti corrispondenti. 🎁 Idee regalo per i tuoi cari: regala (o regalati) la bellezza.',ar:'يجمع متجر بيلا باي منتجات جميع متاجرنا: الوصلات والعناية والتصفيف والأظافر والشمع والأدوات. اكتبي كلمة — مثل «شامبو» — لرؤية جميع المنتجات المطابقة. 🎁 أفكار هدايا لأحبائك: أهدي (أو أهدي نفسك) الجمال.'},'shop.universe':{fr:'✨ Univers Beauté Bella Bay (Profitez de -10% avec le code BELLA)',en:'✨ Bella Bay Beauty Universe (Enjoy -10% with code BELLA)',it:'✨ Universo Bellezza Bella Bay (Approfitta del -10% con il codice BELLA)',ar:'✨ عالم الجمال بيلا باي (استفيدي من خصم 10% مع الرمز BELLA)'},'shop.fCheveux':{fr:'Cheveux 💇',en:'Hair 💇',it:'Capelli 💇',ar:'الشعر 💇'},'shop.fCils':{fr:'Cils 👁️',en:'Lashes 👁️',it:'Ciglia 👁️',ar:'الرموش 👁️'},'shop.fExtensions':{fr:'Extensions ✨',en:'Extensions ✨',it:'Extension ✨',ar:'وصلات الشعر ✨'},'shop.fVisage':{fr:'Visage 🌸',en:'Face 🌸',it:'Viso 🌸',ar:'الوجه 🌸'},'shop.fCorps':{fr:'Corps 🫧',en:'Body 🫧',it:'Corpo 🫧',ar:'الجسم 🫧'},'shop.fOngles':{fr:'Ongles 💅',en:'Nails 💅',it:'Unghie 💅',ar:'الأظافر 💅'},'shop.fBijoux':{fr:'Bijoux 💎',en:'Jewelry 💎',it:'Gioielli 💎',ar:'المجوهرات 💎'},'shop.fEpi':{fr:'Épilation 🕯️',en:'Hair removal 🕯️',it:'Depilazione 🕯️',ar:'إزالة الشعر 🕯️'},'shop.fMaq':{fr:'Maquillage 💄',en:'Makeup 💄',it:'Trucco 💄',ar:'مكياج 💄'},'shop.fAll':{fr:'Tout voir 👀',en:'See all 👀',it:'Vedi tutto 👀',ar:'عرض الكل 👀'},'shop.giftBtn':{fr:'🎁 Créez votre propre panier cadeau — pour les Fêtes',en:'🎁 Create your own gift basket — for the Holidays',it:'🎁 Crea il tuo cesto regalo — per le Feste',ar:'🎁 اصنعي سلة هديتك الخاصة — للأعياد'},'shop.giftNote':{fr:'Choisissez vos produits, votre boîte cadeau et votre papier d\'emballage. Tout est pensé pour vous — prêt à offrir.',en:'Choose your products, your gift box and your wrapping paper. Everything is thought out for you — ready to give.',it:'Scegli i tuoi prodotti, la tua scatola regalo e la tua carta da regalo. Tutto è pensato per te — pronto da regalare.',ar:'اختاري منتجاتك وعلبة الهدية وورق التغليف. كل شيء مُعد لك — جاهز للإهداء.'},'shop.search':{fr:'🔍 Recherche dans tout le catalogue Bella Bay',en:'🔍 Search the whole Bella Bay catalog',it:'🔍 Cerca in tutto il catalogo Bella Bay',ar:'🔍 ابحثي في كل كتالوج بيلا باي'},'shop.searchPh':{fr:'Tapez shampooing, ongles, sérum…',en:'Type shampoo, nails, serum…',it:'Digita shampoo, unghie, siero…',ar:'اكتبي شامبو، أظافر، سيروم…'},'shop.searchBtn':{fr:'RECHERCHER',en:'SEARCH',it:'CERCA',ar:'بحث'},'shop.sort':{fr:'Trier par',en:'Sort by',it:'Ordina per',ar:'ترتيب حسب'},'shop.sortPop':{fr:'Plus populaire',en:'Most popular',it:'Più popolari',ar:'الأكثر شعبية'},'shop.sortRating':{fr:'Mieux noté',en:'Top rated',it:'Più votati',ar:'الأعلى تقييمًا'},'shop.sortPriceAsc':{fr:'Prix croissant',en:'Price: low to high',it:'Prezzo crescente',ar:'السعر: من الأقل للأعلى'},'shop.sortPriceDesc':{fr:'Prix décroissant',en:'Price: high to low',it:'Prezzo decrescente',ar:'السعر: من الأعلى للأقل'},'shop.sortNameAsc':{fr:'A à Z',en:'A to Z',it:'Dalla A alla Z',ar:'من الألف إلى الياء'},'shop.sortNameDesc':{fr:'Z à A',en:'Z to A',it:'Dalla Z alla A',ar:'من الياء إلى الألف'},'shop.disclaimer':{fr:'Commandez directement sur Bella Bay : ajoutez vos produits au panier et payez en ligne avec PayPal ou par carte bancaire. Paiement et livraison confirmés avec Bella Bay. Prix en $ CAD.',en:'Order directly on Bella Bay: add your products to the cart and pay online with PayPal or by bank card. Payment and delivery confirmed with Bella Bay. Prices in CAD $.',it:'Ordina direttamente su Bella Bay: aggiungi i tuoi prodotti al carrello e paga online con PayPal o con carta bancaria. Pagamento e consegna confermati con Bella Bay. Prezzi in $ CAD.',ar:'اطلبي مباشرة من بيلا باي: أضيفي منتجاتك إلى السلة وادفعي عبر الإنترنت بباي بال أو بالبطاقة البنكية. الدفع والتسليم مؤكدان مع بيلا باي. الأسعار بالدولار الكندي.'},'shop.bestTitle':{fr:'🔥 Meilleures ventes',en:'🔥 Best sellers',it:'🔥 I più venduti',ar:'🔥 الأكثر مبيعاً'}
 ,'shop.bestSub':{fr:'Les préférés de la boutique — choisis par Bella Bay pour leur qualité. Faites défiler →',en:'The boutique’s favourites — hand-picked by Bella Bay for quality. Scroll →',it:'I preferiti della boutique — scelti da Bella Bay per la qualità. Scorri →',ar:'مفضلات المتجر — اختارتها بيلا باي لجودتها. مرّري →'}
 ,'shop.bestAll':{fr:'Voir toutes les meilleures ventes →',en:'View all best sellers →',it:'Vedi tutti i più venduti →',ar:'عرض كل الأكثر مبيعاً ←'}
-,'shop.newTitle':{fr:'✨ Nouveautés',en:'✨ New arrivals',it:'✨ Novità',ar:'✨ وصل حديثاً'},'shop.newAll':{fr:'Voir toutes les nouveautés →',en:'See all new arrivals →',it:'Vedi tutte le novità →',ar:'عرض كل المنتجات الجديدة →'},'hero.s1':{fr:'240 produits',en:'240 products',it:'240 prodotti',ar:'240 منتج'},'hero.s2':{fr:'5,0/5 · 4 avis',en:'5.0/5 · 4 reviews',it:'5,0/5 · 4 recensioni',ar:'5.0/5 · 4 تقييمات'},'hero.s3':{fr:'Livraison mondiale',en:'Worldwide delivery',it:'Consegna mondiale',ar:'توصيل حول العالم'},'hero.s4':{fr:'Code BELLA -10 %',en:'Code BELLA -10%',it:'Codice BELLA -10%',ar:'الرمز BELLA -10%'},'shop.chipsLabel':{fr:'Populaires :',en:'Popular:',it:'Popolari:',ar:'الأكثر بحثًا:'},'shop.chip1':{fr:'Shampooing',en:'Shampoo',it:'Shampoo',ar:'شامبو'},'shop.chip2':{fr:'Cils magnétiques',en:'Magnetic lashes',it:'Ciglia magnetiche',ar:'رموش مغناطيسية'},'shop.chip3':{fr:'Bijoux',en:'Jewellery',it:'Gioielli',ar:'مجوهرات'},'shop.chip4':{fr:'Coffret cadeau',en:'Gift set',it:'Set regalo',ar:'مجموعة هدايا'},'shop.chip5':{fr:'Sérum',en:'Serum',it:'Siero',ar:'سيروم'},'shop.chip6':{fr:'Rouge à lèvres',en:'Lipstick',it:'Rossetto',ar:'أحمر شفاه'},'shop.catsFashion':{fr:'Fashion · Beauté · Couleurs — chaque catégorie est une page complète du catalogue.',en:'Fashion · Beauty · Colours — every category is a full page of the catalogue.',it:'Fashion · Bellezza · Colori — ogni categoria è una pagina completa del catalogo.',ar:'أزياء · جمال · ألوان — كل فئة صفحة كاملة في الكتالوج.'},'shop.salonEyebrow':{fr:'Qualité salon — Fashion · Beauté · Couleurs',en:'Salon quality — Fashion · Beauty · Colours',it:'Qualità da salone — Fashion · Bellezza · Colori',ar:'جودة الصالون — أزياء · جمال · ألوان'},'shop.salonStrip':{fr:'L\'exigence des coulisses des défilés parisiens — qualité professionnelle, pour sublimer chaque femme.',en:'The standard of Parisian runway backstage — professional quality, to enhance every woman.',it:'L\'esigenza del backstage delle sfilate parigine — qualità professionale, per valorizzare ogni donna.',ar:'معايير كواليس عروض باريس — جودة احترافية، لإبراز جمال كل امرأة.'},'shop.kidsTitle':{fr:'🧒 Univers Enfants',en:'🧒 Kids\' Universe',it:'🧒 Universo Bambini',ar:'🧒 عالم الأطفال'},'shop.kidsText':{fr:'La beauté des petits, en grand — bijoux, coffrets et surprises pour les enfants. La collection arrive bientôt.',en:'Little ones\' beauty, in a big way — jewellery, gift sets and surprises for kids. The collection is coming soon.',it:'La bellezza dei piccoli, in grande — gioielli, set regalo e sorprese per i bambini. La collezione arriva presto.',ar:'جمال الصغار، بشكل كبير — مجوهرات وعلب هدايا ومفاجآت للأطفال. المجموعة قادمة قريبًا.'},'shop.kidsBtn':{fr:'Découvrir l\'Univers Enfants',en:'Discover the Kids\' Universe',it:'Scopri l\'Universo Bambini',ar:'اكتشفي عالم الأطفال'},'shop.kidsYt':{fr:'BB Kids Story sur YouTube',en:'BB Kids Story on YouTube',it:'BB Kids Story su YouTube',ar:'BB Kids Story على يوتيوب'},'sec.eyebrow':{fr:'Catalogue Beauté · Fashion · Beauté · Couleurs',en:'Beauty Catalogue · Fashion · Beauty · Colours',it:'Catalogo Bellezza · Fashion · Bellezza · Colori',ar:'كتالوج الجمال · أزياء · جمال · ألوان'},'ai.title':{fr:'✨ Bella — ton assistante IA',en:'✨ Bella — your AI assistant',it:'✨ Bella — la tua assistente IA',ar:'✨ بيلا — مساعدتك الذكية'}
+,'shop.newTitle':{fr:'✨ Nouveautés',en:'✨ New arrivals',it:'✨ Novità',ar:'✨ وصل حديثاً'},'shop.newAll':{fr:'Voir toutes les nouveautés →',en:'See all new arrivals →',it:'Vedi tutte le novità →',ar:'عرض كل المنتجات الجديدة →'},'hero.s1':{fr:'240 produits',en:'240 products',it:'240 prodotti',ar:'240 منتج'},'hero.s2':{fr:'5,0/5 · 4 avis',en:'5.0/5 · 4 reviews',it:'5,0/5 · 4 recensioni',ar:'5.0/5 · 4 تقييمات'},'hero.s3':{fr:'Livraison mondiale',en:'Worldwide delivery',it:'Consegna mondiale',ar:'توصيل حول العالم'},'hero.s4':{fr:'Code BELLA -10 %',en:'Code BELLA -10%',it:'Codice BELLA -10%',ar:'الرمز BELLA -10%'},'shop.chipsLabel':{fr:'Populaires :',en:'Popular:',it:'Popolari:',ar:'الأكثر بحثًا:'},'shop.chip1':{fr:'Shampooing',en:'Shampoo',it:'Shampoo',ar:'شامبو'},'shop.chip2':{fr:'Cils magnétiques',en:'Magnetic lashes',it:'Ciglia magnetiche',ar:'رموش مغناطيسية'},'shop.chip3':{fr:'Bijoux',en:'Jewellery',it:'Gioielli',ar:'مجوهرات'},'shop.chip4':{fr:'Coffret cadeau',en:'Gift set',it:'Set regalo',ar:'مجموعة هدايا'},'shop.chip5':{fr:'Sérum',en:'Serum',it:'Siero',ar:'سيروم'},'shop.chip6':{fr:'Rouge à lèvres',en:'Lipstick',it:'Rossetto',ar:'أحمر شفاه'},'shop.catsFashion':{fr:'Fashion · Beauté · Couleurs — chaque catégorie est une page complète du catalogue.',en:'Fashion · Beauty · Colours — every category is a full page of the catalogue.',it:'Fashion · Bellezza · Colori — ogni categoria è una pagina completa del catalogo.',ar:'أزياء · جمال · ألوان — كل فئة صفحة كاملة في الكتالوج.'},'shop.salonEyebrow':{fr:'Qualité salon — Fashion · Beauté · Couleurs',en:'Salon quality — Fashion · Beauty · Colours',it:'Qualità da salone — Fashion · Bellezza · Colori',ar:'جودة الصالون — أزياء · جمال · ألوان'},'shop.salonStrip':{fr:'L\'exigence des coulisses des défilés parisiens — qualité professionnelle, pour sublimer chaque femme.',en:'The standard of Parisian runway backstage — professional quality, to enhance every woman.',it:'L\'esigenza del backstage delle sfilate parigine — qualità professionale, per valorizzare ogni donna.',ar:'معايير كواليس عروض باريس — جودة احترافية، لإبراز جمال كل امرأة.'},'shop.kidsTitle':{fr:'🧒 Univers Enfants',en:'🧒 Kids\' Universe',it:'🧒 Universo Bambini',ar:'🧒 عالم الأطفال'},'shop.kidsText':{fr:'La beauté des petits, en grand — bijoux, coffrets et surprises pour les enfants. La collection arrive bientôt.',en:'Little ones\' beauty, in a big way — jewellery, gift sets and surprises for kids. The collection is coming soon.',it:'La bellezza dei piccoli, in grande — gioielli, set regalo e sorprese per i bambini. La collezione arriva presto.',ar:'جمال الصغار، بشكل كبير — مجوهرات وعلب هدايا ومفاجآت للأطفال. المجموعة قادمة قريبًا.'},'shop.kidsBtn':{fr:'Découvrir l\'Univers Enfants',en:'Discover the Kids\' Universe',it:'Scopri l\'Universo Bambini',ar:'اكتشفي عالم الأطفال'},'shop.kidsYt':{fr:'BB Kids Story sur YouTube',en:'BB Kids Story on YouTube',it:'BB Kids Story su YouTube',ar:'BB Kids Story على يوتيوب'},'sec.eyebrow':{fr:'Catalogue Beauté · Fashion · Beauté · Couleurs',en:'Beauty Catalogue · Fashion · Beauty · Colours',it:'Catalogo Bellezza · Fashion · Bellezza · Colori',ar:'كتالوج الجمال · أزياء · جمال · ألوان'},'nav.back':{fr:'← Retour',en:'← Back',it:'← Indietro',ar:'← رجوع'},'ai.title':{fr:'✨ Bella — ton assistante IA',en:'✨ Bella — your AI assistant',it:'✨ Bella — la tua assistente IA',ar:'✨ بيلا — مساعدتك الذكية'}
 ,'ai.sub':{fr:'Elle te trouve le bon produit en quelques secondes.',en:'She finds the right product for you in seconds.',it:'Trova il prodotto giusto per te in pochi secondi.',ar:'تجد لك المنتج المناسب في ثوانٍ.'}
 ,'ai.hello':{fr:'Bonjour ma belle ! 💗 Dis-moi ce que tu cherches — cheveux, visage, maquillage, un cadeau… ou ton budget, et je te propose les meilleurs produits Bella Bay.',en:'Hello beautiful! 💗 Tell me what you are looking for — hair, face, makeup, a gift… or your budget, and I will suggest the best Bella Bay products.',it:'Ciao bella! 💗 Dimmi cosa cerchi — capelli, viso, trucco, un regalo… o il tuo budget, e ti propongo i migliori prodotti Bella Bay.',ar:'مرحبًا جميلتي! 💗 أخبريني بما تبحثين عنه — شعر، وجه، مكياج، هدية… أو ميزانيتك، وسأقترح عليك أفضل منتجات بيلا باي.'}
 ,'ai.ph':{fr:'Écris ici… ex : shampooing cheveux secs',en:'Type here… e.g. shampoo for dry hair',it:'Scrivi qui… es. shampoo per capelli secchi',ar:'اكتبي هنا… مثال: شامبو للشعر الجاف'}
@@ -5128,6 +5132,63 @@
         function bbCountSection(sectionKey){
             return bbProducts.filter(function(p){ return bbSectionMatch(p, sectionKey); }).length;
         }
+        /* --- Retour en arrière = dernière action (2026-11-24) : chaque vue de la boutique
+           pousse un état dans l'historique du navigateur ; le bouton retour du
+           navigateur ET le bouton « ← Retour » reviennent à la dernière action. --- */
+        var bbNavPopping = false;
+        var bbNavCurrent = null;
+        var bbNavPrevState = null;
+        function bbNavUpdateBack(){
+            var btn = document.getElementById('bbBackBtn');
+            if(!btn) return;
+            var can = false;
+            try{ can = !!(window.history.state && window.history.state.v); }catch(e){}
+            btn.hidden = !can;
+            try{ btn.textContent = bbT('nav.back'); }catch(e){}
+        }
+        function bbNavPush(state){
+            if(bbNavPopping) return;
+            try{
+                var cur = null;
+                try{ cur = window.history.state; }catch(e){}
+                if(cur && JSON.stringify(cur) === JSON.stringify(state)){ bbNavCurrent = state; bbNavUpdateBack(); return; }
+                window.history.pushState(state, '');
+                bbNavCurrent = state;
+            }catch(e){}
+            bbNavUpdateBack();
+        }
+        function bbGoBack(){
+            try{
+                if(window.history.state && window.history.state.v){ window.history.back(); return; }
+            }catch(e){}
+            bbShowAll();
+        }
+        function bbNavRender(state){
+            bbNavPopping = true;
+            try{
+                if(!state || !state.v){ bbShowAll(); }
+                else if(state.v === 'modal'){ bbOpenProduct(state.id, true); }
+                else {
+                    var _m = document.getElementById('bbProductModal');
+                    if(_m) _m.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                    if(state.v === 'section'){ bbShowSection(state.k); }
+                    else if(state.v === 'sub'){ bbShowSub(state.k, state.s); }
+                    else if(state.v === 'all-section'){ bbShowSectionAll(state.k); }
+                    else if(state.v === 'cat'){ filterByCategory(state.c); }
+                    else if(state.v === 'new'){ bbShowNew(); }
+                    else if(state.v === 'dream'){ bbShowExtensionsReve(); }
+                    else if(state.v === 'ext-grid'){ bbShowExtensionsGrid(); }
+                    else { bbShowAll(); }
+                }
+            } finally {
+                bbNavPopping = false;
+            }
+            bbNavCurrent = state || null;
+            bbNavUpdateBack();
+        }
+        window.addEventListener('popstate', function(e){ bbNavRender(e.state); });
+        window.addEventListener('load', function(){ bbNavUpdateBack(); });
         function bbSetBreadcrumb(parts){
             const el = document.getElementById('bbBreadcrumb');
             if(!el){ return; }
@@ -5154,6 +5215,7 @@
             const sec = bbSections[key];
             if(!sec){ return; }
             if(sec.dream){ bbShowExtensionsReve(); return; }
+            bbNavPush({v:'section', k:key});
             activeCategory = key; activeSub = ''; bbPage = 1;
             document.getElementById('bbCatalogSearch').value = '';
             const view = document.getElementById('bbSectionView');
@@ -5234,6 +5296,7 @@
             addToCart(st.opts[idx].id);
         }
         function bbShowExtensionsGrid(){
+            bbNavPush({v:'ext-grid'});
             const key = 'extensions';
             const sec = bbSections[key];
             activeCategory = key; activeSub = ''; bbPage = 1;
@@ -5292,6 +5355,7 @@
             if(view){ view.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function bbShowExtensionsReve(){
+            bbNavPush({v:'dream'});
             const key = 'extensions';
             const sec = bbSections[key];
             activeCategory = key; activeSub = ''; bbPage = 1;
@@ -5354,6 +5418,7 @@
         }
         function bbShowSectionAll(key){
             if(key === 'extensions'){ bbShowExtensionsGrid(); return; }
+            bbNavPush({v:'all-section', k:key});
             const sec = bbSections[key];
             bbNewOnly = false;
             activeCategory = key; activeSub = ''; bbPage = 1;
@@ -5365,6 +5430,7 @@
             if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function bbShowSub(key, subId){
+            bbNavPush({v:'sub', k:key, s:subId});
             const sec = bbSections[key];
             bbNewOnly = false;
             activeCategory = key; activeSub = subId; bbPage = 1;
@@ -5378,6 +5444,7 @@
             if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function bbShowNew(){
+            bbNavPush({v:'new'});
             activeCategory = ''; activeSub = ''; bbPage = 1; bbNewOnly = true;
             const inp = document.getElementById('bbCatalogSearch');
             if(inp){ inp.value = ''; }
@@ -5388,6 +5455,7 @@
             if(g){ g.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function bbShowAll(){
+            bbNavPush({v:'all'});
             activeCategory = ''; activeSub = ''; bbPage = 1; bbNewOnly = false;
             const inp = document.getElementById('bbCatalogSearch');
             if(inp){ inp.value = ''; }
@@ -5397,6 +5465,7 @@
             if(sec_el){ sec_el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
         }
         function filterByCategory(cat) {
+            bbNavPush({v:'cat', c:cat});
             bbNewOnly = false;
             activeCategory = cat;
             activeSub = '';
@@ -5630,7 +5699,7 @@
             if (filtered.length === 0) {
                 const secPend = bbSections[activeCategory];
                 if (activeSub && secPend) {
-                    grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — ' + bbT('sec.pending') + '.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbShowSection(\'' + activeCategory + '\')" style="color:#a5760a;font-weight:700;">← Retour à la section ' + secPend.title + '</a></div>';
+                    grid.innerHTML = '<div class="bb-catalog-empty">✨ <strong>' + bbSubLabel(activeCategory, activeSub) + '</strong> — ' + bbT('sec.pending') + '.<br>Nos produits arrivent bientôt : rien n’est affiché tant que notre fournisseur n’a pas confirmé chaque produit (SKU, photo réelle, prix, logo Bella Bay).<br><br><a href="javascript:void(0)" onclick="bbGoBack()" style="color:#d63384;font-weight:700;">' + bbT('nav.back') + '</a></div>';
                 } else {
                     grid.innerHTML = '<div class="bb-catalog-empty">' + bbT('sec.none') + bbDidYouMeanHtml(searchVal) + '</div>';
                 }
@@ -5824,7 +5893,7 @@
         function bbRecAdd(id){ bbCloseProduct(); bbCloseQuiz(); addToCart(id); }
 
         /* --- Fiche produit (modale) avec « Vous aimerez aussi » --- */
-        function bbOpenProduct(id){
+        function bbOpenProduct(id, noPush){
             const p = bbFindProduct(id); if(!p) return;
             const recs = bbRecommendations(p, 3);
             const t = bbTranslateTitle(p.title, bbLang);
@@ -5842,9 +5911,10 @@
             document.getElementById('bbProductModalContent').innerHTML = html;
             document.getElementById('bbProductModal').classList.add('active');
             document.body.classList.add('modal-open');
+            if(!noPush){ bbNavPrevState = bbNavCurrent; bbNavPush({v:'modal', id:id}); }
         }
-        function bbCloseProduct(){ const m = document.getElementById('bbProductModal'); if(m) m.classList.remove('active'); document.body.classList.remove('modal-open'); }
-        function bbCloseProductOutside(event){ if(event.target.id === 'bbProductModal') bbCloseProduct(); }
+        function bbCloseProduct(goBack){ const m = document.getElementById('bbProductModal'); if(m) m.classList.remove('active'); document.body.classList.remove('modal-open'); if(bbNavCurrent && bbNavCurrent.v === 'modal'){ if(goBack){ try{ window.history.back(); }catch(e){} } else { try{ window.history.replaceState(bbNavPrevState || null, ''); }catch(e){} } bbNavCurrent = bbNavPrevState || null; } bbNavUpdateBack(); }
+        function bbCloseProductOutside(event){ if(event.target.id === 'bbProductModal') bbCloseProduct(true); }
 
         /* --- « Complétez votre routine » dans le panier --- */
         function bbRoutineHtml(){
