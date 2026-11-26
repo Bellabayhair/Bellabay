@@ -102,6 +102,9 @@
 
     /* ==========================================================================
        1. PINKY — mascotte interactive reliee a Bella IA
+       v5.1 : Pinky n'apparait plus a l'entree (ni bouton flottant, ni panneau,
+       ni bulle). Elle ne sort plus que dans Bella IA pour la securite, et
+       dans la modale d'alerte lien suspect + le tableau de securite.
        Visuel : illustration SVG (leopard stylise, yeux roses). Ce n’est pas
        une photo d’un vrai animal et ce n’est pas le logo officiel v4.
        ========================================================================== */
@@ -124,7 +127,6 @@
 
     window.bbPinkySVG = PINKY_SVG;
 
-    function pinkyPanel() { return document.getElementById('bbPinkyPanel'); }
     function pinkyAlertsToday() {
         try {
             var list = JSON.parse(localStorage.getItem('bbPinkyAlerts') || '[]');
@@ -140,26 +142,8 @@
         el.textContent = t('pinkyWatch') + ' — ' + n + ' ' + t('pinkyLinksOk')
             + ' · ' + (alerts ? alerts + ' alerte(s)' : t('pinkyNoAlert'));
     }
-    window.bbPinkyToggle = function () {
-        var p = pinkyPanel(); if (!p) return;
-        var open = !p.classList.contains('active');
-        p.classList.toggle('active', open);
-        if (open) { pinkyUpdateStatus(); }
-    };
-    window.bbPinkyClose = function () { var p = pinkyPanel(); if (p) p.classList.remove('active'); };
-    window.bbPinkyAskAi = function () {
-        window.bbPinkyClose();
-        if (typeof bbAiOpen === 'function') {
-            bbAiOpen();
-            if (typeof bbAiAddMsg === 'function') {
-                try { bbAiAddMsg('ai', esc('Pinky m’a dit que tu es là — je suis Bella, ton assistante. Dis-moi ce que tu cherches, je te trouve le bon produit.')); } catch (e) {}
-            }
-        }
-    };
-    window.bbPinkyOpenMatch = function () {
-        window.bbPinkyClose();
-        if (typeof window.bbBeautyMatchOpen === 'function') window.bbBeautyMatchOpen();
-    };
+    /* v5.1 : le panneau Pinky n'existe plus ; garde pour compatibilite (bbPinkyShowAdmin l'appelle). */
+    window.bbPinkyClose = function () {};
     window.bbPinkyShowAdmin = function () {
         window.bbPinkyClose();
         var s = document.getElementById('bbSecurityAdmin');
@@ -173,21 +157,6 @@
         if (s) s.hidden = true;
     };
 
-    /* Bulle de bienvenue Pinky : une seule fois par jour, fermable. */
-    function pinkyWelcomeBubble() {
-        try {
-            var last = localStorage.getItem('bbPinkyWelcomed') || '';
-            var today = new Date().toISOString().slice(0, 10);
-            if (last === today) return;
-            var b = document.getElementById('bbPinkyBubble');
-            if (!b) return;
-            b.hidden = false;
-            b.querySelector('.bb-pinky-bubble-close').addEventListener('click', function () {
-                b.hidden = true;
-                try { localStorage.setItem('bbPinkyWelcomed', today); } catch (e) {}
-            });
-        } catch (e) {}
-    }
 
     /* ==========================================================================
        5. SECURITE — verification des liens + alertes Pinky + tableau admin
@@ -666,7 +635,7 @@
        4a. ABANDONED CART RECOVERY — rappel local, avec consentement.
        Aucun envoi automatique : le site est statique, il ne peut pas envoyer
        de courriel ni de WhatsApp tout seul. Si la cliente coche la case,
-       Pinky lui rappelle son panier à sa prochaine visite (une fois par jour),
+       Bella IA lui rappelle son panier à sa prochaine visite (une fois par jour),
        et c’est Miraa elle-même qui la recontacte sur WhatsApp.
        ========================================================================== */
     var CART_CONSENT_KEY = 'bbPinkyCartConsent';
@@ -682,7 +651,7 @@
         var note = document.getElementById('bbCartReminderNote');
         if (note) note.style.display = el.checked ? 'block' : 'none';
     };
-    function bbPinkyCartToast() {
+    function bbCartToast() {
         if (!bbPinkyCartConsent()) return;
         var n = bbCartCount();
         if (n <= 0) return;
@@ -691,18 +660,18 @@
             if (localStorage.getItem(CART_REMIND_KEY) === today) return;
             localStorage.setItem(CART_REMIND_KEY, today);
         } catch (e) {}
-        var toast = document.getElementById('bbPinkyCartToast');
+        var toast = document.getElementById('bbCartToast');
         if (!toast) return;
-        var txt = toast.querySelector('.bb-pinky-toast-text');
-        if (txt) txt.textContent = 'Pinky vous rappelle : ' + t('cartToast') + ' ' + n + ' ' + t('cartToastEnd');
+        var txt = toast.querySelector('.bb-cart-toast-text');
+        if (txt) txt.textContent = 'Bella IA vous rappelle : ' + t('cartToast') + ' ' + n + ' ' + t('cartToastEnd');
         toast.hidden = false;
     }
-    window.bbPinkyCartToastClose = function () {
-        var toast = document.getElementById('bbPinkyCartToast');
+    window.bbCartToastClose = function () {
+        var toast = document.getElementById('bbCartToast');
         if (toast) toast.hidden = true;
     };
-    window.bbPinkyCartToastOpen = function () {
-        window.bbPinkyCartToastClose();
+    window.bbCartToastOpen = function () {
+        window.bbCartToastClose();
         if (typeof toggleCart === 'function') toggleCart(true);
     };
 
@@ -735,13 +704,7 @@
        INITIALISATION
        ========================================================================== */
     function bbPinkyInit() {
-        /* Visuel Pinky dans le bouton flottant et le panneau. */
-        var fab = document.getElementById('bbPinkyFab');
-        if (fab && !fab.querySelector('svg')) fab.insertAdjacentHTML('afterbegin', PINKY_SVG);
-        var av = document.getElementById('bbPinkyAvatar');
-        if (av && !av.querySelector('svg')) av.innerHTML = PINKY_SVG;
-        var bubbleAv = document.getElementById('bbPinkyBubbleAvatar');
-        if (bubbleAv && !bubbleAv.querySelector('svg')) bubbleAv.innerHTML = PINKY_SVG;
+        /* Visuel Pinky dans la modale d'alerte securite (v5.1 : FAB, panneau et bulle retires de l'entree). */
         var warnAv = document.getElementById('bbPinkyWarnAvatar');
         if (warnAv && !warnAv.querySelector('svg')) warnAv.innerHTML = PINKY_SVG;
 
@@ -755,8 +718,7 @@
 
         /* Verifier les liens de la page, puis les rappels. */
         bbPinkyScanLinks();
-        pinkyWelcomeBubble();
-        setTimeout(bbPinkyCartToast, 2500);
+        setTimeout(bbCartToast, 2500);
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bbPinkyInit);
     else bbPinkyInit();
