@@ -19,7 +19,7 @@
 
   var IMG = window.BB_PINKY_SECU_IMG || 'img/pinky-protection-securite.png';
   var TITLE = 'Pinky – Protection & Sécurité';
-  var LINE = 'Pinky veille sur vous : paiements protégés, achats en toute confiance et conseils de sécurité Bella Bay.';
+  var LINE = 'Pinky veille sur vous : paiements protégés, achats en toute confiance et conseils de sécurité.';
 
   /* Mots déclencheurs (FR + EN), comparés sans accents ni casse. */
   var WORDS = [
@@ -160,6 +160,10 @@
           } else if (node.classList.contains('ai')) {
             if (node.querySelector && node.querySelector('.bb-pinky-secu-card')) {
               continue; /* c'est notre propre carte */
+            }
+            var txt = (node.textContent || '').replace(/\s+/g, '');
+            if (txt === '' || txt === '…' || txt === '...') {
+              continue; /* bulle « en train d'écrire » de Bella IA : attendre la vraie réponse */
             }
             if (pendingCard && cardGivenFor === null) {
               cardGivenFor = node;
