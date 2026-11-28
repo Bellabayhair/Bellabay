@@ -1,12 +1,16 @@
 /* ============================================================
-   Bella Bay — Pinky · Protection & Sécurité (module additif)
+   Bella Bay — Pinky · Protection & Sécurité (module additif) — v2
    Visuel officiel validé par Bella le 28 nov. 2026 : le léopard
    Pinky (yeux rose fuchsia, patte sur le coquillage rose, badge
    « Protection & Sécurité Pinky »). Aucune couronne, jamais.
    Déclenchement automatique quand la cliente cherche ou demande
    un sujet protection / sécurité :
      1) recherche catalogue (#bbCatalogSearch / bbSearchFor)
-     2) Bella IA (bbAiSend) — carte ajoutée après la réponse
+     2) Bella IA (#bbAiMsgs) — carte ajoutée après la réponse
+   v2 : correction des accents (les marques combinantes sont
+   RETIRÉES, pas remplacées par des espaces — « sécurité » matchait
+   mal), bannière résistante aux réécritures de la grille, et
+   détection Bella IA par observation des messages (robuste).
    Additif seulement : ne modifie ni le catalogue, ni les prix,
    ni le panier, ni PayPal, ni le SEO.
    ============================================================ */
@@ -29,7 +33,7 @@
     return (' ' + (s || '') + ' ')
       .toLowerCase()
       .normalize('NFD')
-      .replace(/[̀-ͯ]/g, ' ');
+      .replace(/[̀-ͯ]/g, '');
   }
   function matches(s) {
     var t = norm(s);
@@ -78,7 +82,9 @@
         banner.id = 'bbPinkySecuBanner';
         banner.innerHTML = cardHtml();
       }
-      if (!banner.parentNode) grid.parentNode.insertBefore(banner, grid);
+      if (banner.parentNode !== grid.parentNode || banner.nextSibling !== grid) {
+        grid.parentNode.insertBefore(banner, grid);
+      }
     } else if (banner && banner.parentNode) {
       banner.parentNode.removeChild(banner);
     }
@@ -96,29 +102,35 @@
       input.addEventListener('change', function () { evalSearch(); });
     }
     var btn = document.getElementById('bbCatalogSearchButton');
-    if (btn) btn.addEventListener('click', function () { setTimeout(evalSearch, 60); });
-    /* Les recherches lancées par le menu ou Bella IA passent par ces fonctions. */
+    if (btn) btn.addEventListener('click', function () { setTimeout(evalSearch, 80); });
     ['bbSearchFor', 'bbMenuSearch'].forEach(function (name) {
       var orig = window[name];
       if (typeof orig === 'function' && !orig.__pinkySecuWrapped) {
         var wrapped = function () {
           var r = orig.apply(this, arguments);
           var term = arguments && arguments.length ? arguments[0] : undefined;
-          setTimeout(function () { evalSearch(term); }, 60);
+          setTimeout(function () { evalSearch(term); }, 80);
           return r;
         };
         wrapped.__pinkySecuWrapped = true;
         window[name] = wrapped;
       }
     });
-    /* Toute réécriture de la grille réévalue avec le terme courant. */
+    /* Si le site réécrit la grille ou son conteneur, on réévalue :
+       la bannière est réinsérée si un rendu l'a emportée. */
     var grid = document.getElementById('bbCatalogGrid');
     if (grid && window.MutationObserver) {
-      new MutationObserver(function () { evalSearch(); }).observe(grid, { childList: true });
+      var reeval = function () { evalSearch(); };
+      new MutationObserver(reeval).observe(grid, { childList: true });
+      if (grid.parentNode) {
+        new MutationObserver(reeval).observe(grid.parentNode, { childList: true });
+      }
     }
   }
 
-  /* ---------- 2) Bella IA ---------- */
+  /* ---------- 2) Bella IA : observation des messages ---------- */
+  var pendingCard = false;
+  var cardGivenFor = null;
   function addChatCard() {
     ensureStyles();
     if (typeof window.bbAiAddMsg === 'function') {
@@ -134,27 +146,30 @@
     }
   }
   function hookAi() {
-    var orig = window.bbAiSend;
-    if (typeof orig !== 'function' || orig.__pinkySecuWrapped) return;
-    var wrapped = function (text) {
-      var r = orig.apply(this, arguments);
-      var q = (typeof text === 'string' && text) ||
-        (document.getElementById('bbAiText') || {}).value || '';
-      if (matches(q)) {
-        /* Laisse la réponse de Bella IA s'afficher, puis ajoute le visuel Pinky. */
-        setTimeout(function () {
-          var box = document.getElementById('bbAiMsgs');
-          if (box && !box.querySelector('.bb-pinky-secu-card[data-turn="' + q.length + '"]')) {
-            addChatCard();
-            var cards = box.querySelectorAll('.bb-pinky-secu-card');
-            if (cards.length) cards[cards.length - 1].setAttribute('data-turn', q.length);
+    var box = document.getElementById('bbAiMsgs');
+    if (!box || !window.MutationObserver) return;
+    new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i++) {
+        var added = records[i].addedNodes;
+        for (var j = 0; j < added.length; j++) {
+          var node = added[j];
+          if (!node || node.nodeType !== 1) continue;
+          if (node.classList.contains('me')) {
+            pendingCard = matches(node.textContent || '');
+            cardGivenFor = null;
+          } else if (node.classList.contains('ai')) {
+            if (node.querySelector && node.querySelector('.bb-pinky-secu-card')) {
+              continue; /* c'est notre propre carte */
+            }
+            if (pendingCard && cardGivenFor === null) {
+              cardGivenFor = node;
+              pendingCard = false;
+              setTimeout(addChatCard, 350);
+            }
           }
-        }, 900);
+        }
       }
-      return r;
-    };
-    wrapped.__pinkySecuWrapped = true;
-    window.bbAiSend = wrapped;
+    }).observe(box, { childList: true });
   }
 
   function init() {
