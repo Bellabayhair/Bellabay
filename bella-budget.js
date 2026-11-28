@@ -10,7 +10,7 @@
      moins cher, puis les prix moyens, puis les prix élevés, 100 $ et plus) ;
    - sinon, la réponse d'origine est appelée sans aucun changement.
    Un bouton « 💰 Mon budget » est ajouté à la rangée de suggestions du
-   clavardage ; il ouvre le menu des paliers : 10 $, 20 $, 25 $, 50 $,
+   clavardage ; il ouvre le menu des paliers : 25 $, 50 $, 75 $,
    100 $ et plus. Tous les prix viennent du catalogue en ligne au moment de
    la réponse : rien n'est inventé, et un palier vide est dit honnêtement
    (avec les articles les plus proches du budget, clairement présentés
@@ -19,7 +19,7 @@
 (function () {
     'use strict';
 
-    var PALIERS = [10, 20, 25, 50]; /* le palier « 100 $ et plus » est à part */
+    var PALIERS = [25, 50, 75]; /* le palier « 100 $ et plus » est à part */
     var NB_CARTES = 8;
 
     function lang() { return (typeof bbLang === 'string' && bbLang === 'en') ? 'en' : 'fr'; }
@@ -43,7 +43,7 @@
         fr: {
             chip: '💰 Mon budget',
             intro1: 'Avec plaisir 💰 Voici nos prix, du plus petit au plus grand : nos articles commencent à ',
-            intro2: ' (baume à lèvres, pinces, petits soins…), beaucoup de choix dans les prix moyens entre 20 $ et 50 $, et nos pièces haut de gamme — perruques et extensions — à 100 $ et plus.',
+            intro2: ' (baume à lèvres, pinces, petits soins…), beaucoup de choix dans les prix moyens entre 25 $ et 75 $, et nos pièces haut de gamme — perruques et extensions — à 100 $ et plus.',
             intro3: 'Dis-moi ton budget, je te sors ce qui rentre dedans :',
             etPlus: '100 $ et plus',
             pourBudget: 'Pour un budget de ',
@@ -60,7 +60,7 @@
         en: {
             chip: '💰 My budget',
             intro1: 'With pleasure 💰 Here are our prices, from lowest to highest: our items start at ',
-            intro2: ' (lip balm, tweezers, little treats…), lots of choice in the mid range between $20 and $50, and our premium pieces — wigs and extensions — at $100 and more.',
+            intro2: ' (lip balm, tweezers, little treats…), lots of choice in the mid range between $25 and $75, and our premium pieces — wigs and extensions — at $100 and more.',
             intro3: 'Tell me your budget and I will pull out what fits:',
             etPlus: '$100 and more',
             pourBudget: 'For a budget of ',
