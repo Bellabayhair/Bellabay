@@ -1,3 +1,10 @@
+/* ============================================================
+   BELLA IA v2 — copie du correctif Pinky (2026-11-27).
+   AUCUNE modification fonctionnelle dans ce fichier : les garde-fous
+   du correctif sont preserves a l'identique (amazon.ca dans la liste
+   blanche, Pinterest @bellabayca, aucun pourcentage ambassadrice).
+   L'enrichissement v3 vit dans index.corrige.v2.html (bloc Bella IA v3).
+   ============================================================ */
 /* ============================================================================
    BELLA IA + PINKY — v5 (2026-11-25)
    Mascotte Pinky, Beauty Match, Complete Your Look, verification des liens,
@@ -174,14 +181,16 @@
         { host: 'instagram.com', path: '/bella.bay.beauty/' },
         { host: 'www.tiktok.com', path: '/@bella.bay82' },
         { host: 'tiktok.com', path: '/@bella.bay82' },
-        { host: 'ca.pinterest.com', path: '/bellabaybeauty/' },
-        { host: 'www.pinterest.com', path: '/bellabaybeauty/' },
+        { host: 'ca.pinterest.com', path: '/bellabayca/' },
+        { host: 'www.pinterest.com', path: '/bellabayca/' },
         { host: 'www.google.com', path: '/maps/search/Bella+Bay+Laval' },
         { host: 'google.com', path: '/maps/search/Bella+Bay+Laval' },
         { host: 'www.youtube.com', path: '/@BB_Kids_story' },
         { host: 'youtube.com', path: '/@BB_Kids_story' },
         { host: 'www.paypal.com', path: null },
         { host: 'paypal.com', path: null },
+        { host: 'www.amazon.ca', path: null },
+        { host: 'amazon.ca', path: null },
         { host: 'cdnjs.cloudflare.com', path: null },
         { host: 'fonts.googleapis.com', path: null },
         { host: 'fonts.gstatic.com', path: null }
