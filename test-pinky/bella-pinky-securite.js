@@ -18,7 +18,7 @@
   'use strict';
 
   var IMG = window.BB_PINKY_SECU_IMG || 'img/pinky-protection-securite.png';
-  var TITLE = 'Pinky – Protection & Sécurité';
+  var TITLE = 'Pinky – Sécurité & Protection B.B';
   var LINE = 'Pinky veille sur vous : paiements protégés, achats en toute confiance et conseils de sécurité.';
 
   /* Mots déclencheurs (FR + EN), comparés sans accents ni casse. */
