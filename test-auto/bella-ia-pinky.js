@@ -41,7 +41,7 @@
     /* ---------- Textes FR / EN ---------- */
     var TXT = {
         fr: {
-            pinkyHello: 'Bonjour, je suis Pinky. Je veille sur ce site et je t’avertis si un lien me semble suspect.',
+            pinkyHello: 'Bonjour, je suis Pinky – Sécurité & Protection B.B. Je veille sur ce site et je t’avertis si un lien me semble suspect.',
             pinkyWatch: 'Surveillance active',
             pinkyLinksOk: 'liens officiels vérifiés',
             pinkyNoAlert: 'aucune alerte aujourd’hui',
@@ -73,7 +73,7 @@
             matchAdd: '+ Panier'
         },
         en: {
-            pinkyHello: 'Hello, I’m Pinky. I watch over this site and warn you if a link looks suspicious.',
+            pinkyHello: 'Hello, I’m Pinky – Security & Protection B.B. I watch over this site and warn you if a link looks suspicious.',
             pinkyWatch: 'Watch active',
             pinkyLinksOk: 'official links checked',
             pinkyNoAlert: 'no alert today',
@@ -115,7 +115,7 @@
        Visuel : illustration SVG (leopard stylise, yeux roses). Ce n’est pas
        une photo d’un vrai animal et ce n’est pas le logo officiel v4.
        ========================================================================== */
-    var PINKY_SVG = '<svg viewBox="0 0 120 120" role="img" aria-label="Pinky – Protection & Sécurité" xmlns="http://www.w3.org/2000/svg">'
+    var PINKY_SVG = '<svg viewBox="0 0 120 120" role="img" aria-label="Pinky – Sécurité & Protection B.B" xmlns="http://www.w3.org/2000/svg">'
         + '<defs><radialGradient id="bbPinkyFace" cx="50%" cy="38%" r="75%"><stop offset="0%" stop-color="#fbe3ec"/><stop offset="60%" stop-color="#f3c6d8"/><stop offset="100%" stop-color="#e7a9c4"/></radialGradient>'
         + '<radialGradient id="bbPinkyEye" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff8fc0"/><stop offset="55%" stop-color="#d63384"/><stop offset="100%" stop-color="#8a2a5c"/></radialGradient></defs>'
         + '<path d="M28 34 L20 8 L46 20 Z" fill="#e7a9c4" stroke="#8a5a6b" stroke-width="1.5"/>'
